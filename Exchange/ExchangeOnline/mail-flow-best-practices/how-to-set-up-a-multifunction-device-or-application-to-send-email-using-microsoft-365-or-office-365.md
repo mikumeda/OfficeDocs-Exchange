@@ -389,6 +389,20 @@ Here are the limitations of each configuration option:
 |Throttling limits|10,000 recipients per day. 30 messages per minute.|Standard throttling is in place to protect Microsoft 365 or Office 365.|Reasonable limits are imposed. The service can't be used to send spam or bulk mail. For more information about reasonable limits, see [High-risk delivery pool for outbound messages](/microsoft-365/security/office-365-security/high-risk-delivery-pool-for-outbound-messages).|
 |
 
+## Run diagnostic to Set up applications or devices sending email using Microsoft 365 
+
+> [!NOTE]
+> This feature requires a Microsoft 365 administrator account.
+
+If you still need help to set up applications or devices sending email using Microsoft 365 or you need help to fix issues with applications or devices sending email using Microsoft 365, you can run an automated diagnostic. 
+
+To run the diagnostic check, select the following button: 
+
+> [!div class="nextstepaction"]
+> [Run Tests: Send email using Microsoft 365](https://aka.ms/smtprelay)
+
+A flyout page opens in the Microsoft 365 admin center. Select the appropriate option that you are looking for, eg. new setup or troubleshooting existing setup. 
+
 ## Use your own email server to send email from multifunction devices and applications
 
 If you happen to have an on-premises email server, you should seriously consider using that server for SMTP relay instead of Microsoft 365 or Office 365. A local email server that you have physical access to is much easier to configure for SMTP relay by devices and applications on your local network. The details about how to do this configuration depends on your on-premises email server. For Exchange Server, see the following articles:
