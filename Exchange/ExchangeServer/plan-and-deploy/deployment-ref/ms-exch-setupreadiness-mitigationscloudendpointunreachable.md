@@ -2,7 +2,7 @@
 ms.localizationpriority: medium
 description:  Mitigations Cloud endpoint is not reachable
 ms.topic: reference
-author: joannehendrickson
+author: JoanneHendrickson
 ms.custom:
 - ms-exch-setupreadiness-KB2999226NotInstalled
 ms.author: jhendr

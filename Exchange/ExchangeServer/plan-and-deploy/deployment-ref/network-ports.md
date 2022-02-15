@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about the network ports that are used by Exchange 2016 and Exchange 2019 for client access and mail flow.'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: fec09455-e99e-42eb-8b32-1ddc08d9a19e
 ms.reviewer: 
 title: Network ports for clients and mail flow in Exchange

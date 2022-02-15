@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn how to create a public folder mailbox in Exchange 2016 or Exchange 2019.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 64437ffd-231b-4c10-84df-232ccbe9538f
 ms.reviewer:
 title: Create a public folder mailbox in Exchange Server

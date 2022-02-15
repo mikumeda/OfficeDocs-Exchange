@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How to use hardware virtualization software with Exchange 2016 and Exchange 2019.'
 ms.topic: conceptual
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 36184b2f-4cd9-48f8-b100-867fe4c6b579
 ms.reviewer: 
 title: Exchange Server virtualization

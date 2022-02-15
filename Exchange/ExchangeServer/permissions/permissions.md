@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about Role Based Access Control in Exchange Server 2016 and Exchange Server 2019'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d8dd605e-0af1-4e18-9ce6-e51d04e161ba
 ms.reviewer:
 title: Exchange Server permissions, permissions Exchange Server, Exchange Admin roles, Exchange admin permissions, role assignment policy Exchange

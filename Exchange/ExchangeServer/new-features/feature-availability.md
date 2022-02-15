@@ -1,7 +1,7 @@
 ---
 title: "Feature availability for Exchange Server"
-ms.author: office365servicedesc
-author: pamelaar
+ms.author: jhendr
+author: JoanneHendrickson
 manager: gailw
 audience: ITPro
 ms.topic: reference

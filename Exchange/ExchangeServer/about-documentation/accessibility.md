@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Microsoft is committed to making its products and services easier for everyone to use. The following sections provide information about the features, products, and services that make Microsoft Exchange more accessible for people with disabilities:'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: a7203ebd-ffac-4a8d-a2d0-6c8a61c8eeb8
 ms.reviewer: 
 title: Accessibility for people with disabilities

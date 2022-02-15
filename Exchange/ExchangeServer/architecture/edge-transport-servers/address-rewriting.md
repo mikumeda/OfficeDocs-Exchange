@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how address rewriting on Edge Transport servers in Exchange Server can modify sender and recipient email addresses on email messages in transit.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 23f1eaf6-247a-4671-ad72-aae19d9b511d
 ms.reviewer: 
 title: "Exchange Server: Address rewriting on Edge Transport servers"

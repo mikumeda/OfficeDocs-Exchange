@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to use the Exchange Management Shell to view dynamic distribution group membership.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 40b100c6-864e-4c82-9f98-08dd5c83e378
 ms.reviewer:
 title: View members of a dynamic distribution group

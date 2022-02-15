@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How to designate a passive copy of an Exchange Server 2016 or Exchange Server 2019 mailbox database as the new active copy.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d948269b-c902-4d8d-8c2b-269473359baa
 ms.reviewer:
 title: Activate a mailbox database copy

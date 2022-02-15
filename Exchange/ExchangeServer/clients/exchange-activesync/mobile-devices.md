@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: "Summary: Learn about how Exchange ActiveSync lets enabled mobile devices access a user's Microsoft Exchange mailbox data any time, anywhere."
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 93a949e7-b3ef-43ea-ae0c-6698826fc8d2
 ms.reviewer: 
 title: Mobile devices

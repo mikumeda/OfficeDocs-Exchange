@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: An overview of switchovers and failovers in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: serdars
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 75388645-cae1-402e-bf02-c4949d3e2c31
 ms.reviewer: 
 title: Switchovers and failovers

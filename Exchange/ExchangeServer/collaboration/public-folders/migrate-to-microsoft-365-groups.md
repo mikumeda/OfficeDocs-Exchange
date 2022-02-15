@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: "Summary: Why you should or shouldn't migrate your Exchange public folders to Microsoft 365 Groups."
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d89e727b-675a-4623-b572-260f8b44b966
 ms.reviewer: 
 title: Migrate your public folders to Microsoft 365 Groups

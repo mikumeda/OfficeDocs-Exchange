@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to configure message expiration intervals, message retries, and message resubmissions in the Transport service on a Mailbox server or on an Edge Transport server in Exchange 2016 and 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 5420124f-aa4c-4702-b493-40a9a7edb786
 ms.reviewer: 
 title: Configure message retry, resubmit, and expiration intervals

@@ -2,8 +2,8 @@
 localization_priority: Critical
 description: 'Summary: Important information that you need to know to successfully deploy Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: how-to
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 1879fd5e-3d63-4264-9cc2-9c050c6ab3c5
 monikerRange: exchserver-2016 || exchserver-2019
 title: Release notes for Exchange Server

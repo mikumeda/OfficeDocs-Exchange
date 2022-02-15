@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn about queues and messages in queues in Exchange 2016 and Exchange 2019
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: e7ad0ba5-3789-4a2b-9825-6bb1b321609c
 ms.reviewer:
 title: Queues and messages in queues in Exchange Server

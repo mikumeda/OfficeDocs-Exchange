@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how and when to create custom Receive connectors in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 86f7d6e7-a869-4c90-a570-0239fd0e5872
 ms.reviewer:
 title: Scenarios for custom Receive connectors in Exchange Server

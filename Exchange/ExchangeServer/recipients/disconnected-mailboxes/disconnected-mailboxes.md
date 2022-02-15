@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about different disconnected mailboxes and how to work with them.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 85ff95d4-0aa4-4964-ac4b-5b07a5a1039f
 ms.reviewer:
 title: Disconnected mailboxes

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How DAC mode, a component of DAGs, works in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 57e4bf22-eeae-42a5-beb3-d68d06489592
 ms.reviewer:
 title: Datacenter Activation Coordination mode

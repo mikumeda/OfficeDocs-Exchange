@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Resources and methods for monitoring the health and status of DAGs in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: f5bdfd6e-e93c-4d96-8bc2-548750d51930
 ms.reviewer:
 title: Monitor database availability groups

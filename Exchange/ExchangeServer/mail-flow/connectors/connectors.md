@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how connectors are used in Exchange Server 2016 or Exchange Server 2019 for incoming and outgoing mail flow in your organization.'
 ms.topic: hub-page
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 73559b0c-fc0e-41fd-84df-d07442137a0c
 ms.reviewer:
 title: Connectors, Exchange connector, Exchange send connector, Exchange receive connector

@@ -5,7 +5,7 @@ monikerRange: exchserver-2016
 ms.author: jhendr
 manager: serdars
 ms.topic: article
-author: joannehendrickson
+author: JoanneHendrickson
 ms.prod: exchange-server-it-pro
 ms.reviewer:
 ms.collection: exchange-server

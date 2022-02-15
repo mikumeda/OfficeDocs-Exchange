@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: See a list of management role groups for managing Exchange 2016 or Exchange 2019 features'
 ms.topic: hub-page
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 48d06fa6-e4a2-4d5c-bdbd-718eeaade4be
 ms.reviewer: 
 title: Feature permissions

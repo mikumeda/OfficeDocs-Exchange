@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: These articles contain architectural and security information for administrators about Outlook for iOS and Android in an Exchange Server 2016 or Exchange Server 2019 on-premises environment.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 8b46e0bf-334d-44ed-bf20-eab605fdcae6
 title: Outlook for iOS and Android
 ms.collection: exchange-server

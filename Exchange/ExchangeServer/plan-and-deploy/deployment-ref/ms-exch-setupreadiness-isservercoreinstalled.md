@@ -1,10 +1,10 @@
 ---
 ms.localizationpriority: medium
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.IsServerCoreInstalled
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 3d297c4f-7b5a-4faa-bf5e-320fe0529dfe
 monikerRange: exchserver-2016
 description: Exchange Server 2016 Setup can't continue because it detected that the local computer is running Windows Server Core or Windows Nano Server.

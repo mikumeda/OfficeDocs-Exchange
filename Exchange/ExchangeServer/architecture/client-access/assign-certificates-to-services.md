@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to assign certificates to Exchange services in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: f4c170cd-76d3-499d-a34e-8a2bc8724c52
 ms.reviewer:
 title: Assign certificates to Exchange Server services

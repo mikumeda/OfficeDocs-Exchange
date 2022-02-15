@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn about the services that Exchange 2016 adds to a Windows server.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 2ed45d18-2ff3-4099-b841-050eb16a416b
 ms.reviewer: 
 title: Overview of Exchange services on Exchange servers

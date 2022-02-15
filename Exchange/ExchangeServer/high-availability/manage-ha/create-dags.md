@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How to create a DAG in Exchange Server, through the Exchange admin center (EAC) or the Exchange Management Shell.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d6b98299-e203-488b-af73-50753fe152c8
 ms.reviewer:
 title: Create a database availability group

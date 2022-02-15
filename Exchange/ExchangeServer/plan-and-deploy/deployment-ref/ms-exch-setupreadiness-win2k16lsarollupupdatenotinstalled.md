@@ -1,10 +1,10 @@
 ---
 ms.localizationpriority: medium
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.Win2k16LSARollupUpdateNotInstalled
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 0d64b18a-4198-4ddf-836a-1f4ab08fb9b8
 ms.reviewer: 
 manager: serdars

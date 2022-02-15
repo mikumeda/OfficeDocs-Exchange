@@ -1,9 +1,9 @@
 ---
 ms.localizationpriority: medium
-ms.author: serdars
+ms.author: jhendr
 manager: serdars
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 ms.prod: exchange-server-it-pro
 ms.assetid: bcb0ac98-2949-486b-a8ab-8549c021651b
 ms.reviewer:

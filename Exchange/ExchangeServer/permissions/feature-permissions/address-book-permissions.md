@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn about permissions that are required to manage email address and address book features in Exchange Server 2016 or Exchange Server 2019
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 1c1de09d-16ef-4424-9bfb-eb7edffbc8c2
 ms.reviewer:
 title: Email address and address book permissions

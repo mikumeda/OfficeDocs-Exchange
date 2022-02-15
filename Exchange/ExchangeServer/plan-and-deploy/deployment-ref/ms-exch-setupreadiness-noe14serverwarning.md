@@ -3,10 +3,10 @@ ms.localizationpriority: medium
 monikerRange: exchserver-2016
 description: Microsoft Exchange Server 2016 Setup displayed this warning because no Exchange 2010 servers exist in the organization.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.NoE14ServerWarning
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 789cabab-c769-4a16-a6c8-3db82cff8861
 ms.reviewer: 
 title: No Exchange 2010 servers detected [NoE14ServerWarning]

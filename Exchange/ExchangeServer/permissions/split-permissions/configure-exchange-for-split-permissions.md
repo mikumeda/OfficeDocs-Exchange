@@ -1,7 +1,7 @@
 ﻿---
 title: "Configure Exchange Server for split permissions"
-ms.author: dstrome
-author: dstrome
+ms.author: jhendr
+author: JoanneHendrickson
 manager: serdars
 ms.date:
 ms.audience: ITPro

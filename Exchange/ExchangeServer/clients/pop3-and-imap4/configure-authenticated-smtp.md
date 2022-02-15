@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to configure the authenticated SMTP settings on an Exchange server 2016 or 2019 that are required by POP3 or IMAP4 clients to send email messages.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: bd22bf7e-3bf7-45e6-8790-919b780166f6
 ms.reviewer:
 title: Configure authenticated SMTP settings for POP3 and IMAP4 clients in Exchange Server

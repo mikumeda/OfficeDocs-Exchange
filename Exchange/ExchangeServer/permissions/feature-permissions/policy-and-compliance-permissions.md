@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about permissions that are required to manage policy and compliance features in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: ec4d3b9f-b85a-4cb9-95f5-6fc149c3899b
 ms.reviewer:
 title: Messaging policy and compliance permissions in Exchange Server

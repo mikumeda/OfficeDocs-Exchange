@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about the elements of high availability and site resilience to incorporate in your Exchange Server 2016 or Exchange Server 2019 deployment plan.'
 ms.topic: conceptual
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 29bb0358-fc8e-4437-8feb-d2959ed0f102
 ms.reviewer: 
 title: Plan for high availability and site resilience

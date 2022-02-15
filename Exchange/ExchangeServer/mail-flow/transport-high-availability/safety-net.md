@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn how Safety Net is used in Exchange 2016 and Exchange 2019 to protect against data loss by maintaining a queue of successfully delivered messages.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d0abb807-3b12-4c7d-bc7e-769b87c84ccb
 ms.reviewer: 
 title: Safety Net in Exchange Server

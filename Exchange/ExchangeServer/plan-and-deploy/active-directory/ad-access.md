@@ -2,8 +2,8 @@
 ms.localizationpriority: high
 description: 'Summary: Learn how Exchange 2016 and Exchange 2019 retrieve data from Active Directory and how to recover deleted objects.'
 ms.topic: conceptual
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 61080b45-8bce-4c23-b744-ed264d5f0b7d
 ms.reviewer: 
 title: Access to Active Directory by Exchange servers

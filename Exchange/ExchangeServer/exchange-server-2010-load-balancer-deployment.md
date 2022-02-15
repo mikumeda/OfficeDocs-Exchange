@@ -3,10 +3,10 @@ f1.keywords:
 - NOCSH
 audience: ITPro
 ms.localizationpriority: high
-ms.author: serdars
+ms.author: jhendr
 manager: serdars
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.prod: exchange-server-it-pro
 ms.collection: exchange-server
 description: This page describes which server load balancer partners have completed solution testing with Exchange Server 2010 and contains pointers to accompanying deployment white papers hosted by the partner.

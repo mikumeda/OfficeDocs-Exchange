@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to configure journaling in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d517f27e-f80a-4a06-988c-cbbf981c701d
 ms.reviewer:
 title: Journaling procedures in Exchange Server

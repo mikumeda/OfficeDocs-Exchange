@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: "Summary: Learn how administrators can search for and recover deleted email messages in a user's mailbox in Exchange Server 2016 or Exchange Server 2019"
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 9e0e34ce-efc5-454e-8d15-57b4da867f12
 ms.reviewer:
 title: Recover deleted messages in a user's mailbox in Exchange Server

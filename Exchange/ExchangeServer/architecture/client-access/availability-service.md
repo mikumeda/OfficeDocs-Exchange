@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about the Availability service in Exchange 2016 and Exchange 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 9722dea2-2bf8-437c-85c0-3ab65b8a07b9
 ms.reviewer: 
 title: Availability service in Exchange Server

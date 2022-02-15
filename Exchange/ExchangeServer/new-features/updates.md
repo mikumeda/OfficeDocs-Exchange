@@ -2,8 +2,8 @@
 ms.localizationpriority: high
 description: 'Summary: Learn about the Cumulative Update strategy and delivery schedule in Exchange Server.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 9c1d8694-bd33-43af-a7ab-4caaada34745
 ms.reviewer: 
 title: Updates for Exchange Server, Cumulative Updates for Exchange Server, Exchange Server 2016 CU, Cumulative Update Exchange 2016

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How to deploy Exchange Server 2016 or Exchange Server 2019 with high availability and site resilience.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 4c4e00a4-1f57-4fdb-b9b2-2779abf381a9
 ms.reviewer:
 title: Exchange high availability, Exchange high availability step by step, Exchange site resilience, Site resilience Exchange, High availability for Exchange, High availability Exchange Server, Exchange DAG high availability, High availability DAG

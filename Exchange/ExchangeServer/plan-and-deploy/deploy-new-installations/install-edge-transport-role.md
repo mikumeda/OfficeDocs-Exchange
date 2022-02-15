@@ -2,8 +2,8 @@
 ms.localizationpriority: high
 description: 'Summary: Learn how to use the Setup wizard in Exchange 2016 or Exchange 2019 to install the Edge Transport server role on a computer.'
 ms.topic: how-to
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: b8e51b0b-201e-4c64-92c8-3ac0db04b6e2
 ms.reviewer: 
 title: Install Exchange Edge Transport servers using the Setup wizard

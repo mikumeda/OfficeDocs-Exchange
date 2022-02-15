@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn how administrators use Delivery Reports to search for the delivery status of email messages in an Exchange Server 2016 or Exchange Server 2019 organization.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: a14e4e62-08ca-4a7b-92e1-d39fe3e0a9e5
 ms.reviewer: 
 title: Track messages with delivery reports

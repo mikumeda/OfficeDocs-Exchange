@@ -2,8 +2,8 @@
 ms.localizationpriority: high
 description: 'Summary: Learn how to install, uninstall, upgrade, and recover Exchange 2016 or Exchange 2019 from the command line.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 386465e9-41da-4e26-9816-b3b69be1f8bf
 ms.reviewer: 
 title: Use unattended mode in Exchange Setup

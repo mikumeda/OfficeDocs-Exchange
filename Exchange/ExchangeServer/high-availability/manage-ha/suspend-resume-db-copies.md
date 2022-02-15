@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How to suspend or resume a mailbox database copy in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 96aa1b82-3e15-4215-843e-3d583af9504b
 ms.reviewer:
 title: Suspend or resume a mailbox database copy

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: A list of frequently asked questions regarding public folders in Exchange Server 2016 and Exchange Server 2019.
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 1cdcdcb7-f11b-45ca-ad23-7c38f640208c
 ms.reviewer:
 title: 'FAQ: Public folders'

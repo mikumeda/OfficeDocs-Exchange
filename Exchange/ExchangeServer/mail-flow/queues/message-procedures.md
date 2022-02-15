@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn how to remove, suspend, resume, and redirect messages in queues in Exchange 2016 and Exchange 2019."
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 83358884-6036-4e91-87a8-35200541874d
 ms.reviewer:
 title: Procedures for messages in queues

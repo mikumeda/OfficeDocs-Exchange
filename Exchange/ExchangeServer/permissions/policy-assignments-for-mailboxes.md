@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to change the management role assignment policy assigned to a mailbox.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 011690a5-233a-4c03-8842-92276f899a89
 ms.reviewer:
 title: Change the assignment policy on a mailbox
