@@ -109,7 +109,7 @@ If the mobile operating system prevents background synchronization, users will e
 
 Upon initial account login, Outlook for iOS and Android establishes a connection to the Microsoft 365- or Office 365-based architecture. A unique device ID is generated, and this device ID is what appears in Active Directory device records (which can be retrieved with cmdlets such as `Get-MobileDevice` in Exchange Online PowerShell) and which appears in HTTP request headers.
 
-Intune uses a different device ID. The basic workflow for how Intune assigns a device ID is described in [App-based conditional access with Intune](/intune/deploy-use/restrict-access-to-email-and-o365-services-with-microsoft-intune). In Intune, the device ID is assigned when the device workplace joins for all device-conditional access scenarios. This ID is an AAD-generated unique ID for the device. Intune uses that unique ID when sending compliance information, and ADAL uses that unique ID when authenticating to services.
+Intune uses a different device ID. The basic workflow for how Intune assigns a device ID is described in [App-based conditional access with Intune](/mem/intune/protect/app-based-conditional-access-intune). In Intune, the device ID is assigned when the device workplace joins for all device-conditional access scenarios. This ID is an AAD-generated unique ID for the device. Intune uses that unique ID when sending compliance information, and ADAL uses that unique ID when authenticating to services.
 
 ### Q: Does Outlook for iOS and Android support RMS?
 

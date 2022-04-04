@@ -181,9 +181,9 @@ If you need to restore a disconnected on-premises mailbox to an Exchange Online 
    Get-MailboxDatabase | Format-List Identity,GUID
    ```
 
-4. [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell.md)
+4. [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell)
 
-5. Replace \<MailboxIdentity\> with the name, alias, or email address of the target Exchange Online mailbox, and then run one of the the following commands:
+5. Replace \<MailboxIdentity\> with the name, alias, or email address of the target Exchange Online mailbox, and then run one of the following commands:
 
    - **Restore to Exchange Online mailbox**: Run the following command to show the required **ExchangeGuid** value:
 
@@ -202,7 +202,7 @@ If you need to restore a disconnected on-premises mailbox to an Exchange Online 
 
 6. Now that we have all the required details, run one of the following commands to start the restore request. In both commands, use the following values:
    - _RemoteHostName_ is the FQDN of the Exchange server (for example, mail.contoso.com)
-   - _RemoteCredential_ is the credentials of an on-premises Exchange administartor account.
+   - _RemoteCredential_ is the credentials of an on-premises Exchange administrator account.
    - _RemoteDatabaseGuid_ is the **GUID** value of the mailbox database from step 3.
    - _SourceStoreMailbox_ is the **MailboxGuid** value of the disconnected mailbox from step 2.
 
@@ -228,7 +228,7 @@ If you need to restore a disconnected on-premises mailbox to an Exchange Online 
       ```PowerShell
       Get-MailboxRestoreRequest
       ```
-   2. Replace \<MailboxRestoreRequestIdentity\> with the **Identity** value of the mailbox restore reuest from the previous step, and run the following command:
+   2. Replace \<MailboxRestoreRequestIdentity\> with the **Identity** value of the mailbox restore request from the previous step, and run the following command:
 
       ```PowerShell
       Get-MailboxRestoreRequestStatistics -Identity <MailboxRestoreRequestIdentity> -IncludeReport

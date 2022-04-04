@@ -218,7 +218,7 @@ A string beginning with S:SFA is an entry from the spam filter agent and provide
 |SFV=BLK|Filtering was skipped and the message was blocked because it originated from a blocked sender.|
 |SFV=SKS|The message was marked as spam prior to being processed by the content filter. This includes messages where the message matched a mail flow rule to automatically mark it as spam and bypass all additional filtering.|
 |SCL=\<*number*\>|For more information about the different SCL values and what they mean, see [Spam Confidence Levels](/microsoft-365/security/office-365-security/spam-confidence-levels).|
-|PCL=\<*number*\>|The Phishing Confidence Level (PCL) value of the message. These can be interpreted the same way as the SCL values documented in [Spam Confidence Levels](/microsoft-365/security/office-365-security/spam-confidence-levelsx).|
+|PCL=\<*number*\>|The Phishing Confidence Level (PCL) value of the message. These can be interpreted the same way as the SCL values documented in [Spam Confidence Levels](/microsoft-365/security/office-365-security/spam-confidence-levels).|
 |DI=SB|The sender of the message was blocked.|
 |DI=SQ|The message was quarantined.|
 |DI=SD|The message was deleted.|

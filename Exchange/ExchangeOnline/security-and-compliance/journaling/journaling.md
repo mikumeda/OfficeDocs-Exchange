@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: Find information about journaling in Exchange Online. Learn the difference between journaling and data archiving, how journaling helps with compliance, and more.
 ms.topic: article
-author: JoanneHendrickson
-ms.author: jhendr
+author: kccross
+ms.author: krowley
 ms.assetid: 1e7df155-02a3-4daf-94f9-8ea46f041a3a
-ms.reviewer:
+ms.reviewer: 
 f1.keywords:
 - NOCSH
 title: Journaling in Exchange Online
@@ -110,10 +110,22 @@ A journal report is the message that the Journaling agent generates when a messa
 
 ### Journal reports and IRM-protected messages
 
-When implementing journaling, you must consider journaling reports and IRM-protected messages. IRM-protected messages will affect the search and discovery capabilities of third-party archiving systems that don't have RMS support built-in. In Microsoft 365 or Office 365, you can configure Journal Report Decryption to save a clear-text copy of the message in a journal report.
+When implementing journaling, you must consider journaling reports and IRM-protected messages. IRM-protected messages will affect the search and discovery capabilities of third-party archiving systems that don't have RMS support built in. In Microsoft 365 and Office 365, you can configure journal report decryption to save a clear-text copy of the message in a journal report. The messages and attachments are decrypted if the encryption originates from the organization. Journaling doesn't decrypt items that are encrypted by external organizations.
+
+To enable journal report decryption for the organization, complete these steps.
+
+1. On your local computer, using a work or school account that has global administrator or compliance admin permissions in your organization, [connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
+
+1. Run the `Set-IRMConfiguration` cmdlet to enable journal report decryption.
+
+```powershell
+ Set-IRMConfiguration -JournalReportDecryptionEnabled $true
+```
+
+Set the `JournalReportDecryptionEnabled` parameter to `true` to enable decryption. Set the parameter to `false` to disable decryption.
 
 > [!IMPORTANT]
-> The Journal Report Decryption feature currently does not support the explicit use of OME templates. If you use a mail flow rule (also known as a transport rule) to apply an OME template, the journal report will not contain a decrypted copy of the message. Currently, journal report decryption only works with the default OME template that's implicitly applied by Exchange Online (on OME messages).
+> Journal report decryption doesn't currently support the explicit use of OME branding templates. If you use a mail flow rule (also known as a transport rule) to apply an OME branding template, the journal report won't contain a decrypted copy of the message. Currently, journal report decryption only works with the default OME branding template that's applied without a mail flow rule by Exchange Online. In other words, the branding template applied by OME implicitly on messages.
 
 ## Troubleshooting
 
@@ -122,7 +134,7 @@ When a message matches the scope of multiple journal rules, all matching rules w
 - If the matching rules are configured with different journal mailboxes, a journal report will be sent to each journal mailbox.
 - If the matching rules are all configured with the same journal mailbox, only one journal report is sent to the journal mailbox.
 
-Journaling always identifies messages as internal if the email address in the SMTP **MAIL FROM** command is in a domain that's configured as an accepted domain in Exchange Online. This includes spoofed messages from external sources (messages where the **X-MS-Exchange-Organization-AuthAs** header value is also Anonymous). Therefore, journal rules that are scoped to external messages won't be triggered by spoofed messages with SMTP **MAIL FROM** email addresses in accepted domains.
+Journaling always identifies messages as internal if the email address in the SMTP **MAIL FROM** command is in a domain that's configured as an accepted domain in Exchange Online. These messages include spoofed messages from external sources (messages where the **X-MS-Exchange-Organization-AuthAs** header value is also Anonymous). Therefore, journal rules that are scoped to external messages won't be triggered by spoofed messages with SMTP **MAIL FROM** email addresses in accepted domains.
 
 ### Duplicate journal report scenarios in a hybrid Exchange environment
 
@@ -133,9 +145,9 @@ In a hybrid Exchange environment, the following scenarios are known to result in
    - Internal and external recipients exist on the same message – two forks are created for spam/phishing purposes (one in which internal recipients exist, and one in which external recipients exist).
    - Any future needs where the cloud needs to fork the message.
 
-2. **On-premises to cloud**: Once when on-premises journals and once when the cloud journals. This can be prevented by implementing the PreventDupJournaling flight in a tenant.
+1. **On-premises to cloud**: Once when on-premises journals and once when the cloud journals. This can be prevented by implementing the PreventDupJournaling flight in a tenant.
 
-3. **Cloud to on-premises**: After the cloud has journaled, on-premises journals. We cannot prevent this scenario.
+1. **Cloud to on-premises**: After the cloud has journaled, on-premises journals. We can't prevent this scenario.
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 

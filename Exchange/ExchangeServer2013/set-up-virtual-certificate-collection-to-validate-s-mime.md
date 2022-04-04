@@ -23,7 +23,7 @@ As an Exchange Server administrator, you need to configure a virtual certificate
 
 ## Create and save an SST
 
-You can create this SST certificate store file by exporting the certificates from a trusted machine using the **Export-Certificate** cmdlet in Windows PowerShell and specifying the _Type_ value as SST. For instructions, see [Export-Certificate](/powershell/module/pkiclient/export-certificate).
+You can create this SST certificate store file by exporting the certificates from a trusted machine using the **Export-Certificate** cmdlet in Windows PowerShell and specifying the _Type_ value as SST. For instructions, see [Export-Certificate](/powershell/module/pki/export-certificate).
 
 Once you have the SST certificate store file, use the following syntax in the Exchange Management Shell to save the SST file contents in the Exchange Online virtual certificate store. To open the Exchange Management Shell, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 

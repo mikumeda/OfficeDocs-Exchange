@@ -25,7 +25,7 @@ Simplicity isn't at all bad, but Basic authentication makes it easier for attack
 
 Basic authentication is an outdated industry standard. Threats posed by it have only increased since we originally announced that we were going to turn it off (see [Improving Security - Together](https://techcommunity.microsoft.com/t5/exchange-team-blog/improving-security-together/ba-p/805892)) There are better and more effective user authentication alternatives.
 
-We actively recommend that customers adopt security strategies such as [Zero Trust](/security/blog/2018/06/14/building-zero-trust-networks-with-microsoft-365/) (Never Trust, Always Verify), or apply real-time assessment policies when users and devices access corporate information. These alternatives allow for intelligent decisions about who is trying to access what from where on which device rather than simply trusting an authentication credential that could be a bad actor impersonating a user.
+We actively recommend that customers adopt security strategies such as [Zero Trust](/security/zero-trust/) (Never Trust, Always Verify), or apply real-time assessment policies when users and devices access corporate information. These alternatives allow for intelligent decisions about who is trying to access what from where on which device rather than simply trusting an authentication credential that could be a bad actor impersonating a user.
 
 With these threats and risks in mind, we're taking steps to improve data security in Exchange Online.
 
@@ -169,7 +169,7 @@ We've already started to disable Basic authentication in following environments:
 
 Before we make any changes to your organization, we'll notify you about the change in a Message Center post. You can opt-out of the change if you act before the date that's specified in the Message Center post. You can do this until October 2022, at which point you can no longer opt-out of the changes.
 
-For more informaiton about the opt-out process, see [Basic Authentication and Exchange Online – September 2021 Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-september-2021-update/ba-p/2772210).
+For more information about the opt-out process, see [Basic Authentication and Exchange Online – September 2021 Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-september-2021-update/ba-p/2772210).
 
 If we already disabled something before you saw the Message Center post, you can re-enable it at any time before October 2022. 
 
