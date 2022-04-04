@@ -18,7 +18,8 @@ f1.keywords:
 
 # Sender Rewriting Scheme (SRS) in Office 365
 
-[!INCLUDE [Branding name note](../../../includes/branding-name-note.md)]
+> [!NOTE]
+> **Office 365 ProPlus** is being renamed to **Microsoft 365 Apps for enterprise**. For more information about this change, [read this blog post](https://www.microsoft.com/microsoft-365/blog/2020/03/30/new-microsoft-365-offerings-small-and-medium-sized-businesses/).
 
 _Original KB number:_&nbsp;4490129
 
