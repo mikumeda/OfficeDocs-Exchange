@@ -31,9 +31,9 @@ _Original KB number:_&nbsp;4490129
 
 ## Summary
 
-Sender Rewriting Scheme (SRS) functionality was added to Office 365 to resolve a problem in which autoforwarding is incompatible with SPF. The SRS feature rewrites the **P1 From** address (also known as the Envelope From address) for all applicable messages that are sent externally from Office 365. It is important to note that the **From** header (also known as the Display From address or P2 From address) that is displayed by email clients remains unchanged.
+Sender Rewriting Scheme (SRS) functionality was added to Office 365 to resolve a problem in which autoforwarding is incompatible with SPF. The SRS feature rewrites the **P1 From** address (also known as the Envelope From address) for all applicable messages that are sent externally from Office 365. It's important to note that the **From** header (also known as the Display From address or P2 From address) that is displayed by email clients remains unchanged.
 
-This SRS change improves deliverability of applicable messages that pass Sender Policy Framework (SPF) checks when they arrive from the original sender but that then fail SPF at the final external destination after they are forwarded.
+This SRS change improves deliverability of applicable messages that pass Sender Policy Framework (SPF) checks when they arrive from the original sender but that then fail SPF at the final external destination after they're forwarded.
 
 SRS rewrites the **P1 From** address in the following scenario:
 
@@ -46,12 +46,12 @@ SRS rewrites the **P1 From** address in the following scenario:
   - Mail User forwarding
 - Messages that are autoforwarded (or redirected) from our customer's on-premises environments and relayed through Office 365.
 
-*Some messages forwarded with SMTP Forwarding will not be rewritten with SRS as they have already been rewritten.
+*Some messages forwarded with SMTP Forwarding won't be rewritten with SRS as they've already been rewritten.
 
 > [!NOTE]
 > SRS rewriting does not fix the issue of DMARC passing for forwarded messages. Although an SPF check will now pass by using a rewritten **P1 From** address, DMARC also requires an alignment check for the message to pass. For forwarded messages, DKIM always fails because the signed DKIM domain does not match the **From** header domain. If an original sender sets their DMARC policy to reject forwarded messages, the forwarded messages are rejected by Message Transfer Agents (MTAs) that honor DMARC policies.  
 
-This change causes Non-Delivery Reports (NDRs) to return to Office 365 instead of the original sender, as they would do if SRS were not used. Therefore, part of the SRS implementation is to reroute returning NDRs to the original sender if a message cannot be delivered.  
+This change causes Non-Delivery Reports (NDRs) to return to Office 365 instead of the original sender, as they would do if SRS weren't used. Therefore, part of the SRS implementation is to reroute returning NDRs to the original sender if a message can't be delivered.  
 
 > [!NOTE]
 > SRS rewriting is used to prevent spoofing of unverified domains. Customers are advised to send messages only from domains that they own and for which they have verified their ownership through the Accepted Domains list. For more information about Accepted Domains in Office 365, see the following TechNet topic:
@@ -106,5 +106,5 @@ A message is sent from Bob (bob@fabrikam.com) to John's mailbox (john.onprem@con
 
 By default, SRS considers on-premises servers to be within the trust boundary, and doesn't rewrite forwarded messages bound to on-premises. However, some customers have complex routing configurations that use their on-premises servers to route messages to the Internet. Therefore, the forwarded messages won't be rewritten, and will be rejected due to SPF failure. To solve this problem, we added a setting to allow the administrators to enable SRS rewrite for traffic flowing through an on-premises outbound connector. For more information about this new connector parameter, see [Sender Rewriting Scheme Upcoming Changes](https://techcommunity.microsoft.com/t5/exchange-team-blog/sender-rewriting-scheme-upcoming-changes/ba-p/2632829). 
 
-Microsoft provides third-party contact information to help you find additional information about this topic. This contact information may change without notice. Microsoft does not guarantee the accuracy of third-party contact information.
+Microsoft provides third-party contact information to help you find additional information about this article. This contact information may change without notice. Microsoft doesn't guarantee the accuracy of third-party contact information.
 
