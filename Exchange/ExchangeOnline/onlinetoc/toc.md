@@ -116,6 +116,7 @@
 ## [Mail flow best practices](../mail-flow-best-practices/mail-flow-best-practices.md)
 ### [Test mail flow](../mail-flow-best-practices/test-mail-flow.md)
 ### [Troubleshoot mail flow](../mail-flow-best-practices/troubleshoot-mail-flow.md)
+### [Sender Rewriting Scheme](../mail-flow-best-practices/sender-rewriting-scheme.md)
 ### [Use connectors to configure mail flow](../mail-flow-best-practices/use-connectors-to-configure-mail-flow/use-connectors-to-configure-mail-flow.md)
 #### [Do I need to create a connector?](../mail-flow-best-practices/use-connectors-to-configure-mail-flow/do-i-need-to-create-a-connector.md)
 #### [Set up connectors to route mail](../mail-flow-best-practices/use-connectors-to-configure-mail-flow/set-up-connectors-to-route-mail.md)
