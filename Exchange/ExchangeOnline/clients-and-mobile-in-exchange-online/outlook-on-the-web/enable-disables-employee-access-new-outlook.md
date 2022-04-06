@@ -4,7 +4,7 @@ author: Benny-54
 ms.author: v-bshilpa
 manager: serdars
 ms.localizationpriority: medium
-description: A basic overview of Outlook on the web in Exchange Online.
+description: Learn how to enable or disable the the new Outlook for Windows.
 ms.topic: conceptual
 ms.assetid: 
 ms.reviewer: 
@@ -33,7 +33,7 @@ To disable the new Outlook for Windows, do the following:
     Input set-CASMailbox <Email being changed> -OneWinNativeOutlookEnabled <$true>  if  or <$false>
     ```
 
-You can use the following command to confirm that the new Outlook for Windows is disabled for your account:  
+You can also use the following command to confirm that the new Outlook for Windows is disabled for your account:  
 
 ```PowerShell
 Get-CASMailbox <email being checked> | Select * 
