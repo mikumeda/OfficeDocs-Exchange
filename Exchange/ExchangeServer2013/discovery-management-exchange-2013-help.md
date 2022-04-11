@@ -5,7 +5,7 @@ ms:assetid: b8bc5922-a8c9-4707-906d-fa38bb87da8f
 ms:mtpsurl: https://technet.microsoft.com/library/Dd351080(v=EXCHG.150)
 ms:contentKeyID: 49289385
 ms.topic: article
-description: The Discovery Management management role group is a built-in role group in the Role Based Access Control permissions model.
+description: The Discovery Management management role group is a built-in role group in the Role Based Access Control permissions model.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The Discovery Management management role group is one of several built-in role groups that make up the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. Role groups are assigned one or more management roles that contain the permissions required to perform a given set of tasks. The members of a role group are granted access to the management roles assigned to the role group. For more information about role groups, see [Understanding management role groups](understanding-management-role-groups-exchange-2013-help.md).
+The Discovery Management management role group is one of several built-in role groups that make up the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. Role groups are assigned one or more management roles that contain the permissions required to perform a given set of tasks. The members of a role group are granted access to the management roles assigned to the role group. For more information about role groups, see [Understanding management role groups](understanding-management-role-groups-exchange-2013-help.md).
 
 Administrators or users who are members of the Discovery Management role group can perform searches of mailboxes in the Exchange organization for data that meets specific criteria and can also configure litigation holds on mailboxes. For more information, see [In-Place eDiscovery](../ExchangeOnline/security-and-compliance/in-place-ediscovery/in-place-ediscovery.md).
 
@@ -107,7 +107,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="legal-hold-role-exchange-2013-help.md">Legal Hold role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -116,7 +116,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="mailbox-search-role-exchange-2013-help.md">Mailbox Search role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>None</code></p></td>

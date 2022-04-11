@@ -69,20 +69,20 @@ The following table explains each key in more detail.
 <td><p><em>MaxHighPriorityMessageSize</em></p></td>
 <td><p><code>250KB</code></p></td>
 <td><p>This key specifies the maximum allowed size of a High priority message. If a High priority message is larger than the value specified by this key, the message is automatically downgraded from High priority to Normal priority.</p>
-<p>The value of this key should be significantly less than the value of the <em>MaxSendMessageSize</em> parameter on the <strong>Set-TransportConfig</strong> cmdlet. The default value of this parameter is <code>10 MB</code>. The difference in these two values helps ensure consistent and predictable delivery times for High priority messages.</p>
+<p>The value of this key should be significantly less than the value of the <em>MaxSendMessageSize</em> parameter on the <strong>Set-TransportConfig</strong> cmdlet. The default value of this parameter is <code>10 MB</code>. The difference in these two values helps ensure consistent and predictable delivery times for High priority messages.</p>
 <p>When you enter a value, qualify the value with one of the following units:</p>
 <ul>
-<li><p>KB (kilobytes)</p></li>
-<li><p>MB (megabytes)</p></li>
+<li><p>KB (kilobytes)</p></li>
+<li><p>MB (megabytes)</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
 <td><p><em>LowPriorityDelayNotificationTimeout</em></p>
 <p><em>NormalPriorityDelayNotificationTimeout</em></p>
 <p><em>HighPriorityDelayNotificationTimeout</em></p></td>
-<td><p><strong>Low</strong>   <code>8:00:00</code> (8 hours)</p>
-<p><strong>Normal</strong>   <code>4:00:00</code> (4 hours)</p>
-<p><strong>High</strong>   <code>00:30:00</code> (30 minutes)</p></td>
+<td><p><strong>Low</strong>   <code>8:00:00</code> (8 hours)</p>
+<p><strong>Normal</strong>   <code>4:00:00</code> (4 hours)</p>
+<p><strong>High</strong>   <code>00:30:00</code> (30 minutes)</p></td>
 <td><p>These keys specify the timeout interval for delay delivery status notification (DSN) messages based on the message priority.</p>
 <p>After each message delivery failure, the Transport service generates a delay DSN message and queues it for delivery to the sender of the undeliverable message. This delay DSN message is sent only after a specified delay notification time-out interval, and only if the failed message wasn't successfully delivered during that time. This delay prevents the sending of unnecessary delay DSN messages that may be caused by temporary message transmission failures.</p>
 <p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p></td>
@@ -91,9 +91,9 @@ The following table explains each key in more detail.
 <td><p><em>LowPriorityMessageExpirationTimeout</em></p>
 <p><em>NormalPriorityMessageExpirationTimeout</em></p>
 <p><em>HighPriorityMessageExpirationTimeout</em></p></td>
-<td><p><strong>Low</strong>   <code>2.00:00:00</code> (2 days)</p>
-<p><strong>Normal</strong>   <code>2.00:00:00</code> (2 days)</p>
-<p><strong>High</strong>   <code>8:00:00</code> (8 hours)</p></td>
+<td><p><strong>Low</strong>   <code>2.00:00:00</code> (2 days)</p>
+<p><strong>Normal</strong>   <code>2.00:00:00</code> (2 days)</p>
+<p><strong>High</strong>   <code>8:00:00</code> (8 hours)</p></td>
 <td><p>These keys specify the maximum length of time that the Transport service tries to deliver a failed message. If the message can't be successfully delivered before the expiration time-out interval has passed, a non-delivery report (NDR) that contains the original message or the message headers is delivered to the sender.</p>
 <p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p></td>
 </tr>
@@ -101,9 +101,9 @@ The following table explains each key in more detail.
 <td><p><em>MaxPerDomainLowPriorityConnections</em></p>
 <p><em>MaxPerDomainNormalPriorityConnections</em></p>
 <p><em>MaxPerDomainHighPriorityConnections</em></p></td>
-<td><p><strong>Low</strong>   2</p>
-<p><strong>Normal</strong>   15</p>
-<p><strong>High</strong>   3</p></td>
+<td><p><strong>Low</strong>   2</p>
+<p><strong>Normal</strong>   15</p>
+<p><strong>High</strong>   3</p></td>
 <td><p>These keys specify the maximum number of connections that the Transport service can have open to any single remote domain. The outgoing connections to remote domains occur by using the delivery queues and Send connectors that exist on the Mailbox server.</p>
 <p>The sum these three keys should be less than or equal to the value of the <em>MaxPerDomainOutboundConnections</em> parameter on the <strong>Set-TransportService</strong> cmdlet. The default value of this parameter is <code>20</code>.</p></td>
 </tr>
@@ -135,22 +135,22 @@ Some message limits available in the **Set-TransportService** cmdlet have corres
 <tr class="odd">
 <td><p><strong>Set-TransportService</strong></p></td>
 <td><p><em>DelayNotificationTimeOut</em></p></td>
-<td><p><code>4:00:00</code> (4 hours)</p></td>
+<td><p><code>4:00:00</code> (4 hours)</p></td>
 </tr>
 <tr class="even">
 <td><p>EdgeTransport.exe.config</p></td>
 <td><p><em>NormalPriorityDelayNotificationTimeout</em></p></td>
-<td><p><code>4:00:00</code> (4 hours)</p></td>
+<td><p><code>4:00:00</code> (4 hours)</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Set-TransportService</strong></p></td>
 <td><p><em>MessageExpirationTimeOut</em></p></td>
-<td><p><code>2.00:00:00</code> (2 days)</p></td>
+<td><p><code>2.00:00:00</code> (2 days)</p></td>
 </tr>
 <tr class="even">
 <td><p>EdgeTransport.exe.config</p></td>
 <td><p><em>NormalPriorityMessageExpirationTimeout</em></p></td>
-<td><p><code>2.00:00:00</code> (2 days)</p></td>
+<td><p><code>2.00:00:00</code> (2 days)</p></td>
 </tr>
 </tbody>
 </table>

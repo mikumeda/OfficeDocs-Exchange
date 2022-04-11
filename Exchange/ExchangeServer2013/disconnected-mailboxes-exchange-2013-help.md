@@ -99,7 +99,7 @@ You can perform two operations on a disconnected archive mailbox:
 
     For more information, see [Manage In-Place Archives in Exchange 2013](manage-in-place-archives-in-exchange-2013-exchange-2013-help.md).
 
-- **Permanently delete it from the Exchange mailbox database**    Exchange retains disconnected archive mailboxes based on the deleted mailbox retention settings configured for the mailbox database. The default retention period is 30 days. After the specified mailbox retention period, a disconnected archive mailbox is purged from the Exchange mailbox database.
+- **Permanently delete it from the Exchange mailbox database**    Exchange retains disconnected archive mailboxes based on the deleted mailbox retention settings configured for the mailbox database. The default retention period is 30 days. After the specified mailbox retention period, a disconnected archive mailbox is purged from the Exchange mailbox database.
 
   Like a disabled primary mailbox, you can permanently delete a disabled archive mailbox at any time by using the **Remove-StoreMailbox** cmdlet. For more information, see [Permanently delete a mailbox](permanently-delete-a-mailbox-exchange-2013-help.md).
 

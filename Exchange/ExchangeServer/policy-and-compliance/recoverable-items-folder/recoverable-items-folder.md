@@ -161,8 +161,8 @@ The following table lists the message properties that trigger copy-on-write page
 
 |Item type|Properties that trigger copy-on-write page protection|
 |---|---|
-|Messages (IPM.Note\*)  <br/> Posts (IPM.Post\*)|Subject  <br/> Body  <br/> Attachments  <br/> Senders and recipients  <br/> Sent and received dates|
-|Items other than messages and posts|Any change to a visible property, except the following:  <br/> • Item location (when an item is moved between folders)  <br/> • Item status change (read or unread)  <br/> • Changes to a retention tag applied to an item|
+|Messages (IPM.Note\*) <br/> Posts (IPM.Post\*)|Subject <ul><li>Body</li><li>Attachments</li><li>Senders and recipients</li><li>Sent and received dates</li></ul>|
+|Items other than messages and posts|Any change to a visible property, except the following: <ul><li>Item location (when an item is moved between folders)</li><li>Item status change (read or unread)</li><li>Changes to a retention tag applied to an item</li></ul>|
 |Items in the Drafts default folder|None. Items in the Drafts folder are exempt from copy-on-write page protection.|
 
 > [!IMPORTANT]

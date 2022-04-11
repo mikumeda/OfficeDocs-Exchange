@@ -21,7 +21,7 @@ _**Applies to:** Exchange Server 2013_
 
 Learn about the Outlook Web App, which was called Outlook Web Access in versions of Microsoft Exchange earlier than 2010. This article provides a brief overview with links out to helpful information.
 
-By default, when you install Microsoft Exchange 2013, you enable Outlook Web App. Microsoft Outlook Web App lets users access their Exchange mailbox from almost any Web browser.
+By default, when you install Microsoft Exchange 2013, you enable Outlook Web App. Microsoft Outlook Web App lets users access their Exchange mailbox from almost any Web browser.
 
 The Client Access server role provides proxy and redirection services for Outlook Web App.
 

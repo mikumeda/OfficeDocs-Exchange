@@ -40,9 +40,9 @@ You can also create user mailboxes for existing users that have an Active Direct
 
 ## Use the EAC to create a user mailbox
 
-1. In the EAC, navigate to **Recipients**  \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients**  \> **Mailboxes**.
 
-2. Click **New** \> **User mailbox**.
+2. Click **New** \> **User mailbox**.
 
 3. On the **New user mailbox** page, in the **Alias** box, type the user's alias, which specifies the email alias for the user. The user's alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
 
@@ -76,7 +76,7 @@ You can also create user mailboxes for existing users that have an Active Direct
 
         To select a different OU, click **Browse**. The dialog box displays all OUs in the forest that are within the specified scope. Select the desired OU, and then click **OK**.
 
-   - **\* User logon name**    Use this box to type the name that the user will use to sign in to the mailbox and to log on to the domain. The user logon name consists of a username on the left side of the at (@) symbol and a suffix on the right side. Typically, the suffix is the domain name in which the user account resides. Note that you can't use an apostrophe (') or a quotation mark (") in the user logon name because these characters aren't supported.
+   - **\* User logon name**    Use this box to type the name that the user will use to sign in to the mailbox and to log on to the domain. The user logon name consists of a username on the left side of the at (@) symbol and a suffix on the right side. Typically, the suffix is the domain name in which the user account resides. Note that you can't use an apostrophe (') or a quotation mark (") in the user logon name because these characters aren't supported.
 
         > [!NOTE]
         > If the value for the username is different than the value used in the <STRONG>Alias</STRONG> box, then the user's email address and the user logon name will be different.
@@ -92,7 +92,7 @@ You can also create user mailboxes for existing users that have an Active Direct
 
         If you select this check box, at first sign-in, the new user will be prompted with a dialog box in which to change the password. The user won't be allowed to perform any tasks until the password is successfully changed.
 
-6. Click **More options** to configure the following boxes. Otherwise, skip to Step 7 to save the new user mailbox.
+6. Click **More options** to configure the following boxes. Otherwise, skip to Step 7 to save the new user mailbox.
 
    - **Specify the mailbox database**: Use this option to specify a mailbox database instead of allowing Exchange to select a database for you. Click **Browse** to open the **Select Mailbox Database** dialog box. This dialog box lists all the mailbox databases in your Exchange organization. By default, the mailbox databases are sorted by name. You can also click the title of the corresponding column to sort the databases by server name or version. Select the mailbox database you want to use, and then click **OK**.
 
@@ -134,7 +134,7 @@ For syntax and parameter information, see [New-Mailbox](/powershell/module/excha
 
 To verify that you've successfully created a user mailbox, do one of the following:
 
-- In the EAC, navigate to **Recipients**  \> **Mailboxes**. The new user mailbox is displayed in the mailbox list. Under **Mailbox Type**, the type is **User**.
+- In the EAC, navigate to **Recipients**  \> **Mailboxes**. The new user mailbox is displayed in the mailbox list. Under **Mailbox Type**, the type is **User**.
 
 - In the Shell, run the following command to display information about the new user mailbox.
 
@@ -148,9 +148,9 @@ You can also create user mailboxes for existing users that have an Active Direct
 
 ## Use the EAC to create a mailbox for an existing user
 
-1. In the EAC, navigate to **Recipients**  \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients**  \> **Mailboxes**.
 
-2. Click **New** \> **User mailbox**.
+2. Click **New** \> **User mailbox**.
 
 3. On the **New user mailbox** page, in the **Alias** box, type the user's alias, which specifies the email alias for the user. The user's alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
 
@@ -166,7 +166,7 @@ You can also create user mailboxes for existing users that have an Active Direct
     > [!NOTE]
     > The Active Directory account that is associated with user mailboxes must reside in the same forest as the Exchange server. To create a mailbox for a user account that resides in a trusted forest, you have to create a linked mailbox. See <A href="manage-linked-mailboxes-exchange-2013-help.md">Manage linked mailboxes</A>.
 
-6. Click **More options** to configure the following boxes. Otherwise, skip to Step 7 to save the new user mailbox.
+6. Click **More options** to configure the following boxes. Otherwise, skip to Step 7 to save the new user mailbox.
 
    - **Specify the mailbox database**: Use this option to specify a mailbox database instead of allowing Exchange to select a database for you. Click **Browse** to open the **Select Mailbox Database** dialog box. This dialog box lists all the mailbox databases in your Exchange organization. By default, the mailbox databases are sorted by name. You can also click the title of the corresponding column to sort the databases by server name or version. Select the mailbox database you want to use, and then click **OK**.
 
@@ -206,7 +206,7 @@ For more information about pipelining, see [about_Pipelines](/powershell/module/
 
 To verify that you've successfully created a mailbox for an existing user, do one of the following:
 
-- In the EAC, navigate to **Recipients**  \> **Mailboxes**. The new mailbox-enabled user is displayed in the mailbox list. Under **Mailbox Type**, the type is **User**.
+- In the EAC, navigate to **Recipients**  \> **Mailboxes**. The new mailbox-enabled user is displayed in the mailbox list. Under **Mailbox Type**, the type is **User**.
 
 - In the Shell, run the following command to display information about the new mailbox-enabled user.
 

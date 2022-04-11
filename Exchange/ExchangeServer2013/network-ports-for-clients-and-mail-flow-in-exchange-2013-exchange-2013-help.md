@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-This topic provides information about the network ports that are used by Microsoft Exchange Server 2013 for communication with email clients, Internet mail servers, and other services that are external to your local Exchange organization. Before we get into that, understand the following ground rules:
+This topic provides information about the network ports that are used by Microsoft Exchange Server 2013 for communication with email clients, Internet mail servers, and other services that are external to your local Exchange organization. Before we get into that, understand the following ground rules:
 
 - We do not support restricting or altering network traffic between internal Exchange servers, between internal Exchange servers and internal Lync or Skype for Business servers, or between internal Exchange servers and internal Active Directory domain controllers in any and all types of topologies. If you have firewalls or network devices that could potentially restrict or alter this kind of network traffic, you need to configure rules that allow free and unrestricted communication between these servers (rules that allow incoming and outgoing network traffic on any port (including random RPC ports) and any protocol that never alter bits on the wire).
 
@@ -66,7 +66,7 @@ The network ports that are required for email clients to access mailboxes and ot
 <li><p>Outlook MAPI over HTTP</p></li>
 <li><p>Outlook Web App</p></li>
 </ul></td>
-<td><p>443/TCP (HTTPS)</p></td>
+<td><p>443/TCP (HTTPS)</p></td>
 <td><p>For more information about these clients and services, see the following topics:</p>
 <ul>
 <li><p><a href="autodiscover-service-for-exchange-2013.md">Autodiscover service</a></p></li>
@@ -96,13 +96,13 @@ The network ports that are required for email clients to access mailboxes and ot
 </tr>
 <tr class="odd">
 <td><p>IMAP4 clients</p></td>
-<td><p>143/TCP (IMAP), 993/TCP (secure IMAP)</p></td>
+<td><p>143/TCP (IMAP), 993/TCP (secure IMAP)</p></td>
 <td><p>IMAP4 is disabled by default. For more information, see <a href="pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md">POP3 and IMAP4 in Exchange Server 2013</a>.</p>
 <p>The IMAP4 service on the Client Access server proxies connections to the IMAP4 Backend service on a Mailbox server.</p></td>
 </tr>
 <tr class="even">
 <td><p>POP3 clients</p></td>
-<td><p>110/TCP (POP3), 995/TCP (secure POP3)</p></td>
+<td><p>110/TCP (POP3), 995/TCP (secure POP3)</p></td>
 <td><p>POP3 is disabled by default. For more information, see <a href="pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md">POP3 and IMAP4 in Exchange Server 2013</a>.</p>
 <p>The POP3 service on the Client Access server proxies connections to the POP3 Backend service on a Mailbox server.</p></td>
 </tr>
@@ -224,8 +224,8 @@ The network ports that are required for mail flow in Exchange organizations that
 <td><p>The default Send connector named &quot;EdgeSync - Inbound to <em>&lt;Active Directory site name&gt;</em>&quot; relays inbound mail on port 25 to any Mailbox server in the subscribed Active Directory site. For more information, see the &quot;Send connectors created during the Edge Subscription process&quot; section in the topic, <a href="edge-subscriptions-exchange-2013-help.md">Edge Subscriptions</a>.</p>
 <p>The service that actually receives mail depends on whether the Mailbox server and Client Access server are installed on the same computer or on separate computers.</p>
 <ul>
-<li><p><strong>Standalone Mailbox server</strong>   The default Receive connector named &quot;Default <em>&lt;Mailbox server name&gt;</em>&quot; listens for inbound mail (including mail from Edge Transport servers) on port 25.</p></li>
-<li><p><strong>Mailbox server and Client Access server installed on the same computer</strong>   The default Receive connector named &quot;Default Frontend <em>&lt;Server name&gt;</em>&quot; in the Front End Transport service (the Client Access server role) listens for inbound mail (including mail from Exchange 2013 Edge Transport servers) on port 25.</p></li>
+<li><p><strong>Standalone Mailbox server</strong>   The default Receive connector named &quot;Default <em>&lt;Mailbox server name&gt;</em>&quot; listens for inbound mail (including mail from Edge Transport servers) on port 25.</p></li>
+<li><p><strong>Mailbox server and Client Access server installed on the same computer</strong>   The default Receive connector named &quot;Default Frontend <em>&lt;Server name&gt;</em>&quot; in the Front End Transport service (the Client Access server role) listens for inbound mail (including mail from Exchange 2013 Edge Transport servers) on port 25.</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -274,7 +274,7 @@ DNS resolution of the next mail hop is a fundamental part of mail flow in any Ex
 
 ## Network ports required for hybrid deployments
 
-The network ports that are required for an organization that uses both Exchange 2013 and Microsoft 365 or Office 365 are covered in the "Hybrid deployment protocols, port and endpoints" section in [Hybrid deployment prerequisites](../ExchangeHybrid/hybrid-deployment-prerequisites.md).
+The network ports that are required for an organization that uses both Exchange 2013 and Microsoft 365 or Office 365 are covered in the "Hybrid deployment protocols, port and endpoints" section in [Hybrid deployment prerequisites](../ExchangeHybrid/hybrid-deployment-prerequisites.md).
 
 ## Network ports required for Unified Messaging
 

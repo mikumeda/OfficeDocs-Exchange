@@ -115,7 +115,7 @@ The following table compares the MRM functionality available when using retentio
 </tr>
 <tr class="even">
 <td><p>Client support</p></td>
-<td><p>Microsoft Outlook 2010 and Office Outlook Web App</p></td>
+<td><p>Microsoft Outlook 2010 and Office Outlook Web App</p></td>
 <td><p>Outlook 2010, Office Outlook 2007, and Outlook Web App</p></td>
 </tr>
 </tbody>

@@ -73,7 +73,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="even">
 <td><p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -82,7 +82,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="odd">
 <td><p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

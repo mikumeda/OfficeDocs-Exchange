@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-You can use the Shell to update a global address list (GAL). A GAL is a directory that contains entries for every group, user, and contact within an organization's implementation of Microsoft Exchange.
+You can use the Shell to update a global address list (GAL). A GAL is a directory that contains entries for every group, user, and contact within an organization's implementation of Microsoft Exchange.
 
 For additional management tasks related to address lists, see [Address list procedures](address-list-procedures-exchange-2013-help.md).
 

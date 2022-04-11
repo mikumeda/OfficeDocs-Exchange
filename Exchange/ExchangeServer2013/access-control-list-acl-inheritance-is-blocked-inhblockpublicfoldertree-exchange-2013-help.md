@@ -22,7 +22,7 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 or Exchange Server 2010 setup cannot continue because the required permissions have not been able to propagate.
+Microsoft Exchange Server 2007 or Exchange Server 2010 setup cannot continue because the required permissions have not been able to propagate.
 
 Exchange setup requires that inheritance for permissions be enabled on the following Exchange objects:
 
@@ -40,7 +40,7 @@ Exchange setup requires that inheritance for permissions be enabled on the follo
 
 Failure to enable inheritance for permissions on these objects may result in mail flow problems, store mounting issues, and other service outages.
 
-To resolve this issue, make sure that the "Allow permissions to propagate to this object and child objects" setting is enabled for the object, and then rerun Exchange Server 2007 or Exchange 2010 setup.
+To resolve this issue, make sure that the "Allow permissions to propagate to this object and child objects" setting is enabled for the object, and then rerun Exchange Server 2007 or Exchange 2010 setup.
 
 <table>
 <colgroup>
@@ -48,7 +48,7 @@ To resolve this issue, make sure that the "Allow permissions to propagate to thi
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>To re-enable permissions inheritance for an Exchange configuration object using Exchange Server 2003 Exchange System Manager</p></td>
+<td><p>To re-enable permissions inheritance for an Exchange configuration object using Exchange Server 2003 Exchange System Manager</p></td>
 </tr>
 <tr class="even">
 <td><ol>
@@ -87,7 +87,7 @@ To resolve this issue, make sure that the "Allow permissions to propagate to thi
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>To re-enable permissions inheritance for an Exchange configuration object using ADSIEdit from Exchange Server 2007 or Exchange Server 2010</p></td>
+<td><p>To re-enable permissions inheritance for an Exchange configuration object using ADSIEdit from Exchange Server 2007 or Exchange Server 2010</p></td>
 </tr>
 <tr class="even">
 <td><ol>

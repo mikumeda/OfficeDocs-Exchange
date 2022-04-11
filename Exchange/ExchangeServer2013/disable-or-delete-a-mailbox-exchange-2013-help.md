@@ -47,7 +47,7 @@ The following table shows which types of Exchange mailboxes you can disable and 
 <tr class="odd">
 <td><p>Archive mailbox</p></td>
 <td><p>Yes</p></td>
-<td><p>No *</p></td>
+<td><p>No *</p></td>
 </tr>
 <tr class="even">
 <td><p>Linked mailbox</p></td>
@@ -72,7 +72,7 @@ The following table shows which types of Exchange mailboxes you can disable and 
 </tbody>
 </table>
 
-\* If an archive mailbox is enabled, it will be deleted when the primary mailbox is deleted. For information about disabling archive mailboxes, see [Manage In-Place Archives in Exchange 2013](manage-in-place-archives-in-exchange-2013-exchange-2013-help.md).
+\* If an archive mailbox is enabled, it will be deleted when the primary mailbox is deleted. For information about disabling archive mailboxes, see [Manage In-Place Archives in Exchange 2013](manage-in-place-archives-in-exchange-2013-exchange-2013-help.md).
 
 If an administrator deletes a user account that has a mailbox, the Exchange Information store will eventually detect that the mailbox is no longer connected to a user account and mark that mailbox for deletion, even if the mailbox is on hold. If you want to retain the mailbox you must do the following:
 
@@ -111,7 +111,7 @@ As previously stated, when you disable a mailbox, the Exchange attributes are re
 
 The following procedure shows how to disable a user mailbox. Use the same procedure to disable other mailbox types after navigating to the appropriate page in the EAC.
 
-1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
 2. In the list of user mailboxes, click the mailbox that you want to disable.
 
@@ -181,7 +181,7 @@ As previously stated, when you delete a mailbox, both the Exchange attributes an
 
 The following procedure shows how to delete a user mailbox. Use the same procedure to delete other mailbox types after navigating to the appropriate page in the EAC.
 
-1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
 2. In the list of user mailboxes, click the mailbox that you want to delete, and then click **Delete** ![Delete icon.](images/Dd298078.14f639f6-61e8-4418-bbfb-0db14de9d2f5(EXCHG.150).gif "Delete icon").
 

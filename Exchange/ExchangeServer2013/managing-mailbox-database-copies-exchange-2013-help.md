@@ -302,15 +302,15 @@ When executed, the API returns the following status information to the calling a
 
 The value of the *DataMoveReplicationConstraint* parameter for the mailbox database determines how many database copies should be evaluated as part of the request. The *DataMoveReplicationConstraint* parameter has the following possible values:
 
-- `None`   When you create a mailbox database, this value is set by default. When this value is set, the Data Guarantee API conditions are ignored. This setting should be used only for mailbox databases that aren't replicated.
+- `None`   When you create a mailbox database, this value is set by default. When this value is set, the Data Guarantee API conditions are ignored. This setting should be used only for mailbox databases that aren't replicated.
 
-- `SecondCopy`   This is the default value when you add the second copy of a mailbox database. When this value is set, at least one passive database copy must meet the Data Guarantee API conditions.
+- `SecondCopy`   This is the default value when you add the second copy of a mailbox database. When this value is set, at least one passive database copy must meet the Data Guarantee API conditions.
 
-- `SecondDatacenter`   When this value is set, at least one passive database copy in another Active Directory site must meet the Data Guarantee API conditions.
+- `SecondDatacenter`   When this value is set, at least one passive database copy in another Active Directory site must meet the Data Guarantee API conditions.
 
-- `AllDatacenters`   When this value is set, at least one passive database copy in each Active Directory site must meet the Data Guarantee API conditions.
+- `AllDatacenters`   When this value is set, at least one passive database copy in each Active Directory site must meet the Data Guarantee API conditions.
 
-- `AllCopies`   When this value is set, all copies of the mailbox database must meet the Data Guarantee API conditions.
+- `AllCopies`   When this value is set, all copies of the mailbox database must meet the Data Guarantee API conditions.
 
 ### Check Replication Health
 

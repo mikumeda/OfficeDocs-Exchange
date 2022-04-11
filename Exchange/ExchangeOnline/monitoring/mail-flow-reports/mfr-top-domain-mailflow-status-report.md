@@ -15,11 +15,11 @@ description: "Admins can learn how to use the Top domain mailflow status report 
 
 # Top domain mailflow status report in the new Exchange admin center in Exchange Online
 
-The Top domain mailflow status report in the new EAC contains two tabs providing insight into your inbound and outbound mail flow status for your organization. You can find this report at Reports > Mail Flow in the new EAC.  
+The Top domain mailflow status report in the new EAC contains two tabs providing insight into your inbound and outbound mail flow status for your organization. You can find this report at Reports > Mail Flow in the new EAC.
 
- - On the **Inbound** page, you can find information on whether your email domains are receiving external messages or not. Typically, these types of issues are related to MX record problems or an expired domain.  
+- On the **Inbound** page, you can find information on whether your email domains are receiving external messages or not. Typically, these types of issues are related to MX record problems or an expired domain.
 
- - On the **Outbound** page, the report gives you insights into your outbound mail flow, for example which outbound pools are being used to send mail out of your organization.
+- On the **Outbound** page, the report gives you insights into your outbound mail flow, for example which outbound pools are being used to send mail out of your organization.
 
 > [!NOTE]
 > For permissions that are required to use this report, see [Permissions required to view mail flow reports](mail-flow-reports.md#permissions-required-to-view-mail-flow-reports).
@@ -31,17 +31,13 @@ The Top domain mailflow status report in the new EAC contains two tabs provi
 > [!NOTE]
 > By default, the report shows data for the last 7 days.
 
-This page shows the following information for each domain: 
+This page shows the following information for each domain:
 
- - **Domain**
- 
- - **Domain status**: The value will be **Healthy** or **Error**
- 
- - **Previous MX record**
- 
- - **Current MX record**
- 
- - **Email received (past 6 hours)**
+- **Domain**
+- **Domain status**: The value will be **Healthy** or **Error**
+- **Previous MX record**
+- **Current MX record**
+- **Email received (past 6 hours)**
 
 To quickly filter the results, click **Search** ![Search icon.](../../media/modern-eac-search-icon.png) and start typing a value.
 
@@ -77,32 +73,22 @@ If you select a row, a details pane for the domain appears based on the value of
 
 To quickly filter the results, click **Search** ![Search icon.](../../media/modern-eac-search-icon.png) and start typing a value.
 
-This page shows the following information for each domain: 
+This page shows the following information for each domain:
 
- - **Domain**
- - Mail sent from each domain for the outbound pools:  
-    - **Normal** 
+- **Domain**
 
-    - **High Risk** 
+- Mail sent from each domain for the outbound pools:
+  - **Normal**
+  - **High Risk**
+  - **Normal Relay**
+  - **High Risk Relay**
+  - **Bulk Risk**
+  - **Low Risk**
 
-    - **Normal Relay**  
+- Pie charts
+  - Total outbound messages sent per domain
+  - Total outbound messages by outbound pool
 
-    - **High Risk Relay** 
-
-    - **Bulk Risk**  
-
-    - **Low Risk**
-    
- - Pie charts 
- 
-    - Total outbound messages sent per domain 
-
-    - Total outbound messages by outbound pool  
-  
 Click **Export** to export the displayed results to a .csv file.
-  
-For more information on the outbound pools, see [Outbound delivery pools](/microsoft-365/security/office-365-security/high-risk-delivery-pool-for-outbound-messages).   
 
-
-  
-  
+For more information on the outbound pools, see [Outbound delivery pools](/microsoft-365/security/office-365-security/high-risk-delivery-pool-for-outbound-messages).

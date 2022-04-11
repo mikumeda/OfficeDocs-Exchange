@@ -43,7 +43,7 @@ A certificate contains a public key and attaches that public key to the identity
 
 ## Types of certificates
 
-There are three primary types of digital certificates: self-signed certificates, Windows PKI-generated certificates, and third-party certificates.
+There are three primary types of digital certificates: self-signed certificates, Windows PKI-generated certificates, and third-party certificates.
 
 ## Self-signed certificates
 
@@ -56,15 +56,15 @@ Frequently, small organizations decide not to use a third-party certificate or n
 
 ## Windows public key infrastructure certificates
 
-The second type of certificate is a Windows PKI-generated certificate. A PKI is a system of digital certificates, certification authorities, and registration authorities (RAs) that verify and authenticate the validity of each party that's involved in an electronic transaction by using public key cryptography. When you implement a PKI in an organization that uses Active Directory, you provide an infrastructure for certificate life-cycle management, renewal, trust management, and revocation. However, there is some additional cost involved in deploying servers and infrastructure to create and manage Windows PKI-generated certificates.
+The second type of certificate is a Windows PKI-generated certificate. A PKI is a system of digital certificates, certification authorities, and registration authorities (RAs) that verify and authenticate the validity of each party that's involved in an electronic transaction by using public key cryptography. When you implement a PKI in an organization that uses Active Directory, you provide an infrastructure for certificate life-cycle management, renewal, trust management, and revocation. However, there is some additional cost involved in deploying servers and infrastructure to create and manage Windows PKI-generated certificates.
 
-Certificate Services are required to deploy a Windows PKI and can be installed through **Add Or Remove Programs** in Control Panel. You can install Certificate Services on any server in the domain.
+Certificate Services are required to deploy a Windows PKI and can be installed through **Add Or Remove Programs** in Control Panel. You can install Certificate Services on any server in the domain.
 
-If you obtain certificates from a domain-joined Windows CA, you can use the CA to request or sign certificates to issue to your own servers or computers on your network. This enables you to use a PKI that resembles a third-party certificate vendor, but is less expensive. These PKI certificates can't be deployed publicly, as other types of certificates can be. However, when a PKI CA signs the requestor's certificate by using the private key, the requestor is verified. The public key of this CA is part of the certificate. A server that has this certificate in the trusted root certificate store can use that public key to decrypt the requestor's certificate and authenticate the requestor.
+If you obtain certificates from a domain-joined Windows CA, you can use the CA to request or sign certificates to issue to your own servers or computers on your network. This enables you to use a PKI that resembles a third-party certificate vendor, but is less expensive. These PKI certificates can't be deployed publicly, as other types of certificates can be. However, when a PKI CA signs the requestor's certificate by using the private key, the requestor is verified. The public key of this CA is part of the certificate. A server that has this certificate in the trusted root certificate store can use that public key to decrypt the requestor's certificate and authenticate the requestor.
 
 The steps for deploying a PKI-generated certificate resemble those required for deploying a self-signed certificate. You must still install a copy of the trusted root certificate from the PKI to the trusted root certificate store of the computers or mobile devices that you want to be able to establish an SSL connection to Microsoft Exchange.
 
-A Windows PKI enables organizations to publish their own certificates. Clients can request and receive certificates from a Windows PKI on the internal network. The Windows PKI can renew or revoke certificates.
+A Windows PKI enables organizations to publish their own certificates. Clients can request and receive certificates from a Windows PKI on the internal network. The Windows PKI can renew or revoke certificates.
 
 ## Trusted third-party certificates
 
@@ -74,7 +74,7 @@ For larger organizations or organizations that must publicly deploy certificates
 
 ## Choosing a certificate type
 
-When you choose the type of certificate to install, there are several things to consider. A certificate must be signed to be valid. It can be self-signed or signed by a CA. A self-signed certificate has limitations. For example, not all mobile devices let a user install a digital certificate in the trusted root certificate store. The ability to install certificates on a mobile device depends on the mobile device manufacturer and the mobile service provider. Some manufacturers and mobile service providers disable access to the trusted root certificate store. In this case, neither a self-signed certificate nor a certificate from a Windows PKI CA can be installed on the mobile device.
+When you choose the type of certificate to install, there are several things to consider. A certificate must be signed to be valid. It can be self-signed or signed by a CA. A self-signed certificate has limitations. For example, not all mobile devices let a user install a digital certificate in the trusted root certificate store. The ability to install certificates on a mobile device depends on the mobile device manufacturer and the mobile service provider. Some manufacturers and mobile service providers disable access to the trusted root certificate store. In this case, neither a self-signed certificate nor a certificate from a Windows PKI CA can be installed on the mobile device.
 
 ## Default Exchange certificates
 
@@ -146,7 +146,7 @@ To prevent clients from receiving errors regarding untrusted certificates, the c
 
 ## How to select a certification authority
 
-A certification authority (CA) is a company that issues and ensures the validity of certificates. Client software (for example, browsers such as Microsoft Internet Explorer, or operating systems such as Windows or Mac OS) have a built-in list of CAs they trust. This list can usually be configured to add and remove CAs, but that configuration is often cumbersome. Use the following criteria when you select a CA to buy your certificates from:
+A certification authority (CA) is a company that issues and ensures the validity of certificates. Client software (for example, browsers such as Microsoft Internet Explorer, or operating systems such as Windows or Mac OS) have a built-in list of CAs they trust. This list can usually be configured to add and remove CAs, but that configuration is often cumbersome. Use the following criteria when you select a CA to buy your certificates from:
 
 - Ensure the CA is trusted by the client software (operating systems, browsers, and mobile phones) that will connect to your Exchange servers.
 
@@ -176,9 +176,9 @@ The most important step you can take to reduce the number of host names that you
 
 The host names you must include in your Exchange certificates are the host names used by client applications to connect to Exchange. The following is a list of typical host names that would be required for a company named Contoso:
 
-- **Mail.contoso.com**: This host name covers most connections to Exchange, including Microsoft Outlook, Outlook Web App, Outlook Anywhere, the Offline Address Book, Exchange Web Services, POP3, IMAP4, SMTP, Exchange Control Panel, and ActiveSync.
+- **Mail.contoso.com**: This host name covers most connections to Exchange, including Microsoft Outlook, Outlook Web App, Outlook Anywhere, the Offline Address Book, Exchange Web Services, POP3, IMAP4, SMTP, Exchange Control Panel, and ActiveSync.
 
-- **Autodiscover.contoso.com**: This host name is used by clients that support Autodiscover, including Microsoft Office Outlook 2007 and later versions, Exchange ActiveSync, and Exchange Web Services clients.
+- **Autodiscover.contoso.com**: This host name is used by clients that support Autodiscover, including Microsoft Office Outlook 2007 and later versions, Exchange ActiveSync, and Exchange Web Services clients.
 
 - **Legacy.contoso.com**: This host name is required in a coexistence scenario with Exchange 2007 and Exchange 2013. If you'll have clients with mailboxes on Exchange 2007 and Exchange 2013, configuring a legacy host name prevents your users from having to learn a second URL during the upgrade process.
 

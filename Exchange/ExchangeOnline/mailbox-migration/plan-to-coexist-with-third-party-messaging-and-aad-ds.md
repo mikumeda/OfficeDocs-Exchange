@@ -29,7 +29,7 @@ Most Microsoft email migration information assumes that you're running Exchange 
 
 In this scenario, the goal is to support cross-premises email coexistence. A third-party messaging system remains in the on-premises organization and shares an email namespace (domain) with the Exchange Online messaging system in the cloud. A unified address book in the cloud shows all users in both the on-premises and cloud organizations. This email coexistence might be a short-term or long-term solution.
 
-As you plan for this third-party email coexistence, consider the Azure Active Directory [hybrid identity options](/azure/active-directory/hybrid/whatis-hybrid-identity) and the [authentication choices](/azure/security/azure-ad-choose-authn) for synchronization and end user authentication options.
+As you plan for this third-party email coexistence, consider the Azure Active Directory [hybrid identity options](/azure/active-directory/hybrid/whatis-hybrid-identity) and the [authentication choices](/azure/active-directory/hybrid/choose-ad-authn) for synchronization and end user authentication options.
 
 **Scenario goals**:
 
@@ -63,7 +63,7 @@ Otherwise, if your long-term goal is to maintain a cross-premises messaging envi
 
 ### Email routing in a cross-premises environment
 
-Regardless of where your inbound mail enters the cross-premises deployment, mail-routing requires that users with mailboxes in your on premise messaging system are represented by mail-enabled users in the cloud messaging system. The mail-enabled user object in the cloud directory is has the target SMTP address of the corresponding recipient mailbox in the on-premises organization.
+Regardless of where your inbound mail enters the cross-premises deployment, mail-routing requires that users with mailboxes in your on premise messaging system are represented by mail-enabled users in the cloud messaging system. The mail-enabled user object in the cloud directory is the target SMTP address of the corresponding recipient mailbox in the on-premises organization.
 
 The process of synchronizing mail-enabled users with the correct target address requires installing the [Azure Active Directory Connect](/azure/active-directory/hybrid/plan-connect-design-concepts) tool in your on-premises Active Directory. The Azure Active Directory Connect tool synchronizes the on-premises mail-enabled user in the Active Directory with a target address value that matches the shared namespace and need to be a verified domain in Microsoft 365 or Office 365.
 
@@ -79,7 +79,7 @@ By default, Exchange Online sends messages back to the on-premises email system 
 
 ## Implementation
 
-In many case, the links refer to configuration particulars for an on-premises Exchange messaging system. You will have to translate the goals of the Exchange Server configurations to specific configurations of your third-party messaging solution. As an example, mail-forwarding is a straightforward goal, but it's an area where configuration differs widely across messaging systems.
+In many cases, the links refer to configuration particulars for an on-premises Exchange messaging system. You will have to translate the goals of the Exchange Server configurations to specific configurations of your third-party messaging solution. As an example, mail-forwarding is a straightforward goal, but it's an area where configuration differs widely across messaging systems.
 
 The following steps outline the process for implementing third-party messaging coexistence with Microsoft 365 or Office 365:
 
@@ -175,7 +175,7 @@ The procedure for implementing a shared namespace depends on:
 
 - Whether you will be configuring your MX record to point to your on-premises email system or to Microsoft 365 or Office 365.
 
-In either case, the cloud-based Exchange Online configurations are similar. After you've configured a shared namespace, you should be able to send email between the two messaging systems. If free busy is required as part of the coexistence strategy, ensure to work with the software vendor to ensure the namespace planning will work with their free busy application.
+In either case, the cloud-based Exchange Online configurations are similar. After you've configured a shared namespace, you should be able to send email between the two messaging systems. If free busy is required as part of the coexistence strategy, work with the software vendor to ensure the namespace planning will work with their free busy application.
 
 ## Step 7: Disable TNEF to your on-premises messaging system
 

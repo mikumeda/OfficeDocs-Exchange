@@ -51,7 +51,7 @@ For other management tasks related to address lists, see [Address list procedure
 
 5. In **Specify words or phrases**, type words or phrases to filter by, click **Add** ![Add Icon.](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon"), and then click **OK**.
 
-    You can continue to add several phrases or words by repeating Step 4. The filter is a Boolean **OR** statement. For example, you can create a filter that will apply the address list to users whose Custom 1 attribute equals **Oregon**, **Idaho**, or **Washington**.
+    You can continue to add several phrases or words by repeating Step 4. The filter is a Boolean **OR** statement. For example, you can create a filter that will apply the address list to users whose Custom 1 attribute equals **Oregon**, **Idaho**, or **Washington**.
 
 6. (Optional) Click **Add a rule** again to add additional filters. Additional filters create a Boolean **And** statement. The more filters you add, the fewer number of users the address list will apply to.
 

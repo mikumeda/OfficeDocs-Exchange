@@ -53,7 +53,7 @@ To configure the queue glitch retry count, the queue glitch retry interval, the 
     <add key="MaxIdleTimeBeforeResubmit" value="<hh:mm:ss>" />
     ```
 
-    This example changes the queue glitch retry count to 6, the queue glitch retry interval to 30 seconds, the mailbox delivery queue retry interval to 3 minutes, and the maximum idle time before resubmit interval to 6 hours.
+    This example changes the queue glitch retry count to 6, the queue glitch retry interval to 30 seconds, the mailbox delivery queue retry interval to 3 minutes, and the maximum idle time before resubmit interval to 6 hours.
 
     ```powershell
     <add key="QueueGlitchRetryCount" value="6" />
@@ -74,9 +74,9 @@ To configure the queue glitch retry count, the queue glitch retry interval, the 
 
 The transient failure retry attempts specifies the number of connection attempts that are tried after the connection attempts controlled by the `QueueGlitchRetryCount` and `QueueGlitchRetryInterval` keys have failed. The default number of transient failure retry attempts is 6. The valid input range for this parameter is from 0 through 15. If you set the number of transient failure retry attempts to 0, the next connection attempt is controlled by the *outbound connection failure retry interval*.
 
-The transient failure retry interval specifies the interval between each connection attempt that's specified by the number of transient failure retry attempts. In the Transport service on a Mailbox server, the default transient failure retry interval is 5 minutes. On an Edge Transport server, the default transient failure retry interval is 10 minutes.
+The transient failure retry interval specifies the interval between each connection attempt that's specified by the number of transient failure retry attempts. In the Transport service on a Mailbox server, the default transient failure retry interval is 5 minutes. On an Edge Transport server, the default transient failure retry interval is 10 minutes.
 
-The outbound connection failure retry interval specifies the retry interval for outgoing connection attempts that have previously failed. The previously failed connection attempts are controlled by the transient failure retry attempts and the transient failure retry interval. The default value for the outbound connection failure retry interval in the Transport service on a Mailbox server is 10 minutes. The default value on an Edge Transport server is 30 minutes.
+The outbound connection failure retry interval specifies the retry interval for outgoing connection attempts that have previously failed. The previously failed connection attempts are controlled by the transient failure retry attempts and the transient failure retry interval. The default value for the outbound connection failure retry interval in the Transport service on a Mailbox server is 10 minutes. The default value on an Edge Transport server is 30 minutes.
 
 ## Use the EAC to configure the transient failure retry attempts, the transient failure retry interval, or the outbound connection failure retry interval
 
@@ -98,9 +98,9 @@ This example changes the following values on the Mailbox server named Mailbox01:
 
 - The number of transient failure retry attempts is set to 8.
 
-- The transient failure retry interval is set to 1 minute.
+- The transient failure retry interval is set to 1 minute.
 
-- The outbound connection failure retry interval is set to 45 minutes.
+- The outbound connection failure retry interval is set to 45 minutes.
 
 ```powershell
 Set-TransportService Mailbox01 -TransientFailureRetryCount 8 -TransientFailureRetryInterval 00:01:00 -OutboundConnectionFailureRetryInterval 00:45:00
@@ -111,7 +111,7 @@ Set-TransportService Mailbox01 -TransientFailureRetryCount 8 -TransientFailureRe
 
 ## Use the Shell to configure the message retry interval
 
-By default, the message retry interval is `00:15:00` or 15 minutes. We recommend that you don't modify the default value unless Microsoft Customer Service and Support advises you to do this.
+By default, the message retry interval is `00:15:00` or 15 minutes. We recommend that you don't modify the default value unless Microsoft Customer Service and Support advises you to do this.
 
 Use the following syntax to set the message retry interval.
 
@@ -119,7 +119,7 @@ Use the following syntax to set the message retry interval.
 Set-TransportService <ServerIdentity> -MessageRetryInterval <dd.hh:mm:ss>
 ```
 
-This example changes the message retry interval to 20 minutes on the Mailbox server named Mailbox01.
+This example changes the message retry interval to 20 minutes on the Mailbox server named Mailbox01.
 
 ```powershell
 Set-TransportService Mailbox01 -MessageRetryInterval 00:20:00
@@ -148,7 +148,7 @@ Use the following syntax to set the message retry interval.
 Set-TransportService <ServerIdentity> -DelayNotificationTimeout <dd.hh:mm:ss>
 ```
 
-This example changes the delay DSN message notification timeout interval to 6 hours on the Mailbox server named Mailbox01.
+This example changes the delay DSN message notification timeout interval to 6 hours on the Mailbox server named Mailbox01.
 
 ```powershell
 Set-TransportService Mailbox01 -DelayNotificationTimeout 06:00:00
@@ -192,7 +192,7 @@ To configure the message expiration timeout interval, use the following syntax.
 Set-TransportService <ServerIdentity> -MessageExpirationTimeout <dd.hh:mm:ss>
 ```
 
-This example changes the message expiration timeout interval to 4 days on the Exchange server named Mailbox01.
+This example changes the message expiration timeout interval to 4 days on the Exchange server named Mailbox01.
 
 ```powershell
 Set-TransportService Mailbox01 -MessageExpirationTimeout 4.00:00:00

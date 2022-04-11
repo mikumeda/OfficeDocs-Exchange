@@ -64,7 +64,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_ABA_Routing**|
+|Keyword_ABA_Routing|
 |---|
 |aba  <br/> aba #  <br/> aba routing #  <br/> aba routing number  <br/> aba#  <br/> abarouting#  <br/> aba number  <br/> abaroutingnumber  <br/> american bank association routing #  <br/> american bank association routing number  <br/> americanbankassociationrouting#  <br/> americanbankassociationroutingnumber  <br/> bank routing number  <br/> bank routing#  <br/> bank routing number  <br/> routing transit number  <br/> RTN|
 
@@ -106,7 +106,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_argentina_national_id**|
+|Keyword_argentina_national_id|
 |---|
 |Argentina National Identity number  <br/> Identity  <br/> Identification National Identity Card  <br/> DNI  <br/> NIC National Registry of Persons  <br/> Documento Nacional de Identidad  <br/> Registro Nacional de las Personas  <br/> Identidad  <br/> Identificación|
 
@@ -157,7 +157,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_australia_bank_account_number**|
+|Keyword_australia_bank_account_number|
 |---|
 |swift bank code  <br/> correspondent bank  <br/> base currency  <br/> usa account  <br/> holder address  <br/> bank address  <br/> information account  <br/> fund transfers  <br/> bank charges  <br/> bank details  <br/> banking information  <br/> full names  <br/> idea|
 
@@ -266,7 +266,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_Australia_Medical_Account_Number**|
+|Keyword_Australia_Medical_Account_Number|
 |---|
 |bank account details  <br/> medicare payments  <br/> mortgage account  <br/> bank payments  <br/> information branch  <br/> credit card loan  <br/> department of human services  <br/> local service  <br/> medicare|
 
@@ -411,7 +411,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_belgium_national_number**|
+|Keyword_belgium_national_number|
 |---|
 |Identity  <br/> Registration  <br/> Identification  <br/> ID  <br/> Identiteitskaart  <br/> Registratie nummer  <br/> Identificatie nummer  <br/> Identiteit  <br/> Registratie  <br/> Identificatie  <br/> Carte d'identité  <br/> numéro d'immatriculation  <br/> numéro d'identification  <br/> identité  <br/> inscription  <br/> Identifikation  <br/> Identifizierung  <br/> Identifikationsnummer  <br/> Personalausweis  <br/> Registrierung  <br/> Registrationsnummer|
 
@@ -472,7 +472,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_brazil_cnpj**|
+|Keyword_brazil_cnpj|
 |---|
 |CNPJ  <br/> CNPJ/MF  <br/> CNPJ-MF  <br/> National Registry of Legal Entities  <br/> Taxpayers Registry  <br/> Legal entity  <br/> Legal entities  <br/> Registration Status  <br/> Business  <br/> Company  <br/> CNPJ  <br/> Cadastro Nacional da Pessoa Jurídica  <br/> Cadastro Geral de Contribuintes  <br/> CGC  <br/> Pessoa jurídica  <br/> Pessoas jurídicas  <br/> Situação cadastral  <br/> Inscrição  <br/> Empresa|
 
@@ -533,7 +533,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_brazil_cpf**|
+|Keyword_brazil_cpf|
 |---|
 |CPF  <br/> Identification  <br/> Registration  <br/> Revenue  <br/> Cadastro de Pessoas Físicas  <br/> Imposto  <br/> Identificação  <br/> Inscrição  <br/> Receita|
 
@@ -604,7 +604,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_brazil_rg**|
+|Keyword_brazil_rg|
 |---|
 |National ID  <br/> Registration  <br/> Cédula de identidade  <br/> Registro Geral  <br/> RG  <br/> Registro de Identidade  <br/> RIC  <br/> Número de registo  <br/> Registro|
 
@@ -661,7 +661,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_canada_bank_account_number**|
+|Keyword_canada_bank_account_number|
 |---|
 |canada savings bonds  <br/> canada revenue agency  <br/> canadian financial institution  <br/> direct deposit form  <br/> canadian citizen  <br/> legal representative  <br/> notary public  <br/> commissioner for oaths  <br/> child care benefit  <br/> universal child care  <br/> canada child tax benefit  <br/> income tax benefit  <br/> harmonized sales tax  <br/> social insurance number  <br/> income tax refund  <br/> child tax benefit  <br/> territorial payments  <br/> institution number  <br/> deposit request  <br/> banking information  <br/> direct deposit|
 
@@ -775,7 +775,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_canada_health_service_number**|
+|Keyword_canada_health_service_number|
 |---|
 |personal health number  <br/> patient information  <br/> health services  <br/> speciality services  <br/> automobile accident  <br/> patient hospital  <br/> psychiatrist  <br/> workers compensation  <br/> disability|
 
@@ -972,7 +972,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_chile_id_card**|
+|Keyword_chile_id_card|
 |---|
 |National Identification Number  <br/> Identity card  <br/> ID  <br/> Identification  <br/> Rol Único Nacional  <br/> RUN  <br/> Rol Único Tributario  <br/> RUT  <br/> Cédula de Identidad  <br/> Número De Identificación Nacional  <br/> Tarjeta de identificación  <br/> Identificación|
 
@@ -1023,7 +1023,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_china_resident_id**|
+|Keyword_china_resident_id|
 |---|
 |Resident Identity Card  <br/> PRC  <br/> National Identification Card  <br/> 身份证  <br/> 居民 身份证  <br/> 居民身份证  <br/> 鉴定  <br/> 身分證  <br/> 居民 身份證  <br/> 鑑定|
 
@@ -1108,7 +1108,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_croatia_id_card**|
+|Keyword_croatia_id_card|
 |---|
 |Croatian identity card  <br/> Osobna iskaznica|
 
@@ -1155,7 +1155,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_croatia_oib_number**|
+|Keyword_croatia_oib_number|
 |---|
 |Personal Identification Number  <br/> Osobni identifikacijski broj  <br/> OIB|
 
@@ -1195,7 +1195,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_czech_id_card**|
+|Keyword_czech_id_card|
 |---|
 |Czech national identity card  <br/> Občanský průka|
 
@@ -1235,7 +1235,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_denmark_id**|
+|Keyword_denmark_id|
 |---|
 |Personal Identification Number  <br/> CPR  <br/> Det Centrale Personregister  <br/> Personnummer|
 
@@ -1365,7 +1365,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_finnish_national_id**|
+|Keyword_finnish_national_id|
 |---|
 |Sosiaaliturvatunnus  <br/> SOTU Henkilötunnus HETU  <br/> Personbeteckning  <br/> Personnummer|
 
@@ -1401,7 +1401,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_finland_passport_number**|
+|Keyword_finland_passport_number|
 |---|
 |Passport  <br/> Passi|
 
@@ -1440,7 +1440,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_french_drivers_license**|
+|Keyword_french_drivers_license|
 |---|
 |drivers licence  <br/> drivers license  <br/> driving licence  <br/> driving license  <br/> permis de conduire  <br/> licence number  <br/> license number  <br/> licence numbers  <br/> license numbers|
 
@@ -1501,7 +1501,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_passport**|
+|Keyword_passport|
 |---|
 |Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passport number  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート ＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
@@ -1559,7 +1559,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_fr_insee**|
+|Keyword_fr_insee|
 |---|
 |insee  <br/> securité sociale  <br/> securite sociale  <br/> national id  <br/> national identification  <br/> numéro d'identité  <br/> no d'identité  <br/> no. d'identité  <br/> numero d'identite  <br/> no d'identite  <br/> no. d'identite  <br/> social security number  <br/> social security code  <br/> social insurance number  <br/> le numéro d'identification nationale  <br/> d'identité nationale  <br/> numéro de sécurité sociale  <br/> le code de la sécurité sociale  <br/> numéro d'assurance sociale  <br/> numéro de sécu  <br/> code sécu|
 
@@ -1657,7 +1657,7 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_germany_id_card**|
+|Keyword_germany_id_card|
 |---|
 |Identity Card  <br/> ID  <br/> Identification  <br/> Personalausweis  <br/> Identifizierungsnummer  <br/> Ausweis  <br/> Identifikation|
 
@@ -1771,7 +1771,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_greece_id_card**|
+|Keyword_greece_id_card|
 |---|
 |Greek identity Card  <br/> Tautotita  <br/> Δελτίο αστυνομικής ταυτότητας  <br/> Ταυτότητα|
 
@@ -1820,7 +1820,7 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_hong_kong_id_card**|
+|Keyword_hong_kong_id_card|
 |---|
 |Hong Kong Identity Card  <br/> HKID  <br/> ID card  <br/> 香港身份證  <br/> 香港永久性居民身份證|
 
@@ -1860,7 +1860,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_india_permanent_account_number**|
+|Keyword_india_permanent_account_number|
 |---|
 |Permanent Account Number  <br/> PAN|
 
@@ -1913,7 +1913,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_india_aadhar**|
+|Keyword_india_aadhar|
 |---|
 |Aadhar  <br/> Aadhaar  <br/> UID  <br/> आधार|
 
@@ -1966,7 +1966,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_indonesia_id_card**|
+|Keyword_indonesia_id_card|
 |---|
 |KTP  <br/> Kartu Tanda Penduduk  <br/> Nomor Induk Kependudukan|
 
@@ -2077,7 +2077,7 @@ For IPv6, a DLP policy is 85% confident that it's detected this type of sensitiv
 
  **Keywords**:
 
-|**Keyword_ipaddress**|
+|Keyword_ipaddress|
 |---|
 |ip address  <br/> internet protocol  <br/> IP-כתובת ה|
 
@@ -2145,7 +2145,7 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_ireland_pps**|
+|Keyword_ireland_pps|
 |---|
 |Personal Public Service Number  <br/> PPS Number  <br/> PPS Num  <br/> PPS No.  <br/> PPS #  <br/> PPS#  <br/> PPSN  <br/> Public Services Card  <br/> Uimhir Phearsanta Seirbhíse Poiblí  <br/> Uimh. PSP  <br/> PSP|
 
@@ -2193,7 +2193,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_israel_bank_account_number**|
+|Keyword_israel_bank_account_number|
 |---|
 |Bank Account Number  <br/> Bank Account  <br/> Account Number  <br/> מספר חשבון בנק|
 
@@ -2229,7 +2229,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_Israel_National_ID**|
+|Keyword_Israel_National_ID|
 |---|
 |מספר זהות  <br/> National ID Number|
 
@@ -2271,7 +2271,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_italy_drivers_license_number**|
+|Keyword_italy_drivers_license_number|
 |---|
 |numero di patente di guida  <br/> patente di guida|
 
@@ -2367,7 +2367,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_drivers_license_number**|
+|Keyword_jp_drivers_license_number|
 |---|
 |driver license  <br/> drivers license  <br/> driver's license  <br/> drivers licenses  <br/> driver's licenses  <br/> driver licenses  <br/> dl#  <br/> dls#  <br/> lic#  <br/> lics#  <br/> 運転免許証  <br/> 運転免許  <br/> 免許証  <br/> 免許  <br/> 運転免許証番号  <br/> 運転免許番号  <br/> 免許証番号  <br/> 免許番号  <br/> 運転免許証ナンバー  <br/> 運転免許ナンバー  <br/> 免許証ナンバー  <br/> 運転免許証No.  <br/> 運転免許No.  <br/> 免許証No.  <br/> 免許No.  <br/> 運転免許証#  <br/> 運転免許#  <br/> 免許証#  <br/> 免許#|
 
@@ -2399,7 +2399,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_passport**|
+|Keyword_jp_passport|
 |---|
 |パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃|
 
@@ -2431,7 +2431,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_resident_registration_number**|
+|Keyword_jp_resident_registration_number|
 |---|
 |Resident Registration Number  <br/> Resident Register Number  <br/> Residents Basic Registry Number  <br/> Resident Registration No.  <br/> Resident Register No.  <br/> Residents Basic Registry No.  <br/> Basic Resident Register No.  <br/> 住民登録番号、登録番号をレジデント  <br/> 住民基本登録番号、登録番号  <br/> 住民基本レジストリ番号を常駐  <br/> 登録番号を常駐住民基本台帳登録番号|
 
@@ -2483,7 +2483,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_sin**|
+|Keyword_jp_sin|
 |---|
 |Social Insurance No.  <br/> Social Insurance Num  <br/> Social Insurance Number  <br/> 社会保険のテンキー  <br/> 社会保険番号|
 
@@ -2528,7 +2528,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_malaysia_id_card_number**|
+|Keyword_malaysia_id_card_number|
 |---|
 |MyKad  <br/> Identity Card  <br/> ID Card  <br/> Identification Card  <br/> Digital Application Card  <br/> Kad Akuan Diri  <br/> Kad Aplikasi Digital|
 
@@ -2584,7 +2584,7 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_netherlands_bsn**|
+|Keyword_netherlands_bsn|
 |---|
 |Citizen service number  <br/> BSN  <br/> Burgerservicenummer  <br/> Sofinummer  <br/> Persoonsgebonden nummer  <br/> Persoonsnummer|
 
@@ -2620,7 +2620,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_nz_terms**|
+|Keyword_nz_terms|
 |---|
 |NHI  <br/> New Zealand  <br/> Health  <br/> treatment|
 
@@ -2669,7 +2669,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_norway_id_number**|
+|Keyword_norway_id_number|
 |---|
 |Personal identification number  <br/> Norwegian ID Number  <br/> ID Number  <br/> Identification  <br/> Personnummer  <br/> Fødselsnummer|
 
@@ -2711,7 +2711,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_philippines_id**|
+|Keyword_philippines_id|
 |---|
 |Unified Multi-Purpose ID  <br/> UMID  <br/> Identity Card  <br/> Pinag-isang Multi-Layunin ID|
 
@@ -2745,7 +2745,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_polish_national_id_passport_number**|
+|Keyword_polish_national_id_passport_number|
 |---|
 |Nazwa i nr dowodu tożsamości  <br/> Dowód Tożsamości  <br/> dow. os.|
 
@@ -2779,7 +2779,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_pesel_identification_number**|
+|Keyword_pesel_identification_number|
 |---|
 |Nr PESEL  <br/> PESEL|
 
@@ -2814,7 +2814,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_polish_national_id_passport_number**|
+|Keyword_polish_national_id_passport_number|
 |---|
 |Nazwa i nr dowodu tożsamości  <br/> Dowód Tożsamości  <br/> dow. os.|
 
@@ -2846,7 +2846,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_portugal_citizen_card**|
+|Keyword_portugal_citizen_card|
 |---|
 |Citizen Card  <br/> National ID Card  <br/> CC  <br/> Cartão de Cidadão  <br/> Bilhete de Identidade|
 
@@ -2880,7 +2880,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_saudi_arabia_national_id**|
+|Keyword_saudi_arabia_national_id|
 |---|
 |Identification Card  <br/> I card number  <br/> ID number  <br/> الوطنية الهوية بطاقة رقم|
 
@@ -2929,7 +2929,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_singapore_nric**|
+|Keyword_singapore_nric|
 |---|
 |National Registration Identity Card  <br/> Identity Card Number  <br/> NRIC  <br/> IC  <br/> Foreign Identification Number  <br/> FIN  <br/> 身份证  <br/> 身份證|
 
@@ -2973,7 +2973,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_south_africa_identification_number**|
+|Keyword_south_africa_identification_number|
 |---|
 |Identity card  <br/> ID  <br/> Identification|
 
@@ -3028,7 +3028,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_south_korea_resident_number**|
+|Keyword_south_korea_resident_number|
 |---|
 |National ID card  <br/> Citizen's Registration Number  <br/> Jumin deungnok beonho  <br/> RRN  <br/> 주민등록번호|
 
@@ -3180,7 +3180,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_swift**|
+|Keyword_swift|
 |---|
 |international organization for standardization 9362  <br/> iso 9362  <br/> iso9362  <br/> swift#  <br/> swift code  <br/> swift number  <br/> swiftroutingnumber  <br/> swift code  <br/> swift number #  <br/> swift routing number  <br/> bic number  <br/> bic code  <br/> bic #  <br/> bic#  <br/> bank identifier code  <br/> 標準化9362  <br/> 迅速＃  <br/> SWIFTコード  <br/> SWIFT番号  <br/> 迅速なルーティング番号  <br/> BIC番号  <br/> BICコード  <br/> 銀行識別コードのための国際組織  <br/> Organisation internationale de normalisation 9362  <br/> rapide #  <br/> code SWIFT  <br/> le numéro de swift  <br/> swift numéro d'acheminement  <br/> le numéro BIC  <br/> # BIC  <br/> code identificateur de banque|
 
@@ -3220,7 +3220,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_taiwanese_national_id**|
+|Keyword_taiwanese_national_id|
 |---|
 |身份證字號  <br/> 身份證  <br/> 身份證號碼  <br/> 身份證號  <br/> 身分證字號  <br/> 身分證  <br/> 身分證號碼  <br/> 身份證號  <br/> 身分證統一編號  <br/> 國民身分證統一編號  <br/> 簽名  <br/> 蓋章  <br/> 簽名或蓋章  <br/> 簽章|
 
@@ -3264,7 +3264,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_taiwan_passport**|
+|Keyword_taiwan_passport|
 |---|
 |ROC passport number  <br/> Passport number  <br/> Passport no  <br/> Passport Num  <br/> Passport #  <br/> 护照  <br/> 中華民國護照  <br/> Zhōnghuá Mínguó hùzhào|
 
@@ -3300,7 +3300,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_taiwan_resident_certificate**|
+|Keyword_taiwan_resident_certificate|
 |---|
 |Resident Certificate  <br/> Resident Cert  <br/> Resident Cert.  <br/> Identification card  <br/> Alien Resident Certificate  <br/> ARC  <br/> Taiwan Area Resident Certificate  <br/> TARC  <br/> 居留證  <br/> 外僑居留證  <br/> 台灣地區居留證|
 
@@ -3344,7 +3344,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_uk_drivers_license**|
+|Keyword_uk_drivers_license|
 |---|
 |DVLA  <br/> light vans  <br/> quad bikes  <br/> motor cars  <br/> 125cc  <br/> sidecar  <br/> tricycles  <br/> motorcycles  <br/> photo card licence  <br/> learner drivers  <br/> licence holder  <br/> licence holders  <br/> driving licences  <br/> driving licence  <br/> dual control car|
 
@@ -3378,7 +3378,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_uk_electoral**|
+|Keyword_uk_electoral|
 |---|
 |council nomination  <br/> nomination form  <br/> electoral register  <br/> electoral roll|
 
@@ -3496,7 +3496,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_uk_nino**|
+|Keyword_uk_nino|
 |---|
 |national insurance number  <br/> national insurance contributions  <br/> protection act  <br/> insurance  <br/> social security number  <br/> insurance application  <br/> medical application  <br/> social insurance  <br/> medical attention  <br/> social security  <br/> great britain  <br/> insurance|
 
@@ -3527,7 +3527,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_passport**|
+|Keyword_passport|
 |---|
 |Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passport number  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
@@ -3559,7 +3559,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_usa_Bank_Account**|
+|Keyword_usa_Bank_Account|
 |---|
 |Checking Account Number  <br/> Checking Account  <br/> Checking Account #  <br/> Checking Acct Number  <br/> Checking Acct #  <br/> Checking Acct No.  <br/> Checking Account No.  <br/> Bank Account Number  <br/> Bank Account #  <br/> Bank Acct Number  <br/> Bank Acct #  <br/> Bank Acct No.  <br/> Bank Account No.  <br/> Savings Account Number  <br/> Savings Account.  <br/> Savings Account #  <br/> Savings Acct Number  <br/> Savings Acct #  <br/> Savings Acct No.  <br/> Savings Account No.  <br/> Debit Account Number  <br/> Debit Account  <br/> Debit Account #  <br/> Debit Acct Number  <br/> Debit Acct #  <br/> Debit Acct No.  <br/> Debit Account No.|
 
@@ -3828,6 +3828,6 @@ A DLP policy is 55% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_ssn**|
+|Keyword_ssn|
 |---|
 |Social Security  <br/> Social Security#  <br/> Soc Sec  <br/> SSN  <br/> SSNS  <br/> SSN#  <br/> SS#  <br/> SSID|

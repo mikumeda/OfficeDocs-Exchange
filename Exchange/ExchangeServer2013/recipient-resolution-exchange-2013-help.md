@@ -33,7 +33,7 @@ Top-level resolution begins with a message and the initial, unexpanded list of r
 
 ## Encapsulated email addresses
 
-Standard SMTP email addresses follow the specifications of RFC 2821 and RFC 2822, such as chris@contoso.com, for example. However, an email address can also be a non-SMTP email address that's encapsulated inside a valid SMTP address. Exchange supports encapsulated addresses that use the Internet Mail Connector Encapsulated Address (IMCEA) encapsulation method.
+Standard SMTP email addresses follow the specifications of RFC 2821 and RFC 2822, such as chris@contoso.com, for example. However, an email address can also be a non-SMTP email address that's encapsulated inside a valid SMTP address. Exchange supports encapsulated addresses that use the Internet Mail Connector Encapsulated Address (IMCEA) encapsulation method.
 
 This encapsulation method requires the encoding of any characters that are invalid in SMTP email addresses. Alphanumeric characters, the equal sign (=) and the hyphen (-) don't require encoding. Other characters use the following encoding syntax:
 
@@ -52,19 +52,19 @@ The placeholder \<*address*\> is the encoded original address. The placeholder \
 
 With the IMCEA encapsulation method, addresses are unencapsulated only when the domain matches the default authoritative domain in the Exchange organization. For more information about accepted domains, see [Accepted domains](accepted-domains-exchange-2013-help.md).
 
-The maximum length for an SMTP email address in Exchange is 571 characters. This limit includes the following:
+The maximum length for an SMTP email address in Exchange is 571 characters. This limit includes the following:
 
-- 315 characters for the name part of the address
+- 315 characters for the name part of the address
 
-- 255 characters for the domain name
+- 255 characters for the domain name
 
-- The at sign (@) character that separates the name part of the address from the domain name
+- The at sign (@) character that separates the name part of the address from the domain name
 
-Note that Exchange doesn't support messages that are encoded with the IMCEA encapsulation method when the name part of the address exceeds 315 characters, even if the complete email address is less than 571 characters.
+Note that Exchange doesn't support messages that are encoded with the IMCEA encapsulation method when the name part of the address exceeds 315 characters, even if the complete email address is less than 571 characters.
 
 ## Address resolution
 
-For each message, the sender email address and all recipient email addresses are added to a list that's used to query Active Directory. Any encapsulated addresses are unencapsulated before they're added to the list of email addresses. The Active Directory query is performed on up to 20 email addresses at a time. If the Active Directory query encounters any transient errors, the message is returned to the Submission queue and deferred for the time that's specified by the *ResolverRetryInterval* key in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file that's associated with the Microsoft Exchange Transport service. The default value is 30 minutes.
+For each message, the sender email address and all recipient email addresses are added to a list that's used to query Active Directory. Any encapsulated addresses are unencapsulated before they're added to the list of email addresses. The Active Directory query is performed on up to 20 email addresses at a time. If the Active Directory query encounters any transient errors, the message is returned to the Submission queue and deferred for the time that's specified by the *ResolverRetryInterval* key in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` XML application configuration file that's associated with the Microsoft Exchange Transport service. The default value is 30 minutes.
 
 The following table describes the recipient objects that are found in Active Directory. For more information about Exchange recipient types, see [Recipients](recipients-exchange-2013-help.md).
 
@@ -86,9 +86,9 @@ The following table describes the recipient objects that are found in Active Dir
 <td><p>DistributionGroup</p></td>
 <td><p>Any mail-enabled group object. The distribution group object types are as follows:</p>
 <ul>
-<li><p><strong>MailUniversalDistributionGroup</strong>   A universal distribution group object</p></li>
-<li><p><strong>MailUniversalSecurityGroup</strong>   A universal security group (USG) object that has an email address</p></li>
-<li><p><strong>MailNonUniversalGroup</strong>   A local security group object or global security group object that has an email address</p></li>
+<li><p><strong>MailUniversalDistributionGroup</strong>   A universal distribution group object</p></li>
+<li><p><strong>MailUniversalSecurityGroup</strong>   A universal security group (USG) object that has an email address</p></li>
+<li><p><strong>MailNonUniversalGroup</strong>   A local security group object or global security group object that has an email address</p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -175,11 +175,11 @@ As the distribution groups, alternative recipients, and contacts chains are expa
 
 - **Broken recipient loop**: A broken recipient loop can't result in successful message delivery. An example of a broken recipient loop is when mailboxes or mail-enabled public folders have the *ForwardingAddress* parameter set to one another. When the categorizer detects a broken recipient loop, expansion activity for the current recipient stops, and an NDR is generated for the recipient.
 
-Detection of recipient loops doesn't prevent duplicate message delivery. For example, Distribution Group C will experience duplicate message delivery if the following conditions are true:
+Detection of recipient loops doesn't prevent duplicate message delivery. For example, Distribution Group C will experience duplicate message delivery if the following conditions are true:
 
-- Distribution Group B and Distribution Group C are members of Distribution Group A.
+- Distribution Group B and Distribution Group C are members of Distribution Group A.
 
-- Distribution Group C is also a member of Distribution Group B.
+- Distribution Group C is also a member of Distribution Group B.
 
 ## Delivery report redirection for distribution groups
 
@@ -200,7 +200,7 @@ The following list describes the available delivery report messages:
 
 - **Delivery status notification (DSN)**: This report describes the result of an attempt to deliver a message. For more information about DSN messages, see [DSNs and NDRs in Exchange 2013](dsns-and-ndrs-in-exchange-2013-exchange-2013-help.md).
 
-- **Message disposition notification (MDN)**: This report describes the status of a message after it has been successfully delivered to a recipient. A read notification (RN) and a non-read notification (NRN) are both examples of an MDN message. MDN messages are defined in RFC 2298 and are controlled by the **Disposition-Notification-To:** header field in the message header. MDN settings that use the `Disposition-Notification-To:` header field are compatible with many different message servers. MDN settings can also be defined by using MAPI properties in Microsoft Outlook and Exchange.
+- **Message disposition notification (MDN)**: This report describes the status of a message after it has been successfully delivered to a recipient. A read notification (RN) and a non-read notification (NRN) are both examples of an MDN message. MDN messages are defined in RFC 2298 and are controlled by the **Disposition-Notification-To:** header field in the message header. MDN settings that use the `Disposition-Notification-To:` header field are compatible with many different message servers. MDN settings can also be defined by using MAPI properties in Microsoft Outlook and Exchange.
 
 - **Non-delivery report (NDR)**: This report indicates to the message sender that the message couldn't be delivered to the specified recipients.
 
@@ -323,13 +323,13 @@ Recipient resolution bifurcates a message if the following conditions are true:
 
 - When alternative recipients are expanded.
 
-- When a **Resent-From:** header field must be added to the message header. Resent header fields are informational header fields that can be used to determine whether a message has been forwarded by a user. Resent header fields are used so that the message appears to the recipient as if it was sent directly by the original sender. The recipient can view the message header to discover who forwarded the message. Resent header fields are defined in section 3.6.6 of RFC 2822.
+- When a **Resent-From:** header field must be added to the message header. Resent header fields are informational header fields that can be used to determine whether a message has been forwarded by a user. Resent header fields are used so that the message appears to the recipient as if it was sent directly by the original sender. The recipient can view the message header to discover who forwarded the message. Resent header fields are defined in section 3.6.6 of RFC 2822.
 
 - When the history of the expansion of the distribution group must be transmitted.
 
 ## Controlling recipient expansion
 
-When the number of expanded recipients is too large, the categorizer splits the message into multiple copies. This is done to reduce system resource use during message expansion. The maximum number of envelope recipients in a message is controlled by the *ExpansionSizeLimit* key in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` application configuration file. The default value is 1000.
+When the number of expanded recipients is too large, the categorizer splits the message into multiple copies. This is done to reduce system resource use during message expansion. The maximum number of envelope recipients in a message is controlled by the *ExpansionSizeLimit* key in the `%ExchangeInstallPath%Bin\EdgeTransport.exe.config` application configuration file. The default value is 1000.
 
 > [!WARNING]
 > We recommend that you don't modify the value of the <EM>ExpansionSizeLimit</EM> key on an Exchange transport server in a production environment.

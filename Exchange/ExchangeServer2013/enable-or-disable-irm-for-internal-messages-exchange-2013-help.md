@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-In Microsoft Exchange Server 2013, Information Rights Management (IRM) is enabled by default for internal messages. This setup allows you to create transport protection rules and Microsoft Outlook protection rules to IRM-protect messages in transport and on Microsoft Outlook 2010 and later clients. Enabling IRM for internal messages is a prerequisite for all other IRM features in Exchange Server 2013, such as transport decryption, journal rule decryption, IRM in Microsoft Office Outlook Web App, and IRM in Microsoft Exchange ActiveSync.
+In Microsoft Exchange Server 2013, Information Rights Management (IRM) is enabled by default for internal messages. This setup allows you to create transport protection rules and Microsoft Outlook protection rules to IRM-protect messages in transport and on Microsoft Outlook 2010 and later clients. Enabling IRM for internal messages is a prerequisite for all other IRM features in Exchange Server 2013, such as transport decryption, journal rule decryption, IRM in Microsoft Office Outlook Web App, and IRM in Microsoft Exchange ActiveSync.
 
 > [!WARNING]
 > Disabling IRM for internal messages disables all IRM features in the Exchange organization. The client-side IRM features in Outlook (for example, the ability to read, reply to, forward, and create IRM-protected messages using an Active Directory Rights Management Services (AD&nbsp;RMS) server) aren't affected.

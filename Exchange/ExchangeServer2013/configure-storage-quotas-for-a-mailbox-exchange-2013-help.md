@@ -43,7 +43,7 @@ This topic shows you how to customize storage settings for a specific mailbox in
 
 ## Use the EAC to configure storage quotas for a mailbox
 
-1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
 2. In the list of user mailboxes, click the mailbox that you want to change the storage quotas for, and then click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
@@ -64,7 +64,7 @@ This topic shows you how to customize storage settings for a specific mailbox in
 
 ## Use the Shell to configure storage quotas for a mailbox
 
-This example sets the issue warning, prohibit send, and prohibit send and receive quotas for Joe Healy's mailbox to 24.5 GB, 24.75 GB, and 25 GB respectively.
+This example sets the issue warning, prohibit send, and prohibit send and receive quotas for Joe Healy's mailbox to 24.5 GB, 24.75 GB, and 25 GB respectively.
 
 > [!NOTE]
 > To ensure that the custom settings for the mailbox are used rather than the mailbox database defaults, you must set the <EM>UseDatabaseQuotaDefaults</EM> parameter to <CODE>$false</CODE>.
@@ -73,7 +73,7 @@ This example sets the issue warning, prohibit send, and prohibit send and receiv
 Set-Mailbox -Identity "Joe Healy" -IssueWarningQuota 24.5gb -ProhibitSendQuota 24.75gb -ProhibitSendReceiveQuota 25gb -UseDatabaseQuotaDefaults $false
 ```
 
-This example sets the issue warning, prohibit send, and prohibit send and receive quotas for Ayla Kol's mailbox to 900 megabytes (MB), 950 MB, and 1 GB respectively, and configures the mailbox to use custom settings.
+This example sets the issue warning, prohibit send, and prohibit send and receive quotas for Ayla Kol's mailbox to 900 megabytes (MB), 950 MB, and 1 GB respectively, and configures the mailbox to use custom settings.
 
 ```powershell
 Set-Mailbox -Identity "Ayla Kol" -IssueWarningQuota 900mb -ProhibitSendQuota 950mb -ProhibitSendReceiveQuota 1gb -UseDatabaseQuotaDefaults $false
@@ -85,7 +85,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](/powershell/mod
 
 To verify that you've successfully set the storage quotas for a mailbox, do one of the following:
 
-1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
 2. In the list of user mailboxes, click the mailbox that you want to verify the storage quotas for, and then click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 

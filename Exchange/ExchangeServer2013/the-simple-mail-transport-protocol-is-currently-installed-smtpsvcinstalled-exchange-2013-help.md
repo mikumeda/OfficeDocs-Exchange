@@ -23,9 +23,9 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because the Microsoft Windows Server™ 2003 Simple Mail Transfer Protocol (SMTP) service is installed on this computer.
+Microsoft® Exchange Server 2007 setup cannot continue because the Microsoft Windows Server™ 2003 Simple Mail Transfer Protocol (SMTP) service is installed on this computer.
 
-Microsoft Exchange setup requires that the SMTP service not be installed on servers that are used for Exchange 2007.
+Microsoft Exchange setup requires that the SMTP service not be installed on servers that are used for Exchange 2007.
 
 To resolve this issue, uninstall the SMTP service and rerun Microsoft Exchange setup.
 

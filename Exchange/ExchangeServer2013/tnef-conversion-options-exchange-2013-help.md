@@ -17,7 +17,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-You can specify whether Transport Neutral Encapsulation Format (TNEF) should be preserved or removed from messages that leave the Exchange organization. TNEF, also known as Outlook Rich Text Format or Exchange Rich Text Format, is a Microsoft-specific format for encapsulating MAPI message properties. All versions of Microsoft Outlook fully understand TNEF. Outlook Web App translates TNEF into MAPI and displays the formatted messages. However, other email clients that don't understand TNEF typically display TNEF formatted messages as plain text messages with Winmail.dat or Win.dat attachments.
+You can specify whether Transport Neutral Encapsulation Format (TNEF) should be preserved or removed from messages that leave the Exchange organization. TNEF, also known as Outlook Rich Text Format or Exchange Rich Text Format, is a Microsoft-specific format for encapsulating MAPI message properties. All versions of Microsoft Outlook fully understand TNEF. Outlook Web App translates TNEF into MAPI and displays the formatted messages. However, other email clients that don't understand TNEF typically display TNEF formatted messages as plain text messages with Winmail.dat or Win.dat attachments.
 
 ## TNEF conversion options for remote domains
 

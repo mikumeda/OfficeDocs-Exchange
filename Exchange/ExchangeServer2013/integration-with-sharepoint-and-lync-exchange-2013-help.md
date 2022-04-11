@@ -17,7 +17,7 @@ f1.keywords:
 
 _**Applies to:** Exchange Server 2013_
 
-Microsoft Exchange Server 2013 includes many features that integrate with Microsoft SharePoint 2013 and Microsoft Lync 2013. Together, these products offer a suite of features that make scenarios such as enterprise eDiscovery and collaboration using site mailboxes possible.
+Microsoft Exchange Server 2013 includes many features that integrate with Microsoft SharePoint 2013 and Microsoft Lync 2013. Together, these products offer a suite of features that make scenarios such as enterprise eDiscovery and collaboration using site mailboxes possible.
 
 ## Archiving, hold, and eDiscovery
 

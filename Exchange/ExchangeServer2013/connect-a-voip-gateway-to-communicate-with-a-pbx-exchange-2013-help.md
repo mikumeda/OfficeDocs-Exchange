@@ -31,7 +31,7 @@ The following suggested resources in the Exchange TechCenter provide information
 
   - **Configuration and technical notes**: [Configuration notes for supported VoIP gateways, IP PBXs, and PBXs](../ExchangeOnline/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-voip-gateways.md) includes configuration files and setup information that you can use when you configure VoIP gateways and PBXs.
 
-  - **Configuring an AudioCodes-based VoIP gateway**  The [Microsoft Exchange Server Resource page](https://www.audiocodes.com/solutions/microsoft/exchange-server) provides the latest support and configuration information to help you configure AudioCodes-based VoIP gateways for use with Unified Messaging.
+  - **Configuring an AudioCodes-based VoIP gateway**  The [Microsoft Exchange Server Resource page](https://www.audiocodes.com/solutions/microsoft/exchange-server) provides the latest support and configuration information to help you configure AudioCodes-based VoIP gateways for use with Unified Messaging.
 
   - **Configuring a Dialogic-based VoIP gateway**: The [Dialogic website](https://www.dialogic.com/) provides the latest support and configuration information for Dialogic-based VoIP gateways.
 

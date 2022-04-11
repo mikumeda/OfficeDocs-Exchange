@@ -180,7 +180,7 @@ The following table shows the message throttling option that's available on Send
 <tr class="odd">
 <td><p><strong>Set-SendConnector</strong></p></td>
 <td><p><em>ConnectionInactivityTimeOut</em></p></td>
-<td><p>10 minutes</p></td>
+<td><p>10 minutes</p></td>
 <td><p>This parameter specifies the maximum time that an open SMTP connection with a destination messaging server can remain idle before the connection is closed.</p></td>
 </tr>
 </tbody>
@@ -211,17 +211,17 @@ The following table shows the message throttling options that are available on R
 <tr class="odd">
 <td><p><strong>Set-ReceiveConnector</strong></p></td>
 <td><p><em>ConnectionInactivityTimeOut</em></p></td>
-<td><p>5 minutes in the Transport service on Mailbox servers</p>
-<p>5 minutes in the Front End Transport service on Client Access servers.</p>
-<p>1 minute on Edge Transport servers.</p></td>
+<td><p>5 minutes in the Transport service on Mailbox servers</p>
+<p>5 minutes in the Front End Transport service on Client Access servers.</p>
+<p>1 minute on Edge Transport servers.</p></td>
 <td><p>This parameter specifies the maximum time that an open SMTP connection with a source messaging server can remain idle before the connection is closed. The value of this parameter must be smaller than the value specified by the <em>ConnectionTimeout</em> parameter.</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Set-ReceiveConnector</strong></p></td>
 <td><p><em>ConnectionTimeOut</em></p></td>
-<td><p>10 minutes in the Transport service on Mailbox servers</p>
-<p>10 minutes in the Front End Transport service on Client Access servers.</p>
-<p>5 minutes on Edge Transport servers.</p></td>
+<td><p>10 minutes in the Transport service on Mailbox servers</p>
+<p>10 minutes in the Front End Transport service on Client Access servers.</p>
+<p>5 minutes on Edge Transport servers.</p></td>
 <td><p>This parameter specifies the maximum time that an SMTP connection with a source messaging server can remain open, even if the source messaging server is transmitting data. The value of this parameter must be larger than the value specified by the <em>ConnectionInactivityTimeout</em> parameter.</p></td>
 </tr>
 <tr class="odd">
@@ -233,8 +233,8 @@ The following table shows the message throttling options that are available on R
 <tr class="even">
 <td><p><strong>Set-ReceiveConnector</strong></p></td>
 <td><p><em>MaxInboundConnectionPercentagePerSource</em></p></td>
-<td><p>100 percent on the Default Receive connector in the Transport service on a mailbox server</p>
-<p>2 percent on the other Receive connectors in the Transport service on Mailbox servers, and in the Front End Transport service on Client Access servers.</p></td>
+<td><p>100 percent on the Default Receive connector in the Transport service on a mailbox server</p>
+<p>2 percent on the other Receive connectors in the Transport service on Mailbox servers, and in the Front End Transport service on Client Access servers.</p></td>
 <td><p>This parameter specifies the maximum number of SMTP connections that a Receive connector allows at the same time from a single source messaging server. The value is expressed as the percentage of available remaining connections on a Receive connector. The maximum number of connections that are permitted by the Receive connector is defined by the <em>MaxInboundConnection</em> parameter.</p></td>
 </tr>
 <tr class="odd">
@@ -253,7 +253,7 @@ The following table shows the message throttling options that are available on R
 <tr class="odd">
 <td><p><strong>Set-ReceiveConnector</strong></p></td>
 <td><p><em>TarpitInterval</em></p></td>
-<td><p>5 seconds</p></td>
+<td><p>5 seconds</p></td>
 <td><p>This parameter specifies the delay that's used in <em>tarpitting</em>. Tarpitting is the practice of artificially delaying SMTP responses for specific SMTP communication patterns that indicate a directory harvest attack or other unwelcome messages. A <em>directory harvest attack</em> is an attempt to collect valid e-mail addresses from a particular organization to use as a target for unsolicited commercial e-mail.</p>
 <p>The delay that's specified by the <em>TarpitInterval</em> parameter only applies to anonymous connections.</p></td>
 </tr>

@@ -33,7 +33,7 @@ Exchange 2019 setup (for September 2021 CU and later versions) installs the Exch
 
 ::: moniker-end
 
-The functionality to check and download mitigations requires outbound connectivity to the Mitigation Service Cloud endpoint. Without this connectivity, the EM service can’t function, which can pose a security risk.
+The functionality to check and download mitigations requires outbound connectivity to the Mitigation Service Cloud endpoint. Without this connectivity, the EM service can't function, which can pose a security risk.
 
 For the EM service to function correctly, admins needs to enable connectivity with the following endpoint from the computer on which Exchange Server is installed.
 

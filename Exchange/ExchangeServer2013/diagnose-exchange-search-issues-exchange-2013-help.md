@@ -27,7 +27,7 @@ Looking for management tasks related to managing Exchange Search? See [Exchange 
 
 ## Using the Test-ExchangeSearch Cmdlet
 
-Step 5 of the procedure in this topic describes running the **Test-ExchangeSearch** cmdlet to help diagnose Exchange Search issues. You can use the **Test-ExchangeSearch** cmdlet to test Exchange Search functionality for a Mailbox server, a mailbox database, or a specific mailbox. The cmdlet delivers a test message to the specified mailbox (or to a database's system mailbox if a mailbox isn't specified), and then performs a search to determine whether the message is indexed, including the time taken to index it. Under normal conditions, Exchange Search indexes a message within about 10 seconds of the message being created or delivered to a mailbox. The test message is automatically deleted after the test.
+Step 5 of the procedure in this topic describes running the **Test-ExchangeSearch** cmdlet to help diagnose Exchange Search issues. You can use the **Test-ExchangeSearch** cmdlet to test Exchange Search functionality for a Mailbox server, a mailbox database, or a specific mailbox. The cmdlet delivers a test message to the specified mailbox (or to a database's system mailbox if a mailbox isn't specified), and then performs a search to determine whether the message is indexed, including the time taken to index it. Under normal conditions, Exchange Search indexes a message within about 10 seconds of the message being created or delivered to a mailbox. The test message is automatically deleted after the test.
 
 For detailed syntax and parameter information, see [Test-ExchangeSearch](/powershell/module/exchange/Test-ExchangeSearch).
 
@@ -48,13 +48,13 @@ For more information about unsearchable items, see :
 
 You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange Search" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
-1. **Check service state**: Is the Microsoft Exchange Search (MSExchangeFastSearch) service started on the Mailbox server? If yes, go to Step 2. If no, use the Services MMC snap-in to verify that the MSExchangeFastSearch service is running as follows:
+1. **Check service state**: Is the Microsoft Exchange Search (MSExchangeFastSearch) service started on the Mailbox server? If yes, go to Step 2. If no, use the Services MMC snap-in to verify that the MSExchangeFastSearch service is running as follows:
 
     1. Click **Start**, point to **Administrative Tools**, and then click **Services**.
 
     2. In **Services**, verify that the **Status** for the **Microsoft Exchange Search** service is listed as **Started**.
 
-2. **Check mailbox database configuration**: Is the *IndexEnabled* parameter set to true for the user's mailbox database? If yes, go to Step 3. If no, run the following command in the Shell to verify that the *IndexEnabled* flag is set to true.
+2. **Check mailbox database configuration**: Is the *IndexEnabled* parameter set to true for the user's mailbox database? If yes, go to Step 3. If no, run the following command in the Shell to verify that the *IndexEnabled* flag is set to true.
 
     ```powershell
     Get-MailboxDatabase | Format-Table Name,IndexEnabled
@@ -62,7 +62,7 @@ You need to be assigned permissions before you can perform this procedure or pro
 
     For detailed syntax and parameter information, see [Get-MailboxDatabase](/powershell/module/exchange/Get-MailboxDatabase).
 
-3. **Check mailbox database crawl state**: Has the Exchange database been crawled? If yes, go to Step 4. If no, use Reliability and Performance Monitor to check the **Crawler: Mailboxes Remaining** counter of the **MSExchange Search Indexes** performance object. Perform the following steps:
+3. **Check mailbox database crawl state**: Has the Exchange database been crawled? If yes, go to Step 4. If no, use Reliability and Performance Monitor to check the **Crawler: Mailboxes Remaining** counter of the **MSExchange Search Indexes** performance object. Perform the following steps:
 
     1. Open **Performance Monitor** (perfmon.exe).
 
@@ -108,7 +108,7 @@ You need to be assigned permissions before you can perform this procedure or pro
 
     For more information, follow the link in the event log entry.
 
-7. **Restart the Microsoft Exchange Search service**: Use the Services MMC snap-in or the Shell to stop and then restart the Microsoft Exchange Search (MSExchangeFastSearch) service:
+7. **Restart the Microsoft Exchange Search service**: Use the Services MMC snap-in or the Shell to stop and then restart the Microsoft Exchange Search (MSExchangeFastSearch) service:
 
     1. Click **Start**, point to **Administrative Tools**, and then click **Services**.
 

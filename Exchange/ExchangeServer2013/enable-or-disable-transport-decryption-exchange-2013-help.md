@@ -40,9 +40,9 @@ For additional management tasks related to IRM, see [Information Rights Manageme
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Rights protection" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
-- An AD RMS server exists in the Active Directory forest and is accessible.
+- An AD RMS server exists in the Active Directory forest and is accessible.
 
-- The Federated Delivery mailbox has been added to the AD RMS super users group. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
+- The Federated Delivery mailbox has been added to the AD RMS super users group. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
 
 - You can't use the Exchange admin center (EAC) to enable transport decryption. You must use the Shell.
 
