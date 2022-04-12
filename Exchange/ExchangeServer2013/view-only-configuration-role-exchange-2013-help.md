@@ -66,7 +66,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="odd">
 <td><p><a href="compliance-management-exchange-2013-help.md">Compliance Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>None</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

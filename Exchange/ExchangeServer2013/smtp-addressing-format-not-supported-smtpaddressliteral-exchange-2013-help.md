@@ -6,7 +6,7 @@ ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.smtpadd
 ms:contentKeyID: 46629094
 ms.reviewer: 
 ms.topic: article
-description: Microsoft Exchange Server setup can't continue because the specified recipient policy uses an unsupported SMTP address format
+description: Microsoft Exchange Server setup can't continue because the specified recipient policy uses an unsupported SMTP address format
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -23,12 +23,12 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 and Exchange Server 2010 setup cannot continue because the specified recipient policy uses an unsupported Simple Mail Transfer Protocol (SMTP) address format.
+Microsoft Exchange Server 2007 and Exchange Server 2010 setup cannot continue because the specified recipient policy uses an unsupported Simple Mail Transfer Protocol (SMTP) address format.
 
-Exchange 2007 and Exchange 2010 setup requires that all SMTP addresses used for e-mail address policies not contain IP address literals, for example: *user@\[10.10.1.1\]*.
+Exchange 2007 and Exchange 2010 setup requires that all SMTP addresses used for e-mail address policies not contain IP address literals, for example: *user@\[10.10.1.1\]*.
 
 To resolve this issue, change the value of the SMTP address in the recipient policy so that it does not contain an IP address literal. Replace brackets (\[\]) and numbers (10.10.1.1) of the IP address literal with the Domain Name System (DNS) naming format, for example: *user@contoso.com*, and then rerun Exchange setup.
 
-For more information about managing recipient policies in Exchange Server 2007, see "Managing E-Mail Address Policies" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/aa998940(v=exchg.80)](/previous-versions/office/exchange-server-2007/aa998940(v=exchg.80))).
+For more information about managing recipient policies in Exchange Server 2007, see "Managing E-Mail Address Policies" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/aa998940(v=exchg.80)](/previous-versions/office/exchange-server-2007/aa998940(v=exchg.80))).
 
-For more information about managing recipient policies in Exchange Server 2010, see "Managing E-Mail Address Policies" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2010/aa998940(v=exchg.141)](/previous-versions/office/exchange-server-2010/aa998940(v=exchg.141))).
+For more information about managing recipient policies in Exchange Server 2010, see "Managing E-Mail Address Policies" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2010/aa998940(v=exchg.141)](/previous-versions/office/exchange-server-2010/aa998940(v=exchg.141))).

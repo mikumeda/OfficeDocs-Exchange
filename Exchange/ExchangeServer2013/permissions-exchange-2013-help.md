@@ -102,7 +102,7 @@ Exchange 2013 includes several built-in role groups, each one providing permissi
 </tr>
 <tr class="odd">
 <td><p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-<td><p>The Help Desk role group, by default, enables members to view and modify the Microsoft Office Outlook Web App options of any user in the organization. These options might include modifying the user's display name, address, and phone number. They don't include options that aren't available in Outlook Web App options, such as modifying the size of a mailbox or configuring the mailbox database on which a mailbox is located.</p></td>
+<td><p>The Help Desk role group, by default, enables members to view and modify the Microsoft Office Outlook Web App options of any user in the organization. These options might include modifying the user's display name, address, and phone number. They don't include options that aren't available in Outlook Web App options, such as modifying the size of a mailbox or configuring the mailbox database on which a mailbox is located.</p></td>
 </tr>
 <tr class="even">
 <td><p><a href="hygiene-management-exchange-2013-help.md">Hygiene Management</a></p></td>

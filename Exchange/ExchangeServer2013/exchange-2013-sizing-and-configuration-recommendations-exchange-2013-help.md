@@ -69,20 +69,20 @@ In Exchange Server 2013 Service Pack 1 or later, you can enable SSL offloading t
 <tbody>
 <tr class="odd">
 <td><p>Exchange 2013 CU16</p></td>
-<td><p> X</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
+<td><p> X</p></td>
+<td><p> </p></td>
+<td><p> </p></td>
 </tr>
 <tr class="even">
 <td><p>Exchange 2013 CU15</p></td>
-<td><p> X</p></td>
-<td><p>X1,2 </p></td>
-<td><p>X </p></td>
+<td><p> X</p></td>
+<td><p>X1,2 </p></td>
+<td><p>X </p></td>
 </tr>
 <tr class="odd">
 <td><p>Exchange 2013 CU13 and CU14</p></td>
 <td></td>
-<td><p>X1,2 </p></td>
+<td><p>X1,2 </p></td>
 <td><p>X</p></td>
 </tr>
 </tbody>

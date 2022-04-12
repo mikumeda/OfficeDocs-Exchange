@@ -52,32 +52,32 @@ The following table shows how an organization might define Active Directory site
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Site A</p></td>
+<td><p>Site A</p></td>
 <td><p>192.168.1.0/24</p>
 <p>192.168.2.0/24</p></td>
 </tr>
 <tr class="even">
-<td><p>Site B</p></td>
+<td><p>Site B</p></td>
 <td><p>192.168.3.0/24</p>
 <p>192.168.4.0/24</p></td>
 </tr>
 <tr class="odd">
-<td><p>Site C</p></td>
+<td><p>Site C</p></td>
 <td><p>192.168.5.0/24</p>
 <p>192.168.6.0/24</p></td>
 </tr>
 </tbody>
 </table>
 
-If a server named Mailbox01 has the IP address of 192.168.1.1, it's a member of Site A. By changing the IP address of a server, you may change its site membership. If you change the IP address of Mailbox01 to 192.168.2.1, it won't change the server's Active Directory site membership because that subnet is also associated with Site A. However, if you move the server and the IP address changes to 192.168.3.1, the server would be considered a member of Site B.
+If a server named Mailbox01 has the IP address of 192.168.1.1, it's a member of Site A. By changing the IP address of a server, you may change its site membership. If you change the IP address of Mailbox01 to 192.168.2.1, it won't change the server's Active Directory site membership because that subnet is also associated with Site A. However, if you move the server and the IP address changes to 192.168.3.1, the server would be considered a member of Site B.
 
-A change in site membership can also occur if you change the association of subnets to Active Directory sites. For example, if you remove the subnet 192.168.3.0 from association with Site B and associate it with Site A, the site membership of a server that has the IP address of 192.168.3.1 also changes to Site A. Whenever a change in site membership occurs, Exchange must update its configuration data so that the change is considered when Exchange makes routing decisions. Some latency occurs between the time that a change in an Active Directory site membership occurs and the topology change is fully propagated.
+A change in site membership can also occur if you change the association of subnets to Active Directory sites. For example, if you remove the subnet 192.168.3.0 from association with Site B and associate it with Site A, the site membership of a server that has the IP address of 192.168.3.1 also changes to Site A. Whenever a change in site membership occurs, Exchange must update its configuration data so that the change is considered when Exchange makes routing decisions. Some latency occurs between the time that a change in an Active Directory site membership occurs and the topology change is fully propagated.
 
 ## IP site links
 
-Site links are logical paths between Active Directory sites. A site link object represents a set of sites that can communicate at a uniform cost. Site links don't correspond to the actual path taken by network packets on the physical network. However, the cost assigned to the site link by the administrator typically relates to the underlying network reliability, speed, and available bandwidth. For example, the Active Directory administrator would assign a lower cost to a network connection with a speed of 100 megabits per second (Mbps) than to a network connection with a speed of 10 Mbps.
+Site links are logical paths between Active Directory sites. A site link object represents a set of sites that can communicate at a uniform cost. Site links don't correspond to the actual path taken by network packets on the physical network. However, the cost assigned to the site link by the administrator typically relates to the underlying network reliability, speed, and available bandwidth. For example, the Active Directory administrator would assign a lower cost to a network connection with a speed of 100 megabits per second (Mbps) than to a network connection with a speed of 10 Mbps.
 
-By default, all site links are transitive. This means that if Site A has a link to Site B, and Site B has a link to Site C, Site A is transitively linked to Site C. The transitive link between Site A and Site C is also known as a *site-link bridge*.
+By default, all site links are transitive. This means that if Site A has a link to Site B, and Site B has a link to Site C, Site A is transitively linked to Site C. The transitive link between Site A and Site C is also known as a *site-link bridge*.
 
 Exchange uses only IP site links to determine its Active Directory site routing topology. The cost that's assigned to the IP site link will be considered by the routing component of Exchange when calculating a routing table. These costs are used to calculate the least-cost routing path to the ultimate destination for a message.
 
@@ -95,7 +95,7 @@ In the following figure, four Active Directory sites are configured in the fores
 
 ![Hub and spoke topology of IP site links.](images/JJ916681.eca6cd51-8c2e-4996-81ea-070cd9766ef8(EXCHG.150).gif "Hub and spoke topology of IP site links")
 
-It's important to note that Exchange uses site links when determining the least-cost path, but will always try to deliver messages directly to the destination Exchange server. For example, if a user in Site B in the topology shown in the preceding figure sends a message to another user in Site C, the Mailbox server in Site B will connect directly to the Mailbox server in Site C. If you want to force messages to go through Site A, you must enable that site as a hub site. For more information about hub sites, see "Implementing Hub Sites" later in this topic.
+It's important to note that Exchange uses site links when determining the least-cost path, but will always try to deliver messages directly to the destination Exchange server. For example, if a user in Site B in the topology shown in the preceding figure sends a message to another user in Site C, the Mailbox server in Site B will connect directly to the Mailbox server in Site C. If you want to force messages to go through Site A, you must enable that site as a hub site. For more information about hub sites, see "Implementing Hub Sites" later in this topic.
 
 An Active Directory administrator implements the topology that best represents the connectivity and communication requirements of the forest. Because the same topology is used by Exchange, you need to make sure that the current topology supports efficient messaging communication.
 
@@ -115,25 +115,25 @@ Adjusting IP site link costs can be useful when the message routing topology has
 
 ![Topology with Exchange costs on IP site links.](images/JJ916681.56ac2bab-99de-4ddf-b968-80cd34ab8c21(EXCHG.150).gif "Topology with Exchange costs on IP site links")
 
-In the preceding figure, the network connection between Site C and Site D is a low bandwidth connection that's only used for Active Directory replication and shouldn't be used for message routing. However, the Active Directory IP site link costs cause that link to be included in the least-cost routing path from any other Active Directory site to Site D. Therefore, messages are delivered to the Site D queue in Site C. The Exchange administrator prefers that the least-cost routing path include Site B instead so that if Site D is unavailable, the messages will queue at Site B. Configuring a high Exchange cost on the IP site link between Site C and Site D prevents that IP site link from being included in the least-cost routing path to Site D.
+In the preceding figure, the network connection between Site C and Site D is a low bandwidth connection that's only used for Active Directory replication and shouldn't be used for message routing. However, the Active Directory IP site link costs cause that link to be included in the least-cost routing path from any other Active Directory site to Site D. Therefore, messages are delivered to the Site D queue in Site C. The Exchange administrator prefers that the least-cost routing path include Site B instead so that if Site D is unavailable, the messages will queue at Site B. Configuring a high Exchange cost on the IP site link between Site C and Site D prevents that IP site link from being included in the least-cost routing path to Site D.
 
 Exchange provides support for configuration of a maximum message size limit on an Active Directory IP site link. By default, Exchange doesn't impose a maximum message size limit on messages that are relayed between Exchange servers in different Active Directory sites. If you use the **Set-AdSiteLink** cmdlet to configure a maximum message size on an Active Directory IP site link, routing generates a non-delivery report (NDR) for any message that has a size larger than the maximum message size limit that's configured on any Active Directory site link in the least-cost routing path. This configuration is useful for restricting the size of messages that are sent to remote Active Directory sites that must communicate over low-bandwidth connections. For more information, see [Message size limits](message-size-limits-exchange-2013-help.md).
 
 ## Implementing hub sites
 
-In your Exchange organization, you may want to force all message delivery through a specific Active Directory site. You can use the Shell to designate an Active Directory site as a hub site. When you do this, you cause additional overall overhead because more servers are involved in message delivery. For example, consider a message that's sent from Site A to Site E. If the least-cost routing path is Site A-Site B-Site C-Site D-Site E, and you designate Site C as a hub site, the message is relayed from Site A to Site C and then relayed from Site C to Site E.
+In your Exchange organization, you may want to force all message delivery through a specific Active Directory site. You can use the Shell to designate an Active Directory site as a hub site. When you do this, you cause additional overall overhead because more servers are involved in message delivery. For example, consider a message that's sent from Site A to Site E. If the least-cost routing path is Site A-Site B-Site C-Site D-Site E, and you designate Site C as a hub site, the message is relayed from Site A to Site C and then relayed from Site C to Site E.
 
 You use the **Set-AdSite** cmdlet to specify an Active Directory site as a hub site. Whenever a hub site exists along the least-cost routing path for message delivery, the messages are queued and are processed by the Transport service on Mailbox servers in the hub site before they're relayed to their ultimate destination.
 
 After the least-cost routing path is chosen, routing determines whether there's a hub site along that routing path. If a hub site is configured, messages stop at a Mailbox server in the hub site before they're relayed to the target destination. If there's more than one hub site along the least-cost routing path, messages stop at each hub site along the routing path.
 
-This variation to direct relay routing only is in effect when the hub site is located along the least-cost routing path. The following figure shows the correct use of a hub site. In this diagram, Site B is configured as a hub site. Messages that are relayed from Site A to Site D are relayed through Site B before they're delivered to Site D.
+This variation to direct relay routing only is in effect when the hub site is located along the least-cost routing path. The following figure shows the correct use of a hub site. In this diagram, Site B is configured as a hub site. Messages that are relayed from Site A to Site D are relayed through Site B before they're delivered to Site D.
 
 **Message delivery with a hub site**
 
 ![Message delivery with a hub site.](images/JJ916681.93238bcb-6bbc-4a48-aeb0-09342a421b5b(EXCHG.150).gif "Message delivery with a hub site")
 
-The following figure shows how IP site link costs affect routing to a hub site. In this scenario, Site B has been designated as a hub site. However, Site B doesn't exist along the least-cost routing path between any other sites. Therefore, messages that are relayed from Site A to Site D are never relayed through Site B. An Active Directory site is never used as a hub site if it isn't on the least-cost routing path between two other sites.
+The following figure shows how IP site link costs affect routing to a hub site. In this scenario, Site B has been designated as a hub site. However, Site B doesn't exist along the least-cost routing path between any other sites. Therefore, messages that are relayed from Site A to Site D are never relayed through Site B. An Active Directory site is never used as a hub site if it isn't on the least-cost routing path between two other sites.
 
 **Misconfigured hub site**
 
@@ -163,7 +163,7 @@ The topology discovery module performs the following steps to generate an Exchan
 
    - All Exchange servers.
 
-2. The data that's retrieved in step 1 is used to create the initial topology and to begin linking and mapping the related configuration objects.
+2. The data that's retrieved in step 1 is used to create the initial topology and to begin linking and mapping the related configuration objects.
 
 3. Exchange servers are matched to Active Directory sites by retrieving the site attribute value from the Exchange server object that's stored in Active Directory.
 

@@ -156,7 +156,7 @@ The agent log stores each agent transaction on a single line in the log. The inf
 </tr>
 <tr class="odd">
 <td><p><strong>LocalEndpoint</strong></p></td>
-<td><p>Local IP address and port number that accepted the message. SMTP sessions typically use port 25.</p></td>
+<td><p>Local IP address and port number that accepted the message. SMTP sessions typically use port 25.</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>RemoteEndpoint</strong></p></td>
@@ -226,7 +226,7 @@ The agent log stores each agent transaction on a single line in the log. The inf
 </tr>
 <tr class="even">
 <td><p><strong>SmtpResponse</strong></p></td>
-<td><p>Enhanced SMTP response as defined in RFC 2034.</p></td>
+<td><p>Enhanced SMTP response as defined in RFC 2034.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>Reason</strong></p></td>

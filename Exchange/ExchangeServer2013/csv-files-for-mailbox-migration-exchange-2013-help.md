@@ -23,22 +23,22 @@ You can use a CSV file to bulk migrate a large number of user mailboxes. You can
 
 - **Moves in on-premises Exchange organizations**
 
-  - **Local move:** A local move is where you move mailboxes from one mailbox database to another. A local move occurs within a single forest.
+  - **Local move:** A local move is where you move mailboxes from one mailbox database to another. A local move occurs within a single forest.
 
-  - **Cross-forest enterprise move:** In a cross-forest enterprise move, mailboxes are moved to a different forest. Cross-forest moves are initiated either from the target forest, which is the forest that you want to move the mailboxes to, or from the source forest, which is the forest that currently hosts the mailboxes.
+  - **Cross-forest enterprise move:** In a cross-forest enterprise move, mailboxes are moved to a different forest. Cross-forest moves are initiated either from the target forest, which is the forest that you want to move the mailboxes to, or from the source forest, which is the forest that currently hosts the mailboxes.
 
   - **Onboarding and offboarding in Exchange Online**
 
-  - **Onboarding remote move migration:** In an Exchange hybrid deployment, you can move mailboxes from an on-premises Exchange organization to Exchange Online. This is also known as an *onboarding* remote move migration because you onboard mailboxes to Exchange Online.
+  - **Onboarding remote move migration:** In an Exchange hybrid deployment, you can move mailboxes from an on-premises Exchange organization to Exchange Online. This is also known as an *onboarding* remote move migration because you onboard mailboxes to Exchange Online.
 
-  - **Offboarding remote move migration:** You can also perform an *offboarding* remote move migration, where you migrate Exchange Online mailboxes to your on-premises Exchange organization.
+  - **Offboarding remote move migration:** You can also perform an *offboarding* remote move migration, where you migrate Exchange Online mailboxes to your on-premises Exchange organization.
 
   > [!NOTE]
   > Both onboarding and offboarding remote move migrations are initiated from your Exchange Online organization.
 
-  - **Staged Exchange migration:** You can also migrate a subset of mailboxes from an on-premises Exchange organization to Exchange Online. This is another type of onboarding migration. You can migrate only Exchange 2003 and Exchange 2007 mailboxes using a staged Exchange migration. Migrating Exchange 2010 and Exchange 2013 mailboxes isn't supported using a staged migration. Prior to running a staged migration, you have to use directory synchronization or some other method to provision mail users in your Exchange Online organization.
+  - **Staged Exchange migration:** You can also migrate a subset of mailboxes from an on-premises Exchange organization to Exchange Online. This is another type of onboarding migration. You can migrate only Exchange 2003 and Exchange 2007 mailboxes using a staged Exchange migration. Migrating Exchange 2010 and Exchange 2013 mailboxes isn't supported using a staged migration. Prior to running a staged migration, you have to use directory synchronization or some other method to provision mail users in your Exchange Online organization.
 
-  - **IMAP migration:** This onboarding migration type migrates mailbox data from an IMAP server (including Exchange) to Exchange Online. For an IMAP migration, you must provision mailboxes in Exchange Online before you can migrate mailbox data.
+  - **IMAP migration:** This onboarding migration type migrates mailbox data from an IMAP server (including Exchange) to Exchange Online. For an IMAP migration, you must provision mailboxes in Exchange Online before you can migrate mailbox data.
 
 > [!NOTE]
 > A cutover Exchange migration doesn't support a using a CSV file because all on-premises user mailboxes are migrated to Exchange Online in a single batch.
@@ -252,7 +252,7 @@ The following table describes the supported attributes for a CSV file for cross-
 <td><p><code>Unlimited</code> or a non-negative integer from <code>0</code> (the default) to a maximum value.</p></td>
 <td><p>Specifies the number of large items in the user's mailbox that will be skipped. When the number of large items exceeds this value, the migration for the mailbox fails.</p>
 <p>The default value is 0, which means that the migration fails if the mailbox contains any large items.</p>
-<p>When onboarding mailboxes to Exchange Online, items up to 35 MB are migrated.</p></td>
+<p>When onboarding mailboxes to Exchange Online, items up to 35 MB are migrated.</p></td>
 </tr>
 <tr class="even">
 <td><p>MailboxType</p></td>

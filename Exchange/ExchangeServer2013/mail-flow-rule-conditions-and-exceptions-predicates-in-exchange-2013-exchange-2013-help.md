@@ -77,7 +77,7 @@ In the EAC, in the **Properties of this rule** section, click **Match sender add
 
       - **The sender's domain is** (*SenderDomainIs*)
 
-  - **Header or envelope** (`HeaderOrEnvelope`)   Examine senders in the message header and the message envelope.
+  - **Header or envelope** (`HeaderOrEnvelope`)   Examine senders in the message header and the message envelope.
 
 <table>
 <colgroup>
@@ -1026,9 +1026,9 @@ The property types that are used in conditions and exceptions are described in t
 <td><p>Array of IP addresses or address ranges</p></td>
 <td><p>You enter the IPv4 addresses using the following syntax:</p>
 <ul>
-<li><p><strong>Single IP address</strong>   For example, <code>192.168.1.1</code>.</p></li>
-<li><p><strong>IP address range</strong>   For example, <code>192.168.0.1-192.168.0.254</code>.</p></li>
-<li><p><strong>Classless InterDomain Routing (CIDR) IP address range</strong>   For example, <code>192.168.0.1/25</code>.</p></li>
+<li><p><strong>Single IP address</strong>   For example, <code>192.168.1.1</code>.</p></li>
+<li><p><strong>IP address range</strong>   For example, <code>192.168.0.1-192.168.0.254</code>.</p></li>
+<li><p><strong>Classless InterDomain Routing (CIDR) IP address range</strong>   For example, <code>192.168.0.1/25</code>.</p></li>
 </ul>
 <p>In the Exchange Management Shell, you can specify multiple IP addresses or ranges separated by commas.</p></td>
 </tr>

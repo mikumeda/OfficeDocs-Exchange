@@ -417,7 +417,7 @@ You can only turn off these settings in Exchange Online PowerShell.
 
 This method uses one specific attribute as a filter for on-premises Active Directory group members that will be synchronized with Exchange Online. This method allows you to disable legacy protocols for specific groups without affecting the entire organization.
 
-Throughout this example, we'll use the **Department** attribute, because it's a common attributes that identifies users based on their department and role. To see all Active Directory user extended properties, go to [Active Directory: Get-ADUser Default and Extended Properties](https://social.technet.microsoft.com/wiki/contents/articles/12037.active-directory-get-aduser-default-and-extended-properties.aspx).
+Throughout this example, we'll use the **Department** attribute, because it's a common attribute that identifies users based on their department and role. To see all Active Directory user extended properties, go to [Active Directory: Get-ADUser Default and Extended Properties](https://social.technet.microsoft.com/wiki/contents/articles/12037.active-directory-get-aduser-default-and-extended-properties.aspx).
 
 ### Step 1: Find the Active Directory users and set the Active Directory user attributes
 
@@ -474,7 +474,7 @@ Get-ADUser -Filter "Department -eq 'Developer'" -Properties Department
 ### Step 2: Disable legacy authentication in Exchange Online
 
 > [!NOTE]
-> The attribute values for on-premises users are synchronized to Exchange Online only for users that have a valid Exchange Online license. For more information, see [Add users individually or in bulk](/microsoft-365/admin/add-users/add-user).
+> The attribute values for on-premises users are synchronized to Exchange Online only for users that have a valid Exchange Online license. For more information, see [Add users individually or in bulk](/microsoft-365/enterprise/add-several-users-at-the-same-time).
 
 The Exchange Online PowerShell syntax uses the following commands (two to identify the user accounts, and the other to apply the policy to those users):
 

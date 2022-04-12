@@ -41,7 +41,7 @@ For additional management tasks related to user mailboxes, see [Manage user mail
 
 ## Use the EAC to configure message size limits
 
-1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
 2. In the list of user mailboxes, click the mailbox that you want to change the message size limits for, and then click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
@@ -57,7 +57,7 @@ For additional management tasks related to user mailboxes, see [Manage user mail
 
 ## Use the Shell to configure message size limits
 
-This example sets the maximum size for sent messages to 25 MB and the maximum size for received messages to 35 MB for the mailbox of Debra Garcia.
+This example sets the maximum size for sent messages to 25 MB and the maximum size for received messages to 35 MB for the mailbox of Debra Garcia.
 
 ```powershell
 Set-Mailbox "Debra Garcia" -MaxSendSize 25mb -MaxReceiveSize 35mb
@@ -69,7 +69,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](/powershell/mod
 
 To verify that you've successfully configured message size limits for a mailbox, do one of the following:
 
-1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
 2. In the list of user mailboxes, click the mailbox that you want to verify the message size limits for, and then click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 

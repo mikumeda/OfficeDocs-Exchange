@@ -62,11 +62,11 @@ This example sets the following connectivity log settings in the Transport servi
 
 - Sets the location of the connectivity log files to D:\\Hub Connectivity Log. Note that if the folder doesn't exist, it will be created for you.
 
-- Sets the maximum size of a connectivity log file to 20 MB.
+- Sets the maximum size of a connectivity log file to 20 MB.
 
-- Sets the maximum size of the connectivity log directory to 1.5 GB.
+- Sets the maximum size of the connectivity log directory to 1.5 GB.
 
-- Sets the maximum age of a connectivity log file to 45 days.
+- Sets the maximum age of a connectivity log file to 45 days.
 
 ```powershell
 Set-TransportService Mailbox01 -ConnectivityLogPath "D:\Hub Connectivity Log" -ConnectivityLogMaxFileSize 20MB -ConnectivityLogMaxDirectorySize 1.5GB -ConnectivityLogMaxAge 45.00:00:00

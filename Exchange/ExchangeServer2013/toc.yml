@@ -195,7 +195,7 @@
           href: the-local-computer-is-responsible-for-expanding-group-membership-serverisgroupexpansionserver-exchange-2013-help.md
         - name: The local computer is responsible for expanding group membership_ServerIsDynamicGroupExpansionServer
           href: ./serverisdynamicgroupexpansionserver-exchange-2013-help.md
-        - name: The fully-qualified domain name of the computer matches a recipient policy_ServerFQDNMatchesSMTPPolicy
+        - name: The fully qualified domain name of the computer matches a recipient policy_ServerFQDNMatchesSMTPPolicy
           href: ./serverfqdnmatchessmtppolicy-exchange-2013-help.md
         - name: Older database files present_SecondSGFilesExist
           href: older-database-files-present-secondsgfilesexist-exchange-2013-help.md
@@ -2565,11 +2565,11 @@
       - name: Change user throttling settings for all users in your organization
         href: change-user-throttling-settings-for-all-users-in-your-organization-exchange-2013-help.md
   - name: Exchange Server 2013 Management Pack Guide
-    href: /Exchange/Exchange/ExchangeServer2013/exchange-server-2013-management-pack-guide
+    href: /exchange/management/exchange-server-2013-management-pack-guide
   - name: Exchange Server 2013 Management Pack Health Sets
-    href: /Exchange/Exchange/ExchangeServer2013/exchange-2013-management-pack-health-sets
+    href: /exchange/management/health/exchange-2013-management-pack-health-sets
   - name: Exchange Server 2013 Technical Articles
-    href: /Exchange/Exchange/ExchangeServer2013/exchange-server-2013-technical-articles
+    href: /exchange/technical-articles/exchange-server-2013-technical-articles
   - name: About Exchange documentation
     href: about-exchange-documentation-exchange-2013-help.md
     items:

@@ -41,7 +41,7 @@ This topic provides guidance to help you answer these questions.
 
 Following are the basic categories of the size limits available for individual messages:
 
-- **Message header size limits**: These limits apply to the total size of all message header fields that are present in a message. The size of the message body or attachments isn't considered. Because the header fields are plain text, the size of the header is determined by the number of characters in each header field and by the total number of header fields. Each character of text consumes 1 byte.
+- **Message header size limits**: These limits apply to the total size of all message header fields that are present in a message. The size of the message body or attachments isn't considered. Because the header fields are plain text, the size of the header is determined by the number of characters in each header field and by the total number of header fields. Each character of text consumes 1 byte.
 
     > [!NOTE]
     > Some third-party firewalls or proxy servers apply their own message header size limits. These third-party firewalls or proxy servers may have difficulty processing messages that contain attachment file names that are greater than 50&nbsp;characters or attachment file names that contain non-US-ASCII characters.
@@ -90,14 +90,14 @@ The following tables show the message limits, including information about how to
 <tbody>
 <tr class="odd">
 <td><p>Maximum size for messages received</p></td>
-<td><p>10 MB</p></td>
+<td><p>10 MB</p></td>
 <td><p>Cmdlet: <strong>Set-TransportConfig</strong></p>
 <p>Parameter: <em>MaxReceiveSize</em></p></td>
 <td><p><strong>Mail flow</strong> &gt; <strong>Receive connectors</strong> &gt; <strong>More options</strong> <img src="images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif" title="More Options Icon" alt="More Options Icon" /> &gt; <strong>Organization transport settings</strong> &gt; <strong>Limits</strong> tab &gt; <strong>Maximum receive message size</strong></p></td>
 </tr>
 <tr class="even">
 <td><p>Maximum size for messages sent</p></td>
-<td><p>10 MB</p></td>
+<td><p>10 MB</p></td>
 <td><p>Cmdlet: <strong>Set-TransportConfig</strong></p>
 <p>Parameter: <em>MaxSendSize</em></p></td>
 <td><p><strong>Mail flow</strong> &gt; <strong>Receive connectors</strong> &gt; <strong>More options</strong> <img src="images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif" title="More Options Icon" alt="More Options Icon" /> &gt; <strong>Organization transport settings</strong> &gt; <strong>Limits</strong> tab &gt; <strong>Maximum send message size</strong></p></td>
@@ -150,7 +150,7 @@ The following tables show the message limits, including information about how to
 <tbody>
 <tr class="odd">
 <td><p>Maximum header size through a Receive connector</p></td>
-<td><p>128 KB</p></td>
+<td><p>128 KB</p></td>
 <td><p>Cmdlets: <strong>New-ReceiveConnector</strong>, <strong>Set-ReceiveConnector</strong></p>
 <p>Parameter: <em>MaxHeaderSize</em></p></td>
 <td><p>N/A</p>
@@ -164,10 +164,10 @@ The following tables show the message limits, including information about how to
 
 </td>
 <td><p><strong>Transport service on Mailbox servers</strong></p>
-<p>35 MB for the Default and Client Proxy Receive connectors</p>
+<p>35 MB for the Default and Client Proxy Receive connectors</p>
 <p><strong>Front End Transport service on Client Access servers</strong></p>
-<p>36 MB for the Default Frontend and Outbound Proxy Frontend Receive connectors.</p>
-<p>35 MB for the Client Frontend Receive connector.</p></td>
+<p>36 MB for the Default Frontend and Outbound Proxy Frontend Receive connectors.</p>
+<p>35 MB for the Client Frontend Receive connector.</p></td>
 <td><p>Cmdlets: <strong>New-ReceiveConnector</strong>, <strong>Set-ReceiveConnector</strong></p>
 <p>Parameter: <em>MaxMessageSize</em></p></td>
 <td><p><strong>Mail flow</strong> &gt; <strong>Receive connectors</strong> &gt; <strong>Edit</strong><img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" /> &gt; <strong>General</strong> tab &gt; <strong>Maximum receive message size</strong></p></td>
@@ -190,7 +190,7 @@ The following tables show the message limits, including information about how to
 </tr>
 <tr class="even">
 <td><p>Maximum message size through a Send connector</p></td>
-<td><p>10 MB</p></td>
+<td><p>10 MB</p></td>
 <td><p>Cmdlets: <strong>New-SendConnector</strong>, <strong>Set-SendConnector</strong></p>
 <p>Parameter: <em>MaxMessageSize</em></p></td>
 <td><p><strong>Mail flow</strong> &gt; <strong>Send connectors</strong> &gt; <strong>Edit</strong><img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" /> &gt; <strong>General</strong> tab &gt; <strong>Maximum send message size</strong></p>
@@ -239,7 +239,7 @@ The following tables show the message limits, including information about how to
 <tbody>
 <tr class="odd">
 <td><p>Maximum header size for messages in the pickup directory</p></td>
-<td><p>64 KB</p></td>
+<td><p>64 KB</p></td>
 <td><p>Cmdlet: <strong>Set-TransportService</strong></p>
 <p>Parameter: <em>PickupDirectoryMaxHeaderSize</em></p></td>
 <td><p>N/A</p></td>
@@ -253,9 +253,9 @@ The following tables show the message limits, including information about how to
 </tr>
 <tr class="odd">
 <td><p>Client-specific maximum messages size limits for Outlook Web App, Exchange ActiveSync, and Exchange Web Services clients</p></td>
-<td><p>Outlook Web App   35 MB</p>
-<p>Exchange ActiveSync   10 MB</p>
-<p>Exchange Web Services   64 MB</p>
+<td><p>Outlook Web App   35 MB</p>
+<p>Exchange ActiveSync   10 MB</p>
+<p>Exchange Web Services   64 MB</p>
 
 > [!NOTE]
 > These values are approximately 33% larger than the actual usable maximum message size because of the overhead that's associated with Base64 encoding.
@@ -308,7 +308,7 @@ The following tables show the message limits, including information about how to
 <tr class="even">
 <td><p>Maximum message size that can be sent to this recipient</p></td>
 <td><p>Unlimited</p>
-<p>For site mailbox provisioning policies: 36 MB</p></td>
+<p>For site mailbox provisioning policies: 36 MB</p></td>
 <td><p>Cmdlets:</p>
 <p><strong>Set-DistributionGroup</strong></p>
 <p><strong>Set-DynamicDistributionGroup</strong></p>

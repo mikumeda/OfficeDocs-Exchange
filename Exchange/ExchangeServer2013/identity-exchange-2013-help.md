@@ -8,7 +8,7 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 ms.topic: article
-description: Using the Identity parameter with cmdlets in Exchange Server 
+description: Using the Identity parameter with cmdlets in Exchange Server 
 author: msdmaguire
 f1.keywords:
 - NOCSH
@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The *Identity* parameter is a special parameter that you can use with most cmdlets. The *Identity* parameter gives you access to the unique identifiers that refer to a specific object in Microsoft Exchange Server 2013. This capability lets you perform actions on a specific Exchange 2013 object.
+The *Identity* parameter is a special parameter that you can use with most cmdlets. The *Identity* parameter gives you access to the unique identifiers that refer to a specific object in Microsoft Exchange Server 2013. This capability lets you perform actions on a specific Exchange 2013 object.
 
 The following sections describe the Identity parameter and provide examples of how you can use it effectively:
 

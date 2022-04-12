@@ -23,8 +23,8 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because the logged-on user is not a member of the local computer's administrators group.
+Microsoft® Exchange Server 2007 setup cannot continue because the logged-on user is not a member of the local computer's administrators group.
 
-Exchange 2007 setup requires that the logged-on user who installs Microsoft Exchange has full access to the local computer.
+Exchange 2007 setup requires that the logged-on user who installs Microsoft Exchange has full access to the local computer.
 
 To resolve this issue, log on to the computer by using an account that has local administrator access and then rerun Microsoft Exchange setup.

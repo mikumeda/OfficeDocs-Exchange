@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-In Microsoft Exchange Server 2013, Information Rights Management (IRM) allows Microsoft Outlook 2010 and later and Microsoft Office Outlook Web App users to protect their messages. You can create Outlook protection rules to automatically apply IRM-protection to messages before they're sent from an Outlook 2010 client. You can also create transport protection rules to apply IRM protection to messages in transit that match the rule conditions.
+In Microsoft Exchange Server 2013, Information Rights Management (IRM) allows Microsoft Outlook 2010 and later and Microsoft Office Outlook Web App users to protect their messages. You can create Outlook protection rules to automatically apply IRM-protection to messages before they're sent from an Outlook 2010 client. You can also create transport protection rules to apply IRM protection to messages in transit that match the rule conditions.
 
 To learn about Outlook protection rules, see [Outlook protection rules](outlook-protection-rules-exchange-2013-help.md).
 
@@ -33,7 +33,7 @@ To learn more about journaling, see [Journaling](journaling-exchange-2013-help.m
 
 ## Journal report decryption
 
-Journal report decryption allows you to save a clear-text copy of IRM-protected messages in journal reports, along with the original, IRM-protected message. If the IRM-protected message contains any supported attachments that were protected by the Active Directory Rights Management Services (AD RMS) cluster in your organization, the attachments are also decrypted.
+Journal report decryption allows you to save a clear-text copy of IRM-protected messages in journal reports, along with the original, IRM-protected message. If the IRM-protected message contains any supported attachments that were protected by the Active Directory Rights Management Services (AD RMS) cluster in your organization, the attachments are also decrypted.
 
 > [!IMPORTANT]
 > To use journal report decryption, you must have an Exchange Enterprise client access license (CAL). Journal report decryption only supports premium journaling.
@@ -58,7 +58,7 @@ The agent decrypts the following types of IRM-protected messages:
 
 ## Configuring journal report decryption
 
-Journal report decryption is configuredb using the [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration) cmdlet in the Exchange Management Shell. However, before you configure journal report decryption, you must assign Exchange 2013 servers the permissions to decrypt content that's IRM-protected by your AD RMS server. To do this, you add the Federation mailbox to the super users group configured on your organization's AD RMS cluster. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
+Journal report decryption is configuredb using the [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration) cmdlet in the Exchange Management Shell. However, before you configure journal report decryption, you must assign Exchange 2013 servers the permissions to decrypt content that's IRM-protected by your AD RMS server. To do this, you add the Federation mailbox to the super users group configured on your organization's AD RMS cluster. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
 
 > [!IMPORTANT]
 > In cross-forest AD&nbsp;RMS deployments where you have an AD&nbsp;RMS cluster deployed in each forest, you must add the Federation mailbox to the super users group on the AD&nbsp;RMS cluster in each forest to allow Exchange 2013 Transport service to decrypt the messages protected against each AD&nbsp;RMS cluster.

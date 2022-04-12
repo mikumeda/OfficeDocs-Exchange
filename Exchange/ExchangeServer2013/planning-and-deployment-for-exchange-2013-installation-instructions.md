@@ -45,7 +45,7 @@ Use the following links to access information to help you plan the deployment of
 
 - [Anti-malware protection](anti-malware-protection-exchange-2013-help.md): Read this topic to understand anti-malware protection options for Exchange 2013.
 
-- [Exchange Server Hybrid Deployments](../ExchangeHybrid/exchange-hybrid.md): Read this topic to help you with planning a hybrid deployment with Microsoft Office 365 and your on-premises Exchange 2013 organization.
+- [Exchange Server Hybrid Deployments](../ExchangeHybrid/exchange-hybrid.md): Read this topic to help you with planning a hybrid deployment with Microsoft Office 365 and your on-premises Exchange 2013 organization.
 
 - [Planning for high availability and site resilience](planning-for-high-availability-and-site-resilience-exchange-2013-help.md): Read this topic to help you with planning to achieve your high availability and business continuity requirements.
 

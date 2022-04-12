@@ -68,7 +68,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](/powershell/mod
 
 To verify that you've successfully enabled an on-premises archive for an existing mailbox, do one of the following:
 
-- In the EAC, navigate to **Recipients**  \> **Mailboxes** and select the mailbox you want. In the details pane, under **In-Place Archive**, click **View Details** and verify the archive's quota settings.
+- In the EAC, navigate to **Recipients**  \> **Mailboxes** and select the mailbox you want. In the details pane, under **In-Place Archive**, click **View Details** and verify the archive's quota settings.
 
 - In the Shell, run the following command to display quota information about the archive.
 

@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-In Microsoft Exchange Server 2013 and Exchange Online, Exchange Search includes filters for indexing most common types of file formats included as message attachments. You can also install filters to index additional file types.
+In Microsoft Exchange Server 2013 and Exchange Online, Exchange Search includes filters for indexing most common types of file formats included as message attachments. You can also install filters to index additional file types.
 
 > [!NOTE]
 > In Exchange 2013, it isn't required to install and register Microsoft Office Filter Pack.<BR>By default, the maximum size file that can be indexed by Exchange Server 2013 on-premises is 32 MB. To increase this size limit, you must add the following registry key on all CAS and multi-role servers in your organization:<BR><CODE>@"SOFTWARE\Microsoft\ExchangeServer\V15\Search\SystemParameters" DWORD: "MaxAttachmentSize"</CODE>

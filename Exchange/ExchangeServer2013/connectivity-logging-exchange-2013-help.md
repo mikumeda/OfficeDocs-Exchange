@@ -37,11 +37,11 @@ You use the **Set-TransportService**, **Set-FrontEndTransportService** and **Set
 
 - Specify the location of the connectivity log files.
 
-- Specify a maximum size for the individual connectivity log files. The default size is 10 megabytes (MB).
+- Specify a maximum size for the individual connectivity log files. The default size is 10 megabytes (MB).
 
-- Specify a maximum size for the directory that contains connectivity log files. The default size is 1000 MB.
+- Specify a maximum size for the directory that contains connectivity log files. The default size is 1000 MB.
 
-- Specify a maximum age for the connectivity log files. The default age is 30 days.
+- Specify a maximum age for the connectivity log files. The default age is 30 days.
 
 By default, Exchange uses circular logging to limit the connectivity logs based on file size and file age to help control the hard disk space used by the connectivity log files.
 
@@ -57,7 +57,7 @@ By default, the connectivity log files exist in the following locations:
 
 The naming convention for the connectivity log files is CONNECTLOG*yyymmdd-nnnn*.log. The placeholders represent the following information:
 
-- The placeholder *yyyymmdd* is the Coordinated Universal Time (UTC) date that the log file was created. The placeholder *yyyy* = year, *mm* = month, and *dd* = day.
+- The placeholder *yyyymmdd* is the Coordinated Universal Time (UTC) date that the log file was created. The placeholder *yyyy* = year, *mm* = month, and *dd* = day.
 
 - The placeholder *nnnn* is an instance number that starts at the value of 1 for each day.
 
@@ -113,9 +113,9 @@ The connectivity log stores each outbound transport service connection event on 
 <td><p><strong>direction</strong></p></td>
 <td><p>Single character that represents the start, middle, or end of the connection. The possible values for the direction field are as follows:</p>
 <ul>
-<li><p><strong>+</strong>   Connect</p></li>
-<li><p><strong>-</strong>   Disconnect</p></li>
-<li><p><strong>&gt;</strong>   Send</p></li>
+<li><p><strong>+</strong>   Connect</p></li>
+<li><p><strong>-</strong>   Disconnect</p></li>
+<li><p><strong>&gt;</strong>   Send</p></li>
 </ul></td>
 </tr>
 <tr class="even">

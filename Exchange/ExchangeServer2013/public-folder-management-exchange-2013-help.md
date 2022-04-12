@@ -104,7 +104,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="mail-enabled-public-folders-role-exchange-2013-help.md">Mail Enabled Public Folders role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -113,7 +113,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="public-folders-role-exchange-2013-help.md">Public Folders role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

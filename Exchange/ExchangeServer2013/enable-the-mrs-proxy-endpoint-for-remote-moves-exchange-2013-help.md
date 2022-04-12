@@ -47,7 +47,7 @@ The Client Access server on which to enable the MRS Proxy endpoint depends on th
 
 ## Use the EAC to enable the MRS Proxy endpoint
 
-1. In the EAC, navigate to **Recipients** \> **Servers** \> **Virtual Directories**.
+1. In the EAC, navigate to **Recipients** \> **Servers** \> **Virtual Directories**.
 
 2. In the **Select server** drop-down list, select the name of the Client Access server on which you want to enable the MRS Proxy endpoint. Or select **All servers** to display the virtual directories on all Client Access servers in your organization.
 
@@ -78,7 +78,7 @@ Get-WebServicesVirtualDirectory | Set-WebServicesVirtualDirectory -MRSProxyEnabl
 
 To verify that you've successfully enabled the MRS Proxy endpoint, do one of the following:
 
-1. In the EAC, navigate to **Recipients** \> **Servers** \> **Virtual Directories**.
+1. In the EAC, navigate to **Recipients** \> **Servers** \> **Virtual Directories**.
 
 2. In the list of virtual directories, click **EWS (Default Web Site)** and verify in the details pane that the MRS Proxy endpoint is enabled.
 

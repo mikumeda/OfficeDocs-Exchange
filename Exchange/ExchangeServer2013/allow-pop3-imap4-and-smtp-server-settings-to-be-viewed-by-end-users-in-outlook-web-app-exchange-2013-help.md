@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-If you have users who use POP3 or IMAP4 to connect to their Microsoft Exchange Server 2013 mailboxes, they need to know the correct server settings to connect. After a default Exchange 2013 installation, your users can't look up their own incoming POP3 or IMAP4 server settings or outgoing SMTP server settings. However, you can configure Exchange so that your users can look up their own settings using Microsoft Outlook Web App.
+If you have users who use POP3 or IMAP4 to connect to their Microsoft Exchange Server 2013 mailboxes, they need to know the correct server settings to connect. After a default Exchange 2013 installation, your users can't look up their own incoming POP3 or IMAP4 server settings or outgoing SMTP server settings. However, you can configure Exchange so that your users can look up their own settings using Microsoft Outlook Web App.
 
 After you perform these procedures, your users can look up their server settings in Outlook Web App as follows:
 

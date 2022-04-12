@@ -73,7 +73,10 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
    - Click the **Include unsearchable items** checkbox to include mailbox items that couldn't be searched (for example, messages with attachments of file types that couldn't be indexed by Exchange Search). Unsearchable items are exported to a separate PST file.
 
      > [!IMPORTANT]
-     > Including unsearchable items when you export eDiscovery search results takes longer when mailboxes contain a lot of unsearchable items. To reduce the time it takes to export search results and prevent large PST export files, consider the following recommendations: <br/>• Create multiple eDiscovery searches that each search a fewer number of source mailboxes. <br/>• If you're exporting all mailbox content within a specific date range (by not specifying any keywords in the search criteria), then all unsearchable items within that date range will be automatically included in the search results. Therefore, don't select the **Include unsearchable items** checkbox.
+     > Including unsearchable items when you export eDiscovery search results takes longer when mailboxes contain a lot of unsearchable items. To reduce the time it takes to export search results and prevent large PST export files, consider the following recommendations:
+     >
+     > - Create multiple eDiscovery searches that each search a fewer number of source mailboxes.
+     > - If you're exporting all mailbox content within a specific date range (by not specifying any keywords in the search criteria), then all unsearchable items within that date range will be automatically included in the search results. Therefore, don't select the **Include unsearchable items** checkbox.
 
 4. Click **Start** to export the search results to a PST file.
 

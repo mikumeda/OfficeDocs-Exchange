@@ -20,7 +20,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The Microsoft Exchange Server 2013 Management Pack provides comprehensive service health information for your Exchange organization.
+The Microsoft Exchange Server 2013 Management Pack provides comprehensive service health information for your Exchange organization.
 
 The Exchange 2013 Management Pack is engineered for organizations that include servers running Exchange 2013. The key feature of this management pack is *user focused monitoring*. The simplified dashboard focuses on the user experience and makes it easier for you quickly determine exactly what your users are experiencing.
 

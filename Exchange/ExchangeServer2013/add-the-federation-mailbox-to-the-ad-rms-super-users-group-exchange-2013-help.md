@@ -21,7 +21,7 @@ _**Applies to:** Exchange Server 2013_
 
 For the following Microsoft Exchange Server 2013 Information Rights Management (IRM) features to be enabled, you must add the Federation mailbox (a system mailbox created by Exchange 2013 Setup) to the super users group on your organization's [Active Directory Rights Management Services (AD RMS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831364(v=ws.11)) cluster:
 
-- IRM in Microsoft Office Outlook Web App
+- IRM in Microsoft Office Outlook Web App
 
 - IRM in Exchange ActiveSync
 
@@ -29,7 +29,7 @@ For the following Microsoft Exchange Server 2013 Information Rights Management (
 
 - Transport decryption
 
-You can configure a mail-enabled distribution group as a super users group in AD RMS. Members of the distribution group are granted an owner use license when they request a license from the AD RMS cluster. This allows them to decrypt all RMS-protected content published by that cluster. Whether you use an existing distribution group or create a distribution group and configure it as the super users group in AD RMS, we recommend that you dedicate the distribution group for this purpose and configure the appropriate settings to approve, audit, and monitor membership changes.
+You can configure a mail-enabled distribution group as a super users group in AD RMS. Members of the distribution group are granted an owner use license when they request a license from the AD RMS cluster. This allows them to decrypt all RMS-protected content published by that cluster. Whether you use an existing distribution group or create a distribution group and configure it as the super users group in AD RMS, we recommend that you dedicate the distribution group for this purpose and configure the appropriate settings to approve, audit, and monitor membership changes.
 
 > [!WARNING]
 > Configuring a super users group in AD RMS allows group members to decrypt IRM-protected content. We recommend that you take adequate measures to control and monitor group membership and enable auditing to track membership changes.
@@ -42,9 +42,9 @@ For additional management tasks related to IRM, see [Information Rights Manageme
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Distribution groups" entry in the [Recipients Permissions](recipients-permissions-exchange-2013-help.md) topic.
 
-- An AD RMS cluster must be deployed in the Active Directory forest.
+- An AD RMS cluster must be deployed in the Active Directory forest.
 
-- If a super users group is already configured on an AD RMS cluster, any modifications to the distribution group membership can take up to 24 hours to be refreshed by the AD RMS cluster. This is a result of caching the group membership on the cluster.
+- If a super users group is already configured on an AD RMS cluster, any modifications to the distribution group membership can take up to 24 hours to be refreshed by the AD RMS cluster. This is a result of caching the group membership on the cluster.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
@@ -53,9 +53,9 @@ For additional management tasks related to IRM, see [Information Rights Manageme
 
 ## Step 1: Use the Shell to add the Federation mailbox to a distribution group
 
-If a distribution group has been created and configured as a super users group in the AD RMS cluster, you can add the Exchange 2013 Federation mailbox as a member of that group. If a super users group isn't configured, you must create a distribution group and add the Federation mailbox as a member.
+If a distribution group has been created and configured as a super users group in the AD RMS cluster, you can add the Exchange 2013 Federation mailbox as a member of that group. If a super users group isn't configured, you must create a distribution group and add the Federation mailbox as a member.
 
-1. Create a distribution group dedicated for use as an AD RMS super users group. For details, see [Create and manage distribution groups](../ExchangeOnline/recipients-in-exchange-online/manage-distribution-groups/manage-distribution-groups.md).
+1. Create a distribution group dedicated for use as an AD RMS super users group. For details, see [Create and manage distribution groups](../ExchangeOnline/recipients-in-exchange-online/manage-distribution-groups/manage-distribution-groups.md).
 
 2. Add the user **FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042** to the new distribution group. The Federation mailbox is a system mailbox, and therefore not visible in the EAC. To add it to a distribution group, you must use the [Add-DistributionGroupMember](/powershell/module/exchange/Add-DistributionGroupMember) cmdlet from the Shell.
 
@@ -69,9 +69,9 @@ For detailed syntax and parameter information, see [Add-DistributionGroupMember]
 
 ## Step 2: Use AD RMS to set up a super users group
 
-Perform the following procedure on an AD RMS cluster. The account used to perform this procedure must be a member of the AD RMS Enterprise Administrators local group on the AD RMS server.
+Perform the following procedure on an AD RMS cluster. The account used to perform this procedure must be a member of the AD RMS Enterprise Administrators local group on the AD RMS server.
 
-1. Open the Active Directory Rights Management Services console and expand the AD RMS cluster.
+1. Open the Active Directory Rights Management Services console and expand the AD RMS cluster.
 
 2. In the console tree, expand **Security Policies**, and then click **Super Users**.
 

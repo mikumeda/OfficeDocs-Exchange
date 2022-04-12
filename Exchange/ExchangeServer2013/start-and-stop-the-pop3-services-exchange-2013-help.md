@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-By default, the two POP3 services, the Microsoft Exchange POP3 service and the Microsoft Exchange POP3 Backend service, aren't started on computers running Microsoft Exchange Server 2013. You must start these two services to allow your email clients to connect to Exchange using POP3. When these services are running, Exchange 2013 accepts unsecured POP3 client communications on port 110 and over port 995 using Secure Sockets Layer (SSL).
+By default, the two POP3 services, the Microsoft Exchange POP3 service and the Microsoft Exchange POP3 Backend service, aren't started on computers running Microsoft Exchange Server 2013. You must start these two services to allow your email clients to connect to Exchange using POP3. When these services are running, Exchange 2013 accepts unsecured POP3 client communications on port 110 and over port 995 using Secure Sockets Layer (SSL).
 
 The Microsoft Exchange POP3 service runs on Exchange 2013 computers that are running the Client Access server role. The Microsoft Exchange POP3 Backend service runs on the Exchange 2013 computer that's running the Mailbox server role. In environments where the Client Access and Mailbox roles are running on the same computer, you manage both services on the same computer.
 

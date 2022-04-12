@@ -144,8 +144,8 @@ The following table describes the parameters that enable shadow redundancy.
 <td><p><em>RejectMessageOnShadowFailure</em> on <strong>Set-TransportConfig</strong></p></td>
 <td><p><code>$false</code></p></td>
 <td><ul>
-<li><p><code>$false</code>   When a shadow copy of the message can't be created, the primary message is accepted anyway by transport servers in the organization. Those messages aren't redundantly persisted while they're in transit.</p></li>
-<li><p><code>$true</code>   No message is accepted or acknowledged by any transport server in the organization until a shadow copy of the message is successfully created. If a shadow copy of the message can't be created, the primary message is rejected with a transient error. All messages in the organization are redundantly persisted while they're in transit.</p>
+<li><p><code>$false</code>   When a shadow copy of the message can't be created, the primary message is accepted anyway by transport servers in the organization. Those messages aren't redundantly persisted while they're in transit.</p></li>
+<li><p><code>$true</code>   No message is accepted or acknowledged by any transport server in the organization until a shadow copy of the message is successfully created. If a shadow copy of the message can't be created, the primary message is rejected with a transient error. All messages in the organization are redundantly persisted while they're in transit.</p>
 <p>You should set this value to <code>$true</code> only if you have multiple Exchange 2013 Mailbox servers in a DAG or Active Directory site where a shadow copy of the message can be created.</p></li>
 </ul>
 <p>This parameter is only meaningful when <em>ShadowRedundancyEnabled</em> is <code>$true</code>.</p></td>
@@ -233,8 +233,8 @@ The following table describes the parameters that control the creation of shadow
 <td><p><em>ShadowMessagePreferenceSetting</em> on <strong>Set-TransportConfig</strong></p></td>
 <td><p><code>PreferRemote</code></p></td>
 <td><ul>
-<li><p><code>PreferRemote</code>   Try to make a shadow copy of the message on a Mailbox server in a different Active Directory site. If the operation fails, try make a shadow copy of the message on a server in the local Active Directory site.</p></li>
-<li><p><code>LocalOnly</code>   A shadow copy of the message should only be made on a transport server in the local Active Directory site.</p></li>
+<li><p><code>PreferRemote</code>   Try to make a shadow copy of the message on a Mailbox server in a different Active Directory site. If the operation fails, try make a shadow copy of the message on a server in the local Active Directory site.</p></li>
+<li><p><code>LocalOnly</code>   A shadow copy of the message should only be made on a transport server in the local Active Directory site.</p></li>
 <li><p><code>RemoteOnly</code>: A shadow copy of the message should only be made on a transport server in a different Active Directory site.</p></li>
 </ul>
 <p>This parameter is only meaningful when the primary server that's trying to make a shadow copy of the message is a Mailbox server that's a member of a DAG that spans multiple Active Directory sites.</p></td>
@@ -274,21 +274,21 @@ The following table describes the parameters that control the creation of shadow
 </tr>
 <tr class="even">
 <td><p><em>ConnectionInactivityTimeout</em> on <strong>Set-ReceiveConnector</strong></p></td>
-<td><p>5 minutes in the Transport service on Mailbox servers</p>
-<p>5 minutes in the Front End Transport service on Client Access servers.</p>
-<p>1 minute on Edge Transport servers.</p></td>
+<td><p>5 minutes in the Transport service on Mailbox servers</p>
+<p>5 minutes in the Front End Transport service on Client Access servers.</p>
+<p>1 minute on Edge Transport servers.</p></td>
 <td><p>This parameter specifies the maximum time that an open SMTP connection with a source messaging server can remain idle before the connection is closed. The value of this parameter must be smaller than the value specified by the <em>ConnectionTimeout</em> parameter.</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>ConnectionTimeout</em> on <strong>Set-ReceiveConnector</strong></p></td>
-<td><p>10 minutes in the Transport service on Mailbox servers</p>
-<p>10 minutes in the Front End Transport service on Client Access servers.</p>
-<p>5 minutes on Edge Transport servers.</p></td>
+<td><p>10 minutes in the Transport service on Mailbox servers</p>
+<p>10 minutes in the Front End Transport service on Client Access servers.</p>
+<p>5 minutes on Edge Transport servers.</p></td>
 <td><p>This parameter specifies the maximum time that an SMTP connection with a source messaging server can remain open, even if the source messaging server is transmitting data. The value of this parameter must be larger than the value specified by the <em>ConnectionInactivityTimeout</em> parameter.</p></td>
 </tr>
 <tr class="even">
 <td><p><em>ConnectionInactivityTimeOut</em> on <strong>Set-SendConnector</strong></p></td>
-<td><p>10 minutes</p></td>
+<td><p>10 minutes</p></td>
 <td><p>This parameter specifies the maximum time that an open SMTP connection with a destination messaging server can remain idle before the connection is closed.</p></td>
 </tr>
 </tbody>
@@ -300,9 +300,9 @@ After a shadow message is successfully created, the work of shadow redundancy ha
 
 When the primary server successfully transmits the message to the next hop, and the next hop acknowledges receipt of the message, the primary server updates the *discard status* of the message as delivery complete. The discard status is basically a message that contains of list of messages that are being monitored. A successfully delivered message doesn't need to be kept in a shadow queue, so once the shadow server knows the primary server has successfully transmitted the message to the next hop, the shadow server moves the shadow message from the shadow queue into Safety Net.
 
-The shadow server determines the discard status of the shadow messages in its shadow queues by querying the primary server. If the shadow server opens an SMTP session with the primary server for any reason, including the transmission of other unrelated messages, the shadow server issues the **XQDISCARD** command to determine the discard status of the primary messages. If the shadow server hasn't opened an SMTP session with the primary server after a preconfigured time interval, the shadow server will open an SMTP session with the primary server and issue the **XQDISCARD** command. The time interval is controlled by the *ShadowHeartbeatFrequentcy* parameter on the **Set-TransportConfig** cmdlet. The default value is 2 minutes. After the shadow server opens an SMTP session with the primary server, the primary server responds with the *discard notifications* for messages that apply to the querying shadow server. In Exchange 2013, discard notifications are stored on disk, not in memory. Therefore, if the Microsoft Exchange Transport service restarts, the discard notifications are persisted. After the service starts, the primary server still knows about the messages it successfully processed, and that information is available to the shadow server.
+The shadow server determines the discard status of the shadow messages in its shadow queues by querying the primary server. If the shadow server opens an SMTP session with the primary server for any reason, including the transmission of other unrelated messages, the shadow server issues the **XQDISCARD** command to determine the discard status of the primary messages. If the shadow server hasn't opened an SMTP session with the primary server after a preconfigured time interval, the shadow server will open an SMTP session with the primary server and issue the **XQDISCARD** command. The time interval is controlled by the *ShadowHeartbeatFrequentcy* parameter on the **Set-TransportConfig** cmdlet. The default value is 2 minutes. After the shadow server opens an SMTP session with the primary server, the primary server responds with the *discard notifications* for messages that apply to the querying shadow server. In Exchange 2013, discard notifications are stored on disk, not in memory. Therefore, if the Microsoft Exchange Transport service restarts, the discard notifications are persisted. After the service starts, the primary server still knows about the messages it successfully processed, and that information is available to the shadow server.
 
-The SMTP communication between the shadow server and the primary server is used as the *heartbeat* that determines the availability of the servers. If the shadow server can't open an SMTP session with the primary server after a preconfigured time interval, or if the transport database of the primary server has a different database ID, the shadow server promotes itself as the primary server, promotes the shadow messages as primary messages, and transmits the messages to the next hop. The time interval is controlled by the *ShadowResubmitTimeSpan* parameter on the **Set-TransportConfig** cmdlet. The default value is 3 hours.
+The SMTP communication between the shadow server and the primary server is used as the *heartbeat* that determines the availability of the servers. If the shadow server can't open an SMTP session with the primary server after a preconfigured time interval, or if the transport database of the primary server has a different database ID, the shadow server promotes itself as the primary server, promotes the shadow messages as primary messages, and transmits the messages to the next hop. The time interval is controlled by the *ShadowResubmitTimeSpan* parameter on the **Set-TransportConfig** cmdlet. The default value is 3 hours.
 
 *Shadow Redundancy Manager* is the core component of an Exchange 2013 transport server that's responsible for managing shadow redundancy. Shadow Redundancy Manager is responsible for maintaining the following information for all the primary messages that a server is currently processing:
 
@@ -397,7 +397,7 @@ The following table summarizes how shadow redundancy reacts to these two scenari
 <tr class="odd">
 <td><p>Mailbox01 comes back online with a new database.</p></td>
 <td><p>When Mailbox01 becomes unavailable, each server that has shadow messages queued for Mailbox01 will assume ownership of those messages and resubmit them. The messages then get delivered to their destinations.</p>
-<p>The maximum delay for messages is the value of the <em>ShadowHeartbeatFrequency</em> parameter on the <strong>Set-TransportConfig</strong> cmdlet. The default value is 2 minutes.</p></td>
+<p>The maximum delay for messages is the value of the <em>ShadowHeartbeatFrequency</em> parameter on the <strong>Set-TransportConfig</strong> cmdlet. The default value is 2 minutes.</p></td>
 </tr>
 <tr class="even">
 <td><p>Mailbox01 comes back online with the same database.</p></td>

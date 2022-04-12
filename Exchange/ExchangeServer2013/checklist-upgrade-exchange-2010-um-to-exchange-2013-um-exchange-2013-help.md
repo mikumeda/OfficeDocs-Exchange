@@ -29,7 +29,7 @@ Before you start working with this checklist, make sure you're familiar with the
 
   - [Connect your voice mail system to your telephone network](../ExchangeOnline/voice-mail-unified-messaging/connect-voice-mail-system/connect-voice-mail-system.md)
 
-For step-by-step guidance about how to upgrade from Exchange 2007 UM to Exchange 2013 UM, see [Upgrade Exchange 2007 UM to Exchange 2013 UM](upgrade-exchange-2007-um-to-exchange-2013-um-exchange-2013-help.md). 
+For step-by-step guidance about how to upgrade from Exchange 2007 UM to Exchange 2013 UM, see [Upgrade Exchange 2007 UM to Exchange 2013 UM](upgrade-exchange-2007-um-to-exchange-2013-um-exchange-2013-help.md). 
 
 ## Checklist for upgrading Exchange 2010 UM to Exchange 2013 UM
 
@@ -53,17 +53,17 @@ For step-by-step guidance about how to upgrade from Exchange 2007 UM to Exchange
 <td><p><a href="connect-um-to-your-telephone-system-exchange-2013-help.md">Connect UM to your telephone system</a></p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Review the system requirements before installing Exchange 2013.</p></td>
 <td><p><a href="exchange-2013-system-requirements-exchange-2013-help.md">Exchange 2013 system requirements</a></p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Verify that you meet the prerequisites for installation.</p></td>
 <td><p><a href="exchange-2013-prerequisites-exchange-2013-help.md">Exchange 2013 prerequisites</a></p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Install the required Client Access and Mailbox servers.</p>
 
 > [!WARNING]
@@ -78,12 +78,12 @@ For step-by-step guidance about how to upgrade from Exchange 2007 UM to Exchange
 <td><p><a href="verify-an-exchange-2013-installation-exchange-2013-help.md">Verify an Exchange 2013 installation</a></p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>If required, install the required UM language packs.</p></td>
 <td><p><a href="install-a-um-language-pack-exchange-2013-help.md">Install a UM language pack</a></p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Move the Exchange 2010 system mailbox used for UM custom prompts to Exchange 2013.</p></td>
 <td><p><a href="mailbox-moves-in-exchange-2013-exchange-2013-help.md">Mailbox moves in Exchange 2013</a></p>
 
@@ -98,7 +98,7 @@ For step-by-step guidance about how to upgrade from Exchange 2007 UM to Exchange
 <td><p><a href="deploying-certificates-for-um-exchange-2013-help.md">Deploying certificates for UM</a></p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Configure the UM startup mode on all Exchange 2013 Client Access servers.</p></td>
 <td><p><a href="configure-the-startup-mode-on-a-client-access-server-exchange-2013-help.md">Configure the startup mode on a Client Access server</a></p></td>
 </tr>
@@ -131,24 +131,24 @@ For step-by-step guidance about how to upgrade from Exchange 2007 UM to Exchange
 <p><a href="/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/manage-um-auto-attendant">Manage a UM auto attendant</a></p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Create or configure UM mailbox policies.</p></td>
 <td><p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/create-um-mailbox-policy">Create a UM mailbox policy</a></p>
 <p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/manage-um-mailbox-policy">Manage a UM mailbox policy</a></p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Move existing UM-enabled mailboxes to Exchange 2013.</p></td>
 <td><p><a href="mailbox-moves-in-exchange-2013-exchange-2013-help.md">Mailbox moves in Exchange 2013</a></p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Enable new users for UM or configure settings for an existing UM-enabled user.</p></td>
 <td><p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail">Enable a user for voice mail</a></p>
 <p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/manage-voice-mail-settings">Manage voice mail settings for a user</a></p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Configure your VoIP gateways, IP PBXs, and SIP-enabled PBXs to send all incoming calls to the Exchange 2013 Client Access servers.</p></td>
 <td><p><a href="/exchange/voice-mail-unified-messaging/telephone-system-integration-with-um/configuration-notes-for-voip-gateways">Configuration notes for supported VoIP gateways, IP PBXs, and PBXs</a> <a href="connect-a-voip-gateway-ip-pbx-or-session-border-controller-to-um-exchange-2013-help.md">Connect a VoIP gateway, IP PBX, or session border controller to UM</a></p></td>
 </tr>

@@ -128,7 +128,7 @@ When you click most tabs, you'll see a toolbar. The toolbar has icons that perfo
 <td><p>Use this icon to view more actions you can perform for that tab's objects. For example, in <strong>Recipients</strong> &gt; <strong>Mailboxes</strong> clicking this icon shows the following options: <strong>Disable</strong>, <strong>Add/Remove columns</strong>, <strong>Export data to a CSV file</strong>, <strong>Connect a mailbox</strong>, and <strong>Advanced search</strong>.</p></td>
 </tr>
 <tr class="odd">
-<td><p><img src="images/JJ150576.1732c727-328b-4a1a-b84d-6d7252c7dcab(EXCHG.150).gif" title="Up Arrow Icon" alt="Up Arrow Icon" />   <img src="images/JJ150576.ef5ca57d-a033-457b-bd92-6361877c33d0(EXCHG.150).gif" title="Down Arrow Icon" alt="Down Arrow Icon" /></p></td>
+<td><p><img src="images/JJ150576.1732c727-328b-4a1a-b84d-6d7252c7dcab(EXCHG.150).gif" title="Up Arrow Icon" alt="Up Arrow Icon" />   <img src="images/JJ150576.ef5ca57d-a033-457b-bd92-6361877c33d0(EXCHG.150).gif" title="Down Arrow Icon" alt="Down Arrow Icon" /></p></td>
 <td><p>Up arrow and down arrow</p></td>
 <td><p>Use these icons to move an object's priority up or down. For example, in <strong>Mail flow</strong> &gt; <strong>Email address policies</strong> click the up arrow to raise the priority of an email address policy. You can also use these arrows to navigate the public folder hierarchy and to move rules up or down in the list view.</p></td>
 </tr>

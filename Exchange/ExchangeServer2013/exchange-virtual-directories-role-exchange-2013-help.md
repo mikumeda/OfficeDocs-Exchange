@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The `Exchange Virtual Directories` management role enables administrators to manage Microsoft Office Outlook Web App, Microsoft ActiveSync, offline address books (OABs), Autodiscover, Windows PowerShell, and Web administration interface virtual directories on individual servers.
+The `Exchange Virtual Directories` management role enables administrators to manage Microsoft Office Outlook Web App, Microsoft ActiveSync, offline address books (OABs), Autodiscover, Windows PowerShell, and Web administration interface virtual directories on individual servers.
 
 ## Default management role assignments
 
@@ -73,7 +73,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="even">
 <td><p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

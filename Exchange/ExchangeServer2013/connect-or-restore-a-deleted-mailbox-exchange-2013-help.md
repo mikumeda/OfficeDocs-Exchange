@@ -67,7 +67,7 @@ When you connect a deleted mailbox, you associate the mailbox with a user accoun
 
 The following procedure shows how to connect a deleted user mailbox to a user account. You can also use this procedure to connect linked mailboxes, resource mailboxes, and shared mailboxes that have been deleted to a user account.
 
-1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients** \> **Mailboxes**.
 
 2. Click **More** ![More Options Icon.](images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif "More Options Icon"), and then click **Connect a mailbox**.
 

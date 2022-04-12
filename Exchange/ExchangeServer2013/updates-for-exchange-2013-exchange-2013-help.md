@@ -144,7 +144,7 @@ Although there are both private (internal network) and public (external network)
 
 ### Browser Support for AppCache
 
-Internet Explorer 10 and Windows Store apps using JavaScript support the Application Cache API (or AppCache), as defined in the HTML5 specification, which allows you to create offline web applications. AppCache enables webpages to cache (or save) resources locally, including images, script libraries, style sheets, and so on. In addition, AppCache allows URLs to be served from cached content using standard Uniform Resource Identifier (URI) notation. The following is a list of the browsers that support AppCache:
+Internet Explorer 10 and Windows Store apps using JavaScript support the Application Cache API (or AppCache), as defined in the HTML5 specification, which allows you to create offline web applications. AppCache enables webpages to cache (or save) resources locally, including images, script libraries, style sheets, and so on. In addition, AppCache allows URLs to be served from cached content using standard Uniform Resource Identifier (URI) notation. The following is a list of the browsers that support AppCache:
 
 - Internet Explorer 10 or later versions
 

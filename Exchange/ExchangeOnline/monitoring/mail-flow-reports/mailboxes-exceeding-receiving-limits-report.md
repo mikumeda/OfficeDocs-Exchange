@@ -19,11 +19,11 @@ In the new Exchange Center (EAC), the Mailboxes exceeding receiving limits repor
 
 This report shows details on three categories of the Exchange Online receiving limit (see [Exchange Online limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#receiving-and-sending-limits)):
 
-  1. **Hot limit**: The general receiving limit. When a mailbox exceeds the overall receiving limit, they won’t receive any mail from the Internet or on-premises senders until the limit resets.
-  
-  2. **Sender-recipient pair limit**: The receiving limit per sender-recipient pair. When a mailbox exceeds the SRP limit, they won’t receive any mail from that sender, if the sender is from the Internet or on-premises.
-  
-  3. **Warm limit**: The logging-only limit that indicates when messages are ‘At risk’ of being blocked, set to 1000 messages per rolling hour. When a mailbox exceeds the warm limit, they aren't yet impacted but will be displayed in reporting for admin awareness. 
+  1. **Hot limit**: The general receiving limit. When a mailbox exceeds the overall receiving limit, they won't receive any mail from the Internet or on-premises senders until the limit resets.
+
+  2. **Sender-recipient pair limit**: The receiving limit per sender-recipient pair. When a mailbox exceeds the SRP limit, they won't receive any mail from that sender, if the sender is from the Internet or on-premises.
+
+  3. **Warm limit**: The logging-only limit that indicates when messages are 'At risk' of being blocked, set to 1000 messages per rolling hour. When a mailbox exceeds the warm limit, they aren't yet impacted but will be displayed in reporting for admin awareness.
 
 
 > [!NOTE]
@@ -38,30 +38,30 @@ There are two sections to this report:
        - **Hot limit**: Mailboxes won't receive any mail from the Internet or on-premises senders if the overall receiving limit is exceeded.
 
     2. When a mailbox is at risk, which means they've exceeded one or both of the below limits. This mailbox hasn't exceeded the receiving (Hot) limit yet but is receiving large volumes of messages regularly.
-    
+
        - **Sender-recipient pair (SRP) limit**: Mailboxes won't receive any mail from a specific sender if the mailbox has received too many messages from the sender. High volumes from specific senders should be paid attention to, as they can put the mailbox at risk of exceeding the receiving (Hot) limit.
-       
+
        - **Warm limit**: When a mailbox hasn't exceeded their limit yet but is receiving large volumes of messages regularly.
 
 2. A table that shows, in the selected time window:
 
    - The date
-   
+
    - The impacted mailbox
-   
-   - The limit type (Hot, SRP, or Warm) based on the user’s filter selection
-   
+
+   - The limit type (Hot, SRP, or Warm) based on the user's filter selection
+
    - The number of hours a mailbox has exceeded the limit
-   
-   - The number of hours a mailbox is at risk 
-   
+
+   - The number of hours a mailbox is at risk
+
    - The limit value, based on limit type
-   
+
    - The maximum number of messages they received per hour
-   
+
    - The top sender
-   
-  The report includes a filter on Limit type, allowing the user to display mailboxes that hit the Hot, SRP, or Warm limit separately. 
+
+  The report includes a filter on Limit type, allowing the user to display mailboxes that hit the Hot, SRP, or Warm limit separately.
 
 > [!NOTE]
 > The default view is for the last 24 hours for all types. If no data is showing, that means you had no mailboxes exceeding the limit (or at risk) in the last 24 hours.
