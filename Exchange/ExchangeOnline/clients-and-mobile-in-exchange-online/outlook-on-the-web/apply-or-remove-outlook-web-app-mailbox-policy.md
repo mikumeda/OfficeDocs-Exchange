@@ -6,7 +6,7 @@ author: JoanneHendrickson
 ms.author: jhendr
 ms.assetid: 51d8e269-b0d5-4bc7-9b3d-0460871e54fa
 ms.reviewer: 
-title: Apply or remove an Outlook on the web mailbox policy on a mailbox in Exchange Online
+title: Apply or remove mailbox policy on a mailbox in Exchange Online
 ms.collection: 
 - exchange-online
 - M365-email-calendar
@@ -18,7 +18,7 @@ manager: serdars
 
 ---
 
-# Apply or remove an Outlook on the web mailbox policy on a mailbox in Exchange Online for Outlook on the web and the new Outlook for Windows
+# Apply or remove mailbox policy on a mailbox in Exchange Online for Outlook on the web and the new Outlook for Windows
 
 Assigning an Outlook on the web mailbox policy to a mailbox controls the Outlook on the web (formerly known as Outlook Web App) and new Outlook for Windows experience for the user. You can apply Outlook on the web mailbox policies to one or more mailboxes or remove the policy assignments in the Exchange admin center (EAC) or Exchange Online PowerShell.
 
@@ -26,16 +26,16 @@ Assigning an Outlook on the web mailbox policy to a mailbox controls the Outlook
 
 - Estimated time to complete each procedure: 5 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) article.
 
 - To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
+- For information about keyboard shortcuts that may apply to the procedures in this article, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
-## Apply Outlook on the web mailbox policies to Outlook on the web and the new Outlook for Windows mailboxes
+## Apply mailbox policies to Outlook on the web and the new Outlook for Windows mailboxes
 
 ### Use the EAC to apply an Outlook on the web mailbox policy to a mailbox
 
@@ -61,7 +61,7 @@ Assigning an Outlook on the web mailbox policy to a mailbox controls the Outlook
 
      3. When you're finished, click **Save**.
 
-### Use Exchange Online PowerShell to apply a mailbox policy to Outlook on the web or the new Outlook or Windowsa mailboxes
+### Use Exchange Online PowerShell to apply a mailbox policy to Outlook on the web or the new Outlook or Windows mailboxes
 
 There are three basic methods you can use to apply a mailbox policy to Outlook on the web and the new Outlook for Windows mailboxes:
 
@@ -71,9 +71,9 @@ There are three basic methods you can use to apply a mailbox policy to Outlook o
     Set-CasMailbox -Identity <MailboxIdentity> -OwaMailboxPolicy "<Policy Name>"
     ```
 
-    This example applies the mailbox policy named Sales Associates to tony@contoso.com.
+    This example applies the mailbox policy named Sales Associates to tony@contoso.com for Outlook on the web and the new Outlook for Windows.
 
-    ```PowerShell for Outlook on the web and the new Outlook for Windows
+    ```PowerShell
     Set-CASMailbox -Identity tony@contoso.com -OwaMailboxPolicy "Sales Associates"
     ```
 
@@ -131,7 +131,7 @@ For detailed syntax and parameter information, see [Set-CASMailbox](/powershell/
 
 ### How do you know this worked?
 
-To verify that you've applied a mailbox for Outlook on the web and the new Outlook for Windows, use any of the following steps:
+To verify that you've applied a mailbox policy to a mailbox for Outlook on the web and the new Outlook for Windows, use any of the following steps:
 
 - In the EAC, go to **Recipients** \> **Mailboxes** and select the mailbox. In the Details pane, go to **Email Connectivity**, click **View details**, and verify the name of the policy in the **Outlook Web App mailbox policy** window that appears.
 

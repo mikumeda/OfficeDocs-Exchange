@@ -28,11 +28,11 @@ For more information about mailbox policies for Outlook on the web and the new O
 
 - Estimated time to complete each procedure: 3 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Outlook on the web mailbox policies" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) article.
 
 - To open the Exchange admin center (EAC), see [Exchange admin center in Exchange Online](../../exchange-admin-center.md). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
+- For information about keyboard shortcuts that may apply to the procedures in this article, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
@@ -41,7 +41,7 @@ For more information about mailbox policies for Outlook on the web and the new O
 
 1. In the EAC, go to **Permissions** \> **Outlook Web App policies** and select the policy that you want to view or configure.
 
-2. The Details pane show the enabled features in the policy. To see more information, click **Edit** ![Edit icon.](../../media/ITPro_EAC_EditIcon.png). In the properties window that opens you can view and configure the following settings:
+2. The Details pane shows the enabled features in the policy. To see more information, click **Edit** ![Edit icon.](../../media/ITPro_EAC_EditIcon.png). In the properties window that opens you can view and configure the following settings:
 
    - On the **General** tab, you can view and edit the name of the policy.
 

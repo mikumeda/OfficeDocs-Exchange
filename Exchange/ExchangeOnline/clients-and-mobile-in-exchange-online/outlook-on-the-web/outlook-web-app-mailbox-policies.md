@@ -27,4 +27,4 @@ Every Exchange Online organization has a default Outlook on the web mailbox poli
 For the procedures that you can do on Outlook on the web mailbox policies, see [Outlook on the web mailbox policy procedures in Exchange Online](outlook-web-app-mailbox-policy-procedures.md).
 
 > [!NOTE]
-> All mailbox policies set for **Outlook on the web** will also affect **new Outlook for Windows**.
+> **All mailbox policies set for Outlook on the web will also affect new Outlook for Windows**.

@@ -4,7 +4,7 @@ author: Benny-54
 ms.author: v-bshilpa
 manager: serdars
 ms.localizationpriority: medium
-description: Learn how to enable or disable the the new Outlook for Windows.
+description: Learn how to enable or disable the new Outlook for Windows.
 ms.topic: conceptual
 ms.assetid: 
 ms.reviewer: 
