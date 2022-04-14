@@ -317,7 +317,7 @@ If you're planning to have more to have hundreds of rooms, use multiple room lis
 > Although there is no hard limit to the number of rooms you can have in a Room List, the maximum number of rooms that can be returned in a request for a Room List is 100 (including when you're using Microsoft Teams to create a meeting invite). A possible workaround would be to further break down your rooms into smaller lists.
 
 > [!NOTE]
-> When using Microsoft Teams, the list of rooms could be shown in any particular order and not necessarily in alphabetical order as the internal process to get the list does not sort the output.
+> When using Microsoft Teams, the list of rooms displays in random order. The internal process to get the list doesn't sort the output, so the list may not be in alphabetical order.
 
 ### Use the Exchange Management Shell to create a room list
 
