@@ -31,6 +31,8 @@ For additional management tasks related to managing email client access to a mai
 
 - [Enable or Disable POP3 or IMAP4 access for a user](../../clients-and-mobile-in-exchange-online/pop3-and-imap4/enable-or-disable-pop3-or-imap4-access.md)
 
+Disabling access to Outlook on the web will also limit the use of the new Outlook for Windows.
+
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 2 minutes.
