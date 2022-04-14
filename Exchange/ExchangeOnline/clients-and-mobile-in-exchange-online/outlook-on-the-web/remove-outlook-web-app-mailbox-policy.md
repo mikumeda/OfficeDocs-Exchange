@@ -18,9 +18,9 @@ manager: serdars
 
 ---
 
-# Remove an Outlook on the web mailbox policy from Exchange Online
+# Remove a mailbox policy from Exchange Online for Outlook on the web and the new Outlook for Windows
 
-You can remove an Outlook on the web mailbox policy (formerly known as an Outlook Web App mailbox policy) from an Exchange Online organization by using either the Exchange admin center (EAC) or Exchange Online PowerShell.
+You can remove a mailbox policy from Outlook on the web (formerly known as an Outlook Web App mailbox policy) and the new Outlook for Windows using either the Exchange admin center (EAC) or Exchange Online PowerShell.
 
 **Note**: Don't remove the built-in mailbox policy named OwaMailboxPolicy-Default.
 
@@ -39,21 +39,21 @@ For additional management tasks related to Outlook on the web mailbox policies, 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
 
-## Use the EAC to remove an Outlook on the web mailbox policy
+## Use the EAC to remove a mailbox policy for Outlook on the web and the new Outlook for Windows
 
 1. In the EAC, go to **Permissions** \> **Outlook Web App policies**, select the policy that you want to remove, and then click **Delete** ![Delete icon.](../../media/ITPro_EAC_DeleteIcon.png).
 
 2. In the confirmation window that appears, click **Yes** to remove the mailbox policy, or click **No** to cancel.
 
-## Use Exchange Online PowerShell to remove an Outlook on the web mailbox policy
+## Use Exchange Online PowerShell to remove a mailbox policy for Outlook on the web and the new Outlook for Windows
 
-To remove an Outlook on the web mailbox policy, use the following syntax:
+To remove a mailbox policy for Outlook on the web and the new Outlook for Windows, use the following syntax:
 
 ```PowerShell
 Remove-OwaMailboxPolicy -Identity "<Policy Name>"
 ```
 
-This example removes the Outlook on the web mailbox policy named Sales Associates.
+This example removes the mailbox policy named Sales Associates from Outlook on the web and the new Outlook for Windows.
 
 ```PowerShell
 Remove-OwaMailboxPolicy -Identity "Sales Associates"
