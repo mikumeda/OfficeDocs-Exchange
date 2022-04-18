@@ -25,9 +25,9 @@ This article is organized in sections that correspond to the major releases of E
 Links for the available downloads are also included.
 
 > [!NOTE]
-> 
+>
 > Releases are listed from the latest release to the earliest release.
-> 
+>
 > Starting in the March 2021 Security Update (SU), we also include build numbers for Security Updates.
 >
 > RTM stands for "release to manufacturing" (the first version of the product).
@@ -406,4 +406,3 @@ The following table lists the build numbers and general release dates for each v
 |Exchange Server 4.0 SP2|July 19, 1996|4.0.993|
 |Exchange Server 4.0 SP1|May 1, 1996|4.0.838|
 |Exchange Server 4.0 Standard Edition|June 11, 1996|4.0.837|
-|
