@@ -1,5 +1,5 @@
 ---
-title: Sender Rewriting Scheme (SRS) in Office 365
+title: Sender Rewriting Scheme (SRS) in Microsoft 365
 description: Describes Sender Rewriting Scheme (SRS) in Office 365.
 author: Benny-54
 ms.author: v-bshilpa
@@ -16,61 +16,50 @@ ms.collection:
 f1.keywords:
 ---
 
-# Sender Rewriting Scheme (SRS) in Office 365
+# Sender Rewriting Scheme (SRS) in Microsoft 365
 
 > [!NOTE]
-> **Office 365 ProPlus** is being renamed to **Microsoft 365 Apps for enterprise**. For more information about this change, [read this blog post](https://www.microsoft.com/microsoft-365/blog/2020/03/30/new-microsoft-365-offerings-small-and-medium-sized-businesses/).
+> A new relay IP pool has been introduced in Microsoft 365, which might affect the current SRS rewriting behavior. Messages that qualify for this relay pool won't be rewritten by SRS but will be sent out of IPs that won't be a part of the Microsoft 365 SPF record. The main change is for messages that fail SPF checks when they are entering Exchange Online because SRS will no longer fix these failures. For more information, check the post about the relay pool change in the [Message Center](https://docs.microsoft.com/microsoft-365/admin/manage/message-center) or see [Outbound delivery pools](https://docs.microsoft.com/microsoft-365/security/office-365-security/high-risk-delivery-pool-for-outbound-messages?#relay-pool).
+>
+> In an upcoming change, SRS will rewrite all messages forwarded by using SMTP or mailbox forwarding. This will consolidate the behavior to use SRS for all message forwarding in the service. Due to this change, some disruptions might occur such as; messages being sent through on-premises not being rewritten. To fix these disruptiones, see [Sender Rewriting Scheme Upcoming Changes](https://techcommunity.microsoft.com/t5/exchange-team-blog/sender-rewriting-scheme-upcoming-changes/ba-p/2632829). 
 
-_Original KB number:_&nbsp;4490129
+The Sender Rewriting Scheme (SRS) functionality was added to Microsoft 365 to resolve a problem in which autoforwarding was incompatible with SPF. The SRS feature rewrites the **P1 From** address (also known as the Envelope From address) for all applicable messages that are sent externally from Microsoft 365. 
 
 > [!NOTE]
-> Upcoming changes:  
-> 
-> - Starting in July 2021, we'll start to roll out a new relay IP pool, which may affect current SRS rewriting behaviour. Messages that qualify for this relay pool won't be rewritten by SRS, and be sent out of IPs that won't be part of the Microsoft 365 SPF record instead. The main change is for messages that fail SPF checks when they are sent to Office 365. SRS will no longer fix these failures. For more information, check the post about the relay pool change in [Message Center](/microsoft-365/admin/manage/message-center) or see [Outbound delivery pools](/microsoft-365/security/office-365-security/high-risk-delivery-pool-for-outbound-messages#relay-pool).
-> - Starting in November 2021, we'll start to use SRS to rewrite all messages forwarded by using SMTP or mailbox forwarding. This will consolidate the behaviour to use SRS for all forwarding in the service. Due to changes in behavior, disruptions may occur. For example, messages sent to on-premises will no longer be rewritten. For more information, see [Sender Rewriting Scheme Upcoming Changes](https://techcommunity.microsoft.com/t5/exchange-team-blog/sender-rewriting-scheme-upcoming-changes/ba-p/2632829).
+> The **From** header, also known as the Display From address or P2 From address, that is displayed by email clients remains unchanged.
 
-## Summary
+The SRS functionality improves the delivery of applicable messages that pass Sender Policy Framework (SPF) checks when they arrive from the original sender but fail SPF checks at the final external destination after they are forwarded.
 
-Sender Rewriting Scheme (SRS) functionality was added to Office 365 to resolve a problem in which autoforwarding is incompatible with SPF. The SRS feature rewrites the **P1 From** address (also known as the Envelope From address) for all applicable messages that are sent externally from Office 365. It's important to note that the **From** header (also known as the Display From address or P2 From address) that is displayed by email clients remains unchanged.
+SRS rewrites the **P1 From** address in the following scenarios:
 
-This SRS change improves deliverability of applicable messages that pass Sender Policy Framework (SPF) checks when they arrive from the original sender but that then fail SPF at the final external destination after they're forwarded.
-
-SRS rewrites the **P1 From** address in the following scenario:
-
-- Messages that are autoforwarded (or redirected) in Office 365 by using any of the following methods to forward a message to an external recipient:
-  - SMTP forwarding*
+- Messages in Microsoft 365 that are autoforwarded (or redirected) to an external recipient by using any of the following methods:
+  - SMTP forwarding
+    *Some messages forwarded by using SMTP Forwarding will not be rewritten by SRS because they would have already been rewritten. In an upcoming change, the SMTP Forwarding method will be covered under SRS as well.
   - Mailbox Rule (or Inbox rule) redirection
   - Transport Rule redirection
   - Groups or DLs that have external members
   - Mail Contact forwarding
   - Mail User forwarding
-- Messages that are autoforwarded (or redirected) from our customer's on-premises environments and relayed through Office 365.
+- Messages that are autoforwarded (or redirected) from a customer's on-premises environments and relayed through Office 365Exchange Online.
 
-*Some messages forwarded with SMTP Forwarding won't be rewritten with SRS as they've already been rewritten.
+It is important to note that SRS rewriting is used to prevent spoofing of unverified domains. You should send messages only from domains that you own and for which you have verified your ownership through the Accepted Domains list. For more information about Accepted Domains in Microsoft 365, see [Manage accepted domains in Exchange Online](https://docs.microsoft.com/exchange/mail-flow-best-practices/manage-accepted-domains/manage-accepted-domains).
 
 > [!NOTE]
 > SRS rewriting does not fix the issue of DMARC passing for forwarded messages. Although an SPF check will now pass by using a rewritten **P1 From** address, DMARC also requires an alignment check for the message to pass. For forwarded messages, DKIM always fails because the signed DKIM domain does not match the **From** header domain. If an original sender sets their DMARC policy to reject forwarded messages, the forwarded messages are rejected by Message Transfer Agents (MTAs) that honor DMARC policies.  
 
-This change causes Non-Delivery Reports (NDRs) to return to Office 365 instead of the original sender, as they would do if SRS weren't used. Therefore, part of the SRS implementation is to reroute returning NDRs to the original sender if a message can't be delivered.  
+This scenario causes Non-Delivery Reports (NDRs) to be returned to Exchange Online instead of the original sender, which is the case do if when SRS is not used. Therefore, part of the SRS implementation is to reroute returning NDRs to the original sender if a message cannot be delivered.
 
-> [!NOTE]
-> SRS rewriting is used to prevent spoofing of unverified domains. Customers are advised to send messages only from domains that they own and for which they have verified their ownership through the Accepted Domains list. For more information about Accepted Domains in Office 365, see the following TechNet topic:
->  
-> [Manage accepted domains in Exchange Online](/exchange/mail-flow-best-practices/manage-accepted-domains/manage-accepted-domains)
+The following sections present different autoforwarding scenarios and information on how SRS handles them.
 
-## More information
+## Autoforwarding emails for a mailbox hosted on eMicrosoft 365
 
-### Autoforwarding emails for an Office 365-hosted mailbox
-
-A message that is autoforwarded for a hosted mailbox by mechanisms such as SMTP forwarding or Mailbox Rule redirection or Transport Rule redirection have the **P1 From** address rewritten before the message leaves Office 365. The address is rewritten by using the following pattern:
+For a message that is sent to a hosted mailbox and is autoforwarded by using mechanisms such as SMTP forwarding, Mailbox Rule redirection or Transport Rule redirection, the P1 From address is rewritten before the message leaves Exchange Online. The address is rewritten by using the following pattern:
 
 ```powershell
 <Forwarding Mailbox Username>+SRS=<Hash>=<Timestamp>=<Original Sender Domain>=<Original Sender Username>@<Forwarding Mailbox Domain>
 ```
 
-Example:
-
-A message is sent from Bob (bob@fabrikam.com) to John's mailbox in Office 365 (john.work@contoso.com). John has set up autoforwarding to his home email address (john.home@example.com).
+In the following example, a message is sent from Bob (bob@fabrikam.com) to John's mailbox in Exchange Online (john.work@contoso.com). John has set up autoforwarding from this mailbox to his home email address (john.home@example.com). Notice how the P1 From address is re-written by SRS.  
 
 ||Original message|Autoforwarded message|
 |---|---|---|
@@ -78,23 +67,19 @@ A message is sent from Bob (bob@fabrikam.com) to John's mailbox in Office 365 (j
 | **P1 From**|bob@fabrikam.com|john.work+SRS=44ldt=IX=fabrikam.com=bob@contoso.com|
 | **From header**|bob@fabrikam.com|bob@fabrikam.com|
 
-> [!NOTE]
-> SRS rewriting causes the username part of an email address increasing in length. However, the email address has a limit of 64 characters. If the email address involves the SRS rewriting and exceeds 64 characters, the rewritten SRS address will take the form of "bounces" below.
-
-### Relaying from a customer's on-premises server
-
-A message that is relayed from a customer's on-premises server or application through Office 365 from a non-verified domain has the **P1 From** address rewritten before it leaves Office 365. The address is rewritten by using the following pattern:
+When SRS re-writes the P1 From address, it increases the length of the username portion of the email address. However, the email address has a limit of 64 characters. So if the length of the re-written email address exceeds 64 characters, it will take the following form of "bounces" below.  
 
 ```powershell
 bounces+SRS=<Hash>=<Timestamp>@<Default Accepted Domain>
 ```
 
-> [!IMPORTANT]
-> In order to receive NDRs for relayed messages that are rewritten by SRS, a mailbox (either hosted or on-premises) must be created by using the username of "bounces" and by having the domain be set as the default Accepted Domain of the customer.
+where `<Default Accepted Domain>` is the name of the default Accepted Domain set up for the tenant.
 
-Example
+## Relaying from a customer's on-premises server
 
-A message is sent from Bob (bob@fabrikam.com) to John's mailbox (john.onprem@contoso.com) on his company's own server that is running Exchange Server. John has set up autoforwarding to his home email address (john.home@example.com).
+When a message that originates from a non-verified domain that is relayed from a customer's on-premises server, or an application through Exchange ooOnline, the **P1 From** address is rewritten before it leaves Exchange Online. The address is rewritten by using the following pattern:
+
+In the following example, a message is sent from Bob (bob@fabrikam.com) to John's mailbox (john.onprem@contoso.com) which is on his company's server that is running Exchange Server. John has set up autoforwarding from this mailbox to his home email address (john.home@example.com). Notice how the **P1 From** address is re-written by SRS in this scenario.
 
 |Type|Original message|Relayed message received by Office 365|Relayed message sent from Office 365|
 |---|---|---|---|
@@ -102,9 +87,12 @@ A message is sent from Bob (bob@fabrikam.com) to John's mailbox (john.onprem@con
 |P1 From|bob@fabrikam.com|bob@fabrikam.com|bounces+SRS=44ldt=IX@contoso.com|
 |From header|bob@fabrikam.com|bob@fabrikam.com|bob@fabrikam.com|
 
-### Forwarded messages sent to a customer's on-premises server
+In some situations , the relayed messages that are re-written by SRS might not get delivered, and a Non Delivery Report (NDR) might be generated. 
 
-By default, SRS considers on-premises servers to be within the trust boundary, and doesn't rewrite forwarded messages bound to on-premises. However, some customers have complex routing configurations that use their on-premises servers to route messages to the Internet. Therefore, the forwarded messages won't be rewritten, and will be rejected due to SPF failure. To solve this problem, we added a setting to allow the administrators to enable SRS rewrite for traffic flowing through an on-premises outbound connector. For more information about this new connector parameter, see [Sender Rewriting Scheme Upcoming Changes](https://techcommunity.microsoft.com/t5/exchange-team-blog/sender-rewriting-scheme-upcoming-changes/ba-p/2632829). 
+To receive those NDRs, the tenant administrator must create a mailbox  named “bounces” that is hosted either on Exchange Online or on-premises. The domain for this mailbox must be set to the default Accepted Domain for the tenant.
 
-Microsoft provides third-party contact information to help you find additional information about this article. This contact information may change without notice. Microsoft doesn't guarantee the accuracy of third-party contact information.
+## Forwarded messages sent to a customer's on-premises server
+
+By design, SRS considers on-premises servers to be within the trust boundary, and doesn't rewrite forwarded messages that are bound to on-premises. However, for complex routing configurations that use on-premises servers to route messages to the Internet, the forwarded messages won't be rewritten, and will be rejected due to SPF failure. To solve this issue, administrators can enable the SRS rewrite for traffic flowing through an on-premises outbound connector. For more information about this SRS parameter on outbound on-premises connectors, see [Sender Rewriting Scheme Upcoming Changes](https://techcommunity.microsoft.com/t5/exchange-team-blog/sender-rewriting-scheme-upcoming-changes/ba-p/2632829). 
+
 
