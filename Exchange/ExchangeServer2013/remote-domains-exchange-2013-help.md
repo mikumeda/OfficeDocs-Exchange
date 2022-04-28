@@ -64,12 +64,12 @@ The following table describes various client and server combinations and the typ
 <tbody>
 <tr class="odd">
 <td><p>Outlook 2010 or Outlook 2007</p></td>
-<td><p>Exchange 2013 Exchange 2010 Exchange 2007</p></td>
+<td><p>Exchange 2013 Exchange 2010 Exchange 2007</p></td>
 <td><p>Internal, External</p></td>
 </tr>
 <tr class="even">
 <td><p>Outlook Web App</p></td>
-<td><p>Exchange 2013 Exchange 2010 Exchange 2007</p></td>
+<td><p>Exchange 2013 Exchange 2010 Exchange 2007</p></td>
 <td><p>Internal, External</p></td>
 </tr>
 </tbody>

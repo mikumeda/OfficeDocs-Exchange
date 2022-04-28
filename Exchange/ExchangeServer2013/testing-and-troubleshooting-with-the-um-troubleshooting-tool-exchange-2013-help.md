@@ -42,11 +42,11 @@ The **Test-ExchangeUMCallFlow** cmdlet can be installed on a local Exchange 2010
 
 The **Test-ExchangeUMCallFlow** cmdlet requires the following components to be installed on a Windows 7, Windows 8, Windows Server 2008, or Windows Server 2012 64-bit computer before installing the cmdlet:
 
-- Microsoft .NET Framework 3.5 Service Pack 1 (SP1). To download the service pack, see [Microsoft .NET Framework 3.5 Service Pack 1](https://www.microsoft.com/download/details.aspx?id=22).
+- Microsoft .NET Framework 3.5 Service Pack 1 (SP1). To download the service pack, see [Microsoft .NET Framework 3.5 Service Pack 1](https://www.microsoft.com/download/details.aspx?id=22).
 
-- Microsoft .NET Framework 3.5 Family Update for Windows Vista x64 and Windows Server 2008 x64 updates if the tool will be run on a Windows Vista or Windows Server 2008 computer. To download the update, see [Microsoft .NET Framework 3.5 Family Update for Windows Vista x64, and Windows Server 2008 x64](https://www.microsoft.com/download/details.aspx?id=1055).
+- Microsoft .NET Framework 3.5 Family Update for Windows Vista x64 and Windows Server 2008 x64 updates if the tool will be run on a Windows Vista or Windows Server 2008 computer. To download the update, see [Microsoft .NET Framework 3.5 Family Update for Windows Vista x64, and Windows Server 2008 x64](https://www.microsoft.com/download/details.aspx?id=1055).
 
-- Windows Remote Management (WinRM) 2.0 and Windows PowerShell V2 (Windows6.0-KB968930.msu). For more information, see Microsoft Knowledge Base article 968930, [Windows Management Framework core package (Windows PowerShell 2.0 and WinRM 2.0)](https://support.microsoft.com/help/968930).
+- Windows Remote Management (WinRM) 2.0 and Windows PowerShell V2 (Windows6.0-KB968930.msu). For more information, see Microsoft Knowledge Base article 968930, [Windows Management Framework core package (Windows PowerShell 2.0 and WinRM 2.0)](https://support.microsoft.com/help/968930).
 
 - Unified Communications Managed AP1 2.0, Core Runtime (64-bit).
 

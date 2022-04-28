@@ -34,8 +34,7 @@
 #### [Create group naming policy](../recipients-in-exchange-online/manage-distribution-groups/create-group-naming-policy.md)
 #### [Override group naming policy](../recipients-in-exchange-online/manage-distribution-groups/override-group-naming-policy.md)
 ###  Dynamic distribution groups
-#### [Manage dynamic distribution groups](../recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups.md)
-#### [Modern dynamic distribution groups in Exchange Online](../recipients-in-exchange-online/manage-dynamic-distribution-groups/modern-dynamic-distribution-groups.md)
+#### [Manage modern dynamic distribution groups](../recipients-in-exchange-online/manage-dynamic-distribution-groups/manage-dynamic-distribution-groups.md)
 #### [View group members](../recipients-in-exchange-online/manage-dynamic-distribution-groups/view-group-members.md)
 ### [Moderated recipients](../recipients-in-exchange-online/moderated-recipients-exo/moderated-recipients-exo.md)
 #### [Configure moderated recipients](../recipients-in-exchange-online/moderated-recipients-exo/configure-moderated-recipients-exo.md)
@@ -263,6 +262,7 @@
 #### [SMTP AUTH clients report in the new EAC](../monitoring/mail-flow-reports/mfr-smtp-auth-clients-report.md)
 #### [Top domain mailflow status report in the new EAC](../monitoring/mail-flow-reports/mfr-top-domain-mailflow-status-report.md)
 #### [Mailboxes exceeding receiving limits report in the new EAC](../monitoring/mail-flow-reports/mailboxes-exceeding-receiving-limits-report.md)
+#### [Reply-all storm protection report in the new EAC](../monitoring/mail-flow-reports/reply-all-storm-protection-report.md)
 ### [Mail flow insights in the new EAC](../monitoring/mail-flow-insights/mail-flow-insights.md)
 #### [Fix possible mail loop insight in the new EAC](../monitoring/mail-flow-insights/mfi-fix-possible-mail-loop-insight.md)
 #### [Fix slow mail flow rules insight in the new EAC](../monitoring/mail-flow-insights/mfi-fix-slow-mail-flow-rules-insight.md)

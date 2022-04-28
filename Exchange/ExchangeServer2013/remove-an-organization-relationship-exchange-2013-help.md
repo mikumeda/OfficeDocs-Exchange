@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-An organization relationship lets users in your Exchange organization share calendar free/busy information with an Office 365 organization or with another Exchange on-premises organization. You can remove an organization relationship to disable calendar sharing with the other organization.
+An organization relationship lets users in your Exchange organization share calendar free/busy information with an Office 365 organization or with another Exchange on-premises organization. You can remove an organization relationship to disable calendar sharing with the other organization.
 
 Before you can share calendars with another organization, you have to set up an authentication relationship with the Azure Active Directory authentication system (also known as "federation") and must meet minimum software requirements. To learn more about federated sharing, see [Sharing](sharing-exchange-2013-help.md).
 

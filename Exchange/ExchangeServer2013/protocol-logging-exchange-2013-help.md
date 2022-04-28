@@ -125,21 +125,21 @@ The protocol log stores each SMTP protocol event on a single line in the protoco
 </tr>
 <tr class="odd">
 <td><p><strong>local-endpoint</strong></p></td>
-<td><p>Local endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
+<td><p>Local endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>remote-endpoint</strong></p></td>
-<td><p>Remote endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
+<td><p>Remote endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>event</strong></p></td>
 <td><p>Single character that represents the protocol event. The possible values for the event are as follows:</p>
 <ul>
-<li><p><strong>+</strong>   Connect</p></li>
-<li><p><strong>-</strong>   Disconnect</p></li>
-<li><p><strong>&gt;</strong>   Send</p></li>
-<li><p><strong>&lt;</strong>   Receive</p></li>
-<li><p><strong>*</strong>   Information</p></li>
+<li><p><strong>+</strong>   Connect</p></li>
+<li><p><strong>-</strong>   Disconnect</p></li>
+<li><p><strong>&gt;</strong>   Send</p></li>
+<li><p><strong>&lt;</strong>   Receive</p></li>
+<li><p><strong>*</strong>   Information</p></li>
 </ul></td>
 </tr>
 <tr class="even">

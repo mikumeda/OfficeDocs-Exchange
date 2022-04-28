@@ -9,7 +9,7 @@ manager: serdars
 ms.author: serdars
 author: msdmaguire
 ms.topic: article
-description: 'Exchange Server setup failed: permission lacking to run /PrepareDomain'
+description: 'Exchange Server setup failed: permission lacking to run /PrepareDomain'
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -23,10 +23,10 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 setup cannot continue because the attempt to run the **/PrepareDomain** process failed. The logged on user has insufficient permissions to perform the **/PrepareDomain** process.
+Microsoft Exchange Server 2007 setup cannot continue because the attempt to run the **/PrepareDomain** process failed. The logged on user has insufficient permissions to perform the **/PrepareDomain** process.
 
 Exchange 2007 setup requires that the user who is logged on when running the **/PrepareDomain** process be a member of the Domain Admins group for the domain to be prepared, and a member of the Enterprise Admins group.
 
-To resolve this issue, grant the logged-on user Domain Admins group permissions for the domain being prepared and enroll them in the Enterprise Admins groups, or log on with an account that has those permissions and rerun Exchange 2007 setup.
+To resolve this issue, grant the logged-on user Domain Admins group permissions for the domain being prepared and enroll them in the Enterprise Admins groups, or log on with an account that has those permissions and rerun Exchange 2007 setup.
 
 For more information about Active Directory permissions that are needed with Microsoft Exchange, see "Working with Active Directory Permissions in Exchange Server" ([https://docs.microsoft.com/previous-versions/tn-archive/bb124223(v=exchg.65)](/previous-versions/tn-archive/bb124223(v=exchg.65))).

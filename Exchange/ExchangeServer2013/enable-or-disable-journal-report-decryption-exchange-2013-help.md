@@ -29,11 +29,11 @@ For other management tasks related to Information Rights Management (IRM), see [
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Rights protection" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
-- Members of the super users group are granted an owner use license when they request a license from the AD RMS cluster. This behavior allows them to decrypt all RMS-protected content created by that AD RMS cluster.
+- Members of the super users group are granted an owner use license when they request a license from the AD RMS cluster. This behavior allows them to decrypt all RMS-protected content created by that AD RMS cluster.
 
-- An AD RMS cluster must be installed in the Active Directory forest.
+- An AD RMS cluster must be installed in the Active Directory forest.
 
-- The Federated Delivery mailbox has been added to an AD RMS super users group. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
+- The Federated Delivery mailbox has been added to an AD RMS super users group. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
 
 - You can't use the Exchange admin center (EAC) to enable journal report decryption. You must use the Shell.
 

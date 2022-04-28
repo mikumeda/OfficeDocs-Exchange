@@ -29,7 +29,7 @@ The following IRM functionality is available in Outlook Web App:
 
   ![Sending an IRM-protected message from OWA.](images/Dd876891.fa8cabb5-c049-46dc-8b29-9d9957dbfd3e(EXCHG.150).gif "Sending an IRM-protected message from OWA")
 
-- **IRM-protected attachments**: When users send an IRM-protected message from Outlook Web App, any files attached to the message also receive the same IRM protection and are protected by using the same rights policy template as the message. In Exchange 2013, IRM protection is applied to files associated with Microsoft Office Word, Excel, and PowerPoint, as well as .xps files and e-mail messages. IRM protection is applied to an attachment only if it's not already IRM-protected. To learn more about Active Directory Rights Management Services (AD RMS) rights policy templates, see [Information Rights Management](information-rights-management-exchange-2013-help.md).
+- **IRM-protected attachments**: When users send an IRM-protected message from Outlook Web App, any files attached to the message also receive the same IRM protection and are protected by using the same rights policy template as the message. In Exchange 2013, IRM protection is applied to files associated with Microsoft Office Word, Excel, and PowerPoint, as well as .xps files and e-mail messages. IRM protection is applied to an attachment only if it's not already IRM-protected. To learn more about Active Directory Rights Management Services (AD RMS) rights policy templates, see [Information Rights Management](information-rights-management-exchange-2013-help.md).
 
   > [!NOTE]
   > IRM in Outlook Web App protects only the supported file attachments mentioned in this section. Attachments that use unsupported file formats aren't protected. When Outlook Web App users protect a message and attach a file of an unsupported type, a notification is displayed informing the users that only supported file types are protected.
@@ -37,7 +37,7 @@ The following IRM functionality is available in Outlook Web App:
   > [!IMPORTANT]
   > IRM protection can't be applied to a message that's already signed or encrypted by using S/MIME. To apply IRM protection, S/MIME signature and encryption must be removed from the message. The same applies for IRM-protected messages; users can't sign or encrypt them by using S/MIME.
 
-- **Read IRM-protected messages**: Messages protected by senders using your organization's AD RMS cluster are rendered in the preview pane in Outlook Web App. No add-ins need to be installed, and the computer doesn't need to be enrolled in the AD RMS deployment. When a user opens a message or views it in the preview pane, the message is decrypted by using the use license added by the Pre-licensing agent. After decryption, the message is displayed in the preview pane. If a pre-license isn't available, Outlook Web App requests one from the AD RMS server and then renders the message. When reading IRM-protected attachments in Outlook Web App, Web-Ready Document Viewing isn't available.
+- **Read IRM-protected messages**: Messages protected by senders using your organization's AD RMS cluster are rendered in the preview pane in Outlook Web App. No add-ins need to be installed, and the computer doesn't need to be enrolled in the AD RMS deployment. When a user opens a message or views it in the preview pane, the message is decrypted by using the use license added by the Pre-licensing agent. After decryption, the message is displayed in the preview pane. If a pre-license isn't available, Outlook Web App requests one from the AD RMS server and then renders the message. When reading IRM-protected attachments in Outlook Web App, Web-Ready Document Viewing isn't available.
 
   > [!NOTE]
   > IRM in Outlook Web App can't prevent users from taking screen captures by using Print Screen functionality in the way Outlook and other Office applications do. This impacts the EXTRACT right, which prevents message content from being copied, if specified in the AD&nbsp;RMS rights policy template.
@@ -50,7 +50,7 @@ Looking for management tasks related to managing IRM? See [Information Rights Ma
 
 ## Enabling IRM in Outlook Web App
 
-To enable IRM in Outlook Web App, you must add the Federation mailbox, a system mailbox created by Exchange 2013 Setup, to the super users group in AD RMS. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md). This allows Exchange 2013 servers to access IRM-protected messages.
+To enable IRM in Outlook Web App, you must add the Federation mailbox, a system mailbox created by Exchange 2013 Setup, to the super users group in AD RMS. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md). This allows Exchange 2013 servers to access IRM-protected messages.
 
 You must also enable IRM in Outlook Web App by using the [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration) cmdlet in the Exchange Management Shell. This enables IRM in Outlook Web App for your Exchange 2013 organization. You can disable or enable IRM in Outlook Web App for an Outlook Web App virtual directory. You can also control IRM in Outlook Web App at the following levels of granularity:
 

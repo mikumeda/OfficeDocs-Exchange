@@ -21,11 +21,11 @@ _**Applies to:** Exchange Server 2013_
 
 Enabling Information Rights Management (IRM) on Client Access servers enables the following features:
 
-- Microsoft Office Outlook Web App
+- Microsoft Office Outlook Web App
 
 - IRM in Microsoft Exchange ActiveSync
 
-When IRM is enabled on Client Access servers, Outlook Web App users can IRM-protect messages by applying an [Active Directory Rights Management Services (AD RMS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831364(v=ws.11)) template created on your AD RMS cluster. Outlook Web App users can also view IRM-protected messages and supported attachments. Before you enable IRM on Client Access servers, you must add the Federation mailbox to the super users group on the AD RMS cluster.
+When IRM is enabled on Client Access servers, Outlook Web App users can IRM-protect messages by applying an [Active Directory Rights Management Services (AD RMS)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831364(v=ws.11)) template created on your AD RMS cluster. Outlook Web App users can also view IRM-protected messages and supported attachments. Before you enable IRM on Client Access servers, you must add the Federation mailbox to the super users group on the AD RMS cluster.
 
 > [!IMPORTANT]
 > Members of the super users group are granted an owner use license when they request a license from the AD&nbsp;RMS cluster. This allows them to decrypt all RMS-protected content by that cluster.
@@ -38,9 +38,9 @@ For additional management tasks related to IRM, see [Information Rights Manageme
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Information Rights Management (IRM) configuration" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
-- An AD RMS cluster must be installed in the Active Directory forest.
+- An AD RMS cluster must be installed in the Active Directory forest.
 
-- The Federation mailbox has been added to the AD RMS super users group. For detailed instructions, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
+- The Federation mailbox has been added to the AD RMS super users group. For detailed instructions, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
 
 - IRM features must be enabled for the organization. For detailed instructions, see [Enable or Disable IRM for Internal Messages](enable-or-disable-irm-for-internal-messages-exchange-2013-help.md).
 

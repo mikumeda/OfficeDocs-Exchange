@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-*In-Place Archiving* helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an *archive mailbox* accessible in Microsoft Outlook 2010 and later and Microsoft Office Outlook Web App.
+*In-Place Archiving* helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an *archive mailbox* accessible in Microsoft Outlook 2010 and later and Microsoft Office Outlook Web App.
 
 In Microsoft Exchange Server 2013, In-Place Archiving provides users with an alternate storage location in which to store historical messaging data. An In-Place Archive is an additional mailbox (called an archive mailbox) enabled for a mailbox user. Outlook 2007 and later and Outlook Web App users have seamless access to their archive mailbox. Using either of these client applications, users can view an archive mailbox and move or copy messages between their primary mailbox and the archive. In-Place Archiving presents a consistent view of messaging data to users and eliminates the user overhead required to manage .pst files.
 

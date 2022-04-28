@@ -6,7 +6,7 @@ ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.serveri
 ms:contentKeyID: 46629180
 ms.reviewer: 
 ms.topic: article
-description: Microsoft® Exchange Server setup can't continue because its attempt to uninstall a Hub Transport role responsible for expanding group membership failed
+description: Microsoft® Exchange Server setup can't continue because its attempt to uninstall a Hub Transport role responsible for expanding group membership failed
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -23,9 +23,9 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because its attempt to uninstall a Hub Transport role responsible for expanding group membership failed.
+Microsoft® Exchange Server 2007 setup cannot continue because its attempt to uninstall a Hub Transport role responsible for expanding group membership failed.
 
-Exchange 2007 setup requires that distribution list expansion be removed from the current Bridgehead server before the Hub Transport role can be uninstalled.
+Exchange 2007 setup requires that distribution list expansion be removed from the current Bridgehead server before the Hub Transport role can be uninstalled.
 
 The expansion of distribution lists enables identification of individual recipients who belong to the distribution list to be identified, or the identification of additional distribution lists for expansion. An expanded distribution list can return the path for any required delivery status notification (DSN). DSNs notify the Microsoft Exchange administrator or e-mail sender of the status of a particular e-mail message. Additionally, distribution list expansion identifies whether Out of Office messages or automatically generated replies should be sent to the sender of the original message.
 

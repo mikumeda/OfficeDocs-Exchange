@@ -25,7 +25,7 @@ This topic explains how the Edge Subscription process provisions credentials use
 
 The Edge Transport server is subscribed to an Active Directory site to establish a synchronization relationship between the Mailbox servers in an Active Directory site and the subscribed Edge Transport server. The credentials provisioned during the Edge Subscription process are used to help secure the LDAP connection between a Mailbox server and an Edge Transport server in the perimeter network.
 
-When you run the **New-EdgeSubscription** cmdlet on an Edge Transport server, EdgeSync bootstrap replication account (ESBRA) credentials are created in the Active Directory Lightweight Directory Services (AD LDS) directory on the local server and then written to the Edge Subscription file. These credentials are used only to establish initial synchronization and will expire 24 hours after the Edge Subscription file is created. If the Edge Subscription process isn't completed within 24 hours, you will need to run the **New-EdgeSubscription** cmdlet again to create a new Edge Subscription file. The Edge Subscription XML file stores configuration data for the Edge Subscription.
+When you run the **New-EdgeSubscription** cmdlet on an Edge Transport server, EdgeSync bootstrap replication account (ESBRA) credentials are created in the Active Directory Lightweight Directory Services (AD LDS) directory on the local server and then written to the Edge Subscription file. These credentials are used only to establish initial synchronization and will expire 24 hours after the Edge Subscription file is created. If the Edge Subscription process isn't completed within 24 hours, you will need to run the **New-EdgeSubscription** cmdlet again to create a new Edge Subscription file. The Edge Subscription XML file stores configuration data for the Edge Subscription.
 
 The Edge Subscription XML file contains the data shown in the following table.
 
@@ -69,11 +69,11 @@ The Edge Subscription XML file contains the data shown in the following table.
 </tr>
 <tr class="odd">
 <td><p><strong>Duration</strong></p></td>
-<td><p>The length of time these credentials will be valid before they expire. The ESBRA account is valid for only 24 hours.</p></td>
+<td><p>The length of time these credentials will be valid before they expire. The ESBRA account is valid for only 24 hours.</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>AdamSslPort</strong></p></td>
-<td><p>The secure LDAP port EdgeSync binds to when synchronizing data from Active Directory to AD LDS. By default, this is TCP port 50636.</p></td>
+<td><p>The secure LDAP port EdgeSync binds to when synchronizing data from Active Directory to AD LDS. By default, this is TCP port 50636.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>ProductID</strong></p></td>
@@ -97,7 +97,7 @@ The Edge Subscription XML file contains the data shown in the following table.
 
 EdgeSync replication accounts (ESRA) are an important part of EdgeSync security. Authentication and authorization of the ESRA is the mechanism used to help secure the connection between an Edge Transport server and a Mailbox server.
 
-The ESBRA contained in the Edge Subscription file is used to establish a secure LDAP connection during initial synchronization. After the Edge Subscription file is imported to a Mailbox server in the Active Directory site where the Edge Transport server is being subscribed, additional ESRA accounts are created in Active Directory for each Edge Transport-Mailbox server pair. During initial synchronization, the newly created ESRA credentials are replicated to AD LDS. These ESRA credentials are used to help secure later synchronization sessions.
+The ESBRA contained in the Edge Subscription file is used to establish a secure LDAP connection during initial synchronization. After the Edge Subscription file is imported to a Mailbox server in the Active Directory site where the Edge Transport server is being subscribed, additional ESRA accounts are created in Active Directory for each Edge Transport-Mailbox server pair. During initial synchronization, the newly created ESRA credentials are replicated to AD LDS. These ESRA credentials are used to help secure later synchronization sessions.
 
 Each EdgeSync replication account is assigned the properties shown in the following table.
 
@@ -158,7 +158,7 @@ When the **New-EdgeSubscription** cmdlet is run on the Edge Transport server, th
 
 - A self-signed certificate (Edge-Cert) is created on the Edge Transport server. The private key is stored in the local computer store and the public key is written to the Edge Subscription file.
 
-- The ESBRA account is created in AD LDS, and its credentials are written to the Edge Subscription file.
+- The ESBRA account is created in AD LDS, and its credentials are written to the Edge Subscription file.
 
 - The Edge Subscription file is exported by copying it to removable media (because the Edge Server is not in your Active Directory, you cannot use a shared folder for exporting the file). The file is now ready to import to a Mailbox server.
 
@@ -186,22 +186,22 @@ The following sections explain how these accounts are used during EdgeSync synch
 
 ## Authenticate initial replication
 
-The initial ESBRA account is used only when establishing initial synchronization. During the first EdgeSync synchronization, the additional ESRA accounts, ESRA.edge.*Mailboxname.\#*, are replicated to AD LDS. These accounts are used to authenticate later EdgeSync synchronization sessions.
+The initial ESBRA account is used only when establishing initial synchronization. During the first EdgeSync synchronization, the additional ESRA accounts, ESRA.edge.*Mailboxname.\#*, are replicated to AD LDS. These accounts are used to authenticate later EdgeSync synchronization sessions.
 
 The Mailbox server that performs the initial replication is determined randomly. The first Mailbox server in the Active Directory site to perform a topology scan and discover the new Edge Subscription performs the initial replication. Because this discovery is based on the timing of the topology scan, any Mailbox server in the site may perform the initial replication.
 
-EdgeSync initiates a secure LDAP session from the Mailbox server to the Edge Transport server. The Edge Transport server presents its self-signed certificate and the Mailbox server verifies that the certificate matches the certificate stored on the Edge Transport server configuration object in Active Directory. After the Edge Transport server's identity is verified, the Mailbox server provides the credentials of the ESRA.edge.*Mailboxname.\#* account to the Edge Transport server. The Edge Transport server verifies the credentials against the account stored in AD LDS.
+EdgeSync initiates a secure LDAP session from the Mailbox server to the Edge Transport server. The Edge Transport server presents its self-signed certificate and the Mailbox server verifies that the certificate matches the certificate stored on the Edge Transport server configuration object in Active Directory. After the Edge Transport server's identity is verified, the Mailbox server provides the credentials of the ESRA.edge.*Mailboxname.\#* account to the Edge Transport server. The Edge Transport server verifies the credentials against the account stored in AD LDS.
 
-The EdgeSync service on the Mailbox server then pushes the topology, configuration, and recipient data from Active Directory to AD LDS. The change to the Edge Transport server configuration object in Active Directory is replicated to AD LDS. AD LDS receives the newly added ESRA.edge.*Mailboxname.\#* entries and the Microsoft Exchange Credential Service creates the corresponding AD LDS account. These accounts are now available to authenticate later scheduled EdgeSync synchronization sessions.
+The EdgeSync service on the Mailbox server then pushes the topology, configuration, and recipient data from Active Directory to AD LDS. The change to the Edge Transport server configuration object in Active Directory is replicated to AD LDS. AD LDS receives the newly added ESRA.edge.*Mailboxname.\#* entries and the Microsoft Exchange Credential Service creates the corresponding AD LDS account. These accounts are now available to authenticate later scheduled EdgeSync synchronization sessions.
 
 ## Microsoft Exchange Credential Service
 
-The Microsoft Exchange Credential Service is part of the Edge Subscription process. The Credential Service runs only on the Edge Transport server. This service creates the reciprocal ESRA accounts in AD LDS so a Mailbox server can authenticate to an Edge Transport server to perform EdgeSync synchronization. EdgeSync doesn't communicate directly with the Microsoft Exchange Credential Service. The Microsoft Exchange Credential Service communicates with AD LDS and installs the ESRA credentials whenever the Mailbox server updates them.
+The Microsoft Exchange Credential Service is part of the Edge Subscription process. The Credential Service runs only on the Edge Transport server. This service creates the reciprocal ESRA accounts in AD LDS so a Mailbox server can authenticate to an Edge Transport server to perform EdgeSync synchronization. EdgeSync doesn't communicate directly with the Microsoft Exchange Credential Service. The Microsoft Exchange Credential Service communicates with AD LDS and installs the ESRA credentials whenever the Mailbox server updates them.
 
 ## Authenticate scheduled synchronization sessions
 
-After initial EdgeSync synchronization finishes, the EdgeSync synchronization schedule is established and any Active Directory data that has changed is regularly updated in AD LDS. A Mailbox server initiates a secure LDAP session with the AD LDS instance on the Edge Transport server. AD LDS proves its identity to that Mailbox server by presenting its self-signed certificate. The Mailbox server presents its ESRA.edge credentials to AD LDS. The ESRA.edge password is encrypted using the Mailbox server's self-signed certificate's public key. Only that particular Mailbox server can use those credentials to authenticate to AD LDS.
+After initial EdgeSync synchronization finishes, the EdgeSync synchronization schedule is established and any Active Directory data that has changed is regularly updated in AD LDS. A Mailbox server initiates a secure LDAP session with the AD LDS instance on the Edge Transport server. AD LDS proves its identity to that Mailbox server by presenting its self-signed certificate. The Mailbox server presents its ESRA.edge credentials to AD LDS. The ESRA.edge password is encrypted using the Mailbox server's self-signed certificate's public key. Only that particular Mailbox server can use those credentials to authenticate to AD LDS.
 
 ## Renew EdgeSync replication accounts
 
-The password for the ESRA account must comply with the local server's password policy. To prevent the password renewal process from causing temporary authentication failure, a second ESRA.edge account is created seven days before the first ESRA.edge account expires, with an effective time three days before the first ESRA expiration time. As soon as the second ESRA.edge account becomes effective, EdgeSync stops using the first account and starts to use the second account. When the expiration time for the first account is reached, those ESRA credentials are deleted. This renewal process will continue until the Edge Subscription is removed.
+The password for the ESRA account must comply with the local server's password policy. To prevent the password renewal process from causing temporary authentication failure, a second ESRA.edge account is created seven days before the first ESRA.edge account expires, with an effective time three days before the first ESRA expiration time. As soon as the second ESRA.edge account becomes effective, EdgeSync stops using the first account and starts to use the second account. When the expiration time for the first account is reached, those ESRA credentials are deleted. This renewal process will continue until the Edge Subscription is removed.

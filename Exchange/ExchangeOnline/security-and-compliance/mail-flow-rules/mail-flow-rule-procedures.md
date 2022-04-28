@@ -52,7 +52,7 @@ To learn about concepts and objectives for mail flow rules, see [Mail flow rules
 
 [Use mail flow rules to automatically add meetings to calendars in Exchange Online](use-rules-to-add-meetings.md): Use the Direct to Calendar feature in Exchange Online to add meetings directly to calendars in Exchange Online.
 
-[Define rules to encrypt email messages in Exchange Online](/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email): Learn how to use mail flow rules to encrypt messages using Office 365 Message Encryption (OME).
+[Define rules to encrypt email messages in Exchange Online](/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email): Learn how to use mail flow rules to encrypt messages using Microsoft Purview Message Encryption.
 
 ### For more information
 

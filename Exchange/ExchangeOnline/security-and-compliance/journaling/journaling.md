@@ -21,7 +21,7 @@ manager: serdars
 # Journaling in Exchange Online
 
 > [!IMPORTANT]
-> Please refer to the [Microsoft 365 security center](https://security.microsoft.com/homepage) and the [Microsoft 365 compliance center](https://compliance.microsoft.com/homepage) for Exchange security and compliance features. They are no longer available in the new [Exchange admin center](https://admin.exchange.microsoft.com).
+> Please refer to the [Microsoft 365 security center](https://security.microsoft.com/homepage) and the [Microsoft Purview compliance portal](https://compliance.microsoft.com/homepage) for Exchange security and compliance features. They are no longer available in the new [Exchange admin center](https://admin.exchange.microsoft.com).
 
 Journaling can help your organization respond to legal, regulatory, and organizational compliance requirements by recording inbound and outbound email communications. When planning for messaging retention and compliance, it's important to understand journaling, how it fits in your organization's compliance policies, and how Exchange Online helps you secure journaled messages.
 

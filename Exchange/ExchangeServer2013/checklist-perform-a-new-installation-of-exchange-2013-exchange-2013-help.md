@@ -46,22 +46,22 @@ This checklist is generic in that it provides guidance for a typical scenario.
 </tr>
 <tr class="even">
 <td><p></p></td>
-<td><p>1. Read the release notes.</p></td>
+<td><p>1. Read the release notes.</p></td>
 <td><p><a href="release-notes-for-exchange-2013-exchange-2013-help.md">Release notes for Exchange 2013</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>2. Verify system requirements.</p></td>
+<td> </td>
+<td><p>2. Verify system requirements.</p></td>
 <td><p><a href="exchange-2013-system-requirements-exchange-2013-help.md">Exchange 2013 system requirements</a></p></td>
 </tr>
 <tr class="even">
-<td> </td>
-<td><p>3. Confirm prerequisite steps are done.</p></td>
+<td> </td>
+<td><p>3. Confirm prerequisite steps are done.</p></td>
 <td><p><a href="exchange-2013-prerequisites-exchange-2013-help.md">Exchange 2013 prerequisites</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>4. Configure disjoint namespace.</p>
+<td> </td>
+<td><p>4. Configure disjoint namespace.</p>
 
 > [!NOTE]
 > This step is optional. It's only necessary if your organization is running a disjoint namespace.
@@ -70,13 +70,13 @@ This checklist is generic in that it provides guidance for a typical scenario.
 <td><p><a href="disjoint-namespace-scenarios-exchange-2013-help.md">Disjoint namespace scenarios</a></p></td>
 </tr>
 <tr class="even">
-<td> </td>
-<td><p>5. Install the Mailbox server role.</p></td>
+<td> </td>
+<td><p>5. Install the Mailbox server role.</p></td>
 <td><p><a href="install-exchange-2013-using-the-setup-wizard-exchange-2013-help.md">Install Exchange 2013 using the Setup wizard</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>6. Install the Client Access server role.</p></td>
+<td> </td>
+<td><p>6. Install the Client Access server role.</p></td>
 <td><p><a href="install-exchange-2013-using-the-setup-wizard-exchange-2013-help.md">Install Exchange 2013 using the Setup wizard</a></p></td>
 </tr>
 <tr class="even">
@@ -111,8 +111,8 @@ This checklist is generic in that it provides guidance for a typical scenario.
 <td><p><a href="configure-mail-flow-and-client-access-exchange-2013-help.md">Configure the default email address policy</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>12. Configure settings on virtual directories, including the offline address book, Exchange Web Services, Exchange admin center (EAC), Outlook Web App, and Exchange ActiveSync virtual directories.</p>
+<td> </td>
+<td><p>12. Configure settings on virtual directories, including the offline address book, Exchange Web Services, Exchange admin center (EAC), Outlook Web App, and Exchange ActiveSync virtual directories.</p>
 
 > [!NOTE]
 > This step is necessary if you want to use Exchange Web Services, Outlook Anywhere, or the offline address book. It also may be required if you need to change any of the default settings for EAC, Outlook Web App, or Exchange ActiveSync.
@@ -122,13 +122,13 @@ This checklist is generic in that it provides guidance for a typical scenario.
 <p><a href="configure-mail-flow-and-client-access-exchange-2013-help.md">Configure internal URLs</a></p></td>
 </tr>
 <tr class="even">
-<td> </td>
-<td><p>13. Add digital certificates on the Client Access server.</p></td>
+<td> </td>
+<td><p>13. Add digital certificates on the Client Access server.</p></td>
 <td><p><a href="configure-mail-flow-and-client-access-exchange-2013-help.md">Configure an SSL certificate</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>14. Configure Unified Messaging.</p>
+<td> </td>
+<td><p>14. Configure Unified Messaging.</p>
 
 > [!NOTE]
 > This step is optional. It's only necessary if you want to use Unified Messaging in your organization.
@@ -147,8 +147,8 @@ This checklist is generic in that it provides guidance for a typical scenario.
 <td><p><a href="deploying-exchange-2013-um-and-lync-server-overview-exchange-2013-help.md">Deploying Exchange 2013 UM and Lync Server overview</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>16. Post-installation tasks.</p></td>
+<td> </td>
+<td><p>16. Post-installation tasks.</p></td>
 <td><p><a href="exchange-2013-post-installation-tasks-exchange-2013-help.md">Exchange 2013 post-Installation tasks</a></p></td>
 </tr>
 </tbody>

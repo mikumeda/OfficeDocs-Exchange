@@ -48,7 +48,7 @@ For additional management tasks related to UM auto attendants, see [UM auto atte
 
 - Before you perform these procedures, confirm that a UM auto attendant has been created. For detailed steps, see [Create a UM auto attendant](../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/create-a-um-auto-attendant.md).
 
-- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
+- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 

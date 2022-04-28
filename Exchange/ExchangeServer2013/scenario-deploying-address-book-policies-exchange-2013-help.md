@@ -39,7 +39,7 @@ The Contoso and Humungous Insurance ABPs were created using the following addres
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>   </p></td>
+<td><p>   </p></td>
 <td><p>Contoso</p></td>
 <td><p>Humungous Insurance</p></td>
 </tr>
@@ -95,7 +95,7 @@ In this scenario, Fabrikam and Tailspin Toys share the same Exchange organizatio
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>   </p></td>
+<td><p>   </p></td>
 <td><p>Fabrikam</p></td>
 <td><p>Tailspin Toys</p></td>
 <td><p>CEO</p></td>
@@ -157,7 +157,7 @@ This scenario is applicable to schools or universities where a division of class
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>   </p></td>
+<td><p>   </p></td>
 <td><p>Students_ClassA</p></td>
 <td><p>Teachers_ClassA</p></td>
 <td><p>Principal</p></td>
@@ -269,7 +269,7 @@ Another best practice to consider implementing when segregating your organizatio
 
 Group naming policies don't apply to dynamic distribution groups, so you will need to manually segregate them and manually apply a naming policy.
 
-## Step 3: Create the address lists, GALs, and OABs
+## Step 3: Create the address lists, GALs, and OABs
 
 When you create the address lists and global address lists do not use "IncludedRecipient" and "ConditionalX" parameters, such as ConditionalCompany and ConditionalCustomAttribute5. You should use a recipient filter instead. You must use the Shell to create recipient filters. For more information about Recipient Filters, see [Recipient filtering on Edge Transport servers](recipient-filtering-on-edge-transport-servers-exchange-2013-help.md)
 
@@ -321,7 +321,7 @@ New-OfflineAddressBook -Name "OAB_FAB" -AddressLists "GAL_FAB"
 
 For more information, see [Create an offline address book](../ExchangeOnline/address-books/offline-address-books/create-offline-address-book.md).
 
-## Step 4: Create the ABPs
+## Step 4: Create the ABPs
 
 After you've created all of the required objects you can then create the ABP. This example creates the ABP named ABP\_TAIL.
 
@@ -331,7 +331,7 @@ New-AddressBookPolicy -Name "ABP_TAIL" -AddressLists "AL_TAIL_Users_DGs"," AL_TA
 
 For more information, see [Create an address book policy](../ExchangeOnline/address-books/address-book-policies/create-an-address-book-policy.md).
 
-## Step 5: Assign the ABPs to the mailboxes
+## Step 5: Assign the ABPs to the mailboxes
 
 Assigning the ABP to the user is the last step in the process. ABPs take effect when a user's application connects to the Microsoft Exchange Address Book service on the Client Access server. If the user is already connected to Outlook or Outlook Web App when the ABP is applied to their account, they will need to close and restart the client application before they can see their new address lists and GAL.
 

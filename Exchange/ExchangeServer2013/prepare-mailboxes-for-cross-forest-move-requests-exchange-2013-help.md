@@ -27,7 +27,7 @@ To move a mailbox from an Exchange forest to an Exchange 2013 forest, the Exchan
 
 To prepare for the mailbox move, you must create mail-enabled users with the required attributes in the target forest. Here are two recommended approaches to creating mail-enable users with the necessary attributes:
 
-  - If you deployed Microsoft Identity Lifecycle Manager (ILM) for cross-forest global address list (GAL) synchronization, the recommended approach to creating the mail-enabled user is to use Service Pack 1 (SP1) for ILM 2007 Feature Pack 1 (FP1). We've created sample code that you can use to learn how to customize ILM to synchronize the source mailbox user and target mail user.
+  - If you deployed Microsoft Identity Lifecycle Manager (ILM) for cross-forest global address list (GAL) synchronization, the recommended approach to creating the mail-enabled user is to use Service Pack 1 (SP1) for ILM 2007 Feature Pack 1 (FP1). We've created sample code that you can use to learn how to customize ILM to synchronize the source mailbox user and target mail user.
 
     For more information, including how to download the sample code, see [Prepare mailboxes for cross-forest moves using sample code](prepare-mailboxes-for-cross-forest-moves-using-sample-code-exchange-2013-help.md).
 
@@ -377,11 +377,11 @@ If you want to move a resource mailbox to an Exchange 2013 forest, you need to s
 <td><p><strong>msExchRecipientDisplayType</strong></p></td>
 <td><p>If the source mailbox is a conference room:</p>
 <ul>
-<li><p><strong>Constant</strong>   -2147481850 (decimal) //equivalent to *unsigned* 0x80000706.</p></li>
+<li><p><strong>Constant</strong>   -2147481850 (decimal) //equivalent to *unsigned* 0x80000706.</p></li>
 </ul>
 <p>If the source mailbox is an equipment mailbox:</p>
 <ul>
-<li><p><strong>Constant</strong>   -2147481594 (decimal) //equivalent to *unsigned* 0x80000806.</p></li>
+<li><p><strong>Constant</strong>   -2147481594 (decimal) //equivalent to *unsigned* 0x80000806.</p></li>
 </ul></td>
 </tr>
 <tr class="even">

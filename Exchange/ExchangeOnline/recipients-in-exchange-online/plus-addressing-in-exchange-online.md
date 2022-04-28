@@ -17,7 +17,7 @@ description: You use plus addressing to support dynamic, disposable recipient (n
 # Plus Addressing in Exchange Online
 
 > [!NOTE]
-> Starting in late April 2022, plus addressing will be turned on by default in all organzations, so the AllowPlusAddressInRecipients parameter will no longer work. After thant happens, you can disable plus addressing by using the new DisablePlusAddressInRecipients as described later in this article.
+> Starting in late April 2022, plus addressing will be turned on by default in all organzations, so the AllowPlusAddressInRecipients parameter will no longer work. After that happens, you can disable plus addressing by using the new DisablePlusAddressInRecipients as described later in this article.
 
 As of September 2020, plus addressing (also known as _subaddressing_) is available in Exchange Online. Subaddressing is an industry-defined way to support dynamic, disposable recipient (not sender) email addresses for mailboxes.
 
@@ -27,11 +27,11 @@ Plus addressing uses the syntax: `<local-part>+<tag>@<domain>`. For example, sea
 
 The original email address must be valid. The `+tag` value that you add is arbitrary, although regular character restrictions for SMTP email addresses apply (for example, no spaces). For more information about using plus addresses, see the [Using plus addresses](#using-plus-addresses) section.
 
-Plus addressing is available in Outlook on the web (formerly known as Outlook Web App or OWA) in Exchange Online at <https://outlook.live.com/owa/>.
+Plus addressing is available in Outlook on the web (formerly known as Outlook Web App or OWA) in Exchange Online at <https://outlook.office365.com/mail/>.
 
 By default, plus addressing support is turned off in Exchange Online. Why? Exchange Server and Exchange Online have historically supported the plus sign as a regular character in email addresses. If you have those email addresses and you turn on plus addressing in your organization, those email addresses might stop working.
 
-When you turn on plus addressing, Exchange Online tries to resolve the full email address address (for example, sean+newsletter@contoso.com) to a known mailbox. If the first resolution attempt fails, Exchange Online does a second attempt to resolve the email address without the plus sign and tag (for example, sean@contoso.com).
+When you turn on plus addressing, Exchange Online tries to resolve the full email address (for example, sean+newsletter@contoso.com) to a known mailbox. If the first resolution attempt fails, Exchange Online does a second attempt to resolve the email address without the plus sign and tag (for example, sean@contoso.com).
 
 If inbound internet email for your on-premises organization is routed through Exchange Online, your on-premises mailboxes can also use plus addresses if those mailbox addresses are known in Exchange Online. If the on-premises mailbox addresses are unknown to Exchange Online, plus addressing won't work and message delivery will be affected.
 

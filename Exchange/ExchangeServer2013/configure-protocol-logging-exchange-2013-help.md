@@ -168,11 +168,11 @@ This example sets the following protocol log settings in the Transport service o
 
 - Sets the location of all Receive connector protocol logs to D:\\Hub Receive SMTP Log and all Send connector protocol logs to D:\\Hub Send SMTP Log. Note that if the folder doesn't exist, it will be created for you.
 
-- Sets the maximum size of a Receive connector protocol log file and a Send connector protocol log file to 20 MB.
+- Sets the maximum size of a Receive connector protocol log file and a Send connector protocol log file to 20 MB.
 
-- Sets the maximum size of the Receive connector protocol log folder and the Send connector protocol log folder to 400 MB.
+- Sets the maximum size of the Receive connector protocol log folder and the Send connector protocol log folder to 400 MB.
 
-- Sets the maximum age of a Receive connector protocol log file and a Send Connector protocol log file to 45 days.
+- Sets the maximum age of a Receive connector protocol log file and a Send Connector protocol log file to 45 days.
 
 ```powershell
 Set-TransportService Mailbox01 -ReceiveProtocolLogPath "D:\Hub Receive SMTP Log" -SendProtocolLogPath "D:\Hub Send SMTP Log" -ReceiveProtocolLogMaxFileSize 20MB -SendProtocolLogMaxFileSize 20MB -ReceiveProtocolLogMaxDirectorySize 400MB -SendProtocolLogMaxDirectorySize 400MB -ReceiveProtocolLogMaxAge 45.00:00:00 -SendProtocolLogMaxAge 45.00:00:00

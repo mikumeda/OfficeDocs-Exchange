@@ -5,7 +5,7 @@ ms:assetid: 8f2ca383-e463-4df0-aa5d-29afe2f81aaf
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657471(v=EXCHG.150)
 ms:contentKeyID: 49289349
 ms.topic: article
-description: Microsoft Exchange Server 2013 administrators can manually download anti-malware engine and definition (signature) updates.
+description: Microsoft Exchange Server 2013 administrators can manually download anti-malware engine and definition (signature) updates.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
@@ -19,13 +19,13 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Microsoft Exchange Server 2013 administrators can manually download anti-malware engine and definition (signature) updates. We strongly recommend that you download engine and definition updates on your Exchange server prior to placing it in production.
+Microsoft Exchange Server 2013 administrators can manually download anti-malware engine and definition (signature) updates. We strongly recommend that you download engine and definition updates on your Exchange server prior to placing it in production.
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 5 minutes
 
-- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
+- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - To download updates, your computer must be able to access the Internet and be able to establish a connection on TCP port 80 (HTTP). If your organization uses a proxy server for Internet access, see the Use the Shell to configure proxy server settings for anti-malware updates section in this topic.
 
@@ -78,7 +78,7 @@ If engine updates were downloaded successfully, you will see Event ID 6033, whic
 
 `Update Path: http://forefrontdl.microsoft.com/server/scanengineupdate`
 
-`Last Update time: ‎2012‎-‎08‎-‎16T13:22:17.000Z`
+`Last Update time: 2012-08-16T13:22:17.000Z`
 
 `Engine Version: 1.1.8601.0`
 

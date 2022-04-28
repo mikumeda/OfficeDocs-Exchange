@@ -65,6 +65,11 @@ An Exchange Online, Microsoft 365, or Office 365 user must be represented by a M
 
     > [!NOTE]
     > The download package at this location contains additional files. To follow the instructions in this article, you only need the two listed above.
+    .
+    > The scripts supports only Basic authentication, so the script will fail in either of the following scenarios:
+    >
+    > - **Basic authentication is disabled for remote PowerShell**: Click the following link (admin access required) to verify the status and enable Basic authentication for remote PowerShell as needed: <https://aka.ms/PillarEXOBasicAuth>.
+    > - **Basic authentication is disabled on the admin account that's used by the script**: Enable Basic authentication for admin account that's used by the script, and then disable it when you're done using the script.
 
 2. Save the files to the local computer on which you'll be running PowerShell. For example, C:\PFScripts.
 

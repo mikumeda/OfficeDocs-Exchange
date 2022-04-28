@@ -438,9 +438,9 @@ The CollectReplicationMetrics.ps1 script supports parameters that allow you to c
 <td><p><em>Mode</em></p></td>
 <td><p>Specifies the processing stages that the script executes. You can use the following values:</p>
 <ul>
-<li><p><code>CollectAndReport</code>   This is the default value. This value signifies that the script should both collect the data from the servers and then process them to produce the summary report.</p></li>
-<li><p><code>CollectOnly</code>   This value signifies that the script should just collect the data and not produce the report.</p></li>
-<li><p><code>ProcessOnly</code>   This value signifies that the script should import data from a set of .csv files and process them to produce the summary report. The <em>SummariseFiles</em> parameter is used to provide the script with the list of files to process.</p></li>
+<li><p><code>CollectAndReport</code>   This is the default value. This value signifies that the script should both collect the data from the servers and then process them to produce the summary report.</p></li>
+<li><p><code>CollectOnly</code>   This value signifies that the script should just collect the data and not produce the report.</p></li>
+<li><p><code>ProcessOnly</code>   This value signifies that the script should import data from a set of .csv files and process them to produce the summary report. The <em>SummariseFiles</em> parameter is used to provide the script with the list of files to process.</p></li>
 </ul></td>
 </tr>
 <tr class="odd">

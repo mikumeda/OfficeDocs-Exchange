@@ -17,6 +17,7 @@
 ## [ActiveSync settings](../activesync-settings.md)
 ## [Performance best practices](../performance-best-practices.md)
 ## [Decommission on-premises Exchange](../decommission-on-premises-exchange.md)
+## [Manage on-premises recipients with Exchange Managment Tools](../manage-hybrid-exchange-recipients-with-management-tools.md)
 ## [Hybrid deployment](../hybrid-deployment/hybrid-deployment.md)
 ### [Hybrid deployments with multiple forests](../hybrid-deployment/hybrid-with-multiple-forests.md)
 ### [Hybrid agent](../hybrid-deployment/hybrid-agent.md)

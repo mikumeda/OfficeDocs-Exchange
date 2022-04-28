@@ -19,11 +19,11 @@ _**Applies to:** Exchange Server 2013_
 
 The Exchange Management Shell offers several methods that you can use to format command output. This topic discusses the following subjects:
 
-- How to format data   Control how the data that you see is formatted by using the **Format-List**, **Format-Table**, and **Format-Wide** cmdlets.
+- How to format data   Control how the data that you see is formatted by using the **Format-List**, **Format-Table**, and **Format-Wide** cmdlets.
 
-- How to output data   Determine whether data is output to the Shell console window or to a file by using the **Out-Host** and **Out-File** cmdlets. Included in this topic is a sample script to output data to Microsoft Internet Explorer.
+- How to output data   Determine whether data is output to the Shell console window or to a file by using the **Out-Host** and **Out-File** cmdlets. Included in this topic is a sample script to output data to Microsoft Internet Explorer.
 
-- How to filter data   Filter data by using either of the following filtering methods:
+- How to filter data   Filter data by using either of the following filtering methods:
 
   - Server-side filtering, available on certain cmdlets.
 
@@ -231,13 +231,13 @@ The **Out-Host** cmdlet is an unseen default cmdlet at the end of the pipeline. 
 Get-ChildItem | Format-Wide -Column 4 | Out-File c:\OutputFile.txt
 ```
 
-In this example, the **Out-File** cmdlet writes the information that is displayed in the **Get-ChildItem | Format-Wide -Column 4** command to a file that is named `OutputFile.txt`. You can also redirect pipeline output to a file by using the redirection operator, which is the right-angle bracket ( `>` ). To append pipeline output of a command to an existing file without replacing the original file, use the double right-angle brackets ( `>>` ), as in the following example:
+In this example, the **Out-File** cmdlet writes the information that is displayed in the **Get-ChildItem | Format-Wide -Column 4** command to a file that is named `OutputFile.txt`. You can also redirect pipeline output to a file by using the redirection operator, which is the right-angle bracket ( `>` ). To append pipeline output of a command to an existing file without replacing the original file, use the double right-angle brackets ( `>>` ), as in the following example:
 
 ```powershell
 Get-ChildItem | Format-Wide -Column 4 >> C:\OutputFile.txt
 ```
 
-In this example, the output from the **Get-Childitem** cmdlet is piped to the **Format-Wide** cmdlet for formatting and then is written to the end of the `OutputFile.txt` file. Notice that if the `OutputFile.txt` file didn't exist, use of the double right-angle brackets ( `>>` ) would create the file.
+In this example, the output from the **Get-Childitem** cmdlet is piped to the **Format-Wide** cmdlet for formatting and then is written to the end of the `OutputFile.txt` file. Notice that if the `OutputFile.txt` file didn't exist, use of the double right-angle brackets ( `>>` ) would create the file.
 
 For more information about pipelines, see [about_Pipelines](/powershell/module/microsoft.powershell.core/about/about_pipelines).
 
@@ -373,7 +373,7 @@ The **Get-Alias** cmdlet and the **Where** command work together to return the l
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><code>{ }</code></p></td>
+<td><p><code>{ }</code></p></td>
 <td><p>Braces enclose the script block that defines the filter.</p></td>
 </tr>
 <tr class="even">

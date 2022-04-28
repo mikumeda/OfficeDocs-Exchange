@@ -108,7 +108,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="database-copies-role-exchange-2013-help.md">Database Copies role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -117,7 +117,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="databases-role-exchange-2013-help.md">Databases role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -126,7 +126,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="exchange-connectors-role-exchange-2013-help.md">Exchange Connectors role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -135,7 +135,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="exchange-server-certificates-role-exchange-2013-help.md">Exchange Server Certificates role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -144,7 +144,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="exchange-servers-role-exchange-2013-help.md">Exchange Servers role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -153,7 +153,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="exchange-virtual-directories-role-exchange-2013-help.md">Exchange Virtual Directories role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -162,7 +162,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="monitoring-role-exchange-2013-help.md">Monitoring role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -171,7 +171,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="pop3-and-imap4-protocols-role-exchange-2013-help.md">POP3 and IMAP4 Protocols role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -180,7 +180,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="receive-connectors-role-exchange-2013-help.md">Receive Connectors role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -189,7 +189,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="transport-queues-role-exchange-2013-help.md">Transport Queues role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

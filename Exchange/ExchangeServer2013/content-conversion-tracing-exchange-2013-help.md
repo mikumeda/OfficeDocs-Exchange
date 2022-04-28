@@ -35,7 +35,7 @@ Content conversion tracing is controlled by the following parameters in the **Se
 
 Content conversion creates a folder named `ContentConversionTracing` in the path specified by the *PipelineTracingPath* parameter. In the `ContentConversionTracing` folder, content conversion creates two subfolders: `InboundFailures` and `OutboundFailures`. The `InboundFailures` folder contains the information from inbound message content conversion failures. The `OutboundFailures` folder contains the information from outbound message content conversion failures.
 
-The maximum size for all the files in the `InboundFailures` folder or the `OutboundFailures` folder is 128 megabytes (MB). Content conversion tracing doesn't use circular logging to remove old files based on the age or size of the files. As soon as the maximum size for a folder is reached, content conversion tracing stops writing information to the folder. If you want to make sure that the maximum folder size limits aren't exceeded, you can create a scheduled task that periodically moves the content conversion tracing files to a different location.
+The maximum size for all the files in the `InboundFailures` folder or the `OutboundFailures` folder is 128 megabytes (MB). Content conversion tracing doesn't use circular logging to remove old files based on the age or size of the files. As soon as the maximum size for a folder is reached, content conversion tracing stops writing information to the folder. If you want to make sure that the maximum folder size limits aren't exceeded, you can create a scheduled task that periodically moves the content conversion tracing files to a different location.
 
 The permissions required on the folders and subfolders used in content conversion tracing are as follows:
 
@@ -68,35 +68,35 @@ The placeholder \<*GUID*\> is the same in both file names. Each content conversi
 
 ## Considerations for content conversion tracing
 
-You can leave content conversion tracing enabled for proactive monitoring. Or, you can enable content conversion tracing to troubleshoot a specific failure event. You can usually reproduce inbound content conversion failures by asking the recipient of the 5.6.0 DSN message to resend the original message.
+You can leave content conversion tracing enabled for proactive monitoring. Or, you can enable content conversion tracing to troubleshoot a specific failure event. You can usually reproduce inbound content conversion failures by asking the recipient of the 5.6.0 DSN message to resend the original message.
 
 Inbound content conversion failures are the most common. Some of the reasons for inbound content conversion errors include the following:
 
 - **Violations of message size limits**: These message size limits are imposed by the Mailbox Transport service to help prevent denial of service attacks (DoS). These message limits are listed in the \<*GUID*\>.txt file. These message limits include the following:
 
-  - **MaxMimeTextHeaderLength**: This limit specifies the maximum number of text characters that can be used in a MIME header. The value is 2000.
+  - **MaxMimeTextHeaderLength**: This limit specifies the maximum number of text characters that can be used in a MIME header. The value is 2000.
 
-  - **MaxMimeSubjectLength**: This limit specifies the maximum number of text characters that can be used in the subject line. The value is 255.
+  - **MaxMimeSubjectLength**: This limit specifies the maximum number of text characters that can be used in the subject line. The value is 255.
 
-  - **MSize**: This limit specifies the maximum message size. The value is 2147483647 bytes.
+  - **MSize**: This limit specifies the maximum message size. The value is 2147483647 bytes.
 
-  - **MaxMimeRecipients**: This limit specifies the total number of recipients allowed in the To, Cc, and Bcc fields. The value is 12288.
+  - **MaxMimeRecipients**: This limit specifies the total number of recipients allowed in the To, Cc, and Bcc fields. The value is 12288.
 
-  - **MaxRecipientPropertyLength**: This limit specifies the maximum number of text characters that can be used in a recipient description. The value is 1000.
+  - **MaxRecipientPropertyLength**: This limit specifies the maximum number of text characters that can be used in a recipient description. The value is 1000.
 
-  - **MaxBodyPartsTotal**: This limit specifies the maximum number of message parts that can be used in a MIME multipart message. The value is 250.
+  - **MaxBodyPartsTotal**: This limit specifies the maximum number of message parts that can be used in a MIME multipart message. The value is 250.
 
-  - **MaxEmbeddedMessageDepth**: This limit specifies the maximum number of forwarded messages that can exist in a message. The value is 30.
+  - **MaxEmbeddedMessageDepth**: This limit specifies the maximum number of forwarded messages that can exist in a message. The value is 30.
 
     For more information about configurable message size limits used in the Transport service on Mailbox servers or on Edge Transport servers, see [Message size limits](message-size-limits-exchange-2013-help.md).
 
-- **Failure to convert an inbound iCalendar message to a meeting request**: RFC 2445 defines iCalendar as a standard for calendar data exchange. Specific causes of the conversion failure include the following:
+- **Failure to convert an inbound iCalendar message to a meeting request**: RFC 2445 defines iCalendar as a standard for calendar data exchange. Specific causes of the conversion failure include the following:
 
   - Incorrect use of iCalendar by the sending agent.
 
   - Constructs of iCalendar that can't be supported by the Outlook or Exchange calendar schema.
 
-  Conversion failures of iCalendar don't result in the sender receiving a 5.6.0 DSN message. Instead, the message is delivered with an attached .ics file that contains the iCalendar message body.
+  Conversion failures of iCalendar don't result in the sender receiving a 5.6.0 DSN message. Instead, the message is delivered with an attached .ics file that contains the iCalendar message body.
 
 - **Failures caused by badly formatted MIME messages**: Unsolicited commercial email or spam messages may have formatting errors in the message header, such as unmatched quotation marks in recipient descriptions. A much smaller number of failures caused by badly formatted MIME messages are considered bugs.
 

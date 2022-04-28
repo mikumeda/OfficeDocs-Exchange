@@ -76,7 +76,7 @@ You can use the features in the following table to manage your Exchange Online o
 |Supervision|Organization Management|
 |Unified Messaging|Organization Management <p> Unified Messaging Management|
 |View-only administrator audit logging|Organization Management <p> Records Management|
-|View reports|Organization Management: Users have access to mailbox reports and mail protection reports. <p> View-Only Organization Management: Users have access to mailbox reports. <p> View-Only Recipients: Users have access to mail protection reports. <p> Compliance Management: Users have access to mail protection reports and Data Loss Prevention (DLP) reports (if their subscription has DLP capabilities).|
+|View reports|Organization Management: Users have access to mailbox reports and mail protection reports. <p> View-Only Organization Management: Users have access to mailbox reports. <p> View-Only Recipients: Users have access to mail protection reports. <p> Compliance Management: Users have access to mail protection reports and data loss prevention (DLP) reports (if their subscription has DLP capabilities).|
 
 > [!NOTE]
 > To find the permissions that are required to run any Exchange Online cmdlet, see [Find the permissions required to run any Exchange cmdlet](/powershell/exchange/find-exchange-cmdlet-permissions).

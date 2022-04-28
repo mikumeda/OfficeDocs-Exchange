@@ -31,7 +31,7 @@ When you run Microsoft Exchange Server 2010 **Setup /PrepareAD**, the Microsoft 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p>Setup is going to prepare the organization for Exchange Server 2010 via 'Setup /PrepareAD' and no Exchange Server 2007 roles have been detected in this topology. After this operation, it will be impossible to install any Exchange Server 2007 roles.</p></td>
+<td><p>Setup is going to prepare the organization for Exchange Server 2010 via 'Setup /PrepareAD' and no Exchange Server 2007 roles have been detected in this topology. After this operation, it will be impossible to install any Exchange Server 2007 roles.</p></td>
 </tr>
 </tbody>
 </table>

@@ -161,7 +161,7 @@ You must complete the following steps to configure Unified Messaging to work wit
 
 4. Add all Client Access and Mailbox servers to the SIP dial plan. To enable the server to answer incoming calls, you must add all Exchange servers to a dial plan if you want them to answer calls from Lync Server.
 
-5. Set the startup mode and the TLS listening port on the Client Access and Mailbox servers that are added to the SIP URI dial plan to Dual and then restart the Microsoft Exchange Unified Messaging service on each Mailbox server and the Microsoft Exchange Unified Messaging Call Router service on each Client Access server.
+5. Set the startup mode and the TLS listening port on the Client Access and Mailbox servers that are added to the SIP URI dial plan to Dual and then restart the Microsoft Exchange Unified Messaging service on each Mailbox server and the Microsoft Exchange Unified Messaging Call Router service on each Client Access server.
 
 6. Create and configure a UM auto attendant. For details, see [Set up a UM auto attendant](../ExchangeOnline/voice-mail-unified-messaging/automatically-answer-and-route-calls/set-up-um-auto-attendant.md).
 

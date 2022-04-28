@@ -161,7 +161,7 @@ The following table lists the default settings on a stand-alone Exchange 2013 Cl
 <td><ul>
 <li><p>Required</p></li>
 </ul></td>
-<td><p> </p></td>
+<td><p> </p></td>
 </tr>
 </tbody>
 </table>

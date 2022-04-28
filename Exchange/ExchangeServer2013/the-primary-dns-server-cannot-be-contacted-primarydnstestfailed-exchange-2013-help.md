@@ -23,9 +23,9 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because communication with the primary Domain Name System (DNS) server cannot be established.
+Microsoft® Exchange Server 2007 setup cannot continue because communication with the primary Domain Name System (DNS) server cannot be established.
 
-Exchange 2007 setup requires that the local computer communicate with the authoritative DNS database for the domain.
+Exchange 2007 setup requires that the local computer communicate with the authoritative DNS database for the domain.
 
 Microsoft Exchange depends on DNS to resolve the IP Address of its next internal or external destination server.
 

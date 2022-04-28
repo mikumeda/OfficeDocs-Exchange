@@ -23,7 +23,7 @@ Some legacy Private Branch eXchange (PBX) and IP PBX telephony systems allow the
 
 Unified Messaging (UM) can be configured to use Active Directory Rights Management Services (AD RMS) to protect voice messages for an organization. This feature is known as Protected Voice Mail.
 
-When a voice message is protected, the recipient is not only blocked from forwarding the message, but UM also ensures that only the intended recipient or recipients of the message can access its content. Protected voice messages can be accessed by using Microsoft Outlook 2010 or later, Outlook Web App, or Outlook Voice Access.
+When a voice message is protected, the recipient is not only blocked from forwarding the message, but UM also ensures that only the intended recipient or recipients of the message can access its content. Protected voice messages can be accessed by using Microsoft Outlook 2010 or later, Outlook Web App, or Outlook Voice Access.
 
 ## Overview of Protected Voice Mail
 
@@ -87,9 +87,9 @@ Before you can implement IRM in Exchange, you must first deploy and configure yo
 <td><p>AD RMS Cluster</p></td>
 <td><ul>
 <li><p>Windows Server 2008 R2 Standard or Enterprise with SP1 or Windows Server 2012 Standard or Datacenter. For more information about system requirements, see <a href="exchange-2013-system-requirements-exchange-2013-help.md">Exchange 2013 system requirements</a>.</p></li>
-<li><p><strong>Service connection point (SCP)</strong>   Exchange 2013 and AD RMS-aware applications use the SCP registered in Active Directory to discover AD RMS clusters and URLs. AD RMS allows you to register the SCP within AD RMS setup. If the account used to set up AD RMS isn't a member of the Enterprise Admins security group, SCP registration can be performed after setup. There is only one SCP for AD RMS in an Active Directory forest.</p></li>
-<li><p><strong>Permissions</strong>   Servers in the Exchange servers group or individual Exchange servers must be assigned Read and Execute permissions to the AD RMS server certification pipeline. The default path is \inetpub\wwwroot\_wmcs\certification\ServerCertification.asmx on AD RMS servers.</p></li>
-<li><p><strong>AD RMS super users</strong>   To enable transport decryption, journal report decryption, IRM in Outlook Web App, and IRM for Exchange Search, you must add the Federated Delivery mailbox, a system mailbox created by Exchange Setup, to the AD RMS super users group on the AD RMS cluster. For detailed information, see <a href="add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md">Add the Federation Mailbox to the AD RMS Super Users Group</a>.</p></li>
+<li><p><strong>Service connection point (SCP)</strong>   Exchange 2013 and AD RMS-aware applications use the SCP registered in Active Directory to discover AD RMS clusters and URLs. AD RMS allows you to register the SCP within AD RMS setup. If the account used to set up AD RMS isn't a member of the Enterprise Admins security group, SCP registration can be performed after setup. There is only one SCP for AD RMS in an Active Directory forest.</p></li>
+<li><p><strong>Permissions</strong>   Servers in the Exchange servers group or individual Exchange servers must be assigned Read and Execute permissions to the AD RMS server certification pipeline. The default path is \inetpub\wwwroot\_wmcs\certification\ServerCertification.asmx on AD RMS servers.</p></li>
+<li><p><strong>AD RMS super users</strong>   To enable transport decryption, journal report decryption, IRM in Outlook Web App, and IRM for Exchange Search, you must add the Federated Delivery mailbox, a system mailbox created by Exchange Setup, to the AD RMS super users group on the AD RMS cluster. For detailed information, see <a href="add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md">Add the Federation Mailbox to the AD RMS Super Users Group</a>.</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -117,7 +117,7 @@ After you've set up an Exchange server, you can use the [Test-IRMConfiguration](
 
 ## Client support and end-user features
 
-The email client software that's used to listen to a Protected Voice Mail message must support IRM and know how to read a UM-protected voice message. Email clients that are supported include Microsoft Outlook 2010 or later versions, Outlook Web App, and Outlook Voice Access. The following table contains a list of email clients and whether they're supported.
+The email client software that's used to listen to a Protected Voice Mail message must support IRM and know how to read a UM-protected voice message. Email clients that are supported include Microsoft Outlook 2010 or later versions, Outlook Web App, and Outlook Voice Access. The following table contains a list of email clients and whether they're supported.
 
 <table>
 <colgroup>

@@ -119,19 +119,19 @@ If you exceed either of the limits, the execution of the cmdlet and its associat
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td><p>400</p></td>
-<td><p>The operation is successful because neither the size of the individual objects exceeds 75 MB nor the total amount of data passed to the cmdlet exceeds 500 MB.</p></td>
+<td><p>The operation is successful because neither the size of the individual objects exceeds 75 MB nor the total amount of data passed to the cmdlet exceeds 500 MB.</p></td>
 </tr>
 <tr class="even">
 <td><p>5</p></td>
 <td><p>80</p></td>
 <td><p>400</p></td>
-<td><p>The operation fails because, although the total amount of data passed to the cmdlet is only 400 MB, the size of each individual object exceeds the 75 MB limit.</p></td>
+<td><p>The operation fails because, although the total amount of data passed to the cmdlet is only 400 MB, the size of each individual object exceeds the 75 MB limit.</p></td>
 </tr>
 <tr class="odd">
 <td><p>120</p></td>
 <td><p>5</p></td>
 <td><p>600</p></td>
-<td><p>The operation fails because, although each individual object is only 5 MB, the total amount of data passed to the cmdlet exceeds the 500 MB limit.</p></td>
+<td><p>The operation fails because, although each individual object is only 5 MB, the total amount of data passed to the cmdlet exceeds the 500 MB limit.</p></td>
 </tr>
 </tbody>
 </table>

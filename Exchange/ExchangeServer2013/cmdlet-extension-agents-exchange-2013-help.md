@@ -179,12 +179,12 @@ The `Scripting agent` configuration file contains all the scripts that you want 
 <p>There can be multiple <code>Feature</code> tags under the <code>Configuration</code> tag.</p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Name</code></p></td>
 <td><p>This attribute contains the name of the feature. Use this attribute to help identify which feature is extended by the scripts contained within the tag.</p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Cmdlets</code></p></td>
 <td><p>This attribute contains a list of the Exchange cmdlets used by the set of scripts in this feature extension. You can specify multiple cmdlets by separating each cmdlet with a comma.</p></td>
 </tr>
@@ -200,7 +200,7 @@ The `Scripting agent` configuration file contains all the scripts that you want 
 </ul></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Name</code></p></td>
 <td><p>This attribute includes the name of the API call that's extending the cmdlet execution pipeline.</p></td>
 </tr>

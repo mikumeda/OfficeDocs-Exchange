@@ -56,22 +56,22 @@ By default, the message queue database is stored at %ExchangeInstallPath%Transpo
 
 100 \* (*hard disk size* - *fixed constant*) / *hard drive size*
 
-The value of *fixed constant* is 500 megabytes (MB).
+The value of *fixed constant* is 500 megabytes (MB).
 
-The results of this formula are expressed as a percentage of the total hard drive space that's being used. The results of the formula are always rounded down to the nearest integer. By default, the medium level of hard drive utilization is 2 percent less than the high level. By default, the normal level of hard drive utilization is 4 percent less than the high level.
+The results of this formula are expressed as a percentage of the total hard drive space that's being used. The results of the formula are always rounded down to the nearest integer. By default, the medium level of hard drive utilization is 2 percent less than the high level. By default, the normal level of hard drive utilization is 4 percent less than the high level.
 
 ## Free hard drive space for the message queue database transaction logs
 
-By default, the message queue database transaction logs are stored at %ExchangeInstallPath%TransportRoles\\data\\Queue. Exchange monitors the hard drive space utilization for this location. The %ExchangeInstallPath%Bin\\EdgeTransport.exe.config application configuration file contains a *DatabaseCheckPointDepthMax* key that has a default value of 384 MB. This key controls the total allowed size of all uncommitted transaction logs that exist on the hard drive. This key is used in the formula that calculates hard drive utilization.
+By default, the message queue database transaction logs are stored at %ExchangeInstallPath%TransportRoles\\data\\Queue. Exchange monitors the hard drive space utilization for this location. The %ExchangeInstallPath%Bin\\EdgeTransport.exe.config application configuration file contains a *DatabaseCheckPointDepthMax* key that has a default value of 384 MB. This key controls the total allowed size of all uncommitted transaction logs that exist on the hard drive. This key is used in the formula that calculates hard drive utilization.
 
 > [!NOTE]
 > The value of the <EM>DatabaseCheckPointDepthMax</EM> key applies to all transport-related Extensible Storage Engine (ESE) databases that exist on the Mailbox server or Edge Transport server. This would include the message queue database and the IP filter database.
 
 By default, the high level of disk utilization is calculated by using the following formula:
 
-100 \* (*hard drive size* - Min(5 GB, 3\**DatabaseCheckPointDepthMax*)) / *hard drive size*
+100 \* (*hard drive size* - Min(5 GB, 3\**DatabaseCheckPointDepthMax*)) / *hard drive size*
 
-The results of the formula are always rounded down to the nearest integer. By default, the medium level of hard drive utilization is 2 percent less than the high level. The normal level of hard drive utilization is 4 percent less than the high level.
+The results of the formula are always rounded down to the nearest integer. By default, the medium level of hard drive utilization is 2 percent less than the high level. The normal level of hard drive utilization is 4 percent less than the high level.
 
 ## Number of uncommitted message queue database transactions in memory
 
@@ -87,11 +87,11 @@ Exchange keeps a history of version bucket and batch point resource utilization.
 
 By default, the high level of memory utilization by the EdgeTransport.exe process is calculated by using the following formula:
 
-75 percent of the total physical memory or 1 terabyte, whichever is less
+75 percent of the total physical memory or 1 terabyte, whichever is less
 
 This calculation doesn't include virtual memory that's available on the hard drive in the paging file, or the memory that's used by other processes. The results of this formula are expressed as a percentage of the total memory that's used by the EdgeTransport.exe process. The results of the formula are always rounded down to the nearest integer.
 
-By default, the medium level of memory utilization by the EdgeTransport.exe file is calculated as 73 percent of the total physical memory or 2 percent less than the value of the high level, whichever is less. By default, the normal level of memory utilization by the EdgeTransport.exe file is calculated as 71 percent of the total physical memory or 4 percent less than the value of the high level, whichever is less.
+By default, the medium level of memory utilization by the EdgeTransport.exe file is calculated as 73 percent of the total physical memory or 2 percent less than the value of the high level, whichever is less. By default, the normal level of memory utilization by the EdgeTransport.exe file is calculated as 71 percent of the total physical memory or 4 percent less than the value of the high level, whichever is less.
 
 If the memory utilization of the EdgeTransport.exe process is higher than the specified normal level, *garbage collection* is forced. Garbage collection is a process that checks for unused objects that exist in memory, and reclaims the memory that's used by those unused objects.
 
@@ -99,7 +99,7 @@ Exchange keeps a history of the memory utilization of the EdgeTransport.exe proc
 
 ## Memory used by all processes
 
-By default, the high level of memory utilization by all processes is 94 percent of total physical memory. This value doesn't include virtual memory that's available on the hard drive in the paging file.
+By default, the high level of memory utilization by all processes is 94 percent of total physical memory. This value doesn't include virtual memory that's available on the hard drive in the paging file.
 
 When the specified memory utilization level is reached, *message dehydration* occurs. Message dehydration is the act of removing unnecessary elements of queued messages that are cached in memory. Complete messages are cached in memory for enhanced performance. Removal of the MIME content of queued messages from memory reduces the memory that's used at the expense of higher latency because the messages are read directly from the message queue database. By default, message dehydration is enabled.
 
@@ -300,7 +300,7 @@ All configuration options for back pressure are available in the %ExchangeInstal
 </tr>
 <tr class="even">
 <td><p><em>ResourceMonitoringInterval</em></p></td>
-<td><p><code>00:00:02</code> (2 seconds)</p></td>
+<td><p><code>00:00:02</code> (2 seconds)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>PercentageDatabaseDiskSpaceUsedHighThreshold</em></p></td>
@@ -308,11 +308,11 @@ All configuration options for back pressure are available in the %ExchangeInstal
 </tr>
 <tr class="even">
 <td><p><em>PercentageDatabaseDiskSpaceUsedMediumThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseDiskSpaceUsedHighThreshold</em>.</p></td>
+<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseDiskSpaceUsedHighThreshold</em>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>PercentageDatabaseDiskSpaceUsedNormalThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseDiskSpaceUsedMediumThreshold</em>.</p></td>
+<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseDiskSpaceUsedMediumThreshold</em>.</p></td>
 </tr>
 <tr class="even">
 <td><p><em>PercentageDatabaseLoggingDiskSpaceUsedHighThreshold</em></p></td>
@@ -320,11 +320,11 @@ All configuration options for back pressure are available in the %ExchangeInstal
 </tr>
 <tr class="odd">
 <td><p><em>PercentageDatabaseLoggingDiskSpaceUsedMediumThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseLoggingDiskSpaceUsedHighThreshold</em>.</p></td>
+<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseLoggingDiskSpaceUsedHighThreshold</em>.</p></td>
 </tr>
 <tr class="even">
 <td><p><em>PercentageDatabaseLoggingDiskSpaceUsedNormalThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseLoggingDiskSpaceUsedMediumThreshold</em>.</p></td>
+<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseLoggingDiskSpaceUsedMediumThreshold</em>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>PercentagePrivateBytesUsedHighThreshold</em></p></td>
@@ -332,11 +332,11 @@ All configuration options for back pressure are available in the %ExchangeInstal
 </tr>
 <tr class="even">
 <td><p><em>PercentagePrivateBytesUsedMediumThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentagePrivateBytesUsedHighThreshold</em>.</p></td>
+<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentagePrivateBytesUsedHighThreshold</em>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>PercentagePrivateBytesUsedNormalThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentagePrivateBytesUsedMediumThreshold</em>.</p></td>
+<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentagePrivateBytesUsedMediumThreshold</em>.</p></td>
 </tr>
 <tr class="even">
 <td><p><em>VersionBucketsHighThreshold</em></p></td>
@@ -380,11 +380,11 @@ All configuration options for back pressure are available in the %ExchangeInstal
 </tr>
 <tr class="even">
 <td><p><em>BatchPointBatchTimeout</em></p></td>
-<td><p><code>00:00:00.100</code> (0.1 seconds)</p></td>
+<td><p><code>00:00:00.100</code> (0.1 seconds)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>BatchPointItemExpiryInterval</em></p></td>
-<td><p><code>00:05:00</code> (5 minutes)</p></td>
+<td><p><code>00:05:00</code> (5 minutes)</p></td>
 </tr>
 <tr class="even">
 <td><p><em>SMTPBaseThrottlingDelayInterval</em></p></td>
@@ -392,15 +392,15 @@ All configuration options for back pressure are available in the %ExchangeInstal
 </tr>
 <tr class="odd">
 <td><p><em>SMTPMaxThrottlingDelayInterval</em></p></td>
-<td><p><code>00:00:55</code> (55 seconds)</p></td>
+<td><p><code>00:00:55</code> (55 seconds)</p></td>
 </tr>
 <tr class="even">
 <td><p><em>SMTPStepThrottlingDelayInterval</em></p></td>
-<td><p><code>00:00:05</code> (5 seconds)</p></td>
+<td><p><code>00:00:05</code> (5 seconds)</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>SMTPStartThrottlingDelayInterval</em></p></td>
-<td><p><code>00:00:10</code> (10 seconds)</p></td>
+<td><p><code>00:00:10</code> (10 seconds)</p></td>
 </tr>
 <tr class="even">
 <td><p><em>PercentagePhysicalMemoryUsedLimit</em></p></td>

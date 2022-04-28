@@ -6,7 +6,7 @@ ms:mtpsurl: https://technet.microsoft.com/library/Dd633492(v=EXCHG.150)
 ms:contentKeyID: 49289166
 ms.reviewer: 
 ms.topic: article
-description: About the Records Management role group of the Role Based Access Control permissions model in Microsoft Exchange Server
+description: About the Records Management role group of the Role Based Access Control permissions model in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: serdars
@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The Records Management management role group is one of several built-in role groups that make up the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. Role groups are assigned one or more management roles that contain the permissions required to perform a given set of tasks. The members of a role group are granted access to the management roles assigned to the role group. For more information about role groups, see [Understanding management role groups](understanding-management-role-groups-exchange-2013-help.md).
+The Records Management management role group is one of several built-in role groups that make up the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. Role groups are assigned one or more management roles that contain the permissions required to perform a given set of tasks. The members of a role group are granted access to the management roles assigned to the role group. For more information about role groups, see [Understanding management role groups](understanding-management-role-groups-exchange-2013-help.md).
 
 Users who are members of the Records Management role group can configure compliance features, such as retention policy tags, message classifications, and transport rules.
 
@@ -104,7 +104,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="audit-logs-role-exchange-2013-help.md">Audit Logs role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -113,7 +113,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="journaling-role-exchange-2013-help.md">Journaling role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -122,7 +122,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="message-tracking-role-exchange-2013-help.md">Message Tracking role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -131,7 +131,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="retention-management-role-exchange-2013-help.md">Retention Management role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -140,7 +140,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="transport-rules-role-exchange-2013-help.md">Transport Rules role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

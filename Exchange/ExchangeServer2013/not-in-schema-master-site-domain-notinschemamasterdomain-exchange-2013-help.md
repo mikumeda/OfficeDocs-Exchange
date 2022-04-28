@@ -23,13 +23,13 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because the computer that is running setup is not in the same Active Directory® directory service site or domain as the server that is assigned the domain schema master role, also known as flexible single master operations or FSMO.
+Microsoft® Exchange Server 2007 setup cannot continue because the computer that is running setup is not in the same Active Directory® directory service site or domain as the server that is assigned the domain schema master role, also known as flexible single master operations or FSMO.
 
-Exchange 2007 setup requires the domain controller that serves as the domain schema master to be in the same site and domain as the local computer that is running Exchange setup.
+Exchange 2007 setup requires the domain controller that serves as the domain schema master to be in the same site and domain as the local computer that is running Exchange setup.
 
-The domain schema master controls all updates and modifications to the Active Directory schema.
+The domain schema master controls all updates and modifications to the Active Directory schema.
 
-To resolve this issue, run Exchange Server 2007 setup using the **/prepareschema** and **/prepareAD** switches from the same site and domain as the domain schema master.
+To resolve this issue, run Exchange Server 2007 setup using the **/prepareschema** and **/prepareAD** switches from the same site and domain as the domain schema master.
 
 For more information about the **/prepareschema** and **/prepareAD** setup switches, see the Exchange 2007 product documentation topic [How to Prepare Active Directory and Domains](/previous-versions/office/exchange-server-2007/bb125224(v=exchg.80)).
 

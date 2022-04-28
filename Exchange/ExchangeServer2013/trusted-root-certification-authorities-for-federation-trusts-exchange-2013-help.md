@@ -57,12 +57,12 @@ The following table lists CAs currently trusted Microsoft. These CAs have been t
 <tr class="even">
 <td><p>Digicert</p></td>
 <td><p>Digicert Global Root Certification Authority</p></td>
-<td><p>‎Server authentication, client authentication</p></td>
+<td><p>Server authentication, client authentication</p></td>
 </tr>
 <tr class="odd">
 <td><p>Digicert High Assurance EV</p></td>
 <td><p>Digicert Global Root Certification Authority</p></td>
-<td><p>‎Server authentication, client authentication</p></td>
+<td><p>Server authentication, client authentication</p></td>
 </tr>
 <tr class="even">
 <td><p>Entrust</p></td>
@@ -77,17 +77,17 @@ The following table lists CAs currently trusted Microsoft. These CAs have been t
 <tr class="even">
 <td><p>Equifax</p></td>
 <td><p>Equifax Secure Certification Authority</p></td>
-<td><p>‎‎Server authentication, client authentication</p></td>
+<td><p>Server authentication, client authentication</p></td>
 </tr>
 <tr class="odd">
 <td><p>GlobalSign</p></td>
 <td><p>GlobalSign Certification Authority</p></td>
-<td><p>‎Server authentication, client authentication</p></td>
+<td><p>Server authentication, client authentication</p></td>
 </tr>
 <tr class="even">
 <td><p>Go Daddy</p></td>
 <td><p>Go Daddy Class 2 Certification Authority</p></td>
-<td><p>‎Server authentication, client authentication</p></td>
+<td><p>Server authentication, client authentication</p></td>
 </tr>
 <tr class="odd">
 <td><p>Network Solutions</p></td>
@@ -97,12 +97,12 @@ The following table lists CAs currently trusted Microsoft. These CAs have been t
 <tr class="even">
 <td><p>PositiveSSL</p></td>
 <td><p>Comodo Certification Authority</p></td>
-<td><p>‎Server authentication, client authentication</p></td>
+<td><p>Server authentication, client authentication</p></td>
 </tr>
 <tr class="odd">
 <td><p>SECOM</p></td>
 <td><p>SECOM Trust Systems Certification Authority</p></td>
-<td><p>‎Server authentication, client authentication</p></td>
+<td><p>Server authentication, client authentication</p></td>
 </tr>
 <tr class="even">
 <td><p>UTN-UserFirst-Hardware</p></td>
@@ -117,7 +117,7 @@ The following table lists CAs currently trusted Microsoft. These CAs have been t
 <tr class="even">
 <td><p>VeriSign</p></td>
 <td><p>VeriSign Trust Network</p></td>
-<td><p>‎Server authentication, client authentication</p></td>
+<td><p>Server authentication, client authentication</p></td>
 </tr>
 </tbody>
 </table>

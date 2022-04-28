@@ -178,7 +178,7 @@ IPv6 unicast addresses have the following possible scopes:
 
 - **Link local**: The scope of the IPv6 address is the local subnet. IPv6 link local addresses are comparable to IPv4 link local addresses used in Automatic Private IP Addressing (APIPA).
 
-- **Site local**: The scope of the IPv6 address is the local organization. Site local addresses were deprecated by RFC 3879 and replaced by unique local addresses as defined in RFC 4193. IPv6 site local addresses and IPv6 unique local addresses are comparable to IPv4 private IP addresses.
+- **Site local**: The scope of the IPv6 address is the local organization. Site local addresses were deprecated by RFC 3879 and replaced by unique local addresses as defined in RFC 4193. IPv6 site local addresses and IPv6 unique local addresses are comparable to IPv4 private IP addresses.
 
 - **Global**: The scope of the IPv6 address is the whole world. IPv6 global addresses are comparable to IPv4 public IP addresses.
 

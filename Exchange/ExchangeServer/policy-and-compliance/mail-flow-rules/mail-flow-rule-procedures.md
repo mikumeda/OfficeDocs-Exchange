@@ -48,7 +48,7 @@ On Mailbox servers, you can manage mail flow rules in the Exchange admin center 
 
   - [Manage message approval](../../../ExchangeServer2013/manage-message-approval-exchange-2013-help.md)
 
-- Data Loss Prevention (DLP) policies are collections of mail flow rules. To create DLP policies, see [Exchange Server DLP Procedures](../../../ExchangeServer2013/dlp-procedures-exchange-2013-help.md).
+- Data loss prevention (DLP) policies are collections of mail flow rules. To create DLP policies, see [Exchange Server DLP Procedures](../../../ExchangeServer2013/dlp-procedures-exchange-2013-help.md).
 
 ### Use the EAC to create mail flow rules
 
