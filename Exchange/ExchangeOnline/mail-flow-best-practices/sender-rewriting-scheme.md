@@ -28,13 +28,13 @@ The Sender Rewriting Scheme (SRS) functionality was added to Microsoft 365 to re
 > [!NOTE]
 > The **From** header, also known as the Display From address or P2 From address, that is displayed by email clients remains unchanged.
 
-The SRS functionality improves the delivery of applicable messages that pass Sender Policy Framework (SPF) checks when they arrive from the original sender but fail SPF checks at the final external destination after they are forwarded.
+The SRS functionality improves the delivery of applicable messages that pass Sender Policy Framework (SPF) checks when they arrive from the original sender but fail SPF checks at the final external destination after they're forwarded.
 
 SRS rewrites the **P1 From** address in the following scenarios:
 
 - Messages in Microsoft 365 that are autoforwarded (or redirected) to an external recipient by using any of the following methods:
   - SMTP forwarding
-    *Some messages forwarded by using SMTP Forwarding will not be rewritten by SRS because they would have already been rewritten. In an upcoming change, the SMTP Forwarding method will be covered under SRS as well.*
+    *Some messages forwarded by using SMTP Forwarding won't be rewritten by SRS because they would have already been rewritten. In an upcoming change, the SMTP Forwarding method will be covered under SRS as well.*
   - Mailbox Rule (or Inbox rule) redirection
   - Transport Rule redirection
   - Groups or DLs that have external members
@@ -42,12 +42,12 @@ SRS rewrites the **P1 From** address in the following scenarios:
   - Mail User forwarding
 - Messages that are autoforwarded (or redirected) from a customer's on-premises environment and relayed through Exchange Online.
 
-It is important to note that SRS rewriting is used to prevent spoofing of unverified domains. You should send messages only from domains that you own and for which you have verified your ownership through the Accepted Domains list. For more information about Accepted Domains in Microsoft 365, see [Manage accepted domains in Exchange Online](/exchange/mail-flow-best-practices/manage-accepted-domains/manage-accepted-domains).
+It's important to note that SRS rewriting is used to prevent spoofing of unverified domains. You should send messages only from domains that you own and for which you've verified your ownership through the Accepted Domains list. For more information about Accepted Domains in Microsoft 365, see [Manage accepted domains in Exchange Online](/exchange/mail-flow-best-practices/manage-accepted-domains/manage-accepted-domains).
 
 > [!NOTE]
 > SRS rewriting does not fix the issue of DMARC passing for forwarded messages. Although an SPF check will now pass by using a rewritten **P1 From** address, DMARC also requires an alignment check for the message to pass. For forwarded messages, DKIM always fails because the signed DKIM domain does not match the **From** header domain. If an original sender sets their DMARC policy to reject forwarded messages, the forwarded messages are rejected by Message Transfer Agents (MTAs) that honor DMARC policies.  
 
-This scenario causes Non-Delivery Reports (NDRs) to be returned to Exchange Online instead of the original sender, which is the case when SRS is not used. Therefore, part of the SRS implementation is to reroute returning NDRs to the original sender if a message cannot be delivered.
+This scenario causes Non-Delivery Reports (NDRs) to be returned to Exchange Online instead of the original sender, which is the case when SRS isn't used. Therefore, part of the SRS implementation is to reroute returning NDRs to the original sender if a message can't be delivered.
 
 The following sections present different autoforwarding scenarios and information on how SRS handles them.
 
@@ -59,7 +59,7 @@ For a message that is sent to a hosted mailbox and is autoforwarded by using mec
 <Forwarding Mailbox Username>+SRS=<Hash>=<Timestamp>=<Original Sender Domain>=<Original Sender Username>@<Forwarding Mailbox Domain>
 ```
 
-In the following example, a message is sent from Bob (bob@fabrikam.com) to John's mailbox in Exchange Online (john.work@contoso.com). John has set up autoforwarding from this mailbox to his home email address (john.home@example.com). Notice how the P1 From address is re-written by SRS.  
+In the following example, a message is sent from Bob (bob@fabrikam.com) to John's mailbox in Exchange Online (john.work@contoso.com). John has set up autoforwarding from this mailbox to his home email address (john.home@example.com). Notice how the P1 From address is rewritten by SRS.  
 
 ||Original message|Autoforwarded message|
 |---|---|---|
@@ -67,7 +67,7 @@ In the following example, a message is sent from Bob (bob@fabrikam.com) to John'
 | **P1 From**|`bob@fabrikam.com`|`john.work+SRS=44ldt=IX=fabrikam.com=bob@contoso.com`|
 | **From header**|`bob@fabrikam.com`|`bob@fabrikam.com`|
 
-When SRS re-writes the **P1 From** address, it increases the length of the username portion of the email address. However, the email address has a limit of 64 characters. So if the length of the re-written email address exceeds 64 characters, it will take the following form:  
+When SRS rewrites the **P1 From** address, it increases the length of the username portion of the email address. However, the email address has a limit of 64 characters. So if the length of the rewritten email address exceeds 64 characters, it will take the following form:  
 
 ```powershell
 bounces+SRS=<Hash>=<Timestamp>@<Default Accepted Domain>
@@ -83,7 +83,7 @@ When a message that originates from a non-verified domain is relayed from a cust
 bounces+SRS=<Hash>=<Timestamp>@<Default Accepted Domain> 
 ```
 
-In the following example, a message is sent from Bob (bob@fabrikam.com) to John's mailbox (john.onprem@contoso.com) which is on his company's server that is running Exchange Server. John has set up autoforwarding from this mailbox to his home email address (john.home@example.com). Notice how the **P1 From** address is re-written by SRS in this scenario.
+In the following example, a message is sent from Bob (bob@fabrikam.com) to John's mailbox (john.onprem@contoso.com) which is on his company's server that is running Exchange Server. John has set up autoforwarding from this mailbox to his home email address (john.home@example.com). Notice how the **P1 From** address is rewritten by SRS in this scenario.
 
 |Type|Original message|Relayed message received by Exchange Online|Relayed message sent from Exchange Online|
 |---|---|---|---|
@@ -91,7 +91,7 @@ In the following example, a message is sent from Bob (bob@fabrikam.com) to John'
 |**P1 From**|`bob@fabrikam.com`|`bob@fabrikam.com`|`bounces+SRS=44ldt=IX@contoso.com`|
 |**From header**|`bob@fabrikam.com`|`bob@fabrikam.com`|`bob@fabrikam.com`|
 
-In some situations, the relayed messages that are re-written by SRS might not get delivered, and a Non Delivery Report (NDR) might be generated. 
+In some situations, the relayed messages that are rewritten by SRS might not get delivered, and a Non Delivery Report (NDR) might be generated.
 
 To receive those NDRs, the tenant administrator must create a mailbox named “bounces” that is hosted either on Exchange Online or on-premises. The domain for this mailbox must be set to the default Accepted Domain for the tenant.
 
