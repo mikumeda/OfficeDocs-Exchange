@@ -16,6 +16,15 @@
 | 4/26/2022 | [Renew an Exchange Server certificate](/Exchange/architecture/client-access/renew-certificates?view=exchserver-2016) | modified |
 | 4/26/2022 | [Create a new Exchange Server self-signed certificate](/Exchange/architecture/client-access/create-self-signed-certificates?view=exchserver-2016) | modified |
 | 4/26/2022 | [Export a certificate from an Exchange server](/Exchange/architecture/client-access/export-certificates?view=exchserver-2016) | modified |
+| 4/25/2022 | [Complete a pending Exchange Server certificate request](/Exchange/architecture/client-access/complete-pending-certificate-requests?view=exchserver-2016) | modified |
+| 4/25/2022 | [Create an Exchange Server certificate request for a certification authority](/Exchange/architecture/client-access/create-ca-certificate-requests?view=exchserver-2016) | modified |
+| 4/25/2022 | [Export a certificate from an Exchange server](/Exchange/architecture/client-access/export-certificates?view=exchserver-2016) | modified |
+| 4/25/2022 | [Import or install a certificate on an Exchange server](/Exchange/architecture/client-access/import-certificates?view=exchserver-2016) | modified |
+| 4/25/2022 | [Renew an Exchange Server certificate](/Exchange/architecture/client-access/renew-certificates?view=exchserver-2016) | modified |
+| 4/26/2022 | [Create an Exchange Server certificate request for a certification authority](/Exchange/architecture/client-access/create-ca-certificate-requests?view=exchserver-2016) | modified |
+| 4/26/2022 | [Renew an Exchange Server certificate](/Exchange/architecture/client-access/renew-certificates?view=exchserver-2016) | modified |
+| 4/26/2022 | [Create a new Exchange Server self-signed certificate](/Exchange/architecture/client-access/create-self-signed-certificates?view=exchserver-2016) | modified |
+| 4/26/2022 | [Export a certificate from an Exchange server](/Exchange/architecture/client-access/export-certificates?view=exchserver-2016) | modified |
 
 
 ## Week of April 18, 2022
