@@ -47,11 +47,13 @@ The requirements for the network and the directory servers in your Exchange 2019
 
 |Component|Requirement|
 |---|---|
-|Domain controllers|All domain controllers in the forest need to be running one of the following versions of Windows Server: <ul><li>Windows Server 2019 Standard or Datacenter</li><li>Windows Server 2016 Standard or Datacenter</li><li>Windows Server 2012 R2 Standard or Datacenter</li></ul>|
+|Domain controllers|All domain controllers in the forest need to be running one of the following versions of Windows Server: <ul><li>Windows Server 2022<sup>1</sup> Standard or Datacenter</li><li>Windows Server 2019 Standard or Datacenter</li><li>Windows Server 2016 Standard or Datacenter</li><li>Windows Server 2012 R2 Standard or Datacenter</li></ul>|
 |Active Directory forest|The Active Directory forest functional level is **Windows Server 2012 R2** or higher.|
 |Active Directory site|The Active Directory site where you install the Exchange Server must contain at least one writeable domain controller that's also a global catalog server, or the installation will fail. Furthermore, you can't install the Exchange server and then remove the domain controller from the Active Directory site.|
 |DNS namespace|Exchange 2019 supports the following DNS namespaces: <ul><li>Contiguous</li><li>Noncontiguous</li><li>Single label domains</li><li>Disjoint</li></ul> <p> For more information about DNS namespaces that are supported by Exchange, see [KB2269838](https://support.microsoft.com/help/2269838).|
 |IPv6|Exchange 2013 and later support IPv6 only when IPv4 is also installed and enabled on the Exchange server. <p> If you deploy Exchange in this configuration, and your network supports IPv4 and IPv6, all Exchange servers can send data to and receive data from devices, servers, and clients that use IPv6 addresses. For more information, see [IPv6 Support in Exchange 2013](../../ExchangeServer2013/ipv6-support-in-exchange-2013-exchange-2013-help.md).|
+
+<sup>1</sup> Support for Windows Server 2022 Active Directory servers was introduced with Exchange Server 2019 CU12 (2022H1).
 
 ## Directory server architecture for Exchange 2019
 
@@ -80,8 +82,10 @@ For information about deploying Exchange in a virtualized environment, see [Exch
 
 |Exchange component|Requirement|
 |---|---|
-|Mailbox and Edge Transport server roles|Windows Server 2019 Standard or Datacenter|
-|Management tools|One of the following versions of Windows: <ul><li>Windows Server 2019 Standard or Datacenter</li><li>64-bit edition of Windows 10</li></ul>|
+|Mailbox and Edge Transport server roles|<ul><li>Windows Server 2022<sup>1</sup> Standard or Datacenter</li><li>Windows Server 2019 Standard or Datacenter</li></ul>|
+|Management tools|One of the following versions of Windows: <ul><li>Windows Server 2022<sup>1</sup> Standard or Datacenter</li><li>Windows Server 2019 Standard or Datacenter</li><li>64-bit edition of Windows 10</li></ul>|
+
+<sup>1</sup> Support for Windows Server 2022 was introduced with Exchange Server 2019 CU12 (2022H1).
 
 > [!NOTE]
 >
@@ -109,7 +113,7 @@ We strongly recommend that you use the latest version of the .NET Framework that
 
 |Exchange 2019 version|.NET Framework 4.8|.NET Framework 4.7.2|
 |---|:---:|:---:|
-|CU4 to CU11|Supported||
+|CU4 to CU12|Supported||
 |CU2, CU3|Supported|Supported|
 |RTM, CU1||Supported|
 
@@ -202,10 +206,10 @@ For information about deploying Exchange in a virtualized environment, see [Exch
 
 |Component|Requirement|
 |---|---|
-|Mailbox and Edge Transport server roles|<ul><li>Windows Server 2016 Standard or Datacenter<sup>\*</sup></li><li>Windows Server 2012 R2 Standard or Datacenter</li><li>Windows Server 2012 Standard or Datacenter</li></ul>|
-|Management tools|One of the following versions of Windows: <ul><li>Windows Server 2016 Standard or Datacenter<sup>\*</sup></li><li>Windows Server 2012 R2 Standard or Datacenter</li><li>Windows Server 2012 Standard or Datacenter</li><li>64-bit edition of Windows 10</li><li>64-bit edition of Windows 8.1</li></ul>|
+|Mailbox and Edge Transport server roles|<ul><li>Windows Server 2016 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 R2 Standard or Datacenter</li><li>Windows Server 2012 Standard or Datacenter</li></ul>|
+|Management tools|One of the following versions of Windows: <ul><li>Windows Server 2016 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 R2 Standard or Datacenter</li><li>Windows Server 2012 Standard or Datacenter</li><li>64-bit edition of Windows 10</li><li>64-bit edition of Windows 8.1</li></ul>|
 
-<sup>\*</sup> Requires Exchange Server 2016 Cumulative Update 3 or later.
+<sup>1</sup> Requires Exchange Server 2016 Cumulative Update 3 or later.
 
 ### Supported Windows Management Framework versions for Exchange 2016
 
@@ -227,7 +231,7 @@ We strongly recommend that you use the latest version of .NET Framework that's s
 
 |Exchange 2016 version|.NET Framework 4.8|.NET Framework 4.7.2|.NET Framework 4.7.1|.NET Framework 4.6.2|
 |---|:---:|:---:|:---:|:---:|
-|CU15 to CU22|Supported||||
+|CU15 to CU23|Supported||||
 |CU13, CU14|Supported|Supported|||
 |CU11, CU12||Supported|Supported||
 |CU10|||Supported||

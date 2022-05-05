@@ -31,7 +31,7 @@ For more information, see [Manage user mailboxes](./recipients-in-exchange-onlin
 
   ![Compliance Management tab.](media/compliance-management-tab.png)
 
-- In new EAC, it is not available and is now a part of [**Microsoft 365 compliance center**](https://df.compliance.microsoft.com/homepage).
+- In new EAC, it is not available and is now a part of [**Microsoft Purview compliance portal**](https://df.compliance.microsoft.com/homepage).
 
 ## Protection tab
 
@@ -82,7 +82,7 @@ For more information, see [What's new in Exchange admin center](./whats-new.md).
 
 ## Related articles
 
-[Microsoft 365 compliance center](/microsoft-365/compliance/microsoft-365-compliance-center?preserve-view=true&view=o365-worldwide)
+[Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center?preserve-view=true&view=o365-worldwide)
 
 [Microsoft 365 security center](/microsoft-365/security/mtp/overview-security-center?preserve-view=true&view=o365-worldwide)
 

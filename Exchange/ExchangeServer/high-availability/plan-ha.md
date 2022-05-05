@@ -48,9 +48,12 @@ Generally, there are no special storage requirements specific to DAGs or mailbox
 ## Software requirements
 <a name="SoftReq"> </a>
 
-Each member of a DAG must be running the same operating system. Exchange Server 2016 is supported on the Windows Server 2012, Windows Server 2012 R2, and Windows Server 2016. Exchange Server 2019 is supported on the Windows Server 2019 operating system. Within a specific DAG, all members must be running the same supported operating system.
+Each member of a DAG must be running the same operating system. Exchange Server 2016 is supported on the Windows Server 2012, Windows Server 2012 R2, and Windows Server 2016. Exchange Server 2019 is supported on the Windows Server 2019 and Windows Server 2022 operating system. Within a specific DAG, all members must be running the same supported operating system.
 
-In addition to meeting the prerequisites for installing Exchange Server, there are operating system requirements that must be met. DAGs use Windows Failover Clustering technology, and as a result, they require the Standard or Datacenter version of the Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, or Windows Server 2019 operating systems.
+> [!NOTE]
+> Support for Windows Server 2022 servers was introduced with Exchange Server 2019 CU12 (2022H1).
+
+In addition to meeting the prerequisites for installing Exchange Server, there are operating system requirements that must be met. DAGs use Windows Failover Clustering technology, and as a result, they require the Standard or Datacenter version of the Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, Windows Server 2019 or Windows Server 2022 operating systems.
 
 ## Network requirements
 <a name="NR"> </a>
@@ -97,7 +100,7 @@ Consider the following when designing the network infrastructure for your DAG:
 
 During creation, each DAG is given a unique name, and either assigned one or more static IP addresses, or configured to use DHCP. Regardless of whether you use static or dynamically assigned addresses, any IP address assigned to the DAG must be on the MAPI network.
 
-Each DAG running on Windows Server 2012 requires a minimum of one IP address on the MAPI network. A DAG requires additional IP addresses when the MAPI network is extended across multiple subnets. DAGs running on Windows Server 2012 R2, Windows Server 2016 or Windows Server 2019 that are created without a cluster administrative access point do not require an IP address.
+Each DAG running on Windows Server 2012 requires a minimum of one IP address on the MAPI network. A DAG requires additional IP addresses when the MAPI network is extended across multiple subnets. DAGs running on Windows Server 2012 R2, Windows Server 2016, Windows Server 2019 or Windows Server 2022 that are created without a cluster administrative access point do not require an IP address.
 
 The following figure illustrates a DAG where all nodes in the DAG have the MAPI network on the same subnet.
 

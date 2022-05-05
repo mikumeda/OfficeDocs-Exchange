@@ -217,4 +217,4 @@ The following table contains links to topics that will help you learn about and 
 |[Delete and re-create the default discovery mailbox in Exchange](delete-and-re-create-default-discovery-mailbox.md)|Learn how to delete the default discovery mailbox, re-create it, and then reassign permissions to it. Use this procedure if this mailbox has exceeded the 50 GB limit and you don't need the search results.|
 |[Using Oauth Authentication to Support eDiscovery in an Exchange Hybrid Deployment](../../../ExchangeServer2013/using-oauth-authentication-to-support-ediscovery-in-an-exchange-hybrid-deployment-exchange-2013-help.md)|Learn about the eDiscovery scenarios in an Exchange hybrid deployment that require you to configure OAuth authentication.|
 
-For more information about eDiscovery in Microsoft 365, see the [Get started with Core eDiscovery](/microsoft-365/compliance/ediscovery).
+For more information about eDiscovery in Microsoft Purview, see the [Get started with eDiscovery (Standard)](/microsoft-365/compliance/ediscovery).

@@ -24,7 +24,7 @@ In Exchange Online organizations or standalone Exchange Online Protection (EOP) 
 
 For a short list of words or phrases, you can use the Exchange admin center (EAC). For a longer list, you can use [Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell) or [standalone EOP PowerShell](/powershell/exchange/connect-to-exchange-online-protection-powershell) to import the words from a text file.
 
-If your Exchange Online organization uses Data Loss Prevention (DLP), see [Data loss prevention](../../security-and-compliance/data-loss-prevention/data-loss-prevention.md) for additional options for identifying and routing email that contains sensitive information (DLP is not available in standalone EOP).
+If your Exchange Online organization uses Data loss prevention (DLP), see [Data loss prevention](../../security-and-compliance/data-loss-prevention/data-loss-prevention.md) for additional options for identifying and routing email that contains sensitive information (DLP is not available in standalone EOP).
 
 ## Example 1: Use a short list of unacceptable words
 

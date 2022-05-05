@@ -64,6 +64,7 @@ The table in this section provides build numbers and general release dates for e
 
 |Product name|Release date|Build number<br>(short format)|Build number<br>(long format)|
 |---|---|:---:|:---:|
+|[Exchange Server 2019 CU12 (2022H1)](https://www.microsoft.com/download/details.aspx?familyID=a149e06c-62f4-4b62-adf8-7d382223a239)|April 20, 2022|15.2.1118.7|15.02.1118.007|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU11 Mar22SU](https://support.microsoft.com/help/5012698)|March 8, 2022|15.2.986.22|15.02.0986.022|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU11 Jan22SU](https://support.microsoft.com/help/5008631)|January 11, 2022|15.2.986.15|15.02.0986.015|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU11 Nov21SU](https://support.microsoft.com/help/5007409)|November 9, 2021|15.2.986.14|15.02.0986.014|
@@ -74,7 +75,7 @@ The table in this section provides build numbers and general release dates for e
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU10 Nov21SU](https://support.microsoft.com/help/5007409)|November 9, 2021|15.2.922.19|15.02.0922.019|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU10 Oct21SU](https://support.microsoft.com/help/5007012)|October 12, 2021|15.2.922.14|15.02.0922.014|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU10 Jul21SU](https://support.microsoft.com/help/5004780)|July 13, 2021|15.2.922.13|15.02.0922.013|
-|[Exchange Server 2019 CU10](https://www.microsoft.com/download/details.aspx?familyID=aa0d4c7c-526f-4a1a-924c-b534839f0001)|June 29, 2021|15.2.922.7|15.02.0922.007|
+|Exchange Server 2019 CU10|June 29, 2021|15.2.922.7|15.02.0922.007|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU9 Jul21SU](https://support.microsoft.com/help/5004780)|July 13, 2021|15.2.858.15|15.02.0858.015|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU9 May21SU](https://support.microsoft.com/help/5003435)|May 11, 2021|15.2.858.12|15.02.0858.012|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2019 CU9 Apr21SU](https://support.microsoft.com/help/5001779)|April 13, 2021|15.2.858.10|15.02.0858.010|
@@ -107,6 +108,7 @@ The table in this section provides build numbers and general release dates for e
 
 |Product name|Release date|Build number<br>(short format)|Build number<br>(long format)|
 |---|---|:---:|:---:|
+|[Exchange Server 2016 CU23 (2022H1)](https://www.microsoft.com/download/details.aspx?familyID=ad395419-4d2f-4eb0-97fb-a5b88ab814e1)|April 20, 2022|15.1.2507.6|15.01.2507.006|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU22 Mar22SU](https://support.microsoft.com/help/5012698)|March 8, 2022|15.1.2375.24|15.01.2375.024|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU22 Jan22SU](https://support.microsoft.com/help/5008631)|January 11, 2022|15.1.2375.18|15.01.2375.018|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU22 Nov21SU](https://support.microsoft.com/help/5007409)|November 9, 2021|15.1.2375.17|15.01.2375.017|
@@ -117,7 +119,7 @@ The table in this section provides build numbers and general release dates for e
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU21 Nov21SU](https://support.microsoft.com/help/5007409)|November 9, 2021|15.1.2308.20|15.01.2308.020|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU21 Oct21SU](https://support.microsoft.com/help/5007012)|October 12, 2021|15.1.2308.15|15.01.2308.015|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU21 Jul21SU](https://support.microsoft.com/help/5004779)|July 13, 2021|15.1.2308.14|15.01.2308.014|
-|[Exchange Server 2016 CU21](https://www.microsoft.com/download/details.aspx?familyID=88e4107e-a9a6-4847-959d-98e6e5d46f4a)|June 29, 2021|15.1.2308.8|15.01.2308.008|
+|Exchange Server 2016 CU21|June 29, 2021|15.1.2308.8|15.01.2308.008|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU20 Jul21SU](https://support.microsoft.com/help/5004779)|July 13, 2021|15.1.2242.12|15.01.2242.012|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU20 May21SU](https://support.microsoft.com/help/5003435)|May 11, 2021|15.1.2242.10|15.01.2242.010|
 |&nbsp;&nbsp;&nbsp;[Exchange Server 2016 CU20 Apr21SU](https://support.microsoft.com/help/5001779)|April 13, 2021|15.1.2242.8|15.01.2242.008|
