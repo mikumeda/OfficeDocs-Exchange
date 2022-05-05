@@ -30,7 +30,7 @@ To disable the new Outlook for Windows, do the following:
  
     ```PowerShell
     Connect-ExchangeOnline -UserPrincipalName <administrator email> 
-    Input set-CASMailbox <Email being changed> -OneWinNativeOutlookEnabled <$true>  if  or <$false>
+    set-CASMailbox <Email being changed> -OneWinNativeOutlookEnabled <$true> or <$false>
     ```
 
 You can also use the following command to confirm that the new Outlook for Windows is disabled for your account:  
