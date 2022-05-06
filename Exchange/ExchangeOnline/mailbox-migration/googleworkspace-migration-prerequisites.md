@@ -92,15 +92,11 @@ Here is how you do it:
    ![image](https://user-images.githubusercontent.com/5260172/152607089-76d8f272-3bd5-4f19-9e23-4fca882a789d.png)
    
 3. Select **IAM & Admin**.
-4. Select **ADD** at the top of the page.
-   
-   ![image](https://user-images.githubusercontent.com/5260172/152607681-7a2f22b3-f606-4188-a9c4-c9922d244b0a.png) 
-   
-5. Enter your Google Migration admin login followed by roles as per the screenshot below:
-   
-   ![image](https://user-images.githubusercontent.com/5260172/152609652-c2402f5a-2538-48d5-89a5-d8877f45af43.png)
-
-6. Select **Save**.
+4. Select **Manage Resources**.
+5. Select the appropriate resource and in the right-hand pane under the **Permissions** tab click on **Add Principal**
+6. Enter your Google Migration admin login, type in "Project Creator" into the Filter and select **Project Creator**.
+7. Click **Add Another Role**, type in "Create Service Accounts" into the Filter and select **Create Service Accounts**.
+8. Select **Save**.
 
  > [!NOTE]
  > It might take up to 15 minutes to propagate role assignment changes across the globe.
