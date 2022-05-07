@@ -22,7 +22,7 @@ f1.keywords:
 
 The new Outlook for Windows is enabled by default for all users with an Azure Active Directory account.
 
-To disable the new Outlook for Windows for users, [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell) and run the following command:
+To enable or disable the new Outlook for Windows for users, [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell) and run the following command:
 
 ```PowerShell
 Set-CASMailbox -Identity <MailboxIdentity> -OneWinNativeOutlookEnabled <$true | $false>
@@ -43,7 +43,9 @@ Set-CASMailbox -Identity colin@contoso.onmicrosoft.com -OneWinNativeOutlookEnabl
 
 To enable the new Outlook for Windows, use the value $true for the OneWinNativeOutlookEnabled parameter.
 
-To verify the new Outlook for Windows is disabled for a specific user, replace \<MailboxIdentity\> with the name, alias, email address or user ID of the user, and then run the following command:
+## Verify if the new Outlook for Windows is enabled or disabled for users
+
+To verify the new Outlook for Windows is disabled for a specific user, replace \<MailboxIdentity\> with the name, alias, email address or user ID of the user, and run the following command:
 
 ```PowerShell
 Get-CASMailbox -Identity <MailboxIdentity> | Format-List UniversalOutlookEnabled
@@ -54,5 +56,5 @@ The value False for the UniversalOutlookEnabled property means the new Outlook f
 To verify if the new Outlook for Windows is enabled or disabled for all users, run the following command:
 
 ```PowerShell
-Get-CASMailbox -ResultSize unlimited | Format-Table -Auto Name,UniversalOutlookEnabled
+Get-CASMailbox -ResultSize unlimited -Filter "RecipientTypeDetailsValue -eq 'UserMailbox'" | Format-Table Name,PrimarySMTPAddress,UniversalOutlookEnabled
 ```
