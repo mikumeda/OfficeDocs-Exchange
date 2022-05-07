@@ -341,7 +341,7 @@ The output of the command looks like this:
 
 ## Direct your Hybrid Agent(s) to the load balancer instead of a specific server
 
-You can use the Hybrid Management PowerShell module to configure your Hybrid Agent(s) to direct requests to your load balancer instead of a specific Exchange Client Access Server. The Hybrid Agent supports routing requests to the load balancer for Exchange Server 2013 or later Client Access Servers. Exchange Server 2010 Client Access Servers aren't supported.
+You can use the Hybrid Management PowerShell module to configure your Hybrid Agent(s) to direct requests to your load balancer instead of a specific Exchange Server. The Hybrid Agent supports routing requests to the load balancer for Exchange Server 2013 Client Access Servers and Exchange Server 2016 servers or later.
 
 1. Follow the steps from the previous section to import the Hybrid Management module for PowerShell.
 
