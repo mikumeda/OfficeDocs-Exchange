@@ -121,7 +121,7 @@ Keep the following issues in mind before you install the Hybrid Agent:
 
 ## Running Setup
 
-You must run the HCW from the computer where you want the agent installed. After the Agent is installed and configured, the HCW will locate a preferred server to connect to and run the standard hybrid configuration steps. You do not have to run the HCW from the Exchange server directly, but as stated previously, the computer where the HCW is run must be able to connect to the Client Access Server on the ports specified in the [Ports and protocols](#port-and-protocol-requirements) section.
+You must run the HCW from the computer where you want the agent installed. After the Agent is installed and configured, the HCW will locate a preferred server to connect to and run the standard hybrid configuration steps. You do not have to run the HCW from the Exchange server directly, but as stated previously, the computer where the HCW is run must be able to connect to the Exchange Server on the ports specified in the [Ports and protocols](#port-and-protocol-requirements) section.
 
 ### Installation Prerequisites
 
