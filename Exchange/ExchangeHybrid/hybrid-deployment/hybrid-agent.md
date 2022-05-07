@@ -37,13 +37,13 @@ The Hybrid Agent has multiple methods of installation with different requirement
 
   - Capable of establishing outbound HTTPS connections to the Internet.
 
-  - Capable of establishing HTTPS connections to the Client Access Server (CAS) chosen for hybrid configuration.
+  - Capable of establishing HTTPS connections to the Exchange Server chosen for hybrid configuration.
 
 The SHCW can download and install the agent MSI automatically. Using this method is ideal when installing on a CAS server directly. In this case, the computer also must:
 
 - Joined to an Active Directory domain.
 
-- Capable of establishing remote PowerShell connections to the Client Access Server (CAS) chosen for hybrid configuration.
+- Capable of establishing remote PowerShell connections to the Exchange Server chosen for hybrid configuration.
 
 - Use a browser that supports ClickOnce technology (for example, Microsoft Edge).
 
