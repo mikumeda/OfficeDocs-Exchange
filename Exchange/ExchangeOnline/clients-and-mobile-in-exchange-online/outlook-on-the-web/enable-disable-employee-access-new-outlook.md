@@ -56,5 +56,5 @@ The value False for the UniversalOutlookEnabled property means the new Outlook f
 To verify if the new Outlook for Windows is enabled or disabled for all users, run the following command:
 
 ```PowerShell
-Get-CASMailbox -ResultSize unlimited | Format-Table -Auto Name,PrimaryEmailAddress,UniversalOutlookEnabled
+Get-CASMailbox -ResultSize unlimited -Filter "RecipientTypeDetailsValue -eq 'UserMailbox'" | Format-Table Name,PrimarySMTPAddress,UniversalOutlookEnabled
 ```
