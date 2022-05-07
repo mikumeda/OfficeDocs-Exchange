@@ -23,7 +23,7 @@ The Hybrid Agent removes some of the challenges you can face when you configure 
 
 ## Agent Install Location & Requirements
 
-The agent install and the configuration of Hybrid via the Hybrid Configuration wizard (HCW) is supported on either a standalone computer designed as your "agent server" or on an 2013, 2016 or 2019 server with the Client Access role.
+The agent install and the configuration of Hybrid via the Hybrid Configuration wizard (HCW) is supported on either a standalone computer designed as your "agent server" or on an 2013 (with the Client Access role), 2016 or 2019 server.
 
 ## System requirements
 
