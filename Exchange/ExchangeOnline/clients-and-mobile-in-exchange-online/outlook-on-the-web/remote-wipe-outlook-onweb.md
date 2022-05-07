@@ -10,13 +10,13 @@ ms.service: exchange-online
 ms.localizationpriority: medium
 
 ---
-# How to use Outlook Web App or Outlook on the web to remotely wipe an ActiveSync device in Microsoft 365
+# How to use Outlook on the web (formerly know as Outlook Web App) and the new Outlook for Windows to remotely wipe an ActiveSync device in Microsoft 365
 
 ## Introduction
 
-This article describes how to use Outlook on the web (formerly known as Outlook Web App OWA) to remotely wipe a mobile device in Microsoft 365.
+This article describes how to use Outlook on the web (formerly known as Outlook Web App OWA) and the new Outlook for Windows to remotely wipe a mobile device in Microsoft 365.
 
-To remotely wipe a mobile device in Outlook Web App or Outlook on the web, the mobile device must be connected to Exchange Online by using Microsoft Exchange ActiveSync. If you lose the mobile device, you can use the remote wiping feature to prevent someone from obtaining your personal information from the device.
+To remotely wipe a mobile device in Outlook on the web or the new Outlook for Windows, the mobile device must be connected to Exchange Online by using Microsoft Exchange ActiveSync. If you lose the mobile device, you can use the remote wiping feature to prevent someone from obtaining your personal information from the device.
 
 ## Procedure
 
