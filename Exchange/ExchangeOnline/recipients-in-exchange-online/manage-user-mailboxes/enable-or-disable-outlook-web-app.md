@@ -25,19 +25,21 @@ You can use the EAC or Exchange Online PowerShell to enable or disable Outlook o
 > [!NOTE]
 > Support for Outlook on the web and MAPI, POP3, and IMAP4 email clients is enabled by default when a user mailbox is created.
 
-For additional management tasks related to managing email client access to a mailbox, see the following topics:
+For additional management tasks related to managing email client access to a mailbox, see the following articles:
 
 - [Enable or disable MAPI for a mailbox](enable-or-disable-mapi.md)
 
 - [Enable or Disable POP3 or IMAP4 access for a user](../../clients-and-mobile-in-exchange-online/pop3-and-imap4/enable-or-disable-pop3-or-imap4-access.md)
 
+Disabling access to Outlook on the web will also limit the use of the new Outlook for Windows.
+
 ## What do you need to know before you begin?
 
 - Estimated time to complete: 2 minutes.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access user settings" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Client Access user settings" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) article.
 
-- For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
+- For information about keyboard shortcuts that may apply to the procedures in this article, see [Keyboard shortcuts for the Exchange admin center](../../accessibility/keyboard-shortcuts-in-admin-center.md).
 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
