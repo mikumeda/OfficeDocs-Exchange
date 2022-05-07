@@ -23,7 +23,7 @@ The Hybrid Agent removes some of the challenges you can face when you configure 
 
 ## Agent Install Location & Requirements
 
-The agent install and the configuration of Hybrid via the Hybrid Configuration wizard (HCW) is supported on either a standalone computer designed as your "agent server" or on an Exchange 2010, 2013, 2016 or 2019 server with the Client Access role.
+The agent install and the configuration of Hybrid via the Hybrid Configuration wizard (HCW) is supported on either a standalone computer designed as your "agent server" or on an 2013, 2016 or 2019 server with the Client Access role.
 
 ## System requirements
 
@@ -60,7 +60,7 @@ The SHCW can download and install the agent MSI automatically. Using this method
 - Ports HTTPS (TCP) 443, 80, 5985 and 5986 must be open between the computer that has the Hybrid Agent installed on the CAS that's selected in the Hybrid Configuration wizard.
 
 > [!IMPORTANT]
-> All Client Access Servers must be able to reach outbound to Microsoft 365 or Office 365 endpoints via HTTPS (TCP) 443, because free/busy request from on-premises users to Microsoft 365 or Office 365 users do not traverse the Hybrid Agent. These requests still require that your Exchange servers have outbound connectivity to Microsoft 365 or Office 365 end points. Microsoft 365 and Office 365 URLs and IP address ranges describes the required (and hybrid) ports and IPs outbound from on-prem to the service here: [https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges](/office365/enterprise/urls-and-ip-address-ranges).
+> All Exchange servers (or Client Access Servers if you have Exchange 2013) must be able to reach outbound to Microsoft 365 or Office 365 endpoints via HTTPS (TCP) 443, because free/busy request from on-premises users to Microsoft 365 or Office 365 users do not traverse the Hybrid Agent. These requests still require that your Exchange servers have outbound connectivity to Microsoft 365 or Office 365 end points. Microsoft 365 and Office 365 URLs and IP address ranges describes the required (and hybrid) ports and IPs outbound from on-prem to the service here: [https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges](/office365/enterprise/urls-and-ip-address-ranges).
 
 ### Proxy server considerations
 
