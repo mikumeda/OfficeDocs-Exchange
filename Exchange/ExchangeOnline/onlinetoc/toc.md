@@ -313,7 +313,7 @@
 #### [Configure email on mobile phone](../clients-and-mobile-in-exchange-online/mobile-access/configure-email-on-mobile-phone.md)
 #### [Remote wipe on mobile phone](../clients-and-mobile-in-exchange-online/mobile-access/remote-wipe-on-mobile-phone.md)
 ### [Outlook on the web](../clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-on-the-web.md)
-### [Enable or Disable employee access to the new Outlook](../clients-and-mobile-in-exchange-online/outlook-on-the-web/enable-disables-employee-access-new-outlook.md)
+### [Enable or Disable employee access to the new Outlook](../clients-and-mobile-in-exchange-online/outlook-on-the-web/enable-disable-employee-access-new-outlook.md)
 #### [Outlook on the web mailbox policies](../clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policies.md)
 ##### [Outlook on the web mailbox policy procedures](../clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policy-procedures.md)
 ###### [Create Outlook on the web mailbox policy](../clients-and-mobile-in-exchange-online/outlook-on-the-web/create-outlook-web-app-mailbox-policy.md)
