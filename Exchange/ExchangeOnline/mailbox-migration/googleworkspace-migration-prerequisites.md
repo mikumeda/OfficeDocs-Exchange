@@ -93,9 +93,9 @@ Here is how you do it:
    
 3. Select **IAM & Admin**.
 4. Select **Manage Resources**.
-5. Select the appropriate resource and in the right-hand pane under the **Permissions** tab click on **Add Principal**
-6. Enter your Google Migration admin login, type in "Project Creator" into the Filter and select **Project Creator**.
-7. Click **Add Another Role**, type in "Create Service Accounts" into the Filter and select **Create Service Accounts**.
+5. Select the appropriate resource and in the right-hand pane under the **Permissions** tab select **Add Principal**.
+6. Enter your Google Migration admin login, enter *Project Creator* in the filter, and select **Project Creator**.
+7. Select **Add Another Role**, enter *Create Service Accounts* in the filter, and select **Create Service Accounts**.
 8. Select **Save**.
 
  > [!NOTE]
