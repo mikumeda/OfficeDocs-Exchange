@@ -33,33 +33,19 @@ Exchange ActiveSync is a Microsoft Exchange synchronization protocol that's opti
 Exchange ActiveSync provides the following:
 
 - Support for HTML messages
-
 - Support for follow-up flags
-
 - Conversation grouping of email messages
-
 - Ability to synchronize or not synchronize an entire conversation
-
 - Support for viewing message reply status
-
 - Support for fast message retrieval
-
 - Meeting attendee information
-
 - Enhanced Exchange Search
-
 - PIN reset
-
 - Enhanced device security through password policies
-
 - Autodiscover for over-the-air provisioning
-
 - Support for setting automatic replies when users are away, on vacation, or out of the office
-
 - Support for task synchronization
-
 - Direct Push
-
 - Support for availability information for contacts
 
 ## Managing Exchange ActiveSync
@@ -70,13 +56,9 @@ By default, Exchange ActiveSync is enabled. All users who have an Exchange mailb
 You can perform the following Exchange ActiveSync tasks:
 
 - Enable and disable Exchange ActiveSync for users
-
 - Set policies such as minimum password length, device locking, and maximum failed password attempts
-
 - Initiate a remote wipe to clear all data from a lost or stolen mobile phone
-
 - Run a variety of reports for viewing or exporting into a variety of formats
-
 - Control which types of mobile devices can synchronize with your organization through device access rules
 
 ### Managing mobile device access in Exchange ActiveSync

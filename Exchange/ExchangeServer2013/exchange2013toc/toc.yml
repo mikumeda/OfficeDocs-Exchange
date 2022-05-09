@@ -1310,9 +1310,9 @@
       - name: Enable or disable email for a mail user
         href: ../enable-or-disable-email-for-a-mail-user-exchange-2013-help.md
     - name: Create and manage room mailboxes
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-room-mailboxes
+      href: ../manage-room-mailboxes-exchange-2013-help.md
     - name: Manage equipment mailboxes
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-equipment-mailboxes
+      href: ../manage-equipment-mailboxes-exchange-2013-help.md
     - name: Disconnected mailboxes
       href: ../disconnected-mailboxes-exchange-2013-help.md
       items:
@@ -1467,7 +1467,7 @@
         - name: Remove an offline address book
           href: ../../ExchangeOnline/address-books/offline-address-books/remove-offline-address-book.md
         - name: Update an offline address book
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/update-offline-address-book
+          href: ../update-offline-address-book-exchange-2013-help.md
         - name: Create an offline address book virtual directory
           href: /exchange/address-books/offline-address-books/create-virtual-directory
         - name: Change the offline address book generation schedule
@@ -1584,9 +1584,9 @@
         - name: Mobile phone and tablet features
           href: ../mobile-phone-and-tablet-features-exchange-2013-help.md
         - name: Perform a remote wipe on a mobile phone
-          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/remote-wipe-on-mobile-phone.md
+          href: ../remote-wipe-on-mobile-phone-exchange-2013-help.md
         - name: Configure mobile phones to access email
-          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/configure-email-on-mobile-phone.md
+          href: ../configure-email-on-mobile-phone-exchange-2013-help.md
     - name: POP3 and IMAP4
       href: ../pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md
       items:
@@ -1626,19 +1626,19 @@
         - name: Configure protocol logging for POP3 and IMAP4
           href: ../configure-protocol-logging-for-pop3-and-imap4-exchange-2013-help.md
     - name: Outlook for iOS and Android
-      href: ../../ExchangeServer/clients/outlook-for-ios-and-android/outlook-for-ios-and-android.md?view=exchserver-2019
+      href: ../../ExchangeServer/clients/outlook-for-ios-and-android/outlook-for-ios-and-android.md
       items:
       - name: Using hybrid Modern Authentication with Outlook for iOS and Android
-        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-hybrid-modern-auth.md?view=exchserver-2019
+        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-hybrid-modern-auth.md
       - name: Using Basic authentication with Outlook for iOS and Android
-        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-basic-auth.md?view=exchserver-2019
+        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-basic-auth.md
         items:
         - name: Account setup in Outlook for iOS and Android using Basic authentication
-          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/account-setup.md?view=exchserver-2019
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/account-setup.md
         - name: Passwords and Security in Outlook for iOS and Android for Exchange Server
-          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/passwords-and-security.md?view=exchserver-2019
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/passwords-and-security.md
         - name: Managing devices for Outlook for iOS and Android for Exchange Server
-          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/manage-devices.md?view=exchserver-2019
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/manage-devices.md
     - name: Client protocol management
       href: ../client-protocol-management-exchange-2013-help.md
       items:
@@ -1653,19 +1653,19 @@
       href: ../outlook-web-app-exchange-2013-help.md
       items:
       - name: Outlook Web App mailbox policies
-        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policies.md
+        href: ../outlook-web-app-mailbox-policies-exchange-2013-help.md
         items:
         - name: Outlook Web App mailbox policy procedures
-          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policy-procedures.md
+          href: ../outlook-web-app-mailbox-policy-procedures-exchange-2013-help.md
           items:
           - name: Create an Outlook Web App mailbox policy
-            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/create-outlook-web-app-mailbox-policy.md
+            href: ../create-outlook-web-app-mailbox-policy-exchange-2013-help.md
           - name: Apply or remove an Outlook Web App mailbox policy on a mailbox
-            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/apply-or-remove-outlook-web-app-mailbox-policy.md
+            href: ../apply-or-remove-outlook-web-app-mailbox-policy-exchange-2013-help.md
           - name: Remove an Outlook Web App mailbox policy from Exchange
-            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/remove-outlook-web-app-mailbox-policy.md
+            href: ../remove-outlook-web-app-mailbox-policy-exchange-2013-help.md
           - name: View or configure Outlook Web App mailbox policy properties
-            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/configure-outlook-web-app-mailbox-policy-properties.md
+            href: ../configure-outlook-web-app-mailbox-policy-properties-exchange-2013-help.md
       - name: Integrate Outlook Web App with Lync Server
         href: ../integrate-outlook-web-app-with-lync-server-exchange-2013-help.md
       - name: View or configure Outlook Web App virtual directories
@@ -1683,14 +1683,14 @@
       - name: Using Outlook Web App Web parts
         href: ../using-outlook-web-app-web-parts-exchange-2013-help.md
     - name: MailTips
-      href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips.md
+      href: ../mailtips-exchange-2013-help.md
       items:
       - name: Enable or disable MailTips
         href: ../enable-or-disable-mailtips-exchange-2013-help.md
       - name: Configure the large audience size for your organization
-        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/configure-large-audience-size.md
+        href: ../configure-large-audience-size-exchange-2013-help.md
       - name: Configure custom MailTips for recipients
-        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/configure-custom-mailtips.md
+        href: ../configure-custom-mailtips-exchange-2013-help.md
       - name: MailTips over organization relationships
         href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips-over-organization-relationships.md
         items:
