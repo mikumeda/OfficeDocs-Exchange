@@ -1310,9 +1310,9 @@
       - name: Enable or disable email for a mail user
         href: ../enable-or-disable-email-for-a-mail-user-exchange-2013-help.md
     - name: Create and manage room mailboxes
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-room-mailboxes
+      href: ../manage-room-mailboxes-exchange-2013-help.md
     - name: Manage equipment mailboxes
-      href: https://docs.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-equipment-mailboxes
+      href: ../manage-equipment-mailboxes-exchange-2013-help.md
     - name: Disconnected mailboxes
       href: ../disconnected-mailboxes-exchange-2013-help.md
       items:
@@ -1467,7 +1467,7 @@
         - name: Remove an offline address book
           href: ../../ExchangeOnline/address-books/offline-address-books/remove-offline-address-book.md
         - name: Update an offline address book
-          href: https://docs.microsoft.com/en-us/exchange/address-books/offline-address-books/update-offline-address-book
+          href: ../update-offline-address-book-exchange-2013-help.md
         - name: Create an offline address book virtual directory
           href: /exchange/address-books/offline-address-books/create-virtual-directory
         - name: Change the offline address book generation schedule
