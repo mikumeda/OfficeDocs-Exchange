@@ -1584,9 +1584,9 @@
         - name: Mobile phone and tablet features
           href: ../mobile-phone-and-tablet-features-exchange-2013-help.md
         - name: Perform a remote wipe on a mobile phone
-          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/remote-wipe-on-mobile-phone.md
+          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/exchange-active-sync/remote-wipe-on-mobile-phone.md
         - name: Configure mobile phones to access email
-          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/configure-email-on-mobile-phone.md
+          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/exchange-active-sync/configure-email-on-mobile-phone.md
     - name: POP3 and IMAP4
       href: ../pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md
       items:
@@ -1626,19 +1626,19 @@
         - name: Configure protocol logging for POP3 and IMAP4
           href: ../configure-protocol-logging-for-pop3-and-imap4-exchange-2013-help.md
     - name: Outlook for iOS and Android
-      href: ../../ExchangeServer/clients/outlook-for-ios-and-android/outlook-for-ios-and-android.md?view=exchserver-2019
+      href: ../../ExchangeServer/clients/outlook-for-ios-and-android/outlook-for-ios-and-android.md
       items:
       - name: Using hybrid Modern Authentication with Outlook for iOS and Android
-        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-hybrid-modern-auth.md?view=exchserver-2019
+        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-hybrid-modern-auth.md
       - name: Using Basic authentication with Outlook for iOS and Android
-        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-basic-auth.md?view=exchserver-2019
+        href: ../../ExchangeServer/clients/outlook-for-ios-and-android/use-basic-auth.md
         items:
         - name: Account setup in Outlook for iOS and Android using Basic authentication
-          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/account-setup.md?view=exchserver-2019
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/account-setup.md
         - name: Passwords and Security in Outlook for iOS and Android for Exchange Server
-          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/passwords-and-security.md?view=exchserver-2019
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/passwords-and-security.md
         - name: Managing devices for Outlook for iOS and Android for Exchange Server
-          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/manage-devices.md?view=exchserver-2019
+          href: ../../ExchangeServer/clients/outlook-for-ios-and-android/manage-devices.md
     - name: Client protocol management
       href: ../client-protocol-management-exchange-2013-help.md
       items:
