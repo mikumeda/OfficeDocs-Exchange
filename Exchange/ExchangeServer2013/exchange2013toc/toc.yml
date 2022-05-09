@@ -1584,9 +1584,9 @@
         - name: Mobile phone and tablet features
           href: ../mobile-phone-and-tablet-features-exchange-2013-help.md
         - name: Perform a remote wipe on a mobile phone
-          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/exchange-active-sync/remote-wipe-on-mobile-phone.md
+          href: ../remote-wipe-on-mobile-phone-exchange-2013-help.md
         - name: Configure mobile phones to access email
-          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/exchange-active-sync/configure-email-on-mobile-phone.md
+          href: ../configure-email-on-mobile-phone-exchange-2013-help.md
     - name: POP3 and IMAP4
       href: ../pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md
       items:
@@ -1690,7 +1690,7 @@
       - name: Configure the large audience size for your organization
         href: ../configure-large-audience-size-exchange-2013-help.md
       - name: Configure custom MailTips for recipients
-        href: ../.configure-custom-mailtips-exchange-2013-help.md
+        href: ../configure-custom-mailtips-exchange-2013-help.md
       - name: MailTips over organization relationships
         href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips-over-organization-relationships.md
         items:
