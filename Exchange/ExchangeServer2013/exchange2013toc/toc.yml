@@ -1653,19 +1653,19 @@
       href: ../outlook-web-app-exchange-2013-help.md
       items:
       - name: Outlook Web App mailbox policies
-        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policies.md
+        href: ../outlook-web-app-mailbox-policies-exchange-2013-help.md
         items:
         - name: Outlook Web App mailbox policy procedures
-          href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policy-procedures.md
+          href: ../outlook-web-app-mailbox-policy-procedures-exchange-2013-help.md
           items:
           - name: Create an Outlook Web App mailbox policy
-            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/create-outlook-web-app-mailbox-policy.md
+            href: ../create-outlook-web-app-mailbox-policy-exchange-2013-help.md
           - name: Apply or remove an Outlook Web App mailbox policy on a mailbox
-            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/apply-or-remove-outlook-web-app-mailbox-policy.md
+            href: ../apply-or-remove-outlook-web-app-mailbox-policy-exchange-2013-help.md
           - name: Remove an Outlook Web App mailbox policy from Exchange
-            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/remove-outlook-web-app-mailbox-policy.md
+            href: ../remove-outlook-web-app-mailbox-policy-exchange-2013-help.md
           - name: View or configure Outlook Web App mailbox policy properties
-            href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/outlook-on-the-web/configure-outlook-web-app-mailbox-policy-properties.md
+            href: ../configure-outlook-web-app-mailbox-policy-properties-exchange-2013-help.md
       - name: Integrate Outlook Web App with Lync Server
         href: ../integrate-outlook-web-app-with-lync-server-exchange-2013-help.md
       - name: View or configure Outlook Web App virtual directories
@@ -1683,14 +1683,14 @@
       - name: Using Outlook Web App Web parts
         href: ../using-outlook-web-app-web-parts-exchange-2013-help.md
     - name: MailTips
-      href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips.md
+      href: ../mailtips-exchange-2013-help.md
       items:
       - name: Enable or disable MailTips
         href: ../enable-or-disable-mailtips-exchange-2013-help.md
       - name: Configure the large audience size for your organization
-        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/configure-large-audience-size.md
+        href: ../configure-large-audience-size-exchange-2013-help.md
       - name: Configure custom MailTips for recipients
-        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/configure-custom-mailtips.md
+        href: ../.configure-custom-mailtips-exchange-2013-help.md
       - name: MailTips over organization relationships
         href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips-over-organization-relationships.md
         items:
