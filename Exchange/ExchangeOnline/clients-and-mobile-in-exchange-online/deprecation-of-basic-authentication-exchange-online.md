@@ -29,6 +29,9 @@ We actively recommend that customers adopt security strategies such as [Zero Tru
 
 With these threats and risks in mind, we're taking steps to improve data security in Exchange Online.
 
+> [!NOTE]
+> The deprecation of basic authentication will also prevent the use of app passwords with apps that don't support two-step verification.
+
 ## What we are changing
 
 We're removing the ability to use Basic authentication in Exchange Online for Exchange ActiveSync (EAS), POP, IMAP, Remote PowerShell, Exchange Web Services (EWS), Offline Address Book (OAB), Outlook for Windows, and Mac.
