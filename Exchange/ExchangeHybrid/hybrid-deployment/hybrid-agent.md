@@ -23,7 +23,7 @@ The Hybrid Agent removes some of the challenges you can face when you configure 
 
 ## Agent Install Location & Requirements
 
-The agent install and the configuration of Hybrid via the Hybrid Configuration wizard (HCW) is supported on either a standalone computer designed as your "agent server" or on an Exchange Server 2013 with the Client Access role, Exchange Server 2016 or later.
+The agent install and the configuration of Hybrid via the Hybrid Configuration wizard (HCW) is supported on either a standalone computer designed as your "agent server" or on an Exchange Server 2013 with the Client Access role or an Exchange Server 2016 or later.
 
 ## System requirements
 
