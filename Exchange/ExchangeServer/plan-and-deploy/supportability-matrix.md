@@ -104,6 +104,7 @@ The following table identifies the web browsers supported for use together with 
 
 |Browser|Exchange 2019|Exchange 2016|Exchange 2013 SP1 and later|Exchange 2010 SP3|
 |---|:---:|:---:|:---:|:---:|
+|Microsoft Chromium Edge|Supported|Supported|Supported|Not supported|
 |Microsoft Edge|Supported|Supported|Supported|Not supported|
 |Internet Explorer 11|Supported|Supported|Supported|Supported|
 |Internet Explorer 10|Not supported|Not supported|Supported|Supported|
