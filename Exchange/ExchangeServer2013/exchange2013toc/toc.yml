@@ -669,7 +669,7 @@
       - name: Configure archive quotas for an In-Place Archive in Exchange 2013
         href: ../configure-archive-quotas-for-an-in-place-archive-in-exchange-2013-exchange-2013-help.md
       - name: Archive Lync conversations and meeting content to Exchange
-        href: /Office365/SecurityCompliance/eop/exchange-online-protection-overview
+        href: ../archive-lync-conversations-and-meeting-content-to-exchange-exchange-2013-help.md
       - name: Using OAuth authentication to support Archiving in an Exchange hybrid deployment
         href: ../using-oauth-authentication-to-support-archiving-in-an-exchange-hybrid-deployment-exchange-2013-help.md
     - name: In-Place Hold and Litigation Hold
@@ -678,18 +678,18 @@
       - name: Create or remove an In-Place Hold
         href: ../create-or-remove-in-place-holds-exchange-2013-help.md
       - name: Place a mailbox on Litigation Hold
-        href: /office365/SecurityCompliance/place-a-mailbox-on-litigation-hold
+        href: ../place-a-mailbox-on-litigation-hold-exchange-2013-help.md
       - name: Place all mailboxes on hold
-        href: /office365/securitycompliance/change-the-hold-duration-for-an-inactive-mailbox
+        href: ../place-all-mailboxes-on-hold-exchange-2013-help.md
       - name: Preserve Bcc and expanded distribution group recipients for eDiscovery
-        href: /office365/SecurityCompliance/preserve-bcc-and-expanded-distribution-group-recipients-for-ediscovery
+        href: ../preserve-bcc-and-expanded-distribution-group-recipients-for-ediscovery-exchange-2013-help.md
     - name: In-Place eDiscovery
       href: ../in-place-ediscovery-exchange-2013-help.md
       items:
       - name: Assign eDiscovery permissions in Exchange
         href: ../assign-ediscovery-permissions-exchange-2013-help.md
       - name: Create an In-Place eDiscovery search
-        href: /exchange/security-and-compliance/in-place-ediscovery/create-in-place-ediscovery-search
+        href: ../create-in-place-ediscovery-search-exchange-2013-help.md
       - name: Copy eDiscovery search results to a discovery mailbox
         href: ../copy-ediscovery-search-results-to-a-discovery-mailbox-exchange-2013-help.md
       - name: Export eDiscovery search results to a PST file
@@ -697,17 +697,17 @@
       - name: Message properties and search operators for In-Place eDiscovery
         href: ../../ExchangeOnline/security-and-compliance/in-place-ediscovery/message-properties-and-search-operators.md
       - name: Create a discovery mailbox
-        href: /Office365/SecurityCompliance/eop/exchange-online-protection-overview
+        href: ../create-a-discovery-mailbox-exchange-2013-help.md
       - name: Start or stop an In-Place eDiscovery search
-        href: /office365/securitycompliance/use-content-search-in-ediscovery
+        href: ../start-or-stop-an-in-place-ediscovery-search-exchange-2013-help.md
       - name: Modify an In-Place eDiscovery search
-        href: /office365/securitycompliance/search-for-ediscovery-activities-in-the-audit-log
+        href: ../modify-an-in-place-ediscovery-search-exchange-2013-help.md
       - name: Create a custom management scope for In-Place eDiscovery searches
         href: ../create-custom-management-scope-exchange-2013-help.md
       - name: Remove an In-Place eDiscovery search
-        href: /SharePoint/governance/create-and-run-queries-in-the-ediscovery-center
-      - name: Search for and delete messages - Admin help
-        href: /office365/SecurityCompliance/search-for-and-delete-messagesadmin-help
+        href: ../remove-an-in-place-ediscovery-search-exchange-2013-help.md
+      - name: Search for and delete messages
+        href: ../search-for-and-delete-messages-exchange-2013-help.md
       - name: Reduce the size of a discovery mailbox in Exchange
         href: ../reduce-discovery-mailbox-size-exchange-2013-help.md
       - name: Delete and re-create the default discovery mailbox in Exchange
@@ -737,7 +737,7 @@
         - name: 'Checklist: Deploying retention policies'
           href: ../checklist-deploying-retention-policies-exchange-2013-help.md
         - name: Messaging Records Management Procedures
-          href: /office365/securitycompliance/inactive-mailboxes-in-office-365
+          href: ../messaging-records-management-procedures-exchange-2013-help.md
           items:
           - name: Create a Retention Policy
             href: ../create-a-retention-policy-exchange-2013-help.md
@@ -781,7 +781,7 @@
       - name: Transport rule actions
         href: ../mail-flow-rule-actions-in-exchange-2013-exchange-2013-help.md
       - name: Best practices for configuring transport rules
-        href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/configuration-best-practices.md
+        href: ../best-practices-for-transport-rules-exchange-2013-help.md
       - name: Use transport rules to inspect message attachments
         href: ../use-transport-rules-to-inspect-message-attachments-exchange-2013-help.md
       - name: Common attachment blocking scenarios for transport rules
@@ -792,11 +792,9 @@
         href: ../mail-flow-or-transport-rule-procedures-exchange-2013-help.md
         items:
         - name: Manage transport rules
-          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/manage-mail-flow-rules.md
+          href: ../manage-transport-rules-exchange-2013-help.md
         - name: Test a transport rule
-          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/test-mail-flow-rules.md
-        - name: Use transport rules so messages can bypass Clutter
-          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/use-rules-to-bypass-clutter.md
+          href: ../test-transport-rules-exchange-2013-help.md
         - name: Use transport rules to route email based on a list of words, phrases, or patterns
           href: ../use-rules-to-route-email-exchange-2013-help.md
         - name: Register Filter Pack IFilters with Exchange 2013
@@ -807,7 +805,7 @@
         - name: Common message approval scenarios
           href: ../common-message-approval-scenarios-exchange-2013-help.md
         - name: Manage and troubleshoot message approval
-          href: ../../ExchangeOnline/security-and-compliance/mail-flow-rules/ttroubleshoot-message-approval.md
+          href: ../troubleshoot-message-approval-exchange-2013-help.md
     - name: Data loss prevention
       href: ../data-loss-prevention-exchange-2013-help.md
       items:
@@ -818,40 +816,40 @@
       - name: What the sensitive information types look for
         href: ../what-the-sensitive-information-types-in-exchange-look-for-exchange-2013-help.md
       - name: DLP policy templates
-        href: /office365/securitycompliance/what-the-dlp-policy-templates-include
+        href: ../dlp-policy-templates-exchange-2013-help.md
         items:
         - name: DLP policy templates supplied in Exchange
-          href: /office365/securitycompliance/create-a-dlp-policy-from-a-template
+          href: ../built-in-dlp-policy-templates-exchange-2013-help.md
         - name: Policy templates from Microsoft partners
-          href: /office365/securitycompliance/eop/exchange-online-protection-overview
+          href: ../policy-templates-from-microsoft-partners-exchange-2013-help.md
       - name: DLP procedures
         href: ../dlp-procedures-exchange-2013-help.md
         items:
         - name: Manage DLP policies
-          href: /office365/securitycompliance/data-loss-prevention-policies
+          href: ../manage-dlp-policies-exchange-2013-help.md
         - name: Create a DLP policy from a template
           href: ../create-dlp-policy-from-template-exchange-2013-help.md
         - name: Create a custom DLP policy
           href: ../create-custom-dlp-policy-exchange-2013-help.md
         - name: Import a custom DLP policy template from a file
-          href: /office365/securitycompliance/create-a-dlp-policy-from-a-template
+          href: ../import-a-custom-dlp-policy-template-from-a-file-exchange-2013-help.md
         - name: View DLP policy detection reports
           href: ../view-dlp-policy-detection-reports-exchange-2013-help.md
         - name: Create incident reports for DLP policy detections
           href: ../create-incident-reports-for-dlp-policy-detections-exchange-2013-help.md
         - name: Define your own DLP templates and information types
-          href: /office365/securitycompliance/create-a-dlp-policy-from-a-template
+          href: ../define-your-own-dlp-templates-and-information-types-exchange-2013-help.md
           items:
           - name: Developing DLP policy template files
-            href: /office365/securitycompliance/create-a-dlp-policy-from-a-template
+            href: ../developing-dlp-policy-template-files-exchange-2013-help.md
           - name: Developing sensitive information rule packages
-            href: /Office365/SecurityCompliance/eop/exchange-online-protection-overview
+            href: ../developing-sensitive-information-rule-packages-exchange-2013-help.md
           - name: Matching methods and techniques for rule packages
-            href: /office365/securitycompliance/eop/exchange-online-protection-overview
+            href: ../matching-methods-and-techniques-for-rule-packages-exchange-2013-help.md
           - name: Customize the built-in DLP sensitive information types
-            href: /office365/securitycompliance/customize-a-built-in-sensitive-information-type
+            href: ../customize-the-built-in-dlp-sensitive-information-types-exchange-2013-help.md
           - name: Export DLP sensitive information types from Exchange
-            href: /office365/securitycompliance/eop/exchange-online-protection-overview
+            href: ../export-dlp-sensitive-information-types-from-exchange-exchange-2013-help.md
       - name: Policy Tips
         href: ../policy-tips-exchange-2013-help.md
         items:
@@ -861,7 +859,7 @@
         href: ../overview-of-document-fingerprinting-in-exchange.md
         items:
         - name: Protect form data with document fingerprinting
-          href: /exchange/security-and-compliance/data-loss-prevention/protect-data-with-fingerprinting
+          href: ../protect-data-with-fingerprinting-exchange-2013-help.md
     - name: Information Rights Management
       href: ../information-rights-management-exchange-2013-help.md
       items:
@@ -903,14 +901,14 @@
         - name: Enable or Disable Information Rights Management Logging
           href: ../enable-or-disable-information-rights-management-logging-exchange-2013-help.md
     - name: S/MIME for message signing and encryption
-      href: /office365/SecurityCompliance/s-mime-for-message-signing-and-encryption
+      href: ../s-mime-for-message-signing-and-encryption.md
       items:
       - name: Configure S/MIME settings for Outlook Web App
-        href: /office365/SecurityCompliance/configure-s-mime-settings-for-outlook-web-app
-      - name: Set up virtual certificate collection to validate S/MIME
-        href: /office365/SecurityCompliance/set-up-virtual-certificate-collection-to-validate-s-mime
+        href: ../configure-s-mime-settings-for-outlook-web-app.md
+      - name: Set up a virtual certificate collection to validate S/MIME
+        href: ../set-up-virtual-certificate-collection-to-validate-s-mime.md
       - name: Send and receive S/MIME signed and encrypted email
-        href: /office365/SecurityCompliance/send-and-receive-s-mime-signed-and-encrypted-email
+        href: ../send-and-receive-s-mime-signed-and-encrypted-email.md
     - name: Mailbox audit logging
       href: ../mailbox-audit-logging-exchange-2013-help.md
       items:
@@ -1295,10 +1293,10 @@
     - name: Manage mail-enabled security groups
       href: ../manage-mail-enabled-security-groups-exchange-2013-help.md
     - name: Manage dynamic distribution groups
-      href: ../../ExchangeServer/recipients/dynamic-distribution-groups/dynamic-distribution-groups.md
+      href: ../manage-dynamic-distribution-groups-exchange-2013-help.md
       items:
       - name: View members of a dynamic distribution group
-        href: ../../ExchangeServer/recipients/dynamic-distribution-groups/view-dynamic-distribution-group-members.md
+        href: ../view-group-members-exchange-2013-help.md
     - name: Manage mail contacts
       href: ../manage-mail-contacts-exchange-2013-help.md
       items:
@@ -1469,9 +1467,9 @@
         - name: Update an offline address book
           href: ../update-offline-address-book-exchange-2013-help.md
         - name: Create an offline address book virtual directory
-          href: /exchange/address-books/offline-address-books/create-virtual-directory
+          href: ../create-virtual-directory-exchange-2013-help.md
         - name: Change the offline address book generation schedule
-          href: /exchange/address-books/offline-address-books/change-address-book-generation-schedule
+          href: ../change-address-book-generation-schedule-exchange-2013-help.md
         - name: Configure offline address book distribution properties
           href: ../configure-distribution-properties-exchange-2013-help.md
     - name: Address lists
@@ -1499,10 +1497,10 @@
         - name: Update a global address list
           href: ../update-a-global-address-list-exchange-2013-help.md
     - name: Hierarchical address books
-      href: ../../ExchangeOnline/address-books/hierarchical-address-books/hierarchical-address-books.md
+      href: ../hierarchical-address-books-exchange-2013.md
       items:
       - name: Enable or disable hierarchical address books
-        href: ../../ExchangeOnline/address-books/hierarchical-address-books/enable-or-disable-hierarchical-address-books.md
+        href: ../enable-or-disable-hierarchical-address-books-exchange-2013.md
   - name: Sharing
     href: ../sharing-exchange-2013-help.md
     items:
@@ -1692,7 +1690,7 @@
       - name: Configure custom MailTips for recipients
         href: ../configure-custom-mailtips-exchange-2013-help.md
       - name: MailTips over organization relationships
-        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/mailtips-over-organization-relationships.md
+        href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/manage-mailtips-for-organization-relationships.md
         items:
         - name: Manage MailTips for organization relationships
           href: ../../ExchangeOnline/clients-and-mobile-in-exchange-online/mailtips/manage-mailtips-for-organization-relationships.md
@@ -2190,7 +2188,7 @@
           - name: Enable or disable multimedia playback of protected voice messages
             href: ../enable-or-disable-multimedia-playback-exchange-2013-help.md
           - name: Specify the text to display for email clients that don't support Windows Rights Management
-            href: ../../ExchangeOnline/voice-mail-unified-messaging/set-up-client-voice-mail-features/specify-text-to-display-for-clients-that-don-t-support-windows-rights-management.md
+            href: ../specify-text-for-non-wrm-email-clients-exchange-2013-help.md
       - name: Allow Message Waiting Indicator
         href: ../allow-message-waiting-indicator-exchange-2013-help.md
         items:
@@ -2582,6 +2580,6 @@
     href: ../about-exchange-documentation-exchange-2013-help.md
     items:
     - name: Accessibility for people with disabilities
-      href: /office365/SecurityCompliance/eop/accessibility-for-people-with-disabilities
+      href: ../accessibility-exchange-2013-help.md
     - name: Third-party copyright notices
-      href: /office365/SecurityCompliance/eop/third-party-copyright-notices
+      href: ../third-party-copyright-notices-exchange-2013-help.md
