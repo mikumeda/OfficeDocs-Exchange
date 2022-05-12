@@ -20,7 +20,7 @@ manager: serdars
 
 # Modify the space used by Inbox rules in Exchange Online
 
-Inbox rules in Outlook on the web (formerly known as Outlook Web App) and Outlook are limited to 256 KB total for all rules. Each rule you create will take up space in your mailbox. The actual amount of space a rule uses depends on several factors, such as how long the name is and how many conditions you've applied. When you reach the 256 KB limit, you'll be warned that you can't create any more rules or that you can't update a rule. You can't increase the amount of space that's allocated to store Inbox rules in Exchange Online, but you can decrease it to suit your business needs.
+Inbox rules in Outlook on the web (formerly known as Outlook Web App) and the Outlook desktop apps are limited to 256 KB total for all rules. Each rule you create will take up space in your mailbox. The actual amount of space a rule uses depends on several factors, such as how long the name is and how many conditions you've applied. When you reach the 256 KB limit, you'll be warned that you can't create any more rules or that you can't update a rule. You can't increase the amount of space that's allocated to store Inbox rules in Exchange Online, but you can decrease it to suit your business needs.
 
 **Notes**:
 
@@ -34,9 +34,9 @@ Inbox rules in Outlook on the web (formerly known as Outlook Web App) and Outloo
 
 - Estimated time to complete each procedure: 5 minutes or less.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox settings" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) topic.
+- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mailbox settings" entry in the [Feature permissions in Exchange Online](../../permissions-exo/feature-permissions.md) article.
 
-- You can only use Exchange Online PowerShell to perform the procedure in this topic. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
+- You can only use Exchange Online PowerShell to perform the procedure in this article. To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](https://social.technet.microsoft.com/forums/msonline/home?forum=onlineservicesexchange) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).
@@ -127,4 +127,4 @@ To verify that you've modified the Inbox rules quota on a mailbox, use any of th
 
 - Inbox rules are run from top to bottom in the order in which they appear in the **Rules** window. To change the order of rules, click the rule you want to move, and then click the up or down arrow to move the rule to the position you want in the list.
 
-- When you create a forwarding rule, you can add more than one address to forward to. The number of addresses you can forward to may be limited, depending on the settings for your account. If you add more addresses than are allowed, your forwarding rule won't work. If you create a forwarding rule with more than one address, test it to be sure it works.
+- When you create a forwarding rule, you can add more than one address to forward to. The number of addresses you can forward may be limited, depending on the settings for your account. If you add more addresses than are allowed, your forwarding rule won't work. If you create a forwarding rule with more than one address, test it to be sure it works.
