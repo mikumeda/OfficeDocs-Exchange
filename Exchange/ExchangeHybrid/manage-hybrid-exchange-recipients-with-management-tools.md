@@ -35,12 +35,12 @@ Install the latest Management tools provided through Exchange Server 2019 Setup 
 
 An updated version of the Exchange Management Tools can eliminate the need for running Exchange server if all of the following are true:
 
-- You have migrated all mailboxes and public folders to Exchange Online
-- Use AD for recipient management and Azure AD Connect for synchronization
-- You don't use/require the on-premises Exchange admin center or Exchange Role-Based Access Control (RBAC)
-- Are comfortable with using only Windows PowerShell for recipient management
-- You don't require auditing or logging of recipient management activity
-- You are running only one Exchange server and only for recipient management purposes
+- You have migrated all mailboxes and public folders to Exchange Online.
+- Use AD for recipient management and Azure AD Connect for synchronization.
+- You don't use/require the on-premises Exchange admin center or Exchange Role-Based Access Control (RBAC).
+- Are comfortable with using only Windows PowerShell for recipient management.
+- You don't require auditing or logging of recipient management activity.
+- You are running only one Exchange server and only for recipient management purposes.
 - Want to manage recipients without running any Exchange servers.
 
 > [!WARNING]
