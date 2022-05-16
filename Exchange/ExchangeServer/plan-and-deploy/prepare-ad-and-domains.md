@@ -26,7 +26,7 @@ Exchange uses Active Directory to store information about mailboxes and the conf
 - **Let the Exchange Setup wizard do it for you**: If you don't have a large Active Directory deployment, and you don't have a separate team that manages Active Directory, we recommend using the Setup wizard. Your account needs to be a member of both the Schema Admins and Enterprise Admins security groups. For more information about how to use the Setup wizard, check out [Install Exchange Mailbox servers using the Setup wizard](deploy-new-installations/install-mailbox-role.md).
 
 > [!IMPORTANT]
-> If Exchange is deployed in a multi-site Active Directory environment and is not in the same site as the Domain Controller that holds the Schema Master role, you cannot prepare Active Directory using the wizard. Instead, follow Step 1 and Step 2 in this topic. 
+> If Exchange is deployed in a multi-site Active Directory environment and is not in the same site as the domain controller that holds the Schema Master role, you cannot prepare Active Directory using the wizard. Instead, follow Step 1 and Step 2 in this topic. 
 
 - **Follow the steps in this topic**: If you have a large Active Directory deployment, or if a separate team manages Active Directory, this topic is for you. Following the steps in this topic gives you much more control over each stage of preparation, and who can do each step. For example, Exchange administrators might not have the required permissions to extend the Active Directory schema.
 
