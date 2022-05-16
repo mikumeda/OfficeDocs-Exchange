@@ -23,7 +23,7 @@ The Hybrid Agent removes some of the challenges you can face when you configure 
 
 ## Agent Install Location & Requirements
 
-The agent install and the configuration of Hybrid via the Hybrid Configuration wizard (HCW) is supported on either a standalone computer designed as your "agent server" or on an Exchange 2010, 2013, 2016 or 2019 server with the Client Access role.
+The agent install and the configuration of Hybrid via the Hybrid Configuration wizard (HCW) is supported on either a standalone computer designed as your "agent server" or on an Exchange Server 2013 with the Client Access role or an Exchange Server 2016 or later.
 
 ## System requirements
 
@@ -37,13 +37,13 @@ The Hybrid Agent has multiple methods of installation with different requirement
 
   - Capable of establishing outbound HTTPS connections to the Internet.
 
-  - Capable of establishing HTTPS connections to the Client Access Server (CAS) chosen for hybrid configuration.
+  - Capable of establishing HTTPS connections to the Exchange Server chosen for hybrid configuration.
 
 The SHCW can download and install the agent MSI automatically. Using this method is ideal when installing on a CAS server directly. In this case, the computer also must:
 
 - Joined to an Active Directory domain.
 
-- Capable of establishing remote PowerShell connections to the Client Access Server (CAS) chosen for hybrid configuration.
+- Capable of establishing remote PowerShell connections to the Exchange Server chosen for hybrid configuration.
 
 - Use a browser that supports ClickOnce technology (for example, Microsoft Edge).
 
@@ -60,7 +60,7 @@ The SHCW can download and install the agent MSI automatically. Using this method
 - Ports HTTPS (TCP) 443, 80, 5985 and 5986 must be open between the computer that has the Hybrid Agent installed on the CAS that's selected in the Hybrid Configuration wizard.
 
 > [!IMPORTANT]
-> All Client Access Servers must be able to reach outbound to Microsoft 365 or Office 365 endpoints via HTTPS (TCP) 443, because free/busy request from on-premises users to Microsoft 365 or Office 365 users do not traverse the Hybrid Agent. These requests still require that your Exchange servers have outbound connectivity to Microsoft 365 or Office 365 end points. Microsoft 365 and Office 365 URLs and IP address ranges describes the required (and hybrid) ports and IPs outbound from on-prem to the service here: [https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges](/office365/enterprise/urls-and-ip-address-ranges).
+> All Exchange Servers (or Client Access Servers if you have Exchange 2013) must be able to reach outbound to Microsoft 365 or Office 365 endpoints via HTTPS (TCP) 443, because free/busy request from on-premises users to Microsoft 365 or Office 365 users do not traverse the Hybrid Agent. These requests still require that your Exchange servers have outbound connectivity to Microsoft 365 or Office 365 end points. Microsoft 365 and Office 365 URLs and IP address ranges describes the required (and hybrid) ports and IPs outbound from on-prem to the service here: [https://docs.microsoft.com/office365/enterprise/urls-and-ip-address-ranges](/office365/enterprise/urls-and-ip-address-ranges).
 
 ### Proxy server considerations
 
@@ -87,9 +87,9 @@ By running the script, the following section will be added to the Microsoft.Onli
 > [!IMPORTANT]
 > A proxy server that prevents registration will cause the connector installation to fail. We recommend that you allow the connectors to bypass the proxy until app config changes can be made. A proxy server that prevents connector bootstrapping will fail **Test-Connectivity** after installation. We recommend that you allow the connectors to bypass the proxy until app config changes can be made.
 
-#### Client Access Server
+#### Exchange Server
 
-The HCW establishes connections from your Client Access Server to domains.live.com to exchange metadata and establish trusts. Because connections originate from your CAS server, the proxy settings on that server (from `Get-ExchangeServer | Format-List InternetWebProxy`) must be set correctly or outbound free/busy can fail. In addition to connection failures, the HCW won't be able to configure delegated authentication if the proxy setting is incorrect.
+The HCW establishes connections from your Exchange Server to domains.live.com to exchange metadata and establish trusts. Because connections originate from your CAS server, the proxy settings on that server (from `Get-ExchangeServer | Format-List InternetWebProxy`) must be set correctly or outbound free/busy can fail. In addition to connection failures, the HCW won't be able to configure delegated authentication if the proxy setting is incorrect.
 
 ## Free/Busy requirements
 
@@ -120,7 +120,7 @@ Keep the following issues in mind before you install the Hybrid Agent:
 
 ## Running Setup
 
-You must run the HCW from the computer where you want the agent installed. After the Agent is installed and configured, the HCW will locate a preferred server to connect to and run the standard hybrid configuration steps. You do not have to run the HCW from the Exchange server directly, but as stated previously, the computer where the HCW is run must be able to connect to the Client Access Server on the ports specified in the [Ports and protocols](#port-and-protocol-requirements) section.
+You must run the HCW from the computer where you want the agent installed. After the Agent is installed and configured, the HCW will locate a preferred server to connect to and run the standard hybrid configuration steps. You do not have to run the HCW from the Exchange server directly, but as stated previously, the computer where the HCW is run must be able to connect to the Exchange Server on the ports specified in the [Ports and protocols](#port-and-protocol-requirements) section.
 
 ### Installation Prerequisites
 
@@ -340,7 +340,7 @@ The output of the command looks like this:
 
 ## Direct your Hybrid Agent(s) to the load balancer instead of a specific server
 
-You can use the Hybrid Management PowerShell module to configure your Hybrid Agent(s) to direct requests to your load balancer instead of a specific Exchange Client Access Server. The Hybrid Agent supports routing requests to the load balancer for Exchange Server 2013 or later Client Access Servers. Exchange Server 2010 Client Access Servers aren't supported.
+You can use the Hybrid Management PowerShell module to configure your Hybrid Agent(s) to direct requests to your load balancer instead of a specific Exchange Server. The Hybrid Agent supports routing requests to the load balancer for Exchange Server 2013 Client Access Servers and Exchange Server 2016 servers or later.
 
 1. Follow the steps from the previous section to import the Hybrid Management module for PowerShell.
 

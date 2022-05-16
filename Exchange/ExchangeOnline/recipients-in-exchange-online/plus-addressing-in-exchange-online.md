@@ -72,7 +72,7 @@ If inbound internet email for your on-premises organization is routed through Ex
 2. The command uses the following syntax:
 
    ```PowerShell
-   Set-OrganizationConfig -DisablePlusAddressingInRecipients <$true | $false>
+   Set-OrganizationConfig -DisablePlusAddressInRecipients <$true | $false>
    ```
 
    To disable plus addressing in your organization, run the following command:

@@ -19,7 +19,7 @@ manager: serdars
 ---
 # Manage recipients in Exchange Hybrid environments using Management tools
 
-In Exchange Hybrid environments, you must have an active Exchange Server to manage recipients attributes. First, attributes are edited using an Exchange Server in on-premises Active Directory (AD), that are then copied to Azure AD using directory synchronization. On-premises recipients can't be modified directly in Azure Active Directory (Azure AD) or Exchange Online. Therefore you have to keep an Exchange Server running using directory synchronization via Azure Active Directory (AAD) Connect tool.
+In Exchange Hybrid environments, you must have an active Exchange Server to manage recipients' attributes. First, attributes are edited using an Exchange Server in on-premises Azure Active Directory (Azure AD), which are then copied to Azure AD using directory synchronization. On-premises recipients can't be modified directly in Azure AD or Exchange Online. Therefore you have to keep an Exchange Server running using directory synchronization via the Azure AD Connect tool.
 
 If you keep an Exchange server running just for recipient management, you may be able to shut down your last Exchange server and manage recipients using Windows PowerShell.
 

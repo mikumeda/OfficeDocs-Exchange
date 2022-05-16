@@ -2,6 +2,19 @@
 
 
 
+## Week of May 09, 2022
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 5/10/2022 | [Exchange ActiveSync in Exchange Online](/Exchange/clients-and-mobile-in-exchange-online/exchange-activesync/exchange-activesync) | modified |
+| 5/10/2022 | [Mobile device mailbox policies in Exchange Online](/Exchange/clients-and-mobile-in-exchange-online/exchange-activesync/mobile-device-mailbox-policies) | modified |
+| 5/10/2022 | Mobile access in Exchange Online | removed |
+| 5/10/2022 | [Exchange Server supportability matrix](/Exchange/plan-and-deploy/supportability-matrix?view=exchserver-2016) | modified |
+| 5/10/2022 | [Enable or disable access to the new Outlook for Windows](/Exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/enable-disable-employee-access-new-outlook) | modified |
+| 5/12/2022 | [Microsoft Hybrid Agent](/Exchange/hybrid-deployment/hybrid-agent) | modified |
+
+
 ## Week of May 02, 2022
 
 
