@@ -48,7 +48,7 @@ The Hybrid Agent has multiple methods of installation with different requirement
   - Capable of establishing outbound HTTPS connections to the internet.
   - Capable of establishing HTTPS connections to the Exchange Server chosen for hybrid configuration.
 
-The HCW can download and install the Agent MSI automatically, as long as the following additional requirement are met:
+The HCW can download and install the Agent MSI automatically, as long as the following requirements are met:
 
 - The computer is a member of an Active Directory domain.
 
@@ -66,18 +66,18 @@ Having the HCW download and install the Agent MSI automatically is ideal if you'
 
 - Outbound ports HTTPS (TCP) 443 and 80 must be open between the computer where the Hybrid Agent installed and the internet as shown [here](/azure/active-directory/manage-apps/application-proxy-enable).
 
-- Ports TCP ports 443, 80, 5985, and 5986 must be open between the computer where the Hybrid Agent is installed on the CAS that's selected in the Hybrid Configuration wizard.
+- Ports TCP ports 443, 80, 5985, and 5986 must be open between the computer where the Hybrid Agent is installed and the CAS that's selected in the Hybrid Configuration wizard.
 
 > [!IMPORTANT]
 > Free/busy requests from on-premises users to Exchange Online users do not traverse the Hybrid Agent. All Exchange Servers (or Exchange 2013 Client Access Servers) must be able to communicate with the Microsoft 365 or Office 365 endpoints via HTTPS (TCP port 443). The required URLs, IP addresses, and ports are described [here](/microsoft-365/enterprise/urls-and-ip-address-ranges).
 
 ### Proxy server considerations
 
-If your network environment uses outbound proxy servers, additional configuration and requirements are needed. This list may not be exhaustive.
+If your network environment uses outbound proxy servers, you need to do some extra configuration as described in this section. This list might not be exhaustive.
 
 #### Agent
 
-The Agent supports outbound unauthenticated proxy servers but requires additional configuration after the installation. Run the `ConfigureOutBoundProxy.ps1` script located in `\Program Files\Microsoft Hybrid Service\` on the computer where the Agent is installed. For example:
+The Agent supports outbound unauthenticated proxy servers, but you need to do more configuration after the installation. Run the `ConfigureOutBoundProxy.ps1` script located in `\Program Files\Microsoft Hybrid Service\` on the computer where the Agent is installed. For example:
 
 ```PowerShell
 PS C:\Program Files\Microsoft Hybrid Service\>.\ConfigureOutBoundProxy.ps1 -ProxyAddress http://proxyserver:8080
@@ -117,9 +117,9 @@ If you encounter problems, see [How to troubleshoot free/busy issues in a hybrid
 
 Keep the following issues in mind before you install the Hybrid Agent:
 
-- [Hybrid Modern Authentication](/office365/enterprise/hybrid-modern-auth-overview) is not supported with the Hybrid Agent. Customers will need to leverage the Classic Exchange Hybrid Topology and publish AutoDiscover, EWS, ActiveSync, MAPI and OAB endpoints for hybrid Modern Authentication to function with various Outlook clients.
+- [Hybrid Modern Authentication](/office365/enterprise/hybrid-modern-auth-overview) is not supported with the Hybrid Agent. You need to use the Classic Exchange Hybrid Topology and publish AutoDiscover, EWS, ActiveSync, MAPI and OAB endpoints for hybrid Modern Authentication to function with various Outlook clients.
 
-- For Teams calendaring features that require access to on-premises mailboxes, we recommended that you leverage the full Classic Exchange Hybrid Topology. For more information, see [How Exchange and Microsoft Teams interact](/microsoftteams/exchange-teams-interact).
+- For Teams calendaring features that require access to on-premises mailboxes, we recommended the full Classic Exchange Hybrid Topology. For more information, see [How Exchange and Microsoft Teams interact](/microsoftteams/exchange-teams-interact).
 
 - Message tracking and multi-mailbox search do not traverse the Hybrid Agent. These Hybrid features require the classic connectivity model where Exchange Web Services (EWS) and Autodiscover are published on-premises and are externally available to Exchange Online.
 
@@ -150,7 +150,7 @@ You must run the HCW on the computer where you want to install the Agent. After 
       Import-Module .\HybridManagement.psm1
       ```
 
-   4. Next run the following command to verify the computer where you're installing can reach out to all required endpoints for the Hybrid Agent installation and Hybrid Configuration wizard setup.
+   4. Run the following command to verify the computer where you're installing can reach out to all required endpoints for the Hybrid Agent installation and Hybrid Configuration wizard setup.
 
       ```PowerShell
       Test-HybridConnectivity -TestO365Endpoints
@@ -210,7 +210,7 @@ You must run the HCW on the computer where you want to install the Agent. After 
 
 During the update phase, the HCW creates a migration endpoint with the custom URL created in step 8.3 above. It will also set the `TargetSharingEPR` value on the Organization Relationship and/or the IntraOrganization Connector object on the Microsoft 365 or Office 365 side to this value. The new URL is used to send requests from your Microsoft 365 or Office 365 organization to your on-premises Exchange organization for free/busy and migrations.
 
-You can view the specific values configured for each of these by running **Get-MigrationEndpoint** and **Get-OrganizationRelationship** from an [Exchange Online PowerShell connection](/powershell/exchange/connect-to-exchange-online-powershell) to your Microsoft 365 or Office 365 organization.
+You can view the specific values by running **Get-MigrationEndpoint** and **Get-OrganizationRelationship** from an [Exchange Online PowerShell connection](/powershell/exchange/connect-to-exchange-online-powershell) to your Microsoft 365 or Office 365 organization.
 
 The following example shows the output that you might see when you run the **Get-MigrationEndpoint** and **Get-OrganizationRelationship** cmdlets:
 
@@ -239,11 +239,11 @@ The Hybrid Management PowerShell module is installed by the Hybrid Configuration
 |Get-HybridApplication|To view all Hybrid Applications in the organization.|
 |Remove-HybridApplication|To remove a specific Hybrid Application.|
 
-### How to use these Hybrid Agent cmdlets with or without multifactor authentication-enabled accounts
+### How to use Hybrid Agent cmdlets with or without multifactor authentication-enabled accounts
 
 To use these cmdlets you would need to import the latest HybridManagement.psm1 available at **\Program Files\Microsoft Hybrid Service\**. It can also be downloaded directly from [https://aka.ms/HybridAgentPSM](https://aka.ms/HybridAgentPSM).
 
-To import the Hybrid Management module, run the following from a Windows PowerShell prompt as an administrator:
+To import the Hybrid Management module, run the following command from a Windows PowerShell prompt as an administrator:
 
 ```PowerShell
 Import-module .\HybridManagement.psm1
@@ -265,9 +265,9 @@ The following table shows how the usage differs in these two modes:
 
 ### Option 1: Use the Hybrid Configuration wizard to install additional Agents
 
-Additional Hybrid Agents can be installed for redundancy, simply download the latest version of the Hybrid Configuration wizard (HCW) and open the application on the computer where you would like to install an additional Hybrid Agent.
+Additional Hybrid Agents can be installed for redundancy. Simply download the latest version of the HCW and open the application on the computer where you would like to install an additional Hybrid Agent.
 
-1. Like previous HCW runs, start the application, select **Next**.
+1. Like previous HCW installations, start the application, select **Next**.
 
 2. Select a desired server to execute against, select **Next**.
 
@@ -289,7 +289,7 @@ The HCW will install the additional Hybrid Agent. When the installation is compl
 
 You can repeat this step on each computer where you would like an additional Hybrid Agent installed.
 
-### Option 2: Manually download & install additional Agents
+### Option 2: Manually download and install additional Agents
 
 A second option for installing additional Agents is outside the HCW itself and is done by downloading and manually installing the Agent on the desired computer.
 
@@ -335,7 +335,7 @@ You can repeat this step on each computer where you would like an additional Hyb
 
 With each installation of the Hybrid Agent, the HCW install the Hybrid Management PowerShell module in \\Program Files\\Microsoft Hybrid Service\\ on the computer where the Agent is installed. By default, this module is not imported and so you will need to import it before you can use it. This module also requires the Azure module for PowerShell if not already installed. First install [the PackageManagement modules](https://www.powershellgallery.com/packages/PackageManagement/) and then see [this topic](/powershell/azure/servicemanagement/install-azure-ps) for the Azure PowerShell module installation instruction.
 
-To import the Hybrid Management module, run the following from a Windows PowerShell prompt as Administrator:
+To import the Hybrid Management module, run the following command from a Windows PowerShell prompt as Administrator:
 
 ```PowerShell
 Import-module .\HybridManagement.psm1
@@ -457,6 +457,6 @@ To uninstall the Hybrid Agent, re-run Hybrid Configuration wizard from the same 
 
 ## Switching modes from Classic to Modern
 
-It is possible to switch to Modern Hybrid (Hybrid Agent) after successfully configuring Classic Hybrid (publishing EWS namespace + allowing inbound), but we only recommend doing this if you are blocked from migrating to Microsoft 365 or Office 365 after this setup is complete. If you are successfully migrating mailboxes your users are experiencing hybrid features and chose to revert to Modern Hybrid, see the previous [Constraints](#constraints) section because not all hybrid features or experiences are supported with the Hybrid Agent.
+You can switch to Modern Hybrid (Hybrid Agent) after successfully configuring Classic Hybrid (publishing the EWS namespace and allowing inbound). But, we only recommend switching if you're blocked from migrating mailboxes to the cloud after this setup is complete. If you chose to revert to Modern Hybrid, see the previous [Constraints](#constraints) section, because not all hybrid features or experiences are supported with the Hybrid Agent.
 
-If you have weighed the pros and cons of switching from Classic to Modern and choose to proceed, you can do this by deleting your existing migration batches and migration endpoint and re-running the Hybrid Configuration wizard and selecting **Modern Hybrid**.
+If you have weighed the pros and cons of switching from Classic to Modern, you proceed by deleting your existing migration batches and migration endpoint and re-running the Hybrid Configuration wizard and selecting **Modern Hybrid**.
