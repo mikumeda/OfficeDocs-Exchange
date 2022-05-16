@@ -115,7 +115,6 @@ Keep the following issues in mind before you install the Hybrid Agent:
 
 - The Hybrid Agent supports a single Exchange organization. Multiple Exchange organizations hybrid is not supported.
 
-
 > [!NOTE]
 > SMTP doesn't traverse the Hybrid Agent and still requires a public certificate for mail flow between Microsoft 365 or Office 365 and your on-premises organization. SMTP traffic is out of scope for the Hybrid Agent.
 
@@ -216,7 +215,7 @@ TargetSharingEpr : https://087f1c2e-8711-4176-ab4f-4b1c1777a350.resource.mailbox
 ```
 
 ## Hybrid Agent PowerShell module
-The Hybrid Management PowerShell module is installed by the Hybrid Configuration wizard at **\Program Files\Microsoft Hybrid Service\** on the computer where the Hybrid Agent is installed. This module provides the following cmdlets that can now be used with or without a multifactor authentication-enabled administrator account.  
+The Hybrid Management PowerShell module is installed by the Hybrid Configuration wizard at **\Program Files\Microsoft Hybrid Service\** on the computer where the Hybrid Agent is installed. This module provides the following cmdlets that can now be used with or without a multifactor authentication-enabled administrator account.
 
 |Cmdlets|Purpose|
 |---|---|
@@ -240,11 +239,11 @@ The following table shows how the usage differs in these two modes:
 
 ||Admin with a multifactor authentication-enabled account|Admin with basic authentication|
 |---|---|---|
-|1|Get-HybridAgent -userPrincipalName <tenant admin UPN>|	Get-HybridAgent -Credential (Get-Credential)|
-|2|Get-HybridApplication -userPrincipalName <tenant admin UPN> -appId <GUID>|Get-HybridApplication -credential (Get-Credential) -appId <GUID>|
-|3|Remove-HybridApplication -userPrincipalName <tenant admin UPN> -appId <GUID>|Remove-HybridApplication -credential (Get-Credential) -appId <GUID>|
-|4|New-HybridApplication -userPrincipalName <tenant admin UPN> -targetUri “Server FQDN”| New-HybridApplication -credential (Get-Credential) -targetUri “Server FQDN”|
-|5|Update-HybridApplication -appId <GUID> -targetUri “Server FQDN” -userPrincipalName <tenant admin UPN>|Update-HybridApplication -appId <GUID> -targetUri “Server FQDN” -credential(Get-Credential)|
+|1|Get-HybridAgent -UserPrincipalName \<tenant admin UPN\>|Get-HybridAgent -Credential (Get-Credential)|
+|2|Get-HybridApplication -UserPrincipalName \<tenant admin UPN\> -AppId \<GUID\>|Get-HybridApplication -Credential (Get-Credential) -AppId \<GUID\>|
+|3|Remove-HybridApplication -UserPrincipalName \<tenant admin UPN\> -AppId \<GUID\>|Remove-HybridApplication -Credential (Get-Credential) -AppId \<GUID\>|
+|4|New-HybridApplication -UserPrincipalName \<tenant admin UPN\> -TargetUri "Server FQDN"| New-HybridApplication -Credential (Get-Credential) -TargetUri "Server FQDN"|
+|5|Update-HybridApplication -AppId \<GUID\> -TargetUri "Server FQDN" -UserPrincipalName \<tenant admin UPN\>|Update-HybridApplication -AppId \<GUID\> -TargetUri "Server FQDN" -Credential (Get-Credential)|
 
 ## Multi Agent Deployment
 
@@ -278,7 +277,7 @@ You can repeat this step on each computer where you would like an additional Hyb
 
 A second option for installing additional agents is outside the HCW itself and is done by downloading and manually installing the agent on the desired computer.
 
-1. Go to [https://aka.ms/hybridagentinstaller](https://aka.ms/hybridagentinstaller).
+1. Go to <https://aka.ms/hybridagentinstaller>.
 
 2. Save the MSHybridService.msi to a location on your computer.
 
@@ -371,7 +370,7 @@ You can use the Hybrid Management PowerShell module to configure your Hybrid Age
 
 4. After you have the endpoint GUID value for your tenant, run the following command:
 
-   - *targetUri*: https://myloadbalancer.com in this example (your value will be different).
+   - *targetUri*: <https://myloadbalancer.com> in this example (your value will be different).
 
    - *appId*: 6ca7c832-49a2-4a5d-aeae-a616f6d4b8e7 in this example (your value will be different).
 
@@ -412,7 +411,6 @@ After a successful deployment of the Hybrid Agent and hybrid configuration, you 
 2. Add the object **Microsoft AD App Proxy Connector** and the **\# requests** counter to your view.
 
     ![The Hybrid Agent in Performance Monitor.](../media/d67d36919447785a56ab2b3759e12e74.png)
-    
 
 ### Migration
 
