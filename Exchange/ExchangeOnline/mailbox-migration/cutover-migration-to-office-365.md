@@ -102,7 +102,7 @@ Before you migrate mailboxes to Microsoft 365 or Office 365 by using a cutover m
 
    - [How to configure Outlook Anywhere with Exchange 2003](/previous-versions/office/exchange-server-2007/aa996922(v=exchg.80))
 
-2. You must use a certificate issued by a trusted certification authority (CA) with your Outlook Anywhere configuration in order for Microsoft 365 or Office 365 to run a cutover migration. If you are doing a cutover migration, you will to add the Outlook Anywhere and Autodiscover services to your certificate. For instructions on how to set up certificates, see:
+2. You must use a certificate issued by a trusted certification authority (CA) with your Outlook Anywhere configuration in order for Microsoft 365 or Office 365 to run a cutover migration. If you are doing a cutover migration, you will need to add the Outlook Anywhere and Autodiscover services to your certificate. For instructions on how to set up certificates, see:
 
    - [Add an SSL certificate to Exchange 2013](add-an-ssl-certificate-to-exchange-2013.md)
 
