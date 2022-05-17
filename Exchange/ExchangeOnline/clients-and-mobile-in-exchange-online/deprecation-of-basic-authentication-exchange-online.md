@@ -49,7 +49,7 @@ Beginning in early 2021, we started to disable Basic authentication for existing
 In September 2021, we announced that effective **October 1, 2022**, we will begin disabling Basic authentication for Outlook, EWS, RPS, POP, IMAP, and EAS protocols in Exchange Online. SMTP Auth will also be disabled if it is not being used. See full announcement: [Basic Authentication and Exchange Online – September 2021 Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-september-2021-update/ba-p/2772210).
 
 > [!NOTE]
-> In Office 365 Operated by 21Vianet, we will begin disabling Basic authentiction on March 31, 2023. All other cloud environments are subject to the October 1, 2022 date. 
+> In Office 365 Operated by 21Vianet, we will begin disabling Basic authentication on March 31, 2023. All other cloud environments are subject to the October 1, 2022 date. 
 
 ## Impact to messaging protocols and existing applications
 
@@ -112,6 +112,8 @@ Outlook 2007 or Outlook 2010 cannot use Modern authentication, and will eventual
 Outlook for Mac supports Modern Authentication.
 
 For more information about Modern authentication support in Office, see [How modern authentication works for Office client apps](/office365/enterprise/modern-auth-for-office-2013-and-2016).
+
+If you need to migrate Public Folders to Exchange online, see [Public Folder Migration Scripts with Modern Authentication Support](https://techcommunity.microsoft.com/t5/exchange-team-blog/announcing-public-folder-migration-scripts-with-modern/ba-p/3382800).
 
 ## How do you know if your users will be impacted?
 
