@@ -248,7 +248,7 @@ Available (completed) Enhanced summary reports are available in the **Downloadab
 
 - **network_message_id**: A unique message ID value that persists across all copies of the message that might be created due to bifurcation or distribution group expansion. An example value is `1341ac7b13fb42ab4d4408cf7f55890f`.
 
-- **original_client_ip**: The IP address of the sender's client.
+- **original_client_ip**: The IP address of the sender's SMTP server.
 
 - **directionality**: Indicates whether the message was sent inbound (1) to your organization, or whether it was sent outbound (2) from your organization.
 
