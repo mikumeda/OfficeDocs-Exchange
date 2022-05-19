@@ -26,7 +26,7 @@ The *address rewrite entry*, which you create, specifies the internal addresses 
 > Regardless of how you plan to use address rewriting, you need to verify that the resulting email addresses are unique in your organization so you don't end up with duplicates. Address rewriting doesn't verify the uniqueness of a rewritten email address.
 
 > [!IMPORTANT]
-> DKIM signing is not supported for outboud email messages using rewriten addresses as it happens before the address rewriting process. If your organization requires DKIM signing for outbound email, plesase take in to account that DKIM validation will fail after implementing address rewriting.
+> DKIM signing is not supported for outbound email messages using rewritten addresses as it happens before the address rewriting process. If your organization requires DKIM signing for outbound email, be aware that DKIM validation will fail after implementing address rewriting.
 
 To configure address rewriting, see [Address rewriting procedures on Edge Transport servers](address-rewriting-procedures.md).
 
