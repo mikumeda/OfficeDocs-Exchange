@@ -80,7 +80,7 @@ The following privileges are associated with an alert policies:
 - **Security administrator**: This privilege is required for a user to create and manage alert policies.
 
 > [!NOTE]
-> Managing alert policies involve a list of tasks. For more information, see [User tasks on alert policies](#user-tasks-on-alert-policies). 
+> Managing alert policies involve a list of tasks. For more information, see [User tasks on alert policies](#user-tasks-on-custom-policies). 
 
 - **Security reader**:  This privilege is required if the tenant wants to just read/view an alert policy.
 
@@ -90,9 +90,9 @@ A user with **security administrator** privileges can perform the following task
 
 - **Creation**: A user with **security administrator** privileges can create an alert policy, which is a custom alert policy. For information on how to create an alert policy, see [Create custom policy](#create-custom-policy). 
 - **Edit**: A user can edit both the **system** and **custom** policies. For more information, see [Edit custom policy](#edit-custom-policy).
-- **Disable**: A user can disable both the **system** and **custom** policies. For more information, see [Disable custom policy](#disable-custom-policy).  
+- **Disable**: A user can disable both the **system** and **custom** policies. For more information, see [Disable alert policy](#disable-alert-policy).  
 - **Disable email notifications of alert policies**: A user can disable the email notifications pertaining to both **system** and **custom** policies. For more information, see [Disable email notifications](#disable-email-notifications).
-- **View**: A user can view alert policies (system or custom) on the **Alerts** screen. For more information, see [View/read custom policy](#viewread-custom-policy).
+- **View**: A user can view alert policies (system or custom) on the **Alerts** screen. For more information, see [View/read alert policy](#viewread-alert-policy).
 
 ### Create custom policy
 
