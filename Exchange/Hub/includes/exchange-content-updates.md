@@ -2,6 +2,17 @@
 
 
 
+## Week of May 16, 2022
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 5/16/2022 | [Microsoft Hybrid Agent](/Exchange/hybrid-deployment/hybrid-agent) | modified |
+| 5/16/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
+| 5/20/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
+| 5/20/2022 | [Sender Rewriting Scheme (SRS) in Microsoft 365](/Exchange/mail-flow-best-practices/sender-rewriting-scheme) | added |
+
+
 ## Week of May 09, 2022
 
 
@@ -51,17 +62,3 @@
 | 4/26/2022 | [Renew an Exchange Server certificate](/Exchange/architecture/client-access/renew-certificates?view=exchserver-2016) | modified |
 | 4/26/2022 | [Create a new Exchange Server self-signed certificate](/Exchange/architecture/client-access/create-self-signed-certificates?view=exchserver-2016) | modified |
 | 4/26/2022 | [Export a certificate from an Exchange server](/Exchange/architecture/client-access/export-certificates?view=exchserver-2016) | modified |
-
-
-## Week of April 18, 2022
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 4/19/2022 | [Reply-all storm protection report in the new EAC in Exchange Online](/Exchange/monitoring/mail-flow-reports/reply-all-storm-protection-report) | added |
-| 4/19/2022 | [Microsoft Hybrid Agent](/Exchange/hybrid-deployment/hybrid-agent) | modified |
-| 4/20/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | added |
-| 4/20/2022 | [Exchange Server prerequisites, Exchange 2019 system requirements, Exchange 2019 requirements](/Exchange/plan-and-deploy/prerequisites?view=exchserver-2016) | modified |
-| 4/20/2022 | [Exchange Server supportability matrix](/Exchange/plan-and-deploy/supportability-matrix?view=exchserver-2016) | modified |
-| 4/20/2022 | [Exchange Server 2019 system requirements, Exchange 2019 Requirements, Exchange 2019 Memory Requirements, Exchange 2019 Client Compatibility](/Exchange/plan-and-deploy/system-requirements?view=exchserver-2016) | modified |
-| 4/21/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
