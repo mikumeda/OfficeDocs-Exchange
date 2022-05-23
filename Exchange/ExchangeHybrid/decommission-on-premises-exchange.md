@@ -21,7 +21,7 @@ description: "Read this article if you're ready to move from an Exchange hybrid 
 # How and when to decommission your on-premises Exchange servers in a hybrid deployment
 
 > [!NOTE]
-> Currently, if you keep an Exchange server running just for recipient management, you may be able to shut down your last Exchange server and manage recipients using Windows PowerShell. For more information, see [Manage recipients in Exchange Hybrid environments using Management tools](/Exchange/manage-hybrid-exchange-recipients-with-management-tools).
+> Currently, if you keep an Exchange server running just for recipient management, you may be able to shut down your last Exchange server and manage recipients using Windows PowerShell. For more information, see [Manage recipients in Exchange Hybrid environments using Management tools](/exchange/manage-hybrid-exchange-recipients-with-management-tools).
 
 Read this article if you're ready to move from an Exchange hybrid deployment to a full cloud implementation.
 
