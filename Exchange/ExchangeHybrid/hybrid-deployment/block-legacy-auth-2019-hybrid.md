@@ -61,7 +61,7 @@ Typically, when you block legacy authentication for a user, we recommend that yo
 
 ## Migration endpoints in Office 365
 
-Migration endpoints in Office 365 use Exchange Web Services (EWS) to connect to Exchange On-Premises to migrate mailboxes from On-Premises to Exchange Online. When setting up authentication policies, ensure that the accounts associated with migration endpoints are not part of a policy which has *BlockLegacyAuthWebServices* set to True. 
+Migration endpoints in Office 365 use Exchange Web Services (EWS) to connect to Exchange on-premises to migrate mailboxes from on-premises to Exchange Online. When setting up authentication policies, ensure that the accounts associated with migration endpoints are not part of a policy that has *BlockLegacyAuthWebServices* set to True. 
 
 ## What do you need to know before you begin?
 
