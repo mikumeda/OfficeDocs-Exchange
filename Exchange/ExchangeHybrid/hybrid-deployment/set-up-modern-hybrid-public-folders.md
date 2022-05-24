@@ -83,10 +83,10 @@ Azure AD Connect sync doesn't synchronize mail-enabled public folders to Exchang
 On the Exchange server, run the following command to synchronize mail-enabled public folders from your local on-premises Active Directory to Office 365.
 
 ```PowerShell
-.\Sync-ModernMailPublicFolders.ps1 -Credential (Get-Credential) -CsvSummaryFile:sync_summary.csv
+.\Sync-ModernMailPublicFolders.ps1 -CsvSummaryFile:sync_summary.csv
 ```
 
-Where `Credential` is your Microsoft 365 or Office 365 admin username and password, and `CsvSummaryFile` is the path to where you would like to log synchronization operations and errors, in .csv format.
+Where `CsvSummaryFile` is the path to where you would like to log synchronization operations and errors, in .csv format.
 
 > [!IMPORTANT]
 > Before running the script, we recommend that you first simulate the actions that the script would take in your environment by running it as described above with the `-WhatIf` switch. As part of the sync operation, the script, when appropriate, could create, update, or delete mail-enabled public folder objects on Exchange Online.
