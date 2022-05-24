@@ -167,7 +167,7 @@ Migration-service throttling affects migrations performed by using the following
 > [!IMPORTANT]
 > The aforementioned migration methods are not affected by user throttling.
 
-An example of migration-service throttling is controlling the number of mailboxes that are migrated simultaneously during simple Exchange migrations and IMAP migrations. The default value is 10. This means that a maximum of 10 mailboxes from all migration batches are migrated at any particular time. You can increase the number of concurrent mailbox migrations for a migration batch in either the Exchange Control Panel or Windows PowerShell. To learn more about how to optimize this setting, see [Manage migration batches in Microsoft 365 or Office 365](manage-migration-batches.md).
+An example of migration-service throttling is controlling the number of mailboxes that are migrated simultaneously during simple Exchange migrations and IMAP migrations. The default value is 20. This means that a maximum of 20 mailboxes from all migration batches are migrated at any particular time. You can increase the number of concurrent mailbox migrations for a migration batch in either the Exchange admin center or Windows PowerShell. To learn more about how to optimize this setting, see [Manage migration batches in Microsoft 365 or Office 365](manage-migration-batches.md).
 
 ### Microsoft 365 or Office 365 resource health-based throttling
 
