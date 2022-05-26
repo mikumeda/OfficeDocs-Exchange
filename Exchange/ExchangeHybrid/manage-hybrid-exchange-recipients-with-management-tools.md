@@ -91,11 +91,13 @@ If your environment includes a single Exchange server running solely for cloud r
    ```
 
    > [!NOTE]
-   > In you already removed the Exchange server or never had an Exchange Server, you access the Set-Remotedomain and New-RemoteDomain cmdlets via the Microsoft.Exchange.Management.PowerShell.E2010 snapin:
+   > If you already removed the last Exchange server or never had one, you can access the Set-Remotedomain and New-RemoteDomain cmdlets via the Exchange snapin. Install the Exchange Management Tools from the last Cumulative Update for Exchange Server 2019 on any domain-joined machine and run the following command in Windows PowerShell: 
    > 
    > ```PowerShell
-   > Add-PSSnapIn Microsoft.Exchange.Management.PowerShell.E2010
+   > Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn
    > ```
+   > 
+   > This method of manually enabling the Exchange snapin is only supported for this specific case.
 
 3. [Install the Exchange Management Tools](/exchange/plan-and-deploy/post-installation-tasks/install-management-tools) role using the Exchange Server 2019 April 2022 Cumulative Update Setup. The updated tools can be installed on any domain-joined computer in an Exchange 2013 or later Exchange organization.
 
