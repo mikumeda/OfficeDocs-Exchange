@@ -22,7 +22,7 @@ Alert policies can be created when your organization has fulfilled certain licen
 Certain privileges/permissions are required for a user to view, create, and manage alert policies. 
 For more information on the privileges/permissions regarding alert policies, see:
 
-- [Privileges associated with alert policies](#privileges-required-for-alert-policy-management).
+- [Privileges associated with alert policies](#privileges-associated-with-alert-policies).
 - The section *RBAC permissions required to view alerts* in [Alert policies in Microsoft 365](/microsoft-365/compliance/alert-policies)
 
 ## Licensing requirements
