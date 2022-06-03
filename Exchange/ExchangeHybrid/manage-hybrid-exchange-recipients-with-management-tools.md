@@ -91,16 +91,20 @@ If your environment includes a single Exchange server running solely for cloud r
    ```
 
    > [!NOTE]
-   > In you already removed the Exchange server or never had an Exchange Server, you access the Set-Remotedomain and New-RemoteDomain cmdlets via the Microsoft.Exchange.Management.PowerShell.E2010 snapin:
+   > If you already removed the last Exchange server or never had one, you can access the Set-Remotedomain and New-RemoteDomain cmdlets via the Exchange snapin. Install the Exchange Management Tools from the last Cumulative Update for Exchange Server 2019 on any domain-joined machine and run the following command in Windows PowerShell: 
    > 
    > ```PowerShell
-   > Add-PSSnapIn Microsoft.Exchange.Management.PowerShell.E2010
+   > Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn
    > ```
+   > 
+   > This method of manually enabling the Exchange snapin is only supported for this specific case.
+   > 
+   > Installing the Exchange Management Tools in an environment that never had an Exchange Server will create a new Exchange organization, and it will prepare Active Directory for Exchange. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Server](/Exchange/plan-and-deploy/prepare-ad-and-domains) to prepare AD.
 
 3. [Install the Exchange Management Tools](/exchange/plan-and-deploy/post-installation-tasks/install-management-tools) role using the Exchange Server 2019 April 2022 Cumulative Update Setup. The updated tools can be installed on any domain-joined computer in an Exchange 2013 or later Exchange organization.
 
    > [!NOTE]
-   > Installing the updated Exchange Management Tools in an environment with only Exchange 2013 and/or Exchange 2016 will upgrade the Exchange organization to Exchange Server 2019, and it will perform an AD schema update. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Serve](/Exchange/plan-and-deploy/prepare-ad-and-domains) to perform the schema update.
+   > Installing the updated Exchange Management Tools in an environment with only Exchange 2013 and/or Exchange 2016 will upgrade the Exchange organization to Exchange Server 2019, and it will perform an AD schema update. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Server](/Exchange/plan-and-deploy/prepare-ad-and-domains) to perform the schema update.
 
 4. Install the Windows Remote Server Administration Tools using the steps in this article: [Install, uninstall and turn off/on RSAT tools](/windows-server/remote/remote-server-administration-tools#install-uninstall-and-turn-offon-rsat-tools).
 

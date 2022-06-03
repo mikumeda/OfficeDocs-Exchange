@@ -75,7 +75,7 @@ An Exchange Online, Microsoft 365, or Office 365 user must be represented by a M
 
 ## Step 2: Synchronize mail-enabled public folder objects to Exchange Online
 
-Azure AD Connect sync doesn't synchronize mail-enabled public folders to Exchange Online. Running the following script will synchronize the mail-enabled public folders across your on-premises environment and Exchange Online. Special permissions assigned to mail-enabled public folders, such as **Send As**, will need to be recreated in Office 365 since cross-premise permissions are not supported in hybrid deployment scenarios. For more information, see [Exchange hybrid deployment documentation](../exchange-hybrid.md#exchange-hybrid-deployment-documentation).
+Azure AD Connect sync doesn't synchronize mail-enabled public folders to Exchange Online. Running the following script will synchronize the mail-enabled public folders across your on-premises environment and Exchange Online. Special permissions assigned to mail-enabled public folders, such as **Send As**, will need to be recreated in Office 365 since cross-premises permissions are not supported in hybrid deployment scenarios. For more information, see [Exchange hybrid deployment documentation](../exchange-hybrid.md#exchange-hybrid-deployment-documentation).
 
 > [!NOTE]
 > Synchronized mail-enabled public folders will not be visible in the Exchange admin center (EAC). Instead, use the [Get-MailPublicFolder](/powershell/module/exchange/get-mailpublicfolder) cmdlet. To recreate Send As permissions in the cloud, use the [Add-RecipientPermission](/powershell/module/exchange/add-recipientpermission) cmdlet.
