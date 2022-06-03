@@ -63,7 +63,8 @@ To eliminate these issues for users with cloud mailboxes, perform the following 
 
    > [!NOTE]
    > 
-   > - Use http, not https.
+   > - Use http, not https. When HTTPS is used, users may get an URL redirection issue [ AADSTS50011 ]
+   > 
    > 
    > - The trailing value /owa is required in the organization relationship, but users don't need to enter /owa in the URL.
    > 
