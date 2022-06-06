@@ -20,6 +20,9 @@ description: "Read this article if you're ready to move from an Exchange hybrid 
 
 # How and when to decommission your on-premises Exchange servers in a hybrid deployment
 
+> [!NOTE]
+> Currently, if you keep an Exchange server running just for recipient management, you may be able to shut down your last Exchange server and manage recipients using Windows PowerShell. For more information, see [Manage recipients in Exchange Hybrid environments using Management tools](/exchange/manage-hybrid-exchange-recipients-with-management-tools).
+
 Read this article if you're ready to move from an Exchange hybrid deployment to a full cloud implementation.
 
 [Exchange Server hybrid deployments](./exchange-hybrid.md) describes one of the most attractive options for getting a company to Exchange Online. This method is the only option that allows you to easily on-board and off-board mailboxes (all other native options are on-board only). In addition to the ability to off-board, a hybrid configuration has the following key options.
