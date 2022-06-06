@@ -180,15 +180,6 @@ When you use one of these options, you don't need to restart the computer after 
 
 ## Windows 10 client prerequisites for the Exchange 2019 management tools
 
-### Before you begin
-
-It is important to understand the server installations in your network to avoid installing unnecessary software. 
-
-|IIS required|IIS not required|
-|:-----|:-----|
-|Server is running Exchange and you wish to install Management tools|The server is not running Exchange or the server is simply a member in the domain.|
-
-#### Install prerequisites
 
 1. Install the [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/download/details.aspx?id=30679)
 
