@@ -182,7 +182,7 @@ When you use one of these options, you don't need to restart the computer after 
 
 ### Before you begin
 
-It is important to understand the server installations in your network to avoid installing unnecessary software. Is your computer running Exchange 
+It is important to understand the server installations in your network to avoid installing unnecessary software. 
 
 |IIS required|IIS not required|
 |:-----|:-----|
