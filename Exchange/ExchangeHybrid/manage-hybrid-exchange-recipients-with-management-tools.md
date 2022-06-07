@@ -117,7 +117,7 @@ If your environment includes a single Exchange server running solely for cloud r
    2. Load the Recipient Management snap-in by running the following command:
 
       ```PowerShell
-      Add-PSSnapin *RecipientManagement.
+      Add-PSSnapin *RecipientManagement
       ```
 
    3. Run Add-PermissionForEMT.ps1 from the $env:ExchangeInstallPath\Scripts folder. The script creates a security group called Recipient Management EMT. Members of this group have recipient management permissions. All admins without domain admin rights need to perform recipient management should be added to this security group.
@@ -125,7 +125,7 @@ If your environment includes a single Exchange server running solely for cloud r
 7. Sign in to the computer with the Management Tools update with the appropriate permissions (domain admin or member of Recipient Management EMT) and load the Recipient Management snap-in by running:
 
    ```powershell
-   Add-PSSnapin *RecipientManagement.
+   Add-PSSnapin *RecipientManagement
    ```
 
    You need to do this step every time you manage recipients.
