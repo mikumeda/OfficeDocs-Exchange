@@ -55,7 +55,7 @@ These settings cover a range of features that are outside of security policies.
 
 ## Troubleshooting
 
-Troubleshoot general issues and trends by using the reports in the admin center. Find single point specific data about a message by using the message trace tool. Learn more about reporting at [Reporting and message trace in Exchange Online Protection](/microsoft-365/security/office-365-security/reporting-and-message-trace-in-exchange-online-protection). Learn more about the message trace tool at [Message trace in the Security & Compliance Center](/microsoft-365/security/office-365-security/message-trace-scc).
+Troubleshoot general issues and trends by using the reports in the admin center. Find single point specific data about a message by using the message trace tool. Learn more about reporting at [Reporting and message trace in Exchange Online Protection](/microsoft-365/security/office-365-security/reporting-and-message-trace-in-exchange-online-protection). Learn more about the message trace tool at [Message trace in Exchange Online](/exchange/monitoring/trace-an-email-message/message-trace-modern-eac).
 
 ## Report false positives and false negatives to Microsoft
 
