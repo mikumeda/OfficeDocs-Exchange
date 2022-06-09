@@ -290,7 +290,7 @@ Here are some of the changes and new features we introduced in the modern EAC in
 
 Exchange admins can now use the existing dashboard to choose from new variety of mail flow cards that personalize their experience for ease of use and better productivity. To access this dashboard, go to the Exchange admin center and select Add Card (+) to see the new cards.
 
-Discover and understand some more trends related to mail flow in your Microsoft 365 or Office 365 organization. The following report were already available in the Security & Compliance Center but are now available in the EAC for added convenience.
+Discover and understand some more trends related to mail flow in your Microsoft 365 or Office 365 organization. The following reports were already available in the Security & Compliance Center but are now available in the EAC for added convenience.
 
 Top domain mail-flow status report: To identify and troubleshoot domains with mail flow issues. [Learn more](/microsoft-365/security/office-365-security/mfi-domain-mail-flow-status-insight).
 
