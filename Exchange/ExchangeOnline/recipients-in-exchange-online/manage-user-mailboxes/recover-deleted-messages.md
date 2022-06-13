@@ -90,7 +90,7 @@ To verify that you have successfully searched the messages you want to recover, 
 
 ### Step 3: Restore recovered items
 
-You need _Mailbox Import Export_ RBAC role before you can do this procedure or procedures.
+You need the _Mailbox Import Export_ RBAC role before you can do this procedure or procedures.
 
 > [!NOTE]
 > You can't use the EAC to restore recovered items.
