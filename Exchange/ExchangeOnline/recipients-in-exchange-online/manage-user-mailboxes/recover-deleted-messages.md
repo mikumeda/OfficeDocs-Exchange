@@ -67,7 +67,7 @@ For instructions, see [Connect to Exchange Online PowerShell](/powershell/exchan
 
 ### Step 2: Search for and recover missing items
 
-You need _Mailbox Import Export_ RBAC role before you can do this procedure or procedures.
+You need the _Mailbox Import Export_ RBAC role before you can do this procedure or procedures.
 
 > [!NOTE]
 > You can use In-Place eDiscovery in the Exchange admin center (EAC) to search for missing items. However, when using the EAC, you can't restrict the search to the Recoverable Items folder. Messages matching your search parameters will be returned even if they're not deleted. After they're recovered to the specified discovery mailbox, you may need to review the search results and remove unnecessary messages before recovering the remaining messages to the user's mailbox or exporting them to a .pst file. For details about how to use the EAC to perform an In-Place eDiscovery search, see [Create an In-Place eDiscovery search](/microsoft-365/compliance/content-search).
