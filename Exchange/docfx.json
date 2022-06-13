@@ -141,15 +141,17 @@
         "feedback_system": "GitHub",
         "feedback_github_repo": "MicrosoftDocs/OfficeDocs-Exchange",
         "feedback_product_url": "https://github.com/MicrosoftDocs/OfficeDocs-Exchange/issues", 
-        "contributors_to_exclude": [ 
-          "rjagiewich", 
-          "traya1", 
-          "rmca14", 
-          "claydetels19", 
-          "jborsecnik",
-          "tiburd",
-          "garycentric"
-        ]
+      "contributors_to_exclude": [
+        "rjagiewich",
+        "traya1",
+        "rmca14",
+        "claydetels19",
+        "jborsecnik",
+        "tiburd",
+    	  "AngelaMotherofDragons",
+        "v-dihans",
+        "garycentric"
+      ]
     },
     "fileMetadata": {
         "feedback_system": {
