@@ -180,6 +180,7 @@ When you use one of these options, you don't need to restart the computer after 
 
 ## Windows 10 client prerequisites for the Exchange 2019 management tools
 
+
 1. Install the [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/download/details.aspx?id=30679)
 
    > [!NOTE]
@@ -191,7 +192,7 @@ When you use one of these options, you don't need to restart the computer after 
 2. If you aren't going to use Exchange Setup to install the required Windows components (in the wizard or from the command line), run the following command in Windows PowerShell:
 
    ```PowerShell
-   Enable-WindowsOptionalFeature -Online -FeatureName IIS-ManagementScriptingTools,IIS-ManagementScriptingTools,IIS-IIS6ManagementCompatibility,IIS-LegacySnapIn,IIS-ManagementConsole,IIS-Metabase,IIS-WebServerManagementTools,IIS-WebServerRole
+   Enable-WindowsOptionalFeature -Online -FeatureName IIS-IIS6ManagementCompatibility,IIS-Metabase -All
    ```
 
 ::: moniker-end

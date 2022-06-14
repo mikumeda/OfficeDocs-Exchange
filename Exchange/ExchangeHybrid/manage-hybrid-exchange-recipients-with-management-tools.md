@@ -19,49 +19,46 @@ manager: serdars
 ---
 # Manage recipients in Exchange Hybrid environments using Management tools
 
-In Exchange Hybrid environments, you must have an active Exchange Server to manage recipients' attributes. First, attributes are edited using an Exchange Server in on-premises Azure Active Directory (Azure AD), which are then copied to Azure AD using directory synchronization. On-premises recipients can't be modified directly in Azure AD or Exchange Online. Therefore you have to keep an Exchange Server running using directory synchronization via the Azure AD Connect tool.
+If you maintain an on-premises Exchange server just for recipient management in Exchange Hybrid environments, even after you moved all of your recipients to Exchange Online, you might be able to shut down your last Exchange server and manage recipients using Windows PowerShell.
 
-If you keep an Exchange server running just for recipient management, you may be able to shut down your last Exchange server and manage recipients using Windows PowerShell.
+Previously, even after you moved all of your mailboxes to Exchange Online, you still needed an on-premises Exchange server to manage those cloud recipients attributes. You edited the recipients on an Exchange server in your on-premises Active Directory, and their attributes were copied to Azure AD using directory synchronization. You can still use this method to manage your recipients, even if they're all in the cloud. Shutting down the Exchange server is completely optional.
 
-> [!IMPORTANT]
-> You can still use this method to manage your recipients and leave your server running if you only run the Exchange server for recipient management. Shutting down the server is optional.
+> [!NOTE]
+> You can't modify on-premises recipients directly in Azure AD or Exchange Online, so you still need an on-premises Exchange server and directory synchronization via the Azure AD Connect tool. For more information, see [Why you may not want to decommission Exchange servers from on-premises](/exchange/decommission-on-premises-exchange#why-you-may-not-want-to-decommission-exchange-servers-from-on-premises).
 
-Install the latest Management tools provided through Exchange Server 2019 Setup on any domain-joined computer (client or server). [Learn how to install the latest Management tools](/exchange/plan-and-deploy/post-installation-tasks/install-management-tools?view=exchserver-2019&preserve-view=true).
+## Will this new method work for me?
 
-> [!IMPORTANT]
-> This feature is only available for Exchange Server 2019 Cumulative Update 12 or later.
+An updated version of the Exchange Management Tools can eliminate the need for running an on-premises Exchange server if all of the following statements are true:
 
-## Will this work for me?
-
-An updated version of the Exchange Management Tools can eliminate the need for running Exchange server if all of the following are true:
-
-- You have migrated all mailboxes and public folders to Exchange Online.
-- Use AD for recipient management and Azure AD Connect for synchronization.
-- You don't use/require the on-premises Exchange admin center or Exchange Role-Based Access Control (RBAC).
-- Are comfortable with using only Windows PowerShell for recipient management.
+- You migrated all mailboxes and public folders to Exchange Online (no on-premises Exchange recipients).
+- You use AD for recipient management and Azure AD Connect for synchronization.
+- You don't use or require the on-premises Exchange admin center or Exchange role-based access control (RBAC).
+- You're comfortable using Windows PowerShell only for recipient management.
 - You don't require auditing or logging of recipient management activity.
-- You are running only one Exchange server and only for recipient management purposes.
-- Want to manage recipients without running any Exchange servers.
+- You're running only one on-premises Exchange server and only for recipient management.
+- You want to manage recipients without running any Exchange servers.
+
+Use Exchange Setup in Exchange 2019 Cumulative Update 12 or later to install the latest Management tools on any domain-joined computer (client or server). For instructions, see [Install the Exchange Management tools](/exchange/plan-and-deploy/post-installation-tasks/install-management-tools?view=exchserver-2019&preserve-view=true).
 
 > [!WARNING]
-> **DO NOT** uninstall the last server. You can choose to shut down the server, and use the script to clean up, but DO NOT uninstall. Uninstalling the server removes critical information out of Active Directory that results in breaking the management tool package to manage Exchange attributes. Learn more here: [Important: Be Aware](#important-be-aware)
+> **DO NOT** uninstall the last server. You can choose to shut down the server, and use the script to clean up, but DO NOT uninstall. Uninstalling the server removes critical information from Active Directory that breaks the ability of the management tool package to manage Exchange attributes. Learn more here: [Important: Be Aware](#important-be-aware)
 
 With the updated Exchange Management Tools, domain admins and members of the Recipient Management EMT group (created through step 6 below) can use Windows PowerShell to run the following cmdlets without a running Exchange server:
 
-- Set-MailUser, Get-MailUser, New-MailUser, Remove-MailUser, Disable-MailUser and Enable-MailUser
-- Set-MailContact, Get-MailContact, New-MailContact, Remove-MailContact, Disable-MailContact and Enable-MailContact
-- Set-RemoteMailbox, Get-RemoteMailbox, New-RemoteMailbox, Remove-RemoteMailbox, Disable-RemoteMailbox and Enable-RemoteMailbox
-- Set-DistributionGroup, Get-DistributionGroup, New-DistributionGroup, Remove-DistributionGroup, Disable-DistributionGroup and Enable-DistributionGroup (excluding Upgrade-DistributionGroup)
-- Get-DistributionGroupMember, Add-DistributionGroupMember, Remove-DistributionGroupMember and Update-DistributionGroupMember
-- Set-EmailAddressPolicy, Get-EmailAddressPolicy, New-EmailAddressPolicy, Remove-EmailAddressPolicy and Update-EmailAddressPolicy
-- Set-User and Get-User
+- Set-MailUser, Get-MailUser, New-MailUser, Remove-MailUser, Disable-MailUser and Enable-MailUser.
+- Set-MailContact, Get-MailContact, New-MailContact, Remove-MailContact, Disable-MailContact and Enable-MailContact.
+- Set-RemoteMailbox, Get-RemoteMailbox, New-RemoteMailbox, Remove-RemoteMailbox, Disable-RemoteMailbox and Enable-RemoteMailbox.
+- Set-DistributionGroup, Get-DistributionGroup, New-DistributionGroup, Remove-DistributionGroup, Disable-DistributionGroup and Enable-DistributionGroup (excluding Upgrade-DistributionGroup).
+- Get-DistributionGroupMember, Add-DistributionGroupMember, Remove-DistributionGroupMember and Update-DistributionGroupMember.
+- Set-EmailAddressPolicy, Get-EmailAddressPolicy, New-EmailAddressPolicy, Remove-EmailAddressPolicy and Update-EmailAddressPolicy.
+- Set-User and Get-User.
 
 > [!NOTE]
 > You can't modify on-premises recipients directly in Azure AD or Exchange Online.
 
 ## Verify that Management Tools can run without Exchange Server
 
-If your environment includes only a single Exchange server running solely because of recipient management requirements, use the steps below to test the Management Tools update.
+If your environment includes a single Exchange server running solely for cloud recipient management, use the steps ins this section to test the Management Tools update.
 
 ### Prepare the Exchange Environment
 
@@ -73,12 +70,12 @@ If your environment includes only a single Exchange server running solely becaus
    ```
 
    > [!NOTE]
-   > Built-in admin mailboxes are not synced to cloud through Azure AD Connect by default. Before you proceed, you should disable these mailboxes using Disable-Mailbox.
+   > By default, built-in admin mailboxes are not synced to the cloud by Azure AD Connect. Before you proceed, you should disable these mailboxes using Disable-Mailbox.
 
 2. Verify that the Exchange Online tenant coexistence domain (usually something like "contoso.mail.onmicrosoft.com") is configured as target delivery domain by running the following command:
 
    ```powershell
-   Get-RemoteDomain Hybrid* | fl DomainName,TargetDeliveryDomain
+   Get-RemoteDomain Hybrid* | Format-List DomainName,TargetDeliveryDomain
    ```
 
    If the coexistence domain isn't added as a remote domain, you can add it using New-RemoteDomain. For example:
@@ -94,12 +91,20 @@ If your environment includes only a single Exchange server running solely becaus
    ```
 
    > [!NOTE]
-   > In you have already removed Exchange Server or never had an Exchange Server to start with, Set-Remotedomain and New-RemoteDomain cmdlets can be accessed via Microsoft.Exchange.Management.PowerShell.E2010 snapin. Add the snapin before using the Set-RemoteDomain or New-RemoteDomain cmdlets.
+   > If you already removed the last Exchange server or never had one, you can access the Set-RemoteDomain and New-RemoteDomain cmdlets via the Exchange snapin. Install the Exchange Management Tools from the last Cumulative Update for Exchange Server 2019 on any domain-joined machine and run the following command in Windows PowerShell:
+   >
+   > ```PowerShell
+   > Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn
+   > ```
+   >
+   > This method of manually enabling the Exchange snapin is only supported for this specific case.
+   >
+   > Installing the Exchange Management Tools in an environment that never had an Exchange Server will create a new Exchange organization, and it will prepare Active Directory for Exchange. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Server](/Exchange/plan-and-deploy/prepare-ad-and-domains) to prepare AD.
 
-3. [Install the Exchange Management Tools](/exchange/plan-and-deploy/post-installation-tasks/install-management-tools) role using the Exchange Server 2019 April 2022 Cumulative Update Setup. The updated tools can be installed on any domain-joined computer in an Exchange organization. It can be used in organizations running Exchange Server 2013, Exchange Server 2016, and/or Exchange Server 2019.
+3. [Install the Exchange Management Tools](/exchange/plan-and-deploy/post-installation-tasks/install-management-tools) role using the Exchange Server 2019 April 2022 Cumulative Update Setup. The updated tools can be installed on any domain-joined computer in an Exchange 2013 or later Exchange organization.
 
    > [!NOTE]
-   > Installing the updated Exchange Management Tools in an environment with only Exchange 2013 and/or Exchange 2016 will upgrade the Exchange organization to Exchange Server 2019, and it will perform an AD schema update. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Serve](/Exchange/plan-and-deploy/prepare-ad-and-domains) to perform the schema update.
+   > Installing the updated Exchange Management Tools in an environment with only Exchange 2013 and/or Exchange 2016 will upgrade the Exchange organization to Exchange Server 2019, and it will perform an AD schema update. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Server](/Exchange/plan-and-deploy/prepare-ad-and-domains) to perform the schema update.
 
 4. Install the Windows Remote Server Administration Tools using the steps in this article: [Install, uninstall and turn off/on RSAT tools](/windows-server/remote/remote-server-administration-tools#install-uninstall-and-turn-offon-rsat-tools).
 
@@ -109,31 +114,35 @@ If your environment includes only a single Exchange server running solely becaus
 
    1. Sign-in to the computer with the Management Tools update as a Domain Admin and open Windows PowerShell.
 
-   2. Load the Recipient Management snap-in by running Add-PSSnapin *RecipientManagement.
+   2. Load the Recipient Management snap-in by running the following command:
+
+      ```PowerShell
+      Add-PSSnapin *RecipientManagement
+      ```
 
    3. Run Add-PermissionForEMT.ps1 from the $env:ExchangeInstallPath\Scripts folder. The script creates a security group called Recipient Management EMT. Members of this group have recipient management permissions. All admins without domain admin rights need to perform recipient management should be added to this security group.
 
 7. Sign in to the computer with the Management Tools update with the appropriate permissions (domain admin or member of Recipient Management EMT) and load the Recipient Management snap-in by running:
 
    ```powershell
-   Add-PSSnapin *RecipientManagement.
+   Add-PSSnapin *RecipientManagement
    ```
 
-   This step must be performed every time you manage recipients.
+   You need to do this step every time you manage recipients.
 
-8. Test all recipient management cmdlets and verify that you see expected results.
+8. Test all recipient management cmdlets and verify that you see the expected results.
 
 9. Shut down your last Exchange server and verify that all recipient management cmdlets still work as expected.
 
 ## Permanently shutting down your last Exchange Server
 
-If you intend to permanently shut down your last Exchange Server, we recommend that you use the following steps to clean up aspects of your Exchange configuration to improve the security posture of your environment.
+If you intend to permanently shut down your last Exchange Server, we recommend that you use the following steps to clean up and improve the security posture of your environment.
 
 > [!IMPORTANT]
-> If you are using your last Exchange server for any purpose other than recipient management (e.g., for SMTP relay), then do not shut it down.
+> If you use your last Exchange server for any purpose other than recipient management (for exmaple, SMTP relay), then do not shut it down.
 
 1. Turn on your last Exchange server.
-2. Clean up your hybrid configuration by performing [Steps 1 to 8](/exchange/decommission-on-premises-exchange#to-keep-ad-fs-and-directory-synchronization-and-decommission-most-of-the-exchange-servers) for Scenario 2 in How and when to decommission your on-premises Exchange servers in a hybrid deployment.
+2. Clean up your hybrid configuration by performing [Steps 1 to 8](/exchange/decommission-on-premises-exchange#to-keep-ad-fs-and-directory-synchronization-and-decommission-most-of-the-exchange-servers) for Scenario 2 in [How and when to decommission your on-premises Exchange servers in a hybrid deployment](/exchange/decommission-on-premises-exchange#scenario-two).
 
 3. Remove the Federation Trust by running the following command in the Exchange Management Shell:
 
@@ -150,7 +159,7 @@ If you intend to permanently shut down your last Exchange Server, we recommend t
    To remove the certificate thumbprint, run:
 
    ```powershell
-   Remove-ExchangeCertificate –Thumbprint $fedThumbprint
+   Remove-ExchangeCertificate -Thumbprint $fedThumbprint
    ```
 
 5. Remove the service principal credentials created for OAuth. To do this, you need to determine which KeyId matches the key value of the OAuth certificate. To find the KeyId that matches, follow these steps:
@@ -179,7 +188,7 @@ If you intend to permanently shut down your last Exchange Server, we recommend t
    3. To remove the service principal credential, run the following command:
 
       ```powershell
-      Remove-MsolServicePrincipalCredential –KeyIds @($keyId) -AppPrincipalId $p.AppPrincipalId
+      Remove-MsolServicePrincipalCredential -KeyIds @($keyId) -AppPrincipalId $p.AppPrincipalId
       ```
 
 6. Uninstall the Hybrid agent. If your environment has a Modern Hybrid configuration, follow the steps below to remove it.
@@ -233,24 +242,24 @@ If you intend to permanently shut down your last Exchange Server, we recommend t
 
    4. Uninstall the Hybrid agent using the steps here: [Uninstall the hybrid agent](/exchange/hybrid-deployment/hybrid-agent#uninstall-the-hybrid-agent).
 
-7. If not already done, point your MX and Autodiscover DNS records to Exchange Online. This is important to ensure mail flow isn't affected. For more information, see External Domain Name System records for Office 365.
+7. If you haven't already, point your MX and Autodiscover DNS records to Exchange Online. This step is important to ensure mail flow isn't affected. For more information, see [External Domain Name System records for Office 365](/microsoft-365/enterprise/external-domain-name-system-records).
 
 8. Shut down your last Exchange server.
 
 ## Active Directory clean up
 
-If you plan to never run Exchange Server on-premises, we recommend that you clean up your Active Directory by removing unnecessary Exchange objects.
+If you plan to never run an on-premises Exchange server again, we recommend that you clean up your Active Directory by removing unnecessary Exchange objects.
 
-> [!IMPORTANT]
-> This step can't be undone, so only proceed if you **never** want to run Exchange Server again.
+> [!WARNING]
+> This step can't be undone. Proceed only if you **never** want to run Exchange Server again.
 
 AD cleanup can be done by running the CleanupActiveDirectoryEMT script shipped with Management tools. The script removes system mailboxes, unnecessary Exchange containers, permissions for Exchange Security Groups on the domain and configuration partitions, and the Exchange Security Groups. You need to run this script with domain admin credentials.
 
-This script is available at: *$env:ExchangeInstallPath\Scripts\CleanupActiveDirectoryEMT.ps1*
+This script is available at: `$env:ExchangeInstallPath\Scripts\CleanupActiveDirectoryEMT.ps1`
 
 ### Important: Be Aware
 
 > [!WARNING]
-> **Once you shut down the last Exchange server, Exchange RBAC will no longer function**. Users who were a part of Exchange Recipient groups or had custom Exchange roles allowing for recipient management will no longer have permission. Only domain admins and users who are assigned permission using Add-PermissionForEMT.ps1 script will be able to perform recipient management.
+> **Once you shut down the last Exchange server, Exchange RBAC will no longer function**. Users who were a part of Exchange Recipient groups or had custom Exchange roles allowing for recipient management will no longer have permission. Only domain admins and users who are assigned permission using `Add-PermissionForEMT.ps1` script will be able to perform recipient management.
 >
-> Once you shut down your last Exchange server and perform the Exchange hybrid and Active Directory cleanup steps listed above, you should **erase and reformat your last Exchange server**. **Do Not Uninstall the Exchange Server**.
+> Once you shut down your last Exchange server and perform the Exchange hybrid and Active Directory cleanup steps as previously described, you should **erase and reformat your last Exchange server**. **Do Not Uninstall the Exchange Server**.

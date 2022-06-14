@@ -36,10 +36,11 @@ The following mail flow reports are available:
 
 To view and use mail flow reports, you need to be a member of one of the following role groups in Exchange Online:
 
+- Compliance Administrator
+- Exchange Administrator
 - Organization Management
 - Security Administrator<sup\>*</sup>
 - Security Reader<sup>\*</sup>
-- View-only Organization Management
 - View-Only Recipients
 
 For more information, see [Permissions in Exchange Online](../../permissions-exo/permissions-exo.md) and [Manage role groups in Exchange Online](../../permissions-exo/role-groups.md).
