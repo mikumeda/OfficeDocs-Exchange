@@ -138,36 +138,24 @@
         "extendBreadcrumb": "true",
         "recommendations": true,
         "uhfHeaderId": "MSDocsHeader-M365-IT",
-        "feedback_system": "GitHub",
-        "feedback_github_repo": "MicrosoftDocs/OfficeDocs-Exchange",
-        "feedback_product_url": "https://github.com/MicrosoftDocs/OfficeDocs-Exchange/issues", 
-      "contributors_to_exclude": [
-        "rjagiewich",
-        "traya1",
-        "rmca14",
-        "claydetels19",
-        "jborsecnik",
-        "tiburd",
-    	  "AngelaMotherofDragons",
-        "v-dihans",
-        "garycentric"
-      ]
+        "contributors_to_exclude": [
+          "rjagiewich",
+          "traya1",
+          "rmca14",
+          "claydetels19",
+          "jborsecnik",
+          "tiburd",
+          "AngelaMotherofDragons",
+          "v-dihans",
+          "garycentric"
+        ],
+        "feedback_system": "none",
+        "feedback_github_repo": "none",
+        "feedback_product_url": "none"
     },
     "fileMetadata": {
-        "feedback_system": {
-          "ExchangeServer/**/*.md": "none",
-          "ExchangeServer2013/**/*.md": "none"
-         },
-        "feedback_github_repo": {
-          "ExchangeServer/**/*.md": "none",
-          "ExchangeServer2013/**/*.md": "none"        
-        },
-        "feedback_product_url": {
-          "ExchangeServer/**/*.md": "none",
-          "ExchangeServer2013/**/*.md": "none"        
-        },
         "hideEdit": {
-          "ExchangeServer/**/*.md": false,
+          "ExchangeServer/**/*.md": true,
           "ExchangeServer2013/**/*.md": true         
         },
         "ms.prod": {

@@ -91,14 +91,14 @@ If your environment includes a single Exchange server running solely for cloud r
    ```
 
    > [!NOTE]
-   > If you already removed the last Exchange server or never had one, you can access the Set-Remotedomain and New-RemoteDomain cmdlets via the Exchange snapin. Install the Exchange Management Tools from the last Cumulative Update for Exchange Server 2019 on any domain-joined machine and run the following command in Windows PowerShell: 
-   > 
+   > If you already removed the last Exchange server or never had one, you can access the Set-RemoteDomain and New-RemoteDomain cmdlets via the Exchange snapin. Install the Exchange Management Tools from the last Cumulative Update for Exchange Server 2019 on any domain-joined machine and run the following command in Windows PowerShell:
+   >
    > ```PowerShell
    > Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn
    > ```
-   > 
+   >
    > This method of manually enabling the Exchange snapin is only supported for this specific case.
-   > 
+   >
    > Installing the Exchange Management Tools in an environment that never had an Exchange Server will create a new Exchange organization, and it will prepare Active Directory for Exchange. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Server](/Exchange/plan-and-deploy/prepare-ad-and-domains) to prepare AD.
 
 3. [Install the Exchange Management Tools](/exchange/plan-and-deploy/post-installation-tasks/install-management-tools) role using the Exchange Server 2019 April 2022 Cumulative Update Setup. The updated tools can be installed on any domain-joined computer in an Exchange 2013 or later Exchange organization.
@@ -159,7 +159,7 @@ If you intend to permanently shut down your last Exchange Server, we recommend t
    To remove the certificate thumbprint, run:
 
    ```powershell
-   Remove-ExchangeCertificate –Thumbprint $fedThumbprint
+   Remove-ExchangeCertificate -Thumbprint $fedThumbprint
    ```
 
 5. Remove the service principal credentials created for OAuth. To do this, you need to determine which KeyId matches the key value of the OAuth certificate. To find the KeyId that matches, follow these steps:
@@ -188,7 +188,7 @@ If you intend to permanently shut down your last Exchange Server, we recommend t
    3. To remove the service principal credential, run the following command:
 
       ```powershell
-      Remove-MsolServicePrincipalCredential –KeyIds @($keyId) -AppPrincipalId $p.AppPrincipalId
+      Remove-MsolServicePrincipalCredential -KeyIds @($keyId) -AppPrincipalId $p.AppPrincipalId
       ```
 
 6. Uninstall the Hybrid agent. If your environment has a Modern Hybrid configuration, follow the steps below to remove it.
