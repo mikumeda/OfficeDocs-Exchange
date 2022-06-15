@@ -107,7 +107,7 @@ To verify the new Outlook for Windows is enabled or disabled for a specific mail
 Get-CASMailbox -Identity <MailboxIdentity> | Format-List OneWinNativeOutlookEnabled
 ```
 
-The value False for the OneWinNativeOutlookEnabled property means the new Outlook for Windows is disabled for the mailbox. True or absence of value means it is disabled.
+The value False for the OneWinNativeOutlookEnabled property means the new Outlook for Windows is disabled for the mailbox. True or absence of value means it is enabled.
 
 To verify if the new Outlook for Windows is enabled or disabled for all mailboxes, run the following command to verify the value of the UniversalOutlookEnabled property:
 
