@@ -104,13 +104,13 @@ You can use the **Get-Mailbox**, **Get-User** or **Get-Content** cmdlets to iden
 To verify the new Outlook for Windows is enabled or disabled for a specific mailbox, replace \<MailboxIdentity\> with the name, alias, email address or user ID of the mailbox, and run the following command:
 
 ```PowerShell
-Get-CASMailbox -Identity <MailboxIdentity> | Format-List UniversalOutlookEnabled
+Get-CASMailbox -Identity <MailboxIdentity> | Format-List OneWinNativeOutlookEnabled
 ```
 
-The value False for the UniversalOutlookEnabled property means the new Outlook for Windows is disabled for the mailbox.
+The value False for the OneWinNativeOutlookEnabled property means the new Outlook for Windows is disabled for the mailbox. True or absence of value means it is enabled.
 
 To verify if the new Outlook for Windows is enabled or disabled for all mailboxes, run the following command to verify the value of the UniversalOutlookEnabled property:
 
 ```PowerShell
-Get-CASMailbox -ResultSize unlimited -Filter "RecipientTypeDetailsValue -eq 'UserMailbox'" | Format-Table Name,PrimarySMTPAddress,UniversalOutlookEnabled
+Get-CASMailbox -ResultSize unlimited -Filter "RecipientTypeDetailsValue -eq 'UserMailbox'" | Format-Table Name,PrimarySMTPAddress,OneWinNativeOutlookEnabled
 ```
