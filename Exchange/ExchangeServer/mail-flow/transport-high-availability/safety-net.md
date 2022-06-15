@@ -5,7 +5,7 @@ ms.topic: article
 author: JoanneHendrickson
 ms.author: jhendr
 ms.assetid: d0abb807-3b12-4c7d-bc7e-769b87c84ccb
-ms.reviewer: 
+ms.reviewer:
 title: Safety Net in Exchange Server
 ms.collection: exchange-server
 f1.keywords:
@@ -18,10 +18,9 @@ manager: serdars
 
 # Safety Net in Exchange Server
 
+In Exchange 2010, the _transport dumpster_ helped protect against data loss by maintaining a queue of successfully delivered messages that hadn't replicated to the passive mailbox database copies in the database availability group (DAG). When a mailbox database or server failure required the promotion of an out-of-date copy of the mailbox database, the messages in the transport dumpster were automatically resubmitted to the new active copy of the mailbox database.
 
-In Exchange 2010, the *transport dumpster* helped protect against data loss by maintaining a queue of successfully delivered messages that hadn't replicated to the passive mailbox database copies in the database availability group (DAG). When a mailbox database or server failure required the promotion of an out-of-date copy of the mailbox database, the messages in the transport dumpster were automatically resubmitted to the new active copy of the mailbox database.
-
-The transport dumpster was improved in Exchange 2013 and is now called *Safety Net*. Exchange 2016 and Exchange 2019 have these same improvements.
+The transport dumpster was improved in Exchange 2013 and is now called _Safety Net_. Exchange 2016 and Exchange 2019 have these same improvements.
 
 Here's how Safety Net is similar to the transport dumpster in Exchange 2010:
 
@@ -33,7 +32,7 @@ Here's how Safety Net is improved from the transport dumpster in Exchange 2010:
 
 - **Safety Net doesn't require a DAG**: For Mailbox servers that don't belong to a DAG, Safety Net stores copies of the delivered messages on other Mailbox servers in the local Active Directory site.
 
-- **Safety Net itself isn't a single point of failure**: Redundancy is provided by using a *Primary Safety Net* and a *Shadow Safety Net*. If the Primary Safety Net is unavailable for more than 12 hours, resubmit requests become shadow resubmit requests, and messages are re-delivered from the Shadow Safety Net.
+- **Safety Net itself isn't a single point of failure**: Redundancy is provided by using a _Primary Safety Net_ and a _Shadow Safety Net_. If the Primary Safety Net is unavailable for more than 12 hours, resubmit requests become shadow resubmit requests, and messages are re-delivered from the Shadow Safety Net.
 
 - **Safety Net takes over some responsibility from shadow redundancy in DAG environments**: Shadow redundancy doesn't need to keep another copy of the delivered message in a shadow queue while it waits for the delivered message to replicate to the passive copies of mailbox database. The copy of the delivered message is already stored in Safety Net, so the message can be resubmitted from Safety Net if necessary.
 
@@ -53,10 +52,10 @@ This table describes the parameters that are used by Safety Net.
 
 |Parameter|Default value|Description|
 |---|---|---|
-|_SafetyNetHoldTime_ on **Set-TransportConfig**|2 days|The length of time successfully processed primary messages are stored in Primary Safety Net, and acknowledged shadow messages are stored in Shadow Safety Net. <br/><br/> You can also specify this value in the Exchange admin center (EAC) at **Mail flow** \> **Receive connectors** \> **More options** ![More Options icon.](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Organization transport settings** \> **Safety Net** \> **Safety Net hold time**. <br/><br/> Unacknowledged shadow messages eventually expire from Shadow Safety Net after the sum of _SafetyNetHoldTime_ and _MessageExpirationTimeout_ parameter values. <br/><br/> To avoid data loss during Safety Net resubmits, the value of this parameter must be greater than or equal to the value of _ReplayLagTime_ on **Set-MailboxDatabaseCopy** for the lagged copy of the mailbox database.|
-|_ReplayLagTime_ on **Set-MailboxDatabaseCopy**|Not configured|The amount of time that the Microsoft Exchange Replication service should wait before replaying log files that have been copied to the passive database copy. Setting this parameter to a value greater than 0 creates a lagged copy of the mailbox database. The maximum value is 14 days. <br/><br/> To avoid data loss during Safety Net resubmits, the value of this parameter for the lagged copy of the mailbox database must be less than or equal to the value of _SafetyNetHoldTime_ on **Set-TransportConfig**.|
+|_SafetyNetHoldTime_ on **Set-TransportConfig**|2 days|The length of time successfully processed primary messages are stored in Primary Safety Net, and acknowledged shadow messages are stored in Shadow Safety Net. <p> You can also specify this value in the Exchange admin center (EAC) at **Mail flow** \> **Receive connectors** \> **More options** ![More Options icon.](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Organization transport settings** \> **Safety Net** \> **Safety Net hold time**. <p> Unacknowledged shadow messages eventually expire from Shadow Safety Net after the sum of _SafetyNetHoldTime_ and _MessageExpirationTimeout_ parameter values. <p> To avoid data loss during Safety Net resubmits, the value of this parameter must be greater than or equal to the value of _ReplayLagTime_ on **Set-MailboxDatabaseCopy** for the lagged copy of the mailbox database.|
+|_ReplayLagTime_ on **Set-MailboxDatabaseCopy**|Not configured|The amount of time that the Microsoft Exchange Replication service should wait before replaying log files that have been copied to the passive database copy. Setting this parameter to a value greater than 0 creates a lagged copy of the mailbox database. The maximum value is 14 days. <p> To avoid data loss during Safety Net resubmits, the value of this parameter for the lagged copy of the mailbox database must be less than or equal to the value of _SafetyNetHoldTime_ on **Set-TransportConfig**.|
 |_MessageExpirationTimeout_ on **Set-TransportService**|2 days|How long a message can remain in a queue before it expires.|
-|_ShadowRedundancyEnabled_ on **Set-TransportConfig**|`$true`|`$true`: Shadow redundancy is enabled on all Mailbox servers in the organization. <br/><br/> `$false`: Shadow redundancy is disabled on all transport servers in the organization. <br/><br/> Redundancy for Safety Net requires shadow redundancy to be enabled.|
+|_ShadowRedundancyEnabled_ on **Set-TransportConfig**|`$true`|`$true`: Shadow redundancy is enabled on all Mailbox servers in the organization. <p> `$false`: Shadow redundancy is disabled on all transport servers in the organization. <p> Redundancy for Safety Net requires shadow redundancy to be enabled.|
 
 ## Safety Net maximum supported sizes
 
@@ -70,7 +69,7 @@ When a Hub-and-spoke topology is used, the transport Safety Net JET database can
 
   1. In a Command prompt window, open the EdgeTransport.exe.config file in **Notepad** by running the following command on the server:
 
-     ```console
+     ```DOS
      Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
      ```
 
@@ -84,13 +83,13 @@ When a Hub-and-spoke topology is used, the transport Safety Net JET database can
 
   3. Restart the Exchange Transport service by running the following command:
 
-     ```console
+     ```DOS
      net stop MSExchangeTransport && net start MSExchangeTransport
      ```
-    
+
 ## Message resubmission from Safety Net
 
-The Active Manager component of the Microsoft Exchange Replication service (MRS) manages DAGs and mailbox database copies. Message resubmissions from Safety Net require no manual actions, and are initiated by the Active Manager. For more information about Active Manager, see [Active Manager](../../high-availability/database-availability-groups/active-manager.md).
+The Active Manager component of the Microsoft Exchange Replication service (MSExchangeRepl.exe) manages DAGs and mailbox database copies. Message resubmissions from Safety Net require no manual actions, and are initiated by the Active Manager. For more information about Active Manager, see [Active Manager](../../high-availability/database-availability-groups/active-manager.md).
 
 There are two basic Safety Net message resubmission scenarios:
 
@@ -98,7 +97,7 @@ There are two basic Safety Net message resubmission scenarios:
 
 - After you activate a lagged copy of a mailbox database.
 
-A *lagged mailbox database copy* or *lagged copy* is a passive copy of a mailbox database where updates to the database are intentionally delayed to protect against logical corruption of the mailbox database. For more information, see [Manage mailbox database copies](../../high-availability/manage-ha/manage-database-copies.md).
+A _lagged mailbox database copy_ or _lagged copy_ is a passive copy of a mailbox database where updates to the database are intentionally delayed to protect against logical corruption of the mailbox database. For more information, see [Manage mailbox database copies](../../high-availability/manage-ha/manage-database-copies.md).
 
 The only significant difference between the two scenarios is how far back in time to go to resubmit messages from Safety Net. Typically, for database failover in a DAG, the new active copy of the mailbox database is anywhere from several minutes to several hours behind the old active copy. A lagged copy of a mailbox database is typically several days behind the old active copy.
 
@@ -143,6 +142,5 @@ These are some other issues to consider when messages are resubmitted from Safet
 - **Users removed from a distribution group may not receive a resubmitted message when the Shadow Safety Net resubmits the message**: For example, a message is sent to a group containing User A and User B, and both recipients receive the message. User B is subsequently removed from the group. Later, a resubmit request from Primary Safety Net is made for the mailbox database that holds User B's mailbox. However, the Primary Safety Net is unavailable for more than 12 hours, so the Shadow Safety Net server responds and resubmits the affected message. During message resubmission when the distribution group is expanded, User B is no longer a member of the group, and won't receive a copy of the resubmitted message.
 
 - **New Users added to a distribution group may receive an old resubmitted message when the Shadow Safety Net resubmits the message**: For example, a message is sent to a group containing User A and User B, and both recipients receive the message. User C is subsequently added to the group. Later, a resubmit request from Primary Safety Net is made for the mailbox database that holds User C's mailbox. However, the Primary Safety Net server is unavailable for more than 12 hours, so the Shadow Safety Net server responds and resubmits the affected messages. During message resubmission when the distribution group is expanded, User C is now a member of the group, and will receive a copy of the resubmitted message.
-
 
 - **Deploying Safety Net in Hub and Spoke Topology**: Safety Net is designed to protect message delivery on Exchange Servers hosting end-user mailboxes.  Customers who have deployed a hub and spoke routing topology should disable Safety Net on transport servers in hub sites to avoid a large growth in the size of the transport database in hub locations.
