@@ -8,7 +8,7 @@ f1.keywords:
 audience: ITPro
 ms.topic: conceptual
 ms.localizationpriority: medium
-description: "Summary:Customized step-by-step instructions to deploy Exchange Server."
+description: "Customized step-by-step instructions to deploy Exchange Server."
 ---
 
 # Exchange Deployment Assistant
@@ -19,63 +19,10 @@ Looking for help with migrating your Exchange organization to Microsoft 365, Off
 
 [![Launch Deployment Assistant.](media/ExchangeDeploymentAssistant.png)](https://assistants.microsoft.com/)
 
-<br>
 
-<html>
-<head>
-</head>
-<body>
-<table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
-  <tbody>
-    <tr>
-      <td style="font-family: Segoe UI Light;">
-      <h2 style="border: 0px none ; margin: 4px 0px 15px; padding: 0px; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.846em; line-height: 1.238; font-size-adjust: none; font-stretch: normal; color: rgb(232, 17, 35); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Exchange 2019 scenarios</h2>
-      </td>
-      <td style="font-family: Segoe UI Light;">
-      <h2 style="border: 0px none ; margin: 4px 0px 15px; padding: 0px; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.846em; line-height: 1.238; font-size-adjust: none; font-stretch: normal; color: rgb(232, 17, 35); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Exchange 2016 scenarios</h2>
-      </td>
-      <td style="font-family: Segoe UI Light;">
-      <h2 style="border: 0px none ; margin: 4px 0px 15px; padding: 0px; font-style: normal; font-variant: normal; font-weight: 100; font-size: 1.846em; line-height: 1.238; font-size-adjust: none; font-stretch: normal; color: rgb(232, 17, 35); height: auto; white-space: normal; overflow: visible; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px;">Exchange 2013 scenarios</h2>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: middle;">
-      <p style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><big>The following deployment scenarios are available for Exchange Server 2019:</big></p>
-      </td>
-      <td style="vertical-align: middle;">
-      <p style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><big>The following deployment scenarios are available for Exchange Server 2016:</big></p>
-      </td>
-      <td>
-      <p style="border: 0px none ; margin: 0px 0px 15px; padding: 0px; font-weight: 400; font-style: normal; font-family: &quot;Segoe UI&quot;,&quot;Lucida Grande&quot;,Verdana,Arial,Helvetica,sans-serif; color: rgb(42, 42, 42); font-size: 13.0093px; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"><big>The following deployment scenarios are available for Exchange Server 2013:</big></p>
-      </td>
-    </tr>
-    <tr>
-      <td style="font-family: Segoe UI; vertical-align: top;">
-      <ul>
-        <li>New installation of Exchange Server 2019</li>
-        <li>Upgrade from Exchange 2013 to Exchange 2019</li>
-        <li>Upgrade from Exchange 2016 to Exchange 2019</li>
-        <li>Upgrade from mixed Exchange 2013 and Exchange 2016 to Exchange 2019</li>
-      </ul>
-      </td>
-      <td style="font-family: Segoe UI; vertical-align: top;">
-      <ul>
-        <li>New installation of Exchange Server 2016</li>
-        <li>Upgrade from Exchange 2010 to Exchange 2016</li>
-        <li>Upgrade from Exchange 2013 to Exchange 2016</li>
-        <li>Upgrade from mixed Exchange 2010 and Exchange 2013 to Exchange 2016</li>
-      </ul>
-      </td>
-      <td style="font-family: Segoe UI; vertical-align: top;">
-      <ul>
-        <li>New installation of Exchange Server 2013</li>
-        <li>Upgrade from Exchange 2007 to Exchange 2013</li>
-        <li>Upgrade from Exchange 2010 to Exchange 2013</li>
-        <li>Upgrade from mixed Exchange 2007 and Exchange 2010 to Exchange 2013</li>
-      </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</body>
-</html>
+
+|     |     |     |
+| --- | --- | --- |
+| Exchange 2019 scenarios<br>----------------------- | Exchange 2016 scenarios<br>----------------------- | Exchange 2013 scenarios<br>----------------------- |
+| The following deployment scenarios are available for Exchange Server 2019: | The following deployment scenarios are available for Exchange Server 2016: | The following deployment scenarios are available for Exchange Server 2013: |
+| * New installation of Exchange Server 2019<br>* Upgrade from Exchange 2013 to Exchange 2019<br>* Upgrade from Exchange 2016 to Exchange 2019<br>* Upgrade from mixed Exchange 2013 and Exchange 2016 to Exchange 2019 | * New installation of Exchange Server 2016<br>* Upgrade from Exchange 2010 to Exchange 2016<br>* Upgrade from Exchange 2013 to Exchange 2016<br>* Upgrade from mixed Exchange 2010 and Exchange 2013 to Exchange 2016 | * New installation of Exchange Server 2013<br>* Upgrade from Exchange 2007 to Exchange 2013<br>* Upgrade from Exchange 2010 to Exchange 2013<br>* Upgrade from mixed Exchange 2007 and Exchange 2010 to Exchange 2013 |

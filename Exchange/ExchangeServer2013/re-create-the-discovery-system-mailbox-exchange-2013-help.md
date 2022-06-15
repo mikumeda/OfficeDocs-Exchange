@@ -5,6 +5,8 @@ ms:assetid: 5ae8426b-5661-4ecb-99c4-cdd342107fb1
 ms:mtpsurl: https://technet.microsoft.com/library/Gg588318(v=EXCHG.150)
 ms:contentKeyID: 49289261
 ms.reviewer: 
+ms.topic: article
+description: How to re-create the Discovery system mailbox in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

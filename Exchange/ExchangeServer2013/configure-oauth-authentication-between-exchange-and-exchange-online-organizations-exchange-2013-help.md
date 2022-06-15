@@ -58,7 +58,7 @@ Run the following command in the Exchange Management Shell (Exchange PowerShell)
 
 ```powershell
 New-AuthServer -Name "WindowsAzureACS" -AuthMetadataUrl "https://accounts.accesscontrol.windows.net/<your tenant coexistence domain>/metadata/json/1"
-New-AuthServer -Name "evoSTS" -Type AzureAD -AuthMetadataUrl "https://login.windows.net/<your tenant coexistence domain>/federationmetadata/2007-06/federationmetadata.xml"
+New-AuthServer -Name "evoSTS" -Type AzureAD -AuthMetadataUrl "https://login.windows.net/<your tenant coexistence domain>/federationmetadata/2007-06/federationmetadata.xml"
 ```
 
 > [!NOTE]
@@ -66,7 +66,7 @@ New-AuthServer -Name "evoSTS" -Type AzureAD -AuthMetadataUrl "https://login
 >
 > ```Powershell  
 > New-AuthServer -Name "WindowsAzureACS" -AuthMetadataUrl "https://login.microsoftonline.us/<your tenant coexistence domain>/metadata/json/1"  
-> New-AuthServer -Name "evoSTS" -Type AzureAD -AuthMetadataUrl "https://login.microsoftonline.us/<your tenant coexistence domain>/federationmetadata/2007-06/federationmetadata.xml"  
+> New-AuthServer -Name "evoSTS" -Type AzureAD -AuthMetadataUrl "https://login.microsoftonline.us/<your tenant coexistence domain>/federationmetadata/2007-06/federationmetadata.xml"  
 > ```  
 
 > [!NOTE]

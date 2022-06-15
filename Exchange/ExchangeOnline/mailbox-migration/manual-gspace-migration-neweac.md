@@ -33,7 +33,9 @@ For more information, see [Prerequisites](googleworkspace-migration-prerequisite
 ## Start a Google Workspace migration batch with the new Exchange admin center (New EAC)
 
 > [!IMPORTANT]
-> Microsoft's data migration tool is currently unaware of tools enforcing messaging records management (MRM) or archival policies. Because of this, any messages that are deleted or moved to archive by these policies will result in the migration process flagging these items as "missing". The result is perceived data loss rather than actual data loss, which makes it much harder to identify actual data loss during any content verification checks. <br/><br/>Therefore, Microsoft strongly recommends disabling all MRM and archival policies before attempting any data migration to mailboxes.
+> Microsoft's data migration tool is currently unaware of tools enforcing messaging records management (MRM) or archival policies. Because of this, any messages that are deleted or moved to archive by these policies will result in the migration process flagging these items as "missing". The result is perceived data loss rather than actual data loss, which makes it much harder to identify actual data loss during any content verification checks.
+>
+> Therefore, Microsoft strongly recommends disabling all MRM and archival policies before attempting any data migration to mailboxes.
 
 1. In the new Exchange Admin center at <https://admin.exchange.microsoft.com/#/>, go to **Migration** and then click **Add migration batch**.
 

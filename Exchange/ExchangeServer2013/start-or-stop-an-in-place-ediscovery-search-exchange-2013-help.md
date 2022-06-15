@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: How to start or stop an In-Place eDiscovery search in Microsoft Exchange
 ms.assetid: 0d546763-4bf5-4523-91f4-d181b7ee4ac2
 f1.keywords:
 - NOCSH

@@ -28,15 +28,15 @@ You can bulk-create or import address rewriting information into an Edge Transpo
 
 You can use a spreadsheet application like Microsoft Excel to create the CSV file. Format the file as described in this topic and save it as a .csv file.
 
-The first row, or *header row*, of the CSV file lists the names of the parameters. Each parameter is separated by a comma. The required and optional parameters are described in the following table.
+The first row, or _header row_, of the CSV file lists the names of the parameters. Each parameter is separated by a comma. The required and optional parameters are described in the following table.
 
-|**Parameter**|**Required or optional**|**Description**|
-|:-----|:-----|:-----|
-| _Name_|Required|A unique, descriptive name for the address rewrites entry.|
-| _InternalAddress_|Required|The address you want to change. You can use the following values:  <br/> • A single email address (chris@contoso.com)  <br/> • A single domain or subdomain (contoso.com or sales.contoso.com)  <br/> • A domain and all subdomains (\*.contoso.com)|
-| _ExternalAddress_|Required|The final email address you want. You can use the following values:  <br/> • A single email address if you specified a single email address for _InternalAddress_ <br/> • A single domain or subdomain for all other values of _InternalAddress_|
-| _ExceptionList_|Optional|Available only when you're rewriting email addresses in a domain and all subdomains (\*.contoso.com). Specifies one or more subdomains you want to exclude from address rewriting. Enclose the value in double quotation marks, and separate multiple values by commas. For example, `"marketing.contoso.com"` or `"marketing.contoso.com,legal.contoso.com"`.|
-| _OutboundOnly_|Optional| `False` means that addresses are written on inbound and outbound mail. `True` means that addresses are rewritten on outbound mail only, and you need to manually configure the rewritten email address as a proxy address on the affected recipients.  <br/> The default value is `False`, but you need to set it to `True` if _InternalAddress_ contains the wildcard character (\*.contoso.com).  <br/> The _OutboundOnly_ parameter value in the CSV file is `True` or `False`, not `$True` or `$False`.|
+|Parameter|Required or optional|Description|
+|---|---|---|
+|_Name_|Required|A unique, descriptive name for the address rewrites entry.|
+|_InternalAddress_|Required|The address you want to change. You can use the following values: <ul><li>A single email address (chris@contoso.com)</li><li>A single domain or subdomain (contoso.com or sales.contoso.com)</li><li>A domain and all subdomains (\*.contoso.com)</li></ul>|
+|_ExternalAddress_|Required|The final email address you want. You can use the following values: <ul><li>A single email address if you specified a single email address for _InternalAddress_</li><li>A single domain or subdomain for all other values of _InternalAddress_</li></ul>|
+|_ExceptionList_|Optional|Available only when you're rewriting email addresses in a domain and all subdomains (\*.contoso.com). Specifies one or more subdomains you want to exclude from address rewriting. Enclose the value in double quotation marks, and separate multiple values by commas. For example, `"marketing.contoso.com"` or `"marketing.contoso.com,legal.contoso.com"`.|
+|_OutboundOnly_|Optional| `False` means that addresses are written on inbound and outbound mail. `True` means that addresses are rewritten on outbound mail only, and you need to manually configure the rewritten email address as a proxy address on the affected recipients.  <br/> The default value is `False`, but you need to set it to `True` if _InternalAddress_ contains the wildcard character (\*.contoso.com).  <br/> The _OutboundOnly_ parameter value in the CSV file is `True` or `False`, not `$True` or `$False`.|
 
 Each row under the header row represents an individual address rewrite entry. The values in each row need to be in the same order as the parameter names in the header row. Each value is separated by a comma.
 

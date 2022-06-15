@@ -5,6 +5,8 @@ ms:assetid: 340c7546-5236-4743-a2b3-3c2363f3da1d
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876869(v=EXCHG.150)
 ms:contentKeyID: 49289226
 ms.reviewer: 
+ms.topic: article
+description: About the Remote and Accepted Domains role in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -37,15 +39,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

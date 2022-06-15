@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: Learn terms that are used with Unified Messaging.
 ms.assetid: 3a6d93f2-1802-4aed-8b83-35c7fd004d0c
 f1.keywords:
 - NOCSH

@@ -21,7 +21,7 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 setup cannot continue because its attempt to remove the Hub Transport server role failed. The local computer is the source for one or more Send connectors in the Exchange organization.
+Microsoft Exchange Server 2007 setup cannot continue because its attempt to remove the Hub Transport server role failed. The local computer is the source for one or more Send connectors in the Exchange organization.
 
 A Send connector represents a logical gateway through which outbound messages are sent.
 
@@ -29,7 +29,7 @@ Exchange 2007 setup requires that all Send connectors for an Exchange organizati
 
 To resolve this issue, move or delete all Send connectors from the local computer and then rerun setup.
 
-For more information about modifying or removing Send connectors, see the following topics in the Exchange Server 2007 product documentation:
+For more information about modifying or removing Send connectors, see the following topics in the Exchange Server 2007 product documentation:
 
 - "How to Remove a Send Connector" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/aa998836(v=exchg.80)](/previous-versions/office/exchange-server-2007/aa998836(v=exchg.80))).
 

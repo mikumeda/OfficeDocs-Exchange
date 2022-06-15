@@ -113,17 +113,12 @@ Some organizations use a unique Outlook on the web FQDN to protect against futur
 
 After you've configured the external URL in the Client Access services virtual directories on the Mailbox server, you need to configure your public DNS records for Autodiscover, Outlook on the web, and mail flow. The public DNS records should point to the external IP address or FQDN of your internet-facing Mailbox server and use the externally accessible FQDNs that you've configured on your Mailbox server. The recommended DNS records that you should create to enable mail flow and external client connectivity are described in the following table:
 
-<br>
-
-****
-
 |FQDN|DNS record type|Value|
 |---|---|---|
 |Contoso.com|MX|Mail.contoso.com|
 |Mail.contoso.com|A|172.16.10.11|
 |Owa.contoso.com|CNAME|Mail.contoso.com|
 |Autodiscover.contoso.com|CNAME|Mail.contoso.com|
-|
 
 ### How do you know this step worked?
 
@@ -135,10 +130,6 @@ To verify that you've successfully configured the external URLs in the Client Ac
 
 3. Select a virtual directory and then, in the virtual directory details pane, verify that the **External URL** field is populated with the correct FQDN and service as shown in the following table:
 
-   <br>
-
-   ****
-
    |Virtual directory|External URL value|
    |---|---|
    |**Autodiscover**|No external URL displayed|
@@ -148,7 +139,6 @@ To verify that you've successfully configured the external URLs in the Client Ac
    |**OAB**|https://mail.contoso.com/OAB|
    |**OWA**|https://owa.contoso.com/owa|
    |**PowerShell**|http://mail.contoso.com/PowerShell|
-   |
 
 To verify that you've successfully configured your public DNS records, do the following steps:
 
@@ -210,8 +200,8 @@ For more information about internal and external URLs on virtual directories, se
 
 After you've configured the internal URL on the Mailbox server virtual directories, you need to configure your private DNS records for Outlook on the web and other connectivity. Depending on your configuration, you'll need to configure your private DNS records to point to the internal or external IP address or FQDN of your Mailbox server. Examples of recommended DNS records that you should create are described in the following table:
 
-|**FQDN**|**DNS record type**|**Value**|
-|:-----|:-----|:-----|
+|FQDN|DNS record type|Value|
+|---|---|---|
 |Mail.contoso.com|CNAME|Mailbox01.corp.contoso.com|
 |Owa.contoso.com|CNAME|Mailbox01.corp.contoso.com|
 
@@ -227,10 +217,6 @@ To verify that you've successfully configured the internal URL on the Mailbox se
 
 4. Verify that the **Internal URL** field is populated with the correct FQDN and service as shown in the following table:
 
-   <br>
-
-   ****
-
    |Virtual directory|Internal URL value|
    |---|---|
    |**Autodiscover**|No internal URL displayed|
@@ -240,7 +226,6 @@ To verify that you've successfully configured the internal URL on the Mailbox se
    |**OAB**|https://mail.contoso.com/OAB|
    |**OWA**|https://owa.contoso.com/owa|
    |**PowerShell**|http://mail.contoso.com/PowerShell|
-   |
 
 To verify that you have successfully configured your private DNS records, do the following:
 
@@ -269,14 +254,9 @@ To verify that you have successfully configured your private DNS records, do the
 
 After you've configured the internal URL on the Mailbox server virtual directories, you need to configure your private DNS records for Outlook on the web, and other connectivity. Depending on your configuration, you'll need to configure your private DNS records to point to the internal or external IP address or FQDN of your Mailbox server. An example of the recommended DNS record that you should create is described in the following table:
 
-<br>
-
-****
-
 |FQDN|DNS record type|Value|
 |---|---|---|
 |internal.contoso.com|CNAME|Mailbox01.corp.contoso.com|
-|
 
 #### How do you know this step worked?
 
@@ -290,10 +270,6 @@ To verify that you've successfully configured the internal URLs in the Client Ac
 
 4. Verify that the **Internal URL** field is populated with the correct FQDN. For example, you may have set the internal URLs to use internal.contoso.com.
 
-   <br>
-
-   ****
-
    |Virtual directory|Internal URL value|
    |---|---|
    |**Autodiscover**|No internal URL displayed|
@@ -303,7 +279,6 @@ To verify that you've successfully configured the internal URLs in the Client Ac
    |**OAB**|https://internal.contoso.com/OAB|
    |**OWA**|https://internal.contoso.com/owa|
    |**PowerShell**|http://internal.contoso.com/PowerShell|
-   |
 
 To verify that you've successfully configured your private DNS records, do the following:
 

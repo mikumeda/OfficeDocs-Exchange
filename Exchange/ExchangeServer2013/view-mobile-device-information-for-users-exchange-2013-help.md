@@ -5,6 +5,8 @@ ms:assetid: 4fd263c0-ad61-416c-bd68-339bf66605cf
 ms:mtpsurl: https://technet.microsoft.com/library/Aa997974(v=EXCHG.150)
 ms:contentKeyID: 49345045
 ms.reviewer: 
+ms.topic: how-to
+description: How to view mobile device information for users in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Users can configure multiple mobile devices for synchronization with Microsoft Exchange Server 2013. You can use the EAC or the Shell to view a list of mobile devices that are associated with a specific user.
+Users can configure multiple mobile devices for synchronization with Microsoft Exchange Server 2013. You can use the EAC or the Shell to view a list of mobile devices that are associated with a specific user.
 
 For additional management tasks related to mobile devices, see [Exchange ActiveSync](exchange-activesync-exchange-2013-help.md).
 

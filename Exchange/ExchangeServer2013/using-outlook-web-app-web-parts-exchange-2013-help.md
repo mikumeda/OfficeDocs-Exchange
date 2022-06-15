@@ -5,6 +5,8 @@ ms:assetid: 7272e3ab-430c-4d6c-8621-9535236ce463
 ms:mtpsurl: https://technet.microsoft.com/library/Mt574711(v=EXCHG.150)
 ms:contentKeyID: 70319891
 ms.reviewer: 
+ms.topic: article
+description: Use Microsoft Office Outlook Web App Web Parts in Microsoft Exchange to specify the mailbox to open, the folder within that mailbox to open, and the content view to use
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-You can use Microsoft Office Outlook Web App Web Parts to specify the mailbox to open, the folder within that mailbox to open, and the content view to use.
+You can use Microsoft Office Outlook Web App Web Parts to specify the mailbox to open, the folder within that mailbox to open, and the content view to use.
 
 Outlook Web App Web Parts let you access Outlook Web App content directly from a URL. The URL can be entered into a Web browser or embedded in an application. Generally, Web Parts aren't created manually. Instead, they're created programmatically based on selections made in a user interface (UI), or they're embedded directly in an application, such as a SharePoint Server page. The code behind the UI then creates the URL. One use for Outlook Web App Web Parts is to display a user's Inbox or Calendar on a SharePoint page.
 
@@ -45,9 +47,9 @@ The following table lists the parameters of a Web Part and examples of how they'
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -114,8 +116,8 @@ The following table lists the parameters of a Web Part and examples of how they'
 <td><p>This parameter specifies the view to be displayed for the folder.</p>
 <p>The default views when this parameter is not present are as follows:</p>
 <ul>
-<li><p>Calendar   Daily</p></li>
-<li><p>Messages   Messages</p></li>
+<li><p>Calendar   Daily</p></li>
+<li><p>Messages   Messages</p></li>
 </ul>
 
 > [!NOTE]
@@ -126,16 +128,16 @@ The following table lists the parameters of a Web Part and examples of how they'
 <td><p>The views available vary according to the folder type.</p>
 <p>Calendar views:</p>
 <ul>
-<li><p>Daily   The daily calendar view</p></li>
-<li><p>Weekly   The weekly calendar view</p></li>
-<li><p>Monthly   The monthly calendar view</p></li>
+<li><p>Daily   The daily calendar view</p></li>
+<li><p>Weekly   The weekly calendar view</p></li>
+<li><p>Monthly   The monthly calendar view</p></li>
 </ul>
 <p>Message views:</p>
 <ul>
-<li><p>Messages   Message view, with default sort</p></li>
-<li><p>By%20Sender   Message view sorted by From with sender names that begin with &quot;a&quot; on top</p></li>
-<li><p>By%20Subject   Message view sorted by Subject with subjects that begin with &quot;a&quot; on top</p></li>
-<li><p>By%20Conversation%20Topic   Conversation View, not available in the light version of Outlook Web App</p></li>
+<li><p>Messages   Message view, with default sort</p></li>
+<li><p>By%20Sender   Message view sorted by From with sender names that begin with &quot;a&quot; on top</p></li>
+<li><p>By%20Subject   Message view sorted by Subject with subjects that begin with &quot;a&quot; on top</p></li>
+<li><p>By%20Conversation%20Topic   Conversation View, not available in the light version of Outlook Web App</p></li>
 </ul></td>
 </tr>
 <tr class="even">

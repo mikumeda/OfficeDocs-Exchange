@@ -31,8 +31,8 @@ In Exchange Server 2013, the maximum size of the default discovery mailbox is 50
 
 How you resolve this depends on whether you want to save the search results from a default discovery mailbox that's exceeded 50 GB.
 
-|**Do you want to save the search results?**|**Do this**|
-|:-----|:-----|
+|Do you want to save the search results?|Do this|
+|---|---|
 |No|Follow the steps in this topic to delete, and then re-create the default discovery mailbox.|
 |Yes|Follow the steps in [Reduce the size of a discovery mailbox in Exchange](reduce-discovery-mailbox-size-exchange-2013-help.md).|
 

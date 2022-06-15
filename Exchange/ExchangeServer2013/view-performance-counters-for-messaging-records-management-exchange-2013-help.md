@@ -5,6 +5,8 @@ ms:assetid: ec374d31-2797-4f8b-8c96-3839d01a662c
 ms:mtpsurl: https://technet.microsoft.com/library/Bb397227(v=EXCHG.150)
 ms:contentKeyID: 50873815
 ms.reviewer: 
+ms.topic: article
+description: View performance counters for messaging records management in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

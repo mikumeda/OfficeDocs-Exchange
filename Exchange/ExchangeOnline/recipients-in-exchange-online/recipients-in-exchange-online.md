@@ -27,10 +27,6 @@ A recipient is any mail-enabled object in Exchange Online that can receive email
 
 The following table describes the different types of recipients in Exchange Online and provides links to articles that explain how to manage and configure them.
 
-<br>
-
-****
-
 |Recipient type|Description|
 |---|---|
 |**Users**||
@@ -48,7 +44,6 @@ The following table describes the different types of recipients in Exchange Onli
 |**Collaboration**||
 |Microsoft 365 group|Microsoft 365 groups (formerly known as Office 365 groups), are used for collaboration between teams, both inside and outside your company, by providing group email and a shared workspace for conversations, files, and calendars. <p> For email, the benefit of a Microsoft 365 group over traditional groups is: the email history of the group is preserved. If a new user joins an old Microsoft 365 group, the entire email history of the group is available to them. <p> [Create and manage groups](create-and-manage-groups.md)|
 |Mail-enabled public folder|A public folder is designed for shared access to collect, organize, and share information. <p> [Public folders in Microsoft 365, Office 365, and Exchange Online](../collaboration-exo/public-folders/public-folders.md)|
-|
 
 ## See also
 

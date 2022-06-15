@@ -5,6 +5,8 @@ ms:assetid: ce99b4bd-868c-4767-9009-e22c17ac0ac7
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150569(v=EXCHG.150)
 ms:contentKeyID: 47560104
 ms.reviewer: 
+ms.topic: article
+description: How to use a Microsoft Exchange 2010 or 2007 Edge Transport server in Exchange 2013
 manager: serdars
 ms.author: serdars
 author: msdmaguire

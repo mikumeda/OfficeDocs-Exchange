@@ -40,10 +40,6 @@ The actions that are available in mail flow rules in Exchange Online and standal
 
 - The names of some of the actions that are returned by the **Get-TransportRuleAction** cmdlet are different than the corresponding parameter names, and multiple parameters might be required for an action.
 
-<br>
-
-****
-
 |Action in the EAC|Action parameter in PowerShell|Property|Description|
 |---|---|---|---|
 |**Forward the message for approval to** <p> **Forward the message for approval** \> **to these people**|_ModerateMessageByUser_|`Addresses`|Forwards the message to the specified moderators as an attachment wrapped in an approval request. For more information, see [Use mail flow rules for message approval scenarios in Exchange Online](common-message-approval-scenarios.md). You can't use a distribution group as a moderator. <p> **Note**: This action isn't available in standalone Exchange Online Protection (EOP) environments.|
@@ -66,7 +62,7 @@ The actions that are available in mail flow rules in Exchange Online and standal
 |**Set the spam confidence level (SCL) to** <p> **Modify the message properties** \> **set the spam confidence level (SCL)**|_SetSCL_|`SCLValue`|Sets the spam confidence level (SCL) of the message to the specified value.|
 |**Apply Office 365 Message Encryption and rights protection** <p> **Apply Message Encryption and rights protection to the message with** <p> **Modify the message security** \> **Message Encryption and rights protection**|_ApplyRightsProtectionTemplate_|`RMSTemplate`|Applies the specified Azure Rights Management (Azure RMS) template to the message. Azure RMS is part of Azure Information Protection. For more information, see [Set up new Message Encryption capabilities](/microsoft-365/compliance/set-up-new-message-encryption-capabilities).|
 |**Require TLS encryption** <p> **Modify the message security** \> **require TLS encryption**|_RouteMessageOutboundRequireTls_|n/a|Forces the outbound messages to be routed over a TLS encrypted connection.|
-|**Encrypt the messages with the previous version of OME** <p> **Modify the message security** \> **Apply Office the previous version of OME**|_ApplyOME_|n/a|If you haven't moved your Microsoft 365 or Office 365 organization to Office 365 Message Encryption (OME) that's built on Azure Information Protection, this action encrypts the message and attachments with the previous version of OME. <p> **Notes**: <ul><li>We recommend that you make a plan to move to OME on Azure Information Protection as soon as it's reasonable for your organization. For instructions, see [Set up new Message Encryption capabilities](/microsoft-365/compliance/set-up-new-message-encryption-capabilitiess).</li><li>If you receive an error stating that IRM licensing isn't enabled, you can't setup the previous version of OME. If you setup OME now, you'll setup the OME capabilities that are built on Azure Information Protection.</li><ul>|
+|**Encrypt the messages with the previous version of OME** <p> **Modify the message security** \> **Apply Office the previous version of OME**|_ApplyOME_|n/a|If you haven't moved your Microsoft 365 or Office 365 organization to Microsoft Purview Message Encryption that's built on Azure Information Protection, this action encrypts the message and attachments with the previous version of OME. <p> **Notes**: <ul><li>We recommend that you make a plan to move to OME on Azure Information Protection as soon as it's reasonable for your organization. For instructions, see [Set up new Message Encryption capabilities](/microsoft-365/compliance/set-up-new-message-encryption-capabilities).</li><li>If you receive an error stating that IRM licensing isn't enabled, you can't setup the previous version of OME. If you setup OME now, you'll setup the OME capabilities that are built on Azure Information Protection.</li><ul>|
 |**Remove the previous version of OME from the message** <p> **Modify the message security** \> **Remove the previous version of OME**|_RemoveOME_|n/a|Decrypt the message and attachments from the previous version of OME so users don't need to sign in to the encryption portal in order to view them. This action is only available for messages that are sent within your organization.|
 |**Remove Office 365 Message Encryption and rights protection** <p> **Modify the message security** \> **Message Encryption and rights protection**|_RemoveOMEv2_|n/a|Remove the Azure RMS template from the message.|
 |**Prepend the subject of the message with**|_PrependSubject_|`String`|Adds the specified text to the beginning of the **Subject** field of the message. Consider using a space or a colon (:) as the last character of the specified text to differentiate it from the original subject text. <br/> To prevent the same string from being added to messages that already contain the text in the subject (for example, replies), add the **The subject includes** (_ExceptIfSubjectContainsWords_) exception to the rule.|
@@ -75,15 +71,10 @@ The actions that are available in mail flow rules in Exchange Online and standal
 |**Notify the recipient with a message**|_GenerateNotification_|`NotificationMessageText`|Specifies the text, HTML tags, and message keywords to include in the notification message that's sent to the message's recipients. For example, you can notify recipients that the message was rejected by the rule, or marked as spam and delivered to their Junk Email folder.|
 |**Properties of this rule** section \> **Audit this rule with severity level**|_SetAuditSeverity_|`AuditSeverityLevel`|Specifies whether to: <ul><li>Prevent the generation of an incident report and the corresponding entry in the message tracking log.</li><li>Generate an incident report and the corresponding entry in the message tracking log with the specified severity level (low, medium, or high).</li></ul>|
 |**Properties of this rule** section \> **Stop processing more rules** <p> **More options** \> **Properties of this rule** section \> **Stop processing more rules**|_StopRuleProcessing_|n/a|Specifies that after the message is affected by the rule, the message is exempt from processing by other rules.|
-|
 
 ## Property values
 
 The property values that are used for actions in mail flow rules are described in the following table.
-
-<br>
-
-****
 
 |Property|Valid values|Description|
 |---|---|---|
@@ -103,7 +94,6 @@ The property values that are used for actions in mail flow rules are described i
 |`RMSTemplate`|Single Azure RMS template object|Specifies the Azure Rights Management (Azure RMS) template that's applied to the message. <p> In the EAC, you select the RMS template from a list. <p> In PowerShell, use the **Get-RMSTemplate** cmdlet to see the RMS templates that are available. <p> For more information about RMS in Microsoft 365 or Office 365, see [What is Azure Information Protection?](/azure/information-protection/what-is-information-protection).|
 |`SCLValue`|One of the following values: <ul><li>**Bypass spam filtering** (`-1`)</li><li>Integers 0 through 9</li></ul>|Specifies the spam confidence level (SCL) that's assigned to the message. A higher SCL value indicates that a message is more likely to be spam.|
 |`String`|Single string|Specifies the text that's applied to the specified message header field, NDR, or event log entry. <p> In PowerShell, if the value contains spaces, enclose the value in quotation marks (").|
-|
 
 ## For more information
 

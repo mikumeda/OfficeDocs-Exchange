@@ -26,9 +26,7 @@ Messaging records management (MRM) helps organizations to manage email lifecycle
 MRM in Exchange Server is accomplished by using *retention tags* and *retention policies*. Before discussing the details about each of these retention features, let's learn how the features are used in the overall MRM strategy:
 
 - Assigning *retention policy tags* (RPTs) to default folders, such as the Inbox and Deleted Items.
-
 - Applying *default policy tags* (DPTs) to mailboxes to manage the retention of all untagged items.
-
 - Allowing the user to assign *personal tags* to custom folders and individual items.
 
 - Separating MRM functionality from users' Inbox management and filing habits. Users aren't required to file messages in managed folders based on retention requirements. Individual messages can have a different retention tag than the one applied to the folder in which they're located.
@@ -50,11 +48,11 @@ Retention tags allow users to tag their own mailbox folders and individual items
 
 Retention tags are classified into the following three types based on who can apply them and where in a mailbox they can be applied.
 
-|**Type of retention tag**|**Applied...**|**Applied by...**|**Available actions...**|**Details**|
-|:-----|:-----|:-----|:-----|:-----|
-|Default policy tag (DPT)|Automatically to entire mailbox  <br/> A DPT applies to *untagged* items, which are mailbox items that don't have a retention tag applied directly or by inheritance from the folder.|Administrator|Move to archive  <br/> Delete and allow recovery  <br/> Permanently delete|Users can't change DPTs applied to a mailbox.|
-|Retention policy tag (RPT)|Automatically to a default folder  <br/> Default folders are folders created automatically in all mailboxes, for example: **Inbox**, **Deleted Items**, and **Sent Items**. See the list of supported default folders in [Default folders that support Retention Policy Tags](../../../ExchangeServer2013/default-folders-exchange-2013-help.md).|Administrator|Delete and allow recovery  <br/> Permanently delete|Users can't change the RPT applied to a default folder.|
-|Personal tag|Manually to items and folders  <br/> Users can automate tagging by using Inbox rules to either move a message to a folder that has a particular tag or to apply a personal tag to the message.|Users|Move to archive  <br/> Delete and allow recovery  <br/> Permanently delete|Personal tags allow your users to determine how long an item should be retained. For example, the mailbox can have a DPT to delete items in seven years, but a user can create an exception for items such as newsletters and automated notifications by applying a personal tag to delete them in three days.|
+|Type of retention tag|Applied...|Applied by...|Available actions...|Details|
+|---|---|---|---|---|
+|Default policy tag (DPT)|Automatically to entire mailbox <p> A DPT applies to *untagged* items, which are mailbox items that don't have a retention tag applied directly or by inheritance from the folder.|Administrator|Move to archive <p> Delete and allow recovery <p> Permanently delete|Users can't change DPTs applied to a mailbox.|
+|Retention policy tag (RPT)|Automatically to a default folder <p> Default folders are folders created automatically in all mailboxes, for example: **Inbox**, **Deleted Items**, and **Sent Items**. See the list of supported default folders in [Default folders that support Retention Policy Tags](../../../ExchangeServer2013/default-folders-exchange-2013-help.md).|Administrator|Delete and allow recovery <p> Permanently delete|Users can't change the RPT applied to a default folder.|
+|Personal tag|Manually to items and folders <p> Users can automate tagging by using Inbox rules to either move a message to a folder that has a particular tag or to apply a personal tag to the message.|Users|Move to archive <p> Delete and allow recovery <p> Permanently delete|Personal tags allow your users to determine how long an item should be retained. For example, the mailbox can have a DPT to delete items in seven years, but a user can create an exception for items such as newsletters and automated notifications by applying a personal tag to delete them in three days.|
 
 ### More about personal tags
 
@@ -84,11 +82,11 @@ You can also create retention tags with retention disabled or disable tags after
 
 When creating or configuring a retention tag, you can select one of the following retention actions to be taken when an item reaches its retention age:
 
-|**Retention action**|**Action taken...**|**Except...**|
-|:-----|:-----|:-----|
-|**Move to archive**|Moves the message to the user's archive mailbox  <br/> Only available for DPTs and personal tags  <br/> For details about archiving, see [In-Place Archiving in Exchange Server](../../policy-and-compliance/in-place-archiving/in-place-archiving.md).|If the user doesn't have an archive mailbox, no action is taken.|
-|**Delete and allow recovery**:|Emulates the behavior when the user empties the Deleted Items folder.  <br/> Items are moved to the [Recoverable Items folder in Exchange Server](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md) in the mailbox and preserved until the *deleted item retention* period.  <br/> Provides the user a second chance to recover the item using the **Recover Deleted Items** dialog box in Outlook or Outlook on the web|If you've set the deleted item retention period to zero days, items are permanently deleted. For details, see [Configure Deleted Item retention and Recoverable Items quotas](../../recipients/user-mailboxes/deleted-item-retention-and-recoverable-items-quotas.md).|
-|**Permanently delete**|Permanently deletes messages.  <br/> You can't recover messages after they're permanently deleted.|If mailbox is placed on [In-Place Hold and Litigation Hold in Exchange Server](../../policy-and-compliance/holds/holds.md) or Litigation Hold, items are preserved in the Recoverable Items folder based on hold parameters. [In-Place eDiscovery in Exchange Server](../../policy-and-compliance/ediscovery/ediscovery.md) will still return these items in search results.|
+|Retention action|Action taken...|Except...|
+|---|---|---|
+|**Move to archive**|Moves the message to the user's archive mailbox <p> Only available for DPTs and personal tags <p> For details about archiving, see [In-Place Archiving in Exchange Server](../../policy-and-compliance/in-place-archiving/in-place-archiving.md).|If the user doesn't have an archive mailbox, no action is taken.|
+|**Delete and allow recovery**:|Emulates the behavior when the user empties the Deleted Items folder. <p> Items are moved to the [Recoverable Items folder in Exchange Server](../../policy-and-compliance/recoverable-items-folder/recoverable-items-folder.md) in the mailbox and preserved until the *deleted item retention* period. <p> Provides the user a second chance to recover the item using the **Recover Deleted Items** dialog box in Outlook or Outlook on the web|If you've set the deleted item retention period to zero days, items are permanently deleted. For details, see [Configure Deleted Item retention and Recoverable Items quotas](../../recipients/user-mailboxes/deleted-item-retention-and-recoverable-items-quotas.md).|
+|**Permanently delete**|Permanently deletes messages. <p> You can't recover messages after they're permanently deleted.|If mailbox is placed on [In-Place Hold and Litigation Hold in Exchange Server](../../policy-and-compliance/holds/holds.md) or Litigation Hold, items are preserved in the Recoverable Items folder based on hold parameters. [In-Place eDiscovery in Exchange Server](../../policy-and-compliance/ediscovery/ediscovery.md) will still return these items in search results.|
 |**Mark as past retention limit**|Marks a message as expired. In Outlook, and Outlook on the web, expired items are displayed with the notification stating 'This item has expired' and 'This item will expire in 0 days'.|N. A.|
 
 > [!NOTE]
@@ -103,11 +101,11 @@ To apply one or more retention tags to a mailbox, you need to add them to a rete
 
 A retention policy can have the following retention tags:
 
-|**Retention tag type**|**Tags in a policy**|
-|:-----|:-----|
-|Default policy tag (DPT)|One DPT with the **Move to archive** action  <br/> One DPT with the **Delete and allow Recovery** or **Permanently delete** actions  <br/> One DPT for voice mail messages with the **Delete and allow recovery** or **Permanently delete** action|
-|Retention policy tags (RPTs)|One RPT for each supported default folder  <br/> **Note**: You can't link more than one RPT for a particular default folder (such as **Deleted Items**) to the same retention policy.|
-|Personal tags|Any number of personal tags  <br/> **Note**: Many personal tags in a policy can confuse users. We recommend adding no more than 10 personal tags to a retention policy.|
+|Retention tag type|Tags in a policy|
+|---|---|
+|Default policy tag (DPT)|One DPT with the **Move to archive** action <p> One DPT with the **Delete and allow Recovery** or **Permanently delete** actions <p> One DPT for voice mail messages with the **Delete and allow recovery** or **Permanently delete** action|
+|Retention policy tags (RPTs)|One RPT for each supported default folder <p> **Note**: You can't link more than one RPT for a particular default folder (such as **Deleted Items**) to the same retention policy.|
+|Personal tags|Any number of personal tags <p> **Note**: Many personal tags in a policy can confuse users. We recommend adding no more than 10 personal tags to a retention policy.|
 
 > [!NOTE]
 > Although a retention policy doesn't need to have any retention tags linked to it, we don't recommend using this scenario. If mailboxes with retention policies don't have retention tags linked to them, this may cause mailbox items to never expire.

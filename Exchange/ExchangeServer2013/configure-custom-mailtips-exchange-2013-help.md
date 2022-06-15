@@ -4,7 +4,9 @@ TOCTitle: Configure custom MailTips for recipients
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+description: How to configure custom MailTips for recipients in Microsoft Exchange
 ms.reviewer:
+ms.topic: article
 ms.assetid: df8ee7ae-2486-4890-b057-cda87b4cb1ec
 f1.keywords:
 - NOCSH

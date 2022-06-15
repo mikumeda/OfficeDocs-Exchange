@@ -20,7 +20,7 @@ manager: serdars
 
 # Override the distribution group naming policy in Exchange Online
 
-The group naming policy for distribution groups is applied only to groups created by users. When you or other administrators use the Exchange admin center (EAC) to create distribution groups, the group naming policy is ignored and not applied to the group name.
+The group naming policy for distribution groups is applied only to groups created by users and to groups created by administrators using the new Exchange admin center (new EAC). When you or other administrators use the classic Exchange admin center (classic EAC) to create distribution groups, the group naming policy is ignored and not applied to the group name.
 
 However, if you use Exchange Online PowerShell to create or rename a distribution group, the group naming policy is applied to groups created by administrators unless you use the _IgnoreNamingPolicy_ parameter to override the group naming policy.
 

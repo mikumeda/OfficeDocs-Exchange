@@ -74,10 +74,6 @@ The following table describes the character sets that you can configure in remot
 
 - In Exchange Online PowerShell, use the value in the Name column in the following table for the _CharacterSet_ parameter or _NonMimeCharacterSet_ parameter on the [Set-RemoteDomain](/powershell/module/exchange/set-remotedomain) cmdlet.
 
-  <br>
-
-  ****
-
   |Name|Description|
   |---|---|
   |big5|Chinese Traditional (Big5)|
@@ -117,4 +113,3 @@ The following table describes the character sets that you can configure in remot
   |windows-1257|Baltic (Windows)|
   |windows-1258|Vietnamese (Windows)|
   |windows-874|Thai (Windows)|
-  |

@@ -51,8 +51,8 @@ The Shadow Safety Net exists on the Mailbox server that held the shadow message.
 
 This table describes the parameters that are used by Safety Net.
 
-|**Parameter**|**Default value**|**Description**|
-|:-----|:-----|:-----|
+|Parameter|Default value|Description|
+|---|---|---|
 |_SafetyNetHoldTime_ on **Set-TransportConfig**|2 days|The length of time successfully processed primary messages are stored in Primary Safety Net, and acknowledged shadow messages are stored in Shadow Safety Net. <br/><br/> You can also specify this value in the Exchange admin center (EAC) at **Mail flow** \> **Receive connectors** \> **More options** ![More Options icon.](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Organization transport settings** \> **Safety Net** \> **Safety Net hold time**. <br/><br/> Unacknowledged shadow messages eventually expire from Shadow Safety Net after the sum of _SafetyNetHoldTime_ and _MessageExpirationTimeout_ parameter values. <br/><br/> To avoid data loss during Safety Net resubmits, the value of this parameter must be greater than or equal to the value of _ReplayLagTime_ on **Set-MailboxDatabaseCopy** for the lagged copy of the mailbox database.|
 |_ReplayLagTime_ on **Set-MailboxDatabaseCopy**|Not configured|The amount of time that the Microsoft Exchange Replication service should wait before replaying log files that have been copied to the passive database copy. Setting this parameter to a value greater than 0 creates a lagged copy of the mailbox database. The maximum value is 14 days. <br/><br/> To avoid data loss during Safety Net resubmits, the value of this parameter for the lagged copy of the mailbox database must be less than or equal to the value of _SafetyNetHoldTime_ on **Set-TransportConfig**.|
 |_MessageExpirationTimeout_ on **Set-TransportService**|2 days|How long a message can remain in a queue before it expires.|

@@ -5,6 +5,8 @@ ms:assetid: d8e315d5-af0e-4725-9770-7a22dffe5334
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124759(v=EXCHG.150)
 ms:contentKeyID: 48385616
 ms.reviewer: 
+ms.topic: article
+description: Supported languages for system messages in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -21,8 +23,8 @@ The following table lists the supported language codes you can use with the **Ne
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

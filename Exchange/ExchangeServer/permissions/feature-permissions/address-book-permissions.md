@@ -37,8 +37,8 @@ If you want to delegate the ability to manage a feature to another user, see [De
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Address book policies|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Address lists|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Email address policies|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|

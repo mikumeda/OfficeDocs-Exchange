@@ -5,6 +5,8 @@ ms:assetid: 1fcccec1-4edc-40b8-948c-111647d7d770
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150501(v=EXCHG.150)
 ms:contentKeyID: 47559971
 ms.reviewer: 
+ms.topic: article
+description: The Voice Mail Preview feature of Microsoft Exchange Server Unified Messaging enhances UM voice mail functionality by providing a text version of audio recordings
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -37,6 +39,6 @@ Some organizations require consistently error-free or near-error-free transcript
 
 - **Hiding the text preview**: If the confidence score of a voice mail preview is below a given threshold, the Voice Mail Preview text will be hidden. If the text is hidden, the voice message will include text stating that the confidence of the voice mail was too low for results to be displayed.
 
-- **Transcription performance**: Voice Mail Preview is a CPU-intensive operation that requires roughly twice the time it takes to process an audio file. If generating the voice mail preview text takes too long, CPU throttling stops processing the preview. In Exchange 2010, UM didn't try to transcribe any voice message that was longer than 75 seconds. In Exchange 2013, the entire voice message is transcribed, but the text for the message isn't included if it extends past 75 seconds.
+- **Transcription performance**: Voice Mail Preview is a CPU-intensive operation that requires roughly twice the time it takes to process an audio file. If generating the voice mail preview text takes too long, CPU throttling stops processing the preview. In Exchange 2010, UM didn't try to transcribe any voice message that was longer than 75 seconds. In Exchange 2013, the entire voice message is transcribed, but the text for the message isn't included if it extends past 75 seconds.
 
 - **Color schemes**: Because of the confusion over the colors that were used to distinguish between low, medium, and high confidence for a voice mail preview, the color scheme has been removed in Exchange 2013 for Outlook Web App and Outlook.

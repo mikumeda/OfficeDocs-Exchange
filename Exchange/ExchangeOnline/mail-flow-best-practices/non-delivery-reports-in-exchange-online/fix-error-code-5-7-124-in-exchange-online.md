@@ -27,10 +27,9 @@ It's frustrating when you get an error after sending an email message. This topi
 
 You'll see this automated notification when the sender isn't specified in the group's allowed senders list (directly or as a member of a group). Depending how the group is configured, even the group's owner might need to be in the group's allowed senders list in order to send messages to the group.
 
-|Icon|Message|Icon|Message|
+|&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 |---|---|---|---|
 |![Email user icon.](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm the group owner or email admin. How do I fix this issue?](#im-the-group-owner-or-email-admin-how-do-i-fix-this-issue)|
-|
 
 ## I got this bounce message. How do I fix it?
 

@@ -44,10 +44,8 @@ For more information about queues and messages in queues, see [Queues and messag
 
 The topics in the following table contain procedures that use Queue Viewer:
 
-****
-
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[Connect to a Server in Queue Viewer](../../../ExchangeServer2013/connect-to-a-server-in-queue-viewer-exchange-2013-help.md)|By default, Queue Viewer opens the queue database on the server where you opened Queue Viewer. However, you can connect to a different server.|
 |[Set Queue Viewer Options](../../../ExchangeServer2013/set-queue-viewer-options-exchange-2013-help.md)|You can configure the queue and message refresh intervals, and the number of items that are displayed on each page.|
 |[View queued message properties in Queue Viewer](queued-message-properties.md)|Explains how to use Queue Viewer to view messages, and explains the message properties.|

@@ -5,6 +5,8 @@ ms:assetid: 8241033f-e201-4799-b17c-4f120c6e6445
 ms:mtpsurl: https://technet.microsoft.com/library/Dd298099(v=EXCHG.150)
 ms:contentKeyID: 49289329
 ms.reviewer: 
+ms.topic: article
+description: Multiple-forest permissions in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -52,11 +54,11 @@ If you have multiple Exchange forests and want to configure permissions identica
 
 - If you created the role groups as linked role groups, add members to the associated USG in the foreign forest.
 
-The following figure shows how the role groups configured within Exchange 2013 forests are bound to their respective forests. The Organization Management role group in Exchange 2013 forest A grants permissions only to manage the mailboxes and servers that are within that forest. Likewise, the role groups in Exchange 2013 forest B grant permissions only to the mailboxes and servers within that forest.
+The following figure shows how the role groups configured within Exchange 2013 forests are bound to their respective forests. The Organization Management role group in Exchange 2013 forest A grants permissions only to manage the mailboxes and servers that are within that forest. Likewise, the role groups in Exchange 2013 forest B grant permissions only to the mailboxes and servers within that forest.
 
-The figure also shows that the Custom role group A is created in each forest. Even though they were created with the same name, each is its own separate entity. In fact, as the figure shows, each can be assigned different management roles in their respective forests. Custom role group A in Exchange 2013 forest A is assigned the Mailbox Search and Message Tracking roles while Custom role group A in Exchange 2013 forest B is assigned the Mailbox Search and Retention Management roles.
+The figure also shows that the Custom role group A is created in each forest. Even though they were created with the same name, each is its own separate entity. In fact, as the figure shows, each can be assigned different management roles in their respective forests. Custom role group A in Exchange 2013 forest A is assigned the Mailbox Search and Message Tracking roles while Custom role group A in Exchange 2013 forest B is assigned the Mailbox Search and Retention Management roles.
 
-Finally, management scopes created in each forest are also bound by the forest. Server scopes created in each forest can only contain the servers that are members of that forest. Server scope A can contain only servers within Exchange 2013 forest A while Server scope B can contain only servers that are within Exchange 2013 forest B. Similarly, the recipient scope in Exchange 2013 forest B can only contain mailboxes that are within Exchange 2013 forest B.
+Finally, management scopes created in each forest are also bound by the forest. Server scopes created in each forest can only contain the servers that are members of that forest. Server scope A can contain only servers within Exchange 2013 forest A while Server scope B can contain only servers that are within Exchange 2013 forest B. Similarly, the recipient scope in Exchange 2013 forest B can only contain mailboxes that are within Exchange 2013 forest B.
 
 **RBAC and forest scope boundary relationship**
 
@@ -113,9 +115,9 @@ Linked role groups and linked mailboxes both have advantages and disadvantages w
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

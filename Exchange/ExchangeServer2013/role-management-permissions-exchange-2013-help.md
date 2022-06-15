@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Permissions required to perform tasks to configure management roles vary depending on the procedure being performed or the cmdlet to be run.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -38,8 +40,8 @@ You can use the features in the following table to manage the management role gr
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col  />
+<col  />
 </colgroup>
 <thead>
 <tr class="header">

@@ -32,8 +32,8 @@ In this scenario, Contoso and Humongous Insurance are two separate companies tha
 
 The GAL, offline address book (OAB), room list, and address lists that are required inn the ABPs for this scenario are described in the this table:
 
-|**ABP element**|**Contoso**|**Humongous Insurance**|
-|:-----|:-----|:-----|
+|ABP element|Contoso|Humongous Insurance|
+|---|---|---|
 |Global address list|GAL_CON|GAL_HI|
 |Offline address book|OAB_CON|OAB_HI|
 |Room list|AL_CON_Rooms|AL_HI_Rooms|
@@ -59,8 +59,8 @@ In this scenario, Fabrikam and Tailspin Toys are separate companies in the same 
 
 The GAL, OAB, room list, and address lists that are required in the ABPs for this scenario are described in the this table:
 
-|**ABP element**|**Fabrikam**|**Tailspin Toys**|**CEO**|
-|:-----|:-----|:-----|:-----|
+|ABP element|Fabrikam|Tailspin Toys|CEO|
+|---|---|---|---|
 |Name|ABP_FAB|AB_TAIL|ABP_CEO|
 |Global address list|GAL_FAB|GAL_TAIL|Default Global Address Book|
 |Offline address book|OAB_FAB|OAB_TAIL|Default Offline Address Book|
@@ -85,8 +85,8 @@ This scenario is applicable to schools or universities where a division of class
 
 The GAL, OAB, room list, and address lists that are required in the ABPs for this scenario are described in the this table:
 
-|**ABP element**|**Students_ClassA**|**Teachers_ClassA**|**Principal**|
-|:-----|:-----|:-----|:-----|
+|ABP element|Students_ClassA|Teachers_ClassA|Principal|
+|---|---|---|---|
 |Global address list|GAL_StudentsClassA|GAL_TeachersClassA|GAL_Everyone|
 |Offline address book|OAB_StudentsClassA|OAB_TeachersClassA|Default Offline Address Book|
 |Room address list|AL_BlankRoom|AL_BlankRoom|All Rooms|
@@ -298,8 +298,8 @@ For more information, see [Use the Exchange Management Shell to create offline a
 
 This organization requires three ABPs:
 
-|**ABP element**|**Fabrikam**|**Tailspin Toys**|**CEO**|
-|:-----|:-----|:-----|:-----|
+|ABP element|Fabrikam|Tailspin Toys|CEO|
+|---|---|---|---|
 |Name|ABP_FAB|ABP_TAIL|ABP_CEO|
 |Global address list|GAL_FAB|GAL_TAIL|Default Global Address Book|
 |Offline address book|OAB_FAB|OAB_TAIL|Default Offline Address Book|

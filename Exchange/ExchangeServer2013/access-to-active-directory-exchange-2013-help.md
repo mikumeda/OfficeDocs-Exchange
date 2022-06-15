@@ -6,7 +6,9 @@ ms:mtpsurl: https://technet.microsoft.com/library/Aa998561(v=EXCHG.150)
 ms:contentKeyID: 49289272
 ms.reviewer: 
 manager: serdars
+ms.topic: article
 ms.author: serdars
+description: About access to Active Directory for Exchange Server 
 author: msdmaguire
 f1.keywords:
 - NOCSH
@@ -19,7 +21,7 @@ _**Applies to:** Exchange Server 2013_
 
 Microsoft Exchange Server 2013 stores all configuration and recipient information in the Active Directory directory service database. When a computer running Exchange 2013 requires information about recipients and information about the configuration of the Exchange organization, it must query Active Directory to access the information. Active Directory servers must be available for Exchange 2013 to function correctly.
 
-This topic explains how Exchange 2013 stores and retrieves information in Active Directory so that you can plan access to Active Directory. This topic also discusses issues you should be aware of if you try to recover deleted Exchange 2013 Active Directory objects.
+This topic explains how Exchange 2013 stores and retrieves information in Active Directory so that you can plan access to Active Directory. This topic also discusses issues you should be aware of if you try to recover deleted Exchange 2013 Active Directory objects.
 
 ## Exchange information stored in Active Directory
 
@@ -39,7 +41,7 @@ The schema partition stores the following two types of information:
 
 - **Schema attributes** define all the properties that can be used to describe the objects that are stored in Active Directory.
 
-When you install the first Exchange 2013 server role in the forest or run the Active Directory preparation process, the Active Directory preparation process adds many classes and attributes to the Active Directory schema. The classes that are added to the schema are used to create Exchange-specific objects, such as agents and connectors. The attributes that are added to the schema are used to configure the Exchange-specific objects and the mail-enabled users and groups. These attributes include properties, such as Outlook Web App settings and Microsoft Exchange Unified Messaging (UM) settings. Every domain controller and global catalog server in the forest contains a complete replica of the schema partition.
+When you install the first Exchange 2013 server role in the forest or run the Active Directory preparation process, the Active Directory preparation process adds many classes and attributes to the Active Directory schema. The classes that are added to the schema are used to create Exchange-specific objects, such as agents and connectors. The attributes that are added to the schema are used to configure the Exchange-specific objects and the mail-enabled users and groups. These attributes include properties, such as Outlook Web App settings and Microsoft Exchange Unified Messaging (UM) settings. Every domain controller and global catalog server in the forest contains a complete replica of the schema partition.
 
 For more information about schema modifications in Exchange 2013, see [Exchange 2013 Active Directory schema changes](exchange-2013-active-directory-schema-changes-exchange-2013-help.md).
 
@@ -79,7 +81,7 @@ Each domain controller contains a complete replica of the domain partition for t
 
 ## How Exchange 2013 accesses information in Active Directory
 
-Exchange 2013 uses an Active Directory API to access information that is stored in Active Directory. The Microsoft Exchange Active Directory Topology service runs on all Exchange 2013 server roles. This service reads information from all Active Directory partitions. The data that is retrieved is cached and is used by Exchange 2013 servers to discover the Active Directory site location of all Exchange services in the organization.
+Exchange 2013 uses an Active Directory API to access information that is stored in Active Directory. The Microsoft Exchange Active Directory Topology service runs on all Exchange 2013 server roles. This service reads information from all Active Directory partitions. The data that is retrieved is cached and is used by Exchange 2013 servers to discover the Active Directory site location of all Exchange services in the organization.
 
 For more information about topology and service discovery, see [Planning to use Active Directory sites for routing mail](planning-to-use-active-directory-sites-for-routing-mail-exchange-2013-help.md).
 

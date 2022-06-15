@@ -80,10 +80,6 @@ Another common method of matching is based on regular expressions. The flexibili
 > [!TIP]
 > Use the constant based match style over regex for better efficiency and performance. Use regex matching only in cases where constant based matches are not sufficient and flexibility of regular expressions is required.
 
-<br>
-
-****
-
 |Symbol|Meaning|
 |---|---|
 |c|Match the literal character c once, unless it is one of the special characters.|

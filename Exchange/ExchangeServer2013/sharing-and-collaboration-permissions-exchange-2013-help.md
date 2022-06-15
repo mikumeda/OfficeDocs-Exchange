@@ -5,6 +5,8 @@ ms:assetid: b7fa4b7c-1266-45bd-a14b-f66be0459cc5
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150556(v=EXCHG.150)
 ms:contentKeyID: 47560082
 ms.reviewer: 
+ms.topic: article
+description: Sharing and collaboration permissions in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -40,8 +42,8 @@ Users who are assigned the View-Only Management role group can view the configur
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

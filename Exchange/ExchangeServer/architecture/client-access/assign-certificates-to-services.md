@@ -24,10 +24,8 @@ After you install a certificate on an Exchange server, you need to assign the ce
 
 The available Exchange services are described in the following table.
 
-****
-
-|**Service**|**Uses**|
-|:-----|:-----|
+|Service|Uses|
+|---|---|
 |IIS|TLS encryption for internal and external client connections that use HTTP. This includes: <br/> Autodiscover <br/> Exchange ActiveSync <br/> Exchange admin center <br/> Exchange Web Services <br/> Offline address book (OAB) distribution <br/> Outlook Anywhere (RPC over HTTP) <br/> Outlook MAPI over HTTP <br/> Outlook on the web|
 |IMAP|TLS encryption for IMAP4 client connections. <br/> Don't assign a wildcard certificate to the IMAP4 service. Instead, use the **Set-ImapSettings** cmdlet to configure the fully qualified domain name (FQDN) that clients use to connect to the IMAP4 service.|
 |POP|TLS encryption for POP3 client connections. <br/> Don't assign a wildcard certificate to the POP3 service. Instead, use the **Set-PopSettings** cmdlet to configure the FQDN that clients use to connect to the POP3 service.|

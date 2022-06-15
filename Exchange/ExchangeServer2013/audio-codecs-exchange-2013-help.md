@@ -79,7 +79,7 @@ A Client Access or Mailbox server and a supported VoIP gateway or IP PBX can off
 <tr class="odd">
 <td><p>G.711</p></td>
 <td><p>64</p></td>
-<td><p>This codec requires very low processing. It needs a minimum of 128 kilobits per second (Kbps) for two-way communication.</p></td>
+<td><p>This codec requires very low processing. It needs a minimum of 128 kilobits per second (Kbps) for two-way communication.</p></td>
 </tr>
 <tr class="even">
 <td><p>G.723.1</p></td>
@@ -156,7 +156,7 @@ When the RTAudio codec is used, the voice message that is recorded will be recor
 
 The outbound media stream will always be negotiated by using either the G.711 or G.723.1 codec. This means that callers will always hear narrowband audio over the telephone. This also applies to situations when a call is placed by using Microsoft Lync Server 2010 or later.
 
-The audio format and codec that Mailbox servers use to store the audio in voice messages depends not only on the audio codec that's configured on the dial plan but also on the bit rate of the audio that UM negotiates with a SIP peer. If your environment includes Lync Server or SIP endpoints, a Mailbox server will also negotiate the audio codec to use with a SIP peer. For example, when wideband RTAudio is negotiated as the wire codec, a Mailbox server will then use either the 32 Kbps MP3 or WMA 9.2 format when creating voice messages, depending on the dial plan setting. The following table shows the relationship between the voice message storage audio codec and the VoIP or wire audio codec that's used.
+The audio format and codec that Mailbox servers use to store the audio in voice messages depends not only on the audio codec that's configured on the dial plan but also on the bit rate of the audio that UM negotiates with a SIP peer. If your environment includes Lync Server or SIP endpoints, a Mailbox server will also negotiate the audio codec to use with a SIP peer. For example, when wideband RTAudio is negotiated as the wire codec, a Mailbox server will then use either the 32 Kbps MP3 or WMA 9.2 format when creating voice messages, depending on the dial plan setting. The following table shows the relationship between the voice message storage audio codec and the VoIP or wire audio codec that's used.
 
 ### Relationship between the storage audio codec and the VoIP or wire audio codec
 
@@ -191,8 +191,8 @@ The audio format and codec that Mailbox servers use to store the audio in voice 
 </tr>
 <tr class="even">
 <td><p>MP3</p></td>
-<td><p>MP3 (16 Kbps)</p></td>
-<td><p>MP3 (32 Kbps)</p></td>
+<td><p>MP3 (16 Kbps)</p></td>
+<td><p>MP3 (32 Kbps)</p></td>
 </tr>
 </tbody>
 </table>
@@ -226,15 +226,15 @@ By default, the MP3 format is selected and is the default audio file format for 
 
 ## WMA
 
-WMA is the most highly compressed audio codec of the three kinds of codecs. The compression is approximately 11,000 bytes for each 10 seconds of audio. However, the .wma file format has a much larger header section than the .wav file format. The .wma file header section is approximately 7 kilobytes (KB), whereas the header section for the .wav file is less than 100 bytes. Although WMA audio recordings are recorded for longer than 15 seconds, they become smaller than GSM audio recordings. Therefore, for the smallest but highest-quality audio files, use the WMA audio codec.
+WMA is the most highly compressed audio codec of the three kinds of codecs. The compression is approximately 11,000 bytes for each 10 seconds of audio. However, the .wma file format has a much larger header section than the .wav file format. The .wma file header section is approximately 7 kilobytes (KB), whereas the header section for the .wav file is less than 100 bytes. Although WMA audio recordings are recorded for longer than 15 seconds, they become smaller than GSM audio recordings. Therefore, for the smallest but highest-quality audio files, use the WMA audio codec.
 
 > [!NOTE]
 > If you using push notifications from your on-premises deployment for OWA for Devices, you can't use the WMA format. OWA for Devices only supports the MP3 file format.
 
 ## G.711 PCM Linear
 
-The G.711 PCM Linear audio codec creates .wav audio files that are not compressed. Therefore, G.711 PCM Linear .wav audio files occupy the most space for any given duration when they're compared to the GSM and WMA audio codecs. G.711 PCM Linear .wav audio files occupy just over 160,000 bytes for each 10 seconds of audio. G.711 PCM Linear .wav audio files have the highest audio quality of the three audio codecs used by UM. However, the quality of comparable audio files created using the WMA and GSM audio codecs is acceptable to most users who listen to voice messages.
+The G.711 PCM Linear audio codec creates .wav audio files that are not compressed. Therefore, G.711 PCM Linear .wav audio files occupy the most space for any given duration when they're compared to the GSM and WMA audio codecs. G.711 PCM Linear .wav audio files occupy just over 160,000 bytes for each 10 seconds of audio. G.711 PCM Linear .wav audio files have the highest audio quality of the three audio codecs used by UM. However, the quality of comparable audio files created using the WMA and GSM audio codecs is acceptable to most users who listen to voice messages.
 
 ## GSM
 
-The GSM audio codec creates .wav audio files that are compressed. GSM .wav audio files are just over 16,000 bytes for each 10 seconds of audio. However, GSM creates an audio file larger than the audio file created by the WMA audio codec. Therefore, when you are balancing the quality of the voice message and the size, this may not be the best choice.
+The GSM audio codec creates .wav audio files that are compressed. GSM .wav audio files are just over 16,000 bytes for each 10 seconds of audio. However, GSM creates an audio file larger than the audio file created by the WMA audio codec. Therefore, when you are balancing the quality of the voice message and the size, this may not be the best choice.

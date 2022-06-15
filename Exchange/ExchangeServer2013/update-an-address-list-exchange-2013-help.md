@@ -5,6 +5,8 @@ ms:assetid: 163e7099-cf14-4bb0-a84c-1401e9db670e
 ms:mtpsurl: https://technet.microsoft.com/library/Aa996375(v=EXCHG.150)
 ms:contentKeyID: 49289182
 ms.reviewer: 
+ms.topic: how-to
+description: How to update an address list in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

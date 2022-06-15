@@ -4,6 +4,8 @@ TOCTitle: MyMobileInformation role
 ms:assetid: b1048d12-3394-41c6-b10a-c01c1e0fdeb3
 ms:mtpsurl: https://technet.microsoft.com/library/Ff461935(v=EXCHG.150)
 ms:contentKeyID: 49289373
+ms.topic: article
+description: The MyMobileInformation management role enables individual users to view and modify their mobile telephone and pager numbers.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars

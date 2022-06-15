@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: You must log in using an Active Directory account that has the permissions required to install Exchange Server 2013.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

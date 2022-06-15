@@ -16,7 +16,7 @@ manager: serdars
 
 ---
 
-# Remove a database availability group
+# Remove a database availability group in Microsoft Exchange
 
 Removing a DAG is a quick and easy task. You can use the EAC or the Exchange Management Shell to remove a DAG.
 

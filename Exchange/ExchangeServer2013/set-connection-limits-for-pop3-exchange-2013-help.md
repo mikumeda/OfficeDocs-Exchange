@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/Aa997988(v=EXCHG.150)
 ms:contentKeyID: 50395399
 ms.reviewer: 
 manager: serdars
+ms.topic: how-to
+description: How to set connection limits for POP3 in Microsoft Exchange
 ms.author: serdars
 author: msdmaguire
 f1.keywords:

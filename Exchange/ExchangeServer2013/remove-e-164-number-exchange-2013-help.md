@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: You can remove the primary E.164 number that was added when the user was enabled for UM or a secondary E.164 number that was added later.
 ms.assetid: 17941918-7dc5-41a0-b540-09f2f907362b
 f1.keywords:
 - NOCSH

@@ -5,6 +5,8 @@ ms:assetid: 9d15d8b8-e061-4288-9354-df58e282fb6b
 ms:mtpsurl: https://technet.microsoft.com/library/Bb123934(v=EXCHG.150)
 ms:contentKeyID: 49286850
 ms.reviewer: 
+ms.topic: how-to
+description: How to view queued message properties in Queue Viewer in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

@@ -5,6 +5,8 @@ ms:assetid: d48df962-9669-420b-838f-44bfe1012e2f
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124728(v=EXCHG.150)
 ms:contentKeyID: 49315533
 ms.reviewer: 
+ms.topic: article
+description: Unified Messaging languages, prompts, and greetings in Microsoft Exchange Server 
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -67,11 +69,11 @@ The following table lists the Unified Messaging language packs that are currentl
 
 <table>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -373,14 +375,14 @@ The following table includes a list of client languages and the fallback languag
 
 ### Client fallback languages for UM
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: You can remove the primary SIP address that was added when the user was enabled for UM or a secondary SIP address that was added later.
 ms.assetid: eaaff0b0-7d85-4845-a7b8-ac22b42bc415
 f1.keywords:
 - NOCSH

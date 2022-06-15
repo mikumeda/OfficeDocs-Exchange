@@ -5,6 +5,8 @@ ms:assetid: 236e8530-62dd-4c43-8a5d-8465623252e6
 ms:mtpsurl: https://technet.microsoft.com/library/Bb266966(v=EXCHG.150)
 ms:contentKeyID: 49289195
 ms.reviewer: 
+ms.topic: how-to
+description: How to update a global address list in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-You can use the Shell to update a global address list (GAL). A GAL is a directory that contains entries for every group, user, and contact within an organization's implementation of Microsoft Exchange.
+You can use the Shell to update a global address list (GAL). A GAL is a directory that contains entries for every group, user, and contact within an organization's implementation of Microsoft Exchange.
 
 For additional management tasks related to address lists, see [Address list procedures](address-list-procedures-exchange-2013-help.md).
 

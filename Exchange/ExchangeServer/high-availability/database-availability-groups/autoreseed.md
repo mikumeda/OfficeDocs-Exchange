@@ -74,8 +74,8 @@ The AutoReseed component that allocates and formats spare disks is called the *D
 
 In addition to the above conditions, the Disk Reclaimer will only attempt to format a given volume once a day. The following table describes the formatting behavior of the Disk Reclaimer.
 
-|**State of Disk and Database Copies**|**Formatting Interval**|
-|:-----|:-----|
+|State of Disk and Database Copies|Formatting Interval|
+|---|---|
 |Disk is unformatted, or formatted but empty, or formatted but contains files that haven't been touched for 24 hours, and there are healthy active database copies in the local Active Directory site that can be used as a seeding source.|1 day|
 |Disk is unformatted, or formatted but empty, or formatted but contains files that haven't been touched for 24 hours, but there are no healthy active database copies in the local Active Directory site that can be used as a seeding source.|2 days|
 |Disk is unformatted, or formatted but empty, or formatted but contains files that haven't been touched for 24 hours, and there are healthy active database copies in the local Active Directory site that can be used as a seeding source, but there are unknown files outside of the database file (EDB file) and log files.|2 weeks|

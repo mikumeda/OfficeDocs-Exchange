@@ -31,15 +31,10 @@ With the Direct to Calendar feature in Exchange Online, admins can configure mai
 
 Direct to Calendar requires two mail flow rules with specific conditions and actions. These rules are described in the following table:
 
-<br>
-
-****
-
 |Rule description|Condition|Action|Comments|
 |---|---|---|---|
 |This mail flow rule turns regular meeting invitations into Direct to Calendar meeting invitations.|**The sender is** or **The sender** \> **is this person** (the _From_ parameter). <p> This condition identifies the users who are authorized to send Direct to Calendar meeting invitations. Although you can use other conditions, restricting the invitations by sender helps prevent unauthorized use of Direct to Calendar meeting invitations.|**Set the message header to this value** or **Modify the message properties** \> **set a message header** (the _SetHeaderName_ and _SetHeaderValue_ parameters). <p> This action sets the **X-MS-Exchange-Organization-CalendarBooking-Response** header to the value `Accept`. Other valid values are `Tentative` and `Decline`.|We recommend that you use dedicated mailboxes (shared mailboxes are OK) for sending Direct to Calendar meeting invitations, because *any* meeting invitations from these senders will be automatically added to recipient calendars. <p> The dedicated mailboxes require no special permissions to send Direct to Calendar meeting invitations.|
 |This mail flow rule prevents Direct to Calendar meeting invitations from appearing in the Inbox of recipients.|**The sender is** or **The sender** \> **is this person** (the _From_ parameter).|**Set the message header to this value** or **Modify the message properties** \> **set a message header** (the _SetHeaderName_ and _SetHeaderValue_ parameters). <p> This action sets the **X-MS-Exchange-Organization-CalendarBooking-TriageAction** header to the value `MoveToDeletedItems`. The other valid value is `None`.|Technically, this rule is optional (without it, meetings are still automatically added to recipient calendars). <p> Note that this rule doesn't prevent meeting cancellation messages for Direct to Calendar meetings from appearing in the Inbox of recipients.|
-|
 
 For more information about mail flow rules, see [Mail flow rules (transport rules) in Exchange Online](mail-flow-rules.md).
 

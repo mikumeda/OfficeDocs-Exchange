@@ -72,7 +72,7 @@ The following table shows the logs generated on different server roles.
 <tr class="odd">
 <td><p>Client Access</p></td>
 <td><p>w3wp_MSExchangeOWAAppOol_IRMLOG<em>yyyymmdd</em>-<em>nnnn</em>.log</p></td>
-<td><p>This log is used to record all transactions for IRM in Microsoft Office Outlook Web App.</p></td>
+<td><p>This log is used to record all transactions for IRM in Microsoft Office Outlook Web App.</p></td>
 </tr>
 <tr class="even">
 <td><p>All Exchange 2013 server roles</p></td>
@@ -152,10 +152,10 @@ IRM log files are text files that contain data in comma-separated value (CSV) fo
     <td><p><strong>Event-Type</strong></p></td>
     <td><p>Lists the event type. Valid values include:</p>
     <ul>
-    <li><p><code>Acquire</code>   An RMS license or template is requested.</p></li>
-    <li><p><code>Success</code>   An RMS license or template is acquired successfully.</p></li>
-    <li><p><code>Exception</code>   An error has occurred.</p></li>
-    <li><p><code>Queued</code>   A request is pending.</p></li>
+    <li><p><code>Acquire</code>   An RMS license or template is requested.</p></li>
+    <li><p><code>Success</code>   An RMS license or template is acquired successfully.</p></li>
+    <li><p><code>Exception</code>   An error has occurred.</p></li>
+    <li><p><code>Queued</code>   A request is pending.</p></li>
     </ul></td>
     </tr>
     <tr class="even">

@@ -27,9 +27,9 @@ You can configure your Exchange 2013 organization for shared permissions if you'
 
 - The Microsoft Exchange Protected Groups organizational unit (OU) exists.
 
-- The Exchange Windows Permissions security group is located in the Microsoft Exchange Protected Groups OU.
+- The Exchange Windows Permissions security group is located in the Microsoft Exchange Protected Groups OU.
 
-- The Exchange Trusted Subsystem security group is a member of the Exchange Windows Permissions security group.
+- The Exchange Trusted Subsystem security group is a member of the Exchange Windows Permissions security group.
 
 - There are no regular management role assignments to the Mail Recipient Creation role or Security Group Creation and Membership role.
 

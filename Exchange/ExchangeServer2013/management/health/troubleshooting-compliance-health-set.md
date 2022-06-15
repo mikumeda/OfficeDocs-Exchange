@@ -5,6 +5,8 @@ ms:assetid: d8b6f1f4-1172-4413-acd0-ee694d919c0b
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.scom.compliance(v=EXCHG.150)
 ms:contentKeyID: 49720898
 ms.reviewer:
+ms.topic: article
+description: Troubleshoot the Compliance Health set in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

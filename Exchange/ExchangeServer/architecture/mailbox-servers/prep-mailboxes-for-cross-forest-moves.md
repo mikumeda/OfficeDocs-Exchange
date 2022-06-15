@@ -68,8 +68,8 @@ The following table lists the minimum set of attributes that need to be configur
 
 **Mail user attributes**
 
-|**Active Directory attribute**|**Action**|
-|:-----|:-----|
+|Active Directory attribute|Action|
+|---|---|
 |**displayName**|Copy the corresponding attribute of the source mailbox or generate a new value.|
 |**Mail**|Directly copy the corresponding attribute of the source mailbox.|
 |**mailNickname**|Copy the corresponding attribute of the source mailbox or generate a new value.|
@@ -93,7 +93,7 @@ The following attributes aren't required for the **New-MoveRequest** cmdlet to f
 **GAL-related attributes**
 
 |**Mail user's Active Directory attribute**|**Action**|
-|:-----|:-----|
+|---|---|
 |**c**|Directly copy the corresponding attribute of the source mailbox.|
 |**co**|Directly copy the corresponding attribute of the source mailbox.|
 |**countryCode**|Directly copy the corresponding attribute of the source mailbox.|
@@ -133,7 +133,7 @@ A _linked attribute_ is an Active Directory attribute that references other Acti
 **Linked attributes**
 
 |**Mail user's Active Directory attribute**|**Action**|
-|:-----|:-----|
+|---|---|
 |**altRecipient**|Correspond to the source mailbox's **altRecipient** attribute.|
 |**deliverAndRedirect**|Directly copy the corresponding attribute of the source mailbox. This attribute is a Boolean value that should be set along with **altRecipient**.|
 |**Manager** (and its backlinks)|Correspond to the source mailbox's manager attribute.|
@@ -147,7 +147,7 @@ If you want to move a mailbox to an Exchange resource forest, the mailbox in the
 **Linked mail user attributes**
 
 |**Active Directory attribute**|**Action**|
-|:-----|:-----|
+|---|---|
 |**msExchMasterAccountHistory**|Directly copy the corresponding attribute of the source mailbox.|
 |**msExchMasterAccountSid**|If the source mailbox has **msExchMasterAccountSid**, copy it. Otherwise, copy the source mailbox's **objectSid**.|
 |**msExchRecipientDisplayType**|Constant:-1073741818 decimal (equivalent to `*unsigned* 0xC0000006`).|
@@ -168,7 +168,7 @@ If you want to move a resource mailbox to an Exchange forest, you need to set th
 **Resource mailbox attributes**
 
 |**Mail user's Active Directory attribute**|**Action**|
-|:-----|:-----|
+|---|---|
 |**msExchRecipientDisplayType**|If the source mailbox is a conference room: Constant: -2147481850 decimal (equivalent to `*unsigned* 0x80000706`).  <br/> If the source mailbox is an equipment mailbox: Constant: -2147481594 decimal (equivalent to `*unsigned* 0x80000806`).|
 |**msExchResourceCapacity**|Directly copy the corresponding attribute of the source mailbox.|
 |**msExchResourceDisplay**|Directly copy the corresponding attribute of the source mailbox.|
@@ -180,7 +180,7 @@ If you want to move a resource mailbox to an Exchange forest, you need to set th
 **Resource mailbox attributes**
 
 |**Mail User's Active Directory attributes**|**Description**|
-|:-----|:-----|
+|---|---|
 |**comment**|Directly copy the corresponding attribute of the source mailbox.|
 |**deletedItemFlags**|Directly copy the corresponding attribute of the source mailbox.|
 |**delivContLength**|Directly copy the corresponding attribute of the source mailbox.|

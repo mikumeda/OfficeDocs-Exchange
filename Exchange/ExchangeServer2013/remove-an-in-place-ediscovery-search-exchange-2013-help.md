@@ -4,6 +4,8 @@ TOCTitle: Remove an In-Place eDiscovery search
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: how-to
+description: How to remove an In-Place eDiscovery search in Microsoft Exchange
 ms.reviewer:
 ms.assetid: 78461a78-1255-4a26-9d36-c6b8eb82a4f9
 f1.keywords:

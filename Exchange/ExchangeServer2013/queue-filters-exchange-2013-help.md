@@ -4,6 +4,8 @@ TOCTitle: Queue filters
 ms:assetid: fbfbdcab-e0d2-4ed9-8f7f-e5fa2c87360d
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125237(v=EXCHG.150)
 ms:contentKeyID: 49286856
+ms.topic: article
+description: Use queue filters to generate different views of queues.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
@@ -33,9 +35,9 @@ You can use the queue properties to create a filter and locate queues that meet 
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col  />
+<col  />
+<col  />
 </colgroup>
 <thead>
 <tr class="header">

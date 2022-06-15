@@ -5,6 +5,8 @@ ms:assetid: 4736367a-750f-44d3-8a20-5149bd35e9ff
 ms:mtpsurl: https://technet.microsoft.com/library/Dd297947(v=EXCHG.150)
 ms:contentKeyID: 49289243
 ms.reviewer: 
+ms.topic: how-to
+description: How to remove a role entry from a role in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

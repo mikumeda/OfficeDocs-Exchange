@@ -5,6 +5,8 @@ ms:assetid: 6aa19a12-c7b2-4eac-a8dc-9a4d26919ac5
 ms:mtpsurl: https://technet.microsoft.com/library/Aa998662(v=EXCHG.150)
 ms:contentKeyID: 49289286
 ms.reviewer: 
+ms.topic: article
+description: In Microsoft Exchange Server, a Send connector controls the flow of outbound messages to the receiving server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

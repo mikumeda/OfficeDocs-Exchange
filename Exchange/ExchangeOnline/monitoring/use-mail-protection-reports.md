@@ -33,12 +33,7 @@ In the Microsoft 365 Defender portal (<https://security.microsoft.com>), go to *
 
 The following table describes the types of reports that are available, how to find them, and where to go to learn more.
 
-<br>
-
-****
-
 |Type of information|Learn more|
 |---|---|---|
 |**Email security reports**: Malware, spam, spoof and other protection reports for all Exchange Online organizations.|[View email security reports in the Microsoft 365 Defender portal](/microsoft-365/security/office-365-security/view-email-security-reports)|
 |**View Defender for Office 365 reports in the Microsoft 365 Defender portal**: Mail latency, threat protection and other reports that are available to organizations with Defender for Office 365 (include in a subscription or as an add-on).|[View reports for Microsoft Defender for Office 365](/microsoft-365/security/office-365-security/view-reports-for-mdo)|
-|

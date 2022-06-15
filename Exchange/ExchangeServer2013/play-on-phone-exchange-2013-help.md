@@ -4,6 +4,8 @@ TOCTitle: Play on Phone
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: article
+description: About the Play on Phone feature in Microsoft Exchange Server
 ms.reviewer: 
 ms.assetid: 511e4950-340a-48cc-a020-35d11e76b993
 f1.keywords:

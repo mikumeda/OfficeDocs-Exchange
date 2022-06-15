@@ -30,8 +30,8 @@ For more information about certificates in Exchange, see [Digital certificates a
 
 The tasks that are associated with certificate management in Exchange are described in the following table.
 
-|**Task**|**EAC**|**Exchange Management Shell**|**Topic**|**Comments**|
-|:-----|:-----|:-----|:-----|:-----|
+|Task|EAC|Exchange Management Shell|Topic|Comments|
+|---|---|---|---|---|
 |Create a new self-signed certificate on an Exchange server.|**Servers** \> **Certificates** \> select the server \> **Add** ![Add icon.](../../media/ITPro_EAC_AddIcon.png) \> **Create a self-signed certificate**|**New-ExchangeCertificate**|[Create a new Exchange Server self-signed certificate](create-self-signed-certificates.md)|You can create new self-signed certificates and configure the certificates for Exchange services in one step.|
 |Create a new certificate request (also known as a certificate signing request or CSR) for a certification authority (CA).|**Servers** \> **Certificates** \> select the server \> **Add** ![Add icon.](../../media/ITPro_EAC_AddIcon.png) \> **Create a request for a certificate from a certification authority**|**New-ExchangeCertificate** with the _GenerateRequest_ switch.|[Create an Exchange Server certificate request for a certification authority](create-ca-certificate-requests.md)|The procedures are the same for an internal CA (for example, Active Directory Certificate Services) or a commercial CA.|
 |Complete a pending certificate request on an Exchange server.|**Servers** \> **Certificates** \> select the server \> select the certificate request \> click the **Complete** link in the details pane.|**Import-ExchangeCertificate**|[Complete a pending Exchange Server certificate request](complete-pending-certificate-requests.md)|After you receive the certificate file or files from the CA, you install them on the Exchange server.|

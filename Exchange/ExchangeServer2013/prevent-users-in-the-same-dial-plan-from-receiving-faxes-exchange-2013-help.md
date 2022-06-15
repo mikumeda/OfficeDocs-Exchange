@@ -2,9 +2,11 @@
 title: 'Prevent users in the same dial plan from receiving faxes: Exchange 2013 Help'
 TOCTitle: Prevent users in the same dial plan from receiving faxes
 ms.author: serdars
-author: msdmaguire
+author: serdars
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: How to prevent users linked with a Unified Messaging (UM) dial plan from receiving faxes in Exchange Server
 ms.assetid: 4fc66414-c950-4bca-ac20-4e489f288d06
 f1.keywords:
 - NOCSH

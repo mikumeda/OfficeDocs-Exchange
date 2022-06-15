@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to remove an address book policy in Exchange
 ms.assetid: c20c6f82-2f75-4116-9be1-c5af10113f71
 f1.keywords:
 - NOCSH

@@ -5,9 +5,11 @@ ms:assetid: 51ebf2f6-8a02-44ef-a489-ca361cb0f63a
 ms:mtpsurl: https://technet.microsoft.com/library/Ff367878(v=EXCHG.150)
 ms:contentKeyID: 48385079
 ms.reviewer: 
+ms.topic: article
+description: How to pre-stage the cluster name object for a database availability group in Microsoft Exchange
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

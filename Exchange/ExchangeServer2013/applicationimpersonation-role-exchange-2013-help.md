@@ -77,7 +77,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="odd">
 <td><p><a href="hygiene-management-exchange-2013-help.md">Hygiene Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>None</code></p></td>
@@ -85,7 +85,7 @@ This role has role assignments to one or more role assignees. The following tabl
 </tr>
 <tr class="even">
 <td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>

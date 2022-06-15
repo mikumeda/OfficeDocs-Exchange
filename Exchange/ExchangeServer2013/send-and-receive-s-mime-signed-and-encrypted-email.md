@@ -5,6 +5,8 @@ ms.assetid: 1ce37ada-0a80-4b47-8611-d008979589ff
 ms:mtpsurl:
 ms:contentKeyID:
 ms.reviewer: 
+ms.topic: article
+description: Send and receive S/MIME signed and encrypted email in Exchange Online
 manager: serdars
 ms.author: serdars
 author: msdmaguire

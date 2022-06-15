@@ -5,6 +5,8 @@ ms:assetid: 55d5ca4a-b0cd-45f1-9f47-e745ef208698
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150516(v=EXCHG.150)
 ms:contentKeyID: 47560002
 ms.reviewer: 
+ms.topic: article
+description: How Microsoft Exchange Server 2013 architecture differs from Exchange Server 2007 and 2010.
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -81,10 +83,10 @@ The following table summarizes the Exchange 2013 ports and protocols, and whethe
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -132,8 +134,8 @@ The following table summarizes the relationship between Client Access and Mailbo
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -171,10 +173,10 @@ To support the new Client Access Unified Messaging Call Router service in Exchan
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

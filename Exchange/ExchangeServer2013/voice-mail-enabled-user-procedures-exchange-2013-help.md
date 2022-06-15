@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: Voice mail-enabled user procedures in Microsoft Exchange Server
 ms.assetid: 57633cf1-9ed9-43ae-a2a8-965431b0a779
 f1.keywords:
 - NOCSH

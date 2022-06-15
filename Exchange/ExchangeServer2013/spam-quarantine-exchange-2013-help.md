@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/Aa997692(v=EXCHG.150)
 ms:contentKeyID: 49248678
 ms.reviewer: 
 manager: serdars
+ms.topic: article
+description: Spam quarantine is a feature of the Content Filter agent that reduces the risk of losing legitimate messages in Microsoft Exchange Server
 ms.author: serdars
 author: msdmaguire
 f1.keywords:

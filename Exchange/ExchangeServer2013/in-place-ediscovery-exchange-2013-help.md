@@ -4,6 +4,8 @@ TOCTitle: In-Place eDiscovery
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: article
+description: Using In-Place eDiscovery for to search for content within mailboxes in Microsoft Exchange
 ms.reviewer:
 ms.assetid: 6377cb7a-3416-4e15-8571-c45d2160fc6f
 f1.keywords:
@@ -258,8 +260,8 @@ In Exchange 2013, the resources In-Place eDiscovery can consume are controlled u
 
 The default throttling policy contains the following throttling parameters.
 
-|**Parameter**|**Description**|**Default value**|
-|:-----|:-----|:-----|
+|Parameter|Description|Default value|
+|---|---|---|
 |DiscoveryMaxConcurrency|The maximum number of In-Place eDiscovery searches that can run at the same time in your organization.|2  <br/> **Note**: If an eDiscovery search is started while two previous searches are still running, the third search won't be queued and will instead fail. You have to wait until one of the previous searches finishes before you can successfully start a new search.|
 |DiscoveryMaxMailboxes|The maximum number of mailboxes that can be searched in a single In-Place eDiscovery search.|5,000|
 |DiscoveryMaxStatsSearchMailboxes|The maximum number of mailboxes that can be searched in a single In-Place eDiscovery search that still allows you to view keyword statistics.|100  <br/> **Note**: After you run an eDiscovery search estimate, you can view keyword statistics. These statistics show details about the number of items returned for each keyword used in the search query. If more than 100 source mailboxes are included in the search, an error will be returned if you try to view keyword statistics.|
@@ -275,8 +277,8 @@ The following table contains links to topics that will help you learn about and 
 
 
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[Assign eDiscovery permissions in Exchange](assign-ediscovery-permissions-exchange-2013-help.md)|Learn how to give a user access to use In-Place eDiscovery in the EAC to search Exchange mailboxes. Adding a user to the Discovery Management role group also allows the person to use the eDiscovery Center in SharePoint 2013 to search Exchange mailboxes.|
 |[Create a discovery mailbox](create-a-discovery-mailbox-exchange-2013-help.md)|Learn how to use the Shell to create a discovery mailbox and assign access permissions.|
 |[Create an In-Place eDiscovery search](create-in-place-ediscovery-search-exchange-2013-help.md)|Learn how to create an In-Place eDiscovery search, and how to estimate and preview eDiscovery search results.|
@@ -295,4 +297,4 @@ The following table contains links to topics that will help you learn about and 
 |[Configure Exchange for SharePoint eDiscovery Center](configure-exchange-for-sharepoint-ediscovery-center-exchange-2013-help.md)|Learn how to configure Exchange 2013 so that you can use the eDiscovery Center in SharePoint 2013 to search Exchange mailboxes.|
 |[Unsearchable items in Exchange eDiscovery](unsearchable-items-in-exchange-ediscovery-exchange-2013-help.md)|Learn about mailbox items that can't be indexed by Exchange Search and are returned in eDiscovery search results as unsearchable items.|
 
-For more information about eDiscovery in Microsoft 365, Office 365, Exchange 2013, SharePoint 2013, and Lync 2013, see the [Get started with Core eDiscovery](/microsoft-365/compliance/get-started-core-ediscovery).
+For more information about eDiscovery in Microsoft Purview, Office 365, Exchange 2013, SharePoint 2013, and Lync 2013, see the [Get started with eDiscovery (Standard)](/microsoft-365/compliance/get-started-core-ediscovery).

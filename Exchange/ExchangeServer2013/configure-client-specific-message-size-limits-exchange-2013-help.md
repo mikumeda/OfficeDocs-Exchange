@@ -44,7 +44,7 @@ However, there are client-specific message size limits you can configure for Out
 <tr class="odd">
 <td><p>Client Access</p></td>
 <td><p><code>%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config</code></p></td>
-<td><p><code>maxAllowedContentLength=&quot;30000000 bytes&quot;</code>   Not present by default (see comments).</p></td>
+<td><p><code>maxAllowedContentLength=&quot;30000000 bytes&quot;</code>   Not present by default (see comments).</p></td>
 <td><p>bytes</p></td>
 </tr>
 <tr class="even">
@@ -56,7 +56,7 @@ However, there are client-specific message size limits you can configure for Out
 <tr class="odd">
 <td><p>Mailbox</p></td>
 <td><p><code>%ExchangeInstallPath%ClientAccess\Sync\web.config</code></p></td>
-<td><p><code>maxAllowedContentLength=&quot;30000000 bytes&quot;</code>   Not present by default (see comments).</p></td>
+<td><p><code>maxAllowedContentLength=&quot;30000000 bytes&quot;</code>   Not present by default (see comments).</p></td>
 <td><p>bytes</p></td>
 </tr>
 <tr class="even">
@@ -208,7 +208,7 @@ To change the maximum message size for ActiveSync clients, you need to change th
 
 - In the `web.config` file on Mailbox servers, there is also an instance of the value `maxStringContentLength="102400"` for the **MsOnlineShellService** binding that you don't need to modify.
 
-For all message size limits, you need to set values that are larger than the actual sizes you want enforced. This increase in values is necessary to account for the inevitable message size increase that occurs after the message attachments and any other binary data are Base64 encoded. Base64 encoding increases the size of the message by approximately 33%, so the values you specify for any message size limits are approximately 33% larger than the actual usable message sizes. For example, if you specify a maximum message size value of 64 MB, you can expect a realistic maximum message size value of approximately 48 MB.
+For all message size limits, you need to set values that are larger than the actual sizes you want enforced. This increase in values is necessary to account for the inevitable message size increase that occurs after the message attachments and any other binary data are Base64 encoded. Base64 encoding increases the size of the message by approximately 33%, so the values you specify for any message size limits are approximately 33% larger than the actual usable message sizes. For example, if you specify a maximum message size value of 64 MB, you can expect a realistic maximum message size value of approximately 48 MB.
 
 ## What do you need to know before you begin?
 
@@ -243,7 +243,7 @@ For all message size limits, you need to set values that are larger than the act
    ...maxReceivedMessageSize="67108864"...
    ```
 
-   For example, to allow a Base64 encoded maximum message size of approximately 64 MB, change all instances of `67108864` to `89478486` (64\*4/3\*1048576):
+   For example, to allow a Base64 encoded maximum message size of approximately 64 MB, change all instances of `67108864` to `89478486` (64\*4/3\*1048576):
 
    ```powershell
    <requestLimits maxAllowedContentLength="89478486" />
@@ -314,4 +314,4 @@ Instead of using Notepad, you can also configure the client-specific message siz
 
 ## How do you know this worked?
 
-To verify that you have successfully configured the client-specific message size limit, you need to send a test message to and from a mailbox that's being accessed by the affected client. You can try a few smaller attachments or one large attachment so the test messages are approximately 33% less than the value you configured. For example, a configured value of 85 MB results in a realistic maximum message size of approximately 64 MB.
+To verify that you have successfully configured the client-specific message size limit, you need to send a test message to and from a mailbox that's being accessed by the affected client. You can try a few smaller attachments or one large attachment so the test messages are approximately 33% less than the value you configured. For example, a configured value of 85 MB results in a realistic maximum message size of approximately 64 MB.

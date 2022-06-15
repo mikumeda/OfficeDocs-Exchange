@@ -1,12 +1,14 @@
 ---
-title: 'IIS 7 component not installed'
+title: "Exchange setup can't continue: IIS 7 component not installed"
 TOCTitle: IIS 7 component not installed_LonghornIIS7HttpCompressionStaticNotInstalled
 ms:assetid: 87fb8068-8c11-45cd-b18c-7d4ba97dedda
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.longhorniis7httpcompressionstaticnotinstalled(v=EXCHG.150)
 ms:contentKeyID: 46629015
 ms.reviewer: 
+description: "Exchange setup can't contue: IIS 7 component not installed"
 manager: serdars
 ms.author: serdars
+ms.topic: article
 author: msdmaguire
 f1.keywords:
 - NOCSH
@@ -21,13 +23,13 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2010 Setup or Microsoft Exchange Server 2007 Setup cannot install the Client Access Server (CAS) role or the Mailbox server role on a Microsoft Windows Server 2008-based computer or on a Windows Server 2008 R2-based computer because the required Internet Information Server (IIS) 7 components are not installed.
+Microsoft Exchange Server 2010 Setup or Microsoft Exchange Server 2007 Setup cannot install the Client Access Server (CAS) role or the Mailbox server role on a Microsoft Windows Server 2008-based computer or on a Windows Server 2008 R2-based computer because the required Internet Information Server (IIS) 7 components are not installed.
 
-Exchange 2010 Setup and Exchange 2007 Setup require that the Windows Server 2008-based computer or the Windows Server 2008 R2-based computer on which you are installing the CAS role already has the following IIS 7 components installed.
+Exchange 2010 Setup and Exchange 2007 Setup require that the Windows Server 2008-based computer or the Windows Server 2008 R2-based computer on which you are installing the CAS role already has the following IIS 7 components installed.
 
 <table>
 <colgroup>
-<col style="width: 100%" />
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -83,11 +85,11 @@ Exchange 2010 Setup and Exchange 2007 Setup require that the Windows Server 200
 </tbody>
 </table>
 
-Exchange 2010 Setup and Exchange 2007 Setup require that the Windows Server 2008-based computer or the Windows Server 2008 R2-based computer on which you are installing the Mailbox server role already has the following IIS 7 components installed.
+Exchange 2010 Setup and Exchange 2007 Setup require that the Windows Server 2008-based computer or the Windows Server 2008 R2-based computer on which you are installing the Mailbox server role already has the following IIS 7 components installed.
 
 <table>
 <colgroup>
-<col style="width: 100%" />
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -106,7 +108,7 @@ Exchange 2010 Setup and Exchange 2007 Setup require that the Windows Server 200
 
 To address this issue, follow the appropriate steps to install the required IIS 7 components on the destination computer, and then run Microsoft Exchange Setup again.
 
-**Install the IIS 7 Components for the CAS server role by using the Windows Server 2008 Server Manager**
+**Install the IIS 7 Components for the CAS server role by using the Windows Server 2008 Server Manager**
 
 1. Click **Start**, click **Administrative Tools**, and then click **Server Manager**.
 
@@ -132,7 +134,7 @@ To address this issue, follow the appropriate steps to install the required IIS 
 
 7. Click **Close** to exit the Add Role Services wizard.
 
-**Install the IIS 7 Components for the Mailbox server role by using the Windows Server 2008 Server Manager**
+**Install the IIS 7 Components for the Mailbox server role by using the Windows Server 2008 Server Manager**
 
 1. Click **Start**, click **Administrative Tools**, and then click **Server Manager**.
 

@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: If you're no longer using a scope, it can be removed.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

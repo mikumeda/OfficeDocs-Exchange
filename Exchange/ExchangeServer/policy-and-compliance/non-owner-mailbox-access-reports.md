@@ -117,8 +117,8 @@ When you run a non-owner mailbox access report, the EAC search results display e
 
 The following table describes the types of actions logged, and whether these actions are logged by default for access by administrators and for access by delegated users. If you want to track actions that aren't logged by default, you have to use the Exchange Management Shell to enable logging of those actions.
 
-|**Action**|**Description**|**Administrators**|**Delegated users**|
-|:-----|:-----|:-----|:-----|
+|Action|Description|Administrators|Delegated users|
+|---|---|---|---|
 |**Update**|A message was changed.|Yes|Yes|
 |**Copy**|A message was copied to another folder.|No|No|
 |**Move**|A message was moved to another folder.|Yes|No|

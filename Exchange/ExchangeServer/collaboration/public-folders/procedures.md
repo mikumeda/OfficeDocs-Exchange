@@ -16,7 +16,7 @@ manager: serdars
 
 ---
 
-# Public folder procedures
+# Public folder procedures in Microsoft Exchange
 
 Use one or more of the procedures listed below to get your public folder infrastructure up and running, and to perform other necessary tasks for managing public folders.
 

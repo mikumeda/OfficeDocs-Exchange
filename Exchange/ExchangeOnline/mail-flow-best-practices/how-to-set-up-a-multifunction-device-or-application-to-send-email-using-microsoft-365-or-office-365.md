@@ -54,17 +54,12 @@ Each device or application must be able to authenticate with Microsoft 365 or Of
 
 Enter the following settings directly on your device or in the application **as their guide instructs** (it might use different terminology than this article). As long as your scenario meets the requirements for SMTP AUTH client submission, the following settings will enable you to send email from your device or application.
 
-<br>
-
-****
-
 |Device or Application setting|Value|
 |---|---|
 |Server/smart host|smtp.office365.com|
 |Port|Port 587 (recommended) or port 25|
 |TLS/StartTLS|Enabled|
 |Username/email address and password|Enter the sign-in credentials of the hosted mailbox being used|
-|
 
 #### TLS and other encryption options
 
@@ -128,28 +123,18 @@ Other scenarios when direct send may be your best choice:
 
 Enter the following settings on the device or in the application directly.
 
-<br>
-
-****
-
 |Device or application setting|Value|
 |---|---|
 |Server/smart host|Your MX endpoint, for example, contoso-com.mail.protection.outlook.com|
 |Port|Port 25|
 |TLS/StartTLS|Optional|
 |Email address|Any email address for one of your Microsoft 365 or Office 365 accepted domains. This email address does not need to have a mailbox.|
-|
 
 We recommend adding an SPF record to avoid having messages flagged as spam. If you are sending from a static IP address, add it to your SPF record in your domain registrar's DNS settings as follows:
-
-<br>
-
-****
 
 |DNS entry|Value|
 |---|---|
 |SPF|`v=spf1 ip4:<Static IP Address> include:spf.protection.outlook.com ~all`|
-|
 
 ### Step-by-step instructions for direct send
 
@@ -226,41 +211,26 @@ SMTP relay lets Microsoft 365 or Office 365 relay emails on your behalf by using
 
 ### Settings for Microsoft 365 or Office 365 SMTP relay
 
-<br>
-
-****
-
 |Device or application setting|Value|
 |---|---|
 |Server/smart host|Your MX endpoint, for example, _yourdomain_-com.mail.protection.outlook.com|
 |Port|Port 25|
 |TLS/StartTLS|Enabled|
 |Email address|Any email address in one of your Microsoft 365 or Office 365 verified domains. This email address does not need a mailbox.|
-|
 
 If you already have a connector that's configured to deliver messages from your on-premises organization to Microsoft 365 or Office 365 (for example, a hybrid environment), you probably don't need to create a dedicated connector for Microsoft 365 or Office 365 SMTP relay. If you need to create a connector, use the following settings to support this scenario:
-
-<br>
-
-****
 
 |Connector setting|Value|
 |---|---|
 |From|Your organization's email server|
 |To|Microsoft 365 or Office 365|
 |Domain restrictions: IP address/range|Your on-premises IP address or address range that the device or application will use to connect to Microsoft 365 or Office 365|
-|
 
 We recommend adding an SPF record to avoid having messages flagged as spam. If you are sending from a static IP address, add it to your SPF record in your domain registrar's DNS settings as follows:
-
-<br>
-
-****
 
 |DNS entry|Value|
 |---|---|
 |SPF|`v=spf1 ip4:<Static IP Address> include:spf.protection.outlook.com ~all`|
-|
 
 ### Step-by-step configuration instructions for SMTP relay
 
@@ -361,10 +331,6 @@ In the following diagram, the application or device in your organization's netwo
 
 Here's a comparison of each configuration option and the features they support.
 
-<br>
-
-****
-
 |Features|SMTP client submission|Direct send|SMTP relay|
 |---|---|---|---|
 |Send to recipients in your domain(s)|Yes|Yes|Yes|
@@ -376,18 +342,12 @@ Here's a comparison of each configuration option and the features they support.
 |Open network port|Port 587 or port 25|Port 25|Port 25|
 |Device or application server must support TLS|Required|Optional|Optional|
 |Requires authentication|Microsoft 365 or Office 365 username and password required|None|One or more static IP addresses. Your printer or the server running your LOB app must have a static IP address to use for authentication with Microsoft 365 or Office 365.|
-|
 
 Here are the limitations of each configuration option:
-
-<br>
-
-****
 
 |Limitations|SMTP client submission|Direct send|SMTP relay|
 |---|---|---|---|
 |Throttling limits|10,000 recipients per day. 30 messages per minute.|Standard throttling is in place to protect Microsoft 365 or Office 365.|Reasonable limits are imposed. The service can't be used to send spam or bulk mail. For more information about reasonable limits, see [High-risk delivery pool for outbound messages](/microsoft-365/security/office-365-security/high-risk-delivery-pool-for-outbound-messages).|
-|
 
 ## Run diagnostic to Set up applications or devices sending email using Microsoft 365 
 

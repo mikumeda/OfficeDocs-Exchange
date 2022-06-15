@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Edge Transport servers store their configuration information in Active Directory Lightweight Directory Services (AD LDS). You can install more than one Edge Transport server in the perimeter network and use a DNS round robin to help balance network traffic among the Edge Transport servers. Round robin is a simple mechanism used by DNS servers to share and distribute loads for network resources.
+Edge Transport servers store their configuration information in Active Directory Lightweight Directory Services (AD LDS). You can install more than one Edge Transport server in the perimeter network and use a DNS round robin to help balance network traffic among the Edge Transport servers. Round robin is a simple mechanism used by DNS servers to share and distribute loads for network resources.
 
 To ensure all Edge Transport servers use the same configuration information, use the provided cloned configuration scripts to duplicate your source server's configuration on a target server.
 
@@ -29,7 +29,7 @@ This topic provides an overview of the cloned configuration process. For detaile
 
 ## Cloned configuration and EdgeSync
 
-Run the EdgeSync process after you import the cloned configuration. To perform recipient lookup and message security tasks, the Edge Transport server requires data that resides in Active Directory. *EdgeSync* is a collection of processes run on an Exchange 2013 Mailbox server to establish one-way replication of recipient and configuration information from Active Directory to the AD LDS instance on an Edge Transport server. EdgeSync copies only information required for the Edge Transport server to perform anti-spam tasks and information about connector configuration required to enable end-to-end mail flow. EdgeSync performs scheduled updates so the information in AD LDS remains current.
+Run the EdgeSync process after you import the cloned configuration. To perform recipient lookup and message security tasks, the Edge Transport server requires data that resides in Active Directory. *EdgeSync* is a collection of processes run on an Exchange 2013 Mailbox server to establish one-way replication of recipient and configuration information from Active Directory to the AD LDS instance on an Edge Transport server. EdgeSync copies only information required for the Edge Transport server to perform anti-spam tasks and information about connector configuration required to enable end-to-end mail flow. EdgeSync performs scheduled updates so the information in AD LDS remains current.
 
 Cloned configuration doesn't duplicate a server's Edge Subscription settings. The certificates used by EdgeSync aren't cloned. You must run the EdgeSync process separately for each Edge Transport server. EdgeSync overwrites any settings included in both the cloned configuration information and in EdgeSync replication information. These settings include Send connectors, Receive connectors, accepted domains, and remote domains.
 
@@ -190,7 +190,7 @@ The attributes in the following table are associated with the transport configur
 </tr>
 <tr class="odd">
 <td><p><strong>InternalSMTPServers</strong></p></td>
-<td><p>This attribute specifies a list of internal SMTP server IP addresses or IP address ranges that should be ignored by Sender ID and connection filtering.</p></td>
+<td><p>This attribute specifies a list of internal SMTP server IP addresses or IP address ranges that should be ignored by Sender ID and connection filtering.</p></td>
 <td><p>Null</p></td>
 </tr>
 <tr class="even">
@@ -201,7 +201,7 @@ The attributes in the following table are associated with the transport configur
 <tr class="odd">
 <td><p><strong>MaxDumpsterSizePerStorageGroup</strong></p></td>
 <td><p>This attribute specifies the maximum size of the transport dumpster on a Mailbox server. This attribute doesn't apply to the configuration of an Edge Transport server.</p></td>
-<td><p>18 MB</p></td>
+<td><p>18 MB</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>MaxDumpsterTime</strong></p></td>
@@ -211,7 +211,7 @@ The attributes in the following table are associated with the transport configur
 <tr class="odd">
 <td><p><strong>MaxReceiveSize</strong></p></td>
 <td><p>This attribute specifies the maximum message size that can be received by recipients in the organization. This attribute doesn't apply to the configuration of an Edge Transport server.</p></td>
-<td><p>10 MB</p></td>
+<td><p>10 MB</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>MaxRecipientEnvelopeLimit</strong></p></td>
@@ -221,7 +221,7 @@ The attributes in the following table are associated with the transport configur
 <tr class="odd">
 <td><p><strong>MaxSendSize</strong></p></td>
 <td><p>This attribute specifies the maximum message size that can be sent by senders in the organization. This attribute doesn't apply to the configuration of an Edge Transport server.</p></td>
-<td><p>10 MB</p></td>
+<td><p>10 MB</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>TLSReceiveDomainSecureList</strong></p></td>

@@ -14,15 +14,15 @@ ms.collection:
 - Ent_O365_Hybrid
 - Hybrid
 - M365-email-calendar
-description: "Organization configuration transfer attributes can be copied by the Hybrid Configuration Wizard from your on-premises organization to Exchange Online to help simplify your hybrid deployment"
+description: "The available OWA Mailbox Policy attributes that are copied by the Hybrid Configuration Wizard from your on-premises organization to Exchange Online."
 ---
 
 # OWA Mailbox Policy attributes
 
 The following attributes of OWA Mailbox Policy are copied from an on-premises Exchange organization to Exchange Online when the **Organization Configuration Transfer** option is selected in the Hybrid Configuration Wizard.
 
-|**OWAMailboxPolicy**|**Available In**|
-|:-----|:-----|
+|OWAMailboxPolicy|Available In|
+|---|---|
 |ActionForUnknownFileAndMIMETypes|Exchange 2010, 2013, 2016, 2019|
 |ActiveSyncIntegrationEnabled|Exchange 2010, 2013, 2016, 2019|
 |AllAddressListsEnabled|Exchange 2010, 2013, 2016, 2019|

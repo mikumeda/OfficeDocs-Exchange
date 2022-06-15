@@ -294,10 +294,6 @@ Only the following access rights will be allowed for users to ensure that the pu
 
 1. The permission entries will be modified as follows:
 
-   <br>
-
-   ***
-
    |Before lockdown|After lockdown|
    |---|---|
    |None|None|
@@ -311,7 +307,6 @@ Only the following access rights will be allowed for users to ensure that the pu
    |PublishingAuthor|ReadItems, CreateSubfolders, FolderVisible|
    |PublishingEditor|ReadItems, CreateSubfolders, FolderVisible|
    |Owner|ReadItems, CreateSubfolders, FolderContact, FolderVisible|
-   |
 
 2. Access rights for users without read permissions will be left untouched, and they will continue to be blocked from read rights.
 

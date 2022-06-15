@@ -57,25 +57,16 @@ A mail flow rule is made of conditions, exceptions, actions, and properties:
 
 The following table shows how multiple conditions, condition values, exceptions, and actions are handled in a rule.
 
-<br>
-
-****
-
 |Component|Logic|Comments|
 |---|---|---|
 |Multiple conditions|AND|A message must match all the conditions in the rule. If you need to match one condition or another, use separate rules for each condition. For example, if you want to add the same disclaimer to messages with attachments and messages that contain specific text, create one rule for each condition. In the EAC, you can easily copy a rule.|
 |One condition with multiple values|OR|Some conditions allow you to specify more than one value. The message must match any one (not all) of the specified values. For example, if an email message has the subject Stock price information, and the **The subject includes any of these words** condition is configured to match the words Contoso or stock, the condition is satisfied because the subject contains at least one of the specified values.|
 |Multiple exceptions|OR|If a message matches any one of the exceptions, the actions are not applied to the message. The message doesn't have to match all the exceptions.|
 |Multiple actions|AND|Messages that match a rule's conditions get all the actions that are specified in the rule. For example, if the actions **Prepend the subject of the message with** and **Add recipients to the Bcc box** are selected, both actions are applied to the message. <p> Keep in mind that some actions (for example, the **Delete the message without notifying anyone** action) prevent subsequent rules from being applied to a message. Other actions (for example, the **Forward the message**) don't allow additional actions. <p> You can also set an action on a rule so that when that rule is applied, subsequent rules are not applied to the message.|
-|
 
 ### Mail flow rule properties
 
 The following table describes the rule properties that are available in mail flow rules.
-
-<br>
-
-****
 
 |Property name in the EAC|Parameter name in PowerShell|Description|
 |---|---|---|
@@ -88,7 +79,6 @@ The following table describes the rule properties that are available in mail flo
 |**Match sender address in message**|_SenderAddressLocation_|If the rule uses conditions or exceptions that examine the sender's email address, you can look for the value in the message header, the message envelope, or both.|
 |**Stop processing more rules**|_StopRuleProcessing_|This is an action for the rule, but it looks like a property in the EAC. You can choose to stop applying additional rules to a message after a rule processes a message.|
 |**Comments**|_Comments_|You can enter descriptive comments about the rule.|
-|
 
 ## How mail flow rules are applied to messages
 
@@ -100,12 +90,8 @@ Each rule also offers the option of stopping processing more rules when the rule
 
 There are several types of messages that pass through an organization. The following table shows which messages types can be processed by mail flow rules.
 
-<br>
-
-****
-
 |Type of message|Can a rule be applied?|
-|:-----|:-----|
+|---|---|
 |**Regular messages**: Messages that contain a single rich text format (RTF), HTML, or plain text message body or a multipart or alternative set of message bodies.|Yes|
 |**Message Encryption**: Messages encrypted by Message Encryption in Microsoft 365 or Office 365. For more information, see [Encryption](/microsoft-365/compliance/encryption).|Rules can always access envelope headers and process messages based on conditions that inspect those headers. <p> For a rule to inspect or modify the contents of an encrypted message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see [Enable or disable transport decryption](../../../ExchangeServer2013/enable-or-disable-transport-decryption-exchange-2013-help.md). <p> You can also create a rule that automatically decrypts encrypted messages. For more information, see [Define rules to encrypt email messages](/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email).|
 |**S/MIME encrypted messages**|Rules can only access envelope headers and process messages based on conditions that inspect those headers. <p> Rules with conditions that require inspection of the message's content, or actions that modify the message's content can't be processed.|
@@ -113,7 +99,6 @@ There are several types of messages that pass through an organization. The follo
 |**Clear-signed messages**: Messages that have been signed but not encrypted.|Yes|
 |**Anonymous messages**: Messages sent by anonymous senders.|Yes|
 |**Read reports**: Reports that are generated in response to read receipt requests by senders. Read reports have a message class of `IPM.Note*.MdnRead` or `IPM.Note*.MdnNotRead`.|Yes|
-|
 
 ## What else should I know?
 

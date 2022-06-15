@@ -5,6 +5,8 @@ ms:assetid: fd268867-2ae5-441b-8103-7a7583eb2bbe
 ms:mtpsurl: https://technet.microsoft.com/library/Dd298183(v=EXCHG.150)
 ms:contentKeyID: 49289479
 ms.reviewer: 
+ms.topic: article
+description: Role Based Access Control in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

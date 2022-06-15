@@ -5,6 +5,8 @@ ms:assetid: 4934d755-65be-47e2-86b0-6ea1ab148a96
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.computerrodc(v=EXCHG.150)
 ms:contentKeyID: 46628890
 ms.reviewer: 
+ms.topic: article
+description: Microsoft Exchange Server Setup can't continue the installation because the target computer is a Read-Only Domain Controller
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -21,7 +23,7 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 Setup cannot continue the installation because the target computer is a Read-Only Domain Controller (RODC).
+Microsoft Exchange Server 2007 Setup cannot continue the installation because the target computer is a Read-Only Domain Controller (RODC).
 
 Read-Only Domain Controllers are a feature of Windows Server 2008 Active Directory. The RODC is a type of domain controller install option that can be installed in remote sites that may have lower levels of physical security.
 

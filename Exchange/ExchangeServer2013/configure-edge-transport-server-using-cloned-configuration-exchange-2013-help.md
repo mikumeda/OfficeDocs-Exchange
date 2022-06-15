@@ -21,7 +21,7 @@ _**Applies to:** Exchange Server 2013_
 
 You can use the provided Exchange Management Shell scripts (located in %ExchangeInstallPath%Scripts) to duplicate the configuration of an Edge Transport server. This process is referred to as *cloned configuration*. *Cloned configuration* is the practice of deploying new Edge Transport servers based on configuration information from a previously configured source server. The configuration information from the previously configured source server is copied and exported to an XML file, which is then imported to the target server. For an overview of this process, see [Edge Transport server cloned configuration](edge-transport-server-cloned-configuration-exchange-2013-help.md).
 
-Edge Transport server configuration information is stored in Active Directory Lightweight Directory Services (AD LDS) and isn't replicated among multiple Edge Transport servers. Using cloned configuration, you can ensure that every Edge Transport server deployed in your perimeter network is using the same configuration.
+Edge Transport server configuration information is stored in Active Directory Lightweight Directory Services (AD LDS) and isn't replicated among multiple Edge Transport servers. Using cloned configuration, you can ensure that every Edge Transport server deployed in your perimeter network is using the same configuration.
 
 Two Shell scripts are used to perform cloned configuration tasks:
 
@@ -41,7 +41,7 @@ Both these scripts are located in the %ExchangeInstallPath%Scripts folder.
 
 - If any Send connectors are configured to use credentials, the password is written to the intermediate XML file as an encrypted string. You can use the *-key* parameter with the ImportEdgeConfig.ps1 and ExportEdgeConfig.ps1 scripts to specify the 32-byte string to use for password encryption and decryption. If you don't use the *-key* parameter, a default encryption key is used.
 
-- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
+- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell).
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 

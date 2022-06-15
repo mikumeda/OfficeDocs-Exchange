@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to set the partner fax server URI to allow faxing in Microsoft Exchange Server
 ms.assetid: 77a9013b-d76b-4af2-8b2c-cef435cf67af
 f1.keywords:
 - NOCSH

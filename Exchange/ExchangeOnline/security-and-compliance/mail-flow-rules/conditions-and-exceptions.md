@@ -73,10 +73,6 @@ In the EAC, in the **Properties of this rule** section, click **Match sender add
 
 - **Header or envelope** (`HeaderOrEnvelope`) Examine senders in the message header and the message envelope.
 
-<br>
-
-****
-
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
 |**The sender is** <p> **The sender** \> **is this person**|_From_ <br/> _ExceptIfFrom_|`Addresses`|Messages that are sent by the specified mailboxes, mail users, mail contacts, or Microsoft 365 groups in the organization. <p> For more information about using Microsoft 365 groups with this condition, see the Addresses entry in the [Property types](#property-types) section.|
@@ -90,7 +86,6 @@ In the EAC, in the **Properties of this rule** section, click **Match sender add
 |**The sender has overridden the Policy Tip** <p> **The sender** \> **has overridden the Policy Tip**|_HasSenderOverride_ <br/> _ExceptIfHasSenderOverride_|n/a|Messages where the sender has chosen to override a data loss prevention (DLP) policy. For more information about DLP policies, see [Data loss prevention](../../security-and-compliance/data-loss-prevention/data-loss-prevention.md). <p>**Note**: This condition/exception isn't available in standalone Exchange Online Protection (EOP) environments.|
 |**Sender's IP address is in the range** <p> **The sender** \> **IP address is in any of these ranges or exactly matches**|_SenderIPRanges_ <br/> _ExceptIfSenderIPRanges_|`IPAddressRanges`|Messages where the sender's IP address matches the specified IP address, or falls within the specified IP address range.|
 |**The sender's domain is** <p> **The sender** \> **domain is**|_SenderDomainIs_ <br/> _ExceptIfSenderDomainIs_|`DomainName`|Messages where the domain of the sender's email address matches the specified value. <p> If you need to find sender domains that *contain* the specified domain (for example, any subdomain of a domain), use **The sender address matches**(_FromAddressMatchesPatterns_) condition and specify the domain by using the syntax: `'\.domain\.com$'`.|
-|
 
 ### Recipients
 
@@ -98,10 +93,6 @@ For conditions and exceptions that examine the recipient's address, you can spec
 
 - Original: Only examine the recipient's primary SMTP email address.
 - Resolved: Examine the recipient's primary SMTP email address and all proxy addresses. This is the default value
-
-<br>
-
-****
 
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
@@ -114,16 +105,11 @@ For conditions and exceptions that examine the recipient's address, you can spec
 |**The recipient's specified properties include any of these words** <p> **The recipient** \> **has specific properties including any of these words**|_RecipientADAttributeContainsWords_ <br/> _ExceptIfRecipientADAttributeContainsWords_|First property: `ADAttribute` <p> Second property: `Words`|Messages where the specified Active Directory attribute of a recipient contains any of the specified words. <p> Note that the **Country** attribute requires the two-letter country code value (for example, DE for Germany).|
 |**The recipient's specified properties match these text patterns** <p> **The recipient** \> **has specific properties matching these text patterns**|_RecipientADAttributeMatchesPatterns_ <br/> _ExceptIfRecipientADAttributeMatchesPatterns_|First property: `ADAttribute` <p> Second property: `Patterns`|Messages where the specified Active Directory attribute of a recipient contains text patterns that match the specified regular expressions.|
 |**A recipient's domain is** <p> **The recipient** \> **domain is**|_RecipientDomainIs_ <br/> _ExceptIfRecipientDomainIs_|`DomainName`|Messages where the domain of a recipient's email address matches the specified value. <p> If you need to find recipient domains that *contain* the specified domain (for example, any subdomain of a domain), use **The recipient address matches** (_RecipientAddressMatchesPatterns_) condition, and specify the domain by using the syntax `'\.domain\.com$'`.|
-|
 
 ### Message subject or body
 
 > [!NOTE]
 > The search for words or text patterns in the subject or other header fields in the message occurs *after* the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages.
-
-<br>
-
-****
 
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
@@ -131,15 +117,10 @@ For conditions and exceptions that examine the recipient's address, you can spec
 |**The subject or body matches** <p> **The subject or body** \> **subject or body matches these text patterns**|_SubjectOrBodyMatchesPatterns_ <br/> _ExceptIfSubjectOrBodyMatchesPatterns_|`Patterns`|Messages where the **Subject** field or message body contain text patterns that match the specified regular expressions.|
 |**The subject includes** <p> **The subject or body** \> **subject includes any of these words**|_SubjectContainsWords_ <br/> _ExceptIfSubjectContainsWords_|`Words`|Messages that have the specified words in the **Subject** field.|
 |**The subject matches** <p> **The subject or body** \> **subject matches these text patterns**|_SubjectMatchesPatterns_ <br/> _ExceptIfSubjectMatchesPatterns_|`Patterns`|Messages where the **Subject** field contains text patterns that match the specified regular expressions.|
-|
 
 ### Attachments
 
 For more information about how mail flow rules inspect message attachments, see [Use mail flow rules to inspect message attachments in Exchange Online](inspect-message-attachments.md).
-
-<br>
-
-****
 
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
@@ -153,7 +134,6 @@ For more information about how mail flow rules inspect message attachments, see 
 |**Any attachment has executable content** <p> **Any attachment** \> **has executable content**|_AttachmentHasExecutableContent_ <br/> _ExceptIfAttachmentHasExecutableContent_|n/a|Messages where an attachment is an executable file. The system inspects the file's properties rather than relying on the file's extension.|
 |**Any attachment is password protected** <p> **Any attachment** \> **is password protected**|_AttachmentIsPasswordProtected_ <br/> _ExceptIfAttachmentIsPasswordProtected_|n/a|Messages where an attachment is password protected (and therefore can't be scanned). Password detection only works for Office documents, .zip files, and .7z files.|
 |**has these properties, including any of these words** <p> **Any attachment** \> **has these properties, including any of these words**|_AttachmentPropertyContainsWords_ <br/> _ExceptIfAttachmentPropertyContainsWords_|First property: `DocumentProperties` <p> Second property: `Words`|Messages where the specified property of an attached Office document contains the specified words. <p> This condition helps you integrate mail flow rules with SharePoint, File Classification Infrastructure (FCI) in Windows Server 2012 R2 or later, or a third-party classification system. <p> You can select from a list of built-in properties, or specify a custom property.|
-|
 
 ### Any recipients
 
@@ -168,15 +148,10 @@ Conversely, a recipient exception from this section *prevents* the rule action f
 >
 > These conditions are applied to all recipients in the current fork of the message only. If the message was bifurcated by any other action (for example, anti-malware or an erlier mail flow rule), the action will be applied on the matching fork only. 
 
-<br>
-
-****
-
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
 |**Any recipient address includes** <p> **Any recipient** \> **address includes any of these words**|_AnyOfRecipientAddressContainsWords_ <br/> _ExceptIfAnyOfRecipientAddressContainsWords_|`Words`|Messages that contain the specified words in the **To**, **Cc**, or **Bcc** fields of the message.|
 |**Any recipient address matches** <p> **Any recipient** \> **address matches any of these text patterns**|_AnyOfRecipientAddressMatchesPatterns_ <br/> _ExceptIfAnyOfRecipientAddressMatchesPatterns_|`Patterns`|Messages where the **To**, **Cc**, or **Bcc** fields contain text patterns that match the specified regular expressions.|
-|
 
 ### Message sensitive information types, To and Cc values, size, and character sets
 
@@ -186,10 +161,6 @@ The conditions in this section that look for values in the **To** and **Cc** fie
 
 - The recipient conditions in this section do not consider messages that are sent to recipient proxy addresses. They only match messages that are sent to the recipient's primary email address.
 - For more information about using Microsoft 365 groups with the recipient conditions in this section, see the Addresses entry in the [Property types](#property-types) section.
-
-<br>
-
-****
 
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
@@ -202,13 +173,8 @@ The conditions in this section that look for values in the **To** and **Cc** fie
 |**The To or Cc box contains a member of** <p> **The message** \> **To or Cc box contains a member of this group**|_AnyOfToCcHeaderMemberOf_ <br/> _ExceptIfAnyOfToCcHeaderMemberOf_|`Addresses`|Messages where the **To** or **Cc** fields contain a recipient who is a member of the specified distribution group or mail-enabled security group.|
 |**The message size is greater than or equal to** <p> **The message** \> **size is greater than or equal to**|_MessageSizeOver_ <br/> _ExceptIfMessageSizeOver_|`Size`|Messages where the total size (message plus attachments) is greater than or equal to the specified value. <p> In the EAC, you can only specify the size in kilobytes (KB). <p> **Note**: Message size limits on mailboxes are evaluated before mail flow rules. A message that's too large for a mailbox will be rejected before a rule with this condition is able to act on the message.|
 |**The message character set name includes any of these words** <p> **The message** \> **character set name includes any of these words**|_ContentCharacterSetContainsWords_ <br/> _ExceptIfContentCharacterSetContainsWords_|`CharacterSets`|Messages that have any of the specified character set names.|
-|
 
 ### Sender and recipient
-
-<br>
-
-****
 
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
@@ -216,36 +182,25 @@ The conditions in this section that look for values in the **To** and **Cc** fie
 |**The message is between members of these groups** <p> **The sender and the recipient** \> **the message is between members of these groups**|_BetweenMemberOf1_ and _BetweenMemberOf2_ <br/> _ExceptIfBetweenMemberOf1_ and _ExceptIfBetweenMemberOf2_|`Addresses`|Messages that are sent between members of the specified distribution groups or mail-enabled security groups. <p> For more information about using Microsoft 365 groups with this condition, see the Addresses entry in the [Property types](#property-types) section.|
 |**The manager of the sender or recipient is** <p> **The sender and the recipient** \> **the manager of the sender or recipient is this person**|_ManagerForEvaluatedUser_ and _ManagerAddress_ <br/> _ExceptIfManagerForEvaluatedUser_ and _ExceptIfManagerAddress_|First property: `EvaluatedUser` <p> Second property: `Addresses`|Messages where either a specified user is the manager of the sender, or a specified user is the manager of a recipient.|
 |**The sender's and any recipient's property compares as** <p> **The sender and the recipient** \> **the sender and recipient property compares as**|_ADAttributeComparisonAttribute_ and _ADComparisonOperator_ <br/> _ExceptIfADAttributeComparisonAttribute_ and _ExceptIfADComparisonOperator_|First property: `ADAttribute` <p> Second property: `Evaluation`|Messages where the specified Active Directory attribute for the sender and recipient either match or don't match.|
-|
 
 ### Message properties
 
-<br>
-
-****
-
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
-|**The message type is** <p> **The message properties** \> **include the message type**|_MessageTypeMatches_ <br/> _ExceptIfMessageTypeMatches_|`MessageType`|Messages of the specified type. <br/> **Note**: When Outlook or Outlook on the web (formerly known as Outlook Web App) is configured to forward a message, the **ForwardingSmtpAddress** property is added to the message.|
+|**The message type is** <p> **The message properties** \> **include the message type**|_MessageTypeMatches_ <br/> _ExceptIfMessageTypeMatches_|`MessageType`|Messages of the specified type. <br/> **Note**: When Outlook or Outlook on the web (formerly known as Outlook Web App) is configured to forward a message, the **ForwardingSmtpAddress** property is added to the message. In thin clients like Outlook on the web, encryption as a message type is currently not supported.|
 |**The message is classified as** <p> **The message properties** \> **include this classification**|_HasClassification_ <br/> _ExceptIfHasClassification_|`MessageClassification`|Messages that have the specified message classification. This is a custom message classification that you can create in your organization by using the **New-MessageClassification** cmdlet. <p> **Note**: This condition/exception isn't available in standalone EOP environments.|
 |**The message isn't marked with any classifications** <p> **The message properties** \> **don't include any classification**|_HasNoClassification_ <br/> _ExceptIfHasNoClassification_|n/a|Messages that don't have a message classification. <p> **Note**: This condition/exception isn't available in standalone EOP environments.|
 |**The message importance is set to** <p> **The message properties** \> **include the importance level**|_WithImportance_ <br/> _ExceptIfWithImportance_|`Importance`|Messages that are marked with the specified Importance level.|
-|
 
 ### Message headers
 
 > [!NOTE]
 > The search for words or text patterns in the subject or other header fields in the message occurs *after* the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages.
 
-<br>
-
-****
-
 |Condition or exception in the EAC|Condition and exception parameters in Exchange Online PowerShell|Property type|Description|
 |---|---|---|---|
 |**A message header includes** <p> **A message header** \> **includes any of these words**|_HeaderContainsMessageHeader_ and _HeaderContainsWords_ <br/> _ExceptIfHeaderContainsMessageHeader_ and _ExceptIfHeaderContainsWords_|First property: `MessageHeaderField` <p> Second property: `Words`|Messages that contain the specified header field, and the value of that header field contains the specified words. <p> The name of the header field and the value of the header field are always used together.|
 |**A message header matches** <p> **A message header** \> **matches these text patterns**|_HeaderMatchesMessageHeader_ and _HeaderMatchesPatterns_ <br/> _ExceptIfHeaderMatchesMessageHeader_ and _ExceptIfHeaderMatchesPatterns_|First property: `MessageHeaderField` <p> Second property: `Patterns`|Messages that contain the specified header field, and the value of that header field contains the specified regular expressions. <p> The name of the header field and the value of the header field are always used together.|
-|
 
 ## Property types
 
@@ -253,10 +208,6 @@ The property types that are used in conditions and exceptions are described in t
 
 > [!NOTE]
 > If the property is a string, trailing spaces are not allowed.
-
-<br>
-
-****
 
 |Property type|Valid values|Description|
 |---|---|---|
@@ -280,7 +231,6 @@ The property types that are used in conditions and exceptions are described in t
 |`UserScopeFrom`|Single value of **Inside the organization** (`InOrganization`) or **Outside the organization** (`NotInOrganization`)|A sender is considered to be inside the organization if either of the following conditions is true: <ul><li>The sender is a mailbox, mail user, group, or mail-enabled public folder that exists inside the organization.</li><li>The sender's email address is in an accepted domain that's configured as an authoritative domain or an internal relay domain, **and** the message was sent or received over an authenticated connection. For more information about accepted domains, see [Manage accepted domains in Exchange Online](../../mail-flow-best-practices/manage-accepted-domains/manage-accepted-domains.md).</li></ul> <p> A sender is considered to be outside the organization if either of the following conditions is true: <ul><li>The sender's email address isn't in an accepted domain.</li><li>The sender's email address is in an accepted domain that's configured as an external relay domain.</li></ul> <p> **Note**: To determine whether mail contacts are considered to be inside or outside the organization, the sender's address is compared with the organization's accepted domains.|
 |`UserScopeTo`|One of the following values: <ul><li>**Inside the organization** (`InOrganization`)</li><li>**Outside the organization** (`NotInOrganization`)</li></ul>|A recipient is considered to be inside the organization if either of the following conditions is true: <ul><li>The recipient is a mailbox, mail user, group, or mail-enabled public folder that exists inside the organization.</li><li>The recipient's email address is in an accepted domain that's configured as an authoritative domain or an internal relay domain, **and** the message was sent or received over an authenticated connection.</li></ul> <p> A recipient is considered to be outside the organization if either of the following conditions is true: <ul><li>The recipient's email address isn't in an accepted domain.</li><li>The recipient's email address is in an accepted domain that's configured as an external relay domain.</li></ul>|
 |`Words`|Array of strings|Specifies one or more words to look for. The words aren't case-sensitive, and can be surrounded by spaces and punctuation marks. Wildcards and partial matches aren't supported. For example, "contoso" matches " Contoso". <p> However, if the text is surrounded by other characters, it isn't considered a match. For example, "contoso" doesn't match the following values: <ul><li>Acontoso</li><li>Contosoa</li><li>Acontosob</li></ul> <p> The asterisk (\*) is treated as a literal character, and isn't used as a wildcard character.|
-|
 
 ## For more information
 

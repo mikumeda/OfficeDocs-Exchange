@@ -5,6 +5,8 @@ ms:assetid: 919a9bfb-c6df-490a-b2c4-51796b0f0596
 ms:mtpsurl: https://technet.microsoft.com/library/Dn635116(v=EXCHG.150)
 ms:contentKeyID: 61200292
 ms.reviewer: 
+ms.topic: article
+description: Using Active Directory Federation Services claims-based authentication with Outlook Web App and EAC in Microsoft Exchange Server SP1
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -40,9 +42,9 @@ There are multiple versions of AD FS that can be used, as summarized by the foll
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -541,7 +543,7 @@ Get-OwaVirtualDirectory | Set-OwaVirtualDirectory -AdfsAuthentication $true -Bas
 > [!NOTE]
 > The preceding Exchange Management Shell commands configure the OWA and ECP virtual directories on every Client Access server in your organization. If you don't want to apply these settings to all Client Access servers, use the <EM>-Identity</EM> parameter and specify the Client Access server. It's likely you will want to apply these settings only to the Client Access servers in your organization that are Internet facing.
 
-For details and syntax, see [Get-OwaVirtualDirectory](https://docs.microsoft.com/powershell/module/exchange/Get-OwaVirtualDirectory) and [Set-OwaVirtualDirectory](https://docs.microsoft.com/powershell/module/exchange/Set-OwaVirtualDirectory) or [Get-EcpVirtualDirectory](/powershell/module/exchange/Get-EcpVirtualDirectory) and [Set-EcpVirtualDirectory](/powershell/module/exchange/Set-EcpVirtualDirectory).
+For details and syntax, see [Get-OwaVirtualDirectory](/powershell/module/exchange/Get-OwaVirtualDirectory) and [Set-OwaVirtualDirectory](/powershell/module/exchange/Set-OwaVirtualDirectory) or [Get-EcpVirtualDirectory](/powershell/module/exchange/Get-EcpVirtualDirectory) and [Set-EcpVirtualDirectory](/powershell/module/exchange/Set-EcpVirtualDirectory).
 
 ## Step 9 - Restart or recycle Internet Information Services (IIS)
 

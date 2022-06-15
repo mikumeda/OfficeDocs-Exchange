@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: In Microsoft Exchange, specify the text to display for email clients that don't support Windows Rights Management
 ms.assetid: a9b2238a-b534-469c-a0c3-2768bc3d005b
 f1.keywords:
 - NOCSH

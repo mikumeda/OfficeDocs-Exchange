@@ -138,16 +138,11 @@ You can't use the **Get-FederationInformation** cmdlet to automatically discover
 
 The configuration parameters that you need to set are described in the following table:
 
-<br>
-
-****
-
 |Parameter|OrgRel in WW/GCC for GCC-H Tenant|OrgRel in GCC-H for WW/GCC Tenant|
 |---|---|---|
 |***DomainNames***|All the domains for the remote org. You need to collect and add these manually.|All the domains for the remote org. You need to collect and add these manually.|
 |***TargetApplicationUri***|Office365.us|Outlook.com|
 |***TargetAutodiscoverEpr***|`https://autodiscover-s.office365.us/autodiscover/autodiscover.svc/WSSecurity`|`https://autodiscover-s.outlook.com/autodiscover/autodiscover.svc/WSSecurity`|
-|
 
 > [!TIP]
 > Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Online](/answers/topics/office-exchange-server-itpro.html) or [Exchange Online Protection](https://social.technet.microsoft.com/forums/forefront/home?forum=FOPE).

@@ -35,10 +35,6 @@ We empower security admins to customize their security settings to satisfy the n
 
 These settings cover a range of features that are outside of security policies.
 
-<br>
-
-****
-
 |Security feature name|Standard|Strict|Comment|
 |---|---|---|---|
 |[Set up SPF to help prevent spoofing](/microsoft-365/security/office-365-security/set-up-spf-in-office-365-to-help-prevent-spoofing)|Yes|Yes||
@@ -56,11 +52,10 @@ These settings cover a range of features that are outside of security policies.
 |Use [spoof intelligence](/microsoft-365/security/office-365-security/learn-about-spoof-intelligence) to add senders to your allow list|Yes|Yes||
 |[Directory-Based Edge Blocking (DBEB)](/exchange/mail-flow-best-practices/use-directory-based-edge-blocking)|Enabled|Enabled|Domain Type = Authoritative|
 |[Set up multi-factor authentication for all admin accounts](/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication)|Enabled|Enabled||
-|
 
 ## Troubleshooting
 
-Troubleshoot general issues and trends by using the reports in the admin center. Find single point specific data about a message by using the message trace tool. Learn more about reporting at [Reporting and message trace in Exchange Online Protection](/microsoft-365/security/office-365-security/reporting-and-message-trace-in-exchange-online-protection). Learn more about the message trace tool at [Message trace in the Security & Compliance Center](/microsoft-365/security/office-365-security/message-trace-scc).
+Troubleshoot general issues and trends by using the reports in the admin center. Find single point specific data about a message by using the message trace tool. Learn more about reporting at [Reporting and message trace in Exchange Online Protection](/microsoft-365/security/office-365-security/reporting-and-message-trace-in-exchange-online-protection). Learn more about the message trace tool at [Message trace in Exchange Online](/exchange/monitoring/trace-an-email-message/message-trace-modern-eac).
 
 ## Report false positives and false negatives to Microsoft
 

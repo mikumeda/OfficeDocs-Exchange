@@ -5,6 +5,8 @@ ms:assetid: e7ad0ba5-3789-4a2b-9825-6bb1b321609c
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125022(v=EXCHG.150)
 ms:contentKeyID: 50646240
 ms.reviewer: 
+ms.topic: article
+description: About queues in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -65,8 +67,8 @@ The following table lists the files that constitute the queue database.
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -111,9 +113,9 @@ The keys for the queue database that are available in the EdgeTransport.exe.conf
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -145,12 +147,12 @@ The keys for the queue database that are available in the EdgeTransport.exe.conf
 </tr>
 <tr class="even">
 <td><p><em>QueueDatabaseLoggingBufferSize</em></p></td>
-<td><p>5 MB</p></td>
+<td><p>5 MB</p></td>
 <td><p>This key specifies the memory that's used to cache the transaction records before they're written to the transaction log file.</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>QueueDatabaseLoggingFileSize</em></p></td>
-<td><p>5 MB</p></td>
+<td><p>5 MB</p></td>
 <td><p>This key specifies the maximum size of a transaction log file. When the maximum log file size is reached, a new log file is opened.</p></td>
 </tr>
 <tr class="even">
@@ -170,12 +172,12 @@ The keys for the queue database that are available in the EdgeTransport.exe.conf
 </tr>
 <tr class="odd">
 <td><p><em>QueueDatabaseOnlineDefragSchedule</em></p></td>
-<td><p><code>1:00:00</code> or 1:00 A.M.</p></td>
-<td><p>This key specifies the time of day in 24 hour format to start the online defragmentation of the mail queue database. To specify a value, enter the value as a time: <em>hh:mm:ss</em>, where <em>h</em> = hours, <em>m</em> = minutes, and <em>s</em> = seconds.</p></td>
+<td><p><code>1:00:00</code> or 1:00 A.M.</p></td>
+<td><p>This key specifies the time of day in 24 hour format to start the online defragmentation of the mail queue database. To specify a value, enter the value as a time: <em>hh:mm:ss</em>, where <em>h</em> = hours, <em>m</em> = minutes, and <em>s</em> = seconds.</p></td>
 </tr>
 <tr class="even">
 <td><p><em>QueueDatabaseOnlineDefragTimeToRun</em></p></td>
-<td><p><code>3:00:00</code> or 3 hours</p></td>
+<td><p><code>3:00:00</code> or 3 hours</p></td>
 <td><p>This key specifies the length of time the online defragmentation task is allowed to run. Even if the defragmentation task doesn't finish in the time specified, the queue database is left in a consistent state. To specify a value, enter the value as a time span: <em>hh:mm:ss</em>, where <em>h</em> = hours, <em>m</em> = minutes, and <em>s</em> = seconds.</p></td>
 </tr>
 <tr class="odd">
@@ -209,14 +211,14 @@ Exchange 2013 also adds the **NextHopCategory** property to the queue based on t
 
 The values of **DeliveryType**, **NextHopCategory**, **NextHopDomain** and **NextHopConnector** are described in the following table.
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -260,9 +262,9 @@ The values of **DeliveryType**, **NextHopCategory**, **NextHopDomain** and **Nex
 <td><p>External</p></td>
 <td><p>This value is the list of smart hosts that are configured on the Send connector. Smart hosts can be configured as FQDNs, IP addresses or both. The values can be one of the following:</p>
 <ul>
-<li><p><strong>FQDN</strong>   The syntax is <code>&lt;FQDN1,FQDN2,...&gt;</code>. For example, <code>smarthost01.contoso.com</code> or <code>smarthost01.contoso.com,smarthost02.fabrikam.com</code>.</p></li>
-<li><p><strong>IP address</strong>   The syntax is <code>&lt;[IPAddress1],[IPAddress2],...&gt;</code>. For example, <code>[10.10.10.100]</code> or <code>[10.10.10.100],[10.10.10.101]</code>.</p></li>
-<li><p><strong>FQDN and IP address</strong>   The syntax is <code>&lt;[IPAddress1],FQDN1,...&gt;</code>, and depends on how the smart hosts are listed on the Send connector. For example, <code>[172.17.17.7],relay.tailspintoys.com</code> or <code>mail.contoso.com,[192.168.1.50]</code>.</p></li>
+<li><p><strong>FQDN</strong>   The syntax is <code>&lt;FQDN1,FQDN2,...&gt;</code>. For example, <code>smarthost01.contoso.com</code> or <code>smarthost01.contoso.com,smarthost02.fabrikam.com</code>.</p></li>
+<li><p><strong>IP address</strong>   The syntax is <code>&lt;[IPAddress1],[IPAddress2],...&gt;</code>. For example, <code>[10.10.10.100]</code> or <code>[10.10.10.100],[10.10.10.101]</code>.</p></li>
+<li><p><strong>FQDN and IP address</strong>   The syntax is <code>&lt;[IPAddress1],FQDN1,...&gt;</code>, and depends on how the smart hosts are listed on the Send connector. For example, <code>[172.17.17.7],relay.tailspintoys.com</code> or <code>mail.contoso.com,[192.168.1.50]</code>.</p></li>
 </ul></td>
 <td><p>This value is the GUID of the Send connector. For example, <code>4520e633-d83d-411a-bbe4-6a84648674ee</code>.</p></td>
 </tr>
@@ -459,10 +461,10 @@ The following table describes the management tasks you can perform on queues or 
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

@@ -63,15 +63,31 @@ For information about add-ins, see [Add-ins for Outlook](add-ins-for-outlook.md)
 
 ## Assign administrators the permissions required to install and manage add-ins for your organization
 
-### Use the EAC to assign permissions to administrators
+### Use the new EAC to assign permissions to administrators
 
-You can use the Exchange admin center (EAC) to assign administrators the permissions required to install and manage add-ins that are available from the Office Store for your organization.
+You can use the new Exchange admin center (EAC) to assign administrators the permissions required to install and manage add-ins that are available from the Office Store for your organization.
+
+1. Log in to the new EAC as a global administrator.
+2. Go to **Roles**, and then select **Admin Roles**. 
+3. Select an existing group or create a new one.
+4. If you are modifying an existing role, go to **Permissions**, add the permissions required to install and manage add-ins, and then click **Save**. If you are creating a new group, follow the wizard.
+
+For detailed information about how to do this, see [Manage role groups in Exchange Online](../../permissions-exo/role-groups.md).
 
 ## Assign users the permissions required to install and manage add-ins for their own use
 
-### Use the EAC to assign permissions to users
+### Use the classic EAC to assign permissions to users
 
-You can use the EAC to assign users the permissions required to view and modify custom add-ins for their own use. For detailed information about how to do this, see [Manage role groups in Exchange Online](../../permissions-exo/role-groups.md).
+You can use the classic EAC to assign users the permissions required to view and modify custom add-ins for their own use.
+
+1. Log in to the classic EAC as a global administrator.
+2. Go to **Permissions**, and then select **User Roles**. 
+3. Select an existing role assignment policy or create a new one.
+4. Type a name for the policy if you are creating a new one.
+5. Select some or all of the roles: **My Custom Apps**, **My MarketPlace Apps**, and **My ReadWriteMailbox Apps**.
+6. Click **Save**.
+
+For detailed information about how to do this, see [Manage role groups in Exchange Online](../../permissions-exo/role-groups.md).
 
 ## Prevent add-in downloads by turning off the Office Store across Outlook
 

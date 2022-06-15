@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: How to troubleshooting the UserThrottling Health set in Microsoft exchange
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

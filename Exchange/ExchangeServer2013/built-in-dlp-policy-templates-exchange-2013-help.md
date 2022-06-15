@@ -10,6 +10,7 @@ ms.assetid: 7e1917ab-1920-4a52-97d1-7dfe2add6198
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: "Admins can learn about the built-in data loss prevention (DLP) policies that are available in Exchange Server 2013."
 ---
 
 # DLP policy templates supplied in Exchange 2013
@@ -25,8 +26,8 @@ In Microsoft Exchange Server 2013, you can use data loss prevention (DLP) policy
 
 The following table lists the DLP policy templates in Exchange. To learn more about customizing these templates to create DLP policies, see [Manage DLP policies](manage-dlp-policies-exchange-2013-help.md).
 
-|**Template**|**Description**|
-|:-----|:-----|
+|Template|Description|
+|---|---|
 |Australia Financial Data|Helps detect the presence of information commonly considered to be financial data in Australia, including credit cards, and SWIFT codes.|
 |Australia Health Records Act (HRIP Act)|Helps detect the presence of information commonly considered to be subject to the Health Records and Information Privacy (HRIP) act in Australia, like medical account number and tax file number.|
 |Australia Personally Identifiable Information (PII) Data|Helps detect the presence of information commonly considered to be personally identifiable information (PII) in Australia, like tax file number and driver's license.|

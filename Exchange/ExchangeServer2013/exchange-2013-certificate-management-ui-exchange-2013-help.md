@@ -53,12 +53,12 @@ By default, the self-signed certificate that is installed on the Exchange 2013 M
 
 You can use the following cmdlets to manage digital certificates on an Exchange Client Access server:
 
-  - Import-ExchangeCertificate   This cmdlet is used to import certificates to a server. You can import a CA-signed certificate (to complete a pending certificate signing request (CSR)) or a certificate with a private key (PKCS \#12 files, generally with a .pfx extension, previously exported from a server along with the private key).
+  - Import-ExchangeCertificate   This cmdlet is used to import certificates to a server. You can import a CA-signed certificate (to complete a pending certificate signing request (CSR)) or a certificate with a private key (PKCS \#12 files, generally with a .pfx extension, previously exported from a server along with the private key).
 
-  - Remove-ExchangeCertificate   This cmdlet is used to remove certificates from a server.
+  - Remove-ExchangeCertificate   This cmdlet is used to remove certificates from a server.
 
-  - Enable-ExchangeCertificate   This cmdlet is used to assign services to a certificate.
+  - Enable-ExchangeCertificate   This cmdlet is used to assign services to a certificate.
 
-  - Get-ExchangeCertificate   This cmdlet is used to retrieve an Exchange certificate based on a variety of criteria.
+  - Get-ExchangeCertificate   This cmdlet is used to retrieve an Exchange certificate based on a variety of criteria.
 
-  - New-ExchangeCertificate   This cmdlet is used to create a new self-signed certificate or a CSR.
+  - New-ExchangeCertificate   This cmdlet is used to create a new self-signed certificate or a CSR.

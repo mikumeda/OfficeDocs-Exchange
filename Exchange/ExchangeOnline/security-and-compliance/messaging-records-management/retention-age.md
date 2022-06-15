@@ -21,7 +21,7 @@ manager: serdars
 # How retention age is calculated in Exchange Online
 
 > [!NOTE]
-> To proactively retain or delete mailbox content for information governance in Microsoft 365, we recommend that you use [retention policies and retention labels](/microsoft-365/compliance/retention) from the [Microsoft 365 compliance center](https://compliance.microsoft.com), instead of messaging records management that's described on this page. However, you should continue using messaging records management to move messages to archive mailboxes.
+> To proactively retain or delete mailbox content for information governance in Microsoft 365, we recommend that you use [retention policies and retention labels](/microsoft-365/compliance/retention) from the [Microsoft Purview compliance portal](https://compliance.microsoft.com), instead of messaging records management that's described on this page. However, you should continue using messaging records management to move messages to archive mailboxes.
 >
 > If you currently use messaging records management, this older feature will continue to work side-by-side with retention policies and retention labels. However, we recommend that going forward, you use retention policies and retention labels instead. They provide you with a single mechanism to centrally manage both retention and deletion of content across Microsoft 365.
 
@@ -35,10 +35,6 @@ The retention age of mailbox items is calculated from the date of delivery or in
 
 Items in the Deleted Items folder and items which may have a start and end date, such as calendar items (meetings and appointments) and tasks, are handled differently as shown in this table.
 
-<br>
-
-****
-
 |If the item type is...|And the item is...|The retention age is calculated based on...|
 |---|---|---|
 |Email message <p> Document <p> Fax <p> Journal item <p> Meeting request, response, or cancellation <p> Missed call <p> Notes|Not in the Deleted Items folder|Delivery date or date of creation|
@@ -49,19 +45,13 @@ Items in the Deleted Items folder and items which may have a start and end date,
 |Task|In the Deleted Items folder|A task expires according to its message-received date, if one exists. If a task doesn't have a message-received date, it expires according to its message-creation date. If a task has neither a message-received date nor a message-creation date, it doesn't expire.|
 |Contact|In any folder|Contacts aren't stamped with a start date or an expiration date, so they're skipped by the Managed Folder Assistant and don't expire.|
 |Corrupted|In any folder|Corrupted items are skipped by the Managed Folder Assistant and don't expire.|
-|
 
 ## Examples
-
-<p>
-
-****
 
 |If the user...|The retention tags on folder...|The Managed Folder Assistant...|
 |---|---|---|
 |Receives a message in the Inbox on 01/26/2019. Deletes the message on 2/27/2019.|Inbox: Delete in 365 days <p> Deleted Items: Delete in 30 days|Processes the message in the Inbox on 1/26/2019; stamps it with a start date of 01/26/2019 and an expiration date of 01/26/2020. <p> Processes the message again in the Deleted Items folder on 2/27/2019. It recalculates the expiration date based on the same start date (01/26/2019). Because the item is older than 30 days, it is expired immediately.|
 |Receives a message in the Inbox on 01/26/2019. Deletes the message on 2/27/2019.|Inbox: None (inherited or implicit) <p> Deleted Items: Delete in 30 days|Processes the message in the Deleted Items folder on 02/27/2019 and determines the item doesn't have a start date. <p> It stamps the current date as the start date, and 03/27/2019 as the expiration date. The item is expired on 3/27/2019, which is 30 days after the user deleted or moved it to the Deleted Items folder.|
-|
 
 ## More Info
 

@@ -5,6 +5,8 @@ ms:assetid: 0bb3a434-6651-473a-94eb-4eb9a34e6f70
 ms:mtpsurl: https://technet.microsoft.com/library/Dd335084(v=EXCHG.150)
 ms:contentKeyID: 49289158
 ms.reviewer: 
+ms.topic: how-to
+description: How to view role scopes in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

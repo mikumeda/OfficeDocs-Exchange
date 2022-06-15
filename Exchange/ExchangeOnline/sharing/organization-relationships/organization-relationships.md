@@ -25,15 +25,15 @@ Set up an organization relationship to share calendar information with an extern
 > [!NOTE]
 > Organization functionality of the Classic Exchange admin center experience is available in the new Exchange admin center as we continue to work on updated versions. If you're using **Edge** incognito and this page isn't working, enable the [third-party cookies](https://support.microsoft.com/microsoft-edge/temporarily-allow-cookies-and-site-data-in-microsoft-edge-597f04f2-c0ce-f08c-7c2b-541086362bd2).
 
-An organization relationship is a one-to-one relationship between businesses to allow users in each organization to view calendar availability information. When you set up the organization relationship, you are setting up your side of the relationship and specifying the level of information that the users in the external organization can view. The external organization may set up the same or different settings on their side. For example, if Contoso creates an organization relationship with Tailspin Toys, the users at Tailspin Toys will be able to schedule meetings with the users at Contoso by adding their email address to the meeting invitation. The availability of the invited Contoso user would display to the Tailspin Toys user. However, before Contoso can also see availability for users at Tailspin Toys, their administrator needs to set up an organization relationship with Contoso.
+An organization relationship is a one-to-one relationship between businesses to allow users in each organization to view calendar availability information. When you set up the organization relationship, you're responsible for setting up your side of the relationship. You specify the level of information that users in the external organization can view in your organization. The external organization is responsible for setting up their side of the relationship and specifying their level of information that's visible to users in your organization (which might be different than yours). The point is: the organization relationship must be set up at both ends for calendar availability information to be shared.
+
+For example, a Contoso admin creates an organization relationship with Tailspin Toys, and a Tailspin Toys admin creates an organization relationship with Contoso. As a result, Tailsping Toys users will be able to schedule meetings and view the availability of Contoso users Contoso by adding Contoso email addresses to meeting invitations. Likewise, Contoso users will also see the availability of Tailspin Toys users when scheduling meetings.
 
 There are three levels of access that you can specify:
 
-- No access
-
-- Access to availability (free/busy) time only
-
-- Access to free/busy, including time, subject, and location
+- No access.
+- Access to availability (free/busy) time only.
+- Access to free/busy, including time, subject, and location.
 
 > [!NOTE]
 > If users don't want to share their free/busy information with others, they can change their permissions entry in Outlook. To do this, users go to the **Calendar Properties** \> **Permissions** tab, select one or more users/groups, and select any of the **Permissions** options.

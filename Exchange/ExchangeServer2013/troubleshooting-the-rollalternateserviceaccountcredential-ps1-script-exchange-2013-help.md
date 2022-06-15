@@ -5,6 +5,8 @@ ms:assetid: 2bbf36d3-eb89-4f92-a8de-259a7cb64d62
 ms:mtpsurl: https://technet.microsoft.com/library/Ff808310(v=EXCHG.150)
 ms:contentKeyID: 63937187
 ms.reviewer: 
+ms.topic: article
+description: Troubleshoot the RollAlternateServiceAccountCredential.ps1 script in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -21,11 +23,11 @@ This topic provides solutions and information about common errors that may occur
 
 ## One or more of the Client Access servers can't be updated with the password
 
-## Problem
+**Problem**
 
 When you use the parameters *ToEntireForest* or *ToArrayMembers* with the script, in some instances, one or more of the Client Access servers may not be updated.
 
-## Resolution
+**Resolution**
 
 Verify the servers the script will target all required servers by using the **Get-ClientAccessArray** cmdlet, as shown in the following example.
 
@@ -37,21 +39,21 @@ If the server that's failing to update is a member of the Client Access array an
 
 ## Some servers aren't responding to the script
 
-## Problem
+**Problem**
 
 In some circumstances, servers might fail to update because of transient errors such as a bad network connection.
 
-## Resolution
+**Resolution**
 
 Verify that the servers in question have network and Active Directory connectivity, and then try the script again.
 
 ## Some array members are out of service for an extended period of time
 
-## Problem
+**Problem**
 
 If a server is out of rotation for a longer period of time but is still a member of the array, as determined by the **Get-ClientAccessArray cmdlet**, the script functionality may be impaired when using the parameters *ToArrayMembers* and *ToEntireForest*. The same problem will occur if a server has had a permanent failure but hasn't been cleanly removed from your deployment.
 
-## Resolution
+**Resolution**
 
 To resolve this issue, remove the server from your deployment using Exchange Setup or run the script in attended mode until the server can be removed.
 

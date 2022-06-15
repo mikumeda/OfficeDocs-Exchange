@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to update the public folder hierarchy in Microsoft Exchange Server
 ms.assetid: a7b2fb51-0207-4d7d-938d-466ae110bb90
 f1.keywords:
 - NOCSH

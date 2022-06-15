@@ -32,8 +32,8 @@ As stated earlier, information about Bcc'ed recipients is stored with the messag
 
 Information about expanded distribution group recipients is stored with the message after you place a mailbox on In-Place Hold or Litigation Hold. Distribution group membership is determined at the time the message is sent. The expanded recipients list stored with the message is not impacted by changes to membership of the group after the message is sent.
 
-|**Information about...**|**Is stored in...**|**Is stored by default?**|**Is accessible to...**|
-|:-----|:-----|:-----|:-----|
+|Information about...|Is stored in...|Is stored by default?|Is accessible to...|
+|---|---|---|---|
 |To and Cc recipients|Message properties in the sender and recipients' mailboxes.|Yes|Sender, recipients, and compliance officers|
 |Bcc recipients|Message property in the sender's mailbox.|Yes|Sender and compliance officers|
 |Expanded distribution group recipients|Message properties in the sender's mailbox.|No. Expanded distribution group recipient information is stored after a mailbox is placed on In-Place Hold or Litigation Hold.|Compliance officers|
@@ -44,8 +44,8 @@ When searching for messages sent to a recipient, eDiscovery search results now i
 
 Scenario 1: John is a member of the US-Sales distribution group. This table shows eDiscovery search results when Bob sends a message to John directly or indirectly via a distribution group.
 
-|**When you search Bob's mailbox for messages sent...**|**And the message is sent with...**|**Results include message?**|
-|:-----|:-----|:-----|
+|When you search Bob's mailbox for messages sent...|And the message is sent with...|Results include message?|
+|---|---|---|
 |To:John|John on TO|Yes|
 |To:John|US-Sales on TO|Yes|
 |To:US-Sales|US-Sales on TO|Yes|
@@ -55,8 +55,8 @@ Scenario 1: John is a member of the US-Sales distribution group. This table show
 
 Scenario 2: Bob sends an email to John (To/Cc) and Jack (Bcc directly, or indirectly via a distribution group). The table below shows eDiscovery search results.
 
-|**When you search...**|**For messages sent...**|**Results include message?**|**Notes**|
-|:-----|:-----|:-----|:-----|
+|When you search...|For messages sent...|Results include message?|Notes|
+|---|---|---|---|
 |Bob's mailbox|To/Cc:John|Yes|Presents an indication that Jack was Bcc'ed.|
 |Bob's mailbox|Bcc:Jack|Yes|Presents an indication that Jack was Bcc'ed.|
 |Bob's mailbox|Bcc:Jack (via distribution group)|Yes|List of members of the Bcc'ed distribution group, expanded when the message was sent, is visible in eDiscovery search preview, export and logs.|

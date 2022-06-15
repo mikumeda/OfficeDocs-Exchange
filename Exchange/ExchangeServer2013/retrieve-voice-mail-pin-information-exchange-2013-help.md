@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: You can retrieve PIN information for a user who is enabled for Unified Messaging (UM).
 ms.assetid: 01517cca-99fe-46b2-b586-19e8d2707728
 f1.keywords:
 - NOCSH

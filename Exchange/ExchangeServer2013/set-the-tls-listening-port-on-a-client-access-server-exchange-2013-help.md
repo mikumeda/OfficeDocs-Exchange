@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/JJ673576(v=EXCHG.150)
 ms:contentKeyID: 49315561
 ms.reviewer: 
 manager: serdars
+ms.topic: how-to
+description: How to set the TLS listening port on a Client Access server in Microsoft Exchange Server
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
@@ -25,7 +27,7 @@ You may have to configure the TLS listening port to 5061 if you want to:
 
 - Set the VoIP security setting on a UM dial plan to Secured.
 
-- Integrate with Microsoft Office Communications Server 2007 R2 or Microsoft Lync Server.
+- Integrate with Microsoft Office Communications Server 2007 R2 or Microsoft Lync Server.
 
 - Use mutual Transport Layer Security (mutual TLS) to encrypt network data between Client Access servers, Mailbox servers running the Microsoft Exchange Unified Messaging service, and VoIP gateways, Private Branch eXchanges (PBXs) enabled for Session Initiation Protocol (SIP), IP PBXs, or session border controllers (SBCs).
 

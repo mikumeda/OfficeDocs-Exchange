@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: Provision recipients for offline address book downloads in Microsoft Exchange
 ms.assetid: 141751ac-16d3-4e3c-b70c-004aeedcb5a0
 f1.keywords:
 - NOCSH

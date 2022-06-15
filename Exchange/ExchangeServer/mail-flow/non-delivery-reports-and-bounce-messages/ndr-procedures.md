@@ -365,10 +365,6 @@ The identity of an NDR uses one of these formats:
 
 This table lists the supported language that codes you can use in custom NDRs.
 
-<br><br>
-
-****
-
 |Language code|Language|
 |---|---|
 |af|Afrikaans|
@@ -468,7 +464,6 @@ This table lists the supported language that codes you can use in custom NDRs.
 |zh-Hant|Chinese (Traditional)|
 |zh-HK|Chinese (Hong Kong)|
 |zu-ZA|isiZulu (South Africa)|
-|
 
 To control the languages that are used in NDRs, you use these parameters on the **Set-TransportConfig** cmdlet:
 
@@ -497,10 +492,6 @@ To control whether Exchange uses HTML or plain text in NDRs, you use these param
 
 This table describes the HTML tags that you can use in the NDR text.
 
-<br><br>
-
-****
-
 |Description|HTML tags|
 |---|---|
 |Bold|`<B>` and `</B>`|
@@ -508,13 +499,8 @@ This table describes the HTML tags that you can use in the NDR text.
 |Line break|`<BR>`|
 |Paragraph|`<P>` and `</P>`|
 |Hyperlink|`<A HREF="url">` and `</A>` <p> **Note**: Because this tag contains double quotation marks, you need to use single quotation marks (not double quotation marks) around the complete text string if you use this tag in your custom text. Otherwise, you'll receive an error.|
-|
 
 Certain characters in an NDR require escape codes to identify them literally, and not by their function in the NDR. These characters are described in the following table:
-
-<br><br>
-
-****
 
 |Character|Escape code|
 |---|---|
@@ -522,7 +508,6 @@ Certain characters in an NDR require escape codes to identify them literally, an
 |\>|`&gt;`|
 |"|`&quot;`|
 |&|`&amp;`|
-|
 
 For example, if you want the NDR to display the text `Please contact the Help Desk at <1234>.`, you need to the value `"Please contact the Help Desk at &lt;1234&gt;."`
 

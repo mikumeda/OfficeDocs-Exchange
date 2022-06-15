@@ -5,6 +5,8 @@ ms:assetid: d9bb0d14-db59-456c-8f50-a8d7f7323df9
 ms:mtpsurl: https://technet.microsoft.com/library/Dd351179(v=EXCHG.150)
 ms:contentKeyID: 49289429
 ms.reviewer: 
+ms.topic: how-to
+description: How to view role entries in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

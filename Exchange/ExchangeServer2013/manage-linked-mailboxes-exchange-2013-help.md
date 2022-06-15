@@ -51,9 +51,9 @@ The following figure illustrates the relationship between the linked user accoun
 
 ## Use the EAC to create a linked mailbox
 
-1. In the EAC, navigate to **Recipients**  \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients**  \> **Mailboxes**.
 
-2. Click **New** \> **Linked mailbox**.
+2. Click **New** \> **Linked mailbox**.
 
 3. On the **New linked mailbox** page, in the **Trusted forest or domain** box, select the name of the account forest that contains the user account that you're creating the linked mailbox for. Click **Next**.
 
@@ -81,7 +81,7 @@ The following figure illustrates the relationship between the linked user accoun
      > [!NOTE]
      > Because the user account that is created in the Exchange forest is disabled when you create a linked mailbox, the user doesn't use the user logon name to sign in to the linked mailbox. They sign in using their credentials from the account forest.
 
-7. Click **More options** to configure the following boxes. Otherwise, skip to Step 8 to save the new linked mailbox.
+7. Click **More options** to configure the following boxes. Otherwise, skip to Step 8 to save the new linked mailbox.
 
    - **Alias**: Type the alias, which specifies the email alias for the linked mailbox. The user's alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
 
@@ -112,7 +112,7 @@ For syntax and parameter information, see [New-Mailbox](/powershell/module/excha
 
 To verify that you've successfully created a linked mailbox, do one of the following:
 
-- In the EAC, navigate to **Recipients**  \> **Mailboxes**. The new linked mailbox is displayed in the mailbox list. Under **Mailbox Type**, the type is **Linked**.
+- In the EAC, navigate to **Recipients**  \> **Mailboxes**. The new linked mailbox is displayed in the mailbox list. Under **Mailbox Type**, the type is **Linked**.
 
 - In the Shell, run the following command to display information about the new linked mailbox.
 
@@ -131,7 +131,7 @@ You can also change properties for multiple linked mailboxes at the same time. F
 
 ## Use the EAC to change linked mailbox properties
 
-1. In the EAC, navigate to **Recipients**  \> **Mailboxes**.
+1. In the EAC, navigate to **Recipients**  \> **Mailboxes**.
 
 2. In the list of mailboxes, click the linked mailbox that you want to change the properties for, and then click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon").
 
@@ -157,9 +157,9 @@ Use the **General** section to view or change basic information about the user.
 
 - **\* Linked mailbox name**: This is the name that's listed in Active Directory. If you change this name, it can't exceed 64 characters.
 
-- **\* Display name**: This name appears in your organization's address book, on the To: and From: lines in email, and in the Mailboxes list in the EAC. This name can't contain empty spaces before or after the display name.
+- **\* Display name**: This name appears in your organization's address book, on the To: and From: lines in email, and in the Mailboxes list in the EAC. This name can't contain empty spaces before or after the display name.
 
-- **\* User logon name**    For user mailboxes, this is the name that the user uses to sign in to their mailbox and to log on to the domain. For linked mailboxes, the corresponding user account that is created in the Exchange forest when the linked mailbox was created is disabled. The user uses their credentials from the account forest to sign in to the linked mailbox.
+- **\* User logon name**    For user mailboxes, this is the name that the user uses to sign in to their mailbox and to log on to the domain. For linked mailboxes, the corresponding user account that is created in the Exchange forest when the linked mailbox was created is disabled. The user uses their credentials from the account forest to sign in to the linked mailbox.
 
   If you change this name, it must be unique in your organization.
 
@@ -173,7 +173,7 @@ Click **More options** to view or change these additional properties:
 
 - **Mailbox database**: This read-only box displays the name of the mailbox database that hosts the mailbox. To move the mailbox to a different database, select it in the mailbox list, and then click **Move mailbox to a different database** in the Details pane.
 
-- **\* Alias**: This specifies the email alias for the linked mailbox. The alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
+- **\* Alias**: This specifies the email alias for the linked mailbox. The alias is the portion of the email address on the left side of the at (@) symbol. It must be unique in the forest.
 
 - **First name**, **Initials**, **Last name**
 
@@ -212,13 +212,13 @@ Click **More options** to view or change the mailbox storage quota and the delet
 
 Use the **Email address** section to view or change the email addresses associated with the linked mailbox. This includes the user's primary SMTP addresses and any associated proxy addresses. The primary SMTP address (also known as the *default reply address*) is displayed in bold text in the address list, with the uppercase **SMTP** value in the **Type** column.
 
-- **Add**  Click **Add** ![Add Icon.](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon") to add a new email address for this mailbox. Select one of following address types:
+- **Add**  Click **Add** ![Add Icon.](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon") to add a new email address for this mailbox. Select one of following address types:
 
-  - **SMTP**: This is the default address type. Click this radio button and then type the new SMTP address in the **\* Email address** box.
+  - **SMTP**: This is the default address type. Click this radio button and then type the new SMTP address in the **\* Email address** box.
 
   - **EUM**: An EUM (Exchange Unified Messaging) address is used by the Microsoft Exchange Unified Messaging service to locate UM-enabled users within an Exchange organization. EUM addresses consist of the extension number and the UM dial plan for the UM-enabled user. Click this radio button and type the extension number in the **Address/Extension** box. Then click **Browse** and select a dial plan for the user.
 
-  - **Custom address type**: Click this button and type one of the supported non-SMTP email address types in the **\* Email address** box.
+  - **Custom address type**: Click this button and type one of the supported non-SMTP email address types in the **\* Email address** box.
 
     > [!NOTE]
     > With the exception of X.400 addresses, Exchange doesn't validate custom addresses for proper formatting. You must make sure that the custom address you specify complies with the format requirements for that address type.

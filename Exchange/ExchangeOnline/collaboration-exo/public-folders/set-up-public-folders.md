@@ -93,4 +93,6 @@ The public folder will be mail-enabled and the name of the public folder will be
 For information about how to use Exchange Online PowerShell to mail-enable a public folder, see [Enable-MailPublicFolder](/powershell/module/exchange/enable-mailpublicfolder).
 
 > [!NOTE]
-> If you have a hybrid configuration, the public folders created on Exchange Online are only visible to cloud-based mailboxes. Conversely, public folders created on-premises are only visible to on-premises mailboxes. <br/><br/> To complete a migration from Exchange Server 2010 to Exchange Online with public folders, see [Configure legacy on-premises public folders for a hybrid deployment](./set-up-legacy-hybrid-public-folders.md).
+> If you have a hybrid configuration, the public folders created on Exchange Online are only visible to cloud-based mailboxes. Conversely, public folders created on-premises are only visible to on-premises mailboxes.
+>
+> To complete a migration from Exchange Server 2010 to Exchange Online with public folders, see [Configure legacy on-premises public folders for a hybrid deployment](./set-up-legacy-hybrid-public-folders.md).

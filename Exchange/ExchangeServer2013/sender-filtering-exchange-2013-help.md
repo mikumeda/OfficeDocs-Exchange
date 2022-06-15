@@ -5,6 +5,8 @@ ms:assetid: b833f864-ff10-46a0-a653-28fb9ba30896
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124354(v=EXCHG.150)
 ms:contentKeyID: 49248686
 ms.reviewer: 
+ms.topic: article
+description: About Sender filtering in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

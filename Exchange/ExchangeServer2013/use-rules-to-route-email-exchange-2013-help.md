@@ -2,8 +2,11 @@
 title: 'Use transport rules to route email based on a list of words, phrases, or patterns: Exchange 2013 Help'
 TOCTitle: Use transport rules to route email based on a list of words, phrases, or patterns
 ms.author: serdars
+manager: serdars
 author: msdmaguire
 ms.reviewer: 
+ms.topic: article
+description: Use transport rules to route email based on a list of words, phrases, or patterns in Microsoft Exchange
 ms.assetid: 4c5bee1b-58b5-4152-baef-86fa103050ae
 f1.keywords:
 - NOCSH
@@ -16,7 +19,7 @@ _**Applies to:** Exchange Server 2013_
 
 To help your users comply with your organization's email policies, you can use Exchange transport rules to determine how email containing specific words or patterns is routed. For a short list of words or phrases, you can use the Exchange admin center. For a longer list, you might want to use the Exchange Module for Windows PowerShell to read the list from a text file.
 
-If your organization uses Data Loss Prevention (DLP), see [Data loss prevention](data-loss-prevention-exchange-2013-help.md) for additional options for identifying and routing email that contains sensitive information.
+If your organization uses Data loss prevention (DLP), see [Data loss prevention](data-loss-prevention-exchange-2013-help.md) for additional options for identifying and routing email that contains sensitive information.
 
 ## Example 1: Use a short list of unacceptable words
 <a name="shortlist"> </a>
@@ -41,15 +44,12 @@ New-TransportRule -Name "Block messages with unacceptable words" -SubjectOrBodyC
 
 The text file can contain regular expressions for patterns. These expressions are not case-sensitive. Common regular expressions include:
 
-****
-
 |Expression|Matches|
 |---|---|
 |**.**|Any single character|
 |**\***|Any additional characters|
 |**\d**|Any decimal digit|
 |[*character_group* ]|Any single character in *character_group*.|
-|
 
 For example, this text file contains common misspellings of Microsoft.
 

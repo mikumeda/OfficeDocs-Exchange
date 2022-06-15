@@ -5,6 +5,8 @@ ms:assetid: 542b7718-9345-40cc-bcb2-e307e70a1fa2
 ms:mtpsurl: https://technet.microsoft.com/library/Ff630916(v=EXCHG.150)
 ms:contentKeyID: 55129210
 ms.reviewer: 
+ms.topic: how-to
+description: How to set credentials to use with the Microsoft Exchange UM Troubleshooting Tool
 manager: serdars
 ms.author: serdars
 author: msdmaguire

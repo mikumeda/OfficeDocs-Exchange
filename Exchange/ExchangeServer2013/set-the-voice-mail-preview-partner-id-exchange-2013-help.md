@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to set the Voice Mail Preview partner ID in Microsoft Exchange Server
 ms.assetid: ab98c320-9952-47a7-b141-ddfc2c0ad419
 f1.keywords:
 - NOCSH

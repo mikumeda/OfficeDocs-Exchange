@@ -343,10 +343,8 @@ A number of commands now need to be run both in your Exchange Server on-premises
 1. From any of your Exchange 2016 or Exchange 2019 servers hosting public folder mailboxes, execute the following script. This script will synchronize mail-enabled public folders from your local Active Directory to Exchange Online. Make sure that you have downloaded the latest version of this script and that you're running it from Exchange Management Shell.
 
    ```PowerShell
-   .\Sync-ModernMailPublicFolders.ps1 -Credential (Get-Credential) -CsvSummaryFile:sync_summary.csv
+   .\Sync-ModernMailPublicFolders.ps1 -CsvSummaryFile:sync_summary.csv
    ```
-
-   - `Credential` is your Exchange Online administrative username and password.
 
    - `CsvSummaryFile` is the file path to where you want your log file of synchronization operations and errors located. The log will be in .csv format.
 
@@ -464,12 +462,12 @@ The expected result if public folders are locked is:
 
 You need to check the following items before you can complete your public folder migration:
 
-1. Confirm that there are no other public folder mailbox moves or public folder moves going on in your on-premises Exchange environment. To do this, use the **Get-MoveRequest** and **Get-PublicFolderMoveRequest** cmdlets to list any existing public folder moves. If there are any moves in progress, or in the **Completed** state, remove them.
+1. Confirm that there are no other public folder mailbox moves or public folder moves going on in your on-premises Exchange environment. To do this, use the **Get-MoveRequest** and **Get-PublicFolderMoveRequest** cmdlets to list any existing public folder moves. If there are any moves [i](/exchange/troubleshoot/public-folders/migrationbatch-fails-no-public-folder-mailboxes)n progress, or in the **Completed** state, remove them.
 
 2. At this point, we recommend re-running the following script to ensure that any new mail-enabled public folders are synchronized with Exchange Online:
 
    ```PowerShell
-   .\Sync-ModernMailPublicFolders.ps1 -Credential (Get-Credential) -CsvSummaryFile:sync_summary.csv
+   .\Sync-ModernMailPublicFolders.ps1 -CsvSummaryFile:sync_summary.csv
    ```
 
 3. If your environment has multiple active directory domains, ensure the steps in ["No active public folder mailboxes were found" error and migration batch fails at Complete-MigrationBatch command](/exchange/troubleshoot/public-folders/migrationbatch-fails-no-public-folder-mailboxes) are followed before initiating completing.

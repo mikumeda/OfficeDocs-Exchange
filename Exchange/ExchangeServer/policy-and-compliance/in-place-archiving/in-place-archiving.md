@@ -26,13 +26,15 @@ You can provision a user's archive mailbox on the same mailbox database as the u
 
 The following table lists the client applications that can be used to access archive mailboxes.
 
-|**Client**|**Access to archive mailbox?**|
-|:-----|:-----|
-|Outlook for Mac for Office 365 <br/><br/> Outlook 2016 for Mac or later <br/><br/> Microsoft 365 Apps for enterprise <br/><br/> Outlook 2013 or later <br/><br/> Outlook on the web|Yes. Users can copy or move items from their primary mailbox to their archive mailbox, and can also use retention policies to move items to the archive. <br/><br/> Outlook doesn't create a local copy of the archive mailbox on a user's computer, even if it's configured to use Cached Exchange Mode. Users can access an archive mailbox in online mode only.|
+|Client|Access to archive mailbox?|
+|---|---|
+|Outlook for Mac for Office 365 <p> Outlook 2016 for Mac or later <p> Microsoft 365 Apps for enterprise <p> Outlook 2013 or later <p> Outlook on the web|Yes. Users can copy or move items from their primary mailbox to their archive mailbox, and can also use retention policies to move items to the archive. <p> Outlook doesn't create a local copy of the archive mailbox on a user's computer, even if it's configured to use Cached Exchange Mode. Users can access an archive mailbox in online mode only.|
 |Exchange ActiveSync|No|
 
 > [!NOTE]
-> • In-Place Archiving is a premium feature and requires an Exchange Enterprise client access license (CAL). For details about how to license Exchange, see [Exchange licensing FAQs](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview). <br/>• For details about the versions of Outlook that are required to access an archive mailbox, see [Outlook license requirements for Exchange features](https://support.microsoft.com/office/46b6b7c5-c3ca-43e5-8424-1e2807917c99).
+>
+> - In-Place Archiving is a premium feature and requires an Exchange Enterprise client access license (CAL). For details about how to license Exchange, see [Exchange licensing FAQs](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview).
+> - For details about the versions of Outlook that are required to access an archive mailbox, see [Outlook license requirements for Exchange features](https://support.microsoft.com/office/46b6b7c5-c3ca-43e5-8424-1e2807917c99).
 
 ## Moving messages to the archive mailbox
 
@@ -58,8 +60,8 @@ To learn more about retention policies, retention tags, and the **Move to Archiv
 
 Exchange Server Setup creates a default archive and retention policy named **Default MRM Policy**. This policy contains retention tags that have the **Move to Archive** action, as shown in the following table.
 
-|**Retention tag name**|**Tag type**|**Description**|
-|:-----|:-----|:-----|
+|Retention tag name|Tag type|Description|
+|---|---|---|
 |**Default 2 year move to archive**|Default (DPT)|Messages are automatically moved to the archive mailbox after two years. Applies to items in the entire mailbox that don't have a retention tag applied explicitly or inherited from the folder.|
 |**Personal 1 year move to archive**|Personal|Messages are automatically moved to the archive mailbox after one year.|
 |**Personal 5 year move to archive**|Personal|Messages are automatically moved to the archive mailbox after five years.|
@@ -91,8 +93,8 @@ To help with this control, you can configure archive mailboxes with an *archive 
 
 The following table lists the events logged and warning messages sent when the archive warning quota and archive quota are met.
 
-|**Quota**|**Event ID**|**Type**|**Source**|**Category**|**Message**|
-|:-----|:-----|:-----|:-----|:-----|:-----|
+|Quota|Event ID|Type|Source|Category|Message|
+|---|---|---|---|---|---|
 |Archive warning quota|10022|Warning|MSExchangeMailboxAssistants|Managed Folder Assistant|`The archive mailbox '<Display Name>:<GUID>:<Mailbox Database>:<Server FQDN>' exceeded the archive warning quota '<Archive warning quota>'. Archive mailbox size is '<Size>' bytes.`|
 |Archive quota|8537|Warning|MSExchangeIS|General|`The archive mailbox for <Legacy DN> has exceeded the maximum archive mailbox size. You can't copy or move items into the archive mailbox. All message retention actions that move items to the archive mailbox will fail, and the primary mailbox may contain items with expired retention tags until the archive mailbox is within the maximum size limit. The mailbox owner should be notified about the condition of the archive mailbox.`|
 
@@ -117,7 +119,6 @@ In Exchange Server, creating and managing archive mailboxes is integrated with c
 - **Creating an archive mailbox**: You can enable an archive mailbox for an existing mailbox or you can create an archive mailbox when creating a new mailbox. .
 
 - **Moving an archive mailbox**: You can move a user's archive mailbox to another mailbox database on the same Mailbox server or to another server, independent of the primary mailbox. To move a user's archive mailbox, you must create a mailbox move request. For details, see [Manage on-premises mailbox moves in Exchange Server](../../architecture/mailbox-servers/manage-mailbox-moves.md).
-
 
 - **Disabling an archive mailbox**: You may want to disable a user's archive mailbox for troubleshooting purposes or if you're moving the primary mailbox to a version of Exchange that doesn't support In-Place Archiving. Disabling an archive is similar to disabling a primary mailbox. In on-premises deployments, a disabled archive mailbox is retained in the mailbox database until the deleted mailbox retention period for that database is reached. During this period, you can reconnect the same disabled archive mailbox to a user's primary mailbox. When the deleted mailbox retention period is reached, the disconnected archive mailbox is purged from the mailbox database.
 

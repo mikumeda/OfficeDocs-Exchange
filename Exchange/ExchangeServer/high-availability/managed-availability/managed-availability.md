@@ -206,8 +206,8 @@ The two primary management tools for managed availability are the Windows Event 
 
 There are 12 cmdlets used for managed availability, which are described in the following table.
 
-|**Cmdlet**|**Description**|
-|:-----|:-----|
+|Cmdlet|Description|
+|---|---|
 |[Get-ServerHealth](/powershell/module/exchange/get-serverhealth)|Used to get raw server health information, such as health sets and their current state (healthy or unhealthy), health set monitors, server components, target resources for probes, and timestamps related to probe or monitor start or stop times, and state transition times.|
 |[Get-HealthReport](/powershell/module/exchange/get-healthreport)|Used to get a summary health view that includes health sets and their current state.|
 |[Get-MonitoringItemIdentity](/powershell/module/exchange/get-monitoringitemidentity)|Used to view the probes, monitors, and responders associated with a specific health set.|

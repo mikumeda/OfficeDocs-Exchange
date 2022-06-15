@@ -18,7 +18,7 @@ manager: serdars
 
 # Exchange architecture
 
-Exchange use a single building block architecture that provides email services for deployments at all sizes, from small organizations to the largest multi-national corporations. This architecture is describe in the following diagram.
+Exchange uses a single building block architecture that provides email services for deployments of all sizes, from small organizations to the largest multi-national corporations. This architecture is described in the following diagram.
 
 ![Exchange architecture.](../media/72f56401-0a52-43d0-9d3d-03e84f2f93ba.png)
 

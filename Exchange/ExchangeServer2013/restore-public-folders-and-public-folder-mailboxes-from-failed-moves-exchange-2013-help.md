@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: How to restore public folders and public folder mailboxes from failed moves.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

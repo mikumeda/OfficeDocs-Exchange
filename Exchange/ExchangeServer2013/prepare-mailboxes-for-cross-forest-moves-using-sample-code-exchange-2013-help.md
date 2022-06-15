@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/Ee861124(v=EXCHG.150)
 ms:contentKeyID: 49360517
 ms.reviewer:
 manager: serdars
+ms.topic: article
+description: How to prepare mailboxes for cross-forest moves using sample code in Microsoft Exchange Server
 ms.author: serdars
 author: msdmaguire
 f1.keywords:

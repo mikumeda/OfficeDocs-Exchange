@@ -51,8 +51,8 @@ When you configure TNEF conversion options for a remote domain, the settings are
 
 The TNEF conversion options for remote domains are described in this table:
 
-|**Setting**|**Value in the EAC**|**Value in Exchange Management Shell**|
-|:-----|:-----|:-----|
+|Setting|Value in the EAC|Value in Exchange Management Shell|
+|---|---|---|
 |Use TNEF for all messages sent to the remote domain.|**Always**| `$true`|
 |Never use TNEF for any messages sent to the remote domain.|**Never**| `$false`|
 |TNEF messages aren't specifically allowed or prevented for recipients in the remote domain. This is the default value.  <br/> Whether TNEF messages are sent to recipients in the remote domain depends on the specific setting on the mail contact or mail user, or the setting specified by the sender in Outlook.|**Follow user settings**| `$null` (blank)|

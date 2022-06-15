@@ -339,11 +339,11 @@ A small subset of actions that are available on Mailbox servers are also availab
 <td><p><code>String</code></p></td>
 <td><p>Generates an event with the specified text in the Application log of the local Edge Transport server. The entry contains the following information:</p>
 <ul>
-<li><p><strong>Level</strong>   <code>Information</code></p></li>
-<li><p><strong>Source</strong>   <code>MSExchange Messaging Policies</code></p></li>
-<li><p><strong>Event ID</strong>   <code>4000</code></p></li>
-<li><p><strong>Task Category</strong>   <code>Rules</code></p></li>
-<li><p><strong>EventData</strong>   <code>The following message is logged by an action in the rules: &lt;text you specify&gt;.</code></p></li>
+<li><p><strong>Level</strong>   <code>Information</code></p></li>
+<li><p><strong>Source</strong>   <code>MSExchange Messaging Policies</code></p></li>
+<li><p><strong>Event ID</strong>   <code>4000</code></p></li>
+<li><p><strong>Task Category</strong>   <code>Rules</code></p></li>
+<li><p><strong>EventData</strong>   <code>The following message is logged by an action in the rules: &lt;text you specify&gt;.</code></p></li>
 </ul></td>
 <td><p>Edge Transport servers only</p></td>
 <td><p>Exchange 2007 or later</p></td>
@@ -476,14 +476,14 @@ The property values that are used for actions in transport rules are described i
 </ul></td>
 <td><p>Specifies what to do if the disclaimer can't be applied to a message. There are situations where the contents of a message can't be altered (for example, the message is encrypted). The available fallback actions are:</p>
 <ul>
-<li><p><strong>Wrap</strong>   The original message is wrapped in a new message envelope, and the disclaimer text is inserted into the new message. This is the default value.</p>
+<li><p><strong>Wrap</strong>   The original message is wrapped in a new message envelope, and the disclaimer text is inserted into the new message. This is the default value.</p>
 <p><strong>Notes</strong>:</p>
 <ul>
 <li><p>Subsequent transport rules are applied to the new message envelope, not to the original message. Therefore, configure these rules with a lower priority than other rules.</p></li>
 <li><p>If the original message can't be wrapped in a new message envelope, the original message isn't delivered. The message is returned to the sender in an NDR.</p></li>
 </ul></li>
-<li><p><strong>Ignore</strong>   The rule is ignored and the message is delivered without the disclaimer</p></li>
-<li><p><strong>Reject</strong>   The message is returned to the sender in an NDR.</p></li>
+<li><p><strong>Ignore</strong>   The rule is ignored and the message is delivered without the disclaimer</p></li>
+<li><p><strong>Reject</strong>   The message is returned to the sender in an NDR.</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -496,8 +496,8 @@ The property values that are used for actions in transport rules are described i
 <td><p>Single value: <code>Append</code> or <code>Prepend</code></p></td>
 <td><p>In the Exchange Management Shell, you use the <em>ApplyHtmlDisclaimerTextLocation</em> to specify the location of the disclaimer text in the message:</p>
 <ul>
-<li><p><code>Append</code>   Add the disclaimer to the end of the message body. This is the default value.</p></li>
-<li><p><code>Prepend</code>   Add the disclaimer to the beginning of the message body.</p></li>
+<li><p><code>Append</code>   Add the disclaimer to the end of the message body. This is the default value.</p></li>
+<li><p><code>Prepend</code>   Add the disclaimer to the beginning of the message body.</p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -530,16 +530,16 @@ The property values that are used for actions in transport rules are described i
 </ul></td>
 <td><p>Specifies the original message properties to include in the incident report. You can choose to include any combination of these properties. In addition to the properties you specify, the message ID is always included. The available properties are:</p>
 <ul>
-<li><p><strong>Sender</strong>   The sender of the original message.</p></li>
-<li><p><strong>Recipients</strong>, <strong>Cc'd recipients</strong> , and <strong>Bcc'd recipients</strong>   All recipients of the message, or only the recipients in the <strong>Cc</strong> or <strong>Bcc</strong> fields. For each property, only the first 10 recipients are included in the incident report.</p></li>
-<li><p><strong>Subject</strong>   The <strong>Subject</strong> field of the original message.</p></li>
-<li><p><strong>Severity</strong>   The audit severity of the rule that was triggered. Message tracking logs include all the audit severity levels, and can be filtered by audit severity. In the EAC, if you clear the <strong>Audit this rule with severity level</strong> check box (in the Exchange Management Shell, the <em>SetAuditSeverity</em> parameter value <code>DoNotAudit</code>), rule matches won't appear in the rule reports. If a message is processed by more than one rule, the highest severity is included in any incident reports.</p></li>
-<li><p><strong>Sender override information</strong>   The override if the sender chose to override a Policy Tip. If the sender provided a justification, the first 100 characters of the justification are also included.</p></li>
-<li><p><strong>Matching rules</strong>   The list of rules that the message triggered.</p></li>
-<li><p><strong>False positive reports</strong>   The false positive if the sender marked the message as a false positive for a Policy Tip.</p></li>
-<li><p><strong>Detected data classifications</strong>   The list of sensitive information types detected in the message.</p></li>
-<li><p><strong>Matching content</strong>   The sensitive information type detected, the exact matched content from the message, and the 150 characters before and after the matched sensitive information.</p></li>
-<li><p><strong>Original mail</strong>   The entire message that triggered the rule is attached to the incident report.</p></li>
+<li><p><strong>Sender</strong>   The sender of the original message.</p></li>
+<li><p><strong>Recipients</strong>, <strong>Cc'd recipients</strong> , and <strong>Bcc'd recipients</strong>   All recipients of the message, or only the recipients in the <strong>Cc</strong> or <strong>Bcc</strong> fields. For each property, only the first 10 recipients are included in the incident report.</p></li>
+<li><p><strong>Subject</strong>   The <strong>Subject</strong> field of the original message.</p></li>
+<li><p><strong>Severity</strong>   The audit severity of the rule that was triggered. Message tracking logs include all the audit severity levels, and can be filtered by audit severity. In the EAC, if you clear the <strong>Audit this rule with severity level</strong> check box (in the Exchange Management Shell, the <em>SetAuditSeverity</em> parameter value <code>DoNotAudit</code>), rule matches won't appear in the rule reports. If a message is processed by more than one rule, the highest severity is included in any incident reports.</p></li>
+<li><p><strong>Sender override information</strong>   The override if the sender chose to override a Policy Tip. If the sender provided a justification, the first 100 characters of the justification are also included.</p></li>
+<li><p><strong>Matching rules</strong>   The list of rules that the message triggered.</p></li>
+<li><p><strong>False positive reports</strong>   The false positive if the sender marked the message as a false positive for a Policy Tip.</p></li>
+<li><p><strong>Detected data classifications</strong>   The list of sensitive information types detected in the message.</p></li>
+<li><p><strong>Matching content</strong>   The sensitive information type detected, the exact matched content from the message, and the 150 characters before and after the matched sensitive information.</p></li>
+<li><p><strong>Original mail</strong>   The entire message that triggered the rule is attached to the incident report.</p></li>
 </ul>
 <p>In the Exchange Management Shell, you specify multiple values separated by commas.</p></td>
 </tr>

@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Setup requires that the local computer have a valid HOST (A) record registered with the authoritative DNS database for the domain.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

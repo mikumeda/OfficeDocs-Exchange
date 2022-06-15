@@ -23,9 +23,9 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup displays this warning because its attempt to uninstall a transport role could cause data loss from a transport queue.
+Microsoft® Exchange Server 2007 setup displays this warning because its attempt to uninstall a transport role could cause data loss from a transport queue.
 
-Exchange 2007 setup checks to make sure that the transport queues are empty before it removes the roles associated with managing those queues.
+Exchange 2007 setup checks to make sure that the transport queues are empty before it removes the roles associated with managing those queues.
 
 If you remove the transport roles before delivery of messages still in the transport queues, those messages may be held indefinitely.
 

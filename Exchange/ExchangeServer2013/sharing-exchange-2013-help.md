@@ -5,6 +5,8 @@ ms:assetid: 09e6732a-4e99-44d0-801d-9463fdc57a9b
 ms:mtpsurl: https://technet.microsoft.com/library/Dd638083(v=EXCHG.150)
 ms:contentKeyID: 48384809
 ms.reviewer: 
+ms.topic: article
+description: In Microsoft Exchange, administrators can set up different levels of calendar access to allow businesses to collaborate with other businesses and enable users share their schedules
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -28,9 +30,9 @@ The following sharing scenarios are supported in Exchange 2013:
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -69,9 +71,9 @@ The following table lists the differences between organization relationships and
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -171,7 +173,7 @@ For details about how to configure free/busy sharing between common Exchange dep
 
 ## Firewall considerations for federated sharing
 
-Federated sharing features require that the Client Access servers in your organization have outbound access to the Internet by using HTTPS. You must allow outbound HTTPS access (port 443 for TCP) to all Exchange 2013 Mailbox servers in the organization.
+Federated sharing features require that the Client Access servers in your organization have outbound access to the Internet by using HTTPS. You must allow outbound HTTPS access (port 443 for TCP) to all Exchange 2013 Mailbox servers in the organization.
 
 For an external organization to access your organization's free/busy information, you must publish at least one Client Access server to the Internet. This requires inbound HTTPS access from the Internet to the Client Access server. Client Access servers in Active Directory sites that don't have a Client Access server published to the Internet can use Client Access servers in other Active Directory sites that are accessible from the Internet. The Client Access servers that aren't published to the Internet must have the external URL of the Web services virtual directory set with the URL that's visible to external organizations.
 
@@ -193,8 +195,8 @@ The following table contains links to topics that will help you learn about and 
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

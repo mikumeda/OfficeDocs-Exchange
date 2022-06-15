@@ -5,6 +5,8 @@ ms:assetid: 07386078-6103-49a2-8698-2d41db9cec95
 ms:mtpsurl: https://technet.microsoft.com/library/Dn750898(v=EXCHG.150)
 ms:contentKeyID: 62380197
 ms.reviewer: 
+ms.topic: article
+description: Changes in Active Directory when Microsoft Exchange 2013 is installed
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -43,9 +45,9 @@ With the schema extended, the next step is to add all of the containers, objects
 
 These are the changes that are made to the Active Directory forest:
 
-  - The Microsoft Exchange container is created under CN=Services,CN=Configuration,DC=\<*root domain*\> if it doesn't already exist.
+  - The Microsoft Exchange container is created under CN=Services,CN=Configuration,DC=\<*root domain*\> if it doesn't already exist.
 
-  - The following containers and objects are created under CN=\<*organization name*\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<*root domain*\> if they don't already exist:
+  - The following containers and objects are created under CN=\<*organization name*\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<*root domain*\> if they don't already exist:
 
       - CN=Address Lists Container
 
@@ -119,7 +121,7 @@ These are the changes that are made to the Active Directory forest:
 
       - CN=Workload Management Settings
 
-  - The following containers and objects are created under CN=Transport Settings,CN=\<*Organization Name*\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<*root domain*\> if they don't already exist:
+  - The following containers and objects are created under CN=Transport Settings,CN=\<*Organization Name*\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<*root domain*\> if they don't already exist:
 
       - CN=Accepted Domains
 
@@ -143,7 +145,7 @@ These are the changes that are made to the Active Directory forest:
 
   - The Rights.ldf file is imported. This file adds permissions that are needed to install Exchange and configure Active Directory.
 
-  - The Microsoft Exchange Security Groups organizational unit (OU) is created in the root domain of the forest, and permissions are assigned to it.
+  - The Microsoft Exchange Security Groups organizational unit (OU) is created in the root domain of the forest, and permissions are assigned to it.
 
   - The following management role groups are created within the Microsoft Exchange Security Groups OU if they don't already exist:
 
@@ -171,7 +173,7 @@ These are the changes that are made to the Active Directory forest:
 
       - View-Only Organization Management
 
-  - The new management role groups (which appear as universal security groups (USGs) in Active Directory) that were created in the Microsoft Exchange Security Groups OU are added to the **otherWellKnownObjects** attribute stored on the CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<*root domain*\> container.
+  - The new management role groups (which appear as universal security groups (USGs) in Active Directory) that were created in the Microsoft Exchange Security Groups OU are added to the **otherWellKnownObjects** attribute stored on the CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<*root domain*\> container.
 
   - The Unified Messaging Voice Originator contact is created in the Microsoft Exchange System Objects container of the root domain.
 

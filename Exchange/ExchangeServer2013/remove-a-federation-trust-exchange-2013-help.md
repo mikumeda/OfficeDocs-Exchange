@@ -5,6 +5,8 @@ ms:assetid: dc4d126d-b567-470d-a5d0-e1402bf8f369
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657500(v=EXCHG.150)
 ms:contentKeyID: 49289432
 ms.reviewer: 
+ms.topic: article
+description: How to remove a federation trust in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

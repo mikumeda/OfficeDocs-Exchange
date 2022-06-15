@@ -64,11 +64,11 @@ This example sets the following message tracking log settings on the Mailbox ser
 
 - Sets the location of the message tracking log files to D:\\Message Tracking Log. Note that if the folder doesn't exist, it will be created for you.
 
-- Sets the maximum size of a message tracking log file to 20 MB.
+- Sets the maximum size of a message tracking log file to 20 MB.
 
-- Sets the maximum size of the message tracking log directory to 1.5 GB.
+- Sets the maximum size of the message tracking log directory to 1.5 GB.
 
-- Sets the maximum age of a message tracking log file to 45 days.
+- Sets the maximum age of a message tracking log file to 45 days.
 
 ```powershell
 Set-TransportService Mailbox01 -MessageTrackingLogPath "D:\Hub Message Tracking Log" -MessageTrackingLogMaxFileSize 20MB -MessageTrackingLogMaxDirectorySize 1.5GB -MessageTrackingLogMaxAge 45.00:00:00

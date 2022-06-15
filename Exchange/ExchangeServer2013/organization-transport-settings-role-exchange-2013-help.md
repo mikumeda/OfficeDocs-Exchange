@@ -5,6 +5,8 @@ ms:assetid: ff4d032e-1b97-4a9d-b479-9b0d61832221
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876961(v=EXCHG.150)
 ms:contentKeyID: 49289473
 ms.reviewer: 
+ms.topic: article
+description: About the Organization Transport Settings role in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -53,15 +55,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

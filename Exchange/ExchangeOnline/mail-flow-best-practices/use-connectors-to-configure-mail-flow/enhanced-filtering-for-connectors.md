@@ -143,16 +143,11 @@ For detailed syntax and parameter information, see [Set-InboundConnector](/power
 
 The following table describes what connections look like before and after you enable Enhanced Filtering for Connectors:
 
-<br>
-
-****
-
 |Feature|Before Enhanced Filtering is enabled|After Enhanced Filtering is enabled|
 |---|---|---|
 |**Email domain authentication**|[Implicit](/microsoft-365/security/office-365-security/email-validation-and-authentication#composite-authentication) using anti-spoof protection technology.|Explicit, based on the source domain's SPF, DKIM, and DMARC records in DNS.|
 |**X-MS-Exchange-ExternalOriginalInternetSender**|Not available|This header is stamped if skip listing was successful, enabled on the connector, and recipient match happens. The value of this field contains information about the true source address.|
 |**X-MS-Exchange-SkipListedInternetSender**|Not available|This header is stamped if skip listing was successful and enabled on the connector. The value of this field contains information about the true source address. This header is used primarily for reporting purposes and to help understand WhatIf scenarios.|
-|
 
 You can view the improvements in filtering and reporting by using the Threat protection status report in the Microsoft 365 Defender portal. For more information, see [Threat protection status report](/microsoft-365/security/office-365-security/view-email-security-reports#threat-protection-status-report).
 

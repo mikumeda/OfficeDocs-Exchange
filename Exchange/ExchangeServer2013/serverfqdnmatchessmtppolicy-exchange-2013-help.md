@@ -5,6 +5,8 @@ ms:assetid: f3ea61f8-1788-4cbf-814e-f7c088c1ac47
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.serverfqdnmatchessmtppolicy(v=EXCHG.150)
 ms:contentKeyID: 46629176
 ms.reviewer:
+ms.topic: article
+description: Microsoft Exchange Server Setup can't continue because the FQDN of the local computer matches the SMTP address of a recipient policy
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -21,7 +23,7 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because the Fully Qualified Domain Name (FQDN) of the local computer matches the Simple Mail Transfer Protocol (SMTP) address of a recipient policy.
+Microsoft® Exchange Server 2007 setup cannot continue because the Fully Qualified Domain Name (FQDN) of the local computer matches the Simple Mail Transfer Protocol (SMTP) address of a recipient policy.
 
 Microsoft Exchange setup requires that the FQDN of the servers in an Exchange organization not match any SMTP addresses of recipient policies in the same Exchange organization.
 

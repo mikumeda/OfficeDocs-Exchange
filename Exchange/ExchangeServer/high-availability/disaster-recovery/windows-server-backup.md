@@ -45,8 +45,8 @@ Before using WSB to back up Exchange data, we recommend that you familiarize you
 
 The following table describes the supportability of the backup and recovery options available for Exchange Server with WSB.
 
-|**If you...**|**Then...**|
-|:-----|:-----|
+|If you...|Then...|
+|---|---|
 |Back up the full server...|A VSS copy backup will be performed, and the transaction logs for the databases on the server will not be truncated.|
 |Perform a custom backup and select one or more volumes to back up...|A VSS full backup can be selected, allowing the transaction logs for the databases on the selected volumes to be truncated at the completion of a successful backup.|
 |Perform a custom backup and select one or more folders to back up...|A VSS full backup can be selected and the log files will be truncated; however, restoration of the backup will be limited to file restore, as an Application level restore will not be available as an option.|

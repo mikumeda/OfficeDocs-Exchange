@@ -7,6 +7,8 @@ ms:contentKeyID: 49300503
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
+ms.topic: article
+description: How to search the mailbox audit log for a mailbox in Microsoft Exchange Server
 author: msdmaguire
 f1.keywords:
 - NOCSH

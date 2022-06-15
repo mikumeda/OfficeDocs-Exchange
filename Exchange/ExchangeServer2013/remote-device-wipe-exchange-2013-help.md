@@ -5,6 +5,8 @@ ms:assetid: cd615210-cd8a-48de-b3e3-8f9ec39ca380
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124591(v=EXCHG.150)
 ms:contentKeyID: 49352799
 ms.reviewer: 
+ms.topic: article
+description: Remote device wipe in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -19,7 +21,7 @@ _**Applies to:** Exchange Server 2013_
 
 Mobile phones, tablets, and other devices can store sensitive corporate data and provide access to many corporate resources. If a mobile device is lost or stolen, that data can be compromised. Through Microsoft Exchange mobile device mailbox policies, you can add a password requirement to your mobile devices. This requires users to enter a password to access their mobile devices. We recommend that, in addition to requiring a device password, you configure your mobile devices to automatically prompt for a password after a period of inactivity. The combination of a device password and inactivity locking provides enhanced security for your corporate data.
 
-In addition to these features, Exchange Server 2013 provides a remote device wipe feature. You can issue a remote device wipe command from the Exchange Management Shell or the Exchange admin center (EAC). Users can issue their own remote device wipe commands from the Microsoft Outlook Web App user interface.
+In addition to these features, Exchange Server 2013 provides a remote device wipe feature. You can issue a remote device wipe command from the Exchange Management Shell or the Exchange admin center (EAC). Users can issue their own remote device wipe commands from the Microsoft Outlook Web App user interface.
 
 The remote device wipe feature also includes a confirmation function that writes a time stamp in the sync state data of the user's mailbox. This time stamp is displayed in Outlook Web App and in the user's mobile phone properties dialog box in the EAC.
 

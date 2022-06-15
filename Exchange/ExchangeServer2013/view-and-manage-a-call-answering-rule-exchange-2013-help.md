@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description:  How to view and manage a call answering rule in Microsoft Exchange Server
 ms.assetid: de6d9fa1-7878-49a9-bddb-e3317d94f4d8
 f1.keywords:
 - NOCSH

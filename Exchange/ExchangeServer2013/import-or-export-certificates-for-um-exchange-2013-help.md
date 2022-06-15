@@ -4,6 +4,8 @@ TOCTitle: Import or export certificates for UM
 ms:assetid: ee688c33-2e08-47e7-95fc-04ba10238341
 ms:mtpsurl: https://technet.microsoft.com/library/Dn205143(v=EXCHG.150)
 ms:contentKeyID: 53908380
+ms.topic: article
+description: Learn to import or export certificates for Um in Exchange Server.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars

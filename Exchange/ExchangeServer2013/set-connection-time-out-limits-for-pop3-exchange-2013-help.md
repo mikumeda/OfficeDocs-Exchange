@@ -5,6 +5,8 @@ ms:assetid: 40003115-be4e-4cf1-97b4-f5ca05b314dc
 ms:mtpsurl: https://technet.microsoft.com/library/Aa997604(v=EXCHG.150)
 ms:contentKeyID: 50395396
 ms.reviewer: 
+ms.topic: how-to
+description: How to set connection time-out limits for POP3 in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -44,7 +46,7 @@ For additional information related to POP3, see [POP3 and IMAP4 in Exchange Serv
 
 5. Under **Time-out settings**, use the following settings:
 
-   - **Authenticated time-out (seconds)**:  Specifies the time to wait before closing an idle authenticated connection. The default value is 1,800. The possible values are from 30 through 86,400.
+   - **Authenticated time-out (seconds)**:  Specifies the time to wait before closing an idle authenticated connection. The default value is 1,800. The possible values are from 30 through 86,400.
 
    - **Unauthenticated time-out (seconds)**: Specifies the time to wait before closing an idle connection that isn't authenticated. The default value is 60. The possible values are from 30 through 3,600.
 

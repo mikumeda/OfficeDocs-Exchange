@@ -171,8 +171,8 @@ If you're a partner seeking information about the third-party API, contact your 
 
 The following table contains links to topics that will help you learn about and manage DAGs, mailbox database copies, and backup and restore for Exchange Server.
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[Database availability groups](database-availability-groups/database-availability-groups.md)|Learn about DAGs, Active Manager, Datacenter Activation Coordination (DAC) mode, and mailbox database copies.|
 |[Plan for high availability and site resilience](plan-ha.md)|Learn about the general, hardware, network, software, witness server, and other requirements and best practices for DAGs.|
 |[Deploying high availability and site resilience](deploy-ha.md)|Explore an example deployment scenario for deploying and configuring DAGs.|

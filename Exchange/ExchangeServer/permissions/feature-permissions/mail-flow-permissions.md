@@ -49,8 +49,8 @@ Users who are assigned the View Only Management role group can view the configur
 
  **Mailbox servers**
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Accepted domains|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Active Directory site and site link management|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Antispam features|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Hygiene Management](../../../ExchangeServer2013/hygiene-management-exchange-2013-help.md)|
@@ -86,8 +86,8 @@ Users who are assigned the View Only Management role group can view the configur
 
  **Edge Transport servers**
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Accepted domains - Edge Transport|Edge Transport server local administrator|
 |Address Rewriting - Edge Transport|Edge Transport server local administrator|
 |Edge Transport server|Edge Transport server local administrator|

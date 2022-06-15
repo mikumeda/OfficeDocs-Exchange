@@ -4,7 +4,9 @@ TOCTitle: Recover an Exchange Server
 ms:assetid: 46e9a1cf-b64c-43c3-a898-6171176da761
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876880(v=EXCHG.150)
 ms:contentKeyID: 48385039
-ms.reviewer: 
+ms.reviewer:
+ms.topic: article
+description: How to recover a Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

@@ -54,8 +54,8 @@ To learn more, see [Recipients in Exchange Online](../recipients-in-exchange-onl
 
 The following table gives you a quick glance at each of the collaboration features to help you decide which one to use.
 
-||**Public folders**|**Shared mailboxes**|**Groups**|
-|:-----|:-----|:-----|:-----|
+||Public folders|Shared mailboxes|Groups|
+|---|---|---|---|
 |**Type of group**|With the proper permissions, everyone in your organization can access and search public folders. Public folders are ideal for maintaining history or distribution group conversations.|Delegates working on behalf of a virtual identity, and they can respond to email as that shared mailbox identity. Example: support@tailspintoys.com|Users who need to send email to a group of recipients with a common interest or characteristic.|
 |**Ideal group size**|Large|Small<sup>1</sup>|Large|
 |**Access**|Accessible by anyone in your organization.|Users can be granted Full Access and/or Send As permissions. If granted Full Access permissions, users must also add the shared mailbox to their Outlook profile to access the shared mailbox.|For distribution groups, members must be manually added. For dynamic distribution groups, members are added based on filtering criteria.|

@@ -81,7 +81,7 @@ A server switchover is the process by which all active databases on a DAG member
 
 1. The administrator initiates a server switchover to move all current active mailbox database copies to one or more other servers.
 
-2. The task performs the same steps described earlier in this topic for database switchovers (Steps 2 through 4) for each of the active databases on the current server.
+2. The task performs the same steps described earlier in this topic for database switchovers (Steps 2 through 4) for each of the active databases on the current server.
 
 3. The PAM reads and updates the database location information that's stored in the cluster database for the DAG.
 
@@ -121,15 +121,15 @@ A failover is an automatic activation process that can occur at the database, se
 
 DAGs and mailbox database copies provide full redundancy and rapid recovery of both the data and the services that provide access to the data. The following table lists the expected recovery actions for various failures. Some failures require the administrator to initiate the recovery, and other failures are automatically handled by the system.
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: Learn how to use messaging records management.
 ms.assetid: 0dd92e9c-881e-43c0-9bbf-f41fdc9dfd87
 f1.keywords:
 - NOCSH

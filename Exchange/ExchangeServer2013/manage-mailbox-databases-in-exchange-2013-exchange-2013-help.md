@@ -83,7 +83,7 @@ From the Shell, verify that all your mailbox database information is represented
 
 2. Select **Databases**, and then click to select the mailbox database you want to configure.
 
-3. Click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon")to configure the attributes of a mailbox database.
+3. Click **Edit** ![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif "Edit icon")to configure the attributes of a mailbox database.
 
 4. Use the **General** tab to view status about the mailbox database, including the mailbox database path, last backup, and mailbox database status:
 
@@ -124,7 +124,7 @@ From the Shell, verify that all your mailbox database information is represented
 
 6. Use the **Limits** tab to specify the storage limits, the warning message interval, and the deletion settings for a mailbox database:
 
-   - *Issue warning at (GB)*: Select this check box to automatically warn mailbox users that their mailbox is approaching its storage limit. To specify the storage limit, select the check box, and then specify in gigabytes (GB) how much content can be stored in the mailbox before a warning email message is sent to the mailbox users. You can enter a value from 0 through 2,097,151 megabytes (MB) (2.0 terabytes).
+   - *Issue warning at (GB)*: Select this check box to automatically warn mailbox users that their mailbox is approaching its storage limit. To specify the storage limit, select the check box, and then specify in gigabytes (GB) how much content can be stored in the mailbox before a warning email message is sent to the mailbox users. You can enter a value from 0 through 2,097,151 megabytes (MB) (2.0 terabytes).
 
    - *Prohibit send at (GB)*: Select this check box to prevent users from sending new email messages after the size of their mailbox reaches the specified limit. To specify this limit, select the check box, and then type the size of the mailbox in GB at which you want to prohibit the sending of new email messages and notify the user. You can enter a value from 0 through 2,097,151 MB (2.0 terabytes).
 
@@ -210,7 +210,7 @@ To verify that you have successfully dismounted the database, implement the foll
 
 1. From the EAC, select **Servers** \> **Databases**, and then click to select the appropriate mailbox.
 
-2. Click **Delete** ![Delete icon.](images/Dd298078.14f639f6-61e8-4418-bbfb-0db14de9d2f5(EXCHG.150).gif "Delete icon")to remove the mailbox database.
+2. Click **Delete** ![Delete icon.](images/Dd298078.14f639f6-61e8-4418-bbfb-0db14de9d2f5(EXCHG.150).gif "Delete icon")to remove the mailbox database.
 
 ## Use the Shell to remove a mailbox database
 

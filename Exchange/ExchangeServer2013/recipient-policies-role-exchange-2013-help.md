@@ -5,9 +5,11 @@ ms:assetid: 81c76e5d-bc57-4326-93ca-5e673c9aa85e
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876916(v=EXCHG.150)
 ms:contentKeyID: 49289328
 ms.reviewer: 
+ms.topic: article
+description: About the Recipient Policies role in Microsoft Exchange
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -37,15 +39,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -71,7 +73,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="even">
 <td><p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

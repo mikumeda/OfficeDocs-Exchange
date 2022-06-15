@@ -34,17 +34,17 @@ Delivery Reports is a message tracking tool in the Exchange admin center (EAC) t
 
 ## Use the EAC to track messages
 
-1. In the EAC, navigate to **Mail Flow** \> **Delivery Reports**.
+1. In the EAC, navigate to **Mail Flow** \> **Delivery Reports**.
 
 2. Enter the following information:
 
-      - **&#42; Mailbox to search:** Click **Browse** to select the mailbox from the address book and then click **OK**. Selecting the mailbox to search is required.
+      - **&#42; Mailbox to search:** Click **Browse** to select the mailbox from the address book and then click **OK**. Selecting the mailbox to search is required.
 
       - Select one of the following:
 
           - **Search for messages sent to** Use this option to search for messages sent to specific users. Click **Select users** and then pick users from the address book by selecting a user from the list and clicking **Add**. You can select more than one user here. When you're finished selecting users, click **OK** to return to the **Delivery Reports** page. If you select this option, you can also leave the field blank to find messages sent to anyone.
 
-          - **Search for messages received from** Use this option to search for messages received from a specific user. Again, just select the user from the address book and click **OK** to return to the **Delivery Reports** page. If you select this option, you have to specify a sender.
+          - **Search for messages received from** Use this option to search for messages received from a specific user. Again, just select the user from the address book and click **OK** to return to the **Delivery Reports** page. If you select this option, you have to specify a sender.
 
       - **Search for these words in the subject line** Enter subject line information here, or leave it blank to expand your search.
 

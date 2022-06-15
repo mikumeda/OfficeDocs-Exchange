@@ -4,7 +4,9 @@ TOCTitle: Set Queue Viewer options
 ms:assetid: 03a9134c-0714-4c13-b286-92bccc7ec05e
 ms:mtpsurl: https://technet.microsoft.com/library/Aa995934(v=EXCHG.150)
 ms:contentKeyID: 49286845
-ms.reviewer: 
+ms.reviewer:
+ms.topic: how-to
+description: How to set Queue Viewer options in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

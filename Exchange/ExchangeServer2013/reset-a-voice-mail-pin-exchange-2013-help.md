@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: Learn how to reset a voice mail PIN in Exchange Server.
 ms.custom:
 - 'Microsoft.Exchange.Management.SnapIn.Esm.Recipients.ResetUnifiedMessagingPinPropertyControl'
 ms.assetid: bf07e6e7-01d2-4933-bff5-c615cc21a480

@@ -5,9 +5,11 @@ ms:assetid: 7a86bfde-f868-4689-bdec-5f01e52b510d
 ms:mtpsurl: https://technet.microsoft.com/library/Aa998920(v=EXCHG.150)
 ms:contentKeyID: 49345049
 ms.reviewer: 
+ms.topic: article
+description: How to use Microsoft Outlook to recover a quarantined message from the spam quarantine mailbox in Microsoft Exchange
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

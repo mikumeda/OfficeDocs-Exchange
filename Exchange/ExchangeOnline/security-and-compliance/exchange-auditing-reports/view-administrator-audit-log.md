@@ -22,7 +22,7 @@ manager: serdars
 # View the admin audit log in Exchange Online
 
 > [!NOTE]
-> Classic Exchange admin center is in the process of being deprecated in worldwide deployment. We recommend that you search the audit log in the Microsoft 365 compliance center. For more information, see [Deprecation of the classic Exchange admin center in WW service](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-the-classic-exchange-admin-center-in-ww-service/ba-p/2736358) and [Search the audit log in the compliance center](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance).
+> Classic Exchange admin center is in the process of being deprecated in worldwide deployment. We recommend that you search the audit log in the Microsoft Purview compliance portal. For more information, see [Deprecation of the classic Exchange admin center in WW service](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-the-classic-exchange-admin-center-in-ww-service/ba-p/2736358) and [Search the audit log in the compliance portal](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance).
 
 In Exchange Online organizations or standalone Exchange Online Protection (EOP) organizations without Exchange Online mailboxes, you can use the Exchange admin center (EAC) or PowerShell to search for and view entries in the admin audit log.
 
@@ -131,10 +131,6 @@ To view the contents of the **CmdletParameters** and **ModifiedProperties** fiel
 
 Each audit log entry contains the information described in the following table. The audit log contains one or more audit log entries.
 
-<br>
-
-****
-
 |Field|Description|
 |---|---|
 |`RunspaceId`|This field is used internally.|
@@ -155,4 +151,3 @@ Each audit log entry contains the information described in the following table. 
 |`Identity`|This field is used internally.|
 |`IsValid`|This field is used internally.|
 |`ObjectState`|This field is used internally.|
-|

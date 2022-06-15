@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: How to override the distribution group naming policy in Microsoft Exchange
 ms.assetid: 9eb23fc9-3f59-4d09-9077-85c89a051ee0
 f1.keywords:
 - NOCSH

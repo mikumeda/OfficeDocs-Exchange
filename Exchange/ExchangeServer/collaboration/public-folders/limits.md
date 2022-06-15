@@ -27,8 +27,8 @@ The following table lists the limits for public folders in on-premises Exchange 
 > [!IMPORTANT]
 > Looking for Exchange Online limits for Microsoft 365 or Office 365? See [Exchange Online Limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits).
 
-|**Item**|**Limits**|**Notes**|
-|:-----|:-----|:-----|
+|Item|Limits|Notes|
+|---|---|---|
 |Total number of public folder mailboxes|1,000|1,000 is the limit for Exchange Server 2016 CU2 or later. Although you can create more than 1,000 public folder mailboxes, it is not officially supported. See [Create a public folder mailbox](create-public-folder-mailboxes.md).|
 |Total public folders in hierarchy|1,000,000|Although you can create more than 1,000,000 public folders, it is not officially supported. For any deployment of 100,000 or more public folders, we recommend reading [Considerations when deploying public folders](deployment-considerations.md).|
 |Sub-folders under the parent folder|10,000|Although you can create more than 1,000 sub-folders under a parent folder, it is not recommended. The limit can be enforced with the _FolderHierarchyChildrenCountReceiveQuota_ parameter on the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet.|

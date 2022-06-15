@@ -4,10 +4,11 @@ TOCTitle: Prevent Message Waiting Indicator (MWI) on a UM IP gateway
 ms.author: serdars
 author: msdmaguire
 manager: serdars
-ms.reviewer:
 ms.assetid: 7af6d094-199f-4134-a25d-9fc7e9c05fe1
-f1.keywords:
+f1.keywords: 
 - NOCSH
+ms.topic: article
+description: How to prevent Message Waiting Indicator (MWI) on a UM IP gateway in Exchange Server
 mtps_version: v=EXCHG.150
 ---
 

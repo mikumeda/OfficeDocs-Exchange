@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: Review the voice mail calls for a user in Exchange Server.
 ms.assetid: 95768fe3-3ae2-43bd-9cbf-18c3b85c4592
 f1.keywords:
 - NOCSH

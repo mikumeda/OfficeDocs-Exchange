@@ -5,6 +5,8 @@ ms:assetid: a604b96d-2a51-480f-937f-45ad753c2cad
 ms:mtpsurl: https://technet.microsoft.com/library/JJ898581(v=EXCHG.150)
 ms:contentKeyID: 50874005
 ms.reviewer: 
+ms.topic: article
+description: How to upgrade from Microsoft Exchange 2007 to Exchange 2013
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -38,8 +40,8 @@ The following table lists the scenarios in which coexistence between Exchange 20
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -80,9 +82,9 @@ The following table lists the scenarios in which coexistence between Exchange 20
 </tbody>
 </table>
 
-1   If you want to create an EdgeSync Subscription between an Exchange 2007 Hub Transport server and an Exchange 2013 SP1 Edge Transport server, you need to install Exchange 2007 SP3 Update Rollup 13 or later on the Exchange 2007 Hub Transport server.
+1   If you want to create an EdgeSync Subscription between an Exchange 2007 Hub Transport server and an Exchange 2013 SP1 Edge Transport server, you need to install Exchange 2007 SP3 Update Rollup 13 or later on the Exchange 2007 Hub Transport server.
 
-2   If you want to create an EdgeSync Subscription between an Exchange 2010 Hub Transport server and an Exchange 2013 SP1 Edge Transport server, you need to install Exchange 2010 SP3 Update Rollup 5 or later on the Exchange 2010 Hub Transport server.
+2   If you want to create an EdgeSync Subscription between an Exchange 2010 Hub Transport server and an Exchange 2013 SP1 Edge Transport server, you need to install Exchange 2010 SP3 Update Rollup 5 or later on the Exchange 2010 Hub Transport server.
 
 ## Mixed mode coexistence of Exchange 2013 and Exchange 2007 with Exchange 2010
 
@@ -94,8 +96,8 @@ To help you get an overview of the Exchange 2007 to Exchange 2013 upgrade proces
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

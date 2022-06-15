@@ -4,6 +4,8 @@ TOCTitle: Update offline address book
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: how-to
+description: How to update offline address book in Microsoft Exchange 
 ms.reviewer:
 ms.assetid: 448a207e-41b4-4cef-9fe9-a68b81e2ec4e
 f1.keywords:

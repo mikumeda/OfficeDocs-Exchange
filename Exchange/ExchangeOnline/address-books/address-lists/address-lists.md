@@ -61,10 +61,6 @@ By default, a new Exchange Online organization has a GAL named Default Global Ad
 
 By default, Exchange Online comes with five built-in address lists and one GAL. These address lists are described in the following table. Note that by default, system-related mailboxes like arbitration mailboxes and public folder mailboxes are hidden from address lists.
 
-<br><br>
-
-****
-
 |Name|Type|Description|Recipient filter used|
 |---|---|---|---|
 |All Contacts|Address list|Includes all mail contacts in the organization. To learn more about mail contacts, see [Recipients in Exchange Online](../../recipients-in-exchange-online/recipients-in-exchange-online.md).|`"Alias -ne $null -and (ObjectCategory -like 'person' -and ObjectClass -eq 'contact')"`|
@@ -73,7 +69,6 @@ By default, Exchange Online comes with five built-in address lists and one GAL. 
 |All Users|Address list|Includes all user mailboxes, linked mailboxes, remote mailboxes (Microsoft 365 or Office 365 mailboxes), shared mailboxes, room mailboxes, equipment mailboxes, and mail users in the organization. To learn more about these recipient types, see [Recipients in Exchange Online](../../recipients-in-exchange-online/recipients-in-exchange-online.md).|`"((Alias -ne $null) -and (((((((ObjectCategory -like 'person') -and (ObjectClass -eq 'user') -and (-not(Database -ne $null)) -and (-not(ServerLegacyDN -ne $null)))) -or (((ObjectCategory -like 'person') -and (ObjectClass -eq 'user') -and (((Database -ne $null) -or (ServerLegacyDN -ne $null))))))) -and (-not(RecipientTypeDetailsValue -eq 'GroupMailbox')))))"`|
 |Default Global Address List|GAL|Includes all mail-enabled recipient objects in the organization (users, contacts, groups, dynamic distribution groups, and public folders.|`"((Alias -ne $null) -and (((ObjectClass -eq 'user') -or (ObjectClass -eq 'contact') -or (ObjectClass -eq 'msExchSystemMailbox') -or (ObjectClass -eq 'msExchDynamicDistributionList') -or (ObjectClass -eq 'group') -or (ObjectClass -eq 'publicFolder'))))"`|
 |Public Folders|Address list|Includes all mail-enabled public folders in your organization. Access permissions determine who can view and use public folders. For more information about public folders, see [Public folders in Microsoft 365 or Office 365 and Exchange Online](../../collaboration-exo/public-folders/public-folders.md).|`"Alias -ne $null -and ObjectCategory -like 'publicFolder'"`|
-|
 
 ## Custom Address Lists
 

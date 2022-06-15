@@ -5,6 +5,8 @@ ms:assetid: 0f628f83-df8c-43fb-bf49-7aaa9ec69ab1
 ms:mtpsurl: https://technet.microsoft.com/library/Aa996295(v=EXCHG.150)
 ms:contentKeyID: 49248676
 ms.reviewer: 
+ms.topic: article
+description: The Sender ID agent is an anti-spam agent in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

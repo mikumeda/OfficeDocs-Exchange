@@ -5,6 +5,8 @@ ms:assetid: 32550081-9af9-474b-ae7b-28f1e68cad41
 ms:mtpsurl: https://technet.microsoft.com/library/Dn602498(v=EXCHG.150)
 ms:contentKeyID: 61071880
 ms.reviewer: 
+ms.topic: article
+description: Unsearchable items in Microsoft Exchange eDiscovery
 manager: serdars
 ms.author: serdars
 author: msdmaguire

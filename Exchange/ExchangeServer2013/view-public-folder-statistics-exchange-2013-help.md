@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to view statistics for public folders and public folder items in Microsoft Exchange Server
 ms.assetid: 4e412710-9a74-4649-ab01-502e969a7eda
 f1.keywords:
 - NOCSH

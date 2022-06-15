@@ -42,8 +42,8 @@ The upgrade steps from Exchange 2007 are:
 
 The coexistence (and therefore, upgrade) options for Exchange are described in the following table:
 
-|**Current Exchange version**|**Latest Exchange version for coexistence**|
-|:-----|:-----|:-----|
+|Current Exchange version|Latest Exchange version for coexistence|
+|---|---|---|
 |Exchange 2000|Exchange 2007|
 |Exchange 2003|Exchange 2010|
 |Exchange 2007|Exchange 2013|

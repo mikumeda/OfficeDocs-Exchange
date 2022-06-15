@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: Search for and delete messages in Microsoft Exchange Server
 ms.assetid: 8c36bb03-e716-4fdd-9958-4aa7a2a1db42
 f1.keywords:
 - NOCSH

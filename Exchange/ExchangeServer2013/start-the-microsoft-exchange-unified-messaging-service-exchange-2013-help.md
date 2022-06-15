@@ -5,6 +5,8 @@ ms:assetid: b54008e6-172e-4435-8516-57cff740e89c
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124330(v=EXCHG.150)
 ms:contentKeyID: 49315502
 ms.reviewer: 
+ms.topic: how-to
+description: How to start the Unified Messaging service in Microsoft Excahange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,9 +19,9 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013, Exchange Server 2016_
 
-You can use the Services snap-in in Microsoft Management Console (MMC) or cmd.exe at a command prompt to start the Microsoft Exchange Unified Messaging service on a Mailbox server. By default, the Microsoft Exchange Unified Messaging service is started after a Mailbox server is installed. However, there may be times when you have to restart the Microsoft Exchange Unified Messaging service manually, for example, when you've taken the Mailbox server offline and have to bring it back online.
+You can use the Services snap-in in Microsoft Management Console (MMC) or cmd.exe at a command prompt to start the Microsoft Exchange Unified Messaging service on a Mailbox server. By default, the Microsoft Exchange Unified Messaging service is started after a Mailbox server is installed. However, there may be times when you have to restart the Microsoft Exchange Unified Messaging service manually, for example, when you've taken the Mailbox server offline and have to bring it back online.
 
-When the Microsoft Exchange Unified Messaging service is started on a Mailbox server, the Mailbox server is available to answer and process incoming UM calls.
+When the Microsoft Exchange Unified Messaging service is started on a Mailbox server, the Mailbox server is available to answer and process incoming UM calls.
 
 For additional management tasks related to Mailbox servers, see [UM services procedures](um-services-procedures-exchange-2013-help.md).
 

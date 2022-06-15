@@ -109,7 +109,7 @@ If the mobile operating system prevents background synchronization, users will e
 
 Upon initial account login, Outlook for iOS and Android establishes a connection to the Microsoft 365- or Office 365-based architecture. A unique device ID is generated, and this device ID is what appears in Active Directory device records (which can be retrieved with cmdlets such as `Get-MobileDevice` in Exchange Online PowerShell) and which appears in HTTP request headers.
 
-Intune uses a different device ID. The basic workflow for how Intune assigns a device ID is described in [App-based conditional access with Intune](/intune/deploy-use/restrict-access-to-email-and-o365-services-with-microsoft-intune). In Intune, the device ID is assigned when the device workplace joins for all device-conditional access scenarios. This ID is an AAD-generated unique ID for the device. Intune uses that unique ID when sending compliance information, and ADAL uses that unique ID when authenticating to services.
+Intune uses a different device ID. The basic workflow for how Intune assigns a device ID is described in [App-based conditional access with Intune](/mem/intune/protect/app-based-conditional-access-intune). In Intune, the device ID is assigned when the device workplace joins for all device-conditional access scenarios. This ID is an AAD-generated unique ID for the device. Intune uses that unique ID when sending compliance information, and ADAL uses that unique ID when authenticating to services.
 
 ### Q: Does Outlook for iOS and Android support RMS?
 
@@ -124,10 +124,6 @@ In cases where Outlook for iOS and Android receives protected messages and promp
 
 Yes, Outlook for iOS and Android supports both Skype for Business and Teams meetings. The Teams coexistence mode at the Microsoft 365 or Office 365 organization level and the user level (the user setting takes precedence over the tenant setting) determines the meeting creation experience in Outlook for iOS and Android:
 
-<br>
-
-****
-
 |Coexistence Mode|Outlook for iOS and Android experience|
 |---|---|
 |Islands|Skype for Business|
@@ -135,7 +131,6 @@ Yes, Outlook for iOS and Android supports both Skype for Business and Teams meet
 |Skype for Business with Teams Collaboration|Skype for Business|
 |Teams Only|Teams|
 |Skype for Business with Teams Collaboration and Meetings|Teams|
-|
 
 In addition, for users using the native Microsoft sync technology, a Teams Join button is available in calendar events. This provision makes it easy to Join a Teams meeting and will be available for all coexistence modes. Users who are not using the native Microsoft sync technology will be able to join Teams Meetings using the weblink in the meeting description.
 
@@ -177,10 +172,6 @@ Outlook for iOS and Android supports a maximum of 25 accounts.
 
 Yes, Outlook for iOS and Android supports contact management. Within the app, users can initiate phone calls, text messages, video chat (for example, FaceTime), etc. Integration with the operating system, and contact management functionality, depend on the client platform, where the mailbox resides, and the authentication type used:
 
-<br>
-
-****
-
 |Functionality|Office 365 mailbox|On-premises mailbox using Hybrid Modern Authentication|On-premises mailbox using Basic Authentication|
 |---|:---:|:---:|:---:|
 |**Export Outlook contacts to native Contacts app**|iOS|iOS|iOS <br> Android|
@@ -189,7 +180,6 @@ Yes, Outlook for iOS and Android supports contact management. Within the app, us
 |**Edit an existing contact from Outlook**|iOS <br> Android|iOS <br> Android|Not supported|
 |**Delete an existing contact from Outlook**|iOS <br> Android|Not supported|Not supported|
 |**Sync profile picture between Outlook contacts and the native Contacts app**|Android|Android|Not supported|
-|
 
 For information on consumer accounts, see Outlook's in-app support FAQ on [People](https://acompli.helpshift.com/a/outlook-mobile/?l=en&s=people).
 

@@ -5,6 +5,8 @@ ms:assetid: f1d05223-7d41-406d-8fae-f4227be1c1c2
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125181(v=EXCHG.150)
 ms:contentKeyID: 49289454
 ms.reviewer: 
+ms.topic: how-to
+description: How to remove an email address policy in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

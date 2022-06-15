@@ -5,6 +5,8 @@ ms:assetid: 124d7253-095c-428e-b8f7-f43a9a2d0150
 ms:mtpsurl: https://technet.microsoft.com/library/JJ676768(v=EXCHG.150)
 ms:contentKeyID: 49361074
 ms.reviewer: 
+description: Federation procedures in Microsoft Exchange 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire

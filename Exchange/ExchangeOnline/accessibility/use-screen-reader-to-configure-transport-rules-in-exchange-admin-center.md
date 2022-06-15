@@ -62,15 +62,12 @@ To complete the tasks covered in this topic, [Use a screen reader to open the Ex
 6. As the focus moves to the **Apply this rule if** drop-down box, you hear "Apply this rule if, Combo box." Press the Down Arrow or Up Arrow key until you hear the condition you want to select. Press Enter. As the focus moves to the first user interface (UI) element in the pop-up window that opens for the selected condition, you hear the name of the pop-up window followed by the name of the first UI element in the window. The following table gives you an overview of the UI elements in each condition's pop-up window.
 .
 
-   ****
-
    |Condition|UI elements in the condition's pop-up window|
-   |:-----|:-----|
-   |The sender is<br/><br/>The recipient is<br/><br/>The sender is a member of<br/><br/>The recipient is a member of<br/><br/>|**Search**, **Refresh**, and **More** buttons.<br/><br/>**Display Name** and **Email Address** column headers.<br/><br/> List of names and email addresses.<br/><br/>**Add** button and text box that includes the selected names.<br/><br/>**Check names** button and text box in which you type the name you want to check.<br/><br/>**OK** and **Cancel** buttons.<br/><br/>|
-   |The sender is located<br/><br/>The recipient is located<br/><br/>|Drop-down box that opens a list of locations.<br/><br/>OK and Cancel buttons.<br/><br/>|
-   |The subject or body includes<br/><br/>The sender address includes<br/><br/>The recipient address includes<br/><br/>Any attachment's content includes<br/><br/>|Edit and Remove buttons.<br/><br/>Text box in which you type words, and an **Add** button to add each entry.<br/><br/>List of entries.<br/><br/>**OK** and **Cancel** buttons.<br/><br/>|
+   |---|---|
+   |The sender is <p> The recipient is <p> The sender is a member of <p> The recipient is a member of <p>|**Search**, **Refresh**, and **More** buttons. <p> **Display Name** and **Email Address** column headers. <p>  List of names and email addresses. <p> **Add** button and text box that includes the selected names. <p> **Check names** button and text box in which you type the name you want to check. <p> **OK** and **Cancel** buttons. <p>|
+   |The sender is located <p> The recipient is located <p>|Drop-down box that opens a list of locations. <p> OK and Cancel buttons. <p>|
+   |The subject or body includes <p> The sender address includes <p> The recipient address includes <p> Any attachment's content includes <p>|Edit and Remove buttons. <p> Text box in which you type words, and an **Add** button to add each entry. <p> List of entries. <p> **OK** and **Cancel** buttons. <p>|
    |[Apply to all messages]|No pop-up window opens|
-   |
 
    > [!TIP]
    > To move the focus to each setting that's listed in a pop-up window, press the Tab key. As you select each setting, you hear information about it. To open drop-down box lists, press Spacebar. To move between and select options in drop-down box lists, press the Down Arrow and Up Arrow keys. To choose an option, press Enter. You can also use the Spacebar to select or clear the selection for check boxes.
@@ -79,15 +76,12 @@ To complete the tasks covered in this topic, [Use a screen reader to open the Ex
 
 8. As the focus moves to the **Do the following** drop-down box, you hear "Do the following, Combo box." Press the Down Arrow or Up Arrow key until you hear the action you want to select. Press Enter. As the focus moves to the first UI element in the pop-up window that opens for the selected action, you hear the name of the pop-up window followed by the name of the first UI element in the window. The following table gives you an overview of the UI elements in each action's pop-up window.
 
-   ****
-
    |Action|UI elements in the pop-up window|
    |---|---|
-   |Forward the message for approval to<br/><br/>Redirect the message to<br/><br/>Bcc the message to<br/><br/>|**Search**, **Refresh**, and **More** buttons.<br/><br/>**Display Name** and **Email Address** column headers.<br/><br/>List of names and email addresses.<br/><br/> **Add** button and text box that includes the selected names.<br/><br/>**Check names** button and text box in which you type the name you want to check.<br/><br/>**OK** and **Cancel** buttons.<br/><br/>|
-   |Reject the message with the explanation|Text box in which you type the explanation OK<br/><br/>**OK** and **Cancel** buttons.<br/><br/>|
+   |Forward the message for approval to <p> Redirect the message to <p> Bcc the message to <p>|**Search**, **Refresh**, and **More** buttons. <p> **Display Name** and **Email Address** column headers. <p> List of names and email addresses. <p>  **Add** button and text box that includes the selected names. <p> **Check names** button and text box in which you type the name you want to check. <p> **OK** and **Cancel** buttons. <p>|
+   |Reject the message with the explanation|Text box in which you type the explanation OK <p> **OK** and **Cancel** buttons. <p>|
    |Delete the message without notifying anyone|No pop-up window opens|
    |Append the disclaimer|No pop-up window opens, but an **Enter text** link and a **Select one** link are inserted in the window after the drop-down box.<ul><li>If you select the **Enter text** link, a pop-up window opens that includes a text box in which you type the disclaimer, and the **OK** and **Cancel** buttons.</li><li>If you select the **Select one** link, a pop-up window opens that includes a drop-down box that opens a list of fallback actions in case the disclaimer can't be inserted, and the **OK** and **Cancel** buttons.</li></ul>|
-   |
 
 9. After you've accepted your action settings in the appropriate pop-up window, move to the next option in the **new rule** pop-up window by pressing the Tab key.
 

@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/Dn600437(v=EXCHG.150)
 ms:contentKeyID: 61071241
 ms.reviewer: 
 manager: serdars
+ms.topic: article
+description: About organization-wide disclaimers, signatures, footers, or headers in email in Microsoft Exchange
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
@@ -32,8 +34,8 @@ Here are a few ideas for how to use disclaimers.
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -80,9 +82,9 @@ Here are some examples of the conditions and exceptions you can use.
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -162,8 +164,8 @@ You can format your disclaimer as needed. Here's what can be included in your di
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

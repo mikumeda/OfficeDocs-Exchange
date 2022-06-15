@@ -5,6 +5,8 @@ ms:assetid: e7780499-9a6f-48b1-aea8-df88ecd8b18a
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125018(v=EXCHG.150)
 ms:contentKeyID: 50934225
 ms.reviewer: 
+ms.topic: article
+description: About Pipeline tracing in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -30,16 +32,11 @@ Before you enable pipeline tracing, you need to specify the sender's email addre
 
 The parameters that you use to configure pipeline tracing are summarized in the following table:
 
-<br>
-
-****
-
 |Cmdlet|Parameter|Default value|Description|
 |---|---|---|---|
 |**Set-TransportService** <p> **Set-MailboxTransportService**|*PipelineTracingSenderAddress*|Blank (`$null`)|Specify the email address of the sender you want to monitor. <p> Specify the value "`<>`" to monitor system-generated messages sent by the specified transport service on the server.|
 |**Set-TransportService** <p> **Set-MailboxTransportService**|*PipelineTracingPath*|**Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\Hub\PipelineTracing` <p> **Mailbox Transport service**: `%ExchangeInstallPath%TransportRoles\Logs\Mailbox\PipelineTracing`|The path must be on the local server. UNC paths aren't supported. <p> The specified path contains the `MessageSnapshots` folder where pipeline tracing files are stored.|
 |**Set-TransportService** <p> **Set-MailboxTransportService**|*PipelineTracingEnabled*|`$false`|You can only enable pipeline tracing for the specified transport service on the server after you configure the sender address you want to monitor.|
-|
 
 For more information about how to enable pipeline tracing and configure the sender address for pipeline tracing, see [Configure pipeline tracing](configure-pipeline-tracing-exchange-2013-help.md).
 

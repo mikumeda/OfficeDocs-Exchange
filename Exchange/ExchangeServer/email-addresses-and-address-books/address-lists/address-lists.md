@@ -36,11 +36,9 @@ For procedures related to address lists, see [Procedures for address lists in Ex
 
 Recipient filters identify the recipients that are included in address lists and GALs. There are two basic options: **precanned recipient filters** and **custom recipient filters**. These are basically the same recipient filtering options that are used by dynamic distribution groups and email address policies. The following table summarizes the differences between the two filtering methods.
 
-****
-
-|**Recipient filtering method**|**User interface**|**Filterable recipient properties**|**Filter operators**|
-|:-----|:-----|:-----|:-----|
-|Precanned recipient filters|**Address lists**: Exchange admin center (EAC) and the Exchange Management Shell <br/><br/> **GALs**: Exchange Management Shell only|Limited to: <br/>• Recipient type (All recipient types or any combination of user mailboxes, resource mailboxes, mail contacts, mail users, and groups) <br/>• Company <br/>• Custom Attribute 1 to 15 <br/>• Department <br/>• State or Province|Property values require an exact match. Wildcards and partial matches aren't supported. For example, "Sales" doesn't match the value "Sales and Marketing". <br/><br/> Multiple values of the same property always use the **or** operator. For example, "Department equals Sales or Department equals Marketing". <br/><br/> Multiple properties always use the **and** operator. For example, "Department equals Sales and Company equals Contoso".|
+|Recipient filtering method|User interface|Filterable recipient properties|Filter operators|
+|---|---|---|---|
+|Precanned recipient filters|**Address lists**: Exchange admin center (EAC) and the Exchange Management Shell <p> **GALs**: Exchange Management Shell only|Limited to: <ul><li>Recipient type (All recipient types or any combination of user mailboxes, resource mailboxes, mail contacts, mail users, and groups)</li><li>Company <br/></li><li>Custom Attribute 1 to 15</li><li>Department</li><li>State or Province</li></ul>|Property values require an exact match. Wildcards and partial matches aren't supported. For example, "Sales" doesn't match the value "Sales and Marketing". <p> Multiple values of the same property always use the **or** operator. For example, "Department equals Sales or Department equals Marketing". <p> Multiple properties always use the **and** operator. For example, "Department equals Sales and Company equals Contoso".|
 |Custom recipient filters|Exchange Management Shell only|You can use virtually any available recipient attributes. For more information, see [Filterable Properties for the -RecipientFilter Parameter](/powershell/exchange/recipientfilter-properties).|You use OPATH filter syntax to specify any available Windows PowerShell filter operators. Wildcards and partial matches are supported.|
 
  **Notes**:
@@ -73,8 +71,8 @@ By default, a new installation of Exchange Server creates an GAL named Default G
 
 By default, Exchange comes with five built-in address lists and one GAL. These address lists are described in the following table. Note that by default, system-related mailboxes like arbitration mailboxes and public folder mailboxes are hidden from address lists.
 
-|**Name**|**Type**|**Description**|**Recipient filter used**|
-|:-----|:-----|:-----|:-----|
+|Name|Type|Description|Recipient filter used|
+|---|---|---|---|
 |All Contacts|Address list|Includes all mail contacts in the organization. To learn more about mail contacts, see [Recipients](../../recipients/recipients.md).|`"Alias -ne $null -and (ObjectCategory -like 'person' -and ObjectClass -eq 'contact')"`|
 |All Distribution Lists|Address list|Includes all distribution groups and mail-enabled security groups in the organization. To learn more about mail-enabled groups, see [Recipients](../../recipients/recipients.md).|`"Alias -ne $null -and ObjectCategory -like 'group'"`|
 |All Rooms|Address list|Includes all room mailboxes. Equipment mailboxes aren't included. To learn more about room and equipment (resource) mailboxes, see [Recipients](../../recipients/recipients.md).|`"Alias -ne $null -and (RecipientDisplayType -eq 'ConferenceRoomMailbox' -or RecipientDisplayType -eq 'SyncedConferenceRoomMailbox')"`|

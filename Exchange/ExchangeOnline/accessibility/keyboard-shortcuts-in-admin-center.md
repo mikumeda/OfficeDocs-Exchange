@@ -60,10 +60,6 @@ To cycle through EAC regions on the screen, press Ctrl+F6 (forward) or Ctrl+Shif
 
 ## Navigate in the EAC
 
-<br>
-
-****
-
 |To do this|Press|
 |---|---|
 |Move among regions|Ctrl+F6 or Ctrl+Shift+F6|
@@ -71,4 +67,3 @@ To cycle through EAC regions on the screen, press Ctrl+F6 (forward) or Ctrl+Shif
 |Move within lists from one item to another|The Up Arrow key, the Down Arrow key, Home, End, Page Up, or Page Down<br/> **Note**: You can also use the Up Arrow key, the Down Arrow key, the Left Arrow key, or the Right Arrow key to move between option buttons or within a group of check boxes.|
 |Select an item|Enter or the Spacebar|
 |Exit a menu or mode|Esc|
-|

@@ -5,6 +5,8 @@ ms:assetid: 90babcf6-4486-4e01-9819-6d3ca4ed756c
 ms:mtpsurl: https://technet.microsoft.com/library/Dd298140(v=EXCHG.150)
 ms:contentKeyID: 49315461
 ms.reviewer: 
+ms.topic: how-to
+description: How to view or configure Outlook Web App virtual directories in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

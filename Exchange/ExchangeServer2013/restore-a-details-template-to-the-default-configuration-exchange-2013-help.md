@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: How to restore a details template to the default configuration.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

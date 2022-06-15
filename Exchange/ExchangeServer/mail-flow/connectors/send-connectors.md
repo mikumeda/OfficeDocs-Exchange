@@ -45,7 +45,7 @@ On Mailbox servers, you can create and manage Send connectors in the Exchange ad
 
 These are the notable changes to Send connectors in Exchange 2016 or Exchange 2019 compared to Exchange 2010:
 
-- You can configure Send connectors to redirect or *proxy* outbound mail through the Front End Transport service. For more information, see [Configure Send connectors to proxy outbound mail](proxy-outbound-mail.md).
+- You can configure Send connectors to redirect or _proxy_ outbound mail through the Front End Transport service. For more information, see [Configure Send connectors to proxy outbound mail](proxy-outbound-mail.md).
 
 - The _IsCoexistenceConnector_ parameter is no longer available.
 
@@ -57,7 +57,7 @@ These are the notable changes to Send connectors in Exchange 2016 or Exchange 20
 
 ## Implicit Send connectors
 
-Although no Send connectors are created during the installation of Exchange servers, a special *implicit Send connector* named the intra-organization Send connector is present. This implicit Send connector is automatically available, invisible, and requires no management. The intra-organization Send connector exists in the transport services to send mail, either internally between services on the local Exchange server, or to services on remote Exchange servers in the organization. For example:
+Although no Send connectors are created during the installation of Exchange servers, a special _implicit Send connector_ named the intra-organization Send connector is present. This implicit Send connector is automatically available, invisible, and requires no management. The intra-organization Send connector exists in the transport services to send mail, either internally between services on the local Exchange server, or to services on remote Exchange servers in the organization. For example:
 
 - Front End Transport service to the Transport service.
 
@@ -81,8 +81,8 @@ Specifying a usage type does configure a default maximum message size, which you
 
 The available usage type values are described in the following table.
 
-|**Usage type**|**Maximum message size**|**Comments**|
-|:-----|:-----|:-----|
+|Usage type|Maximum message size|Comments|
+|---|---|---|
 |Custom|35 MB|None|
 |Internal|unlimited|When you create a Send connector of this usage type in the EAC, you can't select **MX record associated with recipient domain**. After you create the connector, you can go to the **Delivery** tab in the properties of the Send connector and select **MX record associated with recipient domain**. <br/><br/> This same restriction doesn't exist in the Exchange Management Shell. You can use the _Internal_ switch and set the _DNSRoutingEnabled_ to `$true` on the **New-SendConnector** cmdlet.|
 |Internet|35 MB|None|
@@ -118,11 +118,11 @@ You identify one or more smart hosts to use for the Send connector by an individ
 
 An important part of smart host routing is the authentication mechanism that the smart hosts uses. The available authentication mechanisms are described in the following table.
 
-|**Authentication mechanism**|**Description**|
-|:-----|:-----|
+|Authentication mechanism|Description|
+|---|---|
 |**None** (`None`)|No authentication. For example, when access to the smart host is restricted by the source IP address.|
 |**Basic authentication** (`BasicAuth`)|Basic authentication. Requires a username and password. The username and password are sent in clear text.|
-|**Offer basic authentication only after starting TLS** (`BasicAuthRequireTLS`)|Basic authentication that's encrypted with TLS. This requires a server certificate on the smart host that contains the exact FQDN of the smart host that's defined on the Send connector. <br/><br/>  The Send connector attempts to establish the TLS session by sending the **STARTTLS** command to the smart host, and only performs Basic authentication after the TLS session is established.  <br/> A client certificate is also required to support mutual TLS authentication.|
+|**Offer basic authentication only after starting TLS** (`BasicAuthRequireTLS`)|Basic authentication that's encrypted with TLS. This requires a server certificate on the smart host that contains the exact FQDN of the smart host that's defined on the Send connector. <br/><br/> The Send connector attempts to establish the TLS session by sending the **STARTTLS** command to the smart host, and only performs Basic authentication after the TLS session is established. <br/><br/> A client certificate is also required to support mutual TLS authentication.|
 |**Exchange Server authentication** (`ExchangeServer`)|Generic Security Services application programming interface (GSSAPI) and Mutual GSSAPI authentication.|
 |**Externally secured** (`ExternalAuthoritative`)|The connection is presumed to be secured by using a security mechanism that's external to Exchange. The connection may be an Internet Protocol security (IPsec) association or a virtual private network (VPN). Alternatively, the servers may reside in a trusted, physically controlled network.|
 
@@ -132,8 +132,8 @@ The address space specifies the destination domains that are serviced by the Sen
 
 The available SMTP address space values are described in the following table.
 
-|**Address space**|**Explanation**|
-|:-----|:-----|
+|Address space|Explanation|
+|---|---|
 | `*`|The Send connector routes mail to recipients in all domains.|
 |Domain (for example, `contoso.com`)|The Send connector routes mail to recipients in the specified domain, but not in any subdomains.|
 |Domain and subdomains (for example, `*.contoso.com`)|The Send connector routes mail to recipients in the specified domain, and in all subdomains.|
@@ -153,7 +153,7 @@ For example, suppose the recipient is julia@marketing.contoso.com. If a Send con
 
 The source servers for a Send connector determine the destination Exchange server for mail that needs to be routed through the Send connector. The Send connector scope controls the visibility of the connector within the Exchange organization.
 
- By default, Send connectors are visible to all the Exchange servers in the entire Active Directory forest, and are used in routing decisions. However, you can limit the scope of a Send connector so that it's only visible to other Exchange servers in the same Active Directory site. The Send connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A Send connector that's restricted in this way is said to be *scoped*.
+By default, Send connectors are visible to all the Exchange servers in the entire Active Directory forest, and are used in routing decisions. However, you can limit the scope of a Send connector so that it's only visible to other Exchange servers in the same Active Directory site. The Send connector is invisible to Exchange servers in other Active Directory sites, and isn't used in their routing decisions. A Send connector that's restricted in this way is said to be _scoped_.
 
 To configure scoped Send connectors in the EAC, you select **Scoped send connector** in the **Address space** section of the new Send connector wizard, or on the **Scoping** tab in the properties of existing Send connectors. In the Exchange Management Shell, you use the _IsScopedConnector_ parameter on the **New-SendConnector** and **Set-SendConnector** cmdlets.
 
@@ -165,17 +165,15 @@ Permissions are assigned to Send connectors by well-known security principals. S
 
 The available Send connector permissions are described in the following table.
 
-****
-
-|**Permission**|**Assigned to**|**Description**|
-|:-----|:-----|:-----|
+|Permission|Assigned to|Description|
+|---|---|---|
 |`ms-Exch-Send-Headers-Forest`|`<Domain>\Exchange Servers` <br/><br/> `MS Exchange\Edge Transport Servers` <br/><br/> `MS Exchange\Hub Transport Servers`|Controls the preservation of Exchange forest headers in messages. Forest header names start with **X-MS-Exchange-Forest-**. If this permission isn't granted, all forest headers are removed from messages.|
 |`ms-Exch-Send-Headers-Organization`|`<Domain>\Exchange Servers` <br/><br/> `MS Exchange\Edge Transport Servers` <br/><br/> `MS Exchange\Hub Transport Servers`|Controls the preservation of Exchange organization headers in messages. Organization header names start with **X-MS-Exchange-Organization-**. If this permission isn't granted, all organization headers are removed from messages.|
 |`ms-Exch-Send-Headers-Routing`|`NT AUTHORITY\ANONYMOUS LOGON` <br/><br/> `<Domain>\Exchange Servers` <br/><br/> `MS Exchange\Edge Transport Servers` <br/><br/> `MS Exchange\Externally Secured Servers` <br/><br/> `MS Exchange\Hub Transport Servers` <br/><br/> `MS Exchange\Legacy Exchange Servers` <br/><br/> `MS Exchange\Partner Servers`|Controls the preservation of **RECEIVED** headers in messages. If this permission isn't granted, all received headers are removed from messages.|
 |`ms-Exch-SMTP-Send-Exch50`|`<Domain>\Exchange Servers` <br/><br/> `MS Exchange\Edge Transport Servers` <br/><br/> `MS Exchange\Externally Secured Servers` <br/><br/> `MS Exchange\Hub Transport Servers` <br/><br/> `MS Exchange\Legacy Exchange Servers`|Allows the source Exchange server to submit **XEXCH50** commands on the Send connector. The **X-EXCH50** binary large object (BLOB) was used by older versions of Exchange (Exchange 2003 and earlier) to store Exchange data in messages (for example, the spam confidence level or SCL). <br/><br/> If this permission isn't granted, and messages contain the **X-EXCH50** BLOB, the Exchange server sends the message without the **X-EXCH50** BLOB.|
 |`ms-Exch-SMTP-Send-XShadow`|`<Domain>\Exchange Servers` <br/><br/> `MS Exchange\Edge Transport Servers` <br/><br/> `MS Exchange\Hub Transport Servers`|This permission is reserved for internal Microsoft use, and is presented here for reference purposes only.|
 
-**Note**: Permissions names that contain `ms-Exch-Send-Headers-` are part of the *header firewall* feature. For more information, see [Header firewall](../../../ExchangeServer2013/header-firewall-exchange-2013-help.md).
+**Note**: Permissions names that contain `ms-Exch-Send-Headers-` are part of the _header firewall_ feature. For more information, see [Header firewall](../../../ExchangeServer2013/header-firewall-exchange-2013-help.md).
 
 ### Send connector permission procedures
 

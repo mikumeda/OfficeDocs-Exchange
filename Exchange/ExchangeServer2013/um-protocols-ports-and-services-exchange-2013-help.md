@@ -4,7 +4,9 @@ TOCTitle: UM protocols, ports, and services
 ms:assetid: 5997ce29-1755-48bb-8ff4-b08da549482a
 ms:mtpsurl: https://technet.microsoft.com/library/Aa998265(v=EXCHG.150)
 ms:contentKeyID: 49315424
-ms.reviewer: 
+ms.reviewer:
+ms.topic: article
+description: Unified messaging protocols, ports, and services in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013, Exchange Server 2016_
 
-Microsoft Exchange 2013 Unified Messaging (UM) requires that several TCP and User Datagram Protocol (UDP) ports be used to establish communication between servers running Exchange 2013 and other devices. By allowing access through these IP ports, you enable Unified Messaging to function correctly. This topic discusses the TCP and UDP ports used in Exchange 2013 Unified Messaging.
+Microsoft Exchange 2013 Unified Messaging (UM) requires that several TCP and User Datagram Protocol (UDP) ports be used to establish communication between servers running Exchange 2013 and other devices. By allowing access through these IP ports, you enable Unified Messaging to function correctly. This topic discusses the TCP and UDP ports used in Exchange 2013 Unified Messaging.
 
 ## Unified Messaging protocols and services
 
@@ -56,11 +58,11 @@ RTP doesn't require a standard or static TCP or UDP port to communicate with. RT
 
 ## Unified Messaging Web services
 
-The Unified Messaging Web services installed on Mailbox servers use IP for network communication between a client, the Mailbox server, and computers running other Exchange 2013 server roles. Several Exchange 2013 Outlook Web App and Outlook 2013 client features rely on Unified Messaging Web services to operate correctly.
+The Unified Messaging Web services installed on Mailbox servers use IP for network communication between a client, the Mailbox server, and computers running other Exchange 2013 server roles. Several Exchange 2013 Outlook Web App and Outlook 2013 client features rely on Unified Messaging Web services to operate correctly.
 
 The following Unified Messaging client features rely on Unified Messaging Web services:
 
-  - Voice mail options available with Exchange 2013 Outlook Web App, including the Play on Phone feature and the ability to reset a PIN.
+  - Voice mail options available with Exchange 2013 Outlook Web App, including the Play on Phone feature and the ability to reset a PIN.
 
   - The Play on Phone feature found in an Outlook client.
 
@@ -74,10 +76,10 @@ The following table summarizes the Exchange 2013 ports and protocols, and whethe
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

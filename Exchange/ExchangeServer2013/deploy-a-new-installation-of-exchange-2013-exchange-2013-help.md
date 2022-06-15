@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Before you begin your installation of Microsoft Exchange Server 2013, see [Planning and deployment](planning-and-deployment-for-exchange-2013-installation-instructions.md) for important planning information, and information about system requirements and prerequisites.
+Before you begin your installation of Microsoft Exchange Server 2013, see [Planning and deployment](planning-and-deployment-for-exchange-2013-installation-instructions.md) for important planning information, and information about system requirements and prerequisites.
 
 The following topics provide information about deploying a new installation of Exchange 2013 in your organization:
 

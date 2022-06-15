@@ -22,8 +22,8 @@ There are many different clients that you can use to access information in an Ex
 
 The following table contains links to topics that will help you learn about and manage some of the clients and client access methods that you can use to access your Exchange mailbox.
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[MAPI over HTTP in Exchange Server](mapi-over-http/mapi-over-http.md)|Learn about the latest client access method that provides connectivity to Outlook.|
 |[Outlook Anywhere](../../ExchangeServer2013/outlook-anywhere-exchange-2013-help.md)|Learn about the earlier client access method that provides connectivity to Outlook. (This feature was formerly known as RPC/HTTP.)|
 |[Exchange ActiveSync](exchange-activesync/exchange-activesync.md)|Learn about the protocol that provides connectivity to a wide variety of mobile phones and tablets. Using Exchange ActiveSync, users can access email, calendar, contact, and task information.|

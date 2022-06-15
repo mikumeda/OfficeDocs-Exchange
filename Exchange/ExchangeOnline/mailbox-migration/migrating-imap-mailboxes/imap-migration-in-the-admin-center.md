@@ -30,88 +30,15 @@ manager: serdars
 
 After you've added your users to Microsoft 365 or Office 365, you can use Internet Message Access Protocol (IMAP) to migrate email for those users from their IMAP-enabled email servers.
 
-In the Microsoft 365 admin center, go to **Setup** \> **Data migration** to start migrating IMAP enabled emails. The email migrations page is pre-configured for migrations from Gmail, Outlook, Hotmail and Yahoo. You can also enter your own IMAP server name and connection parameters to migrate from an email service that is not listed.
-
 > [!IMPORTANT]
 > Before you can use an IMAP migration for your users, they must have been first added to your Microsoft 365 or Office 365 organization. For instructions, see [Add users individually or in bulk](/microsoft-365/admin/add-users/add-users).
 
 Before you migrate, read [What you need to know about migrating your IMAP mailboxes to Microsoft 365 or Office 365](migrating-imap-mailboxes.md).
 
-To perform an IMAP migration by using the Exchange admin center (EAC), see [Migrate other types of IMAP mailboxes to Microsoft 365 or Office 365](migrate-other-types-of-imap-mailboxes.md).
+> [!IMPORTANT]
+> IMAP migration in the Microsoft 365 admin center has been replaced by IMAP migration by using the Exchange admin center (EAC). To perform an IMAP migration by using the EAC, see [Migrate other types of IMAP mailboxes to Microsoft 365 or Office 365](migrate-other-types-of-imap-mailboxes.md).
 
 To migrate Exchange mail to Microsoft 365 or Office 365, see [Use express migration to migrate Exchange mailboxes to Microsoft 365 or Office 365](../use-minimal-hybrid-to-quickly-migrate.md)
-
-## Migrate IMAP mailboxes to Microsoft 365 or Office 365
-
-1. Sign into the [About the Microsoft 365 admin center](/microsoft-365/admin/admin-overview/about-the-admin-center).
-
-2. Navigate to **Setup** and choose **Migrations** under **Featured Collections**.
-
-    ![Data migration dashboard.](../../media/setup-migrations.png)
-
-3. In the **Migrations** page, choose **Email**.
-4. In the **Migrate your email** page, click the **Get started** button.
-5. In the **Email sources** pane, choose **Import my email messages**.
-
-    **Select your data service** dashboard opens.
-
-    ![Select your email service.](../media/f0c92829-d849-4a26-9d38-1fce1bde616e.png)
-
-6. Do one of the following steps:
-
-   - **Your provider is listed**:
-
-     - Choose the email provider you are migrating from.
-
-       > [!IMPORTANT]
-       > **If you're migrating email from Gmail**, you need to ask your users to [create an app password](prepare-gmail-or-g-suite-accounts.md) you will have to use instead of their account password. **If you're migrating email from Outlook.com or Hotmail.com**, you need to ask your users to [set up two-step verification](migrating-your-outlook-com-account.md) and obtain an app password. You will use their app password instead of their account password when you establish a connection between Outlook.com or Hotmail.com and Microsoft 365 or Office 365.
-
-     - After you choose a provider, the **Select users to start migrating email messages** page will list all of your users with the source email pre-filled in.
-
-       ![All your users are listed with the email pre-filled in.](../media/bbe69914-25da-4e26-880e-e0257f0ccba2.png)
-
-   - **Your provider is not listed:**
-
-     1. Choose **Other email sources**:
-
-     2. On the **Select your data service** page, fill in the appropriate [IMAP connection data](setting-up-your-imap-server-connection.md) to test the connection. You can use any account for this.
-
-        The example below is for a Google apps domain called contoso.com, and therefore the IMAP server name is imap.gmail.com.
-
-        Because the example is for Google apps, note that the password is the 16-digit app password for the email account that is entered to verify the connection to the server.
-
-        > [!IMPORTANT]
-        > If you're migrating email from Google Apps where you own the domain, you need to ask your users to [create an app password](prepare-gmail-or-g-suite-accounts.md) you will have to use instead of their account password.
-
-        ![Fill in IMAP server information and account info to connect.](../media/313a395b-0767-4433-be28-7db3caa7e4d5.png)
-
-     3. Click **Save** to test the connection. Once the connection is verified, the **Email Migration Status** page will list all your added users with the email address that you provided.
-
-7. **This and the following steps apply for both a listed email provider or "Other":**
-
-    Check the box next to the users whose email you want to migrate, and then fill in the email alias, and the password (app password if you are migrating mail from Gmail or Google apps).
-
-8. Choose **Start Migration** after you have entered the required information.
-
-    ![Choose Start Migration.](../media/c820e755-42b4-4a78-9c09-6f2135d7d7da.png)
-
-9. The migration status will be one of:
-
-   - **Starting**
-
-   - **Queued**
-
-   - **Syncing**
-
-   - **Synced**
-
-    When the status is **Synced**, the IMAP migration continues to periodically synchronize with the source email (once a day) until you select **Stop Migration**.
-
-10. If you are migrating from Google apps where you own the domain, you need to go [Create DNS records at Google Domains for Microsoft](/microsoft-365/admin/dns/create-dns-records-at-google-domains) after you have completed email migration so that the mail will be sent to Microsoft 365 or Office 365 mailboxes instead of Google apps. If you are migrating from another IMAP provider where you own the domain, [check these instructions](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider) to find your domain provider.
-
-   If you have migrated as a part of the setup experience, you can return to the setup. The setup steps will guide you through updating the DNS records.
-   
-11. Let the migration batch run for at least 72 hours before you select **Stop Migration**. When you finish, select **Close Connection**. After you do this, you can start a new migration if you want to also migrate emails from other providers.
 
 ## Related Topics
 

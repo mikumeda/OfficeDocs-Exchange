@@ -7,6 +7,8 @@ ms:contentKeyID: 50390855
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
+ms.topic: article
+description: How to enable Outlook Web Access users in your Exchange organization to share calendar free/busy information with external organizations
 author: msdmaguire
 f1.keywords:
 - NOCSH

@@ -40,10 +40,6 @@ The following figure shows the relationship between users, role groups, and role
 
 The available role groups in standalone EOP are described in the following table.
 
-<br>
-
-****
-
 |Role group|Description|Default roles assigned|
 |---|---|---|
 |ComplianceManagement|Configure and manage compliance settings within the organization, including data loss prevention (DLP) if your subscription has DLP capabilities. <p> Members of the [Compliance Administrator](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#compliance-administrator) role in Azure AD automatically get the permissions of this role group.|Audit Logs <p> Compliance Administration <p> Information Rights Management <p> Retention Management <p> View-Only Audit Logs <p> View-Only Configuration <p> View-Only Recipients|
@@ -60,7 +56,6 @@ The available role groups in standalone EOP are described in the following table
 |SecurityReader|View-only access to all aspects of protection in the organization (anti-spam, anti-malware, anti-spoofing, quarantine, etc.). <p> Members of the [Security Reader](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#security-reader) role in Azure AD automatically get the permissions of this role group.|Security Reader <p> View-Only AntiMalware <p> View-Only AntiSpam <p> View-Only Quarantine <p> View-Only Threat Intelligence|
 |TenantAdmins|Membership in this role group is synchronized across services and managed centrally. By default, this role group is not assigned any roles. However, it will be a member of the Organization Management role group and will inherit those permissions.|none|
 |ViewOnlyOrganizationManagement|View recipient, protection, and configuration objects and their properties in the organization.|Compliance Administrator <p> Security Administrator <p> Security Reader <p> Sensitivity Label Administrator <p> View-Only Configuration <p> View-Only Recipients|
-|
 
 If you work in a small organization that has only a few admins, you might need to add those users to the Organization Management role group only, and you may never need to use the other role groups. If you work in a larger organization, you might have admins who perform specific tasks, such as recipient configuration. In those cases, you might add one admin to the Recipient Management role group, and another admin to the Organization Management role group. Those admins can then manage their specific areas, but they won't have permissions to manage areas they're not responsible for.
 
@@ -69,10 +64,6 @@ If the built-in role groups in Exchange Online don't match the job function of y
 ## Roles
 
 The built-in roles that are available in standalone EOP are described in the following table.
-
-<br>
-
-****
 
 |Role**|Description|Default role group assignments|
 |---|---|---|
@@ -113,7 +104,6 @@ The built-in roles that are available in standalone EOP are described in the fol
 |View-Only Quarantine|View all quarantined messages for all recipients.|OrganizationManagement <p> SecurityAdministrator <p> SecurityReader|
 |View-Only Recipients|View recipient properties and run message trace.|ComplianceManagement <p> HelpDesk <p> HygieneManagement <p> MailFlowAdministrator <p>  OrganizationManagement <p> ViewOnlyOrganizationManagement|
 |View-Only Threat Intelligence<sup>\*</sup>||OrganizationManagement <p> SecurityAdministrator <p> SecurityReader|
-|
 
 <sup>\*</sup> Although this role is available, it basically does nothing useful in standalone EOP.
 
@@ -126,10 +116,6 @@ When you create a user in the Microsoft 365 admin center, you can choose whether
 
 The following table lists the Microsoft 365 roles and the standalone EOP role groups that they correspond to. For more information about these roles, see [About admin roles](/microsoft-365/admin/add-users/about-admin-roles).
 
-<br>
-
-****
-
 |Microsoft 365 role|EOP role group|
 |---|---|
 |Exchange admin|OrganizationManagement|
@@ -138,7 +124,6 @@ The following table lists the Microsoft 365 roles and the standalone EOP role gr
 |Global reader|ViewOnlyOrganizationManagement|
 |Security admin|SecurityAdministrator|
 |Security reader|SecurityReader|
-|
 
 Other Microsoft 365 roles don't have a corresponding EOP role group and won't grant administrative permissions in EOP. For more information about assigning a Microsoft 365 role to a user, see [Assign admin roles](/microsoft-365/admin/add-users/assign-admin-roles).
 

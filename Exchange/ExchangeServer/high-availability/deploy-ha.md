@@ -64,8 +64,8 @@ As illustrated in the previous figure, the solution involves the use of multiple
 
 The settings for each network adapter in each node are detailed in the following table.
 
-|**Name**|**IPv4 address**|**Subnet mask**|**Default gateway**|
-|:-----|:-----|:-----|:-----|
+|Name|IPv4 address|Subnet mask|Default gateway|
+|---|---|---|---|
 |MBX1 (MAPI)|192.168.1.4|255.255.255.0|192.168.1.1|
 |MBX2 (MAPI)|192.168.1.5|255.255.255.0|192.168.1.1|
 |MBX3 (MAPI)|192.168.2.4|255.255.255.0|192.168.2.1|

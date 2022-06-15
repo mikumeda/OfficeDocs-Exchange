@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: How to prevent a user from receiving faxes in Microsoft Exchange Server
 ms.assetid: b5d022b9-043a-4324-87fb-074d5e2c2ca3
 f1.keywords:
 - NOCSH

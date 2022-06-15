@@ -4,6 +4,8 @@ TOCTitle: Use batch migration to migrate Exchange 2010 public folders to Microso
 ms:assetid: d018558d-3075-4dd3-9ff7-91ce66b8d5fb
 ms.reviewer: 
 manager: serdars
+ms.topic: article
+description: How to use batch migration to move Microsoft Exchange 2010 public folders to Microsoft 365 Groups
 ms.author: serdars
 author: msdmaguire
 ms:mtpsurl: https://technet.microsoft.com/library/Mt843875(v=EXCHG.150)
@@ -377,10 +379,6 @@ Only the following access rights are allowed for users. This change ensures that
 
 These access rights are stored in the **ListOfAccessRightsAllowed** property. Permission entries are modified as described in the following table:
 
-<br>
-
-****
-
 |Before lock down|After lock down|
 |---|---|
 |None|None|
@@ -394,7 +392,6 @@ These access rights are stored in the **ListOfAccessRightsAllowed** property. Pe
 |PublishingAuthor|ReadItems, CreateSubfolders, FolderVisible|
 |PublishingEditor|ReadItems, CreateSubfolders, FolderVisible|
 |Owner|ReadItems, CreateSubfolders, FolderContact, FolderVisible|
-|
 
 - Access rights for users without read permissions are untouched, and they will continue to be blocked from read rights.
 

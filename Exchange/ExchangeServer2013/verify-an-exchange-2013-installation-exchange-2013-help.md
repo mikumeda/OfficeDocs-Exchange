@@ -5,6 +5,8 @@ ms:assetid: fdd20a2a-c8c1-4d17-b813-3c05d88a4411
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125254(v=EXCHG.150)
 ms:contentKeyID: 48289471
 ms.reviewer: 
+ms.topic: article
+description: Verify a Microsoft Exchange 2013 installation
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -35,7 +37,7 @@ You can also learn more about the installation and configuration of Exchange 201
 
 During installation, Exchange Setup logs events in the **Application** log of **Event Viewer** on computers that are running Windows Server 2008 R2 with Service Pack 1 (SP1) and Windows Server 2012. Review the **Application** log, and make sure there are no warning or error messages related to Exchange setup. These log files contain a history of each action that the system takes during Exchange 2013 setup and any errors that may have occurred. By default, the logging method is set to `Verbose`. Information is available for each installed server role.
 
-You can find the setup log file at *\<system drive\>*\\ExchangeSetupLogs\\ExchangeSetup.log. The *\<system drive\>* variable represents the root directory of the drive where the operating system is installed.
+You can find the setup log file at *\<system drive\>*\\ExchangeSetupLogs\\ExchangeSetup.log. The *\<system drive\>* variable represents the root directory of the drive where the operating system is installed.
 
 The setup log file tracks the progress of every task that is performed during the Exchange 2013 installation and configuration. The file contains information about the status of the prerequisite and system readiness checks that are performed before installation starts, the application installation progress, and the configuration changes that are made to the system. Check this log file to verify that the server roles were installed as expected.
 

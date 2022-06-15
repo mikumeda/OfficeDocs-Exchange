@@ -16,7 +16,7 @@ manager: serdars
 
 ---
 
-# Administrator audit logging in Exchange Server
+# How to use administrator audit logging in Exchange Server
 
 You can use administrator audit logging in Exchange Server to log when a user or administrator makes a change in your organization. By keeping a log of the changes, you can trace changes to the person who made the change, augment your change logs with detailed records of the change as it was implemented, comply with regulatory requirements and requests for discovery, and more.
 
@@ -105,8 +105,8 @@ Each audit log entry contains the information described in the following table. 
 
 **Audit log entry fields**
 
-|**Field**|**Description**|
-|:-----|:-----|
+|Field|Description|
+|---|---|
 |`RunspaceId`|This field is used internally by Exchange.|
 |`ObjectModified`|This field contains the object that was modified by the cmdlet specified in the `CmdletName` field.|
 |`CmdletName`|This field contains the name of the cmdlet that was run by the user in the `Caller` field.|

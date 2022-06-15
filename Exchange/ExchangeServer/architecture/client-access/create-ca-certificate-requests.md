@@ -56,11 +56,8 @@ You can create certificate requests in the Exchange admin center (EAC) or in the
 4. On the **Friendly name for this certificate** page, enter a descriptive name for the certificate, and then click **Next**.
 
 5. On the **Request a wildcard certificate** page, make one of the following choices:
-
    - **If you want a wildcard certificate**: Select **Request a wildcard certificate**, and enter the wildcard character (\*) and the domain in the **Root domain** field. For example, \*.contoso.com or \*.eu.contoso.com. When you're finished, click **Next**.
-
    - **If you want a subject alternative name (SAN) certificate**: Make no selections on this page, and click **Next**.
-
    - **If you want a certificate for a single host**: Make no selections on this page, and click **Next**.
 
 6. In the **Store certificate request on this server** page, click **Browse** and select the Exchange server where you want to store the certificate request (where you want to install the certificate), click **OK**, and then click **Next**.
@@ -68,21 +65,13 @@ You can create certificate requests in the Exchange admin center (EAC) or in the
    **Note:** Steps 7 and 8 only apply to a request for a SAN certificate, or a certificate for a single host. If you selected **Request a wildcard certificate**, skip to Step 9.
 
 7. The **Specify the domains you want to be included in your certificate** page is basically a worksheet that helps you to determine the internal and external host names that are required in the certificate for the following Exchange services:
-
    - Outlook on the web
-
    - Offline address book generation (OAB)
-
    - Exchange Web Services
-
    - Exchange ActiveSync
-
    - Autodiscover
-
    - POP
-
    - IMAP
-
    - Outlook Anywhere
 
      If you enter a value for each service based on the location (internal or external), the wizard determines the host names that are required in the certificate, and the information is displayed on the next page. To modify a value for a service, click **Edit** (![Edit icon.](../../media/ITPro_EAC_EditIcon.png)) and enter the host name value that you want to use (or delete the value). When you're finished, click **Next**.
@@ -90,27 +79,19 @@ You can create certificate requests in the Exchange admin center (EAC) or in the
      If you've already determined the host name values that you need in the certificate, you don't need to fill out the information on this page. Instead, click **Next** to manually enter the host names on the next page.
 
 8. The **Based on your selections, the following domains will be included in your certificate** page lists the host names that will be included in the certificate request. The host name that's used in the certificate's **Subject** field is bold, which can be hard to see if that host name is selected. You can verify the host name entries that are required in the certificate based on the selections that you made on the previous page. Or, you can ignore the values from the last page and add, edit, or remove host name values.
-
    - If you want a SAN certificate, the **Subject** field still requires one common name (CN) value. To select the host name for the certificate's **Subject** field, select the value and click **Set as common name** (check mark). The value should now appear bold.
-
    - If you want a certificate for a single host name, select the other values one at a time and click **Remove** (![Remove icon.](../../media/ITPro_EAC_RemoveIcon.png)).
 
      **Notes:**
 
      - You can't delete the bold host name value that will be used for the certificate's **Subject** field. First, you need to select or add a different host name, and then click **Set as common name** (check mark).
-
      - The changes that you make on this page might be lost if you click the **Back** button.
 
 9. On the **Specify information about your organization** page, enter the following values:
-
    - **Organization name**
-
    - **Department name**
-
    - **City/Locality**
-
    - **State/Province**
-
    - **Country/Region name**
 
      **Note:** These X.500 values are included in the certificate's **Subject** field. Although a value is required in every field before you can proceed, the CA might not care about certain fields (for example, **Department name**), while other fields are very important (for example, **Country/Region name** and **Organization name**). Check the **Subject** field requirements of your CA.
@@ -125,71 +106,100 @@ The certificate request appears in the list of Exchange certificates with a stat
 
 To create a new certificate request for a wildcard certificate, a SAN certificate, or a certificate for a single host, use the following syntax:
 
-```PowerShell
-New-ExchangeCertificate -GenerateRequest -RequestFile <FilePathOrUNCPath>\<FileName>.req [-FriendlyName <DescriptiveName>] -SubjectName [C=<CountryOrRegion>,S=<StateOrProvince>,L=<LocalityOrCity>,O=<Organization>,OU=<Department>],CN=<HostNameOrFQDN> [-DomainName <Host1>,<Host2>...] [-BinaryEncoded <$true | $false>] [-KeySize <1024 | 2048 | 4096>] [-Server <ServerIdentity>]
-```
+- If you need to send the _content_ of the certificate request file to the CA, use the following syntax to create a Base64 encoded request file:
 
-This example creates a certificate request on the local Exchange server for a wildcard certificate with the following properties:
+  ```PowerShell
+  $txtrequest = New-ExchangeCertificate -GenerateRequest [-FriendlyName <DescriptiveName>] -SubjectName C=<CountryOrRegion>[,S=<StateOrProvince>,L=<LocalityOrCity>,O=<Organization>,OU=<Department>],CN=<HostNameOrFQDN> [-DomainName <Host1>,<Host2>...] [-KeySize <1024 | 2048 | 4096>] [-Server <ServerIdentity>]
+  [System.IO.File]::WriteAllBytes('<FilePathOrUNCPath>\<FileName>.req', [System.Text.Encoding]::Unicode.GetBytes($txtrequest))
+  ```
+
+- If you need to send the _certificate request file_ to the CA, use the following syntax to create a DER encoded request file:
+
+  ```PowerShell
+  $binrequest = New-ExchangeCertificate -GenerateRequest -BinaryEncoded [-FriendlyName <DescriptiveName>] -SubjectName C=<CountryOrRegion>[,S=<StateOrProvince>,L=<LocalityOrCity>,O=<Organization>,OU=<Department>],CN=<HostNameOrFQDN> [-DomainName <Host1>,<Host2>...] [-KeySize <1024 | 2048 | 4096>] [-Server <ServerIdentity>]
+  [System.IO.File]::WriteAllBytes('<FilePathOrUNCPath>\<FileName>.pfx', $binrequest.FileData)
+  ```
+
+**Notes:**
+
+- The only required part of the X.500 _SubjectName_ parameter value (the certificate's **Subject** field) to run the command is `CN=<HostNameOrFQDN>`. But, you should always include the `C=<CountryOrRegion>` value. Otherwise, you might not be able to renew the certificate. Check the **Subject** field requirements of your CA.
+- If you don't use the _KeySize_ parameter, the certificate request has a 2048 bit RSA public key.
+- If you don't use the _Server_ parameter, the command is run the local Exchange server.
+
+For detailed syntax and parameter information, see [New-ExchangeCertificate](/powershell/module/exchange/new-exchangecertificate).
+
+### Wildcard certificate request
+
+These examples create certificate request files for wildcard certificates with the following properties:
 
 - **SubjectName**: \*.contoso.com in the United States, which requires the value `C=US,CN=*.contoso.com`.
-
-- **RequestFile**: `\\FileServer01\Data\Contoso Wildcard Cert.req`
-
+- **RequestFile**: `\\FileServer01\Data\Contoso Wildcard Cert.<cer or pfx>`
 - **FriendlyName**: Contoso.com Wildcard Cert
 
+To create a Base64 encoded request file for the wildcard certificate, run the following command:
+
 ```PowerShell
-New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Contoso Wildcard Cert.req" -FriendlyName "Contoso.com Wildcard Cert" -SubjectName "C=US,CN=*.contoso.com"
+$txtrequest = New-ExchangeCertificate -GenerateRequest -FriendlyName "Contoso.com Wildcard Cert" -SubjectName "C=US,CN=*.contoso.com"
+[System.IO.File]::WriteAllBytes('\\FileServer01\Data\Contoso Wildcard Cert.req', [System.Text.Encoding]::Unicode.GetBytes($txtrequest))
 ```
 
-This example creates a certificate request on the local Exchange server for a SAN certificate with the following properties:
+To create a DER encoded request file for the wildcard certificate, run the following command:
+
+```PowerShell
+$binrequest = New-ExchangeCertificate -GenerateRequest -BinaryEncoded -FriendlyName "Contoso.com Wildcard Cert" -SubjectName "C=US,CN=*.contoso.com"
+[System.IO.File]::WriteAllBytes('\\FileServer01\Data\Contoso Wildcard Cert.pfx', $binrequest.FileData)
+```
+
+### SAN certificate request
+
+These examples create certificate request files for SAN certificates with the following properties:
 
 - **SubjectName**: mail.contoso.com in the United States, which requires the value `C=US,CN=mail.contoso.com`. Note that this CN value is automatically included in the _DomainName_ parameter (the **Subject Alternative Name** field).
-
 - Additional **Subject Alternative Name** field values:
-
   - autodiscover.contoso.com
-
   - legacy.contoso.com
-
   - mail.contoso.net
-
   - autodiscover.contoso.net
-
   - legacy.contoso.net
-
-- **RequestFile**: `\\FileServer01\Data\Contoso SAN Cert.req`
-
+- **RequestFile**: `\\FileServer01\Data\Contoso SAN Cert.<cer or pfx>`
 - **FriendlyName**: Contoso.com SAN Cert
-
 - **DomainName**: Unquoted comma-separated list of domains
 
+To create a Base64 encoded request file for the SAN certificate, run the following command:
+
 ```PowerShell
-New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Contoso SAN Cert.req" -FriendlyName "Contoso.com SAN Cert" -SubjectName "C=US,CN=mail.contoso.com" -DomainName autodiscover.contoso.com,legacy.contoso.com,mail.contoso.net,autodiscover.contoso.net,legacy.contoso.net
+$txtrequest = New-ExchangeCertificate -GenerateRequest -FriendlyName "Contoso.com SAN Cert" -SubjectName "C=US,CN=mail.contoso.com" -DomainName autodiscover.contoso.com,legacy.contoso.com,mail.contoso.net,autodiscover.contoso.net,legacy.contoso.net
+[System.IO.File]::WriteAllBytes('\\FileServer01\Data\Contoso SAN Cert.req', [System.Text.Encoding]::Unicode.GetBytes($txtrequest))
 ```
 
-This example creates a request for a single subject certificate with the following properties:
+To create a DER encoded request file for the SAN certificate, run the following command:
+
+```PowerShell
+$binrequest = New-ExchangeCertificate -GenerateRequest -BinaryEncoded -FriendlyName "Contoso.com SAN Cert" -SubjectName "C=US,CN=mail.contoso.com" -DomainName autodiscover.contoso.com,legacy.contoso.com,mail.contoso.net,autodiscover.contoso.net,legacy.contoso.net
+[System.IO.File]::WriteAllBytes('\\FileServer01\Data\Contoso SAN Cert.pfx', $binrequest.FileData)
+```
+
+### Single subject certificate request
+
+These examples create certificate request files for single subject certificates with the following properties:
 
 - **SubjectName**: mail.contoso.com in the United States, which requires the value `C=US,CN=mail.contoso.com`.
-
-- **RequestFile**: `\\FileServer01\Data\Mail.contoso.com Cert.req`
-
+- **RequestFile**: `\\FileServer01\Data\Mail.contoso.com Cert.<cer or pfx>`
 - **FriendlyName**: Mail.contoso.com Cert
 
+To create a Base64 encoded request file for the single subject certificate, run the following command:
+
 ```PowerShell
-New-ExchangeCertificate -GenerateRequest -RequestFile "\\FileServer01\Data\Mail.contoso.com Cert.req" -FriendlyName "Mail.contoso.com Cert" -SubjectName "C=US,CN=mail.contoso.com"
+$txtrequest = New-ExchangeCertificate -GenerateRequest -FriendlyName "Mail.contoso.com Cert" -SubjectName "C=US,CN=mail.contoso.com"
+[System.IO.File]::WriteAllBytes('\\FileServer01\Data\Mail.contoso.com Cert.req', [System.Text.Encoding]::Unicode.GetBytes($txtrequest))
 ```
 
- **Notes:**
+To create a DER encoded request file for the single subject certificate, run the following command:
 
-- The only required part of the X.500 _SubjectName_ parameter value (the certificate's **Subject** field) is `CN=<HostNameOrFQDN>`. However, the certificate request should always include the `C=<CountryOrRegion>` value (otherwise, you might not be able to renew the certificate). Check the **Subject** field requirements of your CA.
-
-- The _RequestFile_ parameter accepts a local path or a UNC path.
-
-- We didn't use the _BinaryEncoded_ switch, so the request is Base64 encoded. The information that's displayed onscreen is also written to the file, and the contents of the file are what we need to send to the CA. If we had used the _BinaryEncoded_ switch, the request would have been encoded by DER, and the certificate request file itself is what we would need to send to the CA.
-
-- We didn't use the _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key.
-
-- For more information, see [New-ExchangeCertificate](/powershell/module/exchange/new-exchangecertificate).
+```PowerShell
+$binrequest = New-ExchangeCertificate -GenerateRequest -BinaryEncoded -FriendlyName "Mail.contoso.com Cert" -SubjectName "C=US,CN=mail.contoso.com"
+[System.IO.File]::WriteAllBytes('\\FileServer01\Data\Mail.contoso.com Cert.pfx', $binrequest.FileData)
+```
 
 ## How do you know this worked?
 
@@ -207,7 +217,7 @@ To verify that you have successfully created a new certificate request, perform 
 
 The content of a Base64 encoded certificate request file looks like this:
 
-```
+```text
 -----BEGIN NEW CERTIFICATE REQUEST-----
 MIIEBjCCAu4CAQAwYzEWMBQGA1UEAwwNKi5jb250b3NvLmNvbTELMAkGA1UECwwC
 SVQxEDAOBgNVBAoMB0NvbnRvc28xEDAOBgNVBAcMB1NlYXR0bGUxCzAJBgNVBAgM

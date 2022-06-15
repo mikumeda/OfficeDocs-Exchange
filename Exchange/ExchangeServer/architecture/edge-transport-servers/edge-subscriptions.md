@@ -172,8 +172,8 @@ When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the _Cre
 
 **Automatic inbound Send connector configuration**
 
-|**Property**|**Value**|
-|:-----|:-----|
+|Property|Value|
+|---|---|
 |_Name_|EdgeSync - Inbound to \< _Site Name_\>|
 |_AddressSpaces_|`SMTP:--;1` <br/> The `--` value in the address space represents all authoritative and internal relay accepted domains for the Exchange organization. Any messages the Edge Transport server receives for these accepted domains are routed to this Send connector and relayed to the smart hosts.|
 |_SourceTransportServers_|\< _Edge Subscription name_\>|
@@ -189,8 +189,8 @@ When you run the **New-EdgeSubscription** cmdlet on the Mailbox server, the _Cre
 
 **Automatic Internet Send connector configuration**
 
-|**Property**|**Value**|
-|:-----|:-----|
+|Property|Value|
+|---|---|
 |_Name_|EdgeSync - \< _Site Name_\> to Internet|
 |_AddressSpaces_|`SMTP:*;100`|
 |_SourceTransportServers_|\< _Edge Subscription name_\> <br/> The name of the Edge Subscription is the same as the name of the subscribed Edge Transport server.|
@@ -266,8 +266,8 @@ The following table lists the EdgeSync properties related to locking and leasing
 
 **EdgeSync lease properties**
 
-|**Parameter**|**Default value**|**Description**|
-|:-----|:-----|:-----|
+|Parameter|Default value|Description|
+|---|---|---|
 |_LockDuration_|`00:05:00` (5 minutes)|This setting determines how long a particular EdgeSync service will acquire a lock. If the EdgeSync service on the Mailbox server that's holding this lock doesn't respond, after five minutes the EdgeSync service on another Mailbox server will take over the lease. Forcing immediate EdgeSync synchronization doesn't override this setting.|
 |_OptionDuration_|`01:00:00` (1 hour)|This setting determines how long an EdgeSync service can declare a lease option on an Edge Transport server. If the EdgeSync service holding the lease is unavailable and doesn't restart during this option period, no other Exchange EdgeSync service will take over the lease option unless you force EdgeSync synchronization.|
 |_LockRenewalDuration_|`00:01:00` (1 minute)|This setting determines how frequently the lock field is updated when an EdgeSync service has acquired a lock to an Edge Transport server.|

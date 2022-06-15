@@ -241,9 +241,9 @@ Active Directory split permissions is a good choice for your organization if the
 > [!IMPORTANT]
 > You can't enable Active Directory split permissions if you've installed Exchange 2010 or Exchange 2013 on a domain controller.<BR>After you enable or disable Active Directory split permissions, we recommend that you restart the Exchange 2010 and Exchange 2013 servers in your organization to force them to pick up the new Active Directory access token with the updated permissions.
 
-Exchange 2013 achieves Active Directory split permissions by removing permissions and membership from the Exchange Windows Permissions security group. This security group, in shared permissions and RBAC split permissions, is given permissions to many non-Exchange objects and attributes throughout Active Directory. By removing the permissions and membership to this security group, Exchange administrators and services are prevented from creating or modifying those non-Exchange Active Directory objects.
+Exchange 2013 achieves Active Directory split permissions by removing permissions and membership from the Exchange Windows Permissions security group. This security group, in shared permissions and RBAC split permissions, is given permissions to many non-Exchange objects and attributes throughout Active Directory. By removing the permissions and membership to this security group, Exchange administrators and services are prevented from creating or modifying those non-Exchange Active Directory objects.
 
-For a list of changes that occur to the Exchange Windows Permissions security group and other Exchange components when you enable or disable Active Directory split permissions, see the following table.
+For a list of changes that occur to the Exchange Windows Permissions security group and other Exchange components when you enable or disable Active Directory split permissions, see the following table.
 
 > [!NOTE]
 > Role assignments to role groups that enable Exchange administrators to create security principals are removed when Active Directory split permissions is enabled. This is done to remove access to cmdlets that would otherwise generate an error when they're run because they don't have permissions to create the associated Active Directory object.

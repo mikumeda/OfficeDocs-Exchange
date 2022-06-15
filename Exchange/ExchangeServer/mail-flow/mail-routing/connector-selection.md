@@ -26,10 +26,10 @@ Like previous versions of Exchange, Exchange Server 2016 and Exchange Server 201
 
 The settings that are configured on connectors might eliminate an otherwise available connector from routing consideration. These settings are described in the following table:
 
-|**Connector setting**|**Comments**|
-|:-----|:-----|
+|Connector setting|Comments|
+|---|---|
 |State (enabled or disabled)|Only enabled connectors are used in routing decisions. If a connector is disabled, it's not considered when routing messages.|
-|Address space|The address spaces defines the destination domains or other address spaces that are serviced by the connector. When Exchange selects a connector for routing a message, it only considers connectors that have a matching address space. If more than one connector matches the destination address space, the connector with the more precise address match is selected. <br/><br/> For example, suppose the recipient is julia@marketing.contoso.com, and separate Send connectors are configured for \*, \*.contoso.com and marketing.contoso.com. The order of connector preference based solely on the address space is: <br/>1: marketing.contoso.com <br/>2: \*.contoso.com <br/>3: \*|
+|Address space|The address spaces defines the destination domains or other address spaces that are serviced by the connector. When Exchange selects a connector for routing a message, it only considers connectors that have a matching address space. If more than one connector matches the destination address space, the connector with the more precise address match is selected. <br/><br/> For example, suppose the recipient is julia@marketing.contoso.com, and separate Send connectors are configured for \*, \*.contoso.com and marketing.contoso.com. The order of connector preference based solely on the address space is: <ol><li>marketing.contoso.com</li><li>\*.contoso.com</li><li>\*</li></ol>|
 |Address space type|By default, the address space type on a new Send connector is SMTP. If you specify a non-SMTP address space, the messages are still sent to the destination (a smart host) by using SMTP. You need to create a Delivery Agent connector or a Foreign connector to route non-SMTP messages to non-SMTP messaging servers without using SMTP.|
 |Address space cost|You use the cost value on the address space for mail flow optimization and fault tolerance when the same address space is configured on multiple connectors. A lower cost value indicates a preferred connector.|
 |Source server|At least one Mailbox server or Edge Transport server must be configured to host the connector. You can configure multiple source servers to provide load balancing and fault tolerance for the address spaces that are defined on the connector.|

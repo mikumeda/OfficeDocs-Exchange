@@ -21,11 +21,11 @@ _**Applies to:** Exchange Server 2013_
 
 Learn about the Exchange Autodiscover service for Microsoft Exchange 2013. You'll learn what the Exchange Autodiscover service does and how it works as well as what the deployment options are.
 
-Microsoft Exchange 2013 includes a service named the Autodiscover service. This topic gives an overview of the service and explains how it works, how it configures Outlook clients, and what options there are for deploying the Autodiscover service in your messaging environment.
+Microsoft Exchange 2013 includes a service named the Autodiscover service. This topic gives an overview of the service and explains how it works, how it configures Outlook clients, and what options there are for deploying the Autodiscover service in your messaging environment.
 
 The Autodiscover service does the following:
 
-- Automatically configures user profile settings for clients running Microsoft Office Outlook 2007, Outlook 2010, or Outlook 2013, as well as supported mobile phones. Phones running Windows Mobile 6.1 or a later version are supported. If your phone isn't a Windows Mobile phone, check your mobile phone documentation to see if it's supported.
+- Automatically configures user profile settings for clients running Microsoft Office Outlook 2007, Outlook 2010, or Outlook 2013, as well as supported mobile phones. Phones running Windows Mobile 6.1 or a later version are supported. If your phone isn't a Windows Mobile phone, check your mobile phone documentation to see if it's supported.
 
 - Provides access to Exchange features for Outlook 2007, Outlook 2010, or Outlook 2013 clients that are connected to your Exchange messaging environment.
 

@@ -47,7 +47,7 @@ This example details how an organization, Contoso, Ltd., is configuring and depl
 
 Each location contains the infrastructure elements that are necessary to operate a messaging infrastructure based on Exchange 2013, namely:
 
-- Directory services (either Active Directory or Active Directory Domain Services (AD DS))
+- Directory services (either Active Directory or Active Directory Domain Services (AD DS))
 
 - Domain Name System (DNS) name resolution
 

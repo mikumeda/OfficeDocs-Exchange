@@ -5,6 +5,8 @@ ms:assetid: 30cbc4de-adb3-42e8-922f-7661095bdb8c
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876866(v=EXCHG.150)
 ms:contentKeyID: 49289215
 ms.reviewer: 
+ms.topic: article
+description: About the Server Management management role group in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -81,15 +83,15 @@ For more information about role assignments and management scopes, see the follo
 
 ### Management roles assigned to this role group
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -106,7 +108,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="database-copies-role-exchange-2013-help.md">Database Copies role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -115,7 +117,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="databases-role-exchange-2013-help.md">Databases role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -124,7 +126,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="exchange-connectors-role-exchange-2013-help.md">Exchange Connectors role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -133,7 +135,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="exchange-server-certificates-role-exchange-2013-help.md">Exchange Server Certificates role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -142,7 +144,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="exchange-servers-role-exchange-2013-help.md">Exchange Servers role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -151,7 +153,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="exchange-virtual-directories-role-exchange-2013-help.md">Exchange Virtual Directories role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -160,7 +162,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="monitoring-role-exchange-2013-help.md">Monitoring role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -169,7 +171,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="pop3-and-imap4-protocols-role-exchange-2013-help.md">POP3 and IMAP4 Protocols role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -178,7 +180,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="receive-connectors-role-exchange-2013-help.md">Receive Connectors role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -187,7 +189,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="transport-queues-role-exchange-2013-help.md">Transport Queues role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

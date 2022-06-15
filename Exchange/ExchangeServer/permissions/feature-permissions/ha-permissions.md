@@ -39,8 +39,8 @@ You can use the features in the following table to add, remove, and configure se
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Database availability group membership|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Database Availability Groups](../../../ExchangeServer2013/database-availability-groups-role-exchange-2013-help.md)|
 |Database availability group properties|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Database Availability Groups](../../../ExchangeServer2013/database-availability-groups-role-exchange-2013-help.md)|
 |Database availability groups|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Database Availability Groups](../../../ExchangeServer2013/database-availability-groups-role-exchange-2013-help.md)|
@@ -50,8 +50,8 @@ Users who are assigned the View-Only Management role group can view the configur
 
 You can use the features in the following table to add, remove, update, and activate mailbox database copies.
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Database switchover|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Database Copies](../../../ExchangeServer2013/database-copies-role-exchange-2013-help.md)|
 |Mailbox database copies|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Database Copies](../../../ExchangeServer2013/database-copies-role-exchange-2013-help.md)|
 |Server switchover|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Database Copies](../../../ExchangeServer2013/database-copies-role-exchange-2013-help.md)|

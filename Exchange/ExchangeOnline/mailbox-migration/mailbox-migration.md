@@ -69,7 +69,7 @@ There are three types of email migrations that can be made from an Exchange Serv
 
   - You have Exchange 2010 and want to migrate mailboxes in small batches over time.
 
-  - You have Exchange 2013.
+  - You have Exchange 2013 or later.
 
     For more information, see [Use the Microsoft 365 and Office 365 mail migration advisor](../../ExchangeHybrid/mail-migration-jump.md).
 

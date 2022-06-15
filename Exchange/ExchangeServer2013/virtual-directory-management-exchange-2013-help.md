@@ -5,6 +5,8 @@ ms:assetid: 1af30fd5-621c-4acb-b6df-d8fa64d719ba
 ms:mtpsurl: https://technet.microsoft.com/library/Ff952752(v=EXCHG.150)
 ms:contentKeyID: 49289186
 ms.reviewer: 
+ms.topic: article
+description: Virtual directory management in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

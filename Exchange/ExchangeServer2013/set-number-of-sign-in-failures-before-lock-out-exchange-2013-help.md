@@ -4,6 +4,8 @@ TOCTitle: Set the number of sign-in failures before a voice mail user Is locked 
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: how-to
+description: How to set the number of sign-in failures before a voice mail user Is locked out in Microsoft Exchange Server
 ms.reviewer:
 ms.assetid: 855e1980-2868-4983-b097-0b5f63f202b8
 f1.keywords:

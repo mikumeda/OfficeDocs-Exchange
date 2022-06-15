@@ -31,8 +31,8 @@ There are two types of settings you can use:
 
 The following list describes the three message formats available in Exchange Online, and shows which ones are available in Outlook and Outlook on the web:
 
-|**Format**|**Description**|**Available in Outlook**|**Available in Outlook on the web**|
-|:-----|:-----|:-----|:-----|
+|Format|Description|Available in Outlook|Available in Outlook on the web|
+|---|---|---|---|
 |**Plain text**|A plain text message uses only US-ASCII text as described in RFC 2822. The message can't contain different fonts or other text formatting.|Yes|Yes|
 |**HTML**|An HTML message supports text formatting, background images, tables, bullet points, and other graphical elements.|Yes|Yes|
 |**Rich text format (RTF)**|RTF supports text formatting and other graphical elements. <br/> Only Outlook, Outlook on the web, and a few other MAPI email clients understand RTF messages.<br/> Please note that RTF messages that are encrypted with S/MIME will face limitations and may be prone to face conversion issues (like journaling delivery). |Yes|Can read messages formatted in RTF, but can't format or send this format|
@@ -41,8 +41,8 @@ The following list describes the three message formats available in Exchange Onl
 
 The following table describes the message transmission formats that Exchange Online uses to send email messages to external recipients.
 
-|**Transmission format**|**Description**|
-|:-----|:-----|
+|Transmission format|Description|
+|---|---|
 |**Transport Neutral Encapsulation Format (TNEF)**| TNEF is a Microsoft-specific format for transmitting formatted email messages. A TNEF message contains a plain text version of the message and an attachment that packages the original formatted version of the message. Typically, this attachment is named Winmail.dat. The Winmail.dat attachment includes formatting, attachments, and Outlook-specific features such as meeting requests. <br/>  An email client that fully understands TNEF, such as Outlook, processes the Winmail.dat attachment and displays the original message content without ever displaying the Winmail.dat attachment. An email client that doesn't understand TNEF may present a TNEF message in any of the following ways:  <br/>  The plain text version of the message is displayed, and the message contains an attachment named Winmail.dat, Win.dat, or some other generic name such as Att_nnnnn_.dat or Att_nnnnn_.eml where the _nnnnn_ placeholder represents a random number. <br/>  The plain text version of the message is displayed. The TNEF attachment is ignored or removed. The result is a plain text message. <br/>  There are third-party utilities that can help convert Winmail.dat attachments.|
 |**Multipurpose Internet Mail Extensions (MIME)**|MIME is an internet standard that supports text in character sets other than ASCII, non-text attachments, message bodies with multiple parts, and header information in non-ASCII character sets.|
 

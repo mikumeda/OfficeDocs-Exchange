@@ -46,12 +46,12 @@ For more information about how to perform the tasks that must be completed for L
 </thead>
 <tbody>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Review the system requirements before installing Exchange Server 2013.</p></td>
 <td><p><a href="exchange-2013-system-requirements-exchange-2013-help.md">Exchange 2013 system requirements</a></p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Verify that you meet the prerequisites for installation.</p></td>
 <td><p><a href="exchange-2013-prerequisites-exchange-2013-help.md">Exchange 2013 prerequisites</a></p></td>
 </tr>
@@ -66,7 +66,7 @@ For more information about how to perform the tasks that must be completed for L
 </td>
 </tr>
 <tr class="even">
-<td><p><strong> </strong></p></td>
+<td><p><strong> </strong></p></td>
 <td><p>Install the required Client Access and Mailbox servers.</p></td>
 <td><p><a href="install-exchange-2013-using-the-setup-wizard-exchange-2013-help.md">Install Exchange 2013 using the Setup wizard</a></p></td>
 </tr>
@@ -76,12 +76,12 @@ For more information about how to perform the tasks that must be completed for L
 <td><p><a href="verify-an-exchange-2013-installation-exchange-2013-help.md">Verify an Exchange 2013 installation</a></p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>If required, install the required UM language packs.</p></td>
 <td><p><a href="install-a-um-language-pack-exchange-2013-help.md">Install a UM language pack</a></p></td>
 </tr>
 <tr class="odd">
-<td><p><strong> </strong></p></td>
+<td><p><strong> </strong></p></td>
 <td><p>Create the number of SIP URI dial plans required for your organization.</p></td>
 <td><p><a href="/exchange/voice-mail-unified-messaging/connect-voice-mail-system/create-um-dial-plan">Create a UM dial plan</a></p></td>
 </tr>
@@ -122,18 +122,18 @@ For more information about how to perform the tasks that must be completed for L
 <td><p><a href="/exchange/voice-mail-unified-messaging/automatically-answer-and-route-calls/set-up-um-auto-attendant">Set up a UM auto attendant</a></p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Create, import, and enable a new Exchange certificate for UM or enable a mutually-trusted third-party certificate.</p></td>
 <td><p><a href="add-mailbox-and-client-access-servers-to-a-sip-uri-dial-plan-exchange-2013-help.md">Add Mailbox and Client Access servers to a SIP URI dial plan</a></p></td>
 </tr>
 <tr class="even">
-<td><p><strong> </strong></p></td>
+<td><p><strong> </strong></p></td>
 <td><p>Configure the UM startup mode to Dual or TLS for each Client Access and Mailbox server.</p></td>
 <td><p><a href="configure-the-startup-mode-on-a-mailbox-server-exchange-2013-help.md">Configure the startup mode on a Mailbox server</a></p>
 <p><a href="configure-the-startup-mode-on-a-client-access-server-exchange-2013-help.md">Configure the startup mode on a Client Access server</a></p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Restart the Microsoft Exchange Unified Messaging service and the Unified Messaging Call Router service on all Exchange servers to load the required certificates.</p></td>
 <td><p><a href="stop-the-microsoft-exchange-unified-messaging-service-exchange-2013-help.md">Stop the Microsoft Exchange Unified Messaging service</a></p>
 <p><a href="start-the-microsoft-exchange-unified-messaging-service-exchange-2013-help.md">Start the Microsoft Exchange Unified Messaging service</a></p>
@@ -141,13 +141,13 @@ For more information about how to perform the tasks that must be completed for L
 <p><a href="start-the-microsoft-exchange-unified-messaging-call-router-service-exchange-2013-help.md">Start the Microsoft Exchange Unified Messaging Call Router service</a></p></td>
 </tr>
 <tr class="even">
-<td><p><strong> </strong></p></td>
+<td><p><strong> </strong></p></td>
 <td><p>Create a UM mailbox policy or configure the default UM mailbox policy.</p></td>
 <td><p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/create-um-mailbox-policy">Create a UM mailbox policy</a></p>
 <p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/manage-um-mailbox-policy">Manage a UM mailbox policy</a></p></td>
 </tr>
 <tr class="odd">
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>Enable users for Unified Messaging with a SIP address and link them to a SIP URI dial plan.</p></td>
 <td><p><a href="/exchange/voice-mail-unified-messaging/set-up-voice-mail/enable-a-user-for-voice-mail">Enable a user for voice mail</a></p></td>
 </tr>

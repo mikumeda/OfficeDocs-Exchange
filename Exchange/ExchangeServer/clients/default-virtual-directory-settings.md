@@ -24,8 +24,8 @@ Exchange Server 2016 and Exchange Server 2019 automatically configure multiple I
 
 The following table lists the default settings in the Client Access services (the default web site) on Exchange Mailbox servers.
 
-|**Virtual directory**|**Authentication method**|**SSL settings**|**Management method**|
-|:-----|:-----|:-----|:-----|
+|Virtual directory|Authentication method|SSL settings|Management method|
+|---|---|---|---|
 |Default Web Site|Anonymous|Required|IIS management console|
 |API<sup>1</sup>|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption||
 |aspnet_client|Anonymous authentication|SSL required <br/> Requires 128-bit encryption|IIS management console|
@@ -45,8 +45,8 @@ The following table lists the default settings in the Client Access services (th
 
 The following table lists the default settings in the back end services on Exchange Mailbox servers.
 
-|**Virtual directory**|**Authentication method**|**SSL settings**|**Management method**|
-|:-----|:-----|:-----|:-----|
+|Virtual directory|Authentication method|SSL settings|Management method|
+|---|---|---|---|
 |Exchange Back End|Anonymous authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
 |API<sup>1</sup>|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|
 |Autodiscover|Anonymous authentication <br/> Windows authentication|SSL required <br/> Requires 128-bit encryption|This virtual directory shouldn't be configured by the user.|

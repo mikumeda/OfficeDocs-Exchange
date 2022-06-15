@@ -43,44 +43,29 @@ A certificate contains a public key and attaches that public key to the identity
 
 The three primary types of digital certificates are described in the following table.
 
-<br>
-
-****
-
 |Type|Description|Advantages|Disadvantages|
-|---|---|:-----|---|
+|---|---|---|---|
 |Self-signed certificate|The certificate is signed by the application that created it.|Cost (free).|The certificate isn't automatically trusted by client computers and mobile devices. The certificate needs to be manually added to the trusted root certificate store on all client computers and devices, but not all mobile devices allow changes to the trusted root certificate store. <p> Not all services work with self-signed certificates. <p> Difficult to establish an infrastructure for certificate lifecycle management. For example, self-signed certificates can't be revoked.|
 |Certificate issued by an internal CA|The certificate is issued by a public key infrastructure (PKI) in your organization. An example is Active Directory Certificate Services (AD CS). For more information, see [Active Directory Certificate Services Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)).|Allows organizations to issue their own certificates. <p> Less expensive than certificates from a commercial CA.|Increased complexity to deploy and maintain the PKI. <p> The certificate isn't automatically trusted by client computers and mobile devices. The certificate needs to be manually added to the trusted root certificate store on all client computers and devices, but not all mobile devices allow changes to the trusted root certificate store.|
 |Certificate issued by a commercial CA|The certificate is purchased from a trusted commercial CA.|Simplified certificate deployment, because all clients, devices, and servers automatically trust the certificates.|Cost. You need to plan ahead to minimize the number of certificates that are required.|
-|
 
 To prove that a certificate holder is who they claim to be, the certificate must accurately identify the certificate holder to other clients, devices, or servers. The three basic methods to do this are described in the following table.
-
-<br>
-
-****
 
 |Method|Description|Advantages|Disadvantages|
 |---|---|---|---|
 |Certificate subject match|The certificate's **Subject** field contains the common name (CN) of the host. For example, the certificate that's issued to www.contoso.com can be used for the web site <https://www.contoso.com>.|Compatible with all clients, devices, and services. <p> Compartmentalization. Revoking the certificate for a host doesn't affect other hosts.|Number of certificates required. You can only use the certificate for the specified host. For example, you can't use the www.contoso.com certificate for ftp.contoso.com, even when the services are installed on the same server. <p> Complexity. On a web server, each certificate requires its own IP address binding.|
 |Certificate subject alternative name (SAN) match|In addition to the **Subject** field, the certificate's **Subject Alternative Name** field contains a list of multiple host names. For example: <ul><li>www.contoso.com</li><li>ftp.contoso.com</li><li>ftp.eu.fabirkam.net</li></ul>|Convenience. You can use the same certificate for multiple hosts in multiple, separate domains. <p> Most clients, devices, and services support SAN certificates. <p> Auditing and security. You know exactly which hosts are capable of using the SAN certificate.|More planning required. You need to provide the list of hosts when you create the certificate. <p> Lack of compartmentalization. You can't selectively revoke certificates for some of the specified hosts without affecting all of the hosts in the certificate.|
 |Wildcard certificate match|The certificate's **Subject** field contains the common name as the wildcard character (\*) plus a single domain or subdomain. For example, \*.contoso.com or \*.eu.contoso.com. The \*.contoso.com wildcard certificate can be used for: <ul><li>www.contoso.com</li><li>ftp.contoso.com</li><li> mail.contoso.com</li></ul>|Flexibility. You don't need to provide a list of hosts when you request the certificate, and you can use the certificate on any number of hosts that you may need in the future.|You can't use wildcard certificates with other top-level domains (TLDs). For example, you can't use the \*.contoso.com wildcard certificate for \*.contoso.net hosts. <p> You can only use wildcard certificates for host names at the level of the wildcard. For example, you can't use the \*.contoso.com certificate for www.eu.contoso.com. Or, you can't use the \*.eu.contoso.com certificate for www.uk.eu.contoso.com. <p> Older clients, devices, applications, or services might not support wildcard certificates. <p> Wildcards aren't available with Extended Validation (EV) certificates. <p> Careful auditing and control is required. If the wildcard certificate is compromised, it affects every host in the specified domain.|
-|
 
 ## Certificates in Exchange
 
 When you install Exchange 2016 or Exchange 2019 on a server, two self-signed certificates are created and installed by Exchange. A third self-signed certificate is created and installed by Microsoft Windows for the Web Management service in Internet Information Services (IIS). These three certificates are visible in the Exchange admin center (EAC) and the Exchange Management Shell, and are described in the following table:
-
-<br>
-
-****
 
 |Name|Comments|
 |---|---|
 |Microsoft Exchange|This Exchange self-signed certificate has the following capabilities: <ul><li>The certificate is automatically trusted by all other Exchange servers in the organization. This includes any Edge Transport servers subscribed to the Exchange organization.</li><li>The certificate is automatically enabled for all Exchange services except Unified Messaging, and is used to encrypt internal communication between Exchange servers, Exchange services on the same computer, and client connections that are proxied from the Client Access services to the backend services on Mailbox servers. (**Note**: UM is not available on Exchange 2019.)</li><li>The certificate is automatically enabled for inbound connections from external SMTP messaging servers, and outbound connections to external SMTP messaging servers. This default configuration allows Exchange to provide *opportunistic TLS* on all inbound and outbound SMTP connections. Exchange attempts to encrypt the SMTP session with an external messaging server, but if the external server doesn't support TLS encryption, the session is unencrypted.</li><li>The certificate doesn't provide encrypted communication with internal or external clients. Clients and servers don't trust the Exchange self-signed certificate, because the certificate isn't defined in their trusted root certification stores.</li></ul>|
 |Microsoft Exchange Server Auth Certificate|This Exchange self-signed certificate is used for server-to-server authentication and integration by using OAuth. For more information, see [Plan Exchange Server integration with SharePoint and Skype for Business](../../plan-and-deploy/integration-with-sharepoint-and-skype/integration-with-sharepoint-and-skype.md).|
 |WMSVC|This Windows self-signed certificate is used by the Web Management service in IIS to enable remote management of the web server and its associated web sites and applications. <p> If you remove this certificate, the Web Management service will fail to start if no valid certificate is selected. Having the service in this state can prevent you from installing Exchange updates, or uninstalling Exchange from the server. For instructions on how to correct this issue, see [Event ID 1007 - IIS Web Management Service Authentication](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc735088(v=ws.10))|
-|
 
 The properties of these self-signed certificates are described in the [Properties of the default self-signed certificates](#properties-of-the-default-self-signed-certificates) section.
 
@@ -110,10 +95,6 @@ The following elements of planning and deployment for Exchange Server are import
 
 The Exchange services that certificates can be assigned to are described in the following table.
 
-<br>
-
-****
-
 |Service|Description|
 |---|---|
 |IIS (HTTP)|By default, the following services are offered under the default website in the Client Access (frontend) services on a Mailbox server, and are used by clients to connect to Exchange: <ul><li>Autodiscover</li><li>Exchange ActiveSync</li><li>Exchange admin center</li><li>Exchange Web Services</li><li>Offline address book (OAB) distribution</li><li>Outlook Anywhere (RPC over HTTP)</li><li>Outlook MAPI over HTTP</li><li>Outlook on the web</li><li>Remote PowerShell<sup>\*</sup></li></ul> <p> Because you can only associate a single certificate with a website, all the DNS names that clients use to connect to these services need to be included in the certificate. You can accomplish this by using a SAN certificate or a wildcard certificate.|
@@ -122,7 +103,6 @@ The Exchange services that certificates can be assigned to are described in the 
 |Unified Messaging (UM)|For more information, see [Deploying Certificates for UM](../../../ExchangeServer2013/deploying-certificates-for-um-exchange-2013-help.md). <p> **Note**: UM is not available in Exchange 2019.|
 |Hybrid deployment with Microsoft 365 or Office 365|For more information, see [Certificate Requirements for Hybrid Deployments](../../../ExchangeHybrid/certificate-requirements.md).|
 |Secure/Multipurpose Internet Mail Extensions (S/MIME)|For more information, see [S/MIME for message signing and encryption](../../policy-and-compliance/smime/smime.md).|
-|
 
 <sup>\*</sup> Kerberos authentication and Kerberos encryption are used for remote PowerShell access, from both the Exchange admin center and the Exchange Management Shell. Therefore, you don't need to configure your certificates for use with remote PowerShell, as long as you connect directly to an Exchange server (not to a load balanced namespace). To use remote PowerShell to connect to an Exchange server from a computer that isn't a member of the domain, or to connect from the internet, you need to configure your certificates for use with remote PowerShell.
 
@@ -160,10 +140,6 @@ Although the configuration of your organization's digital certificates will vary
 
 Some of the more interesting properties of the default self-signed certificates that are visible in the Exchange admin center and/or the Exchange Management Shell on an Exchange server are described in the following table.
 
-<br>
-
-****
-
 |Property|Microsoft Exchange|Microsoft Exchange Server Auth Certificate|WMSVC|
 |---|---|---|---|
 |**Subject**|`CN=<ServerName>` (for example, `CN=Mailbox01`)|`CN=Microsoft Exchange Server Auth Certificate`|`CN=WMSvc-<ServerName>` (for example, `CN=WMSvc-Mailbox01`)|
@@ -189,10 +165,6 @@ Some of the more interesting properties of the default self-signed certificates 
 For more information, see [Get-ExchangeCertificate](/powershell/module/exchange/get-exchangecertificate).
 
 Further details about the default self-signed certificates that are visible in Windows Certificate Manger are described in the following table.
-
-<br>
-
-****
 
 |Property|Microsoft Exchange|Microsoft Exchange Server Auth Certificate|WMSVC|
 |---|---|---|---|

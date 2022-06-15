@@ -57,10 +57,6 @@ If you want to reject a message but let the intended recipient know what happene
 
 You can include placeholders in the notification message so that it includes information about the original message. The placeholders must be enclosed in two percent signs (%%), and when the notification message is sent, the placeholders are replaced with information from the original message. You can also use basic HTML such as \<br\>, \<b\>, \<i\>, and \<img\> in the message.
 
-<br>
-
-****
-
 |Type of information|Placeholder|
 |---|---|
 |Sender of the message.|%%From%%|
@@ -69,7 +65,6 @@ You can include placeholders in the notification message so that it includes inf
 |Subject of the original message.|%%Subject%%|
 |Headers from the original message. This is similar to the list of headers in a delivery status notification (DSN) generated for the original message.|%%Headers%%|
 |Date the original message was sent.|%%MessageDate%%|
-|
 
 In this example, all messages that contain attachments and are sent to people inside your organization are blocked, and the recipient is notified.
 

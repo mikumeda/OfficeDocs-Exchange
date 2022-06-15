@@ -5,6 +5,8 @@ ms:assetid: 99fecdde-b158-4dfc-9ca7-ff7c0ada7819
 ms:mtpsurl: https://technet.microsoft.com/library/Dd298164(v=EXCHG.150)
 ms:contentKeyID: 48385387
 ms.reviewer: 
+ms.topic: how-to
+description: How to remove a mailbox database copy in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

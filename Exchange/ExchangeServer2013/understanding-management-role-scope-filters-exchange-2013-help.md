@@ -5,6 +5,8 @@ ms:assetid: 6acc2922-ee9c-41f1-8a0f-10a541e8c273
 ms:mtpsurl: https://technet.microsoft.com/library/Dd298043(v=EXCHG.150)
 ms:contentKeyID: 49289288
 ms.reviewer: 
+ms.topic: article
+description: Understand management role scope filters in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -85,10 +87,10 @@ The following table shows an example with values, which indicates when the compl
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

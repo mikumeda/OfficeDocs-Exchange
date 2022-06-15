@@ -5,6 +5,8 @@ ms:assetid: 64fa5535-8150-45c6-82e6-d2346892a031
 ms:mtpsurl: https://technet.microsoft.com/library/Aa998595(v=EXCHG.150)
 ms:contentKeyID: 49315438
 ms.reviewer: 
+ms.topic: how-to
+description: How to stop the Microsoft Exchange Unified Messaging service in Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013, Exchange Server 2016_
 
-You can use the Services snap-in in Microsoft Management Console (MMC) or cmd.exe at a command prompt to stop the Microsoft Exchange Unified Messaging service on a Mailbox server. There may be times when you need to stop this service, for example, when you have to take the Mailbox server offline. When you stop the Microsoft Exchange Unified Messaging service, the Mailbox server won't be able to accept and process incoming calls.
+You can use the Services snap-in in Microsoft Management Console (MMC) or cmd.exe at a command prompt to stop the Microsoft Exchange Unified Messaging service on a Mailbox server. There may be times when you need to stop this service, for example, when you have to take the Mailbox server offline. When you stop the Microsoft Exchange Unified Messaging service, the Mailbox server won't be able to accept and process incoming calls.
 
 For additional management tasks related to Mailbox servers, see [UM services procedures](um-services-procedures-exchange-2013-help.md).
 

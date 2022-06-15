@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/JJ674307(v=EXCHG.150)
 ms:contentKeyID: 49319929
 ms.reviewer: 
 manager: serdars
+ms.topic: article
+description: Use transport rules to inspect message attachments in Microsoft Exchange Server
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
@@ -43,9 +45,9 @@ You can use the transport rule conditions in the following table to examine the 
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -86,9 +88,9 @@ The following table lists the file types supported by transport rules. The syste
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -158,9 +160,9 @@ The following transport rule conditions inspect the properties of a file that is
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -215,8 +217,8 @@ The transport agent uses true type detection by inspecting file properties rathe
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

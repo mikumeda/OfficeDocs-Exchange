@@ -55,8 +55,8 @@ If your source system is Exchange 2003 or Exchange 2007, consider the following 
 > [!NOTE]
 > Even though cutover migration supports moving up to 2000 mailboxes, due to length of time it takes to create and migrate 2000 users, it is more reasonable to migrate 150 users or less.
 
-|**Number of mailboxes**|**How quickly do you want to migrate?**|**Use**|
-|:-----|:-----|:-----|
+|Number of mailboxes|How quickly do you want to migrate?|Use|
+|---|---|---|
 |Fewer than 150|Over a weekend or a few days.|[Cutover](cutover-migration-to-office-365.md) <br/> For an overview, see [What you need to know about a cutover email migration to Microsoft 365 or Office 365](what-to-know-about-a-cutover-migration.md).|
 |Fewer than 150|Slowly, by migrating a few users at a time.|[Staged](perform-a-staged-migration/perform-a-staged-migration.md) <br/> For an overview, see [What you need to know about a staged email migration](what-to-know-about-a-staged-migration.md).|
 |Over 150|Over a weekend or a few days.|[Staged](perform-a-staged-migration/perform-a-staged-migration.md) <br/> If you have more than 150 mailboxes , the best method is to use staged migration where you can migrate a limited number of users at a time. This is because cutover migration performance suffers when you try to migrate more than 150 mailboxes.|
@@ -76,8 +76,8 @@ If your source system is Exchange 2010, Exchange 2013 , or Exchange Server 2016,
 > [!NOTE]
 > Even though cutover migration support moving up to 2000 mailboxes, due to length of time it takes to create and migrate 2000 users, it is more reasonable to migrate 150 users or less.
 
-|**Number of mailboxes**|**How quickly do you want to migrate?**|**Use**|
-|:-----|:-----|:-----|
+|Number of mailboxes|How quickly do you want to migrate?|Use|
+|---|---|---|
 |Fewer than 150|Over a weekend or a few days.|[Cutover](cutover-migration-to-office-365.md) or [Express migration](use-minimal-hybrid-to-quickly-migrate.md).|
 |Fewer than 150|Slowly, by migrating a few users at a time.|[Exchange Hybrid](../../ExchangeHybrid/mail-migration-jump.md)|
 |Over 150|Over a weekend or a few days.|[Exchange Hybrid](../../ExchangeHybrid/mail-migration-jump.md) <br/> If you have more than 150 mailboxes, the best method is to use an Exchange hybrid migration where you can migrate a limited number of users at a time. This is because cutover migration performance suffers when you try to migrate more than 150 mailboxes.|

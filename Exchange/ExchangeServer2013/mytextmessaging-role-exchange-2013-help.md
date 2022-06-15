@@ -65,7 +65,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <td><p>Default Role Assignment Policy</p>
 <p>For more information, see <a href="understanding-management-role-assignment-policies-exchange-2013-help.md">Understanding management role assignment policies</a>.</p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -73,7 +73,7 @@ This role has role assignments to one or more role assignees. The following tabl
 </tr>
 <tr class="even">
 <td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>

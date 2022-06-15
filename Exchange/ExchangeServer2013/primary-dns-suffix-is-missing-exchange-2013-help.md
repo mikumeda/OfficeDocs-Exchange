@@ -5,9 +5,11 @@ ms:assetid: 310765bf-a650-4a3d-a5e4-6173b559d4f6
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.fqdnmissing(v=EXCHG.150)
 ms:contentKeyID: 61200284
 ms.reviewer: 
+ms.topic: article
+description: Microsoft Exchange Server 2013 Setup can't continue because the primary DNS suffix for the computer where you're installing Exchange on hasn't been configured
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

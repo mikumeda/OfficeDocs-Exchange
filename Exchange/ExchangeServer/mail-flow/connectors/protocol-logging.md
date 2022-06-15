@@ -102,8 +102,8 @@ The protocol log files are text files that contain data in the comma-separated v
 
 The protocol log stores each SMTP protocol event on a single line in the log. The information stored on each line is organized by fields, and these fields are separated by commas. The fields that are used in the protocol log are described in the following table.
 
-|**Field name**|**Description**|
-|:-----|:-----|
+|Field name|Description|
+|---|---|
 |**date-time**|UTC date-time of the protocol event. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.|
 |**connector-id**|Distinguished name (DN) of the connector that's associated with the SMTP event.|
 |**session-id**|GUID value that's unique for each SMTP session, but is the same for every event that's associated with that SMTP session.|

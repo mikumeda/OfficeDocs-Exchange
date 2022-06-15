@@ -32,10 +32,6 @@ For more information about Queue Viewer, see [Queue Viewer](queue-viewer.md). Fo
 
 The following table describes the message properties that you can use as filters in Queue Viewer and the Exchange Management Shell.
 
-<br><br>
-
-****
-
 |Queue Viewer|Exchange Management Shell|Comparison operators|Description|
 |---|---|---|---|
 |n/a|`AccountForest`|n/a|his property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations. <p> In on-premises Exchange, this property is the forest root domain where the mailbox resides (for example, contoso.com).|
@@ -64,4 +60,3 @@ The following table describes the message properties that you can use as filters
 |**Subject**|`Subject`|**Equals** (`-eq`) <p> **Does Not Equal** (`-ne`) <p> **Contains** (`-contains`) <p> **Is Present** <br/> **Is Not Present**|The subject of the message (from the **Subject:** header field).|
 |n/a|`TrafficType`|n/a|This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations. <p> In on-premises Exchange, this property is blank or has the value `Email`.|
 |n/a|`TrafficSubType`|n/a|This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations.|
-|
