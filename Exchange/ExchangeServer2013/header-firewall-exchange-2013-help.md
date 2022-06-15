@@ -31,7 +31,7 @@ In Microsoft Exchange Server 2013, *header firewall* is a mechanism that removes
 
 - **X-headers**: An *X-header* is a user-defined, unofficial header field. X-headers aren't specifically mentioned in RFC 2822, but the use of an undefined header field starting with **X-** has become an accepted way to add unofficial header fields to a message. Messaging applications, such as anti-spam, antivirus, and messaging servers may add their own X-headers to a message. In Exchange, the X-header fields contain details about the actions that are performed on the message by the Transport service, such as the spam confidence level (SCL), content filtering results, and rules processing status. Revealing this information to unauthorized sources could pose a potential security risk.
 
-- **Routing headers**: Routing headers are standard SMTP header fields that are defined in RFC 2821 and RFC 2822. Routing headers stamp a message by using information about the different messaging servers that were used to deliver the message to the recipient. Routing headers that are inserted into messages by malicious users can misrepresent the routing path that a message traveled to reach a recipient.
+- **Routing headers**: Routing headers are standard SMTP header fields that are defined in RFC 2821 and RFC 2822. Routing headers stamp a message by using information about the different messaging servers that were used to deliver the message to the recipient. Routing headers that are inserted into messages by malicious users can misrepresent the routing path that a message traveled to reach a recipient.
 
 Header firewall prevents the spoofing of these Exchange-related X-headers by removing them from inbound messages that enter the Exchange organization from untrusted sources. Header firewall prevents the disclosure of these Exchange-related X-headers by removing them from outbound messages sent to untrusted destinations outside the Exchange organization. Header firewall also prevents the spoofing of standard routing headers that are used to track the routing history of a message.
 
@@ -411,7 +411,7 @@ Organization X-headers start with **X-MS-Exchange-Organization-**. Forest X-head
 </tr>
 <tr class="even">
 <td><p><strong>X-MS-Exchange-Organization-PCL</strong></p></td>
-<td><p>Identifies the phishing confidence level. The possible phishing confidence level values are from 1 through 8. A larger value indicates a suspicious message. For more information, see <a href="anti-spam-stamps-exchange-2013-help.md">Anti-spam stamps</a>.</p></td>
+<td><p>Identifies the phishing confidence level. The possible phishing confidence level values are from 1 through 8. A larger value indicates a suspicious message. For more information, see <a href="anti-spam-stamps-exchange-2013-help.md">Anti-spam stamps</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>X-MS-Exchange-Organization-Quarantine</strong></p></td>
@@ -419,7 +419,7 @@ Organization X-headers start with **X-MS-Exchange-Organization-**. Forest X-head
 </tr>
 <tr class="even">
 <td><p><strong>X-MS-Exchange-Organization-SCL</strong></p></td>
-<td><p>Identifies the SCL of the message. The possible SCL values are from 0 through 9. A larger value indicates a suspicious message. The special value -1 exempts the message from processing by the Content Filter agent. For more information, see <a href="content-filtering-exchange-2013-help.md">Content filtering</a>.</p></td>
+<td><p>Identifies the SCL of the message. The possible SCL values are from 0 through 9. A larger value indicates a suspicious message. The special value -1 exempts the message from processing by the Content Filter agent. For more information, see <a href="content-filtering-exchange-2013-help.md">Content filtering</a>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>X-MS-Exchange-Organization-SenderIdResult</strong></p></td>

@@ -48,14 +48,9 @@ Each mitigation is a temporary, interim fix until you can apply the Security Upd
 
 The following table describes the repository of all released mitigations.
 
-<br>
-
-****
-
 |Serial number|Mitigation ID|Description|Lowest version applicable|Highest version applicable|Rollback procedure|
 |---|---|---|---|---|---|
 |1|PING1|EEMS heartbeat probe. Does not modify any Exchange settings.|Exchange 2019: September 2021 CU <p> Exchange 2016: September 2021 CU| - |No rollback required.|
-|
 
 ## Prerequisites
 
@@ -70,14 +65,9 @@ The EM service needs outbound connectivity to the OCS to check for and download 
 
 While the EM service can be installed without connectivity to the OCS, it must have connectivity to the OCS in order to download and apply the latest mitigations. The OCS must be reachable from the computer on which Exchange Server is installed for the EM service to function correctly.
 
-<br>
-
-****
-
 |Endpoint|Address|Port|Description|
 |---|---|---|---|
 |Office Config Service|`officeclient.microsoft.com/*`| 443|Required endpoint for the Exchange EM service|
-|
 
 If a network proxy is deployed for outbound connectivity, you need to configure the _InternetWebProxy_ parameter on the Exchange server by running the following command:
 
@@ -125,16 +115,11 @@ By default, _MitigationsEnabled_ is set to `$true`. When set to `$false`, the EM
 
 The combination of the organization setting and the server settings determine the behavior of the EM service on each Exchange server. This behavior is described in the following table:
 
-<br>
-
-****
-
 |Organization setting|Server setting|Result|
 |---|---|---|
 |True|True|EM service will automatically apply mitigations to the Exchange server.|
 |True|False|EM service will not automatically apply mitigations to a specific Exchange server.|
 |False|False|EM service will not automatically apply mitigations to any Exchange server.|
-|
 
 > [!NOTE]
 > The _MitigationsEnabled_ parameter automatically applies to all servers in an organization. This parameter is set to the value `$true` as soon as the first Exchange server in your organization is upgraded to the September 2021 CU (or later). This behavior is by design. After the other Exchange servers in the organization are upgraded with the September 2021 CU (or later), only then will the EM service honor the value of _MitigationsEnabled_ parameter.

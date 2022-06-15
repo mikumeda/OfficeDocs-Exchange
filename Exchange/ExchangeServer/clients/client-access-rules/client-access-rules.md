@@ -46,17 +46,12 @@ A rule is made of conditions, exceptions, an action, and a priority value.
 
 How multiple rules with the same condition are evaluated, and how a rule with multiple conditions, condition values, and exceptions are evaluated are described in the following table.
 
-<br><br>
-
-****
-
 |Component|Logic|Comments|
 |---|---|---|
 |Multiple rules that contain the same condition|The first rule is applied, and subsequent rules are ignored|For example, if your highest priority rule blocks remote PowerShell connections, and you create another rule that allows remote PowerShell connections for a specific IP address range, all remote PowerShell connections are still blocked by the first rule. Instead of creating another rule for remote PowerShell, you need to add an exception to the existing remote PowerShell rule to allow connections from the specified IP address range.|
 |Multiple conditions in one rule|AND|A client connection must match all conditions in the rule. For example, EAC connections from users in the Accounting department.|
 |One condition with multiple values in a rule|OR|For conditions that allow more than one value, the connection must match any one (not all) of the specified conditions. For example, EAC or remote PowerShell connections.|
 |Multiple exceptions in one rule|OR|If a client connection matches any one of the exceptions, the actions are not applied to the client connection. The connection doesn't have to match all the exceptions. For example, IP address 19.2.168.1.1 or Basic authentication.|
-|
 
 You can test how a specific client connection would be affected by Client Access Rules (which rules would match and therefore affect the connection). For more information, see [Use the Exchange Management Shell to test Client Access Rules](procedures-for-client-access-rules.md#use-the-exchange-management-shell-to-test-client-access-rules).
 
@@ -90,21 +85,16 @@ New-ClientAccessRule -Name "Always Allow Remote PowerShell" -Action Allow -AnyOf
 
 Not all authentication types are supported for all protocols. The supported authentication types per protocol in Exchange Server are described in this table:
 
-****
-
 |Protocol|AdfsAuthentication|BasicAuthentication|CertificateBasedAuthentication|NonBasicAuthentication|OAuthAuthentication|
 |---|---|---|---|---|---|
 |`ExchangeAdminCenter`|supported|supported|n/a|n/a|n/a|
 |`RemotePowerShell`|n/a|supported|n/a|supported|n/a|
-|
 
 ## Client Access Rule conditions and exceptions
 
 Conditions and exceptions in Client Access Rules identify the client connections that the rule is applied to or not applied to. For example, if the rule blocks access by remote PowerShell clients, you can configure the rule to allow remote PowerShell connections from a specific range of IP addresses. The syntax is the same for a condition and the corresponding exception. The only difference is conditions specify client connections to include, while exceptions specify client connections to exclude.
 
 This table describes the conditions and exceptions that are available in Client Access Rules:
-
-****
 
 |Condition parameter in the Exchange Management Shell|Exception parameter in the Exchange Management Shell|Description|
 |---|---|---|

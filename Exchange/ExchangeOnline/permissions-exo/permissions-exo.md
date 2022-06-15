@@ -71,10 +71,6 @@ The following figure shows the relationship between users, role groups, and role
 
 Exchange Online includes several built-in role groups, each one providing permissions to manage specific areas in Exchange Online. Some role groups may overlap with other role groups. The following table lists each role group with a description of its use.
 
-<br>
-
-****
-
 |Role group|Description|Default roles assigned|
 |---|---|---|
 |Compliance Management|Members can configure and manage compliance settings within Exchange in accordance with their policies.|Audit Logs <p> Compliance Admin <p> Data Loss Prevention <p> Information Rights Management <p> Journaling <p> Message Tracking <p> Retention Management <p> Transport Rules <p> View-Only Audit Logs <p> View-Only Configuration <p> View-Only Recipients|
@@ -91,7 +87,6 @@ Exchange Online includes several built-in role groups, each one providing permis
 |TenantAdmins\_-\<unique value\>|Membership in this role group is synchronized across services and is managed centrally. You can't manage this role group in Exchange Online. <p> This role group doesn't have any roles assigned to it. However, it's a member of the Organization Management role group (as Company Administrator) and inherits the permissions provided by that role group. <p> You can add members to this role group by adding users to the Azure AD **Global admin** role in the Microsoft 365 admin center.|n/a|
 |UM Management|Members can manage Exchange Unified Messaging (UM) settings and features.|UM Mailboxes <p> UM Prompts <p> Unified Messaging|
 |View-Only Organization Management|Members can view the properties of any object in the Exchange Online organization.|View-Only Configuration <p> View-Only Recipients|
-|
 
 If you work in a small organization that has only a few administrators, you might need to add those administrators to the Organization Management role group only, and you may never need to use the other role groups. If you work in a larger organization, you might have administrators who perform specific tasks administering Exchange Online, such as recipient configuration. In those cases, you might add one administrator to the Recipient Management role group, and another administrator to the Organization Management role group. Those administrators can then manage their specific areas of Exchange Online, but they won't have permissions to manage areas they're not responsible for.
 
@@ -128,10 +123,6 @@ When you create a user in Microsoft 365 or Office 365, you can choose whether to
 
 The following table lists the Microsoft 365 or Office 365 roles and the Exchange Online role group they correspond to.
 
-<br>
-
-****
-
 |Microsoft 365 or Office 365 role|Exchange Online role group|
 |---|---|
 |Global administrator|Organization Management <p> **Note**: The Global administrator role and the Organization Management role group are tied together using a special Company Administrator role group. The Company Administrator role group is managed internally by Exchange Online and can't be modified directly.|
@@ -139,7 +130,6 @@ The following table lists the Microsoft 365 or Office 365 roles and the Exchange
 |Password administrator|Help Desk administrator.|
 |Service administrator|No corresponding Exchange Online role group.|
 |User management administrator|No corresponding Exchange Online role group.|
-|
 
 For a description of the Exchange Online role groups, see the table "Built-in role groups" in [Role groups](#role-groups).
 
@@ -209,14 +199,9 @@ For detailed role assignment policy procedures, see [Role assignment policies in
 
 The following table contains links to topics that will help you learn about and manage permissions in Exchange Online.
 
-<br>
-
-****
-
 |Topic|Description|
 |---|---|
 |[Understanding Role Based Access Control](../../ExchangeServer2013/understanding-role-based-access-control-exchange-2013-help.md)|Learn about each of the components that make up RBAC and how you can create advanced permissions models if role groups and management roles aren't enough.|
 |[Manage role groups in Exchange Online](role-groups.md)|Configure permissions for Exchange Online administrators and specialist users using role groups, including adding and removing members to and from role groups.|
 |[Role assignment policies in Exchange Online](role-assignment-policies.md)|Configure which features end users have access to on their mailboxes using role assignment policies, view, create, modify, and remove role assignment policies, specify the default role assignment policy, and apply role assignment policies to mailboxes.|
 |[Feature permissions in Exchange Online](feature-permissions.md)|Learn more about the permissions required to manage Exchange Online features and services.|
-|

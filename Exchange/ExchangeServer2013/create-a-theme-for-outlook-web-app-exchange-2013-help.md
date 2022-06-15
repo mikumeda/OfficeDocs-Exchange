@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-A *theme* defines the background color, fonts, highlight colors, icons, and header that are used by Microsoft Outlook Web App. Each theme is a collection of media files and cascading style sheets (.css) files that are stored on the Microsoft Exchange server in the installation directory in \\Client Access\\OWA\\prem\\*version*\\resources\\themes. Each theme is stored in its own subdirectory of \\themes.
+A *theme* defines the background color, fonts, highlight colors, icons, and header that are used by Microsoft Outlook Web App. Each theme is a collection of media files and cascading style sheets (.css) files that are stored on the Microsoft Exchange server in the installation directory in \\Client Access\\OWA\\prem\\*version*\\resources\\themes. Each theme is stored in its own subdirectory of \\themes.
 
 The default theme is found in \\Client Access\\OWA\\prem\\*version*\\resources\\themes\\base. Each theme folder contains all the files that are needed to define a theme. These files include CSS files, graphics, and an .xml file that defines the name of the theme. Additional themes are created by copying all the files from one theme into a new folder and modifying those files as needed.
 

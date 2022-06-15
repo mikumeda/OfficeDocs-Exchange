@@ -65,8 +65,8 @@ Three components must be configured correctly for users to be able to receive fa
 
 Faxing can be enabled or disabled on UM dial plans, UM mailbox policies, or on an individual UM-enabled user's mailbox. UM mailbox policies can be enabled or disabled for faxing using either the Exchange admin center (EAC) or the Exchange Management Shell. Enabling and disabling of dial plans and individual UM-enabled users needs to be done using the Exchange Management Shell. The following table shows the options that are available and the cmdlets and parameters that are used for enabling and disabling faxing.
 
-|**UM component**|**Enable/disable using the EAC?**|**Shell example for enabling faxing**|
-|:-----|:-----|:-----|
+|UM component|Enable/disable using the EAC?|Shell example for enabling faxing|
+|---|---|---|
 |Dial plan|No| `Set-UMDialPlan -id MyUMDialPlan -faxenabled $true`|
 |UM mailbox policy|Yes| `Set-UMMaiboxPolicy -id MyPolicy -AllowFax $true`|
 |UM-enabled user|No| `Set-UMMailbox -id tonysmith -faxenabled $true`|

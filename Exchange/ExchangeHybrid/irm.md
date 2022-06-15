@@ -38,8 +38,8 @@ IRM functionality that's available in your on-premises Exchange organization may
 
 **Available IRM features**
 
-|**Feature**|**Available in Exchange 2007 and earlier**|**Available in Exchange 2010**|**Available in Exchange Online and Exchange 2013 and later**|
-|:-----|:-----|:-----|:-----|
+|Feature|Available in Exchange 2007 and earlier|Available in Exchange 2010|Available in Exchange Online and Exchange 2013 and later|
+|---|---|---|---|
 |Manual protection of messages in Outlook|Yes|Yes|Yes|
 |Manual protection of messages in Outlook Web App|No|Yes|Yes|
 |View IRM-protected messages in Outlook|Yes|Yes|Yes|
@@ -64,8 +64,8 @@ The IRM configuration that's applied to a user depends on the client the user us
 
 **Active AD RMS server**
 
-|**Client**|**On-premises mailbox**|**Exchange Online mailbox**|
-|:-----|:-----|:-----|
+|Client|On-premises mailbox|Exchange Online mailbox|
+|---|---|---|
 |Outlook desktop clients|On-premises AD RMS|On-premises AD RMS|
 |Outlook on the web|On-premises AD RMS|Exchange Online AD RMS|
 |ActiveSync device|On-premises AD RMS|Exchange Online AD RMS|

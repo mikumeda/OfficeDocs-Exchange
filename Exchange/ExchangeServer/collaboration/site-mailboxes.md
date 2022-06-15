@@ -44,8 +44,8 @@ When one project member files mail or documents using the site mailbox, any proj
 
 Site mailbox quotas can be set by using the **SiteMailboxProvisioningPolicy** cmdlets in the Exchange Management Shell. The Site mailbox provisioning policies only apply to the email that is sent to and from the site mailbox and the size of the site mailbox on the Exchange server. The document repository settings are configured in SharePoint. Although you can create multiple site mailbox provisioning policies using the **New-SiteMailboxProvisioningPolicy** cmdlet, only the default provisioning policy will be applied to all site mailboxes. You can't apply multiple policies within your organization. The provisioning policies allow you to set the following quotas:
 
-|**Quota**|**Description**|**Default setting**|
-|:-----|:-----|:-----|
+|Quota|Description|Default setting|
+|---|---|---|
 |IssueWarningQuota|The _IssueWarningQuota_ parameter specifies the site mailbox size that triggers a warning message to the site mailbox|4.5 GB|
 |MaxReceiveSize|The _MaxReceiveSize_ parameter specifies the maximum size of email messages that can be received by the site mailbox.|36 MB|
 |ProhibitSendReceiveQuota|The _ProhibitSendReceiveQuota_ parameter specifies the size at which the site mailbox can no longer send or receive messages.|5 GB|

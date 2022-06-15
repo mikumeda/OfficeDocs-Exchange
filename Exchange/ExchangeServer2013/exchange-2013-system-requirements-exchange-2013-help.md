@@ -29,17 +29,12 @@ The following table lists the scenarios in which coexistence between Exchange 20
 
 ### Coexistence of Exchange 2013 and earlier versions of Exchange Server
 
-<br>
-
-****
-
 |Exchange version|Exchange organization coexistence|
 |---|---|
 |Exchange Server 2003 and earlier versions|Not supported|
 |Exchange 2007|Supported with the following minimum versions of Exchange: <ul><li><p>Update Rollup 10 for Exchange 2007 Service Pack 3 (SP3) on all Exchange 2007 servers in the organization, including Edge Transport servers.<sup>1</sup></li><li>Exchange 2013 Cumulative Update 2 (CU2) or later on all Exchange 2013 servers in the organization.</li></ul>|
 |Exchange 2010|Supported with the following minimum versions of Exchange: <ul><li><p>Exchange 2010 SP3 on all Exchange 2010 servers in the organization, including Edge Transport servers).<sup>2</sup></li><li>Exchange 2013 CU2 or later on all Exchange 2013 servers in the organization.</li></ul>|
 |Mixed Exchange 2010 and Exchange 2007 organization|Supported with the following minimum versions of Exchange: <ul><li><p>Update Rollup 10 for Exchange 2007 SP3 on all Exchange 2007 servers in the organization, including Edge Transport servers.<sup>1</sup></li><li>Exchange 2010 SP3 on all Exchange 2010 servers in the organization, including Edge Transport servers.<sup>2</sup></li><li>Exchange 2013 CU2 or later on all Exchange 2013 servers in the organization.</li></ul>|
-|
 
 <sup>1</sup> If you want to create an EdgeSync Subscription between an Exchange 2007 Hub Transport server and an Exchange 2013 SP1 Edge Transport server, you need to install Exchange 2007 SP3 Update Rollup 13 or later on the Exchange 2007 Hub Transport server.
 
@@ -53,10 +48,6 @@ Exchange 2013 supports hybrid deployments with Microsoft 365 or Office 365 organ
 
 The following table lists the requirements for the network and the directory servers in your Exchange 2013 organization.
 
-<br>
-
-****
-
 |Component|Requirement|
 |---|---|
 |Schema master|By default, the schema master runs on the first Active Directory domain controller installed in a forest. The schema master must be running one of the following: <ul><li>Windows Server 2016 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 R2 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 R2 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 Standard or Datacenter</li><li>Windows Server 2008 R2 Standard or Enterprise</li><li>Windows Server 2008 R2 Datacenter RTM or later</li><li>Windows Server 2008 Standard or Enterprise (32-bit or 64-bit)</li><li>Windows Server 2008 Datacenter RTM or later</li><li>Windows Server 2003 Standard Edition with Service Pack 2 (SP2) or later (32-bit or 64-bit)</li><li>Windows Server 2003 Enterprise Edition with SP2 or later (32-bit or 64-bit)</li></ul>|
@@ -65,11 +56,10 @@ The following table lists the requirements for the network and the directory ser
 |Active Directory forest|Active Directory must be at Windows Server 2003 forest functionality mode or higher.<sup>2</sup>|
 |DNS namespace support|Exchange 2013 supports the following domain name system (DNS) namespaces: <ul><li>Contiguous</li><li>Noncontiguous</li><li>Single label domains</li><li>Disjoint</li></ul> <p> For more information about DNS namespaces supported by Exchange, see [KB2269838](https://support.microsoft.com/help/2269838).|
 |IPv6 support|In Exchange 2013, IPv6 is supported only when IPv4 is also installed and enabled. If Exchange 2013 is deployed in this configuration, and the network supports IPv4 and IPv6, all Exchange servers can send data to and receive data from devices, servers, and clients that use IPv6 addresses. For more information, see [IPv6 support in Exchange 2013](ipv6-support-in-exchange-2013-exchange-2013-help.md).|
-|
 
-<sup>1</sup> Windows Server 2012 R2 and Windows Server 2016 are supported only with Exchange 2013 SP1 or later.
+<sup>1</sup> Windows Server 2012 R2 and Windows Server 2016 are supported only with Exchange 2013 SP1 or later.
 
-<sup>2</sup> Windows Server 2012 R2 or Windows Server 2016 forest functionality mode is supported only with Exchange 2013 SP1 or later.
+<sup>2</sup> Windows Server 2012 R2 or Windows Server 2016 forest functionality mode is supported only with Exchange 2013 SP1 or later.
 
 ## Directory server architecture
 
@@ -90,20 +80,15 @@ For detailed information on how to properly size and configure your deployment, 
 
 For information about deploying Exchange in a virtualized environment, see [Exchange 2013 virtualization](exchange-2013-virtualization-exchange-2013-help.md).
 
-<br>
-
-****
-
 |Component|Requirement|Notes|
 |---|---|---|
 |Processor|<ul><li>x64 architecture-based computer with Intel processor that supports Intel 64 architecture (formerly known as Intel EM64T)</li><li>AMD processor that supports the AMD64 platform</li><li>Intel Itanium IA64 processors not supported</li></ul>|See the [Operating system](#operating-system) section later in this topic for supported operating systems.|
 |Memory|Varies depending on Exchange roles that are installed: <ul><li>**Mailbox**: 8GB minimum</li><li>**Client Access**: 4GB minimum</li><li>**Mailbox and Client Access combined**: 8GB minimum</li><li>**Edge Transport**: 4GB minimum</li></ul>|None.|
-|Paging file size|The page file size minimum and maximum must be set to physical RAM plus 10  MB, to a maximum size of 32778MB if you're using more than 32GB of RAM.|For detailed pagefile recommendations, see [Pagefile](exchange-2013-sizing-and-configuration-recommendations-exchange-2013-help.md#pagefile).|
-|Disk space|<ul><li>At least 30 GB on the drive on which you install Exchange</li><li>An additional 500 MB of available disk space for each Unified Messaging (UM) language pack that you plan to install</li><li>200 MB of available disk space on the system drive</li><li>A hard disk that stores the message queue database on with at least 500 MB of free space.</li></ul>|For detailed information on storage recommendations, see Exchange 2013 storage configuration options.|
+|Paging file size|The page file size minimum and maximum must be set to physical RAM plus 10  MB, to a maximum size of 32778MB if you're using more than 32GB of RAM.|For detailed pagefile recommendations, see [Pagefile](exchange-2013-sizing-and-configuration-recommendations-exchange-2013-help.md#pagefile).|
+|Disk space|<ul><li>At least 30 GB on the drive on which you install Exchange</li><li>An additional 500 MB of available disk space for each Unified Messaging (UM) language pack that you plan to install</li><li>200 MB of available disk space on the system drive</li><li>A hard disk that stores the message queue database on with at least 500 MB of free space.</li></ul>|For detailed information on storage recommendations, see Exchange 2013 storage configuration options.|
 |Drive|DVD-ROM drive, local or network accessible|None.|
 |Screen resolution|1024 x 768 pixels or higher|None.|
 |File format|Disk partitions formatted as NTFS file systems, which applies to the following partitions: <ul><li>System partition</li><li>Partitions that store Exchange binary files or files generated by Exchange diagnostic logging</li></ul> <p> Disk partitions containing the following types of files can be formatted as ReFS: <ul><li>Partitions containing transaction log files</li><li>Partitions containing database files</li><li>Partitions containing content indexing files</li></ul>|None.|
-|
 
 ## Operating system
 
@@ -123,19 +108,14 @@ If you want to install Exchange 2013 on a computer that's running in Windows Ser
 
 ### Supported operating systems for Exchange 2013
 
-<br>
-
-****
-
 |Component|Requirement|
 |---|---|
 |Mailbox, Client Access, and Edge Transport server roles|One of the following: <ul><li>Windows Server 2012 R2 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 Standard or Datacenter</li><li>Windows Server 2008 R2 Standard with Service Pack 1 (SP1)</li><li>Windows Server 2008 R2 Enterprise with Service Pack 1 (SP1)</li><li>Windows Server 2008 R2 Datacenter RTM or later</li></ul>|
 |Management tools|One of the following: <ul><li>Windows Server 2012 R2 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 Standard or Datacenter</li><li>Windows Server 2008 R2 Standard with SP1</li><li>Windows Server 2008 R2 Enterprise with SP1</li><li>Windows Server 2008 R2 Datacenter RTM or later</li><li>64-bit edition of Windows 8.1<sup>2</sup></li><li>64-bit edition of Windows 8</li><li>64-bit edition of Windows 7 with Service Pack 1</li></ul>|
-|
 
-<sup>1</sup> Windows Server 2012 R2 is supported only with Exchange 2013 SP1 or later.
+<sup>1</sup> Windows Server 2012 R2 is supported only with Exchange 2013 SP1 or later.
 
-<sup>2</sup> Windows 8.1 is supported only with Exchange 2013 SP1 or later.
+<sup>2</sup> Windows 8.1 is supported only with Exchange 2013 SP1 or later.
 
 ### Supported Windows Management Framework versions for Exchange 2013
 
@@ -156,7 +136,6 @@ We strongly recommend that you use the latest version of .NET Framework that's s
 |CU19, CU20||X|X||
 |CU16, CU17, CU18||||X|
 |CU15||||X|
-|
 
 **Note**: For older versions of the .NET Framework, see the [Exchange Server supportability matrix](../ExchangeServer/plan-and-deploy/supportability-matrix.md#exchange-2013)
 

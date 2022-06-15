@@ -1,6 +1,6 @@
 ---
 ms.localizationpriority: medium
-ms.topic: hub-page
+ms.topic: landing-page
 author: JoanneHendrickson
 ms.author: jhendr
 ms.assetid: 3c368d31-5959-423f-a533-9639fee3501c

@@ -20,7 +20,7 @@ manager: serdars
 # Recoverable Items folder in Exchange Online
 
 > [!IMPORTANT]
-> Please refer to the [Microsoft 365 security center](https://security.microsoft.com/homepage) and the [Microsoft 365 compliance center](https://compliance.microsoft.com/homepage) for Exchange security and compliance features. They are no longer available in the new [Exchange admin center](https://admin.exchange.microsoft.com).
+> Please refer to the [Microsoft 365 security center](https://security.microsoft.com/homepage) and the [Microsoft Purview compliance portal](https://compliance.microsoft.com/homepage) for Exchange security and compliance features. They are no longer available in the new [Exchange admin center](https://admin.exchange.microsoft.com).
 
 To protect from accidental or malicious deletion and to facilitate discovery efforts commonly undertaken before or during litigation or investigations, Exchange Online uses the Recoverable Items folder. The Recoverable Items folder replaces the feature that was known as *the dumpster* in earlier versions of Exchange. The following Exchange features use the Recoverable Items folder:
 
@@ -58,7 +58,7 @@ This architectural change provides the following key benefits:
 
 - When a mailbox is moved to another mailbox database, the Recoverable Items folder moves with it.
 
-- The Recoverable Items folder is indexed by Exchange Search and can be discovered by using In-Place eDiscovery or Content Search in the Microsoft 365 compliance centers.
+- The Recoverable Items folder is indexed by Exchange Search and can be discovered by using In-Place eDiscovery or Content Search in the Microsoft Purview compliance portals.
 
 - The Recoverable Items folder has its own storage quota.
 
@@ -112,13 +112,10 @@ If an item is removed from the Deletions subfolder, either by a user purging the
 
 The following table lists the contents of and actions that can be performed in the Recoverable Items folder if single item recovery is enabled.
 
-****
-
 |State of single item recovery|Recoverable Items folder contains soft-deleted items|Recoverable Items folder contains hard-deleted items|Users can purge items from the Recoverable Items folder|Managed Folder Assistant automatically purges items from the Recoverable Items folder|
 |---|---|---|---|---|
 |Enabled|Yes|Yes|No|Yes. By default, all items are purged after 14 days, except for calendar items, which are purged after 120 days. If the Recoverable Items warning quota is reached before the deleted item retention period elapses, messages are deleted in first in, first out (FIFO) order.|
 |Disabled|Yes|No|Yes|Yes. By default, all items are purged after 14 days, except for calendar items, which are purged after 120 days. If the Recoverable Items warning quota is reached before the deleted item retention period elapses, messages are deleted in first in, first out (FIFO) order.|
-|
 
 ### In-Place Hold and Litigation Hold
 
@@ -131,13 +128,10 @@ Putting a mailbox on In-Place Hold or Litigation Hold stops the Managed Folder A
 
 The following table lists the contents of and actions that can be performed in the Recoverable Items folder if Litigation Hold is enabled.
 
-****
-
 |State of hold|Recoverable Items folder contains soft-deleted items|Recoverable Items folder contains modified and hard-deleted items|Users can purge items from the Recoverable Items folder|Managed Folder Assistant automatically purges items from the Recoverable Items folder|
 |---|---|---|---|---|
 |Enabled|Yes|Yes|No|No|
 |Disabled|Yes|No|Yes|Yes|
-|
 
 To learn more about In-Place eDiscovery, In-Place Hold, and Litigation Hold, see the following articles:
 
@@ -150,8 +144,6 @@ To learn more about In-Place eDiscovery, In-Place Hold, and Litigation Hold, see
 If a user who is placed on In-Place Hold or Litigation Hold modifies specific properties of a mailbox item, a copy of the original mailbox item is created before the changed item is written. The original copy is saved in the Versions subfolder. This process is known as *copy-on-write page protection*. Copy-on-write page protection applies to items residing in any mailbox folder. The Versions subfolder isn't visible to users.
 
 The following table lists the message properties that trigger copy-on-write page protection.
-
-****
 
 |Item type|Properties that trigger copy-on-write page protection|
 |---|---|

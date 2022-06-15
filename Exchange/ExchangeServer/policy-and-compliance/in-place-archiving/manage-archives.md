@@ -24,7 +24,7 @@ In-Place Archiving helps you regain control of your organization's messaging dat
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place Archive" entry in the [Messaging policy and compliance permissions in Exchange Server](../../permissions/feature-permissions/policy-and-compliance-permissions.md) topic.
 
-- The procedures in this topic apply to on-premises archive mailboxes. For information about archive mailboxes in Exchange Online, see [Enable archive mailboxes in the Security & Compliance Center](/microsoft-365/compliance/enable-archive-mailboxes).
+- The procedures in this topic apply to on-premises archive mailboxes. For information about archive mailboxes in Exchange Online, see [Enable archive mailboxes in the compliance portal](/microsoft-365/compliance/enable-archive-mailboxes).
 
 - To learn how to open the Exchange Management Shell in your on-premises Exchange organization, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell).
 
@@ -166,8 +166,8 @@ To verify that you have successfully disabled an archive mailbox, do the followi
 
 If the archive is disabled, the following values are returned for archive-related properties.
 
-|**Property**|**Value**|
-|:-----|:-----|
+|Property|Value|
+|---|---|
 |**ArchiveDatabase** (for on-premises archives)|\<blank\>|
 |**ArchiveState**| `None`|
 |**DisabledArchiveDatabase** (for on-premises archives)| _\<name of mailbox database\>_|

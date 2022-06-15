@@ -30,15 +30,10 @@ If your on-premises environment contains multiple sites in geographically spread
 
 ## Factor 1: Data source (Exchange Server)
 
-<br>
-
-****
-
 |Checklist|Description|Best practices|
 |---|---|---|
 |System performance|Data extraction is an intensive task. The source system must have sufficient resources, such as CPU time and memory, to provide better migration performance. At the time of migration, the source system is usually close to full capacity to serve regular end-user workload. Additional migration workload sometimes even brings down end users' access because of a lack of system resources.|Monitor system performance during a pilot migration test. If the system is busy, we recommend avoiding an aggressive migration schedule for the specific system because of potential migration slowness and service availability issues. If possible, enhance the source system performance by adding hardware resources and reducing the load on the system by moving tasks and users to other servers that aren't involved in the migration. <p> For more information see: <p> [Ask the Perf Guy: Sizing Exchange 2016 Deployments](https://techcommunity.microsoft.com/t5/exchange-team-blog/ask-the-perf-guy-sizing-exchange-2016-deployments/ba-p/603970) <p> [Exchange Server Health and Performance](../ExchangeServer/server-health/server-health.md) <p> [Understanding Exchange 2010 Performance](/previous-versions/office/exchange-server-2010/dd351192(v=exchg.141)) <p> When migrating from an on-premises Exchange organization where there are multiple mailbox servers and multiple databases, we recommend that you create a migration user list that is evenly distributed across multiple mailbox servers and databases. Based on individual server performance, the list can be further fine-tuned to maximize throughput. <p> For example, if server A has 50 percent more resource availability than server B, it's reasonable to have 50 percent more users from server A in the same migration batch. Similar practices can be applied to other source systems. <p> Perform migrations when servers have maximum resource availability, such as after hours or on weekends and holidays.|
 |Back-end tasks|Other back-end tasks that are running during migration time. Because it's a best practice to perform migration after business hours, it's common that migrations conflict with other maintenance tasks running on your on-premises servers, such as data backup.|Review other system tasks that might be running during migration. We recommend that you perform data migration when no other resource-intensive tasks are running. <p> **Note**: For customers using on-premises Microsoft Exchange, the common back-end tasks are backup solutions and [Exchange store](../ExchangeServer2013/managed-store-exchange-2013-help.md) maintenance.|
-|
 
 ## Factor 2: Migration server
 

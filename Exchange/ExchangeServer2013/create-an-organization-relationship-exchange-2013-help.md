@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Set up an organization relationship to share calendar information with an external business partner. You can configure an organization relationship between two federated Exchange 2013 organizations or between a federated Exchange 2013 organization and federated Exchange 2010 organizations. You can also set up an organization relationship between your on-premises Exchange organization and a Microsoft 365 or Office 365 organization.
+Set up an organization relationship to share calendar information with an external business partner. You can configure an organization relationship between two federated Exchange 2013 organizations or between a federated Exchange 2013 organization and federated Exchange 2010 organizations. You can also set up an organization relationship between your on-premises Exchange organization and a Microsoft 365 or Office 365 organization.
 
 > [!IMPORTANT]
 > Creating an organization relationship is one of several steps in setting up federated sharing in your Exchange organization and requires the configuration of a federation trust for your on-premises Exchange organization.

@@ -35,8 +35,8 @@ Two Unified Messaging user interfaces are available to Outlook Voice Access user
 
 Before users can use the VUI in Outlook Voice Access, it must be enabled on the UM dial plan and on the UM mailbox policy and also be enabled for the user. By default, when you create a dial plan and a UM mailbox policy and enable voice mail for a user, the user can use ASR or the Outlook Voice Access VUI to navigate menus, messages, and other options. However, even if the user is able to use the VUI, they will have to use the telephone key pad to enter their PIN, navigate personal options, and perform a directory search. The default settings are listed in the following table.
 
-|**UM component**|**Default setting**|**Exchange Management Shell example to enable VUI access**|
-|:-----|:-----|:-----|
+|UM component|Default setting|Exchange Management Shell example to enable VUI access|
+|---|---|---|
 |UM dial plan|Enabled| `Set-UMDialPlan -id MyUMDialPlan -AutomaticSpeechRecognitionEnabled $true`|
 |UM mailbox policy|Enabled| `Set-UMMaiboxPolicy -id MyUMPolicy -AllowAutomaticSpeechRecognition $true`|
 |User's mailbox|Enabled| `Set-UMMailbox -id tonysmith -AutomaticSpeechRecognitionEnabled $true`|

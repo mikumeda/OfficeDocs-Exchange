@@ -57,10 +57,6 @@ The following tables list the SMTP events that provide access to messages in the
 
 ### SMTP Receive events
 
-<br>
-
-****
-
 |Sequence|SMTP event|Description|
 |:---:|---|---|
 |1|**OnConnectEvent**|This event is triggered by the initial connection from a remote SMTP host.|
@@ -82,15 +78,10 @@ The following tables list the SMTP events that provide access to messages in the
 |\*\*|**OnReject**|This event is triggered if the receiving SMTP host issues a temporary or permanent delivery status notification (also known as a DSN, non-delivery report, NDR, or bounce message) code to the sending SMTP host.|
 |\*\*|**OnRsetCommand**|This event is triggered if the `RSET` command is issued by the sending SMTP host.|
 |15|**OnDisconnectEvent**|This event is triggered by the disconnection of the SMTP conversation by either the receiving or sending SMTP host. Typically, this happens when the `QUIT` command is issued by the remote SMTP host.|
-|
 
 \*\* These events can occur at any time after **OnConnectEvent** but before **OnDisconnectEvent**.
 
 ### Categorizer events
-
-<br>
-
-****
 
 |Sequence|Categorizer event|Description|
 |:---:|---|---|
@@ -98,7 +89,6 @@ The following tables list the SMTP events that provide access to messages in the
 |2|**OnResolvedMessage**|This event is triggered after all the recipients have been resolved, but before the next hop has been determined for each recipient. The **OnResolvedMessage** routing event enables subsequent events to override the default routing behavior by using the per-recipient **SetRoutingOverride** method.|
 |3|**OnRoutedMessage**|This event is triggered after messages have been categorized, distribution lists have been expanded, and recipients have been resolved.|
 |4|**OnCategorizedMessage**|This event is triggered when the categorizer completes processing the message.|
-|
 
 ## Priority of transport agents
 
@@ -122,8 +112,6 @@ The more interesting built-in transport agents on Mailbox servers are described 
 
 ### Interesting built-in transport agents on Mailbox servers
 
-****
-
 |Agent name|Manageable?|Priority|SMTP or categorizer events|
 |---|:---:|:---:|---|
 |Transport Rule Agent|Yes|1|**OnResolvedMessage**|
@@ -140,17 +128,12 @@ The more interesting built-in transport agents on Mailbox servers are described 
 |RMS Decryption Agent|No|Not configurable|**OnSubmittedMessage**|
 |RMS Encryption Agent|No|Not configurable|**OnSubmittedMessage** <p> **OnRoutedMessage**|
 |RMS Protocol Decryption Agent|No|Not configurable|**OnEndOfData**|
-|
 
 ### Interesting built-in transport agents on Edge Transport servers
 
 On Edge Transport servers, most of the built-in transport agents are visible and manageable by the transport agent management cmdlets or by other feature-specific cmdlets.
 
 The more interesting built-in transport agents on Edge Transport servers are described in the following table. Note that this table doesn't include invisible or unmanageable transport agents.
-
-<br><br>
-
-****
 
 |Agent name|Manageable?|Priority|SMTP or categorizer events|
 |---|:---:|:---:|---|
@@ -164,7 +147,6 @@ The more interesting built-in transport agents on Edge Transport servers are des
 |Protocol Analysis Agent<sup>\*</sup>|Yes|8|**OnConnectEvent** <p> **OnEndOfHeaders** <p> **OnEndOfData** <p> **OnReject** <p> **OnRsetCommand** <p> **OnDisconnectEvent**|
 |Attachment Filtering Agent|Yes|9|**OnEndOfData**|
 |Address Rewriting Outbound Agent|Yes|10|**OnSubmittedMessage** <p> **OnRoutedMessage**|
-|
 
 <sup>\*</sup> You can also install and configure these anti-spam agents on Mailbox servers. For more information, see [Enable antispam functionality on Mailbox servers](../../antispam-and-antimalware/antispam-protection/antispam-on-mailbox-servers.md).
 

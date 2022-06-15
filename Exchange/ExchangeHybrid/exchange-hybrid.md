@@ -120,8 +120,8 @@ Let's say that you're the network administrator for Contoso, and you're interest
 
 If you compare Contoso's existing organization configuration and the hybrid deployment configuration, you'll see that configuring a hybrid deployment has added servers and services that support additional communication and features that are shared between the on-premises and Exchange Online organizations. Here's an overview of the changes that a hybrid deployment has made from the initial on-premises Exchange organization.
 
-|**Configuration**|**Before hybrid deployment**|**After hybrid deployment**|
-|:-----|:-----|:-----|
+|Configuration|Before hybrid deployment|After hybrid deployment|
+|---|---|---|
 |Mailbox location|Mailboxes on-premises only.|Mailboxes on-premises and in Exchange Online.|
 |Message transport|On-premises Mailbox servers handle all inbound and outbound message routing.|On-premises Mailbox servers handle internal message routing between the on-premises and Exchange Online organization.|
 |Outlook on the web|On-premises Mailbox servers receive all Outlook on the web requests and displays mailbox information.|On-premises Mailbox servers redirect Outlook on the web requests to either on-premises Exchange 2016 Mailbox servers or provides a link to log on to Exchange Online.|
@@ -260,8 +260,8 @@ The following list provides you with definitions of the core components associat
 
 The following table contains links to topics that will help you learn about and manage hybrid deployments in Microsoft Exchange.
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[Hybrid Configuration wizard](hybrid-configuration-wizard.md)|Learn how the Hybrid Configuration wizard and the Hybrid Configuration Engine configure a hybrid deployment.|
 |[Hybrid deployment prerequisites](hybrid-deployment-prerequisites.md)|Learn more about hybrid deployment prerequisites, including compatible Exchange Server organizations, Microsoft 365 or Office 365 requirements, and other on-premises configuration requirements.|
 |[Certificate requirements for hybrid deployments](certificate-requirements.md)|Learn more about the requirements for digital certificates in hybrid deployments.|

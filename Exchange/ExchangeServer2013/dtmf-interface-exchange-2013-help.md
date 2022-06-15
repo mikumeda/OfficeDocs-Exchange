@@ -68,8 +68,8 @@ The following table shows the DTMF map values that would be stored in Active Dir
 
  **DTMF values stored for a UM-enabled user named Tony Smith**
 
-|**Directory entry**|**User's name**|
-|:-----|:-----|
+|Directory entry|User's name|
+|---|---|
 | firstNameLastName:866976484|tonysmith|
 | lastNameFirstName:764848669|smithtony|
 | emailAddress:876484|tsmith|

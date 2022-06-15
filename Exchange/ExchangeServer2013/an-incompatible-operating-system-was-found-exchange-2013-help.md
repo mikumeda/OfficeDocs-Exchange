@@ -65,9 +65,9 @@ Microsoft Exchange Server 2013 Setup can't continue because it detected an incom
 </tbody>
 </table>
 
-1   Windows Server 2012 R2 is supported only with Exchange 2013 SP1 or later.
+1   Windows Server 2012 R2 is supported only with Exchange 2013 SP1 or later.
 
-2   Windows 8.1 is supported only with Exchange 2013 SP1 or later.
+2   Windows 8.1 is supported only with Exchange 2013 SP1 or later.
 
 For more information, see [Exchange 2013 system requirements](exchange-2013-system-requirements-exchange-2013-help.md).
 

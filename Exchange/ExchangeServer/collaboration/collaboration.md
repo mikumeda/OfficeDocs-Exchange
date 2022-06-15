@@ -59,10 +59,6 @@ To learn more, see [Recipients](../recipients/recipients.md).
 
 The following table gives you a quick glance at each of the collaboration features to help you decide which one to use.
 
-<br>
-
-****
-
 |Scenario|Site mailboxes|Public folders|Shared mailboxes|Groups|
 |---|---|---|---|---|
 |**Type of group**|Users who work together as a team on a specific project with definitive start and end dates.|With the proper permissions, everyone in your organization can access and search public folders. Public folders are ideal for maintaining history or distribution group conversations.|Delegates working on behalf of a virtual identity, and they can respond to email as that shared mailbox identity. Example: support@tailspintoys.com|Users who need to send email to a group of recipients with a common interest or characteristic.|
@@ -71,4 +67,3 @@ The following table gives you a quick glance at each of the collaboration featur
 |**Shared calendar?**|No|Yes|Yes|No|
 |**Email arrives in user's personal Inbox?**|No. Email arrives in the site mailbox.|No. Email arrives in the public folder.|No. Email arrives in the Inbox of the shared mailbox.|Yes. Email arrives in the Inbox of a distribution group member.|
 |**Supported clients**|Outlook 2013 or later <p> SharePoint 2013|Outlook 2007 or later|Outlook 2007 or later <p> Outlook Web App|Outlook 2007 or later <p> Outlook Web App|
-|

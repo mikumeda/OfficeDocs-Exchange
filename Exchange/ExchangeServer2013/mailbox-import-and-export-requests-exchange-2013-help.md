@@ -53,7 +53,7 @@ Before you import or export mailbox data, consider the following:
 
 - To import or export mailbox data, a network shared folder accessible by your Exchange servers must be set up. You must also grant read/write permissions to the Exchange Trusted Subsystem group so that the group can access the network share where you import and export mailbox data. If you don't grant this permission, you will receive an error message stating that Exchange is unable to establish a connection to the target mailbox.
 
-- The maximum .pst file size supported by Outlook is 50 gigabytes (GB). Therefore, we recommend that you don't import a .pst file larger than 50 GB. You can create multiple .pst files for mailboxes larger than 50 GB by specifying specific folders to include or exclude or by using a content filter.
+- The maximum .pst file size supported by Outlook is 50 gigabytes (GB). Therefore, we recommend that you don't import a .pst file larger than 50 GB. You can create multiple .pst files for mailboxes larger than 50 GB by specifying specific folders to include or exclude or by using a content filter.
 
 - Import and export requests are performed by MRS, which also processes move requests and mailbox restore requests. All requests are queued and throttled by MRS.
 

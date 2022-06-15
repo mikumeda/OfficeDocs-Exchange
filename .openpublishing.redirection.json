@@ -252,7 +252,7 @@
     },
     {
       "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/index.md",
-      "redirect_url": "mobile-access",
+      "redirect_url": "clients-and-mobile-in-exchange-online",
       "redirect_document_id": false
     },
     {
@@ -268,6 +268,21 @@
     {
       "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/pop3-and-imap4/index.md",
       "redirect_url": "pop3-and-imap4",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/mobile-access.md",
+      "redirect_url": "/exchange/clients-and-mobile-in-exchange-online/clients-and-mobile-in-exchange-online",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/configure-email-on-mobile-phone.md",
+      "redirect_url": "/exchange/clients-and-mobile-in-exchange-online/exchange-activesync/configure-email-on-mobile-phone",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeOnline/clients-and-mobile-in-exchange-online/mobile-access/emote-wipe-on-mobile-phone.md",
+      "redirect_url": "/exchange/clients-and-mobile-in-exchange-online/exchange-activesync/remote-wipe-on-mobile-phone",
       "redirect_document_id": false
     },
     {
@@ -1803,6 +1818,11 @@
     {
       "source_path": "Exchange/ExchangeOnline/voice-mail-unified-messaging/um-and-voice-mail-terminology.md",
       "redirect_url": "/exchange/voice-mail-unified-messaging/voice-mail-unified-messaging",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "Exchange/ExchangeServer/policy-and-compliance/mrm/default-folders-that-support-tags.md",
+      "redirect_url": "/exchange/policy-and-compliance/mrm/retention-tags-and-retention-policies",
       "redirect_document_id": false
     }
   ]

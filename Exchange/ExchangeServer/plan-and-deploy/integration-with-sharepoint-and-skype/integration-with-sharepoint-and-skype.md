@@ -108,8 +108,8 @@ In on-premises deployments, Exchange 2016, SharePoint Server 2016, and Skype for
 
 **Auth metadata URLs**
 
-|**Server**|**AuthMetadataUrl**|
-|:-----|:-----|
+|Server|AuthMetadataUrl|
+|---|---|
 | Exchange 2016| `https://<serverfqdn>/autodiscover/metadata/json/1`|
 |SharePoint Server 2016| `https://<serverfqdn>/_layouts/15/metadata/json/1`|
 |Skype for Business| `https://<serverfqdn>/metadata/json/1`|

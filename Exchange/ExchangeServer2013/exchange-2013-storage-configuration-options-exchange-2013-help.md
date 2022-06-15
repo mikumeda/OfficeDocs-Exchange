@@ -98,7 +98,7 @@ The following table provides a list of supported physical disk types and provide
 <li><p>Moderate performance</p></li>
 <li><p>Moderate power utilization</p></li>
 </ul></td>
-<td><p>Supported:  512-byte sector disks for Windows Server 2008 and Windows Server 2008 R2. In addition, 512e disks are supported for Windows Server 2008 R2 with the following:</p>
+<td><p>Supported:  512-byte sector disks for Windows Server 2008 and Windows Server 2008 R2. In addition, 512e disks are supported for Windows Server 2008 R2 with the following:</p>
 <ul>
 <li><p>The hotfix described in <a href="https://support.microsoft.com/help/982018">Microsoft Knowledge Base article 982018</a>, An update that improves the compatibility of Windows 7 and Windows Server 2008 R2 with Advanced Format Disks is available.</p></li>
 <li><p>Windows Server 2008 R2 with Service Pack 1 (SP1) and Exchange Server 2010 SP1.</p></li>
@@ -115,7 +115,7 @@ The following table provides a list of supported physical disk types and provide
 <li><p>High performance</p></li>
 <li><p>Moderate power utilization</p></li>
 </ul></td>
-<td><p>Supported:  512-byte sector disks for Windows Server 2008 and Windows Server 2008 R2. In addition, 512e disks are supported for Windows Server 2008 R2 with the following:</p>
+<td><p>Supported:  512-byte sector disks for Windows Server 2008 and Windows Server 2008 R2. In addition, 512e disks are supported for Windows Server 2008 R2 with the following:</p>
 <ul>
 <li><p>The hotfix described in <a href="https://support.microsoft.com/help/982018">Microsoft Knowledge Base article 982018</a>, An update that improves the compatibility of Windows 7 and Windows Server 2008 R2 with Advanced Format Disks is available.</p></li>
 <li><p>Windows Server 2008 R2 with Service Pack 1 (SP1) and Exchange Server 2010 SP1.</p></li>
@@ -132,7 +132,7 @@ The following table provides a list of supported physical disk types and provide
 <li><p>High performance</p></li>
 <li><p>SAN connectivity</p></li>
 </ul></td>
-<td><p>Supported:  512-byte sector disks for Windows Server 2008 and Windows Server 2008 R2. In addition, 512e disks are supported for Windows Server 2008 R2 with the following:</p>
+<td><p>Supported:  512-byte sector disks for Windows Server 2008 and Windows Server 2008 R2. In addition, 512e disks are supported for Windows Server 2008 R2 with the following:</p>
 <ul>
 <li><p>The hotfix described in <a href="https://support.microsoft.com/help/982018">Microsoft Knowledge Base article 982018</a>, An update that improves the compatibility of Windows 7 and Windows Server 2008 R2 with Advanced Format Disks is available.</p></li>
 <li><p>Windows Server 2008 R2 with Service Pack 1 (SP1) and Exchange Server 2010 SP1.</p></li>
@@ -148,7 +148,7 @@ The following table provides a list of supported physical disk types and provide
 <li><p>Low capacity</p></li>
 <li><p>Extremely high performance</p></li>
 </ul></td>
-<td><p>Supported:  512-byte sector disks for Windows Server 2008 and Windows Server 2008 R2. In addition, 512e disks are supported for Windows Server 2008 R2 with the following:</p>
+<td><p>Supported:  512-byte sector disks for Windows Server 2008 and Windows Server 2008 R2. In addition, 512e disks are supported for Windows Server 2008 R2 with the following:</p>
 <ul>
 <li><p>The hotfix described in <a href="https://support.microsoft.com/help/982018">Microsoft Knowledge Base article 982018</a>, An update that improves the compatibility of Windows 7 and Windows Server 2008 R2 with Advanced Format Disks is available.</p></li>
 <li><p>Windows Server 2008 R2 with Service Pack 1 (SP1) and Exchange Server 2010 SP1.</p></li>
@@ -463,7 +463,7 @@ The following table provides guidance about storage array configurations for Exc
 <tr class="odd">
 <td><p>Disk array RAID stripe size (KB)</p></td>
 <td><p>The stripe size is the per disk unit of data distribution within a RAID set. Stripe size is also referred to as <em>block size</em>.</p></td>
-<td><p>Best practice: 256 KB or greater. Follow storage vendor best practices.</p></td>
+<td><p>Best practice: 256 KB or greater. Follow storage vendor best practices.</p></td>
 </tr>
 <tr class="even">
 <td><p>Storage array cache settings</p></td>
@@ -520,16 +520,16 @@ The following table provides guidance about database and log file choices.
 <tr class="even">
 <td><p>Database size</p></td>
 <td><p>Database size refers to the disk database (.edb) file size.</p></td>
-<td><p>Supported: Approximately 16 terabytes.</p>
+<td><p>Supported: Approximately 16 terabytes.</p>
 <p>Best practice:</p>
 <ul>
-<li><p>200 gigabytes (GB) or less.</p></li>
+<li><p>200 gigabytes (GB) or less.</p></li>
 <li><p>Provision for 120 percent of calculated maximum database size.</p></li>
 </ul></td>
-<td><p>Supported: Approximately 16 terabytes.</p>
+<td><p>Supported: Approximately 16 terabytes.</p>
 <p>Best practice:</p>
 <ul>
-<li><p>2 terabytes or less.</p></li>
+<li><p>2 terabytes or less.</p></li>
 <li><p>Provision for 120 percent of calculated maximum database size.</p></li>
 </ul></td>
 </tr>
@@ -613,7 +613,7 @@ The following table provides guidance on volume configurations.
 <tbody>
 <tr class="odd">
 <td><p>GUID partition table (GPT)</p></td>
-<td><p>GPT is a disk architecture that expands on the older master boot record (MBR) partitioning scheme. The maximum NTFS formatted partition size is 256 terabytes.</p></td>
+<td><p>GPT is a disk architecture that expands on the older master boot record (MBR) partitioning scheme. The maximum NTFS formatted partition size is 256 terabytes.</p></td>
 <td><p>Supported.</p>
 <p>Best practice: Use GPT partitions.</p></td>
 <td><p>Supported.</p>
@@ -621,15 +621,15 @@ The following table provides guidance on volume configurations.
 </tr>
 <tr class="even">
 <td><p>MBR</p></td>
-<td><p>An MBR, or partition sector, is the 512-byte boot sector that is the first sector (LBA Sector 0) of a partitioned data storage device such as a hard disk. The maximum NTFS formatted partition size is 2 terabytes.</p></td>
+<td><p>An MBR, or partition sector, is the 512-byte boot sector that is the first sector (LBA Sector 0) of a partitioned data storage device such as a hard disk. The maximum NTFS formatted partition size is 2 terabytes.</p></td>
 <td><p>Supported.</p></td>
 <td><p>Supported.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Partition alignment</p></td>
 <td><p>Partition alignment refers to aligning partitions on sector boundaries for optimal performance.</p></td>
-<td><p>Supported: The Windows Server 2008 R2 and Windows Server 2012 default is 1 megabyte (MB).</p></td>
-<td><p>Supported: The Windows Server 2008 R2 and Windows Server 2012 default is 1 MB.</p></td>
+<td><p>Supported: The Windows Server 2008 R2 and Windows Server 2012 default is 1 megabyte (MB).</p></td>
+<td><p>Supported: The Windows Server 2008 R2 and Windows Server 2012 default is 1 MB.</p></td>
 </tr>
 <tr class="even">
 <td><p>Volume path</p></td>
@@ -657,9 +657,9 @@ The following table provides guidance on volume configurations.
 <td><p>NTFS allocation unit size</p></td>
 <td><p>NTFS allocation unit size represents the smallest amount of disk space that can be allocated to hold a file.</p></td>
 <td><p>Supported: All allocation unit sizes.</p>
-<p>Best practice: 64 KB for both .edb and log file volumes.</p></td>
+<p>Best practice: 64 KB for both .edb and log file volumes.</p></td>
 <td><p>Supported: All allocation unit sizes.</p>
-<p>Best practice: 64 KB for both .edb and log file volumes.</p></td>
+<p>Best practice: 64 KB for both .edb and log file volumes.</p></td>
 </tr>
 <tr class="even">
 <td><p>NTFS compression</p></td>

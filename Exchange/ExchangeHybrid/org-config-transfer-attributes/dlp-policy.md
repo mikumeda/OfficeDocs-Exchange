@@ -14,15 +14,15 @@ ms.collection:
 - Ent_O365_Hybrid
 - Hybrid
 - M365-email-calendar
-description: Organization configuration transfer attributes can be copied by the Hybrid Configuration Wizard. These configuration transfer attributes are copied from your on-premises organization to Exchange Online to help simplify your hybrid deployment.
+description: The available DLP policy attributes that are copied by the Hybrid Configuration Wizard. These configuration transfer attributes are copied from your on-premises organization to Exchange Online.
 ---
 
-# Dlp Policy attributes
+# DLP Policy attributes
 
-The following attributes of Dlp Policy are copied from an on-premises Exchange organization to Exchange Online as soon as the **Organization Configuration Transfer** option is selected in the Hybrid Configuration Wizard.
+As soon as you select **Organization Configuration Transfer** in the Hybrid Configuration Wizard, the following data loss prevention (DLP) policy attributes are copied from the on-premises Exchange organization to Exchange Online:
 
-|**DlpPolicy**|**Available In**|
-|:-----|:-----|
+|DLPPolicy|Available In|
+|---|---|
 |Description|Exchange 2013, 2016, 2019|
 |Identity|Exchange 2013, 2016, 2019|
 |Mode|Exchange 2013, 2016, 2019|

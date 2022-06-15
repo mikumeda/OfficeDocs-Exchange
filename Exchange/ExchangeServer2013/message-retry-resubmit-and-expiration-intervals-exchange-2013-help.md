@@ -61,7 +61,7 @@ The configuration options that are available for message retry intervals are des
 </tr>
 <tr class="even">
 <td><p><em>QueueGlitchRetryInterval</em></p></td>
-<td><p><code>00:01:00</code> or 1 minute</p></td>
+<td><p><code>00:01:00</code> or 1 minute</p></td>
 <td><p>EdgeTransport.exe.config</p></td>
 <td><p>This key controls the connection interval between each connection attempt that's specified by the <em>QueueGlitchRetryCount</em> key.</p>
 <p>Typically, you don't have to modify this parameter unless the network is unreliable and continues to experience many accidentally dropped connections.</p></td>
@@ -76,8 +76,8 @@ The configuration options that are available for message retry intervals are des
 <tr class="even">
 <td><p><em>TransientFailureRetryInterval</em></p></td>
 <td><ul>
-<li><p>Transport service on Mailbox servers: <code>00:05:00</code> or 5 minutes</p></li>
-<li><p>Edge Transport servers: <code>00:01:00</code> or 10 minutes</p></li>
+<li><p>Transport service on Mailbox servers: <code>00:05:00</code> or 5 minutes</p></li>
+<li><p>Edge Transport servers: <code>00:01:00</code> or 10 minutes</p></li>
 </ul></td>
 <td><p><strong>Set-TransportService</strong>cmdlet or server properties in the EAC</p></td>
 <td><p>This parameter controls the connection interval between each connection attempt that's specified by the <em>TransientFailureRetryCount</em> parameter.</p>
@@ -86,8 +86,8 @@ The configuration options that are available for message retry intervals are des
 <tr class="odd">
 <td><p><em>OutboundConnectionFailureRetryInterval</em></p></td>
 <td><ul>
-<li><p>Transport service on Mailbox servers: <code>00:10:00</code> or 10 minutes</p></li>
-<li><p>Edge Transport Servers: <code>00:30:00</code> or 30 minutes</p></li>
+<li><p>Transport service on Mailbox servers: <code>00:10:00</code> or 10 minutes</p></li>
+<li><p>Edge Transport Servers: <code>00:30:00</code> or 30 minutes</p></li>
 </ul></td>
 <td><p><strong>Set-TransportService</strong> cmdlet or server properties in the EAC</p></td>
 <td><p>This parameter specifies the retry interval for outbound connection attempts that have previously failed. The previously failed connection attempts are controlled by the <em>TransientFailureRetryCount</em> and <em>TransientFailureRetryInterval</em> parameters.</p>
@@ -95,13 +95,13 @@ The configuration options that are available for message retry intervals are des
 </tr>
 <tr class="even">
 <td><p><em>MessageRetryInterval</em></p></td>
-<td><p><code>00:15:00</code> or15 minutes</p></td>
+<td><p><code>00:15:00</code> or15 minutes</p></td>
 <td><p><strong>Set-TransportService</strong> cmdlet</p></td>
 <td><p>This parameter specifies the retry interval for individual messages that have a status of Retry. We recommend that you don't modify the default value unless Microsoft Customer Service and Support advises you to do this.</p></td>
 </tr>
 <tr class="odd">
 <td><p><em>MailboxDeliveryQueueRetryInterval</em></p></td>
-<td><p><code>00:05:00</code> or 5 minutes</p></td>
+<td><p><code>00:05:00</code> or 5 minutes</p></td>
 <td><p>EdgeTransport.exe.config</p></td>
 <td><p>This key specifies how frequently the queues try to connect to the Mailbox Transport Delivery service for a destination mailbox database that can't be successfully reached.</p>
 <p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p>
@@ -118,7 +118,7 @@ For more information, see the "Retry queues" section in [Manage queues](manage-q
 
 ## Configuration options for delay DSN messages
 
-After each message delivery failure, the Edge Transport server or the Transport service on the Mailbox server generates a delay delivery status notification (DSN) message and queues it for delivery to the sender of the undeliverable message. This delay DSN message is sent only after a specified delay notification timeout interval, and only if the failed message wasn't successfully delivered during that time. By default, the delay notification timeout interval is 4 hours. This delay prevents the sending of unnecessary delay DSN messages that may be caused by temporary message transmission failures. The sending of delay DSN notification messages can be selectively enabled or disabled for messages that originate inside or outside the Exchange organization.
+After each message delivery failure, the Edge Transport server or the Transport service on the Mailbox server generates a delay delivery status notification (DSN) message and queues it for delivery to the sender of the undeliverable message. This delay DSN message is sent only after a specified delay notification timeout interval, and only if the failed message wasn't successfully delivered during that time. By default, the delay notification timeout interval is 4 hours. This delay prevents the sending of unnecessary delay DSN messages that may be caused by temporary message transmission failures. The sending of delay DSN notification messages can be selectively enabled or disabled for messages that originate inside or outside the Exchange organization.
 
 The configuration options that are available for delay DSN notification messages are described in the following table.
 
@@ -142,7 +142,7 @@ The configuration options that are available for delay DSN notification messages
 <tbody>
 <tr class="odd">
 <td><p><em>DelayNotificationTimeOut</em></p></td>
-<td><p><code>4:00:00</code>4 hours</p></td>
+<td><p><code>4:00:00</code>4 hours</p></td>
 <td><p><strong>Set-TransportService</strong> or server properties in the EAC</p></td>
 <td><p>This parameter specifies how long the server waits before it sends a delay DSN message to the sender. The value of this parameter should always be greater than the value of the <em>TransientFailureRetryCount</em> parameter multiplied by the value of the <em>TransientFailureRetryInterval</em> parameter.</p>
 <p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p></td>
@@ -177,7 +177,7 @@ Undelivered messages are automatically resubmitted if the delivery queue is in t
 
 To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.
 
-The default value is `12:00:00` or 12 hours.
+The default value is `12:00:00` or 12 hours.
 
 ## Manual Message Resubmission
 
@@ -210,7 +210,7 @@ The message expiration timeout interval is controlled by the *MessageExpirationT
 
 To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.
 
-The default value is `2.00:00:00` or 2 days. The valid input range for this parameter is from `00:00:05` through `90.00:00:00`.
+The default value is `2.00:00:00` or 2 days. The valid input range for this parameter is from `00:00:05` through `90.00:00:00`.
 
 ## Manual Message Expiration
 

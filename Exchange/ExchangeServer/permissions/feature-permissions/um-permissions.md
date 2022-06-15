@@ -42,8 +42,8 @@ You can configure settings for the UM components and features in the following t
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |UM auto attendants|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Unified Messaging Management](../../../ExchangeServer2013/um-management-exchange-2013-help.md)|
 |UM call answering rules|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Unified Messaging Management](../../../ExchangeServer2013/um-management-exchange-2013-help.md)|
 |UM call data and summary reports|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Unified Messaging Management](../../../ExchangeServer2013/um-management-exchange-2013-help.md)|

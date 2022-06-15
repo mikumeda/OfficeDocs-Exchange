@@ -106,7 +106,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="monitoring-role-exchange-2013-help.md">Monitoring role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -115,7 +115,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="view-only-configuration-role-exchange-2013-help.md">View-Only Configuration role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>None</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -124,7 +124,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="view-only-recipients-role-exchange-2013-help.md">View-Only Recipients role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>None</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

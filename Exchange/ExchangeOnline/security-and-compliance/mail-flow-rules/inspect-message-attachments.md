@@ -45,16 +45,11 @@ You can use the mail flow rule conditions in the following table to examine the 
 
 To start using these conditions when inspecting messages, you need to add them to a mail flow rule. Learn about creating or changing rules at [Manage mail flow rules in Exchange Online](manage-mail-flow-rules.md).
 
-<br>
-
-****
-
 |Condition name in the EAC|Condition name in Exchange Online PowerShell|Description|
 |---|---|---|
 |**Any attachment's content includes** <br/> **Any attachment** \> **content includes any of these words**|_AttachmentContainsWords_|This condition matches messages with supported file type attachments that contain a specified string or group of characters.|
 |**Any attachment's content matches** <br/> **Any attachment** \> **content matches these text patterns**|_AttachmentMatchesPatterns_|This condition matches messages with supported file type attachments that contain a text pattern that matches a specified regular expression.|
 |**Any attachment's content can't be inspected** <br/> **Any attachment** \> **content can't be inspected**|_AttachmentIsUnsupported_|Mail flow rules only can inspect the content of supported file types. If the mail flow rule finds an attachment that isn't supported, the _AttachmentIsUnsupported_ condition is triggered. The supported file types are described in the next section.|
-|
 
 > [!NOTE]
 >
@@ -67,10 +62,6 @@ To start using these conditions when inspecting messages, you need to add them t
 ### Supported file types for mail flow rule content inspection
 
 The following table lists the file types supported by mail flow rules. The system automatically detects file types by inspecting file properties rather than the actual file name extension, thus helping to prevent malicious hackers from being able to bypass mail flow rule filtering by renaming a file extension. A list of file types with executable code that can be checked within the context of mail flow rules is listed later in this article.
-
-<br>
-
-****
 
 |Category|File extension|Notes|
 |---|---|---|
@@ -85,15 +76,10 @@ The following table lists the file types supported by mail flow rules. The syste
 |AutoCAD Drawing|.dxf|AutoCAD 2013 files aren't supported.|
 |Image|.jpg, .tiff|Only the metadata text associated with these image files is inspected. There's no optical character recognition.|
 |Compressed archive files|.bz2, cab, .gz, .rar, .tar, .zip, .7z|The content of these files, that were originally in a supported file type format, are inspected and processed in a manner similar to messages that have multiple attachments. The properties of the compressed archive file itself aren't inspected. For example, if the container file type supports comments, that field isn't inspected.|
-|
 
 ## Inspect the file properties of attachments
 
 The following conditions can be used in mail flow rules to inspect different properties of files that are attached to messages. To start using these conditions when inspecting messages, you need to add them to a mail flow rule. For more information about creating or changing rules, see [Manage mail flow rules](manage-mail-flow-rules.md).
-
-<br>
-
-****
 
 |Condition name in the EAC|Condition name in Exchange Online PowerShell|Description|
 |---|---|---|
@@ -104,7 +90,6 @@ The following conditions can be used in mail flow rules to inspect different pro
 |**Any attachment has executable content** <p> **Any attachment** \> **has executable content**|_AttachmentHasExecutableContent_|This condition matches messages that contain executable files as attachments. The supported file types are listed [here](#supported-file-types-for-mail-flow-rule-content-inspection).|
 |**Any attachment is password protected** <p> **Any attachment** \> **is password protected**|_AttachmentIsPasswordProtected_|This condition matches messages with attachments that are protected by a password. Password detection only works for Office documents, .zip files, and .7z files.|
 |**Any attachment has these properties, including any of these words** <p> **Any attachment** \> **has these properties, including any of these words**|_AttachmentPropertyContainsWords_|This condition matches messages where the specified property of the attached Office document contains specified words. A property and its possible values are separated with a colon. Multiple values are separated with a comma. Multiple property/value pairs are also separated with a comma.|
-|
 
 > [!NOTE]
 >
@@ -117,10 +102,6 @@ The following conditions can be used in mail flow rules to inspect different pro
 ### Supported executable file types for mail flow rule inspection
 
 The mail flow rules use true type detection to inspect file properties rather than merely the file extensions. This helps to prevent malicious hackers from being able to bypass your rule by renaming a file extension. The following table lists the executable file types supported by these conditions. If a file is found that isn't listed here, the `AttachmentIsUnsupported` condition is triggered.
-
-<br>
-
-****
 
 |Type of file|Native extension|
 |---|---|
@@ -136,7 +117,6 @@ The mail flow rules use true type detection to inspect file properties rather th
 |European Institute for Computer Antivirus Research standard antivirus test file.|.com|
 |Windows program information file.|.pif|
 |Windows executable program file.|.exe|
-|
 
 > [!IMPORTANT]
 > **.rar** (self-extracting archive files created with the WinRAR archiver), **.jar** (Java archive files), and **.obj** (compiled source code, 3D object, or sequence files) files are **not** considered to be executable file types. To block these files, you can use mail flow rules that look for files with these extensions as described earlier in this article, or you can configure an antimalware policy that blocks these file types (the common attachment types filter). For more information, see [Configure anti-malware policies in EOP](/microsoft-365/security/office-365-security/configure-anti-malware-policies).

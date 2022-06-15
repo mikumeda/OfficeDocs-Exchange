@@ -64,8 +64,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_ABA_Routing**|
-|:-----|
+|Keyword_ABA_Routing|
+|---|
 |aba  <br/> aba #  <br/> aba routing #  <br/> aba routing number  <br/> aba#  <br/> abarouting#  <br/> aba number  <br/> abaroutingnumber  <br/> american bank association routing #  <br/> american bank association routing number  <br/> americanbankassociationrouting#  <br/> americanbankassociationroutingnumber  <br/> bank routing number  <br/> bank routing#  <br/> bank routing number  <br/> routing transit number  <br/> RTN|
 
 ## Argentina National Identity (DNI) Number
@@ -106,8 +106,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_argentina_national_id**|
-|:-----|
+|Keyword_argentina_national_id|
+|---|
 |Argentina National Identity number  <br/> Identity  <br/> Identification National Identity Card  <br/> DNI  <br/> NIC National Registry of Persons  <br/> Documento Nacional de Identidad  <br/> Registro Nacional de las Personas  <br/> Identidad  <br/> Identificación|
 
 ## Australia Bank Account Number
@@ -157,8 +157,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_australia_bank_account_number**|
-|:-----|
+|Keyword_australia_bank_account_number|
+|---|
 |swift bank code  <br/> correspondent bank  <br/> base currency  <br/> usa account  <br/> holder address  <br/> bank address  <br/> information account  <br/> fund transfers  <br/> bank charges  <br/> bank details  <br/> banking information  <br/> full names  <br/> idea|
 
 ## Australia Driver's License Number
@@ -210,8 +210,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_australia_drivers_license_number**|**Keyword_australia_drivers_license_number_exclusions**|
-|:-----|:-----|
+|Keyword_australia_drivers_license_number|Keyword_australia_drivers_license_number_exclusions|
+|---|---|
 |international driving permits  <br/> australian automobile association  <br/> Sydney nsw  <br/> international driving permit  <br/> DriverLicence  <br/> DriverLicences  <br/> Driver Lic  <br/> Driver Licence  <br/> Driver Licences  <br/> DriversLic  <br/> DriversLicence  <br/> DriversLicences  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers Licence  <br/> Drivers Licences  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'Licence  <br/> Driver'Licences  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' Licence  <br/> Driver' Licences  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicence  <br/> Driver'sLicences  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's Licence  <br/> Driver's Licences  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicence#  <br/> DriverLicences#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver Licence#  <br/> Driver Licences#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicence#  <br/> DriversLicences#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers Licence#  <br/> Drivers Licences#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'Licence#  <br/> Driver'Licences#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' Licence#  <br/> Driver' Licences#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicence#  <br/> Driver'sLicences#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's Licence#  <br/> Driver's Licences#|aaa  <br/> DriverLicense  <br/> DriverLicenses  <br/> Driver License  <br/> Driver Licenses  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers License  <br/> Drivers Licenses  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver's License  <br/> Driver's Licenses  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> Driver License#  <br/> Driver Licenses#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver's License#  <br/> Driver's Licenses#|
 
 ## Australia Medical Account Number
@@ -266,8 +266,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_Australia_Medical_Account_Number**|
-|:-----|
+|Keyword_Australia_Medical_Account_Number|
+|---|
 |bank account details  <br/> medicare payments  <br/> mortgage account  <br/> bank payments  <br/> information branch  <br/> credit card loan  <br/> department of human services  <br/> local service  <br/> medicare|
 
 ## Australia Passport Number
@@ -301,8 +301,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_passport**|**Keyword_australia_passport_number**|
-|:-----|:-----|
+|Keyword_passport|Keyword_australia_passport_number|
+|---|---|
 |Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passportnumber  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート ＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|passport  <br/> passport details  <br/> immigration and citizenship  <br/> commonwealth of australia  <br/> department of immigration  <br/> residential address  <br/> department of immigration and citizenship  <br/> visa  <br/> national identity card  <br/> passport number  <br/> travel document  <br/> issuing authority|
 
 ## Australia Tax File Number
@@ -367,8 +367,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_Australia_Tax_File_Number**|**Keyword_number_exclusions**|
-|:-----|:-----|
+|Keyword_Australia_Tax_File_Number|Keyword_number_exclusions|
+|---|---|
 |australian business number  <br/> marginal tax rate  <br/> medicare levy  <br/> portfolio number  <br/> service veterans  <br/> withholding tax  <br/> individual tax return  <br/> tax file number|00000000  <br/> 11111111  <br/> 22222222  <br/> 33333333  <br/> 44444444  <br/> 55555555  <br/> 66666666  <br/> 77777777  <br/> 88888888  <br/> 99999999  <br/> 000000000  <br/> 111111111  <br/> 222222222  <br/> 333333333  <br/> 444444444  <br/> 555555555  <br/> 666666666  <br/> 777777777  <br/> 888888888  <br/> 999999999  <br/> 0000000000  <br/> 1111111111  <br/> 2222222222  <br/> 3333333333  <br/> 4444444444  <br/> 5555555555  <br/> 6666666666  <br/> 7777777777  <br/> 8888888888  <br/> 9999999999|
 
 ## Belgium National Number
@@ -411,8 +411,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_belgium_national_number**|
-|:-----|
+|Keyword_belgium_national_number|
+|---|
 |Identity  <br/> Registration  <br/> Identification  <br/> ID  <br/> Identiteitskaart  <br/> Registratie nummer  <br/> Identificatie nummer  <br/> Identiteit  <br/> Registratie  <br/> Identificatie  <br/> Carte d'identité  <br/> numéro d'immatriculation  <br/> numéro d'identification  <br/> identité  <br/> inscription  <br/> Identifikation  <br/> Identifizierung  <br/> Identifikationsnummer  <br/> Personalausweis  <br/> Registrierung  <br/> Registrationsnummer|
 
 ## Brazil Legal Entity Number (CNPJ)
@@ -472,8 +472,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_brazil_cnpj**|
-|:-----|
+|Keyword_brazil_cnpj|
+|---|
 |CNPJ  <br/> CNPJ/MF  <br/> CNPJ-MF  <br/> National Registry of Legal Entities  <br/> Taxpayers Registry  <br/> Legal entity  <br/> Legal entities  <br/> Registration Status  <br/> Business  <br/> Company  <br/> CNPJ  <br/> Cadastro Nacional da Pessoa Jurídica  <br/> Cadastro Geral de Contribuintes  <br/> CGC  <br/> Pessoa jurídica  <br/> Pessoas jurídicas  <br/> Situação cadastral  <br/> Inscrição  <br/> Empresa|
 
 ## Brazil CPF Number
@@ -533,8 +533,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_brazil_cpf**|
-|:-----|
+|Keyword_brazil_cpf|
+|---|
 |CPF  <br/> Identification  <br/> Registration  <br/> Revenue  <br/> Cadastro de Pessoas Físicas  <br/> Imposto  <br/> Identificação  <br/> Inscrição  <br/> Receita|
 
 ## Brazil National ID Card (RG)
@@ -604,8 +604,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_brazil_rg**|
-|:-----|
+|Keyword_brazil_rg|
+|---|
 |National ID  <br/> Registration  <br/> Cédula de identidade  <br/> Registro Geral  <br/> RG  <br/> Registro de Identidade  <br/> RIC  <br/> Número de registo  <br/> Registro|
 
 ## Canada Bank Account Number
@@ -661,8 +661,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_canada_bank_account_number**|
-|:-----|
+|Keyword_canada_bank_account_number|
+|---|
 |canada savings bonds  <br/> canada revenue agency  <br/> canadian financial institution  <br/> direct deposit form  <br/> canadian citizen  <br/> legal representative  <br/> notary public  <br/> commissioner for oaths  <br/> child care benefit  <br/> universal child care  <br/> canada child tax benefit  <br/> income tax benefit  <br/> harmonized sales tax  <br/> social insurance number  <br/> income tax refund  <br/> child tax benefit  <br/> territorial payments  <br/> institution number  <br/> deposit request  <br/> banking information  <br/> direct deposit|
 
 ## Canada Driver's License Number
@@ -741,8 +741,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_[province_name]_drivers_license_name**|**Keyword_canada_drivers_license**|
-|:-----|:-----|
+|Keyword_[province_name]_drivers_license_name|Keyword_canada_drivers_license|
+|---|---|
 |The province abbreviation, for example AB  <br/> The province name, for example Alberta|DL  <br/> DLS  <br/> CDL  <br/> CDLS  <br/> DriverLic  <br/> DriverLics  <br/> DriverLicense  <br/> DriverLicenses  <br/> DriverLicence  <br/> DriverLicences  <br/> Driver Lic  <br/> Driver Lics  <br/> Driver License  <br/> Driver Licenses  <br/> Driver Licence  <br/> Driver Licences  <br/> DriversLic  <br/> DriversLics  <br/> DriversLicence  <br/> DriversLicences  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers License  <br/> Drivers Licenses  <br/> Drivers Licence  <br/> Drivers Licences  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver'Licence  <br/> Driver'Licences  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver' Licence  <br/> Driver' Licences  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver'sLicence  <br/> Driver'sLicences  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's License  <br/> Driver's Licenses  <br/> Driver's Licence  <br/> Driver's Licences  <br/> Permis de Conduire  <br/> id  <br/> ids  <br/> idcard number  <br/> idcard numbers  <br/> idcard #  <br/> idcard #s  <br/> idcard card  <br/> idcard cards  <br/> idcard  <br/> identification number  <br/> identification numbers  <br/> identification #  <br/> identification #s  <br/> identification card  <br/> identification cards  <br/> identification  <br/> DL#  <br/> DLS#  <br/> CDL#  <br/> CDLS#  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> DriverLicence#  <br/> DriverLicences#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver License#  <br/> Driver Licenses#  <br/> Driver License#  <br/> Driver Licences#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> DriversLicence#  <br/> DriversLicences#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Drivers Licence#  <br/> Drivers Licences#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver'Licence#  <br/> Driver'Licences#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver' Licence#  <br/> Driver' Licences#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver'sLicence#  <br/> Driver'sLicences#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's License#  <br/> Driver's Licenses#  <br/> Driver's Licence#  <br/> Driver's Licences#  <br/> Permis de Conduire#  <br/> ID#  <br/> IDs#  <br/> idcard card#  <br/> idcard cards#  <br/> idcard#  <br/> identification card#  <br/> identification cards#  <br/> identification#|
 
 ## Canada Health Service Number
@@ -775,8 +775,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_canada_health_service_number**|
-|:-----|
+|Keyword_canada_health_service_number|
+|---|
 |personal health number  <br/> patient information  <br/> health services  <br/> speciality services  <br/> automobile accident  <br/> patient hospital  <br/> psychiatrist  <br/> workers compensation  <br/> disability|
 
 ## Canada Passport Number
@@ -810,8 +810,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_canada_passport_number**|**Keyword_passport**|
-|:-----|:-----|
+|Keyword_canada_passport_number|Keyword_passport|
+|---|---|
 |canadian citizenship  <br/> canadian passport  <br/> passport application  <br/> passport photos  <br/> certified translator  <br/> canadian citizens  <br/> processing times  <br/> renewal application|Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passportnumber  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
 ## Canada Personal Health Identification Number (PHIN)
@@ -845,8 +845,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_canada_phin**|**Keyword_canada_provinces**|
-|:-----|:-----|
+|Keyword_canada_phin|Keyword_canada_provinces|
+|---|---|
 |social insurance number  <br/> health information act  <br/> income tax information  <br/> manitoba health  <br/> health registration  <br/> prescription purchases  <br/> benefit eligibility  <br/> personal health  <br/> power of attorney  <br/> registration number  <br/> personal health number  <br/> practitioner referral  <br/> wellness professional  <br/> patient referral  <br/> health and wellness|Nunavut  <br/> Quebec  <br/> Northwest Territories  <br/> Ontario  <br/> British Columbia  <br/> Alberta  <br/> Saskatchewan  <br/> Manitoba  <br/> Yukon  <br/> Newfoundland and Labrador  <br/> New Brunswick  <br/> Nova Scotia  <br/> Prince Edward Island  <br/> Canada|
 
 ## Canada Social Insurance Number
@@ -915,8 +915,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_sin**|**Keyword_sin_collaborative**|
-|:-----|:-----|
+|Keyword_sin|Keyword_sin_collaborative|
+|---|---|
 |sin  <br/> social insurance  <br/> numero d'assurance sociale  <br/> sins  <br/> ssn  <br/> ssns  <br/> social security  <br/> numero d'assurance social  <br/> national identification number  <br/> national id  <br/> sin#  <br/> soc ins  <br/> social ins|driver's license  <br/> drivers license  <br/> driver's licence  <br/> drivers licence  <br/> DOB  <br/> Birthdate  <br/> Birthday  <br/> Date of Birth|
 
 ## Chile Identity Card Number
@@ -972,8 +972,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_chile_id_card**|
-|:-----|
+|Keyword_chile_id_card|
+|---|
 |National Identification Number  <br/> Identity card  <br/> ID  <br/> Identification  <br/> Rol Único Nacional  <br/> RUN  <br/> Rol Único Tributario  <br/> RUT  <br/> Cédula de Identidad  <br/> Número De Identificación Nacional  <br/> Tarjeta de identificación  <br/> Identificación|
 
 ## China Resident Identity Card (PRC) Number
@@ -1023,8 +1023,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_china_resident_id**|
-|:-----|
+|Keyword_china_resident_id|
+|---|
 |Resident Identity Card  <br/> PRC  <br/> National Identification Card  <br/> 身份证  <br/> 居民 身份证  <br/> 居民身份证  <br/> 鉴定  <br/> 身分證  <br/> 居民 身份證  <br/> 鑑定|
 
 ## Credit Card Number
@@ -1076,8 +1076,8 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_cc_verification**|**Keyword_cc_name**|
-|:-----|:-----|
+|Keyword_cc_verification|Keyword_cc_name|
+|---|---|
 |card verification  <br/> card identification number  <br/> cvn  <br/> cid  <br/> cvc2  <br/> cvv2  <br/> pin block  <br/> security code  <br/> security number  <br/> security no  <br/> issue number  <br/> issue no  <br/> cryptogramme  <br/> numéro de sécurité  <br/> numero de securite  <br/> kreditkartenprüfnummer  <br/> kreditkartenprufnummer  <br/> prüfziffer  <br/> prufziffer  <br/> sicherheits Kode  <br/> sicherheitscode  <br/> sicherheitsnummer  <br/> verfalldatum  <br/> codice di verifica  <br/> cod. sicurezza  <br/> cod sicurezza  <br/> n autorizzazione  <br/> código  <br/> codigo  <br/> cod. seg  <br/> cod seg  <br/> código de segurança  <br/> codigo de seguranca  <br/> codigo de segurança  <br/> código de seguranca  <br/> cód. segurança  <br/> cod. seguranca cod. segurança  <br/> cód. seguranca  <br/> cód segurança  <br/> cod seguranca cod segurança  <br/> cód seguranca  <br/> número de verificação  <br/> numero de verificacao  <br/> ablauf  <br/> gültig bis  <br/> gültigkeitsdatum  <br/> gultig bis  <br/> gultigkeitsdatum  <br/> scadenza  <br/> data scad  <br/> fecha de expiracion  <br/> fecha de venc  <br/> vencimiento  <br/> válido hasta  <br/> valido hasta  <br/> vto  <br/> data de expiração  <br/> data de expiracao  <br/> data em que expira  <br/> validade  <br/> valor  <br/> vencimento  <br/> Venc|amex  <br/> american express  <br/> americanexpress  <br/> Visa  <br/> mastercard  <br/> master card  <br/> mc  <br/> mastercards  <br/> master cards  <br/> diner's Club  <br/> diners club  <br/> dinersclub  <br/> discover card  <br/> discovercard  <br/> discover cards  <br/> JCB  <br/> japanese card bureau  <br/> carte blanche  <br/> carteblanche  <br/> credit card  <br/> cc#  <br/> cc#:  <br/> expiration date  <br/> exp date  <br/> expiry date  <br/> date d'expiration  <br/> date d'exp  <br/> date expiration  <br/> bank card  <br/> bankcard  <br/> card number  <br/> card num  <br/> cardnumber  <br/> cardnumbers  <br/> card numbers  <br/> creditcard  <br/> credit cards  <br/> creditcards  <br/> ccn  <br/> card holder  <br/> cardholder  <br/> card holders  <br/> cardholders  <br/> check card  <br/> checkcard  <br/> check cards  <br/> checkcards  <br/> debit card  <br/> debitcard  <br/> debit cards  <br/> debitcards  <br/> atm card  <br/> atmcard  <br/> atm cards  <br/> atmcards  <br/> enroute  <br/> en route  <br/> card type  <br/> carte bancaire  <br/> carte de crédit  <br/> carte de credit  <br/> numéro de carte  <br/> numero de carte  <br/> nº de la carte  <br/> nº de carte  <br/> kreditkarte  <br/> karte  <br/> karteninhaber  <br/> karteninhabers  <br/> kreditkarteninhaber  <br/> kreditkarteninstitut  <br/> kreditkartentyp  <br/> eigentümername  <br/> kartennr  <br/> kartennummer  <br/> kreditkartennummer  <br/> kreditkarten-nummer  <br/> carta di credito  <br/> carta credito  <br/> n. carta  <br/> n carta  <br/> nr. carta  <br/> nr carta  <br/> numero carta  <br/> numero della carta  <br/> numero di carta  <br/> tarjeta credito  <br/> tarjeta de credito  <br/> tarjeta crédito  <br/> tarjeta de crédito  <br/> tarjeta de atm  <br/> tarjeta atm  <br/> tarjeta debito  <br/> tarjeta de debito  <br/> tarjeta débito  <br/> tarjeta de débito  <br/> nº de tarjeta  <br/> no. de tarjeta  <br/> no de tarjeta  <br/> numero de tarjeta  <br/> número de tarjeta  <br/> tarjeta no  <br/> tarjetahabiente  <br/> cartão de crédito  <br/> cartão de credito  <br/> cartao de crédito  <br/> cartao de credito  <br/> cartão de débito  <br/> cartao de débito  <br/> cartão de debito  <br/> cartao de debito  <br/> débito automático  <br/> debito automatico  <br/> número do cartão  <br/> numero do cartão  <br/> número do cartao  <br/> numero do cartao  <br/> número de cartão  <br/> numero de cartão  <br/> número de cartao  <br/> numero de cartao  <br/> nº do cartão  <br/> nº do cartao  <br/> nº. do cartão  <br/> no do cartão  <br/> no do cartao  <br/> no. do cartão  <br/> no. do cartao|
 
 ## Croatia Identity Card Number
@@ -1108,8 +1108,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_croatia_id_card**|
-|:-----|
+|Keyword_croatia_id_card|
+|---|
 |Croatian identity card  <br/> Osobna iskaznica|
 
 ## Croatia Personal Identification (OIB) Number
@@ -1155,8 +1155,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_croatia_oib_number**|
-|:-----|
+|Keyword_croatia_oib_number|
+|---|
 |Personal Identification Number  <br/> Osobni identifikacijski broj  <br/> OIB|
 
 ## Czech National Identity Card Number
@@ -1195,8 +1195,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_czech_id_card**|
-|:-----|
+|Keyword_czech_id_card|
+|---|
 |Czech national identity card  <br/> Občanský průka|
 
 ## Denmark Personal Identification Number
@@ -1235,8 +1235,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_denmark_id**|
-|:-----|
+|Keyword_denmark_id|
+|---|
 |Personal Identification Number  <br/> CPR  <br/> Det Centrale Personregister  <br/> Personnummer|
 
 ## Drug Enforcement Agency (DEA) Number
@@ -1323,8 +1323,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_eu_debit_card**|**Keyword_card_terms_dict**|**Keyword_card_security_terms_dict**|**Keyword_card_expiration_terms_dict**|
-|:-----|:-----|:-----|:-----|
+|Keyword_eu_debit_card|Keyword_card_terms_dict|Keyword_card_security_terms_dict|Keyword_card_expiration_terms_dict|
+|---|---|---|---|
 |account number  <br/> card number  <br/> card no.  <br/> security number  <br/> cc#|acct nbr  <br/> acct num  <br/> acct no  <br/> american express  <br/> americanexpress  <br/> americano espresso  <br/> amex  <br/> atm card  <br/> atm cards  <br/> atm kaart  <br/> atmcard  <br/> atmcards  <br/> atmkaart  <br/> atmkaarten  <br/> bancontact  <br/> bank card  <br/> bankkaart  <br/> card holder  <br/> card holders  <br/> card num  <br/> card number  <br/> card numbers  <br/> card type  <br/> cardano numerico  <br/> cardholder  <br/> cardholders  <br/> cardnumber  <br/> cardnumbers  <br/> carta bianca  <br/> carta credito  <br/> carta di credito  <br/> cartao de credito  <br/> cartao de crédito  <br/> cartao de debito  <br/> cartao de débito  <br/> carte bancaire  <br/> carte blanche  <br/> carte bleue  <br/> carte de credit  <br/> carte de crédit  <br/> carte di credito  <br/> carteblanche  <br/> cartão de credito  <br/> cartão de crédito  <br/> cartão de debito  <br/> cartão de débito  <br/> cb  <br/> ccn  <br/> check card  <br/> check cards  <br/> checkcard  <br/> checkcards  <br/> chequekaart  <br/> cirrus  <br/> cirrus-edc-maestro  <br/> controlekaart  <br/> controlekaarten  <br/> credit card  <br/> credit cards  <br/> creditcard  <br/> creditcards  <br/> debetkaart  <br/> debetkaarten  <br/> debit card  <br/> debit cards  <br/> debitcard  <br/> debitcards  <br/> debito automatico  <br/> diners club  <br/> dinersclub  <br/> discover  <br/> discover card  <br/> discover cards  <br/> discovercard  <br/> discovercards  <br/> débito automático  <br/> edc  <br/> eigentümername  <br/> european debit card  <br/> hoofdkaart  <br/> hoofdkaarten  <br/> in viaggio  <br/> japanese card bureau  <br/> japanse kaartdienst  <br/> jcb  <br/> kaart  <br/> kaart num  <br/> kaartaantal  <br/> kaartaantallen  <br/> kaarthouder  <br/> kaarthouders  <br/> karte  <br/> karteninhaber  <br/> karteninhabers  <br/> kartennr  <br/> kartennummer  <br/> kreditkarte  <br/> kreditkarten-nummer  <br/> kreditkarteninhaber  <br/> kreditkarteninstitut  <br/> kreditkartennummer  <br/> kreditkartentyp  <br/> maestro  <br/> master card  <br/> master cards  <br/> mastercard  <br/> mastercards  <br/> mc  <br/> mister cash  <br/> n carta  <br/> n. carta  <br/> no de tarjeta  <br/> no do cartao  <br/> no do cartão  <br/> no. de tarjeta  <br/> no. do cartao  <br/> no. do cartão  <br/> nr carta  <br/> nr. carta  <br/> numeri di scheda  <br/> numero carta  <br/> numero de cartao  <br/> numero de carte  <br/> numero de cartão  <br/> numero de tarjeta  <br/> numero della carta  <br/> numero di carta  <br/> numero di scheda  <br/> numero do cartao  <br/> numero do cartão  <br/> numéro de carte  <br/> nº carta  <br/> nº de carte  <br/> nº de la carte  <br/> nº de tarjeta  <br/> nº do cartao  <br/> nº do cartão  <br/> nº. do cartão  <br/> número de cartao  <br/> número de cartão  <br/> número de tarjeta  <br/> número do cartao  <br/> scheda dell'assegno  <br/> scheda dell'atmosfera  <br/> scheda dell'atmosfera  <br/> scheda della banca  <br/> scheda di controllo  <br/> scheda di debito  <br/> scheda matrice  <br/> schede dell'atmosfera  <br/> schede di controllo  <br/> schede di debito  <br/> schede matrici  <br/> scoprono la scheda  <br/> scoprono le schede  <br/> solo  <br/> supporti di scheda  <br/> supporto di scheda  <br/> switch  <br/> tarjeta atm  <br/> tarjeta credito  <br/> tarjeta de atm  <br/> tarjeta de credito  <br/> tarjeta de debito  <br/> tarjeta debito  <br/> tarjeta no  <br/> tarjetahabiente  <br/> tipo della scheda  <br/> ufficio giapponese della  <br/> scheda  <br/> v pay  <br/> v-pay  <br/> visa  <br/> visa plus  <br/> visa electron  <br/> visto  <br/> visum  <br/> vpay|card identification number  <br/> card verification  <br/> cardi la verifica  <br/> cid  <br/> cod seg  <br/> cod seguranca  <br/> cod segurança  <br/> cod sicurezza  <br/> cod. seg  <br/> cod. seguranca  <br/> cod. segurança  <br/> cod. sicurezza  <br/> codice di sicurezza  <br/> codice di verifica  <br/> codigo  <br/> codigo de seguranca  <br/> codigo de segurança  <br/> crittogramma  <br/> cryptogram  <br/> cryptogramme  <br/> cv2  <br/> cvc  <br/> cvc2  <br/> cvn  <br/> cvv  <br/> cvv2  <br/> cód seguranca  <br/> cód segurança  <br/> cód. seguranca  <br/> cód. segurança  <br/> código  <br/> código de seguranca  <br/> código de segurança  <br/> de kaart controle  <br/> geeft nr uit  <br/> issue no  <br/> issue number  <br/> kaartidentificatienummer  <br/> kreditkartenprufnummer  <br/> kreditkartenprüfnummer  <br/> kwestieaantal  <br/> no. dell'edizione  <br/> no. di sicurezza  <br/> numero de securite  <br/> numero de verificacao  <br/> numero dell'edizione  <br/> numero di identificazione della  <br/> scheda  <br/> numero di sicurezza  <br/> numero van veiligheid  <br/> numéro de sécurité  <br/> nº autorizzazione  <br/> número de verificação  <br/> perno il blocco  <br/> pin block  <br/> prufziffer  <br/> prüfziffer  <br/> security code  <br/> security no  <br/> security number  <br/> sicherheits kode  <br/> sicherheitscode  <br/> sicherheitsnummer  <br/> speldblok  <br/> veiligheid nr  <br/> veiligheidsaantal  <br/> veiligheidscode  <br/> veiligheidsnummer  <br/> verfalldatum|ablauf  <br/> data de expiracao  <br/> data de expiração  <br/> data del exp  <br/> data di exp  <br/> data di scadenza  <br/> data em que expira  <br/> data scad  <br/> data scadenza  <br/> date de validité  <br/> datum afloop  <br/> datum van exp  <br/> de afloop  <br/> espira  <br/> espira  <br/> exp date  <br/> exp datum  <br/> expiration  <br/> expire  <br/> expires  <br/> expiry  <br/> fecha de expiracion  <br/> fecha de venc  <br/> gultig bis  <br/> gultigkeitsdatum  <br/> gültig bis  <br/> gültigkeitsdatum  <br/> la scadenza  <br/> scadenza  <br/> valable  <br/> validade  <br/> valido hasta  <br/> valor  <br/> venc  <br/> vencimento  <br/> vencimiento  <br/> verloopt  <br/> vervaldag  <br/> vervaldatum  <br/> vto  <br/> válido hasta|
 
 ## Finland National ID
@@ -1365,8 +1365,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_finnish_national_id**|
-|:-----|
+|Keyword_finnish_national_id|
+|---|
 |Sosiaaliturvatunnus  <br/> SOTU Henkilötunnus HETU  <br/> Personbeteckning  <br/> Personnummer|
 
 ## Finland Passport Number
@@ -1401,8 +1401,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_finland_passport_number**|
-|:-----|
+|Keyword_finland_passport_number|
+|---|
 |Passport  <br/> Passi|
 
 ## France Driver's License Number
@@ -1440,8 +1440,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_french_drivers_license**|
-|:-----|
+|Keyword_french_drivers_license|
+|---|
 |drivers licence  <br/> drivers license  <br/> driving licence  <br/> driving license  <br/> permis de conduire  <br/> licence number  <br/> license number  <br/> licence numbers  <br/> license numbers|
 
 ## France National ID Card (CNI)
@@ -1501,8 +1501,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_passport**|
-|:-----|
+|Keyword_passport|
+|---|
 |Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passport number  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート ＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
 ## France Social Security Number (INSEE)
@@ -1559,8 +1559,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_fr_insee**|
-|:-----|
+|Keyword_fr_insee|
+|---|
 |insee  <br/> securité sociale  <br/> securite sociale  <br/> national id  <br/> national identification  <br/> numéro d'identité  <br/> no d'identité  <br/> no. d'identité  <br/> numero d'identite  <br/> no d'identite  <br/> no. d'identite  <br/> social security number  <br/> social security code  <br/> social insurance number  <br/> le numéro d'identification nationale  <br/> d'identité nationale  <br/> numéro de sécurité sociale  <br/> le code de la sécurité sociale  <br/> numéro d'assurance sociale  <br/> numéro de sécu  <br/> code sécu|
 
 ## German Driver's License Number
@@ -1613,8 +1613,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_german_drivers_license_number**|**Keyword_german_drivers_license_collaborative**|**Keyword_german_drivers_license**|
-|:-----|:-----|:-----|
+|Keyword_german_drivers_license_number|Keyword_german_drivers_license_collaborative|Keyword_german_drivers_license|
+|---|---|---|
 |Führerschein  <br/> Fuhrerschein  <br/> Fuehrerschein  <br/> Führerscheinnummer  <br/> Fuhrerscheinnummer  <br/> Fuehrerscheinnummer  <br/> Führerschein-  <br/> Fuhrerschein-  <br/> Fuehrerschein-  <br/> FührerscheinnummerNr  <br/> FuhrerscheinnummerNr  <br/> FuehrerscheinnummerNr  <br/> FührerscheinnummerKlasse  <br/> FuhrerscheinnummerKlasse  <br/> FuehrerscheinnummerKlasse  <br/> Führerschein- Nr  <br/> Fuhrerschein- Nr  <br/> Fuehrerschein- Nr  <br/> Führerschein- Klasse  <br/> Fuhrerschein- Klasse  <br/> Fuehrerschein- Klasse  <br/> FührerscheinnummerNr  <br/> FuhrerscheinnummerNr  <br/> FuehrerscheinnummerNr  <br/> FührerscheinnummerKlasse  <br/> FuhrerscheinnummerKlasse  <br/> FuehrerscheinnummerKlasse  <br/> Führerschein- Nr  <br/> Fuhrerschein- Nr  <br/> Fuehrerschein- Nr  <br/> Führerschein- Klasse  <br/> Fuhrerschein- Klasse  <br/> Fuehrerschein- Klasse  <br/> DL  <br/> DLS  <br/> Driv Lic  <br/> Driv Licen  <br/> Driv License  <br/> Driv Licenses  <br/> Driv Licence  <br/> Driv Licences  <br/> Driv Lic  <br/> Driver Licen  <br/> Driver License  <br/> Driver Licenses  <br/> Driver Licence  <br/> Driver Licences  <br/> Drivers Lic  <br/> Drivers Licen  <br/> Drivers License  <br/> Drivers Licenses  <br/> Drivers Licence  <br/> Drivers Licences  <br/> Driver's Lic  <br/> Driver's Licen  <br/> Driver's License  <br/> Driver's Licenses  <br/> Driver's Licence  <br/> Driver's Licences  <br/> Driving Lic  <br/> Driving Licen  <br/> Driving License  <br/> Driving Licenses  <br/> Driving Licence  <br/> Driving Licences|Nr-Führerschein  <br/> Nr-Fuhrerschein  <br/> Nr-Fuehrerschein  <br/> No-Führerschein  <br/> No-Fuhrerschein  <br/> No-Fuehrerschein  <br/> N-Führerschein  <br/> N-Fuhrerschein  <br/> N-Fuehrerschein  <br/> Nr-Führerschein  <br/> Nr-Fuhrerschein  <br/> Nr-Fuehrerschein  <br/> No-Führerschein  <br/> No-Fuhrerschein  <br/> No-Fuehrerschein  <br/> N-Führerschein  <br/> N-Fuhrerschein  <br/> N-Fuehrerschein|ausstellungsdatum  <br/> ausstellungsort  <br/> ausstellende behöde  <br/> ausstellende behorde  <br/> ausstellende behoerde|
 
 ## German Identity Card Number
@@ -1657,8 +1657,8 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_germany_id_card**|
-|:-----|
+|Keyword_germany_id_card|
+|---|
 |Identity Card  <br/> ID  <br/> Identification  <br/> Personalausweis  <br/> Identifizierungsnummer  <br/> Ausweis  <br/> Identifikation|
 
 ## German Passport Number
@@ -1723,8 +1723,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_german_passport**|**Keyword_german_passport_collaborative**|**Keyword_german_passport_number**|**Keyword_german_passport1**|**Keyword_german_passport2**|
-|:-----|:-----|:-----|:-----|:-----|
+|Keyword_german_passport|Keyword_german_passport_collaborative|Keyword_german_passport_number|Keyword_german_passport1|Keyword_german_passport2|
+|---|---|---|---|---|
 |reisepass  <br/> reisepasse  <br/> reisepassnummer  <br/> passport  <br/> passports|geburtsdatum  <br/> ausstellungsdatum  <br/> ausstellungsort|No-Reisepass  <br/> Nr-Reisepass|Reisepass-Nr|bnationalit.t|
 
 ## Greece National ID Card
@@ -1771,8 +1771,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_greece_id_card**|
-|:-----|
+|Keyword_greece_id_card|
+|---|
 |Greek identity Card  <br/> Tautotita  <br/> Δελτίο αστυνομικής ταυτότητας  <br/> Ταυτότητα|
 
 ## Hong Kong Identity Card (HKID) Number
@@ -1820,8 +1820,8 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_hong_kong_id_card**|
-|:-----|
+|Keyword_hong_kong_id_card|
+|---|
 |Hong Kong Identity Card  <br/> HKID  <br/> ID card  <br/> 香港身份證  <br/> 香港永久性居民身份證|
 
 ## India Permanent Account Number
@@ -1860,8 +1860,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_india_permanent_account_number**|
-|:-----|
+|Keyword_india_permanent_account_number|
+|---|
 |Permanent Account Number  <br/> PAN|
 
 ## India Unique Identification (Aadhaar) Number
@@ -1913,8 +1913,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_india_aadhar**|
-|:-----|
+|Keyword_india_aadhar|
+|---|
 |Aadhar  <br/> Aadhaar  <br/> UID  <br/> आधार|
 
 ## Indonesia Identity Card (KTP) Number
@@ -1966,8 +1966,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_indonesia_id_card**|
-|:-----|
+|Keyword_indonesia_id_card|
+|---|
 |KTP  <br/> Kartu Tanda Penduduk  <br/> Nomor Induk Kependudukan|
 
 ## International Banking Account Number (IBAN)
@@ -2077,8 +2077,8 @@ For IPv6, a DLP policy is 85% confident that it's detected this type of sensitiv
 
  **Keywords**:
 
-|**Keyword_ipaddress**|
-|:-----|
+|Keyword_ipaddress|
+|---|
 |ip address  <br/> internet protocol  <br/> IP-כתובת ה|
 
 ## Ireland Personal Public Service (PPS) Number
@@ -2145,8 +2145,8 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_ireland_pps**|
-|:-----|
+|Keyword_ireland_pps|
+|---|
 |Personal Public Service Number  <br/> PPS Number  <br/> PPS Num  <br/> PPS No.  <br/> PPS #  <br/> PPS#  <br/> PPSN  <br/> Public Services Card  <br/> Uimhir Phearsanta Seirbhíse Poiblí  <br/> Uimh. PSP  <br/> PSP|
 
 ## Israel Bank Account Number
@@ -2193,8 +2193,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_israel_bank_account_number**|
-|:-----|
+|Keyword_israel_bank_account_number|
+|---|
 |Bank Account Number  <br/> Bank Account  <br/> Account Number  <br/> מספר חשבון בנק|
 
 ## Israel National ID
@@ -2229,8 +2229,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_Israel_National_ID**|
-|:-----|
+|Keyword_Israel_National_ID|
+|---|
 |מספר זהות  <br/> National ID Number|
 
 ## Italy Driver's License Number
@@ -2271,8 +2271,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_italy_drivers_license_number**|
-|:-----|
+|Keyword_italy_drivers_license_number|
+|---|
 |numero di patente di guida  <br/> patente di guida|
 
 ## Japan Bank Account Number
@@ -2335,8 +2335,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_bank_account**|**Keyword_jp_bank_branch_code**|
-|:-----|:-----|
+|Keyword_jp_bank_account|Keyword_jp_bank_branch_code|
+|---|---|
 |Checking Account Number  <br/> Checking Account  <br/> Checking Account #  <br/> Checking Acct Number  <br/> Checking Acct #  <br/> Checking Acct No.  <br/> Checking Account No.  <br/> Bank Account Number  <br/> Bank Account  <br/> Bank Account #  <br/> Bank Acct Number  <br/> Bank Acct #  <br/> Bank Acct No.  <br/> Bank Account No.  <br/> Savings Account Number  <br/> Savings Account  <br/> Savings Account #  <br/> Savings Acct Number  <br/> Savings Acct #  <br/> Savings Acct No.  <br/> Savings Account No.  <br/> Debit Account Number  <br/> Debit Account  <br/> Debit Account #  <br/> Debit Acct Number  <br/> Debit Acct #  <br/> Debit Acct No.  <br/> Debit Account No.  <br/> 口座番号を当座預金口座の確認  <br/> ＃アカウントの確認、勘定番号の確認  <br/> ＃勘定の確認  <br/> 勘定番号の確認  <br/> 口座番号の確認  <br/> 銀行口座番号  <br/> 銀行口座  <br/> 銀行口座＃  <br/> 銀行の勘定番号  <br/> 銀行のacct＃  <br/> 銀行の勘定いいえ  <br/> 銀行口座番号  <br/> 普通預金口座番号  <br/> 預金口座  <br/> 貯蓄口座＃  <br/> 貯蓄勘定の数  <br/> 貯蓄勘定＃  <br/> 貯蓄勘定番号  <br/> 普通預金口座番号  <br/> 引き落とし口座番号  <br/> 口座番号  <br/> 口座番号＃  <br/> デビットのacct番号  <br/> デビット勘定＃  <br/> デビットACCTの番号  <br/> デビット口座番号|Otemachi|
 
 ## Japan Driver's License Number
@@ -2367,8 +2367,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_drivers_license_number**|
-|:-----|
+|Keyword_jp_drivers_license_number|
+|---|
 |driver license  <br/> drivers license  <br/> driver's license  <br/> drivers licenses  <br/> driver's licenses  <br/> driver licenses  <br/> dl#  <br/> dls#  <br/> lic#  <br/> lics#  <br/> 運転免許証  <br/> 運転免許  <br/> 免許証  <br/> 免許  <br/> 運転免許証番号  <br/> 運転免許番号  <br/> 免許証番号  <br/> 免許番号  <br/> 運転免許証ナンバー  <br/> 運転免許ナンバー  <br/> 免許証ナンバー  <br/> 運転免許証No.  <br/> 運転免許No.  <br/> 免許証No.  <br/> 免許No.  <br/> 運転免許証#  <br/> 運転免許#  <br/> 免許証#  <br/> 免許#|
 
 ## Japan Passport Number
@@ -2399,8 +2399,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_passport**|
-|:-----|
+|Keyword_jp_passport|
+|---|
 |パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃|
 
 ## Japan Resident Registration Number
@@ -2431,8 +2431,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_resident_registration_number**|
-|:-----|
+|Keyword_jp_resident_registration_number|
+|---|
 |Resident Registration Number  <br/> Resident Register Number  <br/> Residents Basic Registry Number  <br/> Resident Registration No.  <br/> Resident Register No.  <br/> Residents Basic Registry No.  <br/> Basic Resident Register No.  <br/> 住民登録番号、登録番号をレジデント  <br/> 住民基本登録番号、登録番号  <br/> 住民基本レジストリ番号を常駐  <br/> 登録番号を常駐住民基本台帳登録番号|
 
 ## Japan Social Insurance Number (SIN)
@@ -2483,8 +2483,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_jp_sin**|
-|:-----|
+|Keyword_jp_sin|
+|---|
 |Social Insurance No.  <br/> Social Insurance Num  <br/> Social Insurance Number  <br/> 社会保険のテンキー  <br/> 社会保険番号|
 
 ## Malaysia ID Card Number
@@ -2528,8 +2528,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_malaysia_id_card_number**|
-|:-----|
+|Keyword_malaysia_id_card_number|
+|---|
 |MyKad  <br/> Identity Card  <br/> ID Card  <br/> Identification Card  <br/> Digital Application Card  <br/> Kad Akuan Diri  <br/> Kad Aplikasi Digital|
 
 ## Netherlands Citizen's Service (BSN) Number
@@ -2584,8 +2584,8 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_netherlands_bsn**|
-|:-----|
+|Keyword_netherlands_bsn|
+|---|
 |Citizen service number  <br/> BSN  <br/> Burgerservicenummer  <br/> Sofinummer  <br/> Persoonsgebonden nummer  <br/> Persoonsnummer|
 
 ## New Zealand Ministry of Health Number
@@ -2620,8 +2620,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_nz_terms**|
-|:-----|
+|Keyword_nz_terms|
+|---|
 |NHI  <br/> New Zealand  <br/> Health  <br/> treatment|
 
 ## Norway Identification Number
@@ -2669,8 +2669,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_norway_id_number**|
-|:-----|
+|Keyword_norway_id_number|
+|---|
 |Personal identification number  <br/> Norwegian ID Number  <br/> ID Number  <br/> Identification  <br/> Personnummer  <br/> Fødselsnummer|
 
 ## Philippines Unified Multi-Purpose ID Number
@@ -2711,8 +2711,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_philippines_id**|
-|:-----|
+|Keyword_philippines_id|
+|---|
 |Unified Multi-Purpose ID  <br/> UMID  <br/> Identity Card  <br/> Pinag-isang Multi-Layunin ID|
 
 ## Poland Identity Card
@@ -2745,8 +2745,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_polish_national_id_passport_number**|
-|:-----|
+|Keyword_polish_national_id_passport_number|
+|---|
 |Nazwa i nr dowodu tożsamości  <br/> Dowód Tożsamości  <br/> dow. os.|
 
 ## Poland National ID (PESEL)
@@ -2779,8 +2779,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_pesel_identification_number**|
-|:-----|
+|Keyword_pesel_identification_number|
+|---|
 |Nr PESEL  <br/> PESEL|
 
 ## Poland Passport
@@ -2814,8 +2814,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_polish_national_id_passport_number**|
-|:-----|
+|Keyword_polish_national_id_passport_number|
+|---|
 |Nazwa i nr dowodu tożsamości  <br/> Dowód Tożsamości  <br/> dow. os.|
 
 ## Portugal Citizen Card Number
@@ -2846,8 +2846,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_portugal_citizen_card**|
-|:-----|
+|Keyword_portugal_citizen_card|
+|---|
 |Citizen Card  <br/> National ID Card  <br/> CC  <br/> Cartão de Cidadão  <br/> Bilhete de Identidade|
 
 ## Saudi Arabia National ID
@@ -2880,8 +2880,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_saudi_arabia_national_id**|
-|:-----|
+|Keyword_saudi_arabia_national_id|
+|---|
 |Identification Card  <br/> I card number  <br/> ID number  <br/> الوطنية الهوية بطاقة رقم|
 
 ## Singapore National Registration Identity Card (NRIC) Number
@@ -2929,8 +2929,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_singapore_nric**|
-|:-----|
+|Keyword_singapore_nric|
+|---|
 |National Registration Identity Card  <br/> Identity Card Number  <br/> NRIC  <br/> IC  <br/> Foreign Identification Number  <br/> FIN  <br/> 身份证  <br/> 身份證|
 
 ## South Africa Identification Number
@@ -2973,8 +2973,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_south_africa_identification_number**|
-|:-----|
+|Keyword_south_africa_identification_number|
+|---|
 |Identity card  <br/> ID  <br/> Identification|
 
 ## South Korea Resident Registration Number
@@ -3028,8 +3028,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_south_korea_resident_number**|
-|:-----|
+|Keyword_south_korea_resident_number|
+|---|
 |National ID card  <br/> Citizen's Registration Number  <br/> Jumin deungnok beonho  <br/> RRN  <br/> 주민등록번호|
 
 ## Spain Social Security Number (SSN)
@@ -3139,8 +3139,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_sweden_passport**|**Keyword_passport**|
-|:-----|:-----|
+|Keyword_sweden_passport|Keyword_passport|
+|---|---|
 |visa requirements  <br/> Alien Registration Card  <br/> Schengen visas  <br/> Schengen visa  <br/> Visa Processing  <br/> Visa Type  <br/> Single Entry  <br/> Multiple Entry  <br/> G3 Processing Fees|Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passport number  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
 ## SWIFT Code
@@ -3180,8 +3180,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_swift**|
-|:-----|
+|Keyword_swift|
+|---|
 |international organization for standardization 9362  <br/> iso 9362  <br/> iso9362  <br/> swift#  <br/> swift code  <br/> swift number  <br/> swiftroutingnumber  <br/> swift code  <br/> swift number #  <br/> swift routing number  <br/> bic number  <br/> bic code  <br/> bic #  <br/> bic#  <br/> bank identifier code  <br/> 標準化9362  <br/> 迅速＃  <br/> SWIFTコード  <br/> SWIFT番号  <br/> 迅速なルーティング番号  <br/> BIC番号  <br/> BICコード  <br/> 銀行識別コードのための国際組織  <br/> Organisation internationale de normalisation 9362  <br/> rapide #  <br/> code SWIFT  <br/> le numéro de swift  <br/> swift numéro d'acheminement  <br/> le numéro BIC  <br/> # BIC  <br/> code identificateur de banque|
 
 ## Taiwan National ID
@@ -3220,8 +3220,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_taiwanese_national_id**|
-|:-----|
+|Keyword_taiwanese_national_id|
+|---|
 |身份證字號  <br/> 身份證  <br/> 身份證號碼  <br/> 身份證號  <br/> 身分證字號  <br/> 身分證  <br/> 身分證號碼  <br/> 身份證號  <br/> 身分證統一編號  <br/> 國民身分證統一編號  <br/> 簽名  <br/> 蓋章  <br/> 簽名或蓋章  <br/> 簽章|
 
 ## Taiwan Passport Number
@@ -3264,8 +3264,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_taiwan_passport**|
-|:-----|
+|Keyword_taiwan_passport|
+|---|
 |ROC passport number  <br/> Passport number  <br/> Passport no  <br/> Passport Num  <br/> Passport #  <br/> 护照  <br/> 中華民國護照  <br/> Zhōnghuá Mínguó hùzhào|
 
 ## Taiwan Resident Certificate (ARC/TARC) Number
@@ -3300,8 +3300,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_taiwan_resident_certificate**|
-|:-----|
+|Keyword_taiwan_resident_certificate|
+|---|
 |Resident Certificate  <br/> Resident Cert  <br/> Resident Cert.  <br/> Identification card  <br/> Alien Resident Certificate  <br/> ARC  <br/> Taiwan Area Resident Certificate  <br/> TARC  <br/> 居留證  <br/> 外僑居留證  <br/> 台灣地區居留證|
 
 ## U.K. Driver's License Number
@@ -3344,8 +3344,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_uk_drivers_license**|
-|:-----|
+|Keyword_uk_drivers_license|
+|---|
 |DVLA  <br/> light vans  <br/> quad bikes  <br/> motor cars  <br/> 125cc  <br/> sidecar  <br/> tricycles  <br/> motorcycles  <br/> photo card licence  <br/> learner drivers  <br/> licence holder  <br/> licence holders  <br/> driving licences  <br/> driving licence  <br/> dual control car|
 
 ## U.K. Electoral Roll Number
@@ -3378,8 +3378,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_uk_electoral**|
-|:-----|
+|Keyword_uk_electoral|
+|---|
 |council nomination  <br/> nomination form  <br/> electoral register  <br/> electoral roll|
 
 ## U.K. National Health Service Number
@@ -3432,8 +3432,8 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_uk_nhs_number**|**Keyword_uk_nhs_number1**|**Keyword_uk_nhs_number_dob**|
-|:-----|:-----|:-----|
+|Keyword_uk_nhs_number|Keyword_uk_nhs_number1|Keyword_uk_nhs_number_dob|
+|---|---|---|
 |national health service  <br/> nhs  <br/> health services authority  <br/> health authority|patient ID  <br/> patient identification  <br/> patient no  <br/> patient number|GP  <br/> DOB  <br/> D.O.B  <br/> Date of Birth  <br/> Birth Date|
 
 ## U.K. National Insurance Number (NINO)
@@ -3496,8 +3496,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_uk_nino**|
-|:-----|
+|Keyword_uk_nino|
+|---|
 |national insurance number  <br/> national insurance contributions  <br/> protection act  <br/> insurance  <br/> social security number  <br/> insurance application  <br/> medical application  <br/> social insurance  <br/> medical attention  <br/> social security  <br/> great britain  <br/> insurance|
 
 ## U.S. / U.K. Passport Number
@@ -3527,8 +3527,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_passport**|
-|:-----|
+|Keyword_passport|
+|---|
 |Passport Number  <br/> Passport No  <br/> Passport #  <br/> Passport#  <br/> PassportID  <br/> Passportno  <br/> passport number  <br/> パスポート  <br/> パスポート番号  <br/> パスポートのNum  <br/> パスポート＃  <br/> Numéro de passeport  <br/> Passeport n °  <br/> Passeport Non  <br/> Passeport #  <br/> Passeport#  <br/> PasseportNon  <br/> Passeportn °|
 
 ## U.S. Bank Account Number
@@ -3559,8 +3559,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_usa_Bank_Account**|
-|:-----|
+|Keyword_usa_Bank_Account|
+|---|
 |Checking Account Number  <br/> Checking Account  <br/> Checking Account #  <br/> Checking Acct Number  <br/> Checking Acct #  <br/> Checking Acct No.  <br/> Checking Account No.  <br/> Bank Account Number  <br/> Bank Account #  <br/> Bank Acct Number  <br/> Bank Acct #  <br/> Bank Acct No.  <br/> Bank Account No.  <br/> Savings Account Number  <br/> Savings Account.  <br/> Savings Account #  <br/> Savings Acct Number  <br/> Savings Acct #  <br/> Savings Acct No.  <br/> Savings Account No.  <br/> Debit Account Number  <br/> Debit Account  <br/> Debit Account #  <br/> Debit Acct Number  <br/> Debit Acct #  <br/> Debit Acct No.  <br/> Debit Account No.|
 
 ## U.S. Driver's License Number
@@ -3613,8 +3613,8 @@ A DLP policy is 65% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_us_drivers_license_abbreviations**|**Keyword_us_drivers_license**|**Keyword_[state_name]_drivers_license_name**|
-|:-----|:-----|:-----|
+|Keyword_us_drivers_license_abbreviations|Keyword_us_drivers_license|Keyword_[state_name]_drivers_license_name|
+|---|---|---|
 |DL  <br/> DLS  <br/> CDL  <br/> CDLS  <br/> ID  <br/> IDs  <br/> DL#  <br/> DLS#  <br/> CDL#  <br/> CDLS#  <br/> ID#  <br/> IDs#  <br/> ID number  <br/> ID numbers  <br/> LIC  <br/> LIC#|DriverLic  <br/> DriverLics  <br/> DriverLicense  <br/> DriverLicenses  <br/> Driver Lic  <br/> Driver Lics  <br/> Driver License  <br/> Driver Licenses  <br/> DriversLic  <br/> DriversLics  <br/> DriversLicense  <br/> DriversLicenses  <br/> Drivers Lic  <br/> Drivers Lics  <br/> Drivers License  <br/> Drivers Licenses  <br/> Driver'Lic  <br/> Driver'Lics  <br/> Driver'License  <br/> Driver'Licenses  <br/> Driver' Lic  <br/> Driver' Lics  <br/> Driver' License  <br/> Driver' Licenses  <br/> Driver'sLic  <br/> Driver'sLics  <br/> Driver'sLicense  <br/> Driver'sLicenses  <br/> Driver's Lic  <br/> Driver's Lics  <br/> Driver's License  <br/> Driver's Licenses  <br/> identification number  <br/> identification numbers  <br/> identification #  <br/> ID card  <br/> ID cards  <br/> identification card  <br/> identification cards  <br/> DriverLic#  <br/> DriverLics#  <br/> DriverLicense#  <br/> DriverLicenses#  <br/> Driver Lic#  <br/> Driver Lics#  <br/> Driver License#  <br/> Driver Licenses#  <br/> DriversLic#  <br/> DriversLics#  <br/> DriversLicense#  <br/> DriversLicenses#  <br/> Drivers Lic#  <br/> Drivers Lics#  <br/> Drivers License#  <br/> Drivers Licenses#  <br/> Driver'Lic#  <br/> Driver'Lics#  <br/> Driver'License#  <br/> Driver'Licenses#  <br/> Driver' Lic#  <br/> Driver' Lics#  <br/> Driver' License#  <br/> Driver' Licenses#  <br/> Driver'sLic#  <br/> Driver'sLics#  <br/> Driver'sLicense#  <br/> Driver'sLicenses#  <br/> Driver's Lic#  <br/> Driver's Lics#  <br/> Driver's License#  <br/> Driver's Licenses#  <br/> ID card#  <br/> ID cards#  <br/> identification card#  <br/> identification cards#|State abbreviation (for example, "NY")  <br/> State name (for example, "New York")|
 
 ## U.S. Individual Taxpayer Identification Number (ITIN)
@@ -3705,8 +3705,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_itin**|**Keyword_itin_collaborative**|
-|:-----|:-----|
+|Keyword_itin|Keyword_itin_collaborative|
+|---|---|
 |taxpayer  <br/> tax ID  <br/> tax identification  <br/> itin  <br/> ssn  <br/> tin  <br/> social security  <br/> tax payer  <br/> itins  <br/> taxid  <br/> individual taxpayer|License  <br/> DL  <br/> DOB  <br/> Birthdate  <br/> Birthday  <br/> Date of Birth|
 
 ## U.S. Social Security Number (SSN)
@@ -3828,6 +3828,6 @@ A DLP policy is 55% confident that it's detected this type of sensitive informat
 
  **Keywords**:
 
-|**Keyword_ssn**|
-|:-----|
+|Keyword_ssn|
+|---|
 |Social Security  <br/> Social Security#  <br/> Soc Sec  <br/> SSN  <br/> SSNS  <br/> SSN#  <br/> SS#  <br/> SSID|

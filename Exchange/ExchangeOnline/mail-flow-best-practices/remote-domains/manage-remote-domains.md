@@ -24,10 +24,6 @@ Remote domains define settings based on the destination domain of each email mes
 
 The following table shows the default values for common settings:
 
-<br>
-
-****
-
 | Setting | Default |
 |---|---|
 |Out of office replies|Send external out-of-office replies to people on the remote domain.|
@@ -36,7 +32,6 @@ The following table shows the default values for common settings:
 |Meeting forward notifications|Don't allow meeting forward notifications to be sent to people on the remote domain.|
 |Rich Text format (RTF)|Follow settings created by each user in Outlook or Outlook on the web (formerly known as Outlook Web App) when a message is sent to people on the remote domain.|
 |Supported character set|Do not specify a MIME or non-MIME character set if the character set isn't specified in the message sent to the remote domain.|
-|
 
 For information about when to configure remote domains, descriptions of the available settings, and information about how remote domain settings override per-user settings, see [Remote domains in Exchange Online](remote-domains.md).
 

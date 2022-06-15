@@ -379,10 +379,6 @@ Only the following access rights are allowed for users. This change ensures that
 
 These access rights are stored in the **ListOfAccessRightsAllowed** property. Permission entries are modified as described in the following table:
 
-<br>
-
-****
-
 |Before lock down|After lock down|
 |---|---|
 |None|None|
@@ -396,7 +392,6 @@ These access rights are stored in the **ListOfAccessRightsAllowed** property. Pe
 |PublishingAuthor|ReadItems, CreateSubfolders, FolderVisible|
 |PublishingEditor|ReadItems, CreateSubfolders, FolderVisible|
 |Owner|ReadItems, CreateSubfolders, FolderContact, FolderVisible|
-|
 
 - Access rights for users without read permissions are untouched, and they will continue to be blocked from read rights.
 

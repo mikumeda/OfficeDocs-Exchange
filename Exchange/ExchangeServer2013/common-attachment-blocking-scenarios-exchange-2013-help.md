@@ -55,8 +55,8 @@ If you want to reject a message but let the intended recipient know what happene
 
 You can include placeholders in the notification message so that it includes information about the original message. The placeholders must be enclosed in two percent signs (%%), and when the notification message is sent, the placeholders are replaced with information from the original message. You can also use basic HTML such as \<br\>, \<b\>, \<i\>, and \<img\> in the message.
 
-|**Type of information**|**Placeholder**|
-|:-----|:-----|
+|Type of information|Placeholder|
+|---|---|
 |Sender of the message.|%%From%%|
 |Recipients listed on the "To" line.|%%To%%|
 |Recipients listed on the "Cc" line.|%%Cc%%|

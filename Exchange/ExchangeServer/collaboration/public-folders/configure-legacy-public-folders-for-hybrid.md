@@ -40,8 +40,8 @@ When you complete this procedure your on-premises and Microsoft 365 or Office 36
 
 The following table describes the supported version and location combinations of user mailboxes and public folders. "Hybrid not applicable" is still a supported scenario, but is not considered a hybrid scenario because both the public folders and the users are residing in the same location.
 
-|**Scenario**|**On-Premises Exchange 2010 User Mailbox**|**On-Premises Exchange 2016/2019 User Mailbox**|**Exchange Online User Mailbox**|
-|:-----|:-----|:-----|:-----|
+|Scenario|On-Premises Exchange 2010 User Mailbox|On-Premises Exchange 2016/2019 User Mailbox|Exchange Online User Mailbox|
+|---|---|---|---|
 |On-Premises Exchange 2010 Public Folders|Hybrid not applicable|Hybrid not applicable|Supported|
 |On-Premises Exchange 2013, Exchange 2016, or Exchange 2019 Public Folders|Hybrid not applicable|Hybrid not applicable|Supported|
 |Exchange Online Public Folders|Not supported|Supported|Hybrid not applicable|

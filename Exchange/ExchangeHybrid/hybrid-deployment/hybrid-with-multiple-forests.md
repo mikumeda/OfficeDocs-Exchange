@@ -90,10 +90,6 @@ Let's say that you're the network administrator for Contoso and you're intereste
 
 If you compare Contoso's existing organization configuration and the hybrid deployment configuration, you'll see that configuring a hybrid deployment has added servers and services that support additional communication and features that are shared between the on-premises and Exchange Online organizations. Here's an overview of the changes that a hybrid deployment has made from the initial on-premises Exchange organization.
 
-<br>
-
-****
-
 |Configuration|Before hybrid deployment|After hybrid deployment|
 |---|---|---|
 |Mailbox location|Mailboxes on-premises only.|Mailboxes on-premises and in Exchange Online.|
@@ -103,7 +99,6 @@ If you compare Contoso's existing organization configuration and the hybrid depl
 |Single-sign on used for both organizations|Not applicable; single organization only.|On-premises Active Directory Federation Services (AD FS) server supports using single-sign on credentials for mailboxes located either on-premises or in the Microsoft 365 or Office 365 organization.|
 |Organization relationship established and a federation trust with Azure AD authentication system|Trust relationship with the Azure AD authentication system and organization relationships with other federated Exchange organizations may be configured.|Trust relationship with the Azure AD authentication system is required. Organization relationships are established between the on-premises and Exchange Online organization.|
 |Free/busy sharing|Free/busy sharing between on-premises users only.|Free/busy sharing between both on-premises and Exchange Online users.|
-|
 
 ## Configuring hybrid deployments in multi-forest organizations
 

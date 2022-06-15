@@ -25,8 +25,8 @@ The following character sets can be specified for messages sent to remote domain
 
 **Supported character sets for remote domain configuration**
 
-|**Name**|**Description**|
-|:-----|:-----|
+|Name|Description|
+|---|---|
 |big5|Chinese Traditional (Big5)|
 |DIN_66003|German (IA5)|
 |euc-jp|Japanese (EUC)|

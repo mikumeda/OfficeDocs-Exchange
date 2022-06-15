@@ -34,7 +34,7 @@ Looking for other management tasks related to remote move requests? Check out [M
 
 ## What do you need to know before you begin?
 
-- Locate the Prepare-MoveRequest.ps1 script in %ExchangeInstallPath%Scripts. By default, %ExcangeInstallPath% is C:\Program Files\Microsoft\Exchange Server\V15\ (note the trailing '\\').
+- Locate the Prepare-MoveRequest.ps1 script in %ExchangeInstallPath%Scripts. By default, %ExchangeInstallPath% is C:\Program Files\Microsoft\Exchange Server\V15\ (note the trailing '\\').
 
 - To run the sample script, you need the following:
 
@@ -78,8 +78,8 @@ To assign a specific authentication credential for the remote forest domain cont
 
 The following table describes the parameter set for the script.
 
-|**Parameter**|**Required**|**Description**|
-|:-----|:-----|:-----|
+|Parameter|Required|Description|
+|---|---|---|
 |_Identity_|Required|The _Identity_ parameter uniquely identifies a mailbox in the source forest. Identity can be any of the following values: Common name (CN), Alias, **proxyAddress** property, **objectGuid** property, or **DisplayName** property|
 |_RemoteForestCredential_|Required|The _RemoteForestCredential_ parameter specifies the administrator who has permissions to copy data from the source forest Active Directory.|
 |_RemoteForestDomainController_|Required|The _RemoteForestDomainController_ parameter specifies a domain controller in the source forest where the mailbox resides.|

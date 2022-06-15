@@ -46,10 +46,6 @@ Throughput limitations for contacts and calendars completely depend on the quota
 
 Other migration limitations are described in the following table:
 
-<br>
-
-****
-
 |Data type|Limitations|
 |---|---|
 |Mail|Vacation settings, Automatic reply settings|
@@ -57,7 +53,6 @@ Other migration limitations are described in the following table:
 |Calendar|Shared calendars, cloud attachments, and event colors will not be migrated|
 |Contacts|A maximum of three email addresses per contact are migrated over|
 |Contacts|Gmail tags, contact URLs, and custom tags will not be migrated|
-|
 
 > [!TIP]
 >Rules will be migrated and remain turned off by default. We advise users to verify the rules on Outlook before enabling them.

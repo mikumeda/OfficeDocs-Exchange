@@ -353,10 +353,10 @@ The following table summarizes the syntax you can use with *Identity* parameter 
 <p><em>&lt;MessageInteger&gt;</em> is the unique integer value of the message that's displayed in the <strong>Identity</strong> property of the <strong>Get-Message</strong> cmdlet.</p>
 <p><em>&lt;Queue&gt;</em> represents one of the following values:</p>
 <ul>
-<li><p><strong>Persistent queue name</strong>   The value <code>Submission</code>, <code>Unreachable</code>, or <code>Poison</code>.</p></li>
-<li><p><strong>Delivery queue name</strong>   The value of the <strong>NextHopDomain</strong> property of the queue, which is effectively the name of the queue. This value could be a routing destination or a delivery group. For more information, see the &quot;NextHopSolutionKey&quot; section in the <a href="queues-exchange-2013-help.md">Queues</a> topic.</p></li>
-<li><p><strong>Queue integer</strong>   The unique integer value of the delivery queue or shadow queue that's displayed in the <strong>Identity</strong> property of the <strong>Get-Message</strong> or <strong>Get-Queue</strong> cmdlets.</p></li>
-<li><p><strong>Shadow queue identity</strong>   The shadow queue identity uses the syntax <code>Shadow\&lt;QueueInteger&gt;</code>.</p></li>
+<li><p><strong>Persistent queue name</strong>   The value <code>Submission</code>, <code>Unreachable</code>, or <code>Poison</code>.</p></li>
+<li><p><strong>Delivery queue name</strong>   The value of the <strong>NextHopDomain</strong> property of the queue, which is effectively the name of the queue. This value could be a routing destination or a delivery group. For more information, see the &quot;NextHopSolutionKey&quot; section in the <a href="queues-exchange-2013-help.md">Queues</a> topic.</p></li>
+<li><p><strong>Queue integer</strong>   The unique integer value of the delivery queue or shadow queue that's displayed in the <strong>Identity</strong> property of the <strong>Get-Message</strong> or <strong>Get-Queue</strong> cmdlets.</p></li>
+<li><p><strong>Shadow queue identity</strong>   The shadow queue identity uses the syntax <code>Shadow\&lt;QueueInteger&gt;</code>.</p></li>
 </ul></td>
 </tr>
 <tr class="even">

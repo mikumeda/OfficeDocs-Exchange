@@ -32,8 +32,8 @@ Before you place all mailboxes in an organization on Litigation Hold or In-Place
 
 Here are some factors to consider when deciding the hold feature you should use to place all mailboxes in your organization on hold.
 
-|**If you want to...**|**Use Litigation Hold**|**Use In-Place Hold**|
-|:-----|:-----|:-----|
+|If you want to...|Use Litigation Hold|Use In-Place Hold|
+|---|---|---|
 |Use the EAC|Yes <br/><br/> For setting a Litigation Hold, the EAC is best suited for quick one-off actions on a few mailboxes. We recommend using the Exchange Management Shell for placing a Litigation Hold for all users in your organization. For details, see [Place a mailbox on Litigation Hold](litigation-holds.md).|Yes <br/><br/> However, you can't select more than 500 source mailboxes in the EAC. For details, see [Create or remove an In-Place Hold](in-place-holds.md).|
 |Use the Exchange Management Shell|Yes|Yes|
 |Place more than 10,000 mailboxes on hold|Yes <br/><br/> Litigation Hold is a mailbox property. You can place all mailboxes in an organization on hold by using the **Set-Mailbox** cmdlet.|Yes; use multiple In-Place Holds <br/><br/> You can use distribution groups to specify a maximum of 10,000 mailboxes in a single In-Place Hold. To place additional mailboxes on hold, you must create additional In-Place Holds. This will result in additional management overhead. Using Litigation Hold placing large numbers of mailboxes on hold is simpler.|

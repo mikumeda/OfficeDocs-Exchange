@@ -27,8 +27,8 @@ A Retention Policy Tag (RPT) is a type of retention tag that you can apply to de
 
 You can create RPTs for the default folders shown in the following table.
 
-|**Folder name**|**Details**|
-|:-----|:-----|
+|Folder name|Details|
+|---|---|
 |Calendar|This default folder is used to store meetings and appointments.|
 |Clutter|This folder contains email messages that are low priority. Clutter looks at what you've done in the past to determine the messages you're most likely to ignore. It then moves those messages to the **Clutter** folder.|
 |Conversation History|This folder is created by Microsoft Lync (previously Microsoft Office Communicator). Although not treated as a default folder by Outlook, it's treated as a special folder by Exchange and can have RPTs applied.|

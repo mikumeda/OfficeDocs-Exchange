@@ -475,13 +475,13 @@ The following table lists all of the administrative management role types in Exc
 <td><p>This role type is associated with roles that enable administrators to manage organization-wide transport settings, such as system messages, Active Directory site configuration, and other organization-wide transport settings in an organization.</p>
 <p>This role doesn't enable you to create or manage transport Receive or Send connectors, queues, hygiene, agents, remote and accepted domains, or rules. To create or manage each of the transport features, you must be assigned roles associated with the following role types:</p>
 <ul>
-<li><p><strong>Receive connectors</strong>   <code>ReceiveConnectors</code></p></li>
-<li><p><strong>Send connectors</strong>   <code>SendConnectors</code></p></li>
-<li><p><strong>Transport queues</strong>   <code>TransportQueues</code></p></li>
-<li><p><strong>Transport hygiene</strong>   <code>TransportHygiene</code></p></li>
-<li><p><strong>Transport agents</strong>   <code>TransportAgents</code></p></li>
-<li><p><strong>Remote and accepted domains</strong>   <code>RemoteAndAcceptedDomains</code></p></li>
-<li><p><strong>Transport rules</strong>   <code>TransportRules</code></p></li>
+<li><p><strong>Receive connectors</strong>   <code>ReceiveConnectors</code></p></li>
+<li><p><strong>Send connectors</strong>   <code>SendConnectors</code></p></li>
+<li><p><strong>Transport queues</strong>   <code>TransportQueues</code></p></li>
+<li><p><strong>Transport hygiene</strong>   <code>TransportHygiene</code></p></li>
+<li><p><strong>Transport agents</strong>   <code>TransportAgents</code></p></li>
+<li><p><strong>Remote and accepted domains</strong>   <code>RemoteAndAcceptedDomains</code></p></li>
+<li><p><strong>Transport rules</strong>   <code>TransportRules</code></p></li>
 </ul></td>
 <td><p>Organization</p></td>
 </tr>

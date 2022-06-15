@@ -10,6 +10,7 @@ ms.assetid: b6e696ce-c848-475b-a598-9035677497e2
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: "Admins can learn how to allow users to make calls in Unified Messaging (UM) in Exchange Server 2013."
 ---
 
 # Allow users to make calls in Exchange Server
@@ -77,14 +78,14 @@ You need to configure several settings to apply outdialing rules for your organi
 
 For you to successfully configure outdialing for your organization, you first need to understand how each component can be used with outdialing and how the component must be configured. The following table introduces each component that needs to be configured on UM dial plans, UM auto attendants, and UM mailbox policies before outdialing will work correctly.
 
-**Outdialing components**
+**Outdialing components**:
 
-|**Component**|**Description**|
-|:-----|:-----|
+|Component|Description|
+|---|---|
 |Dial codes, number prefixes, and number formats|UM uses dial codes, number prefixes, and number formats to determine the correct number to dial when placing an outgoing call. You can configure dial codes, number prefixes, and number formats to restrict outgoing calls for users who dial in to a UM auto attendant associated with a UM dial plan or for users who dial in to an Outlook Voice Access number configured on the dial plan.|
-|Dialing rule groups|Dialing rule groups are created to enable telephone numbers to be modified before they're sent to the PBX for outgoing calls. Dialing rule groups remove numbers from or add numbers to telephone numbers being called by UM. For example, you can create a dialing rule group that automatically adds a 9 as a prefix to a 7-digit telephone number to provide access to an outside line. In this example, users who place outgoing calls don't have to dial the 9 before the telephone number to reach someone external to the organization.  <br/> Each dialing rule group contains dialing rules that determine the types of in-country/region and international calls that users within a dialing rule group can make. Dialing rule groups apply to the users who are associated with a UM dial plan or to UM auto attendants and UM mailbox policies associated with the UM dial plan. Each dialing rule group must contain at least one dialing rule.|
-|Dialing rule entries|A dialing rule is used to determine the types of calls that users within a dialing rule group can make. When you create a dialing rule group, you configure one or more dialing rules.  <br/> When you configure each dialing rule, you must enter the dialing rule name, number pattern to transform (number mask), and dialed number. You can also enter a comment. Comments can be used to describe how the dialing rule will be used or to describe a group of users to whom the dialing rule will apply. When you add a number mask and the dialed number to a dialing rule, you can substitute the letter x for a digit in a telephone number, for example, 91425xxxxxxx. You can also use an asterisk (\*) symbol as a wildcard character, for example, 91425\*.|
-|Dialing authorizations|A dialing authorization uses dialing rule groups to apply dialing restrictions for users who are associated with a specific UM mailbox policy, dial plan, or auto attendant. They can also be used when you want to let users place calls to in-country/region or international telephone numbers.  <br/> After you create dialing rules on a UM dial plan, you add the dialing rule group to a UM mailbox policy, dial plan, or auto attendant. After the dialing rule group is added to a UM mailbox policy, all settings or rules defined will apply to UM-enabled users who are linked with the UM mailbox policy.|
+|Dialing rule groups|Dialing rule groups are created to enable telephone numbers to be modified before they're sent to the PBX for outgoing calls. Dialing rule groups remove numbers from or add numbers to telephone numbers being called by UM. For example, you can create a dialing rule group that automatically adds a 9 as a prefix to a 7-digit telephone number to provide access to an outside line. In this example, users who place outgoing calls don't have to dial the 9 before the telephone number to reach someone external to the organization. <p> Each dialing rule group contains dialing rules that determine the types of in-country/region and international calls that users within a dialing rule group can make. Dialing rule groups apply to the users who are associated with a UM dial plan or to UM auto attendants and UM mailbox policies associated with the UM dial plan. Each dialing rule group must contain at least one dialing rule.|
+|Dialing rule entries|A dialing rule is used to determine the types of calls that users within a dialing rule group can make. When you create a dialing rule group, you configure one or more dialing rules. <p> When you configure each dialing rule, you must enter the dialing rule name, number pattern to transform (number mask), and dialed number. You can also enter a comment. Comments can be used to describe how the dialing rule will be used or to describe a group of users to whom the dialing rule will apply. When you add a number mask and the dialed number to a dialing rule, you can substitute the letter x for a digit in a telephone number, for example, 91425xxxxxxx. You can also use an asterisk (\*) symbol as a wildcard character, for example, 91425\*.|
+|Dialing authorizations|A dialing authorization uses dialing rule groups to apply dialing restrictions for users who are associated with a specific UM mailbox policy, dial plan, or auto attendant. They can also be used when you want to let users place calls to in-country/region or international telephone numbers. <p> After you create dialing rules on a UM dial plan, you add the dialing rule group to a UM mailbox policy, dial plan, or auto attendant. After the dialing rule group is added to a UM mailbox policy, all settings or rules defined will apply to UM-enabled users who are linked with the UM mailbox policy.|
 
 ## Configuring outdialing
 <a name="configuring"> </a>
@@ -99,10 +100,10 @@ When a user dials a telephone number, UM takes the number and looks for a match 
 
 The following table shows an example of dialing rule groups and dialing rules. In this example, Local-Calls-Only and Low-Rate are the dialing rule groups that have been created. The dialing rule group Local-Calls-Only has two dialing rules: 91425\* and 91206\*, and the dialing rule group Low-Rate also has two dialing rules: 91509\* and 91360\*.
 
-**Dialing rule groups and dialing rules**
+**Dialing rule groups and dialing rules**:
 
-|**Name**|**NumberMask**|**DialedNumber**|**Comment**|
-|:-----|:-----|:-----|:-----|
+|Name|NumberMask|DialedNumber|Comment|
+|---|---|---|---|
 |Local-Calls-Only|91425\*|91\*|Local calls|
 |Local-Calls-Only|91206\*|91\*|Local calls|
 |Low-Rate|91509\*|9\*|In-state calls|
@@ -126,25 +127,22 @@ To retrieve a list of the dialing rule groups configured on a UM dial plan, run 
 
 The .csv file must be created and saved in the correct format. Each line in the .csv file represents one dialing rule. However, each dialing rule is configured on the same dialing rule group. Each rule in the file will have four sections separated by commas. These sections are name, number mask, dialed number, and comment. Each section is required, and you must enter the correct information in each section except for the comment section. There should be no spaces between the text entry and the comma for the next section, nor should there be any blank lines between the rules or at the end. The following is an example of a .csv file that can be used to create in-country/region dialing rule groups and dialing rules.
 
- **Name,NumberMask,DialedNumber,Comment**
-
- **Low-rate,91425xxxxxxx,9xxxxxxx,Local call**
-
- **Low-rate,9425xxxxxxx,9xxxxxxx,Local call**
-
- **Low-rate,9xxxxxxx,9xxxxxxx,Local call**
-
- **Any,91\*,91\*,Open access to in-country/region numbers**
-
- **Long-distance,91408\*,91408\*,long distance**
+```dos
+Name,NumberMask,DialedNumber,Comment
+Low-rate,91425xxxxxxx,9xxxxxxx,Local call
+Low-rate,9425xxxxxxx,9xxxxxxx,Local call
+Low-rate,9xxxxxxx,9xxxxxxx,Local call
+Any,91*,91*,Open access to in-country/region numbers
+Long-distance,91408*,91408*,long distance
+```
 
 The following is an example of a .csv file that can be used to create international dialing rule groups and dialing rule entries.
 
- **Name,NumberMask,DialedNumber,Comment**
-
- **International, 901144\*, 901144\*, international call**
-
- **International, 901133\*, 901133\*, international call**
+```dos
+Name,NumberMask,DialedNumber,Comment
+International,901144*,901144*,international call
+International,901133*,901133*,international call
+```
 
 ## Applying configured dialing rule groups
 <a name="applying"> </a>
@@ -173,10 +171,10 @@ You can apply the dialing rule groups that you created on a UM dial plan to the 
 
 The following table summarizes the way that dialing rule groups are applied in Unified Messaging.
 
-**Applying outdialing rules**
+**Applying outdialing rules**:
 
-|**Caller type**|**Scope**|**Outdialing settings applied**|
-|:-----|:-----|:-----|
+|Caller type|Scope|Outdialing settings applied|
+|---|---|---|
 |Outlook Voice Access number|User calls a dial plan Outlook Voice Access number and signs in to the mailbox|UM mailbox policy|
 |Anonymous caller|User calls a dial plan Outlook Voice Access number|UM dial plan|
 |Anonymous caller|User calls an auto attendant pilot or extension number|UM auto attendant|

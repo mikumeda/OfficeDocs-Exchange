@@ -67,14 +67,15 @@ With mailbox archiving in Exchange Online, also called "in-place archiving," use
 
 8. Press the Tab key about six times until you hear "Archiving link, Enable..
 
-**Tip**: If the user is already enabled for archiving, you hear "Archiving link, Disable..
+   **Tip**: If the user is already enabled for archiving, you hear "Archiving link, Disable".
 
 9. Press Enter. You hear "Are you sure you want to enable the archive?" With the focus on the **Yes** button, press Enter.
 
    > [!TIP]
+   >
    > - If you want to enable archiving for additional users, move the focus back to the list of mailboxes by pressing Ctrl+Shift+F6. Select the name you want by pressing the Down Arrow key or the Up Arrow key, and repeat steps 7 through 9.
-   > 
-   > - For more information, go to [Enable archive mailboxes in the compliance center](/microsoft-365/compliance/enable-archive-mailboxes).
+   >
+   > - For more information, go to [Enable archive mailboxes in the compliance portal](/microsoft-365/compliance/enable-archive-mailboxes).
 
 ## Disable mailbox archiving for a user
 

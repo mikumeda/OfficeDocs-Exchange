@@ -27,8 +27,8 @@ However, there are client-specific message size limits you can configure for Out
 
 ## ActiveSync
 
-|**Services**|**Configuration file**|**Keys and default values**|**Size**|
-|:-----|:-----|:-----|:-----|
+|Services|Configuration file|Keys and default values|Size|
+|---|---|---|---|
 |Client Access (frontend)|`%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config`|`maxAllowedContentLength="30000000"` (not present by default; see comments)|bytes|
 |Client Access (frontend)|`%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config`|`maxRequestLength="10240"`|kilobytes|
 |Backend|`%ExchangeInstallPath%ClientAccess\Sync\web.config`|`maxAllowedContentLength="30000000 bytes"` (not present by default; see comments)|bytes|
@@ -59,8 +59,8 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
 
 ## Exchange Web Services
 
-|**Service**|**Configuration file**|**Keys and default values**|**Size**|
-|:-----|:-----|:-----|:-----|
+|Service|Configuration file|Keys and default values|Size|
+|---|---|---|---|
 |Client Access (frontend)|`%ExchangeInstallPath%FrontEnd\HttpProxy\ews\web.config`|`maxAllowedContentLength="67108864"`|bytes|
 |Backend|`%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config`|`maxAllowedContentLength="67108864"`|bytes|
 |Backend|`%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config`|14 instances of `maxReceivedMessageSize="67108864"` (for different combinations of http/https bindings and authentication methods)|bytes|
@@ -73,8 +73,8 @@ After you change the value in IIS Manager, a new _maxAllowedContentLength_ key i
 
 ## Outlook on the web
 
-|**Service**|**Configuration file**|**Keys and default values**|**Size**|
-|:-----|:-----|:-----|:-----|
+|Service|Configuration file|Keys and default values|Size|
+|---|---|---|---|
 |Client Access (frontend)|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\web.config`|`maxAllowedContentLength="35000000"`|bytes|
 |Client Access (frontend)|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\web.config`|`maxRequestLength="35000"`|kilobytes|
 |Backend|`%ExchangeInstallPath%ClientAccess\Owa\web.config`|`maxAllowedContentLength="35000000"`|bytes|

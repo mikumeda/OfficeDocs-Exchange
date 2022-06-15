@@ -231,8 +231,8 @@ To start using the new rule to detect sensitive information, you need to add the
 
 These are the definitions for the terms you encountered during this procedure.
 
-|**Term**|**Definition**|
-|:-----|:-----|
+|Term|Definition|
+|---|---|
 |Entity|Entities are what we call sensitive information types, such as credit card numbers. Each entity has a unique GUID as its ID. If you copy a GUID and search for it in the XML, you'll find the XML rule definition and all the localized translations of that XML rule. You can also find this definition by locating the GUID for the translation and then searching for that GUID.|
 |Functions|The XML file references **Func_credit_card**, which is a function in compiled code. Functions are used to run complex regexes and verify that checksums match for our built-in rules.) Because this happens in the code, some of the variables don't appear in the XML file.|
 |IdMatch|This is the identifier that the pattern is to trying to match (for example, a credit card number). You can read more about this and about the **Match** tags in [Entity rules](developing-sensitive-information-rule-packages-exchange-2013-help.md#entity-rules).|

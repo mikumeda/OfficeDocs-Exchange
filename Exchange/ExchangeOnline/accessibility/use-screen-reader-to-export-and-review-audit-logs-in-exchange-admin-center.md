@@ -154,10 +154,6 @@ Before you can export and review audit logs, you or another admin must enable ma
 
 4. Open the SearchResult.xml file in Excel. Each log entry includes information about non-owners of the mailbox who accessed the mailbox and the actions performed. The following fields are included, among others, in the audit log:
 
-   <br>
-
-   ****
-
    |This mailbox audit log field|Gives this information|
    |---|---|
    |Owner|The owner of the mailbox accessed by a non-owner|
@@ -168,4 +164,3 @@ Before you can export and review audit logs, you or another admin must enable ma
    |ClientIPAddress|The IP address of the computer used by the non-owner to access the mailbox|
    |LogonUserDN|The display name of the non-owner|
    |Subject|The subject line of the message affected by the non-owner|
-   |

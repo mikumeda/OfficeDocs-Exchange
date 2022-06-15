@@ -37,8 +37,8 @@ The following table contains links to Exchange Team blog posts ("What's New" inf
 
 - For downloads and updates for other versions of Exchange, see [Exchange Server build numbers and release dates](../ExchangeServer/new-features/build-numbers-and-release-dates.md).
 
-|**Version**|**Blog pst**|
-|:-----|:-----|
+|Version|Blog pst|
+|---|---|
 |Exchange 2013 CU23|[Released: June 2019 Quarterly Exchange Updates](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Released-June-2019-Quarterly-Exchange-Updates/ba-p/698398)|
 |Exchange 2013 CU22|[Released: February 2019 Quarterly Exchange Updates](https://techcommunity.microsoft.com/t5/Exchange-Team-Blog/Released-February-2019-Quarterly-Exchange-Updates/ba-p/609061)|
 |Exchange 2013 CU21|[Released: June 2018 Quarterly Exchange Updates](https://techcommunity.microsoft.com/t5/exchange-team-blog/released-june-2018-quarterly-exchange-updates/ba-p/607964)|
@@ -144,7 +144,7 @@ Although there are both private (internal network) and public (external network)
 
 ### Browser Support for AppCache
 
-Internet Explorer 10 and Windows Store apps using JavaScript support the Application Cache API (or AppCache), as defined in the HTML5 specification, which allows you to create offline web applications. AppCache enables webpages to cache (or save) resources locally, including images, script libraries, style sheets, and so on. In addition, AppCache allows URLs to be served from cached content using standard Uniform Resource Identifier (URI) notation. The following is a list of the browsers that support AppCache:
+Internet Explorer 10 and Windows Store apps using JavaScript support the Application Cache API (or AppCache), as defined in the HTML5 specification, which allows you to create offline web applications. AppCache enables webpages to cache (or save) resources locally, including images, script libraries, style sheets, and so on. In addition, AppCache allows URLs to be served from cached content using standard Uniform Resource Identifier (URI) notation. The following is a list of the browsers that support AppCache:
 
 - Internet Explorer 10 or later versions
 

@@ -48,8 +48,8 @@ Here's what the Classic Exchange admin center looks like.
 
 Here are the features you'll find in the left-hand navigation.
 
-|**Area**|**What you do here**|
-|:-----|:-----|
+|Area|What you do here|
+|---|---|
 |**Dashboard**|An overview of the admin center.|
 |**Recipients**|View and manage your mailboxes, groups, resource mailboxes, contacts, shared mailboxes, and mailbox migrations.|
 |**Permissions**|Manage administrator roles, user roles, and Outlook on the web (formerly known as Outlook Web App) policies.|

@@ -118,8 +118,8 @@ The following table lists the actions performed by non-owners that can be logged
 > [!NOTE]
 > An administrator who has been assigned the Full Access permission to a user's mailbox is considered a delegated user.
 
-|**Action**|**Description**|**Administrator**|**Delegated user**|
-|:-----|:-----|:-----|:-----|
+|Action|Description|Administrator|Delegated user|
+|---|---|---|---|
 |**Copy**|A message was copied to another folder.|Yes|No|
 |**Create**|An item is created in the Calendar, Contacts, Notes, or Tasks folder in the mailbox; for example, a new meeting request is created. Note that message or folder creation isn't audited.|Yes\*|Yes\*|
 |**FolderBind**|A mailbox folder was accessed.|Yes\*|Yes|

@@ -46,11 +46,9 @@ Remote domains specify settings for messages sent to domains that are external t
 
 When you configure message encoding options for a remote domain, the settings are applied to all messages that are sent to recipients in that domain. Some settings are available in the Exchange admin center (EAC), but most are only available in the Exchange Management Shell. The message encoding settings are described in this table:
 
-****
-
-|**Setting**|**EAC configuration**|**Exchange Management Shell configuration**|
-|:-----|:-----|:-----|
-|**MIME character set**: The specified character set is only used for MIME messages that don't contain a character set. This setting won't overwrite character sets that are already specified in outgoing messages.  <br/> **Non-MIME character set**: This setting is used if either of these conditions are true:  <br/> • Incoming messages from a remote domain are missing the value of the _charset=_ setting in the MIME **Content-Type:** header field.  <br/> • Outgoing messages to a remote domain are missing the value of the MIME character set.|**Mail flow** \> **Remote domains** \> **Add** ![Add icon.](../../media/ITPro_EAC_AddIcon.png), or select an existing remote domain, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Supported character set** section.|Cmdlet: **Set-RemoteDomain** <br/> Parameters: _CharacterSet_ and _NonMimeCharacterSet_|
+|Setting|EAC configuration|Exchange Management Shell configuration|
+|---|---|---|
+|**MIME character set**: The specified character set is only used for MIME messages that don't contain a character set. This setting won't overwrite character sets that are already specified in outgoing messages.  <br/> **Non-MIME character set**: This setting is used if either of these conditions are true: <ul><li>Incoming messages from a remote domain are missing the value of the _charset=_ setting in the MIME **Content-Type:** header field.</li><li>Outgoing messages to a remote domain are missing the value of the MIME character set.</li></ul>|**Mail flow** \> **Remote domains** \> **Add** ![Add icon.](../../media/ITPro_EAC_AddIcon.png), or select an existing remote domain, and then click **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Supported character set** section.|Cmdlet: **Set-RemoteDomain** <br/> Parameters: _CharacterSet_ and _NonMimeCharacterSet_|
 |**Content type**: Valid values are:  <br/> `MimeHtmlText`: All messages are converted to MIME messages that use HTML formatting, unless the original message is a text message. If the original message is a text message, the outgoing message will be a MIME message that uses text formatting. This is the default value.  <br/> `MimeText`: All messages are converted to MIME messages that use text formatting.  <br/> `MimeHtml`: All messages are converted to MIME messages that use HTML formatting.|n/a|Cmdlet: **Set-RemoteDomain** <br/> Parameter: _ContentType_|
 |**Line wrap size**: You can specify the maximum number of characters that can exist on a single line of text in the body of the email message. Older email clients might prefer 78 characters per line.|n/a|Cmdlet: **Set-RemoteDomain** <br/> Parameter: _LineWrapSize_ <br/>  The default value is `Unlimited`, which means the email client is responsible for setting the line wrap size in new messages.|
 
@@ -134,8 +132,8 @@ The order of precedence for message encoding options are described in the follow
 
 The following table describes the order of precedence from highest priority to lowest priority for message character set encoding options.
 
-|**Source**|**Setting**|**Values**|
-|:-----|:-----|:-----|
+|Source|Setting|Values|
+|---|---|---|
 |Outlook|**Preferred encoding for outgoing messages**|**Automatically select encoding for outgoing messages** enabled or disabled (enabled by default).  <br/> **Preferred encoding for outgoing messages** set to the specified character set. This is the encoding option that's used if you disable **Automatically select encoding for outgoing messages**|
 |Remote domain|MIME character set and non-MIME character set|The specified MIME and non-MIME character sets (which can be the same).|
 
@@ -157,8 +155,8 @@ The following table describes the order of precedence from highest priority to l
 
  **Note**: Only plain text message settings are included here (not plain text settings for MIME encoded messages).
 
-|**Source**|**Setting**|**Values**|
-|:-----|:-----|:-----|
+|Source|Setting|Values|
+|---|---|---|
 |Mail contact or mail user|Use the preferred message format|If the value `$true`, the plain text message encoding settings for the mail contact or mail user override the corresponding settings in Outlook.  <br/> If the value is `$false`, the plain text message encoding settings for the mail contact or mail user are ignored (the corresponding settings in Outlook are used).|
 |Mail contact or mail user|Message format|Text|
 |Mail contact or mail user|Message body format|Text|
@@ -171,8 +169,8 @@ The following table describes the order of precedence from highest priority to l
 
 The following table describes the order of precedence from highest priority to lowest priority for MIME message encoding options.
 
-|**Source**|**Setting**|**Values**|
-|:-----|:-----|:-----|
+|Source|Setting|Values|
+|---|---|---|
 |Mail contact or mail user|Use the preferred message format|If the value `$true`, the MIME message encoding settings for the mail contact or mail user override the corresponding settings in Outlook.  <br/> If the value is `$false`, the MIME text message encoding settings for the mail contact or mail user are ignored (the corresponding settings in Outlook, Outlook on the web, or remote domains are used).|
 |Mail contact or mail user|Message format|MIME|
 |Mail contact or mail user|Message body format|Text, HTML, or `TextAndHtml` (the default value is `TextAndHtml`).|

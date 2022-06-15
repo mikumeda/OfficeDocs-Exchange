@@ -23,9 +23,9 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup can't continue because the Microsoft Internet Information Service (IIS) is running in 32-bit mode on this 64-bit computer.
+Microsoft® Exchange Server 2007 setup can't continue because the Microsoft Internet Information Service (IIS) is running in 32-bit mode on this 64-bit computer.
 
-Exchange 2007 requires that IIS is in full 64-bit mode when it runs on a 64-bit computer.
+Exchange 2007 requires that IIS is in full 64-bit mode when it runs on a 64-bit computer.
 
 To resolve this issue, switch IIS to 64-bit mode, and then rerun Microsoft Exchange setup.
 

@@ -10,6 +10,7 @@ ms.assetid: abd863c3-c0ce-42f3-9470-a573adc3cbba
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: "Admins can learn about best practices for transport rules in Exchange Server 2013."
 ---
 
 # Best practices for configuring transport rules in Exchange 2013
@@ -58,8 +59,8 @@ For example, you might want to prevent emails from being sent if they contain a 
 
 The text file can contain regular expressions for patterns. These expressions are not case-sensitive. Common regular expressions include:
 
-|**Expression**|**Matches**|
-|:-----|:-----|
+|Expression|Matches|
+|---|---|
 |**.**|Any single character|
 |**\***|Any additional characters|
 |**\d**|Any decimal digit|

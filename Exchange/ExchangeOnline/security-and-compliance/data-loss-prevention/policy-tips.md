@@ -39,8 +39,8 @@ If email senders in your organization who are in the act of composing a message 
 
 You have a range of possible options when you add sender notification rules to DLP policies. When you add a rule to notify the sender by using the **Notify the sender with a Policy Tip** action within a DLP policy, you can choose how restrictive to be. The notification options in the following table are available. For specific information about creating Policy Tips, see [Manage policy tips](manage-policy-tips.md).
 
-|**Notification rule**|**Meaning**|**Default Policy Tip notification message that Outlook users will see**|
-|:-----|:-----|:-----|
+|Notification rule|Meaning|Default Policy Tip notification message that Outlook users will see|
+|---|---|---|
 |**Notify only**|Similar to MailTips, this causes an informative Policy Tip notification message about a policy violation. A sender can prevent this type of tip from showing up by using a Policy Tip options dialog box that can be accessed in Outlook.|This message may contain sensitive content. All recipients must be authorized to receive this content.|
 |**Reject message**|The message will not be delivered until the condition is no longer present. The sender is provided with an option to indicate that their email message does not contain sensitive content. This is also known as a false-positive override. If the sender indicates this, then Outlook will allow the message to leave the outbox so that the user's report may be audited, but Exchange will block the message from being sent.|This message may contain sensitive content. Your organization won't allow this message to be sent until that content is removed.|
 |**Reject unless false positive override**|The result with this notification rule is similar to the **Reject message** notification rule. However, if you select this then Exchange will allow the message to be sent to the intended recipient, instead of blocking the message.|**Before the sender selects an option to override**: This message may contain sensitive content. Your organization won't allow this message to be sent until that content is removed. <br/> **After the sender selects an option override**: Your feedback will be submitted to your administrator when the message is sent.|
@@ -53,8 +53,8 @@ To customize the text of a Policy Tip notification that email senders see in the
 
 For procedures that explain how to create your own Policy Tips, see [Manage policy tips](manage-policy-tips.md). The custom text that you create can replace the default text shown in the previous table.
 
-|**Policy Tip Notification Actions and Settings**|**Meaning**|
-|:-----|:-----|
+|Policy Tip Notification Actions and Settings|Meaning|
+|---|---|
 |**Notify the sender**|Your text only appears when a **Notify the sender, but allow them to send** action is initiated.|
 |**Allow the sender to override**|Your text only appears when the following actions are initiated: **Block the message unless it's a false positive**, **Block the message, but allow the sender to override and send**.|
 |**Block the message**|Your text only appears when a **Block the message** action is initiated.|

@@ -91,7 +91,7 @@ The following table maps the routing destinations to the delivery group based on
 </colgroup>
 <thead>
 <tr class="header">
-<th> </th>
+<th> </th>
 <th>Exchange 2013 Mailbox server</th>
 <th>Exchange 2010 or Exchange 2007 Hub Transport server</th>
 <th>Edge Transport server in the perimeter network</th>

@@ -28,7 +28,7 @@ Users whose mailboxes are on Exchange Server 2013 or Exchange Server 2016 won't 
 > [!NOTE]
 > Outlook 2016 for Mac users can access legacy public folders after you follow the steps in this article. If clients in your organization use Outlook 2016 for Mac, make sure they have installed the April 2016 update. Otherwise, those users will not be able to access public folders in a co-existence or hybrid topology. For more information, see <A href="/exchange/collaboration-exo/public-folders/access-public-folders-with-outlook-2016-for-mac">Accessing public folders with Outlook 2016 for Mac</A>.
 
-## Step 1: Make the Exchange 2010 public folders discoverable
+## Step 1: Make the Exchange 2010 public folders discoverable
 
 1. If your public folders are on servers that are running Exchange Server 2010 or a later version, you must install the Client Access server (CAS) role on all mailbox servers that have a public folder database. You must also enable Outlook Anywhere on all public folder servers. This allows the Microsoft Exchange RpcClientAccess service to run so that all clients can access public folders. For Exchange Server 2007 public folder servers, the CAS role isn't required, and this step isn't necessary. For more information, see [Install Exchange Server 2010](install-exchange-2013-using-the-setup-wizard-exchange-2013-help.md).
 
@@ -70,11 +70,11 @@ Users whose mailboxes are on Exchange Server 2013 or Exchange Server 2016 won't 
 
 5. Repeat the preceding steps for every public folder server in your organization.
 
-## Step 2: Configure user mailboxes to access the legacy public folders
+## Step 2: Configure user mailboxes to access the legacy public folders
 
 The final step in this procedure is to configure the user mailboxes to allow access to the legacy on-premises public folders.
 
-Enable the Exchange Server 2013 on-premises users to access the legacy public folders. You will point to all of the proxy public folder mailboxes that you created in [Step 1: Make the Exchange 2010 public folders discoverable](../ExchangeOnline/collaboration-exo/public-folders/set-up-legacy-hybrid-public-folders.md). Run the following command from an Exchange 2013 server with the CU5 or higher update.
+Enable the Exchange Server 2013 on-premises users to access the legacy public folders. You will point to all of the proxy public folder mailboxes that you created in [Step 1: Make the Exchange 2010 public folders discoverable](../ExchangeOnline/collaboration-exo/public-folders/set-up-legacy-hybrid-public-folders.md). Run the following command from an Exchange 2013 server with the CU5 or higher update.
 
 ```powershell
 Set-OrganizationConfig -PublicFoldersEnabled Remote -RemotePublicFolderMailboxes ProxyMailbox1,ProxyMailbox2,ProxyMailbox3

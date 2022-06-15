@@ -19,9 +19,9 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013, Exchange Server 2016_
 
-You can use the Services snap-in in Microsoft Management Console (MMC) or cmd.exe at a command prompt to start the Microsoft Exchange Unified Messaging Call Router service on a Client Access server. By default, the Microsoft Exchange Unified Messaging Call Router service is started after a Client Access server is installed. However, there may be times when you have to restart or stop the Microsoft Exchange Unified Messaging Call Router service manually, for example, when you've taken the Client Access server offline and have to bring it back online.
+You can use the Services snap-in in Microsoft Management Console (MMC) or cmd.exe at a command prompt to start the Microsoft Exchange Unified Messaging Call Router service on a Client Access server. By default, the Microsoft Exchange Unified Messaging Call Router service is started after a Client Access server is installed. However, there may be times when you have to restart or stop the Microsoft Exchange Unified Messaging Call Router service manually, for example, when you've taken the Client Access server offline and have to bring it back online.
 
-When the Microsoft Exchange Unified Messaging Call Router service is started on a Client Access server, the Client Access server is available to answer and process incoming UM calls.
+When the Microsoft Exchange Unified Messaging Call Router service is started on a Client Access server, the Client Access server is available to answer and process incoming UM calls.
 
 For additional management tasks related to Client Access servers, see [UM services procedures](um-services-procedures-exchange-2013-help.md).
 

@@ -76,7 +76,7 @@ You configure the Content Filter agent by using the Exchange Management Shell.
 > [!IMPORTANT]
 > Configuration changes that you make to the Content Filter agent in the Exchange Management Shell are only made on the local computer. If you have the Content Filter agent running on multiple Exchange servers in your organization, you must make Content Filter configuration changes to each computer.
 
-The Content Filter agent depends on updates to determine whether a message can be delivered with confidence that it isn't spam. These updates contain data about phishing Web sites, Microsoft SmartScreen spam heuristics, and other Intelligent Message Filter updates. Content filter updates generally contain about 6 MB of data that's useful for longer periods of time than other anti-spam update data.
+The Content Filter agent depends on updates to determine whether a message can be delivered with confidence that it isn't spam. These updates contain data about phishing Web sites, Microsoft SmartScreen spam heuristics, and other Intelligent Message Filter updates. Content filter updates generally contain about 6 MB of data that's useful for longer periods of time than other anti-spam update data.
 
 Content filter updates are available from Microsoft Update. The content filter update data is updated and available for download every two weeks.
 

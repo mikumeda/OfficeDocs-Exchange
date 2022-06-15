@@ -38,7 +38,7 @@ To enable PIN-less sign-ins to voice mail for a user, the following conditions m
 
 - The UM-enabled user dials in to Outlook Voice Access from a phone number that's been assigned to them.
 
-- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
+- You can only use the Shell to perform this procedure. To learn how to open the Shell in your on-premises Exchange organization, see [Open the Shell](/powershell/exchange/open-the-exchange-management-shell). To connect to Exchange Online PowerShell, see [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 For additional tasks related to UM mailbox policies, see [UM mailbox policy procedures](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/um-mailbox-policy-procedures.md).
 

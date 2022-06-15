@@ -74,8 +74,8 @@ In the credit card rule, there is a section of XML code for patterns, which incl
 
 The five steps here represent actions that Exchange takes to compare your rule with email messages. For our credit card rule example, the following steps are taken.
 
-|**Step**|**Action**|
-|:-----|:-----|
+|Step|Action|
+|---|---|
 |1. Get Content|Spencer Badillo  <br/> Visa: 4111 1111 1111 1111  <br/> Expires: 2/2012|
 |2. Regular Expression Analysis|4111 1111 1111 1111 -\> a 16-digit number is detected|
 |3. Function Analysis| 4111 1111 1111 1111 -\> matches checksum  <br/>  1234 1234 1234 1234 -\> doesn't match|

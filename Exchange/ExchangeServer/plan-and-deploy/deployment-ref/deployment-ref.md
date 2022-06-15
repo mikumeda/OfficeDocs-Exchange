@@ -1,7 +1,7 @@
 ---
 ms.localizationpriority: medium
 description: Exchange 2016 readiness checks
-ms.topic: hub-page
+ms.topic: landing-page
 author: JoanneHendrickson
 ms.author: jhendr
 ms.assetid: 1999c070-1441-4605-b36b-118a5d78defe

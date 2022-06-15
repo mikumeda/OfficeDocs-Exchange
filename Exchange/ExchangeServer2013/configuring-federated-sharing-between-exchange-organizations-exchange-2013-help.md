@@ -82,7 +82,7 @@ Complete the steps in [Configure federated sharing](configure-federated-sharing-
 
        To learn more, see [Prerequisites for Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-prerequisites)
 
-     - **Install and Configure**: Configure Active Directory synchronization between your on-premises organization and the Microsoft 365 or Office 365 organization.
+     - **Install and Configure**: Configure Active Directory synchronization between your on-premises organization and the Microsoft 365 or Office 365 organization.
 
        To learn more, see [Select which installation type to use for Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-select-installation).
 
@@ -127,7 +127,7 @@ Complete the steps in [Configure federated sharing](configure-federated-sharing-
 
        To learn more, see [Prerequisites for Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-prerequisites)
 
-     - **Install and Configure**: Configure Active Directory synchronization between your on-premises organization and the Microsoft 365 or Office 365 organization.
+     - **Install and Configure**: Configure Active Directory synchronization between your on-premises organization and the Microsoft 365 or Office 365 organization.
 
        [Select which installation type to use for Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-install-select-installation).
 

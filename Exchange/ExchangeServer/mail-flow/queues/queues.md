@@ -28,10 +28,6 @@ You can manage queues and messages in queues by using the Exchange Management Sh
 
 The following types of queues are used in Exchange 2016 and Exchange 2019, which are the same as Exchange 2013:
 
-<br><br>
-
-****
-
 |Queue|Server role|Description|
 |---|---|---|
 |Delivery queues|Mailbox servers and Edge Transport servers|Holds messages that are being delivered to all internal and external destinations. <p> Delivery queues are dynamically created when they're required, and are automatically deleted when the queue is empty and the expiration time has passed. The queue expiration time is controlled by the _QueueMaxIdleTime_ parameter on the **Set-TransportService** cmdlet. The default value is three minutes. <p> On Edge Transport servers, there's a queue for every unique destination SMTP domain or smart host. <p> On Mailbox servers, there's a queue for every unique destination as indicated by the **NextHopSolutionKey** property. For more information, see the [NextHopSolutionKey](#nexthopsolutionkey) section later in this topic. <p> All messages are transmitted between Exchange 2016 and Exchange 2013 servers by using SMTP. Non-SMTP destinations also use delivery queues if the destination is serviced by a Delivery Agent connector. For more information, see [Delivery Agents and Delivery Agent Connectors](../../../ExchangeServer2013/delivery-agents-and-delivery-agent-connectors-exchange-2013-help.md).|
@@ -39,7 +35,6 @@ The following types of queues are used in Exchange 2016 and Exchange 2019, which
 |Shadow queues|Mailbox servers|Shadow queues hold redundant copies of messages while the messages are in transit. For more information, see [Shadow redundancy in Exchange Server](../../mail-flow/transport-high-availability/shadow-redundancy.md).|
 |Submission queue|Mailbox servers and Edge Transport servers|Holds messages that have been accepted by the Transport service, but haven't been processed. Messages in the Submission queue are either waiting to be processed, or are actively being processed. <p> On Mailbox servers, messages are received by a Receive connector, the Pickup or Replay directories, or the Mailbox Transport Submission service. On Edge Transport servers, messages are typically received by a Receive connector, but the Pickup and Replay directories are also available. <p> The categorizer retrieves messages from this queue and, among other things, determines the location of the recipient and the route to that location. After categorization, the message is moved to a delivery queue or to the Unreachable queue. For more information about the categorizer and the transport pipeline, see [Mail flow and the transport pipeline](../../mail-flow/mail-flow.md). <p> Every Mailbox server or Edge Transport server has only one Submission queue.|
 |Unreachable queue|Mailbox servers and Edge Transport servers|Contains messages that can't be routed to their destinations. Typically, an unreachable destination is caused by configuration changes that have modified the routing path for delivery. Regardless of destination, all messages that have unreachable recipients reside in this queue. <p> Every Mailbox server or Edge Transport server has only one Unreachable queue.|
-|
 
 ## Queue database files
 
@@ -51,10 +46,6 @@ Circular logging is used for the queue database. This means that transaction log
 
 The following table lists the files that constitute the queue database.
 
-<br><br>
-
-****
-
 |File|Description|
 |---|---|
 |Mail.que|This queue database file stores all the queued messages.|
@@ -62,7 +53,6 @@ The following table lists the files that constitute the queue database.
 |Trn\*.log|Transaction logs record all changes to the queue database. Changes to the database are first written to the transaction log and then committed to the database. Trn.log is the current active transaction log file. Trntmp.log is the next provisioned transaction log file that's created in advance. If the existing Trn.log transaction log file reaches its maximum size, Trn.log is renamed to Trn _nnnn_.log, where _nnnn_ is a sequence number. Trntmp.log is then renamed Trn.log and becomes the current active transaction log file.|
 |Trn.chk|This checkpoint file tracks the transaction log entries that have been committed to the database. This file is always in the same location as the mail.que file.|
 |Trnres00001.jrs <p> Trnres00002.jrs|These reserve transaction log files act as placeholders. They're only used when the hard disk that contains the transaction log runs out of space to stop the queue database cleanly.|
-|
 
 Exchange uses *generation tables* for storage and clean-up of messages in the queue database. Instead of processing and deleting individual message records from one large table, the queue database stores messages in time-based tables, and only deletes the entire table after all the messages in the table have been successfully processed. For example, consider the following example:
 
@@ -85,10 +75,6 @@ The `<appSettings>` section of the EdgeTransport.exe.config file is where you ca
 
 The keys for the queue database that are available in the EdgeTransport.exe.config file are described in the following table.
 
-<br><br>
-
-****
-
 |Key|Default value|Description|
 |---|---|---|
 |_QueueDatabaseBatchSize_|40|Specifies the number of database I/O operations that can be grouped together before they're executed. <p> By default, this key doesn't exist in the EdgeTransport.exe.config file.|
@@ -102,7 +88,6 @@ The keys for the queue database that are available in the EdgeTransport.exe.conf
 |_QueueDatabaseOnlineDefragSchedule_|`1:00:00` or 1:00 A.M.|Specifies the time of day in 24 hour format to start the online defragmentation of the mail queue database. To specify a value, enter the value as a time span: _hh:mm:ss_, where _h_ = hours, _m_ = minutes, and _s_ = seconds.|
 |_QueueDatabaseOnlineDefragTimeToRun_|`3:00:00` or 3 hours|Specifies the length of time the online defragmentation task is allowed to run. Even if the defragmentation task doesn't finish in the time specified, the queue database is left in a consistent state. To specify a value, enter the value as a time span: _hh:mm:ss_, where _h_ = hours, _m_ = minutes, and _s_ = seconds.|
 |_QueueDatabasePath_|`%ExchangeInstallPath%TransportRoles\data\Queue`|Specifies the default directory for the queue database files. For instructions on how to change the location of the queue database, see [Change the location of the queue database](relocate-queue-database.md).|
-|
 
 ## Queue properties
 
@@ -133,10 +118,6 @@ The **NextHopSolutionKey** property contains the following fields:
 
 The values of **DeliveryType**, **NextHopCategory**, **NextHopDomain** and **NextHopConnector** are described in the following table.
 
-<br><br>
-
-****
-
 |Delivery Type in Queue Viewer|DeliveryType in the Exchange Management Shell|Description|NextHopCategory|NextHopDomain|NextHopConnector|
 |---|---|---|---|---|---|
 |**Delivery Agent**|`DeliveryAgent`|The queue holds messages for delivery to recipients in a non-SMTP address space that's serviced by a delivery agent and a Delivery Agent connector. The connector has the local Mailbox server configured as a source server. For more information, see [Delivery Agents and Delivery Agent Connectors](../../../ExchangeServer2013/delivery-agents-and-delivery-agent-connectors-exchange-2013-help.md).|External|This value is the destination address space that's configured on the Delivery Agent connector. For example, `MOBILE`.|This value is the GUID of the Delivery Agent connector. For example, `4520e633-d83d-411a-bbe4-6a84648674ee`.|
@@ -164,16 +145,11 @@ The values of **DeliveryType**, **NextHopCategory**, **NextHopDomain** and **Nex
 
 Exchange measures the rate of messages entering and leaving a queue and stores these values in queue properties. You can use these rates as an indicator of queue and transport server health. The properties are described in the following table:
 
-<br><br>
-
-****
-
 |Property|Description|
 |---|---|
 |**IncomingRate**|The rate that messages are entering the queue. The rate is the number of messages per second averaged over the last minute.|
 |**OutgoingRate**|The rate that messages are leaving the queue. The rate is the number of messages per second averaged over the last minute.|
 |**Velocity**|The drain rate of the queue, calculated by subtracting the value of **IncomingRate** from the value of **OutgoingRate**. <p> If the value is greater than 0, messages are leaving the queue faster than they are entering the queue. <p> If the value equals 0, messages are leaving the queue as fast as they are entering the queue. This is also the value you'll see when the queue is inactive. <p> If the value is less than 0, messages are entering the queue faster than they are leaving the queue. <p> The **Velocity** value is displayed in the results of **Get-Queue**.|
-|
 
 At a basic level, a positive value of **Velocity** indicates a healthy queue that's efficiently draining, and a negative value of **Velocity** indicates a queue that isn't efficiently draining. However, you also need to consider the values of **IncomingRate**, **OutgoingRate**, and **MessageCount**, as well as the magnitude of **Velocity**.
 
@@ -199,10 +175,6 @@ Although the value for **Velocity** is negative, it's very close to zero, and th
 
 The current status of a queue is stored in the **Status** property of the queue. A queue can have one of the status values that's described in the following table:
 
-<br><br>
-
-****
-
 |Queue status|Description|
 |---|---|
 |Active|The queue is actively transmitting messages.|
@@ -210,7 +182,6 @@ The current status of a queue is stored in the **Status** property of the queue.
 |Ready|The queue recently transmitted messages, but the queue is now empty.|
 |Retry|The last automatic or manual connection attempt failed, and the queue is waiting to retry the connection.|
 |Suspended| The queue has been manually suspended by an administrator to prevent message delivery. New messages can enter the queue, and messages that are in the act of being transmitted to the next hop will finish delivery and leave the queue. Otherwise, messages won't leave the queue until the queue is manually resumed by an administrator. <p> **Notes:** <p> You can suspend the following queues: <ul><li>Delivery queues that have any status.</li><li>The Unreachable queue. When you suspend this queue, messages are no longer automatically resubmitted to the categorizer when configuration updates are detected. To automatically resubmit these messages, you need to manually resume the queue.</li><li>The Submission queue. When you suspend this queue, messages aren't picked up by the categorizer until the queue is resumed.</li></ul> <p> Suspending a queue doesn't change the status of the messages in the queue.|
-|
 
 ### Other queue properties
 
@@ -226,10 +197,6 @@ A message in a queue has many properties. Many of the properties reflect the inf
 
 The current status of a message is stored in the **Status** property of the message. A message can have one of the status values that's described in the following table:
 
-<br><br>
-
-****
-
 |Message status|Description|
 |---|---|
 |Active|If the message is in a delivery queue, the message is being delivered to its destination. If the message is in the Submission queue, the message is being processed by the categorizer.|
@@ -239,7 +206,6 @@ The current status of a message is stored in the **Status** property of the mess
 |Ready|The message is waiting in the queue and is ready to be processed.|
 |Retry|The last automatic or manual connection attempt fail for the queue that holds the message. The message is waiting for the next automatic queue connection retry.|
 |Suspended|The message was manually suspended by an administrator. <p> Any messages in the poison message queue are in a permanently suspended state.|
-|
 
 ### Other message properties
 
@@ -256,10 +222,6 @@ The **Get-QueueDigest** cmdlet was introduced in Exchange 2013 to provide a high
 
 The following table describes the management tasks you can perform on queues or messages in queues.
 
-<br><br>
-
-****
-
 |Task|Description|Tool to use|Instructions|
 |---|---|---|---|
 |View and filter queues on a server|Displays one or more queues on a transport server. You can use the results to take action on the queues.|Queue Viewer or the **Get-Queue** cmdlet.|[Procedures for queues](queue-procedures.md)|
@@ -272,4 +234,3 @@ The following table describes the management tasks you can perform on queues or 
 |Resume messages in queues|Reverses the effect of the suspend message action, and enables the delivery of queued messages to resume. You can resume the delivery of a message to all recipients in a specific queue, or to all recipients in all queues.|Queue Viewer or the **Resume-Message** cmdlet.|[Procedures for messages in queues](message-procedures.md)|
 |Remove messages from queues|Permanently prevents the delivery of a message. You can prevent the delivery of a message to any recipients in a specific queue, or to all recipients in all queues. Optionally, you can send a non-delivery report (also known as an NDR, delivery status notification, DSN or bounce message) to the sender when the message is removed.|Queue Viewer or the **Remove-Message** cmdlet.|[Procedures for messages in queues](message-procedures.md)|
 |Export messages from queues|Copies a message to the location that you specify. The messages aren't deleted from the queue, but a copy of the message is saved as a file in the specified location. This enables administrators or officials in an organization to later examine the messages. Before you export a message, you need to temporarily suspend the message.|**Export-Message** cmdlet only.|[Export messages from queues](export-messages.md)|
-|

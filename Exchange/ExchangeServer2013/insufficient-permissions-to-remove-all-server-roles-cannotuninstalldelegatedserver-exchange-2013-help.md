@@ -8,7 +8,7 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 ms.topic: article
-description: Exchange Server setup failed because uninstalling all server roles failed
+description: Exchange Server setup failed because uninstalling all server roles failed
 author: msdmaguire
 f1.keywords:
 - NOCSH
@@ -23,10 +23,10 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 setup cannot continue because the attempt to uninstall all server roles failed.
+Microsoft Exchange Server 2007 setup cannot continue because the attempt to uninstall all server roles failed.
 
 Exchange 2007 setup requires that the user who is logged on when uninstalling all server roles be a member of the Exchange Organization Administrators groups, or the Enterprise Admins group.
 
-To resolve this issue, grant the logged-on user Exchange Organization Administrator permissions or enroll them in the Enterprise Admins group, or log on with an account that has those permissions and rerun Exchange 2007 setup.
+To resolve this issue, grant the logged-on user Exchange Organization Administrator permissions or enroll them in the Enterprise Admins group, or log on with an account that has those permissions and rerun Exchange 2007 setup.
 
 For more information about Active Directory permissions needed with Microsoft Exchange, see "Working with Active Directory Permissions in Exchange Server" ([https://docs.microsoft.com/previous-versions/tn-archive/bb124223(v=exchg.65)](/previous-versions/tn-archive/bb124223(v=exchg.65))).

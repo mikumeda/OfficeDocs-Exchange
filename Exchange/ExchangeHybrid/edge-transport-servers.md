@@ -27,7 +27,9 @@ The Edge Transport server role is an optional role that's typically deployed on 
 Exchange 2016 organizations that want to use Edge Transport servers have the option of deploying Edge Transport servers running the latest release of Exchange 2010 or later. Use Edge Transport servers if you don't want to expose internal Exchange servers directly to the internet. When you deploy an Edge Transport server in a hybrid deployment, Exchange Online, via the Exchange Online Protection service, will connect to your Edge Transport server to deliver messages. The Edge Transport server will then deliver messages to the on-premises Exchange Mailbox server where the recipient mailbox is located.
 
 > [!IMPORTANT]
-> Don't place any servers, services, or devices that process or modify SMTP traffic between your on-premises Exchange servers and Microsoft 365 or Office 365. Secure mail flow between your on-premises Exchange organization and Microsoft 365 or Office 365 depends on information contained in messages sent between the organization. Firewalls that allow SMTP traffic on TCP port 25 through without modification are supported. If a server, service, or device processes a message sent between your on-premises Exchange organization and Microsoft 365 or Office 365, this information is removed. If this happens, the message will no longer be considered internal to your organization and will be subject to anti-spam filtering, transport and journal rules, and other policies that may not apply to it. <br/><br/> An Edge subscription is required for Exchange hybrid. If you have other Exchange Edge Transport servers in other locations that won't handle hybrid transport, they don't need to be upgraded to support a hybrid deployment. However, if in the future you want EOP to connect to additional Edge Transport servers for hybrid transport, they must be running the latest release of Exchange 2010 or later.
+> Don't place any servers, services, or devices that process or modify SMTP traffic between your on-premises Exchange servers and Microsoft 365 or Office 365. Secure mail flow between your on-premises Exchange organization and Microsoft 365 or Office 365 depends on information contained in messages sent between the organization. Firewalls that allow SMTP traffic on TCP port 25 through without modification are supported. If a server, service, or device processes a message sent between your on-premises Exchange organization and Microsoft 365 or Office 365, this information is removed. If this happens, the message will no longer be considered internal to your organization and will be subject to anti-spam filtering, transport and journal rules, and other policies that may not apply to it.
+>
+> An Edge subscription is required for Exchange hybrid. If you have other Exchange Edge Transport servers in other locations that won't handle hybrid transport, they don't need to be upgraded to support a hybrid deployment. However, if in the future you want EOP to connect to additional Edge Transport servers for hybrid transport, they must be running the latest release of Exchange 2010 or later.
 
 ## Adding an Edge Transport server to a hybrid deployment
 
@@ -37,15 +39,21 @@ When you add an Edge Transport server to your hybrid deployment, it communicates
 
 If you add an Edge Transport server to your hybrid deployment, you don't need to route mail sent between on-premises users and internet recipients through it. Only messages sent between the on-premises and Exchange Online organizations will be routed through the Edge Transport server.
 
-After running the HCW, ensure to update the Receive Connector on the Edge to ensure it will accept mail from EOP securely:
+After running the HCW, update the Receive Connector on the Edge Transport server to ensure it will accept mail from EOP securely:
 
-For Commercical Office 365 Tenant use:
+- For commercial Office 365, run the following command:
 
-Set-ReceiveConnector -Identity "<Edge server name>\Default internal receive connector <Edge server name>" -TlsDomainCapabilities mail.protection.outlook.com:AcceptOorgProtocol -Fqdn "subject name on the public cert on Edge"
+  ```powershell
+  Set-ReceiveConnector -Identity "<Edge server name>\Default internal receive connector <Edge server name>" -TlsDomainCapabilities mail.protection.outlook.com:AcceptOorgProtocol -Fqdn "subject name on the public cert on Edge"
+  ```
 
-For US Government Office 365 Tenant use:
+- For US Government Office 365, run the following command:
 
-Set-ReceiveConnector -Identity "<Edge server name>\Default internal receive connector <Edge server name>" -TlsDomainCapabilities mail.protection.office365.us:AcceptOorgProtocol -Fqdn "subject name on the public cert on Edge"
+  ```powershell
+  Set-ReceiveConnector -Identity "<Edge server name>\Default internal receive connector <Edge server name>" -TlsDomainCapabilities mail.protection.office365.us:AcceptOorgProtocol -Fqdn "subject name on the public cert on Edge"
+  ```
+
+For detailed syntax and parameter information, see [Set-ReceiveConnector](/powershell/module/exchange/set-receiveconnector).
 
 > [!IMPORTANT]
 > If you need to delete and recreate an Edge subscription that's used to communicate between your on-premises organization and Exchange Online, make sure to run the Hybrid Configuration wizard again. Recreating an Edge subscription removes configuration changes that are needed for your on-premises organization to talk to Exchange Online. Re-running the Hybrid Configuration wizard applies those changes again.
@@ -62,7 +70,7 @@ The following process and diagram describes the path messages take between an on
 
 Messages sent from the Exchange Online organization to recipients in the on-premises organization follow the reverse route.
 
-**Mail flow in a hybrid deployment without an Edge Transport server deployed**
+**Mail flow in a hybrid deployment without an Edge Transport server deployed**:
 
 ![Hybrid mail flow without an Edge Transport server.](media/a95b4d1e-fd4a-4952-b891-22f84c9e71a3.png)
 
@@ -82,8 +90,6 @@ Messages sent from the Exchange Online organization to recipients in the on-prem
 
 > [!NOTE]
 > Installing an Edge server and establishing an Edge subscription will impact your mail flow. This process automatically creates two Send connectors for internet mail flow: one to send e-mail to all internet domains, and another to send email from the Edge Transport server to the internal Exchange organization. Please review the connectors and mail flow if this is not your intended mail flow scenario.
-
-**Mail flow in a hybrid deployment with an Edge Transport server deployed**
 
 ![Hybrid mail flow with an Edge Transport server.](media/821fe099-56f5-4501-8e1a-e184ba07a653.png)
 

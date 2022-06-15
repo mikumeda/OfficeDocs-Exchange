@@ -193,11 +193,11 @@ There are several types of messages that pass through an organization. The follo
 </thead>
 <tbody>
 <tr class="odd">
-<td><p><strong>Regular messages</strong>   Messages that contain a single rich text format (RTF), HTML, or plain text message body or a multipart or alternative set of message bodies.</p></td>
+<td><p><strong>Regular messages</strong>   Messages that contain a single rich text format (RTF), HTML, or plain text message body or a multipart or alternative set of message bodies.</p></td>
 <td><p>Yes</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Microsoft 365 or Office 365 Message Encryption</strong>    Messages encrypted by Microsoft 365 or Office 365. For more information, see <a href="/microsoft-365/compliance/encryption">Encryption</a>.</p></td>
+<td><p><strong>Microsoft 365 or Microsoft Purview Message Encryption</strong>    Messages encrypted by Microsoft 365 or Office 365. For more information, see <a href="/microsoft-365/compliance/encryption">Encryption</a>.</p></td>
 <td><p>Rules can always access envelope headers and process messages based on conditions that inspect those headers.</p>
 <p>For a rule to inspect or modify the contents of an encrypted message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="/exchange/enable-or-disable-transport-decryption-exchange-2013-help">Enable or disable transport decryption</a>.</p>
 <p>You can also create a rule that automatically decrypts encrypted messages. For more information, see <a href="/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email">Define mail flow rules to encrypt email messages</a>.</p></td>
@@ -208,24 +208,24 @@ There are several types of messages that pass through an organization. The follo
 <p>Rules with conditions that require inspection of the message's content, or actions that modify the message's content can't be processed.</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>RMS protected messages</strong>   Messages that had an Active Directory Rights Management Services (AD RMS) or Azure Rights Management (RMS) policy applied.</p></td>
+<td><p><strong>RMS protected messages</strong>   Messages that had an Active Directory Rights Management Services (AD RMS) or Azure Rights Management (RMS) policy applied.</p></td>
 <td><p>Rules can always access envelope headers and process messages based on conditions that inspect those headers.</p>
 <p>For a rule to inspect or modify the contents of an RMS protected message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="/exchange/enable-or-disable-transport-decryption-exchange-2013-help">Enable or disable transport decryption</a>.</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Clear-signed messages</strong>   Messages that have been signed but not encrypted.</p></td>
+<td><p><strong>Clear-signed messages</strong>   Messages that have been signed but not encrypted.</p></td>
 <td><p>Yes</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>UM messages</strong>   Messages that are created or processed by the Unified Messaging service, such as voice mail, fax, missed call notifications, and messages created or forwarded by using Microsoft Outlook Voice Access.</p></td>
+<td><p><strong>UM messages</strong>   Messages that are created or processed by the Unified Messaging service, such as voice mail, fax, missed call notifications, and messages created or forwarded by using Microsoft Outlook Voice Access.</p></td>
 <td><p>Yes</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Anonymous messages</strong>   Messages sent by anonymous senders.</p></td>
+<td><p><strong>Anonymous messages</strong>   Messages sent by anonymous senders.</p></td>
 <td><p>Yes</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Read reports</strong>   Reports that are generated in response to read receipt requests by senders. Read reports have a message class of <code>IPM.Note*.MdnRead</code> or <code>IPM.Note*.MdnNotRead</code>.</p></td>
+<td><p><strong>Read reports</strong>   Reports that are generated in response to read receipt requests by senders. Read reports have a message class of <code>IPM.Note*.MdnRead</code> or <code>IPM.Note*.MdnNotRead</code>.</p></td>
 <td><p>Yes</p></td>
 </tr>
 </tbody>
@@ -247,7 +247,7 @@ Transport rules that you create and configure on Mailbox servers are stored in A
 
 - Each Mailbox server caches expanded distribution groups to avoid repeated Active Directory queries to determine a group's membership. By default, entries in the expanded groups cache expire every four hours. Therefore, changes to the group's membership aren't detected by transport rules until the expanded groups cache is updated. To force an immediate update of the cache on a Mailbox server, restart the Microsoft Exchange Transport service. You need to restart the service on each Mailbox server where you want to forcibly update the cache.
 
-Transport rules that you create and configure on Edge Transport servers are stored in the local instance of AD LDS on the server. No automated replication of transport rules occurs on Edge Transport servers. Rules on the Edge Transport server apply only to messages that flow through the local server. If you need to apply the same set of transport rules on multiple Edge Transport servers, you can clone the Edge Transport server configuration, or export and import the transport rules. For more information, see [Edge Transport server cloned configuration](edge-transport-server-cloned-configuration-exchange-2013-help.md) and [Import or export a transport rule collection](manage-transport-rules-exchange-2013-help.md#import-or-export-a-transport-rule-collection).
+Transport rules that you create and configure on Edge Transport servers are stored in the local instance of AD LDS on the server. No automated replication of transport rules occurs on Edge Transport servers. Rules on the Edge Transport server apply only to messages that flow through the local server. If you need to apply the same set of transport rules on multiple Edge Transport servers, you can clone the Edge Transport server configuration, or export and import the transport rules. For more information, see [Edge Transport server cloned configuration](edge-transport-server-cloned-configuration-exchange-2013-help.md) and [Import or export a transport rule collection](manage-transport-rules-exchange-2013-help.md#import-or-export-a-transport-rule-collection).
 
 Whenever the Transport service on a Mailbox server or Edge Transport server detects a modified transport rule, an event is logged in the Application log in the Event Viewer (Event ID 4002 on Mailbox servers, and Event ID 16028 on Edge Transport servers).
 

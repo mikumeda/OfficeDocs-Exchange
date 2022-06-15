@@ -22,7 +22,9 @@ _**Applies to:** Exchange Server 2013_
 A *management role group* is a universal security group (USG) used in the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. A management role group simplifies the assignment of management roles to a group of users. All members of a role group are assigned the same set of roles. Role groups are assigned administrator and specialist roles that define major administrative tasks in Exchange 2013 such as organization management, recipient management, and other tasks. Role groups enable you to more easily assign a broader set of permissions to a group of administrators or specialist users.
 
 > [!NOTE]
-> This topic focuses on advanced RBAC functionality. If you want to manage basic Exchange 2013 permissions, such as using the Exchange admin center (EAC) to add and remove members to and from role groups, create and modify role groups, or create and modify role assignment policies, see [Permissions](permissions-exchange-2013-help.md). <br/><br/> If you want to assign permissions to users to manage their own mailbox or distribution groups, see [Understanding management role assignment policies](understanding-management-role-assignment-policies-exchange-2013-help.md).
+> This topic focuses on advanced RBAC functionality. If you want to manage basic Exchange 2013 permissions, such as using the Exchange admin center (EAC) to add and remove members to and from role groups, create and modify role groups, or create and modify role assignment policies, see [Permissions](permissions-exchange-2013-help.md).
+>
+> If you want to assign permissions to users to manage their own mailbox or distribution groups, see [Understanding management role assignment policies](understanding-management-role-assignment-policies-exchange-2013-help.md).
 
 ## Role group layers
 

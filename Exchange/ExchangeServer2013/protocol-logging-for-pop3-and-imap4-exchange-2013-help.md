@@ -25,7 +25,7 @@ You can use protocol logging to review the POP3 and IMAP4 connections in your Ex
 
 You can enable, disable, or change protocol logging using the Exchange Management Shell. If you enable protocol logging using the Shell, the default protocol logging settings will be used. In most cases, the default settings will be sufficient.
 
-Alternatively, you can enable, disable, and modify protocol logging options by editing the Microsoft.Exchange.Pop3.exe.config and Microsoft.Exchange.Imap4.exe.config configuration files located on your Microsoft Exchange Server 2013 Client Access server. For more information about how to manage POP3 and IMAP4 protocol settings, see [Configure protocol logging for POP3 and IMAP4](configure-protocol-logging-for-pop3-and-imap4-exchange-2013-help.md).
+Alternatively, you can enable, disable, and modify protocol logging options by editing the Microsoft.Exchange.Pop3.exe.config and Microsoft.Exchange.Imap4.exe.config configuration files located on your Microsoft Exchange Server 2013 Client Access server. For more information about how to manage POP3 and IMAP4 protocol settings, see [Configure protocol logging for POP3 and IMAP4](configure-protocol-logging-for-pop3-and-imap4-exchange-2013-help.md).
 
 ## Reviewing the protocol log
 
@@ -47,7 +47,7 @@ The protocol log files are text files that contain data in the comma-separated v
 <tbody>
 <tr class="odd">
 <td><p>date-time</p></td>
-<td><p>The date and time of the protocol event. The value is formatted as <em>yyyy-mm-ddhh:mm:ss.fffZ</em>, where <em>yyyy</em> = year, <em>mm</em> = month, <em>dd</em> = day, <em>hh</em> = hour, <em>mm</em> = minute, <em>ss</em> = second, <em>fff</em> = fractions of a second, and <em>Z</em> signifies Zulu. Zulu is another way to indicate Coordinated Universal Time (UTC).</p></td>
+<td><p>The date and time of the protocol event. The value is formatted as <em>yyyy-mm-ddhh:mm:ss.fffZ</em>, where <em>yyyy</em> = year, <em>mm</em> = month, <em>dd</em> = day, <em>hh</em> = hour, <em>mm</em> = minute, <em>ss</em> = second, <em>fff</em> = fractions of a second, and <em>Z</em> signifies Zulu. Zulu is another way to indicate Coordinated Universal Time (UTC).</p></td>
 </tr>
 <tr class="even">
 <td><p>connector-id</p></td>
@@ -73,11 +73,11 @@ The protocol log files are text files that contain data in the comma-separated v
 <td><p>event</p></td>
 <td><p>A single character that represents the protocol event. The possible values for the event are as follows:</p>
 <ul>
-<li><p>+   Connect</p></li>
-<li><p>-   Disconnect</p></li>
-<li><p>&gt;   Send</p></li>
-<li><p>&lt;   Receive</p></li>
-<li><p>*   Information</p></li>
+<li><p>+   Connect</p></li>
+<li><p>-   Disconnect</p></li>
+<li><p>&gt;   Send</p></li>
+<li><p>&lt;   Receive</p></li>
+<li><p>*   Information</p></li>
 </ul></td>
 </tr>
 <tr class="even">

@@ -46,8 +46,8 @@ After you create authentication policies, you assign them to users. Assigning a 
 
 You manage all aspects of authentication policies in the Exchange Management Shell. The protocols and services in Exchange that you can block legacy authentication for are described in the following table.
 
-|**Protocol or service**|**Description**|**Parameter name**|
-|:-----|:-----|:-----|
+|Protocol or service|Description|Parameter name|
+|---|---|---|
 |Exchange Active Sync (EAS)|Used by some email clients on mobile devices.|*BlockLegacyAuthActiveSync*|
 |Autodiscover|Used by Outlook and EAS clients to find and connect to mailboxes in Exchange|*BlockLegacyAuthAutodiscover*|
 |IMAP|Used by IMAP email clients.|*BlockLegacyAuthImap*|
@@ -55,9 +55,13 @@ You manage all aspects of authentication policies in the Exchange Management She
 |Offline Address Book (OAB)|A copy of address list collections that are downloaded and used by Outlook.|*BlockLegacyAuthOfflineAddressBook*|
 |POP3|Used by POP email clients.|*BlockLegacyAuthPop*|
 |Outlook Anywhere (RPC over HTTP)|Used by Outlook 2016 and earlier.|*BlockLegacyAuthRpc*|
-|Exchange Web Services (EWS)|A programming interface that's used by Outlook, Outlook for Mac, and third-party apps.|*BlockLegacyAuthWebServices*|
+|Exchange Web Services (EWS)|A programming interface that's used by Outlook, Outlook for Mac, Migration endpoints in Microsoft 365, and third-party apps.|*BlockLegacyAuthWebServices*|
 
 Typically, when you block legacy authentication for a user, we recommend that you block legacy authentication for all protocols. However, you can use the *BlockLegacyAuth\** parameters (switches) on the **New-AuthenticationPolicy** and **Set-AuthenticationPolicy** cmdlets to selectively allow or block legacy authentication for specific protocols.
+
+## Migration endpoints in Microsoft 365
+
+Migration endpoints in Microsoft 365 use Exchange Web Services (EWS) to connect to Exchange on-premises to migrate mailboxes from on-premises to Exchange Online. When setting up authentication policies, ensure that the accounts associated with migration endpoints are not part of a policy that has *BlockLegacyAuthWebServices* set to True.
 
 ## What do you need to know before you begin?
 

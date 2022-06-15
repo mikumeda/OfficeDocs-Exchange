@@ -41,7 +41,9 @@ In a hybrid deployment, many services make use of certificates:
 When configuring a hybrid deployment, you must use and configure certificates that you have purchased from a trusted third-party CA. The certificate used for hybrid secure mail transport must be installed on all on-premises Mailbox (Exchange 2016 and newer), and Mailbox and Client Access (Exchange 2013 and older) servers.
 
 > [!IMPORTANT]
-> If you're configuring a hybrid deployment in an organization that has Exchange servers deployed in multiple Active Directory forests, you must use a separate third-party CA certificate for each Active Directory forest. <br/><br/> When Exchange Edge Transport servers are deployed in an on-premises organization, this certificate must also be installed on all Edge Transport servers. Each Edge transport server must use a certificate that shares the same issuing CA and the same subject for hybrid secure mail to function correctly.
+> If you're configuring a hybrid deployment in an organization that has Exchange servers deployed in multiple Active Directory forests, you must use a separate third-party CA certificate for each Active Directory forest.
+>
+> When Exchange Edge Transport servers are deployed in an on-premises organization, this certificate must also be installed on all Edge Transport servers. Each Edge transport server must use a certificate that shares the same issuing CA and the same subject for hybrid secure mail to function correctly.
 
 Multiple services, such as AD FS, Exchange federation, services, and Exchange, each require certificates. Depending on your organization, you may decide to do one of the following:
 
@@ -61,8 +63,8 @@ The services that are installed on a single server may require that you configur
 
 The following table outlines the minimum suggested FQDNs that should be included on certificates configured for use in a hybrid deployment.
 
-|**Service**|**Suggested FQDN**|**Field**|
-|:-----|:-----|:-----|
+|Service|Suggested FQDN|Field|
+|---|---|---|
 |Primary shared SMTP domain|contoso.com|Subject name|
 |Autodiscover|Label that matches the external Autodiscover FQDN of your Exchange 2013 Client Access server, such as autodiscover.contoso.com|Subject alternative name|
 |Transport|Label that matches the external FQDN of your Edge Transport servers, such as edge.contoso.com|Subject alternative name|

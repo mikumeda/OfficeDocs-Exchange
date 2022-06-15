@@ -79,10 +79,6 @@ In the credit card rule, there is a section of XML code for patterns, which incl
 
 The five steps here represent actions that Exchange takes to compare your rule with email messages. For our credit card rule example, the following steps are taken.
 
-<br>
-
-****
-
 |Step|Action|
 |---|---|
 |1. Get Content|Spencer Badillo p> Visa: 4111 1111 1111 1111 <p> Expires: 2/2012|
@@ -92,7 +88,6 @@ The five steps here represent actions that Exchange takes to compare your rule w
 Keyword Visa is near the number. A regular expression for a date (2/2012) is near the number.|
 |5. Verdict|
 There is a regular expression that matches a checksum. Additional evidence increases confidence.|
-|
 
 The way this rule is set up by Microsoft makes it mandatory that corroborating evidence such as keywords are a part of the email message content in order to match the rule. So the following email content would not be detected as containing a credit card:
 

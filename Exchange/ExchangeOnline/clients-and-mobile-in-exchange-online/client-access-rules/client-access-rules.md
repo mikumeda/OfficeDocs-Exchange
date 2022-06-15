@@ -58,10 +58,6 @@ A rule is made of conditions, exceptions, an action, and a priority value.
 
 How multiple rules with the same condition are evaluated, and how a rule with multiple conditions, condition values, and exceptions are evaluated are described in the following table.
 
-<br><br>
-
-****
-
 |Component|Logic|Comments|
 |---|---|---|
 |Multiple rules that contain the same condition|The first rule is applied, and subsequent rules are ignored|For example, if your highest priority rule blocks Outlook on the web connections, and you create another rule that allows Outlook on the web connections for a specific IP address range, all Outlook on the web connections are still blocked by the first rule. Instead of creating another rule for Outlook on the web, you need to add an exception to the existing Outlook on the web rule to allow connections from the specified IP address range.|
@@ -103,10 +99,6 @@ New-ClientAccessRule -Name "Always Allow Remote PowerShell" -Action Allow -AnyOf
 #### Authentication types and protocols in Client Access Rules
 
 Not all authentication types are supported for all protocols in Client Access Rules. The supported authentication types per protocol are described in this table:
-
-<br><br>
-
-****
 
 |Protocol|AdfsAuthentication|BasicAuthentication|CertificateBasedAuthentication|NonBasicAuthentication|OAuthAuthentication|
 |---|:---:|:---:|:---:|:---:|:---:|

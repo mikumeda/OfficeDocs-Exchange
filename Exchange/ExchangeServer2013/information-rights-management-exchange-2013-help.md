@@ -72,14 +72,14 @@ Finally, traditional solutions often lack enforcement tools that apply uniform m
 
 ## IRM in Exchange 2013
 
-In Exchange 2013, you can use IRM features to apply persistent protection to messages and attachments. IRM uses Active Directory Rights Management Services (AD RMS), an information protection technology in Windows Server 2008 and later. With the IRM features in Exchange 2013, your organization and your users can control the rights recipients have for e-mail. IRM also helps allow or restrict recipient actions such as forwarding a message to other recipients, printing a message or attachment, or extracting message or attachment content by copying and pasting. IRM protection can be applied by users in Microsoft Outlook or Microsoft Office Outlook Web App, or it can be based on your organization's messaging policies and applied using transport protection rules or Outlook protection rules. Unlike other e-mail encryption solutions, IRM also allows your organization to decrypt protected content to enforce policy compliance.
+In Exchange 2013, you can use IRM features to apply persistent protection to messages and attachments. IRM uses Active Directory Rights Management Services (AD RMS), an information protection technology in Windows Server 2008 and later. With the IRM features in Exchange 2013, your organization and your users can control the rights recipients have for e-mail. IRM also helps allow or restrict recipient actions such as forwarding a message to other recipients, printing a message or attachment, or extracting message or attachment content by copying and pasting. IRM protection can be applied by users in Microsoft Outlook or Microsoft Office Outlook Web App, or it can be based on your organization's messaging policies and applied using transport protection rules or Outlook protection rules. Unlike other e-mail encryption solutions, IRM also allows your organization to decrypt protected content to enforce policy compliance.
 
-AD RMS uses extensible rights markup language (XrML)-based certificates and licenses to certify computers and users, and to protect content. When content such as a document or a message is protected using AD RMS, an XrML license containing the rights that authorized users have to the content is attached. To access IRM-protected content, AD RMS-enabled applications must procure a use license for the authorized user from the AD RMS cluster.
+AD RMS uses extensible rights markup language (XrML)-based certificates and licenses to certify computers and users, and to protect content. When content such as a document or a message is protected using AD RMS, an XrML license containing the rights that authorized users have to the content is attached. To access IRM-protected content, AD RMS-enabled applications must procure a use license for the authorized user from the AD RMS cluster.
 
 > [!NOTE]
 > In Exchange 2013, the Prelicensing agent attaches a use license to messages protected using the AD&nbsp;RMS cluster in your organization. For more details, see Prelicensing later in this topic.
 
-Applications used to create content must be RMS-enabled to apply persistent protection to content using AD RMS. Microsoft Office applications, such as Word, Excel, PowerPoint and Outlook are RMS-enabled and can be used to create and consume protected content.
+Applications used to create content must be RMS-enabled to apply persistent protection to content using AD RMS. Microsoft Office applications, such as Word, Excel, PowerPoint and Outlook are RMS-enabled and can be used to create and consume protected content.
 
 IRM helps you do the following:
 
@@ -99,25 +99,25 @@ However, IRM can't prevent information from being copied using the following met
 
 - Users remembering or manually transcribing the information
 
-To learn more about AD RMS, see [Active Directory Rights Management Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772403(v=ws.11)).
+To learn more about AD RMS, see [Active Directory Rights Management Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772403(v=ws.11)).
 
 ## AD RMS rights policy templates
 
-AD RMS uses XrML-based rights policy templates to allow compatible IRM-enabled applications to apply consistent protection policies. In Windows Server 2008 and later, the AD RMS server exposes a Web service that can be used to enumerate and acquire templates. Exchange 2013 ships with the Do Not Forward template. When the Do Not Forward template is applied to a message, only the recipients addressed in the message can decrypt the message. The recipients can't forward the message, copy content from the message, or print the message. You can create additional RMS templates on the AD RMS server in your organization to meet your IRM protection requirements.
+AD RMS uses XrML-based rights policy templates to allow compatible IRM-enabled applications to apply consistent protection policies. In Windows Server 2008 and later, the AD RMS server exposes a Web service that can be used to enumerate and acquire templates. Exchange 2013 ships with the Do Not Forward template. When the Do Not Forward template is applied to a message, only the recipients addressed in the message can decrypt the message. The recipients can't forward the message, copy content from the message, or print the message. You can create additional RMS templates on the AD RMS server in your organization to meet your IRM protection requirements.
 
-IRM protection is applied by applying an AD RMS rights policy template. Using policy templates, you can control permissions that recipients have on a message. Actions such as replying, replying to all, forwarding, extracting information from a message, saving a message, or printing a message can be controlled by applying the appropriate rights policy template to the message.
+IRM protection is applied by applying an AD RMS rights policy template. Using policy templates, you can control permissions that recipients have on a message. Actions such as replying, replying to all, forwarding, extracting information from a message, saving a message, or printing a message can be controlled by applying the appropriate rights policy template to the message.
 
 For more information about rights policy templates, see [AD RMS Policy Template Considerations](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd996658(v=ws.10)).
 
-For more information about creating AD RMS rights policy templates, see [AD RMS Rights Policy Templates Deployment Step-by-Step Guide](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731070(v=ws.10)).
+For more information about creating AD RMS rights policy templates, see [AD RMS Rights Policy Templates Deployment Step-by-Step Guide](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731070(v=ws.10)).
 
 ## Applying IRM protection to messages
 
 In Exchange 2010, IRM protection can be applied to messages using the following methods:
 
-- **Manually by Outlook users**: Your Outlook users can IRM-protect messages with the AD RMS rights policy templates available to them. This process uses the IRM functionality in Outlook, and not Exchange. However, you can use Exchange to access messages, and you can take actions (such as applying transport rules) to enforce your organization's messaging policy. For more information about using IRM in Outlook, see [Introduction to IRM for email messages](https://support.microsoft.com/office/bb643d33-4a3f-4ac7-9770-fd50d95f58dc).
+- **Manually by Outlook users**: Your Outlook users can IRM-protect messages with the AD RMS rights policy templates available to them. This process uses the IRM functionality in Outlook, and not Exchange. However, you can use Exchange to access messages, and you can take actions (such as applying transport rules) to enforce your organization's messaging policy. For more information about using IRM in Outlook, see [Introduction to IRM for email messages](https://support.microsoft.com/office/bb643d33-4a3f-4ac7-9770-fd50d95f58dc).
 
-- **Manually by Outlook Web App users**: When you enable IRM in Outlook Web App, users can IRM-protect messages they send, and view IRM-protected messages they receive. In Exchange 2013 Cumulative Update 1 (CU1), Outlook Web App users can also view IRM-protected attachments using Web-Ready Document Viewing. For more information about IRM in Outlook Web App, see [Information Rights Management in Outlook Web App](information-rights-management-in-outlook-web-app-exchange-2013-help.md).
+- **Manually by Outlook Web App users**: When you enable IRM in Outlook Web App, users can IRM-protect messages they send, and view IRM-protected messages they receive. In Exchange 2013 Cumulative Update 1 (CU1), Outlook Web App users can also view IRM-protected attachments using Web-Ready Document Viewing. For more information about IRM in Outlook Web App, see [Information Rights Management in Outlook Web App](information-rights-management-in-outlook-web-app-exchange-2013-help.md).
 
 - **Manually by Windows Mobile and Exchange ActiveSync device users**: In the release to manufacturing (RTM) version of Exchange 2010, users of Windows Mobile devices can view and create IRM-protected messages. This requires users to connect their supported Windows Mobile devices to a computer and activate them for IRM. In Exchange 2010 SP1, you can enable IRM in Microsoft Exchange ActiveSync to allow users of Exchange ActiveSync devices (including Windows Mobile devices) to view, reply to, forward, and create IRM-protected messages. For more information about IRM in Exchange ActiveSync, see [Information Rights Management in Exchange ActiveSync](information-rights-management-in-exchange-activesync-exchange-2013-help.md).
 
@@ -162,15 +162,15 @@ Scenarios for IRM protection are described in the following table.
 <td><p>Between an on-premises Exchange 2013 deployment and a cloud-based Exchange organization</p></td>
 <td><p>Yes</p></td>
 <td><ul>
-<li><p>Use an on-premises AD RMS server.</p></li>
-<li><p>Export the trusted publishing domain from your on-premises AD RMS server.</p></li>
+<li><p>Use an on-premises AD RMS server.</p></li>
+<li><p>Export the trusted publishing domain from your on-premises AD RMS server.</p></li>
 <li><p>Import the trusted publishing domain in your cloud-based organization.</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td><p>To external recipients</p></td>
 <td><p>No</p></td>
-<td><p>Exchange 2010 doesn't include a solution for sending IRM-protected messages to external recipients in a non-federated organization. AD RMS offers solutions using trust policies. You can configure a trust policy between your AD RMS cluster and Microsoft account (formerly known as Windows Live ID). For messages sent between two organizations, you can create a federated trust between the two Active Directory forests using Active Directory Federation Services (AD FS). To learn more, see <a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755156(v=ws.10)">Understanding AD RMS Trust Policies</a>.</p></td>
+<td><p>Exchange 2010 doesn't include a solution for sending IRM-protected messages to external recipients in a non-federated organization. AD RMS offers solutions using trust policies. You can configure a trust policy between your AD RMS cluster and Microsoft account (formerly known as Windows Live ID). For messages sent between two organizations, you can create a federated trust between the two Active Directory forests using Active Directory Federation Services (AD FS). To learn more, see <a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755156(v=ws.10)">Understanding AD RMS Trust Policies</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -188,11 +188,11 @@ To enforce messaging policies and for regulatory compliance, you must be able to
   > [!NOTE]
   > In Exchange 2010 SP1 and later, members of the Discovery Management role group can access IRM-protected messages returned by a discovery search and residing in a discovery mailbox. To enable this functionality, use the _EDiscoverySuperUserEnabled_ parameter with the [Set-IRMConfiguration](/powershell/module/exchange/Set-IRMConfiguration) cmdlet. For more information, see [Configure IRM for Exchange Search and In-Place eDiscovery](configure-irm-for-exchange-search-and-in-place-ediscovery-exchange-2013-help.md).
 
-To enable these decryption features, Exchange servers must have access to the message. This is accomplished by adding the Federation mailbox, a system mailbox created by Exchange Setup, to the super users group on the AD RMS server. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
+To enable these decryption features, Exchange servers must have access to the message. This is accomplished by adding the Federation mailbox, a system mailbox created by Exchange Setup, to the super users group on the AD RMS server. For details, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
 
 ## Prelicensing
 
-To view IRM-protected messages and attachments, Exchange 2013 automatically attaches a prelicense to protected messages. This prevents the client from having to make repeated trips to the AD RMS server to retrieve a use license, and enables offline viewing of IRM-protected messages and attachments. Prelicensing also allows IRM-protected messages to be viewed in Outlook Web App. When you enable IRM features, prelicensing is enabled by default.
+To view IRM-protected messages and attachments, Exchange 2013 automatically attaches a prelicense to protected messages. This prevents the client from having to make repeated trips to the AD RMS server to retrieve a use license, and enables offline viewing of IRM-protected messages and attachments. Prelicensing also allows IRM-protected messages to be viewed in Outlook Web App. When you enable IRM features, prelicensing is enabled by default.
 
 ## IRM agents
 
@@ -268,17 +268,17 @@ To implement IRM in your Exchange 2013 organization, your deployment must meet t
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>AD RMS cluster</p></td>
+<td><p>AD RMS cluster</p></td>
 <td><ul>
-<li><p><strong>Operating system</strong>   Windows Server 2012, Windows Server 2008 R2 or Windows Server 2008 SP2 with the hotfix <a href="https://support.microsoft.com/help/973247">Active Directory Rights Management Services role in Windows Server 2008</a> is required.</p></li>
-<li><p><strong>Service connection point</strong>   Exchange 2010 and AD RMS-aware applications use the service connection point registered in Active Directory to discover an AD RMS cluster and URLs. AD RMS allows you to register the service connection point from within AD RMS Setup. If the account used to set up AD RMS isn't a member of the Enterprise Admins security group, service connection point registration can be performed after setup is complete. There is only one service connection point for AD RMS in an Active Directory forest.</p></li>
-<li><p><strong>Permissions</strong>   Read and Execute permissions to the AD RMS server certification pipeline (<code>ServerCertification.asmx</code> file on AD RMS servers) must be assigned to the following:</p>
+<li><p><strong>Operating system</strong>   Windows Server 2012, Windows Server 2008 R2 or Windows Server 2008 SP2 with the hotfix <a href="https://support.microsoft.com/help/973247">Active Directory Rights Management Services role in Windows Server 2008</a> is required.</p></li>
+<li><p><strong>Service connection point</strong>   Exchange 2010 and AD RMS-aware applications use the service connection point registered in Active Directory to discover an AD RMS cluster and URLs. AD RMS allows you to register the service connection point from within AD RMS Setup. If the account used to set up AD RMS isn't a member of the Enterprise Admins security group, service connection point registration can be performed after setup is complete. There is only one service connection point for AD RMS in an Active Directory forest.</p></li>
+<li><p><strong>Permissions</strong>   Read and Execute permissions to the AD RMS server certification pipeline (<code>ServerCertification.asmx</code> file on AD RMS servers) must be assigned to the following:</p>
 <ul>
 <li><p>Exchange Servers group or individual Exchange servers</p></li>
-<li><p>AD RMS Service group on AD RMS servers</p></li>
+<li><p>AD RMS Service group on AD RMS servers</p></li>
 </ul>
-<p>By default, the ServerCertification.asmx file is located in the <code>\inetpub\wwwroot\_wmcs\certification\</code> folder on AD RMS servers. For details, see <a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee849850(v=ws.10)">Set Permissions on the AD RMS Server Certification Pipeline</a>.</p></li>
-<li><p><strong>AD RMS super users</strong>   To enable transport decryption, journal report decryption, IRM in Outlook Web App, and IRM for Exchange Search, you must add the Federation mailbox, a system mailbox created by Exchange 2013 Setup, to the super users group on the AD RMS cluster. For details, see <a href="add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md">Add the Federation Mailbox to the AD RMS Super Users Group</a>.</p></li>
+<p>By default, the ServerCertification.asmx file is located in the <code>\inetpub\wwwroot\_wmcs\certification\</code> folder on AD RMS servers. For details, see <a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee849850(v=ws.10)">Set Permissions on the AD RMS Server Certification Pipeline</a>.</p></li>
+<li><p><strong>AD RMS super users</strong>   To enable transport decryption, journal report decryption, IRM in Outlook Web App, and IRM for Exchange Search, you must add the Federation mailbox, a system mailbox created by Exchange 2013 Setup, to the super users group on the AD RMS cluster. For details, see <a href="add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md">Add the Federation Mailbox to the AD RMS Super Users Group</a>.</p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -291,7 +291,7 @@ To implement IRM in your Exchange 2013 organization, your deployment must meet t
 <tr class="odd">
 <td><p>Outlook</p></td>
 <td><ul>
-<li><p>Users can IRM-protect messages in Outlook. Beginning with Outlook 2003, AD RMS templates for IRM-protecting messages is supported.</p></li>
+<li><p>Users can IRM-protect messages in Outlook. Beginning with Outlook 2003, AD RMS templates for IRM-protecting messages is supported.</p></li>
 <li><p>Outlook protection rules are an Exchange 2010 and Outlook 2010 feature. Previous versions of Outlook don't support this feature.</p></li>
 </ul></td>
 </tr>
@@ -320,11 +320,11 @@ After you set up an Exchange 2013 server, you can use the [Test-IRMConfiguration
 
 - Inspects IRM configuration for your Exchange 2013 organization.
 
-- Checks the AD RMS server for version and hotfix information.
+- Checks the AD RMS server for version and hotfix information.
 
 - Verifies whether an Exchange server can be activated for RMS by retrieving a Rights Account Certificate (RAC) and client licensor certificate.
 
-- Acquires AD RMS rights policy templates from the AD RMS server.
+- Acquires AD RMS rights policy templates from the AD RMS server.
 
 - Verifies that the specified sender can send IRM-protected messages.
 

@@ -39,7 +39,7 @@ This topic explains how to use the Group Policy Management console (GPMC) to con
 
 ## Use the GPMC to configure the DNS suffix search list
 
-1. On a 32-bit computer in your domain, install GPMC with Service Pack 1 (SP1). For download information, see [Group Policy Management Console with Service Pack 1](https://www.microsoft.com/download/details.aspx?id=21895).
+1. On a 32-bit computer in your domain, install GPMC with Service Pack 1 (SP1). For download information, see [Group Policy Management Console with Service Pack 1](https://www.microsoft.com/download/details.aspx?id=21895).
 
     > [!NOTE]
     > If you have a computer in your domain running Windows Server 2008 or Windows Vista, you can skip this step.
@@ -50,7 +50,7 @@ This topic explains how to use the Group Policy Management console (GPMC) to con
 
 4. In **New GPO**, type a name for the policy, and then click **OK**.
 
-5. Right-click the new policy that you created in Step 4, and then click **Edit**.
+5. Right-click the new policy that you created in Step 4, and then click **Edit**.
 
 6. In **Group Policy Management Editor**, expand **Computer Configuration**, expand **Policies**, expand **Administrative Templates**, expand **Network**, and then click **DNS Client**.
 
@@ -58,7 +58,7 @@ This topic explains how to use the Group Policy Management console (GPMC) to con
 
 8. On the **DNS Suffix Search List Properties** page, select **Enabled**. In the **DNS Suffixes** box, type the primary DNS suffix of the disjoint computer, the DNS domain name, and any additional namespaces for other servers with which Exchange may interoperate, such as monitoring servers or servers for third-party applications. Click **OK**.
 
-9. In **Group Policy Management**, expand **Group Policy Objects**, and then select the policy that you created in Step 4. On the **Scope** tab, scope the policy so that it applies to only the computers that are disjoint.
+9. In **Group Policy Management**, expand **Group Policy Objects**, and then select the policy that you created in Step 4. On the **Scope** tab, scope the policy so that it applies to only the computers that are disjoint.
 
 ## How do you know this worked?
 

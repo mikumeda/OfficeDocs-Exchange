@@ -113,8 +113,8 @@ The Recoverable Items folder contains the following subfolders used to store del
 
 - **Versions**: When a user placed on In-Place Hold or Litigation Hold, mailbox items must be protected from tampering or modification by the user or a process. This is accomplished using a copy-on-write process. When a user or a process changes specific properties of a mailbox item, a copy of the original item is saved in the Versions folder before the change is committed. The process is repeated for subsequent changes. Items captured in the Versions folder are also indexed and returned in In-Place eDiscovery searches. After the hold is removed, copies in the Versions folder are removed by the Managed Folder Assistant.
 
-|**Item type**|**Properties that trigger copy-on-write**|
-|:-----|:-----|
+|Item type|Properties that trigger copy-on-write|
+|---|---|
 |Messages (IPM.Note\*)  <br/> Posts (IPM.Post\*)| Subject  <br/>  Body  <br/>  Attachments  <br/>  Senders/Recipients  <br/>  Sent/Received Dates|
 |Items other than messages and posts| Any change to a visible property, except the following:  <br/>  Item location (when an item is moved between folders)  <br/>  Item status change (read or unread)  <br/>  Changes to retention tag applied to an item|
 |Items in the default folder Drafts|None (items in the Drafts folder are exempt from copy on write)|
@@ -132,7 +132,7 @@ When a user's Recoverable Items folder exceeds the warning quota for recoverable
 
 In Exchange Online, the quota for the Recoverable Items folder (in the user's primary mailbox) is automatically increased to 100 GB when you place a mailbox on Litigation Hold or In-Place Hold. When the storage quota for the Recoverable Items folder in the primary mailbox of a mailbox on hold is close to reaching its limit, you can do the following things:
 
-- **Enable the archive mailbox and turn on auto-expanding archiving**: You can enable an unlimited storage capacity for the Recoverable Items folder simply by enabling the archive mailbox and then turning on the auto-expanding archiving feature in Exchange Online. This results in 100 GB for the Recoverable Items folder in the primary mailbox and an unlimited amount of storage capacity for the Recoverable Items folder in the user's archive. See how: [Enable archive mailboxes in the Security & Compliance Center](/microsoft-365/compliance/enable-archive-mailboxes) and [Enable unlimited archiving - Admin Help](/microsoft-365/compliance/enable-unlimited-archiving).
+- **Enable the archive mailbox and turn on auto-expanding archiving**: You can enable an unlimited storage capacity for the Recoverable Items folder simply by enabling the archive mailbox and then turning on the auto-expanding archiving feature in Exchange Online. This results in 100 GB for the Recoverable Items folder in the primary mailbox and an unlimited amount of storage capacity for the Recoverable Items folder in the user's archive. See how: [Enable archive mailboxes in the compliance portal](/microsoft-365/compliance/enable-archive-mailboxes) and [Enable unlimited archiving - Admin Help](/microsoft-365/compliance/enable-unlimited-archiving).
 
   **Notes**:
 

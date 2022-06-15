@@ -67,8 +67,8 @@ You have to use a CSV file to identify the group of users for a migration batch 
 
 The following table describes the supported attributes for a CSV file for a staged Exchange migration.
 
-|**Attribute**|**Required or optional**|**Accepted values**|**Description**|
-|:-----|:-----|:-----|:-----|
+|Attribute|Required or optional|Accepted values|Description|
+|---|---|---|---|
 |EmailAddress|Required|SMTP address for the user|Specifies the email address for the mail-enabled user (or a mailbox if you're retrying the migration) in Microsoft 365 or Office 365 that corresponds to the on-premises user mailbox that will be migrated. Mail-enabled users are created in Microsoft 365 or Office 365 as a result of directory synchronization or another provisioning process. The email address of the mail-enabled user must match the _WindowsEmailAddress_ property for the corresponding on-premises mailbox.|
 |Password|Optional|A password has to have a minimum length of eight characters, and satisfy any password restrictions that are applied to your Microsoft 365 or Office 365 organization.|This password is set on the user account when the corresponding mail-enabled user in Microsoft 365 or Office 365 is converted to a mailbox during the migration.|
 |ForceChangePassword|Optional|`True` or `False`|Specifies whether a user must change the password the first time they sign in to their Microsoft 365 or Office 365 mailbox. <br/> **Note**: If you've implemented a single sign-on (SSO) solution by deploying Active Directory Federation Services 2.0 (AD FS 2.0) in your on-premises organization, you must use `False` for the value of this attribute.|
@@ -83,8 +83,8 @@ A CSV file for an IMAP migration batch can have maximum of 50,000 rows. But it's
 
 The following table describes the supported attributes for a CSV file for an IMAP migration.
 
-|**Attribute**|**Required or optional**|**Accepted values**|**Description**|
-|:-----|:-----|:-----|:-----|
+|Attribute|Required or optional|Accepted values|Description|
+|---|---|---|---|
 |EmailAddress|Required|SMTP address for the user.|Specifies the user ID for the user's Microsoft 365 or Office 365 mailbox|
 |UserName|Required|String that identifies the user on the IMAP messaging system, in a format supported by the IMAP server.|Specifies the logon name for the user's account in the IMAP messaging system (the source environment). In addition to the username, you can use the credentials of an account that has been assigned the necessary permissions to access mailboxes on the IMAP server. For more information, see [CSV files for IMAP migration batches](migrating-imap-mailboxes/csv-files-for-imap-migrations.md).|
 |Password|Required|Password string.|Specifies the password for the user account specified by the UserName attribute.|

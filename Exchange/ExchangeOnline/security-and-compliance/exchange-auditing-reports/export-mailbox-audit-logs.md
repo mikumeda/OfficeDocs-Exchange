@@ -21,7 +21,7 @@ manager: serdars
 # Export mailbox audit logs in Exchange Online
 
 > [!NOTE]
-> Classic Exchange admin center is in the process of being deprecated in worldwide deployment. We recommend that you search the audit log in the Microsoft 365 compliance center. For more information, see [Deprecation of the classic Exchange admin center in WW service](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-the-classic-exchange-admin-center-in-ww-service/ba-p/2736358) and [Search the audit log in the compliance center](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance).
+> Classic Exchange admin center is in the process of being deprecated in worldwide deployment. We recommend that you search the audit log in the Microsoft Purview compliance portal. For more information, see [Deprecation of the classic Exchange admin center in WW service](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-the-classic-exchange-admin-center-in-ww-service/ba-p/2736358) and [Search the audit log in the compliance portal](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance).
 
 When mailbox auditing is enabled for a mailbox, Exchange Online logs information in the mailbox audit log whenever a user other than the owner accesses the mailbox. Each log entry includes information about who accessed the mailbox and when, the actions performed by the non-owner, and whether the action was successful. Entries in the mailbox audit log are retained for 90 days by default. You can use the mailbox audit log to determine if a user other than the owner has accessed a mailbox.
 
@@ -112,10 +112,6 @@ The following example shows an entry from the mailbox audit log contained in the
 
 Here's a description of useful fields in the mailbox audit log. They can help you identify specific information about each instance of non-owner access of a mailbox.
 
-<br>
-
-****
-
 |Field|Description|
 |---|---|
 |Owner|The owner of the mailbox that was accessed by a non-owner.|
@@ -130,4 +126,3 @@ Here's a description of useful fields in the mailbox audit log. They can help yo
 |MailboxOwnerUPN|The email address of the mailbox owner.|
 |LogonUserDN|The display name of the non-owner.|
 |Subject|The subject line of the email message that was affected by the non-owner.|
-|

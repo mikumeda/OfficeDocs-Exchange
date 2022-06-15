@@ -18,9 +18,9 @@ manager: serdars
 
 # Configure http to https redirection for Outlook on the web in Exchange Server
 
-By default in Exchange Server, the URL `https://*<ServerName>*` redirects users to `https://*<ServerName>*/owa`. But, if anyone tries to access Outlook on the web (formerly known as Outlook Web App) by using `http://*<ServerName>*` or `http://*<ServerName>*/owa`, they'll get an error.
+By default in Exchange Server, the URL `https://<ServerName>` redirects users to `https://<ServerName>/owa`. But, if anyone tries to access Outlook on the web (formerly known as Outlook Web App) by using `http://<ServerName>` or `http://<ServerName>/owa`, they'll get an error.
 
-You can configure http redirection for Outlook on the web so that requests for `http://*<ServerName>*` or `http://*<ServerName>*/owa` are automatically redirected to `https://*<ServerName>*/owa`. This requires the following configuration steps in Internet Information Services (IIS):
+You can configure http redirection for Outlook on the web so that requests for `http://<ServerName>` or `http://<ServerName>/owa` are automatically redirected to `https://*<ServerName>*/owa`. This requires the following configuration steps in Internet Information Services (IIS):
 
 1. Remove the **Require SSL** setting from the default website.
 
@@ -179,11 +179,11 @@ net start w3svc
 
 To verify that you have successfully configured http to https redirection for Outlook on the web, perform the following steps:
 
-1. On a client computer, open a web browser and enter the URL http://*\<ServerName\>*. On the local server, you can use the value http://127.0.0.1 or http://localhost.
+1. On a client computer, open a web browser and enter the URL `http://<ServerName>`. On the local server, you can use the value `http://127.0.0.1` or `http://localhost`.
 
 2. Verify that you're redirected to Outlook on the web in https, and verify that you can log in successfully.
 
-3. Open the URL http://*\<ServerName\>*/owa (or http://127.0.0.1/owa or http://localhost/owa).
+3. Open the URL `http://<ServerName>/owa` (or `http://127.0.0.1/owa` or `http://localhost/owa`).
 
 4. Verify that you're redirected to Outlook on the web in https, and verify that you can log in successfully.
 
@@ -191,8 +191,8 @@ To verify that you have successfully configured http to https redirection for Ou
 
 The default **Require SSL** and **HTTP Redirect** settings for the default website and all virtual directories in the default website on an Exchange server are described in the following table.
 
-|**Website**|**Virtual directory**|**Require SSL**|**HTTP Redirect**|
-|:-----|:-----|:-----|:-----|
+|Website|Virtual directory|Require SSL|HTTP Redirect|
+|---|---|---|---|
 |Default Web Site|n/a|yes|none|
 |Default Web Site|API|yes|none|
 |Default Web Site|aspnet_client (directory)|yes|none|
@@ -202,6 +202,6 @@ The default **Require SSL** and **HTTP Redirect** settings for the default websi
 |Default Web Site|mapi|yes|none|
 |Default Web Site|Microsoft-Server-ActiveSync|yes|none|
 |Default Web Site|OAB|yes|none|
-|Default Web Site|owa|yes <br/><br/> Subdirectories: <br/>• auth: yes  <br/>• Calendar: no  <br/>• Integrated: yes  <br/>• oma: yes|none|
+|Default Web Site|owa|yes <p> Subdirectories: <ul><li>auth: yes</li><li>Calendar: no</li><li>Integrated: yes</li><li>oma: yes</li></ul>|none|
 |Default Web Site|PowerShell|no|none|
 |Default Web Site|Rpc|no|none|

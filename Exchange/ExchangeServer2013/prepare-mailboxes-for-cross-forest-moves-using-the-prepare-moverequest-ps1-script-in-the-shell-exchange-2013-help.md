@@ -244,7 +244,7 @@ When the script attempts to create a target mail-enabled user from the source ma
 
 The script prompts the user about the duplicate objects.
 
-If the target mail-enabled object is a mail-enabled user or contact, which is most likely created by a cross-forest (Identity Lifecycle Management 2007 Service Pack 1-based) global address list (GAL) synchronization deployment, the user can run the script again with the *UseLocalObject* parameter to use the target mail-enabled object for mailbox migration.
+If the target mail-enabled object is a mail-enabled user or contact, which is most likely created by a cross-forest (Identity Lifecycle Management 2007 Service Pack 1-based) global address list (GAL) synchronization deployment, the user can run the script again with the *UseLocalObject* parameter to use the target mail-enabled object for mailbox migration.
 
 ## Mail-enabled user
 

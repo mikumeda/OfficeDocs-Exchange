@@ -45,7 +45,7 @@ As previously stated, when you disable email for a mail user, the Exchange attri
 
 ## Use the EAC to disable email for a mail user
 
-1. In the EAC, navigate to **Recipients**  \> **Contacts**.
+1. In the EAC, navigate to **Recipients**  \> **Contacts**.
 
 2. In the list of contacts, click the mail user you want to disable email for.
 
@@ -69,7 +69,7 @@ For detailed syntax and parameter information, see [Disable-MailUser](/powershel
 
 To verify that you've successfully disabled email for a mail user, do one of the following:
 
-1. In the EAC, navigate to **Recipients** \> **Contacts** and verify that the mail user is no longer listed.
+1. In the EAC, navigate to **Recipients** \> **Contacts** and verify that the mail user is no longer listed.
 
 2. In Active Directory Users and Computers, right-click the user, and then click **Properties**. On the **General** tab, notice that the **E-mail** box is blank. This verifies that the mail user isn't mail-enabled.
 
@@ -161,7 +161,7 @@ When you're mail-enabling users in bulk, you first export the list of users that
 
 To verify that you've successfully mail-enabled Active Directory users, do one of the following:
 
-- In the EAC, navigate to **Recipients** \> **Contacts**. New mail users are displayed in the contact list. Under **Contact Type**, the type is **Mail user**.
+- In the EAC, navigate to **Recipients** \> **Contacts**. New mail users are displayed in the contact list. Under **Contact Type**, the type is **Mail user**.
 
   > [!NOTE]
   > You may have to click <STRONG>Refresh</STRONG> <IMG title="Refresh Icon" alt="Refresh Icon" src="images/Dn624163.85f271ca-32a4-426c-842a-d2172567099d(EXCHG.150).gif"> to display new mail users.

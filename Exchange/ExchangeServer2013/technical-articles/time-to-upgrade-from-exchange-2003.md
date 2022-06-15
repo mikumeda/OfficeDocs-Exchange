@@ -106,4 +106,4 @@ For this two-phase upgrade, you'll need to use both Exchange 2010 ExDeploy and E
 
 Well, we hope this article's been helpful for you as you contemplate life after Exchange 2003 and think about an upgrade to Exchange 2013. After deploying your Exchange 2013 organization, you'll be well on your way to successfully upgrading your Exchange 2003 organization. Then, you'll be ready to secure, administer, and verify mail flow in your Exchange 2013 organization.
 
-![24ee4aef-3dc3-4a8b-a737-953b41ec5ff4.](images/Dn201758.24ee4aef-3dc3-4a8b-a737-953b41ec5ff4(EXCHG.150).jpg "24ee4aef-3dc3-4a8b-a737-953b41ec5ff4")  [Kweku Ako-Adjei](https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange), Sr. Technical Writer, Exchange Server
+![24ee4aef-3dc3-4a8b-a737-953b41ec5ff4.](images/Dn201758.24ee4aef-3dc3-4a8b-a737-953b41ec5ff4(EXCHG.150).jpg "24ee4aef-3dc3-4a8b-a737-953b41ec5ff4")  [Kweku Ako-Adjei](https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange), Sr. Technical Writer, Exchange Server

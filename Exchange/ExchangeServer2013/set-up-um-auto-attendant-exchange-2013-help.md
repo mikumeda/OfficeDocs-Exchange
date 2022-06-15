@@ -54,14 +54,14 @@ To plan and create a new UM auto attendant structure, you need to do the followi
 
 8. The following is an example of a worksheet you could use to plan non-business hours menu navigation.
 
-|****Key****|****Prompt/Navigation menu entry name****|****Response to record****|
-|:-----|:-----|:-----|
-|1|Language selection to use English.|"Press or say 1 to use English."|
-|2|Account balance|"Press or say 2 to get your account balance."|
-|3|Transfer to Sales|"Press or say 3 to be transferred to our sales department."|
-|4|Transfer to customer service|"Press or say 4 to be transferred to the next customer service representative."|
-|5|Business hours|No response needed.|
-|6|Business location|No response needed.|
+   |Key|Prompt/Navigation menu entry name|Response to record|
+   |---|---|---|
+   |1|Language selection to use English.|"Press or say 1 to use English."|
+   |2|Account balance|"Press or say 2 to get your account balance."|
+   |3|Transfer to Sales|"Press or say 3 to be transferred to our sales department."|
+   |4|Transfer to customer service|"Press or say 4 to be transferred to the next customer service representative."|
+   |5|Business hours|No response needed.|
+   |6|Business location|No response needed.|
 
 9. Using your menu navigation plan, record prompts that inform callers what they can do. For example, depending on the auto attendant structure for the non-business hours menu navigation shown in the table, you might record the following script: "To leave a message for Sales, press one. For our business hours, press two. For our address, press three."
 

@@ -63,7 +63,7 @@ To eliminate these issues for users with cloud mailboxes, perform the following 
 
    > [!NOTE]
    > 
-   > - Use http, not https.
+   > - Use http, not https. If https is used, users may get a URL redirection issue [AADSTS50011].
    > 
    > - The trailing value /owa is required in the organization relationship, but users don't need to enter /owa in the URL.
    > 
@@ -83,8 +83,8 @@ Users may receive multiple authentication prompts depending on:
 
 The authentication prompt experience that users can expect is described in the following table.
 
-|**Authentication method**|**Client computer**|**Authentication prompt experience**|
-|:-----|:-----|:-----|
+|Authentication method|Client computer|Authentication prompt experience|
+|---|---|---|
 |Identity federation|Internal Internet connection|Single prompt|
 |Identity Federation|External Internet connection|Double prompt|
 |No Identity federation|Domain joined (internal or external)|Double prompt|

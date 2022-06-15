@@ -50,9 +50,9 @@ This example sets the following routing table log settings on the Mailbox server
 
 - Sets the location of the routing table log files to D:\\Routing Table Log. Note that if the folder doesn't exist, it will be created for you.
 
-- Sets the maximum size of the routing table log folder to 70 MB.
+- Sets the maximum size of the routing table log folder to 70 MB.
 
-- Sets the maximum age of a routing table log file to 45 days.
+- Sets the maximum age of a routing table log file to 45 days.
 
 ```powershell
 Set-TransportService Mailbox01 -RoutingTableLogPath "D:\Routing Table Log" -RoutingTableLogMaxDirectorySize 70MB -RoutingTableLogMaxAge 45.00:00:00
@@ -87,7 +87,7 @@ To verify that you have successfully configured routing table logging, do the fo
    <add key="RoutingConfigReloadInterval" value="<hh:mm:ss>" />
    ```
 
-   For example, to change the interval for automatic recalculation of the routing table to 10 hours, use the following value:
+   For example, to change the interval for automatic recalculation of the routing table to 10 hours, use the following value:
 
    ```command line
    <add key="RoutingConfigReloadInterval" value="10:00:00" />
@@ -107,6 +107,6 @@ To verify that you have successfully configured the interval for the automatic r
 
 Note that the routing table will be recalculated and logged earlier than the value specified by the *RoutingConfigReloadInterval* key if any of the following conditions occur:
 
-- A routing configuration change is detected. For example, a Send connector or a Receive connector is added, removed, or modified, or the 6 hour Kerberos token renewal occurs.
+- A routing configuration change is detected. For example, a Send connector or a Receive connector is added, removed, or modified, or the 6 hour Kerberos token renewal occurs.
 
 - The Microsoft Exchange Transport service is started.

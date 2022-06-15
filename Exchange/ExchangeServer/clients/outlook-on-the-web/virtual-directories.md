@@ -255,8 +255,8 @@ For detailed syntax and parameter information, see [Get-OWAVirtualDirectory](/po
 
 There are many more configuration settings available for Outlook on the web virtual directories in the Exchange Management Shell (the **Set-OwaVirtualDirectory** cmdlet) than in the EAC. Hare are some of the Outlook on the web virtual directory settings that are only available in the Exchange Management Shell:
 
-|**Parameter**|**Function**|
-|:-----|:-----|
+|Parameter|Function|
+|---|---|
 |_AllowedFileTypes_ <br/> _BlockedFileTypes_ <br/> _ForceSaveFileTypes_ <br/> _AllowedMimeTypes_ <br/> _BlockedMimeTypes_ <br/> _ForceSaveMimeTypes_ <br/> _ActionForUnknownFileAndMIMETypes_|Defines the file types for direct file access (traditional file attachments an embedded MIME files) in Outlook on the web (not in other email clients).|
 |_DefaultTheme_|Specifies the default theme that's used in Outlook on the web.|
 |_LogonAndErrorLanguage_ <br/> _OutboundCharset_ <br/> _UseGB18030_ <br/> _UseISO885915_|Configures the various language settings for Outlook on the web.|

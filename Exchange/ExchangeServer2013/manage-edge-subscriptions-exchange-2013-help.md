@@ -38,7 +38,7 @@ You can subscribe one or more Edge Transport servers to a single Active Director
 
 - A new Edge Subscription object is created in Active Directory.
 
-- Additional ESRA accounts are created for each Mailbox server in the Active Directory site. These accounts are replicated to Active Directory Lightweight Directory Services (AD LDS) and used by the EdgeSync synchronization process during synchronization with the new server.
+- Additional ESRA accounts are created for each Mailbox server in the Active Directory site. These accounts are replicated to Active Directory Lightweight Directory Services (AD LDS) and used by the EdgeSync synchronization process during synchronization with the new server.
 
 - The new Edge Subscription is added to the source server list of the automatic Send connector to the Internet. Messages submitted to that connector for processing will be load balanced between the subscribed Edge Transport servers.
 
@@ -48,11 +48,11 @@ You can subscribe one or more Edge Transport servers to a single Active Director
 
 ## Remove an Edge Subscription
 
-You may occasionally want to remove an Edge Subscription from the Exchange organization or from both the Exchange organization and the Edge Transport server. If you plan to later resubscribe the Edge Transport server to the Exchange organization, don't remove the Edge Subscription from the Edge Transport server. When you remove the Edge Subscription from an Edge Transport server, all replicated data is deleted from AD LDS. This can take a long time if you have lots of recipient data.
+You may occasionally want to remove an Edge Subscription from the Exchange organization or from both the Exchange organization and the Edge Transport server. If you plan to later resubscribe the Edge Transport server to the Exchange organization, don't remove the Edge Subscription from the Edge Transport server. When you remove the Edge Subscription from an Edge Transport server, all replicated data is deleted from AD LDS. This can take a long time if you have lots of recipient data.
 
 To completely remove an Edge Subscription, you need to run this procedure on the Edge Transport server you wish to remove and on an Exchange 2013 Mailbox server in the Active Directory site where the Edge Transport server is subscribed.
 
-After you remove the Edge Subscription, synchronization of information from AD LDS stops. All accounts stored in AD LDS are removed, and the Edge Transport server is removed from the source server list of any Send connector. You will no longer be able to use Edge Transport server features that rely on Active Directory data.
+After you remove the Edge Subscription, synchronization of information from AD LDS stops. All accounts stored in AD LDS are removed, and the Edge Transport server is removed from the source server list of any Send connector. You will no longer be able to use Edge Transport server features that rely on Active Directory data.
 
 1. To remove the Edge Subscription from the Edge Transport server, use the following syntax.
 
@@ -82,25 +82,25 @@ You will need to remove the Edge Subscription if:
 
 - You no longer want the Edge Transport server to participate in EdgeSync synchronization. You will need to remove the Edge Subscription from both the Edge Transport server and from the Exchange organization.
 
-- An Edge Transport server is being decommissioned. In this scenario, you only need to remove the Edge Subscription from the Exchange organization. If you uninstall the Edge Transport server role from the computer, the AD LDS instance and all Active Directory data stored in AD LDS will also be removed.
+- An Edge Transport server is being decommissioned. In this scenario, you only need to remove the Edge Subscription from the Exchange organization. If you uninstall the Edge Transport server role from the computer, the AD LDS instance and all Active Directory data stored in AD LDS will also be removed.
 
 - You want to change the Active Directory site association for the Edge Subscription. You will only need to remove the Edge Subscription from the Exchange organization. After the Edge Subscription is removed from the Exchange organization, you can resubscribe the Edge Transport server to a different Active Directory site.
 
 When you remove an Edge Subscription from the Exchange organization:
 
-- Synchronization of information from Active Directory to AD LDS stops.
+- Synchronization of information from Active Directory to AD LDS stops.
 
-- The ESRA accounts are removed from both Active Directory and AD LDS.
+- The ESRA accounts are removed from both Active Directory and AD LDS.
 
 - The Edge Transport server is removed from the *SourceTransportServers* property of any Send connector.
 
-- The automatic inbound Send connector from the Edge Transport server to the Exchange organization is removed from AD LDS.
+- The automatic inbound Send connector from the Edge Transport server to the Exchange organization is removed from AD LDS.
 
 When you remove the Edge Subscription from an Edge Transport server:
 
 - You can no longer use Edge Transport server features that rely on Active Directory data.
 
-- Replicated data is removed from AD LDS.
+- Replicated data is removed from AD LDS.
 
 - Tasks that were disabled when the Edge Subscription was created are re-enabled to allow for local configuration.
 
@@ -163,7 +163,7 @@ Start-EdgeSynchronization -TargetServer Edge03 -ForceFullSync
 
 You can use the **Test-EdgeSynchronization** cmdlet to verify that the Edge synchronization is working. This cmdlet reports synchronization status of subscribed Edge Transport servers.
 
-The output of this cmdlet lets you view objects that have not been synchronized to the Edge Transport server. The task compares data stored in Active Directory against data stored in AD LDS and reports any data inconsistencies.
+The output of this cmdlet lets you view objects that have not been synchronized to the Edge Transport server. The task compares data stored in Active Directory against data stored in AD LDS and reports any data inconsistencies.
 
 You can use the *ExcludeRecipientTest* parameter on the **Test-EdgeSynchronization** cmdlet to exclude validation of recipient data synchronization. If you include this parameter, only the synchronization of configuration objects is validated. Validating recipient data will take longer than validating only configuration data.
 

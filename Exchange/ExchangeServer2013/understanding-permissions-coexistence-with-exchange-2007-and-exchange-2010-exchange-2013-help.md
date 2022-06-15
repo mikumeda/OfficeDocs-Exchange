@@ -194,7 +194,7 @@ In Exchange 2007, you can separate administrators by assigning them various role
 <td><p>The Administrator account or the account used to install the first Exchange 2007 server</p></td>
 <td><p>Exchange Recipient Administrator</p>
 <p>Administrators local group of <em>&lt;server name&gt;</em></p></td>
-<td><p>Full control of the Microsoft Exchange container in Active Directory</p></td>
+<td><p>Full control of the Microsoft Exchange container in Active Directory</p></td>
 </tr>
 <tr class="even">
 <td><p>Exchange View-Only Administrator</p></td>

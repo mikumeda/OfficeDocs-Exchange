@@ -1,7 +1,7 @@
 ---
 ms.localizationpriority: medium
 description: Email has become a reliable and ubiquitous communication medium for information workers in organizations of all sizes. Messaging stores and mailboxes have become repositories of valuable data. It's important for organizations to formulate messaging policies that dictate the fair use of their messaging systems, provide user guidelines for how to act on the policies, and where required, provide details about the types of communication that may not be allowed.
-ms.topic: hub-page
+ms.topic: landing-page
 author: JoanneHendrickson
 ms.author: jhendr
 ms.assetid: 65f20a20-27a4-4f6e-9b27-f8705d65b8d9
@@ -26,8 +26,8 @@ Organizations must also create policies to manage email lifecycle, retain messag
 
 The following table provides an overview of the messaging policy and compliance features in Exchange 2016 and Exchange 2019 and includes links to topics that will help you learn about and use these features.
 
-|**Feature**|**Description**|**Resources**|
-|:-----|:-----|:-----|
+|Feature|Description|Resources|
+|---|---|---|
 |In-Place Archiving| *In-Place Archiving* helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an *archive mailbox* accessible in Outlook 2010 and later and Outlook on the web.|[In-Place Archiving in Exchange Server](in-place-archiving/in-place-archiving.md)|
 |In-Place Hold and Litigation Hold|When a reasonable expectation of litigation exists, organizations are required to preserve electronically stored information, including email that's relevant to the case. In-Place Hold allows you to search and preserve messages matching query parameters. Litigation Hold only allows you to place all items in a mailbox on hold. For both types of holds, messages are protected from permanent deletion, modification, and tampering and can be preserved indefinitely or for a specified period.|[In-Place Hold and Litigation Hold in Exchange Server](holds/holds.md)|
 |In-Place eDiscovery|In-Place eDiscovery allows you to search mailbox data across your Exchange organization, preview search results, copy search results to a Discovery mailbox, or export the results to a PST file|[In-Place eDiscovery in Exchange Server](ediscovery/ediscovery.md)|

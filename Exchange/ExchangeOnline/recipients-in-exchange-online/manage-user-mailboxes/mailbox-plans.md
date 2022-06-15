@@ -24,17 +24,11 @@ A mailbox plan is a template that automatically configures mailbox properties in
 
 The following table describes the mailbox plans that you're likely to see in Exchange Online.
 
-<br>
-
-****
-
 |Subscription or license|Mailbox plan display name|
 |---|---|
 |Exchange Online Kiosk <p> Microsoft 365 or Office 365 Enterprise F3|ExchangeOnlineDeskless|
-|Microsoft 365 or Office 365 Enterprise E1 <p> Exchange Online Plan 1|ExchangeOnline|
+|Microsoft 365 Business Basic <p> Microsoft 365 or Office 365 Enterprise E1 <p> Exchange Online Plan 1|ExchangeOnline|
 |Microsoft 365 or Office 365 Enterprise E3 <p> Microsoft 365 or Office 365 Enterprise E5 <p> Exchange Online Plan 2|ExchangeOnlineEnterprise|
-|Microsoft 365 Business Basic|ExchangeOnlineEssentials|
-|
 
 **Notes**:
 
@@ -44,10 +38,6 @@ The following table describes the mailbox plans that you're likely to see in Exc
 For every mailbox plan (returned by the **Get-MailboxPlan** cmdlet), there's a corresponding Client Access services (CAS) mailbox plan (returned by the **Get-CasMailboxPlan** cmdlet). The names and display names of the mailbox plans and CAS mailbox plans are identical, and the relationship between them is unbreakable (both the mailbox plan and the corresponding CAS mailbox plan are assigned to the mailbox when you license the user; you can't assign just the mailbox plan or just the CAS mailbox plan separately).
 
 The _modifiable_ settings that are available in mailbox plans by using the **Set-MailboxPlan** cmdlet are described in the following table:
-
-<br>
-
-****
 
 |Setting|Default value|Description|
 |---|---|---|
@@ -59,13 +49,8 @@ The _modifiable_ settings that are available in mailbox plans by using the **Set
 |_RetainDeletedItemsFor_|`14.00:00:00` (14 days)|Depending on your subscription, you can change this value up to 30 days. For more information, see [Change how long permanently deleted items are kept for an Exchange Online mailbox](change-deleted-item-retention.md).|
 |_RetentionPolicy_|Default MRM Policy|**Note** Only existing mailboxes respect a custom retention policy that's configured in the mailbox plan. New mailboxes are always created using the default policy. <p> For more information about retention policies, see [Retention tags and retention policies in Exchange Online](../../security-and-compliance/messaging-records-management/retention-tags-and-policies.md).|
 |_RoleAssignmentPolicy_|Default Role Assignment Policy|Grants users permissions to their own mailbox and distribution groups. For more information, see [Role assignment policies](../../permissions-exo/permissions-exo.md#role-assignment-policies).|
-|
 
 The _modifiable_ settings that are available in CAS mailbox plans by using the **Set-CasMailboxPlan** cmdlet are described in the following table:
-
-<br>
-
-****
 
 |Setting|Default value|Description|
 |---|---|---|
@@ -73,7 +58,6 @@ The _modifiable_ settings that are available in CAS mailbox plans by using the *
 |_ImapEnabled_|Varies by license.|Enables or disables IMAP4 access to the mailbox.|
 |_OwaMailboxPolicy_|OwaMailboxPolicy-Default|Configures the user's settings in Outlook on the web (formerly known as Outlook Web App). For more information about Outlook on the web mailbox policies, see [Outlook on the web mailbox policies in Exchange Online](../../clients-and-mobile-in-exchange-online/outlook-on-the-web/outlook-web-app-mailbox-policies.md).|
 |_PopEnabled_|True|Enables or disables POP3 access to the mailbox.|
-|
 
 Modifying the settings of a mailbox plan won't update the settings of an existing mailbox that's already has the mailbox plan applied. To modify these settings on a existing mailbox, you can:
 

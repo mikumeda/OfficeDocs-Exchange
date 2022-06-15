@@ -190,7 +190,7 @@ The following table contains a list of the enhanced status codes that are return
 <td><p>5.4.6</p></td>
 <td><p><code>Routing loop detected</code></p></td>
 <td><p>A configuration error has caused an email loop. By default, after 20 iterations of an email loop, Exchange interrupts the loop and generates an NDR to the sender of the message.</p></td>
-<td><p>This error occurs when the delivery of a message generates another message in response. That message then generates a third message, and the process is repeated, creating a loop. To help protect against exhausting system resources, Exchange interrupts the mail loop after 20 iterations. Mail loops are typically created because of a configuration error on the sending mail server, the receiving mail server, or both. Check the sender's and the recipient's mailbox rules configuration to determine whether automatic message forwarding is enabled.</p></td>
+<td><p>This error occurs when the delivery of a message generates another message in response. That message then generates a third message, and the process is repeated, creating a loop. To help protect against exhausting system resources, Exchange interrupts the mail loop after 20 iterations. Mail loops are typically created because of a configuration error on the sending mail server, the receiving mail server, or both. Check the sender's and the recipient's mailbox rules configuration to determine whether automatic message forwarding is enabled.</p></td>
 </tr>
 <tr class="even">
 <td><p>5.5.2</p></td>
@@ -246,7 +246,7 @@ The following table contains a list of the enhanced status codes that are return
 <td><p>5.7.3</p></td>
 <td><p><code>Not Authorized</code></p></td>
 <td><p>The sender prohibited reassignment to the alternate recipient.</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 </tr>
 </tbody>
 </table>
@@ -283,7 +283,7 @@ The **Diagnostic information for administrators** section contains more detailed
 
   - **Remote server**: The remote server field contains the FQDN of the server that rejects delivery of the message during the SMTP conversation. The remote server field is only populated when delivery has been attempted to a remote server, and that delivery attempt has been rejected before the receiving server successfully acknowledges the message after the message body is sent. If the original message is successfully acknowledged by the receiving server and is then rejected because of content restrictions, for example, the remote server field is not populated.
 
-  - **Enhanced status code**: The enhanced status code is the code returned by the server that rejected the original message. The enhanced status code indicates why the original message was rejected. The enhanced status code is not rewritten by Exchange but is used to determine what text to display in the user information section. The enhanced status codes you're most likely to encounter are listed in "Common Enhanced Status Codes" later in this topic. For a detailed list of enhanced status codes, see RFC 3463.
+  - **Enhanced status code**: The enhanced status code is the code returned by the server that rejected the original message. The enhanced status code indicates why the original message was rejected. The enhanced status code is not rewritten by Exchange but is used to determine what text to display in the user information section. The enhanced status codes you're most likely to encounter are listed in "Common Enhanced Status Codes" later in this topic. For a detailed list of enhanced status codes, see RFC 3463.
 
   - **SMTP response**: The SMTP response is the machine readable text returned by the server that rejected the original message. The SMTP response typically contains a short string that provides an explanation of the enhanced status code that is also returned. The SMTP response is not rewritten by Exchange. Additionally, this response is always presented in US-ASCII format.
 

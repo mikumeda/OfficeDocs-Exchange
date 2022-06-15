@@ -29,7 +29,7 @@ Transport agents let you install custom software that is created by Microsoft, b
 
 For more information about the transport pipeline, see [Mail flow](mail-flow-exchange-2013-help.md)
 
-Like the previous version of Exchange, Exchange 2013 transport provides extensibility through the Microsoft Exchange Server 2013 Transport Agents SDK. The Exchange 2013 version of the SDK is based on the Microsoft .NET Framework version 4.0 and allows third parties to implement the following predefined classes:
+Like the previous version of Exchange, Exchange 2013 transport provides extensibility through the Microsoft Exchange Server 2013 Transport Agents SDK. The Exchange 2013 version of the SDK is based on the Microsoft .NET Framework version 4.0 and allows third parties to implement the following predefined classes:
 
 - **SmtpReceiveAgent**
 

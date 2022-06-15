@@ -29,8 +29,8 @@ In Microsoft Exchange Server and Exchange Online, you can use data loss preventi
 
 The following table lists the DLP policy templates in Exchange.
 
-|**Template**|**Description**|
-|:-----|:-----|
+|Template|Description|
+|---|---|
 |Australia Financial Data|Helps detect the presence of information commonly considered to be financial data in Australia, including credit cards, and SWIFT codes.|
 |Australia Health Records Act (HRIP Act)|Helps detect the presence of information commonly considered to be subject to the Health Records and Information Privacy (HRIP) act in Australia, like medical account number and tax file number.|
 |Australia Personally Identifiable Information (PII) Data|Helps detect the presence of information commonly considered to be personally identifiable information (PII) in Australia, like tax file number and driver's license.|

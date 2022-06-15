@@ -49,8 +49,8 @@ The following table lists the actions logged by mailbox audit logging, including
 
 If you no longer require certain types of mailbox actions to be audited, you should modify the mailbox's audit logging configuration to disable those actions. Existing log entries aren't purged until the age limit for audit log entries is reached.
 
-|**Action**|**Description**|**Admin**|**Delegate**|**Owner**|
-|:-----|:-----|:-----|:-----|:-----|
+|Action|Description|Admin|Delegate|Owner|
+|---|---|---|---|---|
 |Copy|An item is copied to another folder.|Yes|No|No|
 |Create|An item is created in the Calendar, Contacts, Notes, or Tasks folder in the mailbox; for example, a new meeting request is created. Note that message or folder creation isn't audited.|Yes<sup>1</sup>|Yes<sup>1</sup>|Yes|
 |FolderBind|A mailbox folder is accessed.|Yes<sup>1</sup>|Yes<sup>2</sup>|No|
@@ -90,8 +90,8 @@ You can use the following methods to search mailbox audit log entries:
 
 The following table describes the fields logged in a mailbox audit log entry.
 
-|**Field**|**Populated with**|
-|:-----|:-----|
+|Field|Populated with|
+|---|---|
 |**Operation**|One of the following actions:  <br/> Copy  <br/> Create  <br/> FolderBind  <br/> HardDelete  <br/> MailboxLogin  <br/> MessageBind  <br/> Move  <br/> MoveToDeletedItems  <br/> SendAs  <br/> SendOnBehalf  <br/> SoftDelete  <br/> Update|
 |**OperationResult**|One of the following results:  <br/> Failed  <br/> PartiallySucceeded  <br/> Succeeded|
 |**LogonType**|Logon type of the user who performed the operation. Logon types include:  <br/> Owner  <br/> Delegate  <br/> Admin|

@@ -189,15 +189,12 @@ When a response is received by the server that opened the connection, it can tel
 
 The first digit (X) is particularly important to understand because it indicates the success or failure of the command that was sent. Here are its possible values, and their meanings.
 
-****
-
 |Reply code|Meaning|
 |---|---|
 |2.y.z|The command that was sent was successfully completed on the remote server. The remote server is ready for the next command.|
 |3.y.z|The command was accepted but the remote server needs more information before the operation can be completed. The sending server needs to send a new command with the needed information.|
 |4.y.z|The command wasn't accepted by the remote server for a reason that might be temporary. The sending server should try to connect again later to see if the remote server can successfully accept the command. The sending server will continue to retry the connection until either a successful connection is completed (indicated by a 2.y.z code) or fails permanently (indicated by a 5.y.z code).  <br/> An example of a temporary error is low storage space on the remote server. Once more space is made available, the remote server should be able to successfully accept the command.|
 |5.y.z|The command wasn't accepted by the remote server for a reason that is isn't recoverable. The sending server won't retry the connection and will send a non-delivery report back to the user who sent the message.  <br/> An example of an unrecoverable error is a message that's sent to an email address that doesn't exist.|
-|
 
 The table above is based on information provided by [RFC 5321 (Simple Mail Transfer Protocol), section 4.2.1](https://tools.ietf.org/html/rfc5321#section-4.2.1). Additional information, including descriptions of the second (Y) and third (Z) digits of SMTP reply codes is included in this section, and in sections [4.2.2](https://tools.ietf.org/html/rfc5321#section-4.2.2) and [4.2.3](https://tools.ietf.org/html/rfc5321#section-4.2.3).
 

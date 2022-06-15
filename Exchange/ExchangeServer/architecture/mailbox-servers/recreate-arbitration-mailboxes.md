@@ -20,10 +20,6 @@ manager: serdars
 
 Exchange 2016 CU8 or later contains seven special system mailboxes known as *arbitration mailboxes*. Arbitration mailboxes are used for storing different types of system data and for managing messaging approval workflow. The following table lists each type of arbitration mailbox and their responsibilities.
 
-<br>
-
-****
-
 |Arbitration mailbox Name|Display name|Persisted capabilities|Function|
 |---|---|---|---|
 |FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042|Microsoft Exchange Federation Mailbox|none|This mailbox stores data used to maintain federation between different Exchange organizations. This includes Rights Management Services, cross-premises mail-flow monitoring probes and responses, notifications, online archives, messaging records management, and cross-premises free/busy information.|
@@ -33,7 +29,6 @@ Exchange 2016 CU8 or later contains seven special system mailboxes known as *arb
 |SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}|Microsoft Exchange|UMDataStorage|Discovery system mailbox. <p> Provisioned for use by the e-Discovery feature, which is used by compliance officers to locate messages that match specified selection criteria. This mailbox is also used by Unified Messaging in Exchange 2016 for storing UM console attending files and other information.|
 |SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201} <p> (Exchange 2016 CU8 and later)|Microsoft Exchange|none| Used for temporarily storing encrypted mails so that external users may read it in OWA.|
 |SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA} <p> (Exchange 2016 CU8 and later)|Microsoft Exchange|none|This mailbox contain relevancy features of each shard in an organization.|
-|
 
 If you need to re-create one of more of these arbitration mailboxes, use the instructions in this article.
 

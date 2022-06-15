@@ -23,7 +23,7 @@ By default, the Pickup and Replay directories exist on every Microsoft Exchange 
 
 ## Anatomy of an email message file
 
-A standard SMTP email message consists of a *message envelope* and message content. The message envelope contains information required for transmitting and delivering the message. The message content contains message header fields (collectively called the *message header*) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822.
+A standard SMTP email message consists of a *message envelope* and message content. The message envelope contains information required for transmitting and delivering the message. The message content contains message header fields (collectively called the *message header*) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822.
 
 When a sender composes an email message and submits it for delivery, the message contains the basic information required to comply with SMTP standards, such as a sender, a recipient, the date and time that the message was composed, an optional subject line, and an optional message body. This information is contained in the message itself and, by definition, is contained in the message header.
 
@@ -37,7 +37,7 @@ In Exchange 2013, the default location of the Pickup directory is `%ExchangeInst
 
 1. The Pickup and Replay directories are checked for new message files every five seconds. You can't modify this polling interval. You can adjust the rate of message file processing by using the *PickupDirectoryMaxMessagesPerMinute* parameter on the **Set-TransportService** cmdlet. This parameter affects the Pickup directory and the Replay directory. The default value is 100 messages per minute. Files that can't be opened are left in the Pickup directory and are reevaluated at the next poll.
 
-2. Limits put on message files in the Pickup directory, such as the maximum header size and the maximum number of recipients, are checked. By default, the maximum header size is 64 kilobytes (KB), and the maximum number of recipients is 100. You change these limits by using the **Set-TransportService** cmdlet. These settings affect the Pickup directory only.
+2. Limits put on message files in the Pickup directory, such as the maximum header size and the maximum number of recipients, are checked. By default, the maximum header size is 64 kilobytes (KB), and the maximum number of recipients is 100. You change these limits by using the **Set-TransportService** cmdlet. These settings affect the Pickup directory only.
 
 3. The file is renamed from *\<filename\>*.eml to *\<filename\>*.tmp. If the *\<filename\>*.tmp file already exists, the file is renamed as *\<filename\>\<datetime\>*.tmp. If the file renaming fails, an event log error is generated, and the pickup process proceeds to the next file.
 
@@ -163,7 +163,7 @@ The X-Headers described in the following list are optional for message files in 
 
 - **X-HeloDomain**: HELO/EHLO domain string presented during the initial SMTP protocol conversation.
 
-- **X-Source**: Used by Queue Viewer under the **MessageSourceName** column. If the value of this X-Header isn't specified, the value of **Replay** is used. Other possible values for this X-Header are **Smtp Receive Connector** and **Smtp Send Connector**.
+- **X-Source**: Used by Queue Viewer under the **MessageSourceName** column. If the value of this X-Header isn't specified, the value of **Replay** is used. Other possible values for this X-Header are **Smtp Receive Connector** and **Smtp Send Connector**.
 
 - **X-SourceIPAddress**: IP address of the sending server. This field is `0.0.0.0` if no IP address is specified.
 

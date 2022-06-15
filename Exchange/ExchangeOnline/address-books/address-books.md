@@ -22,8 +22,8 @@ manager: serdars
 
 Exchange Online uses address books to organize and store email address information for recipients in the organization. The topics that will help you learn about and configure email addresses and address books in Exchange Online are described in the following table.
 
-|**Key terminology**|**Description**|**Topic**|
-|:-----|:-----|:-----|
+|Key terminology|Description|Topic|
+|---|---|---|
 |**Address book policies**|The global address list (GAL) is the master list of all recipients in your Exchange Online organization. Address book policies (ABPs) provide a simpler mechanism for GAL segmentation in organizations that require multiple GALs. An ABP defines a GAL, an offline address book (OAB), a room list, and one or more address lists. You can then assign the ABP to users.|[Address book policies in Exchange Online](address-book-policies/address-book-policies.md)|
 |**Address lists**|An address list is a subset of a GAL. Each address list is a dynamic collection of one or more types recipients. You can use address lists to help users find the recipients and resources that they need.|[Address lists](address-lists/address-lists.md)|
 |**Hierarchical address books**|The hierarchical address book (HAB) presents recipients in the GAL by using your organization's unique business structure (for example, seniority or management hierarchy), which provides an efficient method for locating internal recipients.|[Hierarchical address books](hierarchical-address-books/hierarchical-address-books.md)|

@@ -23,11 +23,11 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 setup cannot continue because the attempt to install the server role failed.
+Microsoft Exchange Server 2007 setup cannot continue because the attempt to install the server role failed.
 
-Microsoft Exchange setup requires that the local domain be prepared for Exchange Server 2007 before certain server roles can be installed.
+Microsoft Exchange setup requires that the local domain be prepared for Exchange Server 2007 before certain server roles can be installed.
 
-Preparation of the domain for Exchange Server 2007 consists of the following tasks:
+Preparation of the domain for Exchange Server 2007 consists of the following tasks:
 
   - Setting permissions on the Domain container for the Exchange Servers, Exchange Organization Administrators, Authenticated Users, and Exchange Mailbox Administrators.
 

@@ -52,7 +52,7 @@ This example makes the following changes to the Pickup directory on the Mailbox 
 
 - The Pickup directory location is set to D:\\Pickup Directory.
 
-- The maximum size allowed for message headers in a message file is increased to 96 KB.
+- The maximum size allowed for message headers in a message file is increased to 96 KB.
 
 - The maximum number of recipients allowed in a message file is increased to 250.
 

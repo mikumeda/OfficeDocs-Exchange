@@ -123,8 +123,8 @@ Theme image files are stored in the following folders in `%ExchangeInstallPath%C
 
 The image files that exist in these folders are described in the following table:
 
-|**File name**|**Dimensions (width x height in pixels)**|**Bit depth**|**Description**|
-|:-----|:-----|:-----|:-----|
+|File name|Dimensions (width x height in pixels)|Bit depth|Description|
+|---|---|---|---|
 |headerbgmaing2.png|2000 x 50|32|The header image for themes that use a static header image. The size of the file varies. <br/><br/> If the theme doesn't use a static header image, the file is 1 x 1, and the size is 2815 bytes.|
 |headerbgmaing2.gif|2000 x 50|24|The header image for themes that use an animated header image. The size of the file varies. <br/><br/> If the theme doesn't use an animated header image, the file is 1 x 1, and the size is 43 bytes.|
 |themepreview.png|64 x 64|24 or 8|The small square image that represents the theme in the **Change theme** panel in Outlook on the web. <br/><br/> For the Default theme and the Black theme, this file 1 x 1, and the preview image is a black square.|
@@ -209,10 +209,6 @@ To verify that you've successfully created an Outlook on the web theme, perform 
 
 The built-in Outlook on the web themes are located in the folder `%ExchangeInstallPath%ClientAccess\OWA\prem\<ExchangeVersion>\resources\themes`, and are described in the following table.
 
-<br>
-
-****
-
 |Folder name|Display name in Outlook on the web|Sort order in Outlook on the web (lower listed first)|Header image type|
 |---|---|---|---|
 |angular|Angular 80's|110|Static|
@@ -265,4 +261,3 @@ The built-in Outlook on the web themes are located in the folder `%ExchangeInsta
 |whimsical|Whimsical|220|Static|
 |wntrlnd|Winterland|260|Static|
 |wrld|One World|270|Static|
-|

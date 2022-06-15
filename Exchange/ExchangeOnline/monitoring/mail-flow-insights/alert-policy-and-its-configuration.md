@@ -15,39 +15,86 @@ ms.custom:
 
 # Alert policies in Exchange Online
 
-An alert policy is the mechanism that enables you to track events related to mail flow in the new Exchange admin center (EAC).
+An alert policy is the mechanism that enables you to track events related to mail flow in the new Exchange admin center (EAC). 
+
+Alert policies can be created when your organization has fulfilled certain licensing requirements. For more information, see [Licensing requirements](#licensing-requirements).
+
+Certain privileges/permissions are required for a user to view, create, and manage alert policies. 
+For more information on the privileges/permissions regarding alert policies, see:
+
+- [Privileges associated with alert policies](#privileges-associated-with-alert-policies).
+- The section *RBAC permissions required to view alerts* in [Alert policies in Microsoft 365](/microsoft-365/compliance/alert-policies)
+
+## Licensing requirements
+
+Alert policies can be created and managed when your organization acquires the following licenses:
+
+- Microsoft 365 Enterprise subscription
+- Office 365 Enterprisesubscription
+- Office 365 US Government E1/F1/G1 subscription
+- E3/F3/G3 subscription
+- E5/G5 subscription
+- Office 365 GCC environment
+- GCC High environment
+- DoD US government environment
+
+These licenses determine the features/functionalities which users and administrators in the organization can have access to. These are the functionalities for which the user/administrator can create alert policies.
+
+You can create alert policies for advanced features/functionalities if your organization has acquired the following licenses:
+
+- E5/G5 subscription
+- E1/F1/G1 or E3/F3/G3 subscription and Microsoft Defender for Office 365 P2/Microsoft 365 E5 Compliance/E5 eDiscovery subscription
+- Microsoft Defender for Office 365 P2/Microsoft 365 E5 Compliance/E5 eDiscovery and Audit add-on subscription, and Microsoft Defender for Office 365 P2/Microsoft 365 E5 Compliance/E5 eDiscovery subscription
 
 ## Types of alert policies
 
-There are two types of alert policies, namely [System](#system-policy) and [Custom](#custom-policy).
+There are two types of alert policies on the **Alert policies** page, namely [System](#system-policy) and [Custom](#custom-policy).
 
 ### System policy
 
-System policy is created by the system, by default. A **System** policy automatically maps a newly created tenant to it.
+System policy is created by the system, by default, hence, it i also referred to as "default alert policy".
+
+#### Characteristics of a system policy
+
+A system alert policy is one that is:
+
+- Marked in bold
+- Labeled as **System** under **Policy type**
+- Available to view by a normal user, who just needs to be included in the list of recipients and doesn't need a license
+
+#### User tasks on system policies
+
+The user can perform the following tasks on a system policy:
+- Turn it off (by default, it is turned on)
+- Choose a list of recipients and group them as the recipients entitled to receive email notifications of an alert
+- Set the daily notification limit for the list of recipients
 
 ### Custom policy
 
 Custom policy is the policy that can be manually created by the user/tenant.
 
-## Privileges for management of alert policy
+## Privileges associated with alert policies
 
-- **Security administrator** privileges are required for the management of an alert policy. 
+The following privileges are associated with an alert policies:
+
+- **Security administrator**: This privilege is required for a user to create and manage alert policies.
+
 > [!NOTE]
-> For information on the tasks involved in the management of an alert policy, see [User tasks on alert policies](#user-tasks-on-alert-policies). 
+> Managing alert policies involve a list of tasks. For more information, see [User tasks on alert policies](#user-tasks-on-custom-policies). 
 
-- **Security reader** privileges are sufficient if the tenant wants to just read/view an alert policy.
+- **Security reader**:  This privilege is required if the tenant wants to just read/view an alert policy.
 
-## User tasks on alert policies
+## User tasks on custom policies
 
 A user with **security administrator** privileges can perform the following tasks on an alert policy:
 
-- **Creation**: A user with **security administrator** privileges can create an alert policy, which is a custom alert policy. For information on how to create an alert policy, see [Create alert policy](#create-alert-policy). 
-- **Edit**: A user can edit both the **system** and **custom** policies. For more information, see [Edit alert policy](#edit-alert-policy).
+- **Creation**: A user with **security administrator** privileges can create an alert policy, which is a custom alert policy. For information on how to create an alert policy, see [Create custom policy](#create-custom-policy). 
+- **Edit**: A user can edit both the **system** and **custom** policies. For more information, see [Edit custom policy](#edit-custom-policy).
 - **Disable**: A user can disable both the **system** and **custom** policies. For more information, see [Disable alert policy](#disable-alert-policy).  
 - **Disable email notifications of alert policies**: A user can disable the email notifications pertaining to both **system** and **custom** policies. For more information, see [Disable email notifications](#disable-email-notifications).
 - **View**: A user can view alert policies (system or custom) on the **Alerts** screen. For more information, see [View/read alert policy](#viewread-alert-policy).
 
-### Create alert policy
+### Create custom policy
 
 To create an alert policy, perform the following steps:
 
@@ -81,7 +128,7 @@ To create an alert policy, perform the following steps:
 10. Review the alert-policy settings and click **Create**.
     The alert policy is created.
 
-### Edit alert policy
+### Edit custom policy
 
 A user can edit the following types of alerts:
 

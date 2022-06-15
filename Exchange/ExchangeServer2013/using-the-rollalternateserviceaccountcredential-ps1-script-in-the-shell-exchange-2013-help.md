@@ -22,7 +22,9 @@ _**Applies to:** Exchange Server 2013_
 You can use the RollAlternateServiceAccountPassword.ps1 script in Exchange Server 2013 to update an alternate service account credential (ASA credential) and distribute the update to specified Client Access servers.
 
 > [!NOTE]
-> The Exchange Management Shell doesn't load scripts automatically. You need to precede all scripts with **.\\** For example, to run the RollAlternateServiceAccountPassword.ps1 script, type `.\RollAlternateServiceAccountPassword.ps1`. <br/><br/> This script is provided in English only.
+> The Exchange Management Shell doesn't load scripts automatically. You need to precede all scripts with **.\\** For example, to run the RollAlternateServiceAccountPassword.ps1 script, type `.\RollAlternateServiceAccountPassword.ps1`.
+>
+> This script is provided in English only.
 
 For more information about how to use and write scripts, see [Scripting with the Exchange Management Shell](/powershell/module/microsoft.powershell.core/about/about_scripts).
 

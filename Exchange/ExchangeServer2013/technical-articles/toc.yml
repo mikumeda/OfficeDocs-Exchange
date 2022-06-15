@@ -1,5 +1,5 @@
 - name: Exchange Server 2013 Technical Articles
-  href: exchange-server-2013-technical-articles.md
+  href: /exchange/technical-articles/exchange-server-2013-technical-articles  
   items:
   - name: Time to Upgrade from Exchange 2003
-    href: time-to-upgrade-from-exchange-2003.md
+    href: /exchange/technical-articles/time-to-upgrade-from-exchange-2003

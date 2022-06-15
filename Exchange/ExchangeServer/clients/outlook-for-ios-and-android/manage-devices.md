@@ -154,8 +154,8 @@ The `New-ActiveSyncDeviceAccessRule` cmdlet has a `Characteristic` parameter, an
 
 The values for each characteristic are displayed in the following table:
 
-|**Characteristic**|**String for iOS**|**String for Android**|
-|:-----|:-----|:-----|
+|Characteristic|String for iOS|String for Android|
+|---|---|---|
 |DeviceModel|Outlook for iOS and Android|Outlook for iOS and Android|
 |DeviceType|Outlook|Outlook|
 |UserAgent|Outlook-iOS-Android/1.0|Outlook-iOS-Android/1.0|

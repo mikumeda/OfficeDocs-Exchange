@@ -35,7 +35,7 @@ If you don't want to subscribe the Edge Transport server to an Active Directory 
 
   - Before you subscribe an Edge Transport server to your organization, you will first need to configure authoritative domains and email address policies for your Exchange organization.
 
-  - Enable the secure LDAP port 50636/TCP through the firewall separating your perimeter network from the Exchange organization. The Edge Transport server needs to be able to communicate with all Exchange 2013 Mailbox servers in the subscribed Active Directory site.
+  - Enable the secure LDAP port 50636/TCP through the firewall separating your perimeter network from the Exchange organization. The Edge Transport server needs to be able to communicate with all Exchange 2013 Mailbox servers in the subscribed Active Directory site.
 
   - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 

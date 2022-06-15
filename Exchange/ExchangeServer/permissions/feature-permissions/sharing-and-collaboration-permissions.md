@@ -39,8 +39,8 @@ You can use the features in the following table to configure sharing and collabo
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Partner applications - configure|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Public folders, mail-enabled|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Recipient Management](../../../ExchangeServer2013/recipient-management-exchange-2013-help.md)|
 |Public folders|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Public Folder Management](../../../ExchangeServer2013/public-folder-management-exchange-2013-help.md)|

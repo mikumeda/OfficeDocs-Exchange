@@ -74,8 +74,8 @@ If you add additional Exchange 2013 servers to support your hybrid deployment, t
 
 The following table describes briefly the changes in services after configuring a hybrid deployment.
 
-|**Service**|**Before hybrid deployment**|**After hybrid deployment**|**Description**|
-|:-----|:-----|:-----|:-----|
+|Service|Before hybrid deployment|After hybrid deployment|Description|
+|---|---|---|---|
 |Message transport (inbound and outbound)|Exchange 2007 Client Access server|Exchange 2013 Client Access server or Exchange Online Protection (EOP) included with Microsoft 365 and Office 365|The MX (mail exchanger) record for the domain may remain unchanged or be updated to point to EOP.|
 |Outlook Web App public URL|Exchange 2007 Client Access server|Exchange 2013 Client Access server|Exchange 2013 Client Access servers proxy Outlook Web App requests for on-premises mailboxes to Exchange 2007 Client Access servers. Outlook Web App requests for mailboxes hosted on Exchange Online are provided with a link to the Exchange Online Outlook Web App URL.|
 
