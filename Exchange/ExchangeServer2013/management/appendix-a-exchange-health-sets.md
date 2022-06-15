@@ -157,7 +157,7 @@ The Exchange Server 2013 Management Pack relies on the Managed Availability feat
 <tr class="odd">
 <td><p>Classification</p></td>
 <td><p>Mailbox</p></td>
-<td><p>Monitors the health of the Data Loss Prevention (DLP) feature.</p></td>
+<td><p>Monitors the health of the Data loss prevention (DLP) feature.</p></td>
 </tr>
 <tr class="even">
 <td><p>ClientAccess.Proxy</p></td>

@@ -42,7 +42,7 @@ additionalContent:
           url: ../ExchangeHybrid/exchange-hybrid.md
         # Card
         - title: PowerShell Reference for Exchange
-          summary: Learn about the PowerShell cmdlets you need to manage Exchange Server, Exchange Online, Office 365 Security &amp; Compliance Center, and Exchange Online Protection.
+          summary: Learn about the available cmdlets in Exchange PowerShell, Exchange Online PowerShell, Security &amp; Compliance PowerShell, and standalone Exchange Online Protection PowerShell.
           url: /powershell/exchange
         # Card
         - title: Exchange Online Protection

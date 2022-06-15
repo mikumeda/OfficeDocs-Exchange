@@ -117,3 +117,6 @@ To view the add-ins that are installed in your organization, do one the followin
 - In the EAC, navigate to **Organization** \> **Add-ins**, and then review the list of installed add-ins.
 
 - From the Exchange Management Shell, run `Get-App`, and then review the list of installed add-ins.
+
+> [!NOTE]
+> It can take up to 72 hours for a new add-in deployment, add-in updates, changes from turn on or turn off, or add-in removals to reflect for users.

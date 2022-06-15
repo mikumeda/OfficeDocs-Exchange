@@ -197,7 +197,7 @@ There are several types of messages that pass through an organization. The follo
 <td><p>Yes</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Microsoft 365 or Office 365 Message Encryption</strong>    Messages encrypted by Microsoft 365 or Office 365. For more information, see <a href="/microsoft-365/compliance/encryption">Encryption</a>.</p></td>
+<td><p><strong>Microsoft 365 or Microsoft Purview Message Encryption</strong>    Messages encrypted by Microsoft 365 or Office 365. For more information, see <a href="/microsoft-365/compliance/encryption">Encryption</a>.</p></td>
 <td><p>Rules can always access envelope headers and process messages based on conditions that inspect those headers.</p>
 <p>For a rule to inspect or modify the contents of an encrypted message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="/exchange/enable-or-disable-transport-decryption-exchange-2013-help">Enable or disable transport decryption</a>.</p>
 <p>You can also create a rule that automatically decrypts encrypted messages. For more information, see <a href="/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email">Define mail flow rules to encrypt email messages</a>.</p></td>

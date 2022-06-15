@@ -57,7 +57,7 @@ Interested in scenarios where these procedures are used? See the following topic
 
 ## Create a transport rule
 
-You can create a transport rule by setting up a Data Loss Prevention (DLP) policy, creating a new rule, or by copying a rule. You can use the Exchange admin center (EAC) or the Exchange Management Shell.
+You can create a transport rule by setting up a Data loss prevention (DLP) policy, creating a new rule, or by copying a rule. You can use the Exchange admin center (EAC) or the Exchange Management Shell.
 
 > [!NOTE]
 > After you create or modify a transport rule, it can take up to 30 minutes for the new or updated rule to be applied to email.
@@ -111,7 +111,7 @@ The EAC allows you to create transport rules by using a template, copying an exi
 
       - **Enforce**: This turns on the rule and it starts processing messages immediately. All actions on the rule will be performed.
 
-      - **Test with Policy Tips**: This turns on the rule, and any Policy Tip actions ( **Notify the sender with a Policy Tip**) will be sent, but no actions related to message delivery will be performed. Data Loss Prevention (DLP) is required in order to use this mode. To learn more, see [Policy Tips](policy-tips-exchange-2013-help.md).
+      - **Test with Policy Tips**: This turns on the rule, and any Policy Tip actions ( **Notify the sender with a Policy Tip**) will be sent, but no actions related to message delivery will be performed. Data loss prevention (DLP) is required in order to use this mode. To learn more, see [Policy Tips](policy-tips-exchange-2013-help.md).
 
      - **Test without Policy Tips**: Only the Generate incident report action will be enforced. No actions related to message delivery are performed.
 

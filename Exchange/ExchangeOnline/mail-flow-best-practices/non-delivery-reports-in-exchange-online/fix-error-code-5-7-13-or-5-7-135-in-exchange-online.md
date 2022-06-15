@@ -23,7 +23,7 @@ description: "Learn how to fix email issues for error code 550 5.7.13 or 5.7.135
 
 It's frustrating when you get an error after sending an email message. This topic describes what you can do if you see error code 550 5.7.13 or 550 5.7.135 in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN). You'll see this automated notification when the recipient is a public folder that's configured to reject messages from external senders (senders from outside the organization).
 
-|Icon|Message|Icon|Message|
+|&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 |---|---|---|---|
 |![Email user icon.](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix this issue?](#i-got-this-bounce-message-how-do-i-fix-this-issue)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How do I fix this issue?](#im-an-email-admin-how-do-i-fix-this-issue)|
 

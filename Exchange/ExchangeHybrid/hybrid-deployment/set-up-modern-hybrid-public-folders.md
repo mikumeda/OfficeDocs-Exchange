@@ -65,12 +65,17 @@ An Exchange Online, Microsoft 365, or Office 365 user must be represented by a M
 
     > [!NOTE]
     > The download package at this location contains additional files. To follow the instructions in this article, you only need the two listed above.
+    .
+    > The scripts supports only Basic authentication, so the script will fail in either of the following scenarios:
+    >
+    > - **Basic authentication is disabled for remote PowerShell**: Click the following link (admin access required) to verify the status and enable Basic authentication for remote PowerShell as needed: <https://aka.ms/PillarEXOBasicAuth>.
+    > - **Basic authentication is disabled on the admin account that's used by the script**: Enable Basic authentication for admin account that's used by the script, and then disable it when you're done using the script.
 
 2. Save the files to the local computer on which you'll be running PowerShell. For example, C:\PFScripts.
 
 ## Step 2: Synchronize mail-enabled public folder objects to Exchange Online
 
-Azure AD Connect sync doesn't synchronize mail-enabled public folders to Exchange Online. Running the following script will synchronize the mail-enabled public folders across your on-premises environment and Exchange Online. Special permissions assigned to mail-enabled public folders, such as **Send As**, will need to be recreated in Office 365 since cross-premise permissions are not supported in hybrid deployment scenarios. For more information, see [Exchange hybrid deployment documentation](../exchange-hybrid.md#exchange-hybrid-deployment-documentation).
+Azure AD Connect sync doesn't synchronize mail-enabled public folders to Exchange Online. Running the following script will synchronize the mail-enabled public folders across your on-premises environment and Exchange Online. Special permissions assigned to mail-enabled public folders, such as **Send As**, will need to be recreated in Office 365 since cross-premises permissions are not supported in hybrid deployment scenarios. For more information, see [Exchange hybrid deployment documentation](../exchange-hybrid.md#exchange-hybrid-deployment-documentation).
 
 > [!NOTE]
 > Synchronized mail-enabled public folders will not be visible in the Exchange admin center (EAC). Instead, use the [Get-MailPublicFolder](/powershell/module/exchange/get-mailpublicfolder) cmdlet. To recreate Send As permissions in the cloud, use the [Add-RecipientPermission](/powershell/module/exchange/add-recipientpermission) cmdlet.
@@ -78,10 +83,10 @@ Azure AD Connect sync doesn't synchronize mail-enabled public folders to Exchang
 On the Exchange server, run the following command to synchronize mail-enabled public folders from your local on-premises Active Directory to Office 365.
 
 ```PowerShell
-.\Sync-ModernMailPublicFolders.ps1 -Credential (Get-Credential) -CsvSummaryFile:sync_summary.csv
+.\Sync-ModernMailPublicFolders.ps1 -CsvSummaryFile:sync_summary.csv
 ```
 
-Where `Credential` is your Microsoft 365 or Office 365 admin username and password, and `CsvSummaryFile` is the path to where you would like to log synchronization operations and errors, in .csv format.
+Where `CsvSummaryFile` is the path to where you would like to log synchronization operations and errors, in .csv format.
 
 > [!IMPORTANT]
 > Before running the script, we recommend that you first simulate the actions that the script would take in your environment by running it as described above with the `-WhatIf` switch. As part of the sync operation, the script, when appropriate, could create, update, or delete mail-enabled public folder objects on Exchange Online.

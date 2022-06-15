@@ -1,5 +1,5 @@
 ---
-title: "Email non-delivery reports in Exchange Online"
+title: "Email non-delivery reports and SMTP errors in Exchange Online"
 ms.author: jhendr
 author: JoanneHendrickson
 manager: serdars
@@ -15,18 +15,18 @@ search.appverid:
 - MET150
 - MOP150
 ms.assetid: 51daa6b9-2e35-49c4-a0c9-df85bf8533c3
-description: "Admins can learn about non-delivery reports (also known as NDRs or bounce messages) that are generated in Exchange Online."
+description: "Admins can learn about SMTP errors and non-delivery reports (also known as NDRs or bounce messages) that are generated in Exchange Online."
 ---
 
-# Email non-delivery reports in Exchange Online
+# Email non-delivery reports and SMTP errors in Exchange Online
 
-When there's a problem delivering an email message that you sent, Microsoft 365 or Office 365 sends an email to let you know. The email you receive is a delivery status notification, also known as a DSN or bounce message. The most common type is called a non-delivery report (NDR) and they tell you that a message wasn't delivered. Non-delivery can be caused by something as simple as a typo in an email address. NDRs include an error code that indicates why your email wasn't delivered, solutions to help you get your email delivered, a link to more help on the web, and technical details for administrators. Find out [What's included in an NDR?](#whats-included-in-an-ndr).
+When there's a problem delivering an email message that you sent, Microsoft 365 or Office 365 will generate an error code and often will send an email to let you know. The email you receive is a delivery status notification, also known as a DSN or bounce message. The most common type is called a non-delivery report (NDR) and they tell you that a message wasn't delivered. Non-delivery can be caused by something as simple as a typo in an email address. NDRs include an error code that indicates why your email wasn't delivered, solutions to help you get your email delivered, a link to more help on the web, and technical details for administrators. Find out [What's included in an NDR?](#whats-included-in-an-ndr). 
 
-## Find my NDR code and get help delivering my email
+## Find my error code and get help delivering my email
 
-The following table contains the NDR codes (also called enhanced status codes) for the most common bounce messages and NDRs that you might encounter in Exchange Online.
+The following table contains the error codes (also called enhanced status codes) for the most common bounce messages and errors that you might encounter in Exchange Online.
 
-|NDR code|Description|Possible cause|Additional information|
+|Error code|Description|Possible cause|Additional information|
 |---|---|---|---|
 |432&nbsp;4.3.2|`STOREDRV.Deliver; recipient thread limit exceeded`|The recipient mailbox's ability to accept messages is being throttled because it's receiving too many messages too quickly. This is done so a single recipient's mail processing doesn't unfairly impact other recipients sharing the same mailbox database.|For more information about this by-design throttling, see [Store Driver Fault Isolation Improvements in Exchange 2010 SP1](https://techcommunity.microsoft.com/t5/exchange-team-blog/store-driver-fault-isolation-improvements-in-exchange-2010-sp1/ba-p/586093).|
 |4.4.316|`Connection refused [Message=Socket error code 10061]`|Microsoft 365 or Office 365 is trying to send a message to an email server outside of Microsoft 365 or Office 365, but attempts to connect to it are failing due to a network connection issue at the external server's location.|This error almost always indicates an issue with the receiving server or network outside of Microsoft 365 or Office 365. The error should also include the IP address of the server or service that's generating the error, which you can use to identify the party responsible for fixing this.|
@@ -186,7 +186,7 @@ Although the **Original message headers** are omitted from this example due to t
 
 - **Received-SPF**: If this value is anything other than `pass`, check the Sender Policy Framework (SPF) DNS record for your domain. For more information, see [Add or edit custom DNS records](/microsoft-365/admin/setup/add-domain).
 
-## Still need help with NDRs or other status notifications?
+## Still need help with SMTP errors, NDRs or other status notifications?
 
 [![Get help from the community forums.](../../media/12a746cc-184b-4288-908c-f718ce9c4ba5.png)](https://answers.microsoft.com/)
 
