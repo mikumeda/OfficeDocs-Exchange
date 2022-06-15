@@ -25,6 +25,9 @@ Exchange uses Active Directory to store information about mailboxes and the conf
 
 - **Let the Exchange Setup wizard do it for you**: If you don't have a large Active Directory deployment, and you don't have a separate team that manages Active Directory, we recommend using the Setup wizard. Your account needs to be a member of both the Schema Admins and Enterprise Admins security groups. For more information about how to use the Setup wizard, check out [Install Exchange Mailbox servers using the Setup wizard](deploy-new-installations/install-mailbox-role.md).
 
+> [!IMPORTANT]
+> If Exchange is deployed in a multi-site Active Directory environment and is not in the same site as the domain controller that holds the Schema Master role, you cannot prepare Active Directory using the wizard. Instead, follow Step 1 and Step 2 in this topic. 
+
 - **Follow the steps in this topic**: If you have a large Active Directory deployment, or if a separate team manages Active Directory, this topic is for you. Following the steps in this topic gives you much more control over each stage of preparation, and who can do each step. For example, Exchange administrators might not have the required permissions to extend the Active Directory schema.
 
 For details on new schema classes and attributes that Exchange adds to Active Directory, including those made by Cumulative Updates (CUs), see [Active Directory schema changes in Exchange Server](active-directory/ad-schema-changes.md).
@@ -219,6 +222,8 @@ The tables in the following sections contain the Exchange objects in Active Dire
 
 |Exchange 2019 version|rangeUpper|objectVersion<br>(Default)|objectVersion<br>(Configuration)|
 |---|:---:|:---:|:---:|
+|Exchange 2019 CU12|17003|13243|16760|
+|Exchange 2019 CU11 with KB5014260|17003|13243|16759|
 |Exchange 2019 CU11|17003|13242|16759|
 |Exchange 2019 CU10|17003|13241|16758|
 |Exchange 2019 CU9|17002|13240|16757|
@@ -241,6 +246,8 @@ The tables in the following sections contain the Exchange objects in Active Dire
 
 |Exchange 2016 version|rangeUpper|objectVersion<br>(Default)|objectVersion<br>(Configuration)|
 |---|:---:|:---:|:---:|
+|Exchange 2016 CU23|15334|13243|16223|
+|Exchange 2016 CU22 with KB5014260|15334|13243|16222|
 |Exchange 2016 CU22|15334|13242|16222|
 |Exchange 2016 CU21|15334|13241|16221|
 |Exchange 2016 CU20|15333|13240|16220|

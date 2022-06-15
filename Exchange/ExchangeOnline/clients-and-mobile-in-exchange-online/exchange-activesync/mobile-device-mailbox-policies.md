@@ -56,11 +56,11 @@ Android's password complexity levels are mapped to the following Exchange mobile
 |Mobile device mailbox policy setting|Android password complexity level|
 |---|---|
 |Password enabled = false| None|
-|Allow simple password = true <p> Min password length < 4|Low|
-|Alphanumeric password required = false <p> Min password length >= 4 <p> Min password length \< 8|Medium|
-|Alphanumeric password required = true <p> Min password length < 6|Medium|
-|Alphanumeric password required = false <p> Min password length >= 8|High|
-|Alphanumeric password required = true <p> Min password length >= 6|High|
+|Allow simple password = true <br/><br/> Min password length < 4|Low|
+|Alphanumeric password required = false <br/><br/> Min password length >= 4 <br/><br/> Min password length \< 8|Medium|
+|Alphanumeric password required = true <br/><br/> Min password length < 6|Medium|
+|Alphanumeric password required = false <br/><br/> Min password length >= 8|High|
+|Alphanumeric password required = true <br/><br/> Min password length >= 6|High|
 
 ## Mobile device mailbox policy settings
 
@@ -98,8 +98,8 @@ The following table summarizes the settings you can specify using mobile device 
 |Device policy refresh interval|This setting specifies how often the mobile device mailbox policy is sent from the server to the mobile device.|
 |IRM enabled|This setting specifies whether Information Rights Management (IRM) is enabled on the mobile device.|
 |Max attachment size|This setting controls the maximum size of attachments that can be downloaded to the mobile device. The default value is Unlimited.|
-|Max calendar age filter| This setting specifies the maximum range of calendar days that can be synchronized to the mobile device. The following values are accepted: <p> All <p> TwoWeeks <p> OneMonth <p> ThreeMonths <p> SixMonths|
-|Max email age filter| This setting specifies the maximum number of days of email items to synchronize to the mobile device. The following values are accepted: <p> All <p> OneDay <p> ThreeDays <p> OneWeek <p> TwoWeeks <p> OneMonth|
+|Max calendar age filter| This setting specifies the maximum range of calendar days that can be synchronized to the mobile device. The following values are accepted: <br/><br/> All <br/><br/> TwoWeeks <br/><br/> OneMonth <br/><br/> ThreeMonths <br/><br/> SixMonths|
+|Max email age filter| This setting specifies the maximum number of days of email items to synchronize to the mobile device. The following values are accepted: <br/><br/> All <br/><br/> OneDay <br/><br/> ThreeDays <br/><br/> OneWeek <br/><br/> TwoWeeks <br/><br/> OneMonth|
 |Max email body truncation size|This setting specifies the maximum size at which email messages are truncated when synchronized to the mobile device. The value is in kilobytes (KB).|
 |Max email HTML body truncation size|This setting specifies the maximum size at which HTML email messages are truncated when synchronized to the mobile device. The value is in kilobytes (KB).|
 |Max inactivity time lock|This value specifies the length of time that the mobile device can be inactive before a password is required to reactivate it. You can enter any interval between 30 seconds and 1 hour. The default value is 15 minutes.|

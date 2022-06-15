@@ -53,7 +53,7 @@ The types of connection limits are:
 
 The types of client connections to the Managed Store and the limits based on those connections are described in the following table.
 
-|Client type|Max sessions per mailbox database|Default number of user sections per mailbox database|
+|Client type|Max sessions per mailbox database|Default number of user sessions per mailbox database|
 |---|---|---|
 |Admin|10000|n/a|
 |Availability service|10000|16|

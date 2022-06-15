@@ -89,7 +89,7 @@ The EAC allows you to create mail flow rules by using a template, copying an exi
 
    4. Set the mode for the rule. You can use one of the two test modes to test the rule without impacting mail flow. In both test modes, when the conditions are met, an entry is added to the message trace.
       - **Enforce**: This turns on the rule and it starts processing messages immediately. All actions on the rule will be performed.
-      - **Test with Policy Tips**: This turns on the rule, and any Policy Tip actions ( **Notify the sender with a Policy Tip**) will be sent, but no actions related to message delivery will be performed. Data Loss Prevention (DLP) is required in order to use this mode. To learn more, see [Policy Tips](../../security-and-compliance/data-loss-prevention/policy-tips.md).
+      - **Test with Policy Tips**: This turns on the rule, and any Policy Tip actions ( **Notify the sender with a Policy Tip**) will be sent, but no actions related to message delivery will be performed. Data loss prevention (DLP) is required in order to use this mode. To learn more, see [Policy Tips](../../security-and-compliance/data-loss-prevention/policy-tips.md).
       - **Test without Policy Tips**: Only the Generate incident report action will be enforced. No actions related to message delivery are performed.
 
 4. If you are satisfied with the rule, go to step 5. If you want to add more conditions or actions, or if you want to specify exceptions or set additional properties, click **More options**. After you click **More options**, complete the following fields to create your rule:
@@ -282,18 +282,14 @@ If you're using Exchange Online or Exchange Online Protection, you can check the
 > [!NOTE]
 > While most data is in the report within 24 hours, some data may take as long as 5 days to appear.
 
-### Use the Microsoft 365 Defender portal to view a rules report
+### Use the new Exchange admin center to view a rules report
 
-1. In the Microsoft 365 Defender portal (<https://security.microsoft.com>), go to **Reports** \> **Email & collaboration** \> **Email & collaboration reports**.
-2. On the **Email & collaboration reports** page, find and select **Exchange transport rule**.
-
-Or, to go directly to the report, use <https://security.microsoft.com/reports/ETRRuleReport>.
-
-To learn more, see [Exchange transport rule report](/microsoft-365/security/office-365-security/view-email-security-reports#exchange-transport-rule-report).
+1. In the new EAC (<https://admin.exchange.microsoft.com>), go to **Reports** \> **Mail flow**.
+2. On the **Mail flow reports** page, find and select **Exchange Transport Rule report**.
 
 ### Download an Excel version of the reports
 
-For steps to download reports, see [Download existing reports in the Microsoft 365 compliance center](/microsoft-365/compliance/download-existing-reports).
+For steps to download reports, see [Download existing reports in the Microsoft Purview compliance portal](/microsoft-365/compliance/download-existing-reports).
 
 ## Import or export a mail flow rule collection
 

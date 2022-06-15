@@ -31,7 +31,7 @@ If the queued email volume exceeds the pre-defined threshold (the default value 
 - An alert is displayed on the **Alerts** page in the Microsoft 365 Defender portal (<https://security.microsoft.com> \> **Incidents & alerts** \> **Alerts** or <https://security.microsoft.com/alerts>).
 - Admins will receive an email notification based on the configuration of the default alert policy named **Messages have been delayed**. To configure the notification settings for this alert, see the next section.
 
-  For more information about alert policies, see [Alert policies in the Microsoft 365 compliance center](/microsoft-365/compliance/alert-policies).
+  For more information about alert policies, see [Alert policies in the Microsoft Purview compliance portal](/microsoft-365/compliance/alert-policies).
 
 ## Customize queue alerts
 
