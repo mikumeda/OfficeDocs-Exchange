@@ -459,4 +459,4 @@ To uninstall the Hybrid Agent, re-run Hybrid Configuration wizard from the same 
 
 You can switch to Modern Hybrid (Hybrid Agent) after successfully configuring Classic Hybrid (publishing the EWS namespace and allowing inbound). But, we only recommend switching if you're blocked from migrating mailboxes to the cloud after this setup is complete. If you chose to revert to Modern Hybrid, see the previous [Constraints](#constraints) section, because not all hybrid features or experiences are supported with the Hybrid Agent.
 
-If you have weighed the pros and cons of switching from Classic to Modern, you proceed by deleting your existing migration batches and migration endpoint and re-running the Hybrid Configuration wizard and selecting **Modern Hybrid**.
+If you have weighed the pros and cons of switching from Classic to Modern, you proceed by deleting your existing migration batches and migration endpoint in Exchange Online and re-running the Hybrid Configuration wizard and selecting **Modern Hybrid**.
