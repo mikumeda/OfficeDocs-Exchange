@@ -59,4 +59,4 @@ sections:
       - question: |
           Does the Exchange hybrid server in my on-premises organization require an Exchange license?
         answer: |
-          Yes. You need to license your hybrid server when you configure a hybrid deployment. The HCW is now able to detect and license your designated on-premises Exchange 2010, Exchange 2013, or Exchange 2016 hybrid server for free without going to a separate web site or calling Microsoft support. You can access the HCW [here](https://aka.ms/HybridWizard). Note that the free Exchange Server license is not available for Exchange 2019 hybrid servers.
+          Yes. You need to license your hybrid server when you configure a hybrid deployment. The HCW is now able to detect and license your designated on-premises Exchange 2013, Exchange 2016, or Exchange 2019 hybrid server for free without going to a separate web site or calling Microsoft support. You can access the HCW [here](https://aka.ms/HybridWizard).
