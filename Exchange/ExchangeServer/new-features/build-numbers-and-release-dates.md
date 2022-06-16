@@ -59,7 +59,7 @@ Get-ExchangeServer | Format-List Name,Edition,AdminDisplayVersion
 ```
 
 > [!NOTE]
-> This option does not reflect the installed Security Update (SU). To verify it, use option 1 or 2.
+> This option does not reflect the installed Security Update (SU), only the Cumulative Update (CU). To verify it, use option 1 or 2.
 
 ## Exchange Server 2019
 
