@@ -77,6 +77,11 @@ There are other mobile device email apps that support Modern authentication. The
 
 If you're using [Microsoft Intune](/mem/intune/), you might be able to change the authentication type using the email profile you push or deploy to your devices. If you are using iOS devices (iPhones and iPads) you should take a look at [Add e-mail settings for iOS and iPadOS devices in Microsoft Intune](/mem/intune/configuration/email-settings-ios)
 
+> [!NOTE]
+> If your devices are using certificate-based authentication, they will be unaffected when Exchange Online turns off Basic auth in Exchange Online later this year. Only devices authenticating directly using Basic auth will be affected.
+> 
+> Certificate-based authentication is still legacy authentication and as such will be blocked by Azure AD conditional access policies that block legacy authentication. For more information see [Block legacy authentication - Azure Active Directory](/azure/active-directory/conditional-access/block-legacy-authentication)
+
 ### Exchange Online PowerShell
 
 Since the release of the Exchange Online V2 PowerShell module (abbreviated as the EXO V2 module) it's been easy to manage your Exchange Online settings and protection settings from the command line using Modern authentication. The EXO V2 module uses Modern authentication and works with multifactor authentication (MFA) for connecting to all Exchange-related PowerShell environments in Microsoft 365: Exchange Online PowerShell, Security & Compliance PowerShell, and standalone Exchange Online Protection (EOP) PowerShell.
