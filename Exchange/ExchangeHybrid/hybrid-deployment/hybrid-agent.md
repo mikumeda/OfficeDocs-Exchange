@@ -69,7 +69,7 @@ Having the HCW download and install the Agent MSI automatically is ideal if you'
 - Ports TCP ports 443, 80, 5985, and 5986 must be open between the computer where the Hybrid Agent is installed and the CAS that's selected in the Hybrid Configuration wizard.
 
 > [!IMPORTANT]
-> Free/busy requests from on-premises users to Exchange Online users do not traverse the Hybrid Agent. All Exchange Servers (or Exchange 2013 Client Access Servers) must be able to communicate with the Microsoft 365 or Office 365 endpoints via HTTPS (TCP port 443). The required URLs, IP addresses, and ports are described [here](/microsoft-365/enterprise/urls-and-ip-address-ranges).
+> Free/busy requests from on-premises users to Exchange Online users do not traverse the Hybrid Agent. All Exchange Mailbox Servers (including Exchange 2013 Mailbox Servers) must be able to communicate with the Microsoft 365 or Office 365 endpoints via HTTPS (TCP port 443). The required URLs, IP addresses, and ports are described [here](/microsoft-365/enterprise/urls-and-ip-address-ranges).
 
 ### Proxy server considerations
 
