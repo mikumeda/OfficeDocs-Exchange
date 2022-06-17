@@ -29,15 +29,10 @@ In Exchange Online, the maximum size of the default discovery mailbox is 50 GB. 
 
 How you resolve this issue depends on whether you want to save the search results from a default discovery mailbox that's exceeded 50 GB.
 
-<br>
-
-****
-
 |Do you want to save the search results?|Do this|
 |---|---|
 |No|Follow the steps in this topic to delete, and then re-create the default discovery mailbox.|
 |Yes|Follow the steps in [Reduce the size of a discovery mailbox in Exchange](reduce-discovery-mailbox-size.md).|
-|
 
 ## Use Exchange Online PowerShell to delete and re-create the default discovery mailbox
 
@@ -65,3 +60,9 @@ How you resolve this issue depends on whether you want to save the search result
    ```PowerShell
    Add-MailboxPermission "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}" -User "Discovery Management" -AccessRights FullAccess -InheritanceType all
    ```
+5. Run the following command to reset mailbox settings.
+
+   ```PowerShell
+   Set-Mailbox -Identity "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}" -HiddenFromAddressListsEnabled $true -ProhibitSendQuota 50GB -ProhibitSendReceiveQuota 50GB -RecoverableItemsQuota 50GB
+   ```
+   

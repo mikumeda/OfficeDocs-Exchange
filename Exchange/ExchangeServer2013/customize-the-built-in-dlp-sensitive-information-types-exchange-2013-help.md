@@ -41,11 +41,32 @@ To learn what the different parts of rules are and what they do, check out the [
 
 To export the XML, you need to use the Exchange Management Shell. For more information, see [Exchange Management Shell](/powershell/exchange/exchange-management-shell).
 
-1. In the Exchange Management Shell, type `Get-ClassificationRuleCollection` to display your organization's rules on screen. If you haven't created your own, you'll only see the default, built-in rules, labeled "Microsoft Rule Package."
+1. In the Exchange Management Shell, run the following command to display your organization's rules.
 
-2. Store your organization's rules in a in a variable by typing `$ruleCollections = Get-ClassificationRuleCollection`. Storing something in a variable makes it easily available later in a format that works for remote PowerShell commands.
+   ```powershell
+   Get-ClassificationRuleCollection
+   ```
 
-3. Make a formatted XML file with all that data by replacing `"C:\custompath\` with a real file path and typing `Set-Content -Path "C:\custompath\exportedRules.xml" -Encoding Byte -Value $ruleCollections.SerializedClassificationRuleCollection`. (**Set-content** is the part of the cmdlet that writes the XML to the file.)
+   If you haven't created any rules of your own, you'll only see the default, built-in sensitive information types collection, labeled "Microsoft Rule Package".
+
+2. Store your organization's rules in a variable by running the following command:
+
+   ```powershell
+   $ruleCollections = Get-ClassificationRuleCollection
+   ```
+
+   Storing something in a variable makes it easily available later in a format that works for remote PowerShell commands.
+
+3. Make a formatted XML file with all that data by replacing `"C:\custompath\` with a real file path and running the following command:
+
+   ```powershell
+   [System.IO.File]::WriteAllBytes('C:\custompath\exportedRules.xml', $ruleCollections.SerializedClassificationRuleCollection)
+   ```
+
+   > [!NOTE]
+   > If the output of the command `Get-ClassificationRuleCollection | Format-List Name,SerializedClassificationRuleCollection` shows that the SerializedClassificationRuleCollection property is empty, you'll receive the following error, and the rest of the procedures in this topic won't work:
+   >
+   > Exception calling "WriteAllBytes" with "2" argument(s): "Value cannot be null. Parameter name: bytes"
 
 ## Find the rule that you want to modify in the XML
 
@@ -57,7 +78,7 @@ The cmdlets above exported the entire rule collection, which includes the 51 def
 
 3. Look for **Func_credit_card** to find the Credit Card Number rule definition. (In the XML, rule names can't contain spaces, so the spaces are usually replaced with underscores, and rule names are sometimes abbreviated. An example of this is the U.S. Social Security number rule, which is abbreviated "SSN." The Credit Card Number rule XML should look like the following code sample.
 
-   ```powershell
+   ```xml
    <Entity id="50842eb7-edc8-4019-85dd-5a5c1f2bb085"
           patternsProximity="300" recommendedConfidence="85">
          <Pattern confidenceLevel="85">
@@ -79,7 +100,7 @@ First, you need to create a new sensitive information type because you can't dir
 
 All XML rule definitions are built on the following general template. You need to copy and paste the Credit Card Number definition XML in the template, modify some values (notice the ". . ." placeholders in the following example), and then upload the modified XML as a new rule that can be used in policies.
 
-```powershell
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RulePackage xmlns="http://schemas.microsoft.com/office/2011/mce">
   <RulePack id=". . .">
@@ -108,7 +129,7 @@ All XML rule definitions are built on the following general template. You need t
 
 Now, you have something that looks similar to the following XML. Because rule packages and rules are identified by their unique GUIDs, you need to generate two GUIDs: one for the rule package and one to replace the GUID for the Credit Card Number rule. (The GUID for the entity ID in the following code sample is the one for our built-in rule definition, which you need to replace with a new one.) There are several ways to generate GUIDs, but you can do it easily in PowerShell by typing `[guid]::NewGuid()`.
 
-```powershell
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RulePackage xmlns="http://schemas.microsoft.com/office/2011/mce">
   <RulePack id="8aac8390-e99f-4487-8d16-7f0cdee8defc">
@@ -150,7 +171,7 @@ Now, you have something that looks similar to the following XML. Because rule pa
 
 Now that you have a new sensitive information type that you're able to upload to your Exchange environment, the next step is to make the rule more specific. Modify the rule so that it only looks for a 16-digit number that passes the checksum but doesn't require additional (corroborative) evidence (for example keywords). To do this, you need to remove the part of the XML that looks for corroborative evidence. Corroborative evidence is very helpful in reducing false positives because usually there are certain keywords or an expiration date near the credit card number. If you remove that evidence, you should also adjust how confident you are that you found a credit card number by lowering the **confidenceLevel**, which is 85 in the example.
 
-```powershell
+```xml
 <Entity id="db80b3da-0056-436e-b0ca-1f4cf7080d1f" patternsProximity="300"
       <Pattern confidenceLevel="85">
         <IdMatch idRef="Func_credit_card" />
@@ -162,7 +183,7 @@ Now that you have a new sensitive information type that you're able to upload to
 
 You might want to require corroborative evidence but want different or additional keywords, and perhaps you want to change where to look for that evidence. You can adjust the **patternsProximity** to expand or shrink the window for corroborative evidence around the 16-digit number. To add your own keywords, you need to define a keyword list and reference it within your rule. The following XML adds the keywords "company card" and "Contoso card" so that any message that contains those phrases within 150 characters of a credit card number will be identified as a credit card number.
 
-```powershell
+```xml
 <Rules>
 <! -- Modify the patternsProximity to be "150" rather than "300." -->
     <Entity id="db80b3da-0056-436e-b0ca-1f4cf7080d1f" patternsProximity="150" recommendedConfidence="85">
@@ -197,7 +218,7 @@ To upload your rule, you need to do the following.
 3. Replace `\C:\custompath\` with a real file path and run the following command:
 
    ```powershell
-   New-ClassificationRuleCollection -FileData (Get-Content -Path "C:\custompath\MyNewRulePack.xml " -Encoding Byte)
+   New-ClassificationRuleCollection -FileData ([System.IO.File]::ReadAllBytes('C:\custompath\MyNewRulePack.xml'))
    ```
 
 4. To confirm, type **Y**, and then press **Enter**.
@@ -210,8 +231,8 @@ To start using the new rule to detect sensitive information, you need to add the
 
 These are the definitions for the terms you encountered during this procedure.
 
-|**Term**|**Definition**|
-|:-----|:-----|
+|Term|Definition|
+|---|---|
 |Entity|Entities are what we call sensitive information types, such as credit card numbers. Each entity has a unique GUID as its ID. If you copy a GUID and search for it in the XML, you'll find the XML rule definition and all the localized translations of that XML rule. You can also find this definition by locating the GUID for the translation and then searching for that GUID.|
 |Functions|The XML file references **Func_credit_card**, which is a function in compiled code. Functions are used to run complex regexes and verify that checksums match for our built-in rules.) Because this happens in the code, some of the variables don't appear in the XML file.|
 |IdMatch|This is the identifier that the pattern is to trying to match (for example, a credit card number). You can read more about this and about the **Match** tags in [Entity rules](developing-sensitive-information-rule-packages-exchange-2013-help.md#entity-rules).|

@@ -3,10 +3,10 @@ ms.localizationpriority: medium
 monikerRange: exchserver-2016 || exchserver-2019
 description: Setup can't continue because the organization contains one or more Exchange servers that are too old.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.Exchange2000or2003PresentInOrg
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: a115b182-cbd2-4d31-aa0e-375240939301
 ms.reviewer: 
 title: Can't install Exchange 2016 in a forest that contains Exchange 2000 or Exchange 2003 servers. [Exchange2000or2003PresentInOrg]
@@ -31,8 +31,8 @@ The upgrade path that you need to follow depends on your current version of Exch
 >When you need to upgrade to an interim version of Exchange, you need to migrate all mailboxes, public folders and other components onto the interim version of Exchange before you decommission and remove the earlier Exchange servers.
 
 ::: moniker range="exchserver-2019"
-|**Current Exchange version**|**Latest Exchange version for coexistence**|**Upgrade path summary**|
-|:-----|:-----|:-----|
+|Current Exchange version|Latest Exchange version for coexistence|Upgrade path summary|
+|---|---|---|
 |Exchange 2000|Exchange 2007|Exchange 2000 \> Exchange 2007 \> Exchange 2013 \> Exchange 2019.|
 |Exchange 2003|Exchange 2010|Exchange 2003 \> Exchange 2010 \> Exchange 2016 \> Exchange 2019.|
 |Exchange 2007|Exchange 2013|Exchange 2007 \> Exchange 2013 \> Exchange 2019.|
@@ -40,8 +40,8 @@ The upgrade path that you need to follow depends on your current version of Exch
 ::: moniker-end
 
 ::: moniker range="exchserver-2016"
-|**Current Exchange version**|**Latest Exchange version for coexistence**|**Upgrade path summary**|
-|:-----|:-----|:-----|
+|Current Exchange version|Latest Exchange version for coexistence|Upgrade path summary|
+|---|---|---|
 |Exchange 2000|Exchange 2007|Exchange 2000 \> Exchange 2007 \> Exchange 2013 \> Exchange 2016.|
 |Exchange 2003|Exchange 2010|Exchange 2003 \> Exchange 2010 \> Exchange 2016.|
 |Exchange 2007|Exchange 2013|Exchange 2007 \> Exchange 2013 \> Exchange 2016.|

@@ -36,15 +36,32 @@ For additional management tasks related to DLP, see [Manage DLP policies](manage
 
 ### Use the Exchange Management Shell to export the DLP sensitive information types
 
-This example exports all DLP sensitive information types along with their attributes to an XML file in the path C:\My Documents\exportedInformationTypes.xml. We recommend making a backup copy of your current DLP sensitive information types collection. One way to achieve this is to export and then immediately copy and rename the same XML file.
+This example exports all DLP sensitive information types along with their attributes to an XML file. We recommend making a backup copy of your current DLP sensitive information types collection. One way to achieve this is to export and then immediately copy and rename the same XML file.
 
-1. Open the Exchange Management Shell.
+1. In the Exchange Management Shell, run the following command to display your organization's sensitive information types.
 
-2. Type Get-ClassificationRuleCollection, and your organization's sensitive information types should display on screen. If you haven't created any sensitive information types of your own, you'll only see the default, built-in sensitive information types collection, labeled "Microsoft Rule Package."
+   ```powershell
+   Get-ClassificationRuleCollection
+   ```
 
-3. Store the sensitive information types in a variable by typing $ruleCollections = Get-ClassificationRuleCollection.
+   If you haven't created any sensitive information types of your own, you'll only see the default, built-in sensitive information types collection, labeled "Microsoft Rule Package".
 
-4. Now make a formatted XML file with all that data by typing Set-Content -path "C:\My Documents\exportedRules.xml" -Encoding Byte -Value $ruleCollections.SerializedClassificationRuleCollection..
+2. Store the sensitive information types in a variable by running the following command:
+
+   ```powershell
+   $ruleCollections = Get-ClassificationRuleCollection
+   ```
+
+3. Make a formatted XML file with all that data by replacing `"C:\custompath\` with a real file path and running the following command:
+
+   ```powershell
+   [System.IO.File]::WriteAllBytes('C:\custompath\exportedRules.xml', $ruleCollections.SerializedClassificationRuleCollection)
+   ```
+
+   > [!NOTE]
+   > If the output of the command `Get-ClassificationRuleCollection | Format-List Name,SerializedClassificationRuleCollection` shows that the SerializedClassificationRuleCollection property is empty, you'll receive the following error, and there are no policies to edit:
+   >
+   > Exception calling "WriteAllBytes" with "2" argument(s): "Value cannot be null. Parameter name: bytes"
 
 You can now edit the XML file to adjust the policies as needed. To learn how to customize the built-in sensitive information types, see [Customize the built-in DLP sensitive information types](customize-the-built-in-dlp-sensitive-information-types-exchange-2013-help.md). For details on importing policies back into Exchange, see [Import a custom DLP policy template from a file](import-a-custom-dlp-policy-template-from-a-file-exchange-2013-help.md).
 

@@ -5,6 +5,8 @@ ms:assetid: cddb5dbf-ad1e-471c-9fc8-28ddcf7ec1d0
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124595(v=EXCHG.150)
 ms:contentKeyID: 49345061
 ms.reviewer: 
+ms.topic: how-to
+description: How to view anti-spam stamps that Microsoft Exchange applied to an email in Outlook
 manager: serdars
 ms.author: serdars
 author: msdmaguire

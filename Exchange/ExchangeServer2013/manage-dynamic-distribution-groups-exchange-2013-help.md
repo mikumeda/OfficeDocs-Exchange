@@ -80,8 +80,8 @@ Unlike regular distribution groups that contain a defined set of members, the me
 
 5. Select one of the following recipient attributes from the drop-down list and provide a value. If the value for the selected attribute matches that value you define, the recipient receives a message sent to this group.
 
-   |**Attribute**|**Send message to a recipient if...**|
-   |:-----|:-----|
+   |Attribute|Send message to a recipient if...|
+   |---|---|
    |**Recipient container**|The recipient object resides in the specified domain or OU.|
    |**State or province**|The specified value matches the recipient's State or province property.|
    |**Company**|The specified value matches the recipient's Company property.|
@@ -190,19 +190,19 @@ Use this section to manage who can send email to this group.
 
 Use this section to set options for moderating the group. Moderators approve or reject messages sent to the group before they reach the group members.
 
-- **Messages sent to this group have to be approved by a moderator** This check box isn't selected by default. If you select this check box, incoming messages are reviewed by the group moderators before delivery. Group moderators can approve or reject incoming messages.
+- **Messages sent to this group have to be approved by a moderator**: This check box isn't selected by default. If you select this check box, incoming messages are reviewed by the group moderators before delivery. Group moderators can approve or reject incoming messages.
 
-- **Group moderators** To add group moderators, click **Add** ![Add Icon.](images/ITPro_EAC_AddIcon.gif). To remove a moderator, select the moderator, and then click **Remove** ![Remove icon.](images/ITPro_EAC_RemoveIcon.gif). If you've selected "Messages sent to this group have to be approved by a moderator" and you don't select a moderator, messages to the group are sent to the group owners for approval.
+- **Group moderators**: To add group moderators, click **Add** ![Add Icon.](images/ITPro_EAC_AddIcon.gif). To remove a moderator, select the moderator, and then click **Remove** ![Remove icon.](images/ITPro_EAC_RemoveIcon.gif). If you've selected "Messages sent to this group have to be approved by a moderator" and you don't select a moderator, messages to the group are sent to the group owners for approval.
 
-- **Senders who don't require message approval** **** To add people or groups that can bypass moderation for this group, click **Add** ![Add Icon.](images/ITPro_EAC_AddIcon.gif). To remove a person or a group, select the item, and then click **Remove** ![Remove icon](images/ITPro_EAC_RemoveIcon.gif).
+- **Senders who don't require message approval**: To add people or groups that can bypass moderation for this group, click **Add** ![Add Icon.](images/ITPro_EAC_AddIcon.gif). To remove a person or a group, select the item, and then click **Remove** ![Remove icon](images/ITPro_EAC_RemoveIcon.gif).
 
-- **Select moderation notifications** Use this section to set how users are notified about message approval.
+- **Select moderation notifications**: Use this section to set how users are notified about message approval.
 
-  - **Notify all senders when their messages aren't approved** This is the default setting. Notify all senders, inside and outside your organization, when their message isn't approved.
+  - **Notify all senders when their messages aren't approved**: This is the default setting. Notify all senders, inside and outside your organization, when their message isn't approved.
 
-  - **Notify senders in your organization only when their messages aren't approved** When you select this option, only people or groups in your organization are notified when a message that they sent to the group isn't approved by a moderator.
+  - **Notify senders in your organization only when their messages aren't approved**: When you select this option, only people or groups in your organization are notified when a message that they sent to the group isn't approved by a moderator.
 
-  - **Don't notify anyone when a message isn't approved** When you select this option, notifications aren't sent to message senders whose messages aren't approved by the group moderators.
+  - **Don't notify anyone when a message isn't approved**: When you select this option, notifications aren't sent to message senders whose messages aren't approved by the group moderators.
 
 ### Email options
 

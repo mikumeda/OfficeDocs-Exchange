@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: How to use the Shell to test the operation of your voice mail system.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -61,4 +63,6 @@ Test-UMConnectivity -ListenPort 5061
 ```
 
 > [!NOTE]
-> Use mode 1 when the <CODE>-UMIPGateway</CODE> parameter isn't specified. <br/><br/> You can set the <CODE>-Timeout</CODE> parameter with a value of less than 5&nbsp;seconds. However, we recommend that you always configure this parameter with a value of 5&nbsp;seconds or more.
+> Use mode 1 when the <CODE>-UMIPGateway</CODE> parameter isn't specified.
+>
+> You can set the <CODE>-Timeout</CODE> parameter with a value of less than 5&nbsp;seconds. However, we recommend that you always configure this parameter with a value of 5&nbsp;seconds or more.

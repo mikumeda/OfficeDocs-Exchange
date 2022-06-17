@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to view, create, modify, delete, and test Client Access Rules in Exchange 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 monikerRange: exchserver-2019
 title: Procedures for Client Access Rules in Exchange 2019
 ms.collection: exchange-server
@@ -27,8 +27,7 @@ Client Access Rules allow or block Exchange admin center (EAC) or remote PowerSh
 
 - The procedures in this topic are only available in the Exchange Management Shell. For more information, see [Open the Exchange Management Shell](/powershell/exchange/open-the-exchange-management-shell) or [Connect to Exchange servers using remote PowerShell](/powershell/exchange/connect-to-exchange-servers-using-remote-powershell).
 
-- Client Access Rules support IPv4 and IPv6 addresses. For more information about IPv6 addresses and syntax, see this Exchange 2013 topic: [IPv6 address basics](https://docs.microsoft.com/exchange/ipv6-support-in-exchange-2013-exchange-2013-help#ipv6-address-basics).
-
+- Client Access Rules support IPv4 and IPv6 addresses. For more information about IPv6 addresses and syntax, see this Exchange 2013 topic: [IPv6 address basics](/exchange/ipv6-support-in-exchange-2013-exchange-2013-help#ipv6-address-basics).
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Mail flow" entry in [Mail flow permissions](../../permissions/feature-permissions/mail-flow-permissions.md).
 

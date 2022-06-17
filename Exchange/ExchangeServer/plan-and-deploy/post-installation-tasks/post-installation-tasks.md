@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: "Summary: Learn about tasks you'll need to do after you install Exchange 2016 or Exchange 2019."
 ms.topic: how-to
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: bd99aaa4-b82c-427c-ab65-b9230ff63fb2
 ms.reviewer: 
 title: Exchange Server post-installation tasks
@@ -22,8 +22,8 @@ manager: serdars
 
 Read the following topics to help you configure your new Exchange 2016 or Exchange 2016 organization.
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[Enter your Exchange product key](enter-product-key.md)|Learn how to license your Exchange server.|
 |[Configure mail flow and client access on Exchange servers](configure-mail-flow-and-client-access.md)|Learn how to configure mail flow to and from the Internet and configure Exchange to accept client connections from the Internet.|
 |[Verify Exchange Server installations](verify-installation.md)|Learn how to verify that Exchange 2016 was installed successfully in your organization.|

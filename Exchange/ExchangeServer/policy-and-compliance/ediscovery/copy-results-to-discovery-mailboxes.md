@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to copy the results of an In-Place eDiscovery search to a discovery mailbox in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: bff2ce89-9e6f-494a-bd6a-2f2011507845
 ms.reviewer:
 title: Copy eDiscovery search results to a discovery mailbox

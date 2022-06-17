@@ -23,7 +23,7 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 Disaster Recovery setup cannot continue because Disaster Recovery setup cannot access the mailbox database drive specification that was used in the previous installation of this server.
+Microsoft® Exchange Server 2007 Disaster Recovery setup cannot continue because Disaster Recovery setup cannot access the mailbox database drive specification that was used in the previous installation of this server.
 
 Microsoft Exchange Disaster Recovery setup requires that the same mailbox database drive specifications previously used for this server be available during the restore.
 

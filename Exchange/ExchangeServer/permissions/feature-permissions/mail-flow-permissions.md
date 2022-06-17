@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: The permissions required to perform tasks related to mail flow vary depending on the procedure being performed or the cmdlet you want to run.
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: f49f4fb5-af75-43cb-900f-c5f7b8cfa143
 ms.reviewer:
 title: Mail flow permissions
@@ -49,8 +49,8 @@ Users who are assigned the View Only Management role group can view the configur
 
  **Mailbox servers**
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Accepted domains|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Active Directory site and site link management|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Antispam features|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Hygiene Management](../../../ExchangeServer2013/hygiene-management-exchange-2013-help.md)|
@@ -86,8 +86,8 @@ Users who are assigned the View Only Management role group can view the configur
 
  **Edge Transport servers**
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Accepted domains - Edge Transport|Edge Transport server local administrator|
 |Address Rewriting - Edge Transport|Edge Transport server local administrator|
 |Edge Transport server|Edge Transport server local administrator|

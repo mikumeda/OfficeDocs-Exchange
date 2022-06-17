@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to set the PIN lifetime for voice mail in Microsoft Exchange Server
 ms.assetid: d17f0bf6-0ad6-40a4-bdd5-f7098f39250d
 f1.keywords:
 - NOCSH

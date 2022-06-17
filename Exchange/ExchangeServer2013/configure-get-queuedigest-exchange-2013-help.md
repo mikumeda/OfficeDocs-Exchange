@@ -71,7 +71,7 @@ By default, delivery queues that have the status Active, Connecting, Ready, or R
     <add key="QueueLoggingInterval" value="<hh:mm:ss>" />
     ```
 
-    For example, to set the **QueueLoggingThreshold** value to 1 and the **QueueLoggingInterval** value to 30 seconds, use the following values:
+    For example, to set the **QueueLoggingThreshold** value to 1 and the **QueueLoggingInterval** value to 30 seconds, use the following values:
 
     ```xml
     <add key="QueueLoggingThreshold" value="1" />
@@ -92,7 +92,7 @@ By default, delivery queues that have the status Active, Connecting, Ready, or R
     Set-TransportConfig -QueueDiagnosticsAggregationInterval <hh:mm:ss>
     ```
 
-    For example, to change the value to 30 seconds, run the following command:
+    For example, to change the value to 30 seconds, run the following command:
 
     ```powershell
     Set-TransportConfig -QueueDiagnosticsAggregationInterval 00:00:30

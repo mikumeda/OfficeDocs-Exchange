@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how administrators can track delivery information about messages sent or received from any mailbox in the organization.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d98623d3-e0b7-4cb9-93fb-6351b4a06137
 ms.reviewer: 
 title: Delivery reports for administrators

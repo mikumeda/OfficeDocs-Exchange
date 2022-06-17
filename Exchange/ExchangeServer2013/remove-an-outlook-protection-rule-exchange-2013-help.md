@@ -5,6 +5,8 @@ ms:assetid: 569fc3be-b269-43f5-8797-73ab0691e685
 ms:mtpsurl: https://technet.microsoft.com/library/Ee633467(v=EXCHG.150)
 ms:contentKeyID: 49319914
 ms.reviewer: 
+ms.topic: how-to
+description: How to remove an Outlook protection rule in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

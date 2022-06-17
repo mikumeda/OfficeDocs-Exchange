@@ -3,8 +3,8 @@ localization_priority: Critical
 monikerRange: exchserver-2016 || exchserver-2019
 description: 'Summary: Learn about the Windows operating system prerequisites for Exchange Server 2016 and Exchange Server 2019 and the Exchange Management Tools.'
 ms.topic: conceptual
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid:
 ms.reviewer: 
 title: Exchange Server prerequisites, Exchange 2019 system requirements, Exchange 2019 requirements
@@ -54,11 +54,6 @@ To actually install Exchange 2016 and Exchange 2019, see [Deploy new installatio
 
 - Verify the [Supported operating systems for Exchange 2019](./system-requirements.md?preserve-view=true&view=exchserver-2019#supported-operating-systems-for-exchange-2019) or [Supported operating systems for Exchange 2016](./system-requirements.md?preserve-view=true&view=exchserver-2016#supported-operating-systems-for-exchange-2016).
 
-::: moniker range="exchserver-2019"
-> [!NOTE]
-> New to Exchange 2019 is the ability to upgrade your operating system to a newer version while Exchange is installed on Windows Server 2019 or later.
-::: moniker-end
-
 - Verify the computer is joined to the appropriate internal Active Directory domain.
 
 - Install the latest Windows updates on your computer.
@@ -83,7 +78,7 @@ You can use any member of the Active Directory domain to prepare Active Director
 
       > [!NOTE]
       >
-      > - The system requirements for the Visual C++ Redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+      > - The system requirements for the Visual C++ Redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
       >
       > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
       >
@@ -98,16 +93,21 @@ You can use any member of the Active Directory domain to prepare Active Director
 > [!NOTE]
 > Using the Exchange Setup Wizard to prepare Active Directory requires the installation of the Management Tools Exchange role.
 
-## Windows Server 2019 prerequisites for Exchange 2019
+## Windows Server 2019 & Windows Server 2022 prerequisites for Exchange 2019
 
-The requirements to install Exchange 2019 on Windows Server 2019 computers are described in the following sections. We recommend either of the following methods to install the Windows prerequisites for Exchange 2019:
+> [!NOTE]
+>
+> Support for Windows Server 2022 was introduced with [Exchange Server 2019 CU12 (2022H1)](https://techcommunity.microsoft.com/t5/exchange-team-blog/released-2022-h1-cumulative-updates-for-exchange-server/ba-p/3285026).
+>
+
+The requirements to install Exchange 2019 on Windows Server 2019 or Windows Server 2022 computers are described in the following sections. We recommend either of the following methods to install the Windows prerequisites for Exchange 2019:
 
 - Use the /InstallWindowsComponents switch in unattended Setup mode.
 - Select the check box in the Exchange Setup Wizard to install Windows prerequisites.
 
 When you use one of these options, you don't need to restart the computer after the Windows components have been added.
 
-### Exchange 2019 Mailbox servers on Windows Server 2019
+### Exchange 2019 Mailbox servers on Windows Server 2019 & Windows Server 2022
 
 1. Install the following software:
 
@@ -119,7 +119,7 @@ When you use one of these options, you don't need to restart the computer after 
 
       > [!NOTE]
       >
-      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
       >
       > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
@@ -158,7 +158,7 @@ When you use one of these options, you don't need to restart the computer after 
       Install-WindowsFeature Server-Media-Foundation, NET-Framework-45-Features, RPC-over-HTTP-proxy, RSAT-Clustering, RSAT-Clustering-CmdInterface, RSAT-Clustering-PowerShell, WAS-Process-Model, Web-Asp-Net45, Web-Basic-Auth, Web-Client-Auth, Web-Digest-Auth, Web-Dir-Browsing, Web-Dyn-Compression, Web-Http-Errors, Web-Http-Logging, Web-Http-Redirect, Web-Http-Tracing, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Metabase, Web-Mgmt-Service, Web-Net-Ext45, Web-Request-Monitor, Web-Server, Web-Stat-Compression, Web-Static-Content, Web-Windows-Auth, Web-WMI, RSAT-ADDS
       ```
 
-### Exchange 2019 Edge Transport servers on Windows Server 2019
+### Exchange 2019 Edge Transport servers on Windows Server 2019 & Windows Server 2022
 
 1. Install the following software:
 
@@ -168,7 +168,7 @@ When you use one of these options, you don't need to restart the computer after 
 
       > [!NOTE]
       >
-      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
       >
       > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
@@ -180,18 +180,19 @@ When you use one of these options, you don't need to restart the computer after 
 
 ## Windows 10 client prerequisites for the Exchange 2019 management tools
 
+
 1. Install the [Visual C++ Redistributable Package for Visual Studio 2012](https://www.microsoft.com/download/details.aspx?id=30679)
 
    > [!NOTE]
    >
-   > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+   > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
    >
    > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
 2. If you aren't going to use Exchange Setup to install the required Windows components (in the wizard or from the command line), run the following command in Windows PowerShell:
 
    ```PowerShell
-   Enable-WindowsOptionalFeature -Online -FeatureName IIS-ManagementScriptingTools,IIS-ManagementScriptingTools,IIS-IIS6ManagementCompatibility,IIS-LegacySnapIn,IIS-ManagementConsole,IIS-Metabase,IIS-WebServerManagementTools,IIS-WebServerRole
+   Enable-WindowsOptionalFeature -Online -FeatureName IIS-IIS6ManagementCompatibility,IIS-Metabase -All
    ```
 
 ::: moniker-end
@@ -210,7 +211,7 @@ You can use any member of the Active Directory domain to prepare Active Director
 
       > [!NOTE]
       >
-      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
       >
       > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
@@ -252,7 +253,7 @@ The prerequisites that are needed to install Exchange 2016 on computers running 
 
       > [!NOTE]
       >
-      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
       >
       > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
       >
@@ -282,7 +283,7 @@ The prerequisites that are needed to install Exchange 2016 on computers running 
 
       > [!NOTE]
       >
-      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
       >
       > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
@@ -308,7 +309,7 @@ The prerequisites for Exchange 2016 on Windows Server 2012 or Windows Server 201
 
       > [!NOTE]
       >
-      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
       >
       > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
       >
@@ -344,7 +345,7 @@ The prerequisites for Exchange 2016 on Windows Server 2012 or Windows Server 201
 
       > [!NOTE]
       >
-      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+      > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
       >
       > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
@@ -356,7 +357,7 @@ The prerequisites for Exchange 2016 on Windows Server 2012 or Windows Server 201
 
    > [!NOTE]
    >
-   > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+   > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
    >
    > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
@@ -374,7 +375,7 @@ The prerequisites for Exchange 2016 on Windows Server 2012 or Windows Server 201
 
    > [!NOTE]
    >
-   > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016 or Windows Server 2019, but the redistributable package is safe to install on these versions of Windows.
+   > - The system requirements for the Visual C++ redistributable package do not mention support for Windows Server 2016, Windows Server 2019 or Windows Server 2022, but the redistributable package is safe to install on these versions of Windows.
    >
    > - An overview of the latest supported versions is available at: [Visual C++ Redistributable versions](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 

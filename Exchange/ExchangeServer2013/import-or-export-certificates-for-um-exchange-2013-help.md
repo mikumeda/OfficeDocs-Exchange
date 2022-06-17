@@ -4,6 +4,8 @@ TOCTitle: Import or export certificates for UM
 ms:assetid: ee688c33-2e08-47e7-95fc-04ba10238341
 ms:mtpsurl: https://technet.microsoft.com/library/Dn205143(v=EXCHG.150)
 ms:contentKeyID: 53908380
+ms.topic: article
+description: Learn to import or export certificates for Um in Exchange Server.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
@@ -95,5 +97,5 @@ This example does the following:
 This example imports a certificate from the d:\\certificates\\exchange\\SelfSignedUMCert.pfx certificate file after you enter a username and password.
 
 ```powershell
-Import-ExchangeCertificate -FileData ([Byte[]]$(Get-Content -Path d:\certificates\exchange\SelfSignedUMCert.pfx -Encoding Byte -ReadCount 0)) -Password:(Get-Credential).password
+Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('D:\certificates\exchange\SelfSignedUMCert.pfx')) -Password:(Get-Credential).password
 ```

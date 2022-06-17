@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to create and remove an In-Place Hold in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 9d5d8d37-a053-4830-9cb1-6e1ede25e963
 ms.reviewer:
 title: Create or remove an In-Place Hold

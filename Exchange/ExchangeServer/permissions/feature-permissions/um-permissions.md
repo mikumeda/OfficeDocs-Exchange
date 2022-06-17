@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about permissions that are required to manage Unified Messaging services and features in Exchange Server 2016.'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d326c3bc-8f33-434a-bf02-a83cc26a5498
 ms.reviewer:
 title: Unified Messaging permissions in Exchange 2016
@@ -42,8 +42,8 @@ You can configure settings for the UM components and features in the following t
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |UM auto attendants|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Unified Messaging Management](../../../ExchangeServer2013/um-management-exchange-2013-help.md)|
 |UM call answering rules|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Unified Messaging Management](../../../ExchangeServer2013/um-management-exchange-2013-help.md)|
 |UM call data and summary reports|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Unified Messaging Management](../../../ExchangeServer2013/um-management-exchange-2013-help.md)|

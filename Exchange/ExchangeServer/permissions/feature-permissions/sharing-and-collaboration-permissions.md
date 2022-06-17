@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about permissions that are required to manage sharing and collaboration features in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: b7fa4b7c-1266-45bd-a14b-f66be0459cc5
 ms.reviewer:
 title: Sharing and collaboration permissions
@@ -39,8 +39,8 @@ You can use the features in the following table to configure sharing and collabo
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Partner applications - configure|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Public folders, mail-enabled|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Recipient Management](../../../ExchangeServer2013/recipient-management-exchange-2013-help.md)|
 |Public folders|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Public Folder Management](../../../ExchangeServer2013/public-folder-management-exchange-2013-help.md)|

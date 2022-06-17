@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How users in your Exchange 2016 or Exchange 2019 organization can quickly set up their Outlook for iOS and Android accounts using Basic authentication.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 013dbe8c-30de-4c9c-baa9-75081b9229e8
 title: Account setup in Outlook for iOS and Android using Basic authentication
 ms.collection: exchange-server
@@ -104,8 +104,8 @@ You assign the settings to groups of users in Azure Active Directory. When a use
 
 When you create an app configuration policy in the Azure Portal or through your UEM provider, you will need the following key value pairs:
 
-|**Key**|**Values**|
-|:-----|:-----|
+|Key|Values|
+|---|---|
 |com.microsoft.outlook.EmailProfile.EmailAccountName|This value specifies the display name email account as it will appear to users on their devices.  <br/> **Value type**: String  <br/> **Accepted values**: Display Name  <br/> **Default if not specified**: \<blank\>  <br/> **Required**: Yes  <br/> **Example**: user  <br/> **Intune Token**<sup>*</sup>: {{username}}|
 |com.microsoft.outlook.EmailProfile.EmailAddress|This value specifies the email address to be used for sending and receiving mail.  <br/> **Value type**: String  <br/> **Accepted values**: Email address  <br/> **Default if not specified**: \<blank\>  <br/> **Required**: Yes  <br/> **Example**: user@companyname.com  <br/> **Intune Token**<sup>*</sup>: {{mail}}|
 |com.microsoft.outlook.EmailProfile.EmailUPN|This value specifies the User Principal Name or username for the email profile that will be used to authenticate the account.  <br/> **Value type**: String  <br/> **Accepted values**: UPN Address or username  <br/> **Default if not specified**: \<blank\>  <br/>**Required**: Yes  <br/> **Example**: userupn@companyname.com  <br/> **Intune Token**<sup>*</sup>: {{userprincipalname}}|

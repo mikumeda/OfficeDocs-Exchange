@@ -5,6 +5,8 @@ ms:assetid: 49f4fa77-1722-4703-81c9-8724ae0334fb
 ms:mtpsurl: https://technet.microsoft.com/library/JJ218639(v=EXCHG.150)
 ms:contentKeyID: 48385052
 ms.reviewer: 
+ms.topic: how-to
+description: How to turn off access to the Microsoft Exchange admin center
 manager: serdars
 ms.author: serdars
 author: msdmaguire

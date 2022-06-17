@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: All about recipients, such as mailboxes and mail users, in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: abad5939-8826-4df1-94bf-2d734f07e929
 ms.reviewer:
 title: Recipients in Exchange Server
@@ -31,10 +31,6 @@ Exchange includes several explicit recipient types. Each recipient type is ident
 
 The following table lists the available recipient types. These recipient types are discussed in more detail later in this topic.
 
-<br>
-
-****
-
 |Recipient type|Description|
 |---|---|
 |Dynamic distribution group|A distribution group that uses recipient filters and conditions to derive its membership at the time messages are sent.|
@@ -54,7 +50,6 @@ The following table lists the available recipient types. These recipient types a
 |User mailbox|A mailbox that's assigned to an individual user in your Exchange organization. It typically contains messages, calendar items, contacts, tasks, documents, and other important business data.|
 |Microsoft 365 or Office 365 mailbox|In hybrid deployments, a Microsoft 365 or Office 365 mailbox consists of a mail user that exists in Active Directory on-premises and an associated cloud mailbox that exists in Exchange Online.|
 |Linked user|A linked user is a user whose mailbox resides in a different forest than the forest in which the user resides.|
-|
 
 ### Mailboxes
 
@@ -107,10 +102,6 @@ System mailboxes are created by Exchange in the root domain of the Active Direct
 > [!NOTE]
 > Unified Messaging is not available in Exchange 2019
 
-<br>
-
-****
-
 |Mailbox|Name|
 |---|---|
 |Organization|`SystemMailbox {bb558c35-97f1-4cb9-8ff7-d53741dc928c}`|
@@ -119,7 +110,6 @@ System mailboxes are created by Exchange in the root domain of the Active Direct
 |Discovery|`DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852}`|
 |Federated email|`FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042`|
 |Migration|`Migration.8f3e7716-2011-43e4-96b1-aba62d229136`|
-|
 
 If you want to decommission the last Mailbox server in your Exchange organization, you should first disable these system mailboxes by using the [Disable-Mailbox](/powershell/module/exchange/disable-mailbox) cmdlet. When you decommission a Mailbox server that contains these system mailboxes, you should move the system mailboxes to another Mailbox server to make sure that you don't lose functionality.
 
@@ -200,10 +190,6 @@ The Microsoft Exchange recipient isn't a typical recipient object, such as a mai
 
 The following table contains links to topics that will help you learn about and manage Exchange recipients.
 
-<br>
-
-****
-
 |Topic|Description|
 |---|---|
 |[Create user mailboxes in Exchange Server](create-user-mailboxes.md)|Learn how to create user mailboxes using the Exchange admin center or the Exchange Management Shell.|
@@ -219,4 +205,3 @@ The following table contains links to topics that will help you learn about and 
 |[Filters in recipient Shell commands](/powershell/exchange/recipient-filters)|Learn how to use precanned or custom filters with commands to filter a set of recipients.|
 |[Manage permissions for recipients](mailbox-permissions.md)|Learn how to use the EAC or the Exchange Management Shell to assign permissions to users and groups.|
 |[Automatic Mailbox Distribution](../../ExchangeServer2013/automatic-mailbox-distribution-exchange-2013-help.md)|Learn about how automatic mailbox distribution works and how to control which mailbox databases are selected for new and moved mailboxes.|
-|

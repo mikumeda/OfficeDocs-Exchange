@@ -1,10 +1,12 @@
 ---
-title: 'Safelist Aggregation: Exchange 2013 Help'
+title: 'Safelist aggregation: Exchange 2013 Help'
 TOCTitle: Safelist Aggregation
 ms:assetid: f05430a0-0405-4b65-a18d-18c9e86a13c4
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125168(v=EXCHG.150)
 ms:contentKeyID: 49248692
 ms.reviewer: 
+ms.topic: article
+description: About safelist aggregation in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -13,7 +15,7 @@ f1.keywords:
 mtps_version: v=EXCHG.150
 ---
 
-# Safelist Aggregation
+# Safelist aggregation in Exchange
 
 _**Applies to:** Exchange Server 2013_
 
@@ -50,7 +52,7 @@ The following types of information are stored in an Outlook user's safelist coll
 
 ## How Exchange uses the safelist collection
 
-The safelist collection is stored on the user's Mailbox server. A user can have up to 1,024 unique entries in a safelist collection. Exchange 2013 has a mailbox assistant, called the Junk Email Options mailbox assistant, which monitors changes to the safelist collection for your mailboxes. It then replicates these changes to Active Directory, where the safelist collection is stored on each user object. When the safelist collection is stored on the user object in Active Directory, the safelist collection is aggregated with the anti-spam functionality of Exchange 2013 and is optimized for minimized storage and replication. Exchange uses the safelist collection data during content filtering. If you have a subscribed Edge Transport server in your perimeter network, the Microsoft Exchange EdgeSync service replicates the safelist collection to the Active Directory Lightweight Directory Services (AD LDS) instance on the Edge Transport server.
+The safelist collection is stored on the user's Mailbox server. A user can have up to 1,024 unique entries in a safelist collection. Exchange 2013 has a mailbox assistant, called the Junk Email Options mailbox assistant, which monitors changes to the safelist collection for your mailboxes. It then replicates these changes to Active Directory, where the safelist collection is stored on each user object. When the safelist collection is stored on the user object in Active Directory, the safelist collection is aggregated with the anti-spam functionality of Exchange 2013 and is optimized for minimized storage and replication. Exchange uses the safelist collection data during content filtering. If you have a subscribed Edge Transport server in your perimeter network, the Microsoft Exchange EdgeSync service replicates the safelist collection to the Active Directory Lightweight Directory Services (AD LDS) instance on the Edge Transport server.
 
 > [!IMPORTANT]
 > Although the safe recipient data is stored in Outlook and can be aggregated into the safelist collection, the content filtering functionality doesn't act on safe recipient data.
@@ -69,7 +71,7 @@ One-way hashing of safelist collection entries performs the following important 
 
 Safelist aggregation is enabled by default in Exchange 2013. Unlike in Exchange Server 2007, you don't need to manually run the **Update-SafeList** cmdlet to hash and write the safelist collection data to Active Directory. In Exchange 2013, the safelist collection data is written to Active Directory by the Junk Email Options mailbox assistant.
 
-To make the safelist aggregation data in Active Directory available to Edge Transport servers in the perimeter network, you need to install and configure the Microsoft Exchange EdgeSync service so that the safelist aggregation data is replicated to AD LDS.
+To make the safelist aggregation data in Active Directory available to Edge Transport servers in the perimeter network, you need to install and configure the Microsoft Exchange EdgeSync service so that the safelist aggregation data is replicated to AD LDS.
 
 You can still manually run safelist aggregation by using the **UpdateSafelist** cmdlet. However, you need to be mindful of the network and replication traffic that may be generated when you run this command. Running **Update-Safelist** on multiple mailboxes where safelists are heavily used may generate a significant amount of traffic. We recommend that if you run the command on multiple mailboxes, you should run the command during off-peak, non-business hours.
 

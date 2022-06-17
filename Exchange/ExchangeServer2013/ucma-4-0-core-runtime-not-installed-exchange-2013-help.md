@@ -5,6 +5,8 @@ ms:assetid: b26b628b-116d-4f13-ab86-bac80e2a2e1f
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.ucmaredistmsi(v=EXCHG.150)
 ms:contentKeyID: 46629086
 ms.reviewer: 
+ms.topic: article
+description: Microsoft Exchange requires that the Unified Communications Managed API 4.0 Runtime update is installed for installation to continue
 manager: serdars
 ms.author: serdars
 author: msdmaguire

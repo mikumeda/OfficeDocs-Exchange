@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-This topic provides the steps for installing the necessary Windows Server 2012 R2, Windows Server 2012 and Windows Server 2008 R2 with Service Pack 1 (SP1) operating system prerequisites for the Microsoft Exchange 2013 Mailbox, Client Access, and Edge Transport server roles. It also provides the prerequisites required to install the Exchange 2013 management tools on Windows 8, Windows 8.1, and Windows 7 client computers.
+This topic provides the steps for installing the necessary Windows Server 2012 R2, Windows Server 2012 and Windows Server 2008 R2 with Service Pack 1 (SP1) operating system prerequisites for the Microsoft Exchange 2013 Mailbox, Client Access, and Edge Transport server roles. It also provides the prerequisites required to install the Exchange 2013 management tools on Windows 8, Windows 8.1, and Windows 7 client computers.
 
 ## What do you need to know before you begin?
 
@@ -29,7 +29,7 @@ This topic provides the steps for installing the necessary Windows Server 2012 R
 
 - Make sure that the functional level of your forest is at least Windows Server 2003, and that the schema master is running Windows Server 2003 with Service Pack 2 or later. For more information about the Windows functional level, see [Managing Domains and Forests](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754918(v=ws.10)).
 
-- The full installation option of Windows Server 2012 R2, Windows Server 2012 and Windows Server 2008 R2 SP1 must be used for all servers running Exchange 2013 server roles or management tools.
+- The full installation option of Windows Server 2012 R2, Windows Server 2012 and Windows Server 2008 R2 SP1 must be used for all servers running Exchange 2013 server roles or management tools.
 
 - You must first join the computer to the appropriate internal Active Directory forest and domain.
 
@@ -236,7 +236,7 @@ After you've installed the operating system roles and features, install the foll
 
 ## Windows 7 prerequisites (admin tools only)
 
-Follow the instructions in this section to install the prerequisites on domain-joined Windows 7 64-bit computers where you want to install the Exchange management tools.
+Follow the instructions in this section to install the prerequisites on domain-joined Windows 7 64-bit computers where you want to install the Exchange management tools.
 
 1. Open **Control Panel**, and then select **Programs**.
 

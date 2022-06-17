@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Verify that the COM+ Event System service status is started on the local computer.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -21,9 +23,9 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 setup cannot continue because its attempt to install the Client Access Server or Edge Transport server roles failed because the COM+ Event System service is not started on the target computer.
+Microsoft Exchange Server 2007 setup cannot continue because its attempt to install the Client Access Server or Edge Transport server roles failed because the COM+ Event System service is not started on the target computer.
 
-Exchange 2007 setup requires the computer that you are installing Microsoft Exchange to have the COM+ Event System service status set to **Started**.
+Exchange 2007 setup requires the computer that you are installing Microsoft Exchange to have the COM+ Event System service status set to **Started**.
 
 The COM+ Event System service supports system event notification for COM+ components, which provide automatic distribution of events to subscribing COM components.
 

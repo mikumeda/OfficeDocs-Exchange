@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: Microsoft Exchange Server 2016 Setup has detected that the computer you're attempting to install Exchange 2016 on doesn't have a recommended Windows update installed. We strongly recommend that you install this Windows update before installing Exchange 2016 to avoid any issues resolved by the update.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.Win2k12UrefsUpdateNotInstalled
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 0a540b1a-c9e3-4c99-99d9-5e093ef1b2b4
 ms.reviewer: 
 title: Disks formatted as ReFS may not perform reliably [Win2k12UrefsUpdateNotInstalled]

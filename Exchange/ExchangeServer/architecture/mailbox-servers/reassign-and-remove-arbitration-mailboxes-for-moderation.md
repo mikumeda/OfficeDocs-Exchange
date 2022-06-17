@@ -2,7 +2,7 @@
 ms.localizationpriority: medium
 description: Administrators can learn how to identify the arbitration mailbox that's used for message approval on moderated recipients. After all moderated recipients are configured to no longer use the arbitration mailbox, you can remove the arbitration mailbox.
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 ms.author: jhendr
 ms.assetid: 860df43f-a05b-4da3-83f1-68d3123a923d
 ms.reviewer: 

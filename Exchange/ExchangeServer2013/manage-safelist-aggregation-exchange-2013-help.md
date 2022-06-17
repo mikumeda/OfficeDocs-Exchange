@@ -100,7 +100,7 @@ To verify that you have successfully configured safelist aggregation, perform th
 
 This step is only required if you run the Content Filter agent on an Edge Transport server in your perimeter network.
 
-You can view the user objects in the Active Lightweight Directory Services (AD LDS) instance on the Edge Transport server to verify that the safelist collection data is updated for the user objects and that the Microsoft Exchange EdgeSync service has replicated the data to the AD LDS instance.
+You can view the user objects in the Active Lightweight Directory Services (AD LDS) instance on the Edge Transport server to verify that the safelist collection data is updated for the user objects and that the Microsoft Exchange EdgeSync service has replicated the data to the AD LDS instance.
 
 There are three safelist collection attributes for each user object:
 
@@ -112,7 +112,7 @@ There are three safelist collection attributes for each user object:
 
 If a hexadecimal string, such as `0xac 0xbd 0x03 0xca`, is present on the attribute, the user object was updated. If the attribute has a value of `<Not Set>`, the attribute wasn't updated.
 
-You can search for and view the attributes by using the AD LDS Active Directory Service Interfaces (ADSI) Edit snap-in.
+You can search for and view the attributes by using the AD LDS Active Directory Service Interfaces (ADSI) Edit snap-in.
 
 ## Step 3: Send a test message to verify safelist aggregation is working
 

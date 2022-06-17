@@ -5,6 +5,8 @@ ms:assetid: 98d6869d-ee4a-4088-849d-ef75b0f5d932
 ms:mtpsurl: https://technet.microsoft.com/library/Ff851872(v=EXCHG.150)
 ms:contentKeyID: 55129212
 ms.reviewer:
+ms.topic: how-to
+description: How to run the Microsoft Exchange UM Troubleshooting Tool on Windows 7 or Windows 8
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -37,11 +39,11 @@ The Microsoft Exchange 2010 UM Troubleshooting Tool is an Exchange Management Sh
 
 - If you're running the UM Troubleshooting Tool on a local UM server with Exchange 2010 SP1 or later or on an Exchange 2013 Mailbox server, you may not have to install all the prerequisites listed below. They may have already been installed along with the UM server role. However, if you're installing the UM Troubleshooting Tool on a 64-bit computer other than a server that is running the UM server role, you will need to install the following components:
 
-  - Microsoft .NET Framework 3.5 Service Pack 1 (SP1). See [Microsoft .NET Framework 3.5 Service Pack 1](https://www.microsoft.com/download/details.aspx?id=22).
+  - Microsoft .NET Framework 3.5 Service Pack 1 (SP1). See [Microsoft .NET Framework 3.5 Service Pack 1](https://www.microsoft.com/download/details.aspx?id=22).
 
-  - If the tool will be run on a Windows Vista or Windows Server 2008 computer, see [Microsoft .NET Framework 3.5 Family Update for Windows Vista x64, and Windows Server 2008 x64](https://www.microsoft.com/download/details.aspx?id=1055).
+  - If the tool will be run on a Windows Vista or Windows Server 2008 computer, see [Microsoft .NET Framework 3.5 Family Update for Windows Vista x64, and Windows Server 2008 x64](https://www.microsoft.com/download/details.aspx?id=1055).
 
-  - Windows Remote Management (WinRM) 2.0 and Windows PowerShell V2 (Windows6.0-KB968930.msu). See Microsoft Knowledge Base article 968930, [Windows Management Framework Core package (Windows PowerShell 2.0 and WinRM 2.0)](https://support.microsoft.com/help/968930).
+  - Windows Remote Management (WinRM) 2.0 and Windows PowerShell V2 (Windows6.0-KB968930.msu). See Microsoft Knowledge Base article 968930, [Windows Management Framework Core package (Windows PowerShell 2.0 and WinRM 2.0)](https://support.microsoft.com/help/968930).
 
   - Microsoft Unified Communications Managed API 2.0 Core Runtime (UcmaRuntimeWebDownloadX64.msi).
 

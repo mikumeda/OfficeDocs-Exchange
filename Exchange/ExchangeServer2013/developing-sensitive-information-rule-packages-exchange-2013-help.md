@@ -269,8 +269,8 @@ Next, tune the confidence level for each Pattern or Evidence in your rules based
 
 Confidence Level = True Positives / (True Positives + False Positives)
 
-|**Pattern or Evidence**|**True Positives**|**False Positives**|**Confidence Level**|
-|:-----|:-----|:-----|:-----|
+|Pattern or Evidence|True Positives|False Positives|Confidence Level|
+|---|---|---|---|
 |P<sub>1</sub>or E<sub>1</sub>|4|1|80%|
 |P<sub>2</sub>or E<sub>2</sub>|2|2|50%|
 |P<sub>n</sub>or E<sub>n</sub>|9|10|47%|

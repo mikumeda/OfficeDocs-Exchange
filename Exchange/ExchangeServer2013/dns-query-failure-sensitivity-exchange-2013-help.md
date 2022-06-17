@@ -29,11 +29,11 @@ The Exchange server queries the configured DNS servers to find the DNS records t
 
   - **Mail exchange (MX) records for the domain part of the external recipient**: The MX record contains the fully qualified domain name (FQDN) of the messaging server that's responsible for accepting messages for the domain, and a preference value for that messaging server. A lower preference value indicates a preferred messaging server. The preference value is important if the domain has more than one MX record. To optimize fault tolerance, most organizations use multiple messaging servers and multiple MX records that have different preference values.
 
-  - **Address (A) records for the destination messaging servers**: Every messaging server that's used in an MX record should have a corresponding A record. The A record is used to find the IP address of the destination messaging server. The subscribed Edge Transport server uses the IP address to open an SMTP connection with the destination messaging server. Although it's technically possible to use the FQDN of a canonical name (CNAME) record in an MX record, this practice violates RFC 974, RFC 1034, RFC 1912, and RFC 2181, and is therefore not supported by most messaging servers.
+  - **Address (A) records for the destination messaging servers**: Every messaging server that's used in an MX record should have a corresponding A record. The A record is used to find the IP address of the destination messaging server. The subscribed Edge Transport server uses the IP address to open an SMTP connection with the destination messaging server. Although it's technically possible to use the FQDN of a canonical name (CNAME) record in an MX record, this practice violates RFC 974, RFC 1034, RFC 1912, and RFC 2181, and is therefore not supported by most messaging servers.
 
     The required combination of iterative DNS queries and recursive DNS queries that start with a root DNS server is used to resolve the FQDN of the messaging server that's found in the MX record into an IP address.
 
-In Exchange 2013, there's a DNS query limit that's not configurable of 5 seconds for each DNS server, and a one-minute limit for the entire DNS query.
+In Exchange 2013, there's a DNS query limit that's not configurable of 5 seconds for each DNS server, and a one-minute limit for the entire DNS query.
 
 ## Potential DNS problems
 
@@ -49,7 +49,7 @@ In Exchange 2013, when a DNS query results in errors, the query continues to the
 
 You can control the DNS query failure sensitivity by modifying the `%ExchangeInstallPath%bin\EdgeTransport.exe.config` XML application configuration file. This file is associated with the Microsoft Exchange Transport service. Changes you save to this file are applied after you restart the Microsoft Exchange Transport service. When you restart this service, mail flow on the server is temporarily interrupted. The DNS query failure sensitivity is controlled by the *DnsFaultTolerance* key in the EdgeTransport.exe.config file. This key uses the following values:
 
-  - **Lenient**: When the DNS query encounters a combination of valid MX records and invalid MX records, the DNS query continues until the DNS query time-out value of one minute is reached. The invalid MX records are discarded, and the valid MX record that has the lowest preference value is used to deliver the message to the destination messaging server. This is the default value.
+  - **Lenient**: When the DNS query encounters a combination of valid MX records and invalid MX records, the DNS query continues until the DNS query time-out value of one minute is reached. The invalid MX records are discarded, and the valid MX record that has the lowest preference value is used to deliver the message to the destination messaging server. This is the default value.
 
   - **Normal**: When the DNS query first encounters an invalid MX record, any resolved MX records that have a preference value that's greater than or equal to the invalid MX records are immediately discarded. The remaining MX record that has the lowest preference value is used to deliver the message to the destination messaging server without waiting for the whole DNS query to time out. Although this behavior may result in faster message delivery, the potential drawback of this behavior is the DNS query may have no valid MX records if the following conditions are true:
 

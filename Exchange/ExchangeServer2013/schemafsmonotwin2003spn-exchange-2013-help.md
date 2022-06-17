@@ -21,22 +21,22 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 setup can't continue because the domain controller assigned the Active Directory directory service schema master role, also known as flexible single master operations (FSMO), isn't running Microsoft Windows Server 2003 Service Pack 1 (SP1) or a later version.
+Microsoft Exchange Server 2007 setup can't continue because the domain controller assigned the Active Directory directory service schema master role, also known as flexible single master operations (FSMO), isn't running Microsoft Windows Server 2003 Service Pack 1 (SP1) or a later version.
 
-Exchange 2007 setup requires that the domain controller that serves as the schema FSMO run Windows Server 2003 SP1 or a later version.
+Exchange 2007 setup requires that the domain controller that serves as the schema FSMO run Windows Server 2003 SP1 or a later version.
 
-The FSMO controls all updates and modifications to the Active Directory schema.
+The FSMO controls all updates and modifications to the Active Directory schema.
 
 To resolve this issue, use one or more of the following methods:
 
-  - Upgrade the FSMO domain controller to Windows Server 2003 SP1 or a later version and rerun Microsoft Exchange setup.
+  - Upgrade the FSMO domain controller to Windows Server 2003 SP1 or a later version and rerun Microsoft Exchange setup.
 
-  - If there's an FSMO domain controller running Microsoft Windows Server 2003 Service Pack 1 (SP1) or a later version in the Exchange organization, run Exchange 2007 setup with the /domaincontroller parameter pointing to that FSMO domain controller:
+  - If there's an FSMO domain controller running Microsoft Windows Server 2003 Service Pack 1 (SP1) or a later version in the Exchange organization, run Exchange 2007 setup with the /domaincontroller parameter pointing to that FSMO domain controller:
 
     \[*/DomainController*, or */dc* *\<FQDN of domain controller\>*\]
 
     Use the */DomainController* parameter to specify the domain controller to use to read from and write to Active Directory during setup. You can use NetBIOS or the fully qualified domain name (FQDN) format.
 
-To obtain the latest service pack for Windows Server 2003, see [KB889100](https://support.microsoft.com/help/889100).
+To obtain the latest service pack for Windows Server 2003, see [KB889100](https://support.microsoft.com/help/889100).
 
-For more information about Exchange Server 2007 Setup parameters, see "How to Install Exchange 2007 in Unattended Mode" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/aa997281(v=exchg.80)](/previous-versions/office/exchange-server-2007/aa997281(v=exchg.80))) in the Exchange Server 2007 product documentation.
+For more information about Exchange Server 2007 Setup parameters, see "How to Install Exchange 2007 in Unattended Mode" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/aa997281(v=exchg.80)](/previous-versions/office/exchange-server-2007/aa997281(v=exchg.80))) in the Exchange Server 2007 product documentation.

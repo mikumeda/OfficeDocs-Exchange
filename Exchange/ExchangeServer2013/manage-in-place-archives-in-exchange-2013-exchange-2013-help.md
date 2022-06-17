@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-In-Place Archiving helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing you to meet your organization's message retention and eDiscovery requirements. With archiving enabled, users can store messages in an archive mailbox, which is accessible by using Microsoft Outlook and Outlook Web App.
+In-Place Archiving helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing you to meet your organization's message retention and eDiscovery requirements. With archiving enabled, users can store messages in an archive mailbox, which is accessible by using Microsoft Outlook and Outlook Web App.
 
 ## What do you need to know before you begin?
 
@@ -85,7 +85,7 @@ For detailed syntax and parameter information, see [New-Mailbox](/powershell/mod
 
 To verify that you've successfully created a user mailbox with an on-premises archive, do one of the following:
 
-- In the EAC, navigate to **Recipients**  \> **Mailboxes**, and then select the new user mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created.
+- In the EAC, navigate to **Recipients**  \> **Mailboxes**, and then select the new user mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created.
 
 - In the Shell, run the following command to display information about the new user mailbox and archive.
 
@@ -101,7 +101,7 @@ You can also create archives for existing users that have a mailbox but aren't a
 
 ### Use the EAC
 
-1. Navigate to **Recipients**  \> **Mailboxes**.
+1. Navigate to **Recipients**  \> **Mailboxes**.
 
 2. Select a mailbox.
 
@@ -132,7 +132,7 @@ For detailed syntax and parameter information, see [Enable-Mailbox](/powershell/
 
 To verify that you've successfully enabled an on-premises archive for an existing mailbox, do one of the following:
 
-- In the EAC, navigate to **Recipients**  \> **Mailboxes**, and then select the mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created.
+- In the EAC, navigate to **Recipients**  \> **Mailboxes**, and then select the mailbox from the list. In the details pane, under **In-Place Archive**, confirm that it is set to **Enabled**. Click **View details** to view archive properties, including archive status and the mailbox database in which it is created.
 
 - In the Shell, run the following command to display information about the new archive.
 
@@ -153,7 +153,7 @@ If you want to reconnect the on-premises archive to that mailbox, you can use th
 
 ### Use the EAC
 
-1. Navigate to **Recipients**  \> **Mailboxes**.
+1. Navigate to **Recipients**  \> **Mailboxes**.
 
 2. Select a mailbox.
 

@@ -22,10 +22,10 @@ manager: serdars
 # Default Retention Policy in Exchange Online
 
 > [!IMPORTANT]
-> Please refer to the [Microsoft 365 security center](https://security.microsoft.com/homepage) and the [Microsoft 365 compliance center](https://compliance.microsoft.com/homepage) for Exchange security and compliance features. They are no longer available in the new [Exchange admin center](https://admin.exchange.microsoft.com).
+> Please refer to the [Microsoft 365 security center](https://security.microsoft.com/homepage) and the [Microsoft Purview compliance portal](https://compliance.microsoft.com/homepage) for Exchange security and compliance features. They are no longer available in the new [Exchange admin center](https://admin.exchange.microsoft.com).
 
 > [!NOTE]
-> To proactively retain or delete mailbox content for information governance in Microsoft 365, we recommend that you use [retention policies and retention labels](/microsoft-365/compliance/retention) from the [Microsoft 365 compliance center](https://compliance.microsoft.com), instead of messaging records management that's described on this page. However, you should continue using messaging records management to move messages to archive mailboxes.
+> To proactively retain or delete mailbox content for information governance in Microsoft 365, we recommend that you use [retention policies and retention labels](/microsoft-365/compliance/retention) from the [Microsoft Purview compliance portal](https://compliance.microsoft.com), instead of messaging records management that's described on this page. However, you should continue using messaging records management to move messages to archive mailboxes.
 >
 > If you currently use messaging records management, this older feature will continue to work side-by-side with retention policies and retention labels. However, we recommend that going forward, you use retention policies and retention labels instead. They provide you with a single mechanism to centrally manage both retention and deletion of content across Microsoft 365.
 
@@ -36,10 +36,6 @@ You can modify tags included in the Default MRM Policy, for example by changing 
 ## Retention tags linked to the Default MRM Policy
 
 The following table lists the default retention tags linked to the Default MRM Policy.
-
-<br>
-
-****
 
 |Name|Type|Retention age (days)|Retention action|
 |---|---|---|---|
@@ -54,23 +50,17 @@ The following table lists the default retention tags linked to the Default MRM P
 |1 Year Delete|Personal tag|365|Delete and Allow Recovery|
 |5 Year Delete|Personal tag|1,825|Delete and Allow Recovery|
 |Never Delete|Personal tag|Not applicable|Delete and Allow Recovery|
-|
 
 ## What you can do with the Default MRM Policy
 
-<br>
-
-****
-
 |You can...|In Exchange Online...|In Exchange Server...|
-|:-----|:-----|:-----|
+|---|---|---|
 |Apply the Default MRM Policy automatically to new users|Yes, applied by default. No action is required.|Yes, applied by default if you also create an archive for the new user. <p> If you create an archive for the user later, the policy is applied automatically only if the user doesn't have an existing Retention Policy.|
 |Modify the retention age or retention action of a retention tag linked to the policy|Yes|Yes|
 |Disable a retention tag linked to the policy|Yes|Yes|
 |Add a retention tag to the policy|Yes|Yes|
 |Remove a retention tag from the policy|Yes|Yes|
 |Set another policy as the default retention policy to be applied automatically to new users|No|No|
-|
 
 ## More information
 

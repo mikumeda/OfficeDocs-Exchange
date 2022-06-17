@@ -4,6 +4,7 @@ TOCTitle: Older database files present_SecondSGFilesExist
 ms:assetid: fe2908e7-df8b-4f35-946a-cfbf8521e93a
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.secondsgfilesexist(v=EXCHG.150)
 ms:contentKeyID: 46629214
+ms.topic: article
 ms.reviewer: 
 description: "Exchange Setup can't continue - Older database files are present"
 manager: serdars
@@ -22,9 +23,9 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because it detected existing Microsoft Exchange database files in the target installation path.
+Microsoft® Exchange Server 2007 setup cannot continue because it detected existing Microsoft Exchange database files in the target installation path.
 
-Exchange 2007 setup requires that the target installation path be empty of Microsoft Exchange database files.
+Exchange 2007 setup requires that the target installation path be empty of Microsoft Exchange database files.
 
 To resolve this issue, remove all existing files from target installation paths and then rerun setup.
 

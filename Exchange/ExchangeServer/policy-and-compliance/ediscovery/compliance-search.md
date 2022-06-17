@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to run a script to create an In-Place eDiscovery search that uses the list of source mailboxes and search query from a Compliance Search.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 9f0f4a3d-de9a-4d8a-9172-2edf4288d766
 ms.reviewer:
 title: Use Compliance Search to search all mailboxes in Exchange Server

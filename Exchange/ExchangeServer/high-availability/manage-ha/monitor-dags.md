@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Resources and methods for monitoring the health and status of DAGs in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: f5bdfd6e-e93c-4d96-8bc2-548750d51930
 ms.reviewer:
 title: Monitor database availability groups
@@ -27,8 +27,8 @@ Use the [Get-MailboxDatabaseCopyStatus](/powershell/module/exchange/get-mailboxd
 
 **Database copy status**
 
-|**Database copy status**|**Description**|
-|:-----|:-----|
+|Database copy status|Description|
+|---|---|
 |Failed|The mailbox database copy is in a Failed state because it isn't suspended, and it isn't able to copy or replay log files. While in a Failed state and not suspended, the system will periodically check whether the problem that caused the copy status to change to Failed has been resolved. After the system has detected that the problem is resolved, and barring no other issues, the copy status will automatically change to Healthy.|
 |Seeding|The mailbox database copy is being seeded, the content index for the mailbox database copy is being seeded, or both are being seeded. Upon successful completion of seeding, the copy status should change to Initializing.|
 |SeedingSource|The mailbox database copy is being used as a source for a database copy seeding operation.|
@@ -81,8 +81,8 @@ The **Test-ReplicationHealth** cmdlet is designed for the proactive monitoring o
 
 **Test-ReplicationHealth cmdlet tests**
 
-|**Test name**|**Description**|
-|:-----|:-----|
+|Test name|Description|
+|---|---|
 |ClusterService|Verifies that the Cluster service is running and reachable on the specified DAG member, or if no DAG member is specified, on the local server.|
 |ReplayService|Verifies that the Microsoft Exchange Replication service is running and reachable on the specified DAG member, or if no DAG member is specified, on the local server.|
 |ActiveManager|Verifies that the instance of Active Manager running on the specified DAG member, or if no DAG member is specified, the local server, is in a valid role (primary, secondary, or stand-alone).|
@@ -171,8 +171,8 @@ The script supports parameters that allow you to customize the script's behavior
 
 **CollectOverMetrics.ps1 script parameters**
 
-|**Parameter**|**Description**|
-|:-----|:-----|
+|Parameter|Description|
+|---|---|
 | _DatabaseAvailabilityGroup_|Specifies the name of the DAG from which you want to collect metrics. If this parameter is omitted, the DAG of which the local server is a member will be used. Wildcard characters can be used to collect information from and report on multiple DAGs.|
 | _Database_|Provides a list of databases for which the report needs to be generated. Wildcard characters are supported, for example, `-Database:"DB1","DB2"` or `-Database:"DB*"`.|
 | _StartTime_|Specifies the duration of the time period to report on. The script gathers only the events logged during this period. As a result, the script may capture partial operation records (for example, only the end of an operation at the start of the period or vice-versa). If neither _StartTime_ nor _EndTime_ is specified, the script defaults to the past 24 hours. If only one parameter is specified, the period will be 24 hours, either beginning or ending at the specified time.|
@@ -225,8 +225,8 @@ The CollectReplicationMetrics.ps1 script supports parameters that allow you to c
 
 **CollectReplicationMetrics.ps1 script parameters**
 
-|**Parameter**|**Description**|
-|:-----|:-----|
+|Parameter|Description|
+|---|---|
 | _DagName_|Specifies the name of the DAG from which you want to collect metrics. If this parameter is omitted, the DAG of which the local server is a member will be used.|
 | _DatabaseNames_|Provides a list of databases for which the report needs to be generated. Wildcard characters are supported for use, for example, `-DatabaseNames:"DB1","DB2"` or `-DatabaseNames:"DB*"`.|
 | _ReportPath_|Specifies the folder used to store the results of event processing. If this parameter is omitted, the Scripts folder will be used.|

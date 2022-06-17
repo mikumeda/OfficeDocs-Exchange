@@ -29,8 +29,8 @@ You may need to coordinate schedules with people in different organizations or w
 
 The following sharing scenarios are supported in Exchange Online:
 
-|**Sharing goal**|**Setting to use**|**Requirements**|
-|:-----|:-----|:-----|
+|Sharing goal|Setting to use|Requirements|
+|---|---|---|
 |Share calendars with another Microsoft 365 or Office 365 organization|Organization relationships|None, ready to configure|
 |Share calendars with an on-premises Exchange organization|Organization relationships|The on-premises Exchange administrator has to set up an authentication relationship with the cloud (also known as "federation") and must meet minimum software requirements|
 |Share a Microsoft 365 or Office 365 user's calendar with another internet user|Sharing policies|None, ready to configure|
@@ -41,7 +41,7 @@ The following sharing scenarios are supported in Exchange Online:
 
 The following table contains links to articles that will help you learn about and manage sharing in Exchange Online.
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[Organization relationships in Exchange Online](organization-relationships/organization-relationships.md)|Learn more about the one-to-one relationships between organizations that enable calendar free/busy sharing.|
 |[Sharing policies in Exchange Online](sharing-policies/sharing-policies.md)|Learn more about the person-to-person policies that enable calendar sharing.|

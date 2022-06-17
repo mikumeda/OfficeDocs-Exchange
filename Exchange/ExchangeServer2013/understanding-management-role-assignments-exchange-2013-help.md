@@ -5,6 +5,8 @@ ms:assetid: 1dc33dd6-52fb-4852-a5ce-027bc73e1d8f
 ms:mtpsurl: https://technet.microsoft.com/library/Dd335131(v=EXCHG.150)
 ms:contentKeyID: 49289190
 ms.reviewer: 
+ms.topic: article
+description: Understand management role assignments in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

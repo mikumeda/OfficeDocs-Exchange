@@ -25,17 +25,12 @@ The membership list is now stored for each DDG and is updated once every 24 hour
 
 The changes in behavior for dynamic distribution groups in Exchange Online are described in the following table:
 
-<br>
-
-****
-
 |Area|Old behavior|New behavior|
 |---|---|---|
 |Mail delivery latency|Unpredictable. The time it takes to deliver mail to a DDG depends on how complex the filters are on that DDG.|Faster and more predictable overall. You should see delivery times more in line with those for regular distribution groups.|
 |Creation|DDGs could be used immediately after being created. |It takes 2 hours for the initial membership list to be calculated and be available for use.|
 |Modification|DDGs could be used immediately after any changes were made|Users have to wait up to 2 hours for the membership list to be recalculated and links updated.|
 |Membership list "freshness"|The list of members was up to date in real time.|The list of members for each DDG is refreshed every 24 hours.|
-|
 
 > [!IMPORTANT]
 > The list of DDG members might become stale. For example, if a user has left a department that was used as a filter for the DDG, they might continue to receive mail that's sent to the DDG for the next 24 hours util the membership list is refreshed.
@@ -53,7 +48,7 @@ Get-DynamicDistributionGroupMember -Identity <DDGIdentity>
 For detailed parameter and syntax information, see [Get-DynamicDistributionGroupMember](/powershell/module/exchange/get-dynamicdistributiongroupmember).
 
 > [!NOTE]
-> Do not use the [old procedure](/exchange/recipients/dynamic-distribution-groups/view-dynamic-distribution-group-members) for viewing members of a DDG. The old procedure only evaluates the users that satisfy the DDG filters at the time you run the old procedure. The old procedure doesn't return the calculated list of members that's stored on the DDG object.
+> Don't use the old procedure for viewing members of a DDG as described in [View members of a dynamic distribution group in Exchange Online](/exchange/recipients-in-exchange-online/manage-dynamic-distribution-groups/view-group-members). The old procedure returns all users that satisfy the DDG filters at the time you run the command. The old procedure does not return the calculated list of members that are stored on the DDG object.
 
 ## Refresh the membership of a DDG
 
@@ -67,7 +62,3 @@ For detailed syntax and parameter information, see [Set-DynamicDistributionGroup
 
 > [!NOTE]
 > You can run the refresh command only after more than one hour has passed since the last membership refresh.
-
-## Support
-
-If you need further assistance, contact the [Modern DDG Support team](mailto:modernddgsupport@service.microsoft.com).

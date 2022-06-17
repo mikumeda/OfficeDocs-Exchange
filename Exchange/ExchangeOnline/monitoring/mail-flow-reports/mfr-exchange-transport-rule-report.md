@@ -15,9 +15,6 @@ description: "Admins can learn how to use the Exchange transport rule report to 
 
 # Exchange transport rule report in the new Exchange admin center in Exchange Online
 
-> [!NOTE]
-> This article describes features that are currently in Preview, are not available in all organizations, and are subject to change.
-
 The **Exchange transport rule** report in the new Exchange admin center (new EAC) displays information on messages that were affected by mail flow rules (also known as transport rules).
 
 > [!NOTE]

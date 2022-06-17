@@ -21,8 +21,6 @@ description: "Remote Domains attributes can be copied by the Hybrid Configuratio
 
 The following attributes of Remote Domains are copied from an on-premises Exchange organization to Exchange Online when the **Organization Configuration Transfer** option is selected in the Hybrid Configuration Wizard.
 
-****
-
 |RemoteDomains|Available In|
 |---|---|
 |AllowedOOFType|Exchange 2010, 2013, 2016|
@@ -47,4 +45,3 @@ The following attributes of Remote Domains are copied from an on-premises Exchan
 |TrustedMailInboundEnabled|Exchange 2010, 2013, 2016|
 |TrustedMailOutboundEnabled|Exchange 2010, 2013, 2016|
 |UseSimpleDisplayName|Exchange 2010, 2013, 2016|
-|

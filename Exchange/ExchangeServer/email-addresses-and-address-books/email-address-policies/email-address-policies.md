@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about email address policies in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: b63b63bb-6faf-4337-8441-50bc64b49bb8
 ms.reviewer: 
 title: Email address policies in Exchange Server
@@ -66,8 +66,8 @@ You can use email address policies to assign multiple SMTP email addresses to re
 
 All SMTP email address formats in the Exchange Management Shell, or custom SMTP email address formats in the EAC require you to use variables to define the local part of the email address. These variables are described in the following table:
 
-|**Variable**|**Value**|
-|:-----|:-----|
+|Variable|Value|
+|---|---|
 |%d|Display name|
 |%g|Given name (first name)|
 |%i|Middle initial|
@@ -82,8 +82,8 @@ In addition to variables, you can also use US ASCII text characters that are all
 
 In the EAC, you can selected from a short list of precanned SMTP email address formats. These address formats are described in the following table, where the example user is named Elizabeth Brunner, and the domain is contoso.com:
 
-|**Example**|**Exchange Management Shell equivalent**|
-|:-----|:-----|
+|Example|Exchange Management Shell equivalent|
+|---|---|
 |`<alias>@contoso.com`|`%m@contoso.com`|
 |`elizabeth.brunner@contoso.com`|`%g.%s@contoso.com`|
 |`ebrunner@contoso.com`|`%1g%s@contoso.com`|
@@ -96,11 +96,9 @@ In the EAC, you can selected from a short list of precanned SMTP email address f
 
 Recipient filters identify the recipients that the email address policy applies to. There are two basic options: **precanned recipient filters** and **custom recipient filters**. These are basically the same recipient filtering options that are used by dynamic distribution groups and address books. The following table summarizes the differences between the two filtering methods.
 
-****
-
-|**Recipient filtering method**|**User interface**|**Filterable recipient properties**|**Filter operators**|
-|:-----|:-----|:-----|:-----|
-|Precanned recipient filters|Exchange admin center (EAC) and the Exchange Management Shell|Limited to: <br/>• Recipient type (All recipient types or any combination of user mailboxes, resource mailboxes, mail contacts, mail users, and groups) <br/>• Company <br/> • Custom Attribute 1 to 15 <br/>• State or Province <br/>• Department|Property values require an exact match. Wildcards and partial matches aren't supported. For example, "Sales" doesn't match the value "Sales and Marketing". <br/> Multiple values of the same property always use the **or** operator. For example, "Department equals Sales or Department equals Marketing". <br/><br/> Multiple properties always use the **and** operator. For example, "Department equals Sales and Company equals Contoso".|
+|Recipient filtering method|User interface|Filterable recipient properties|Filter operators|
+|---|---|---|---|
+|Precanned recipient filters|Exchange admin center (EAC) and the Exchange Management Shell|Limited to:<ul><li>Recipient type (All recipient types or any combination of user mailboxes, resource mailboxes, mail contacts, mail users, and groups)</li><li>Company</li><li>Custom Attribute 1 to 15</li><li>State or Province</li><li>Department</li></ul>|Property values require an exact match. Wildcards and partial matches aren't supported. For example, "Sales" doesn't match the value "Sales and Marketing". <br/> Multiple values of the same property always use the **or** operator. For example, "Department equals Sales or Department equals Marketing". <br/><br/> Multiple properties always use the **and** operator. For example, "Department equals Sales and Company equals Contoso".|
 |Custom recipient filters|Exchange Management Shell only|You can use virtually any available recipient attributes.|You use OPATH filter syntax to specify any available Windows PowerShell filter operators. Wildcards and partial matches are supported.|
 
  **Notes**:

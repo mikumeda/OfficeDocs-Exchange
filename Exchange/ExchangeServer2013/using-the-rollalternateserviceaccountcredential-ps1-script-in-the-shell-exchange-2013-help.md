@@ -5,6 +5,8 @@ ms:assetid: 6ac55aae-472a-4ed6-83df-2d0e7b48e05c
 ms:mtpsurl: https://technet.microsoft.com/library/Ff808311(v=EXCHG.150)
 ms:contentKeyID: 63937186
 ms.reviewer: 
+ms.topic: article
+description: Use the RollAlternateServiceAccountPassword.ps1 script in Microsoft Exchange Server to update an alternate service account credential and distribute the update to specified Client Access servers
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,10 +19,12 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-You can use the RollAlternateServiceAccountPassword.ps1 script in Exchange Server 2013 fto update an alternate service account credential (ASA credential) and distribute the update to specified Client Access servers.
+You can use the RollAlternateServiceAccountPassword.ps1 script in Exchange Server 2013 to update an alternate service account credential (ASA credential) and distribute the update to specified Client Access servers.
 
 > [!NOTE]
-> The Exchange Management Shell doesn't load scripts automatically. You need to precede all scripts with **.\\** For example, to run the RollAlternateServiceAccountPassword.ps1 script, type `.\RollAlternateServiceAccountPassword.ps1`. <br/><br/> This script is provided in English only.
+> The Exchange Management Shell doesn't load scripts automatically. You need to precede all scripts with **.\\** For example, to run the RollAlternateServiceAccountPassword.ps1 script, type `.\RollAlternateServiceAccountPassword.ps1`.
+>
+> This script is provided in English only.
 
 For more information about how to use and write scripts, see [Scripting with the Exchange Management Shell](/powershell/module/microsoft.powershell.core/about/about_scripts).
 
@@ -91,8 +95,8 @@ You can also examine the event log on the computer on which the script is run. T
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -129,9 +133,9 @@ You can use the log to confirm that the task has been running successfully.
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

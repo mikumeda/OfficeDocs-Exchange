@@ -33,8 +33,8 @@ To authorize or restrict dialing, the following settings must be configured corr
 
 Where you authorize dialing rule groups depends on the types of callers that you want to allow to make outgoing calls. For example, if you want only Outlook Voice Access users to place outgoing calls, you would create your dialing rules and then authorize those dialing rule groups to the UM mailbox policy that the Outlook Voice Access users are linked to. The following table shows how to authorize calls for different types of callers.
 
-|**Type of caller**|**Authorize dialing rule groups here**|
-|:-----|:-----|
+|Type of caller|Authorize dialing rule groups here|
+|---|---|
 |Unauthenticated callers who call in to an Outlook Voice Access number and don't enter a PIN|UM dial plan. For details, see [Authorize calls for users in a dial plan](authorize-calls-for-users-in-a-dial-plan-exchange-2013-help.md).|
 |Authenticated callers who call in to an Outlook Voice Access number and enter a PIN|UM mailbox policy for the caller. For details, see [Authorize calls for a group of users](authorize-calls-for-a-group-of-users-exchange-2013-help.md).|
 |Unauthenticated callers who call in to a telephone number that's configured on a UM auto attendant|UM auto attendant. For details, see [Authorize calls for auto attendant callers](authorize-calls-for-auto-attendant-callers-exchange-2013-help.md).|

@@ -5,6 +5,8 @@ ms:assetid: 76fa4e23-f0f6-473b-9227-70ded907578f
 ms:mtpsurl: https://technet.microsoft.com/library/Dn169553(v=EXCHG.150)
 ms:contentKeyID: 53875525
 ms.reviewer: 
+ms.topic: article
+description: Unsupported characters for Microsoft Exchange object names
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -25,9 +27,9 @@ The following table lists characters that aren't supported for use in the names 
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

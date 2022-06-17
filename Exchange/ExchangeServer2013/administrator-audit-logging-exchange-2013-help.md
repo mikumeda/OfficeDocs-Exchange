@@ -6,6 +6,7 @@ ms:mtpsurl: https://technet.microsoft.com/library/Dd335144(v=EXCHG.150)
 ms:contentKeyID: 50117641
 ms.topic: article
 ms.reviewer: 
+description: About administrator audit logging in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: You can use the Call Statistics report to view information about the type and status of incoming calls handled by the Exchange servers.
 ms.assetid: f6fdbe17-d1d2-442a-aa13-06b908d9c33a
 f1.keywords:
 - NOCSH

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about In-Place eDiscovery in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 6377cb7a-3416-4e15-8571-c45d2160fc6f
 ms.reviewer:
 title: In-Place eDiscovery in Exchange Server
@@ -265,8 +265,8 @@ In Exchange Server, the resources In-Place eDiscovery uses are controlled with t
 
 The default throttling policy contains the following parameters. You can change the default values to meet your organization's requirements by creating a new throttling policy with an Organization scope and name it as "DiscoveryThrottlingPolicy" only.
 
-|**Parameter**|**Description**|**Default value**|
-|:-----|:-----|:-----|
+|Parameter|Description|Default value|
+|---|---|---|
 |DiscoveryMaxConcurrency|The maximum number of In-Place eDiscovery searches a user can perform concurrently.|2|
 |DiscoveryMaxMailboxes|The maximum number of mailboxes that can be searched in a single In-Place eDiscovery search. Public folder mailboxes are also counted against the source mailbox limit.|10,000<sup>1</sup>|
 |DiscoveryMaxStatsSearchMailboxes|The maximum number of mailboxes that can be searched in a single In-Place eDiscovery search that still allows you to view keyword statistics.|100  <br/> **Note**: After you run an eDiscovery search estimate, you can view keyword statistics. These statistics show details about the number of items returned for each keyword used in the search query. If more than 100 source mailboxes are included in the search, an error will be returned if you try to view keyword statistics.|
@@ -280,8 +280,8 @@ The default throttling policy contains the following parameters. You can change 
 
 The following table contains links to Exchange Server topics that will help you learn about and manage In-Place eDiscovery.
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[Assign eDiscovery permissions in Exchange Server](assign-permissions.md)|Learn how to give a user access to use In-Place eDiscovery in the EAC (and by using the corresponding cmdlets) to search Exchange mailboxes.|
 |[Create an In-Place eDiscovery search in Exchange Server](create-searches.md)|Learn how to create an In-Place eDiscovery search, and how to estimate and preview eDiscovery search results.|
 |[Copy eDiscovery search results to a discovery mailbox](copy-results-to-discovery-mailboxes.md)|Learn how to copy the results of an eDiscovery search to a discovery mailbox.|

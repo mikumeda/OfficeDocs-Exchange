@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to import (install) a certificate on Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 43fbe354-ccfc-45b0-9fbc-4b23c6c5ccf4
 ms.reviewer:
 title: Import or install a certificate on an Exchange server
@@ -75,22 +75,21 @@ These are the types of certificate files that you can import on an Exchange serv
 
 ## Use the Exchange Management Shell to import a certificate on an Exchange server
 
-To import a binary certificate file (PKCS #12 files that have .cer, .crt, .der, .p12, or .pfx filename extensions), use the following syntax:
+To import a certificate file, use the following syntax:
 
 ```PowerShell
-Import-ExchangeCertificate -FileName "<FilePathOrUNCPath>\<FileName>" -Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force) [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
+Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('<FilePathOrUNCPath>')) [-Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force)] [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
 ```
+
+You use this syntax with the following types of certificate files:
+
+- Binary certificate files (PKCS #12 files that have .cer, .crt, .der, .p12, or .pfx filename extensions).
+- Chain of certificates files (PKCS #7 text files that have .p7b or .p7c filename extensions).
 
 This example imports the certificate file `\\FileServer01\Data\Fabrikam.pfx` that's protected by the password P@ssw0rd1 on the local Exchange server.
 
 ```PowerShell
-Import-ExchangeCertificate -FileName "\\FileServer01\Data\Fabrikam.pfx" -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
-```
-
-To import a chain of certificates file (PKCS #7 text files that have .p7b or .p7c filename extensions) that's associated with a certificate, use the following syntax:
-
-```PowerShell
-Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('<FilePathOrUNCPath>'))
+Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('\\FileServer01\Data\Fabrikam.pfx')) -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
 ```
 
 This example imports the chain of certificates file `\\FileServer01\Data\Chain of Certificates.p7b`.
@@ -99,15 +98,13 @@ This example imports the chain of certificates file `\\FileServer01\Data\Chain o
 Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('\\FileServer01\Data\Chain of Certificates.p7b'))
 ```
 
+For detailed syntax and parameter information, see [Import-ExchangeCertificate](/powershell/module/exchange/import-exchangecertificate).
+
 **Notes:**
 
 - You need to repeat this procedure on each Exchange server where you want to import the certificate (run the command on the server, or use the _Server_ parameter).
-
-- The _FileName_ and _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path.
-
+- The _FileData_ parameter accepts local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path.
 - If you want to be able to export the certificate from the server where you're importing it, you need to use the _PrivateKeyExportable_ parameter with the value `$true`.
-
-- For more information, see [Import-ExchangeCertificate](/powershell/module/exchange/import-exchangecertificate).
 
 ## How do you know this worked?
 

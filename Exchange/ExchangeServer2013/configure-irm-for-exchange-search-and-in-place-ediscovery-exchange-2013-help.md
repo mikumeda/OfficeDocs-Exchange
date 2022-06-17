@@ -36,7 +36,7 @@ For additional management tasks related to IRM, see [Information Rights Manageme
 
 - IRM must be configured in your Exchange 2013 organization. To learn more, see [Enable or Disable IRM for Internal Messages](enable-or-disable-irm-for-internal-messages-exchange-2013-help.md).
 
-- The Federation mailbox must be added to the Active Directory Rights Management Services (AD RMS) super users group. To learn more, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
+- The Federation mailbox must be added to the Active Directory Rights Management Services (AD RMS) super users group. To learn more, see [Add the Federation Mailbox to the AD RMS Super Users Group](add-the-federation-mailbox-to-the-ad-rms-super-users-group-exchange-2013-help.md).
 
 - You can't use the Exchange admin center (EAC) to configure IRM for Exchange Search and In-Place eDiscovery. You must use the Shell.
 

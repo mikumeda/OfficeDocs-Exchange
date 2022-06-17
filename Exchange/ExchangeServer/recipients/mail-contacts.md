@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how use Exchange admin center (EAC) or the Exchange Management Shell to create and change mail contacts for people outside your organization.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: ed0438ea-f396-480e-b661-9f704b0a04e6
 ms.reviewer:
 title: Manage mail contacts

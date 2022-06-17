@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn about queue properties to use in filters in Exchange Server.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: fbfbdcab-e0d2-4ed9-8f7f-e5fa2c87360d
 ms.reviewer:
 title: Queue properties in Exchange Server
@@ -36,10 +36,6 @@ For more information about Queue Viewer, see [Queue Viewer](queue-viewer.md). Fo
 
 The following table describes the queue properties that you can use as filters in Queue Viewer and the Exchange Management Shell.
 
-<br><br>
-
-****
-
 |Queue Viewer|Exchange Management Shell|Comparison operators|Description|
 |---|---|---|---|
 |n/a| `DeferredMessageCount`|Equals (`-eq`) <p> Does not equal (`-ne`) <p> Greater than (`-gt`) <p> Greater than or equal to (`-ge`) <p> Less than (`-lt`) <p> Less than or equal to (`-le`)|The number of messages returned to the Submission queue because of transient errors that were encountered during recipient resolution. For more information about deferred messages, see [Recipient resolution in Exchange Server](../../mail-flow/mail-routing/recipient-resolution.md).|
@@ -66,4 +62,3 @@ The following table describes the queue properties that you can use as filters i
 |**Status**| `Status`|**Equals** (`eq`) <p> **Does Not Equal** (`-ne`)|The current queue status. A queue can have one of the following status values: Active, Connecting, Suspended, Ready, or Retry. For more information, see [Queue status](queues.md#queue-status).|
 |n/a| `TlsDomain`|Equals (`-eq`) <p> Does Not Equal (`-ne`) <p> Contains (`-like`)|The FQDN of the destination domain if the domain is configured for Domain Security (mutual TLS authentication).|
 |n/a| `Velocity`|Equals (`-eq`) <p> Does not equal (`-ne`) <p> Greater than (`-gt`) <p> Greater than or equal to (`-ge`) <p> Less than (`-lt`) <p> Less than or equal to (`-le`)|A calculated number that indicates how effectively the queue is draining. For more information, see [IncomingRate, OutgoingRate, and Velocity](queues.md#incomingrate-outgoingrate-and-velocity)|
-|

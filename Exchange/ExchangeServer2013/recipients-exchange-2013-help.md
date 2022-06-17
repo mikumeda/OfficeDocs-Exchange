@@ -5,9 +5,11 @@ ms:assetid: 40300ed4-85a5-463d-bb3a-cf787bd44e9d
 ms:mtpsurl: https://technet.microsoft.com/library/Bb201680(v=EXCHG.150)
 ms:contentKeyID: 49315395
 ms.reviewer: 
+ms.topic: article
+description: About recipients in Microsoft Exchange
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -35,8 +37,8 @@ The following table lists the available recipient types. All these recipient typ
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -177,8 +179,8 @@ System mailboxes are created by Exchange in the root domain of the Active Direct
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -302,8 +304,8 @@ The following table contains links to topics that will help you learn about and 
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

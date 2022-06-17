@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to set the number of sign-in failures before a voice mail PIN is reset in Microsoft Exchange Server
 ms.assetid: 4de38499-0a6f-4f00-8697-eeff805d7266
 f1.keywords:
 - NOCSH

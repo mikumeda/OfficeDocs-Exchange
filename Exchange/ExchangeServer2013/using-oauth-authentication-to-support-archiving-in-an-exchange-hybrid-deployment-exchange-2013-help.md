@@ -5,6 +5,8 @@ ms:assetid: deb882b1-1ae2-40f3-a71c-423fafe3d66a
 ms:mtpsurl: https://technet.microsoft.com/library/Dn689104(v=EXCHG.150)
 ms:contentKeyID: 62380199
 ms.reviewer: 
+ms.topic: article
+description: Using OAuth authentication to support Archiving in a Microsoft Exchange hybrid deployment
 manager: serdars
 ms.author: serdars
 author: msdmaguire

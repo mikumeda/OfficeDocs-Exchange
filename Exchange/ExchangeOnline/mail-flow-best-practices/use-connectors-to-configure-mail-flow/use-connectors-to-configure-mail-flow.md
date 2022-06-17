@@ -44,17 +44,12 @@ The process for setting up connectors has changed; instead of using the terms "i
 
 Exchange Online is ready to send and receive email from the internet right away. You don't need to set up connectors unless you have standalone Exchange Online Protection (EOP) or other specific circumstances that are described in the following table:
 
-<br>
-
-****
-
 |Scenario|Description|Connector required?|Connector settings|
 |---|---|:---:|---|
 |You have a standalone EOP subscription.|You have your own on-premises email servers, and you subscribe to EOP only for email protection services for your on-premises mailboxes (you have no mailboxes in Exchange Online). <p> For more information about standalone EOP, see [Standalone Exchange Online Protection](/exchange/standalone-eop/standalone-eop) and the [How connectors work with my on-premises email servers](#how-connectors-work-with-my-on-premises-email-servers) section later in this article.|Yes|**Connector for incoming email:** <ul><li>**From**: Your on-premises email server</li><li>**To**: Office 365</li></ul> <p> **Connector for outgoing email**: <ul><li>**From**: Office 365</li><li>**To**: Your on-premises mail server</li></ul>|
 |Some of your mailboxes are on your on-premises email servers, and some are in Exchange Online.|Before you manually configure connectors, check whether an Exchange hybrid deployment better meets your business needs. <p> For details, see the [I have my own email servers](#i-have-my-own-email-servers) section later in this article and [Exchange Server Hybrid Deployments](../../../ExchangeHybrid/exchange-hybrid.md).|Yes|**Connector for incoming email:** <ul><li>**From**: Your on-premises email server</li><li>**To**: Office 365</li></ul> <p> **Connector for outgoing email:** <ul><li>**From**: Office 365</li><li>**To**: Your on-premises email server</li></ul>|
 |All of your mailboxes are in Exchange Online, you don't have any on-premises email servers, but you need to send email from printers, fax machines, apps, or other devices.|You can _relay_ messages from these non-mailbox entities through Microsoft 365 or Office 365. <p> For details, see [Option 3: Configure a connector to send mail using Office 365 SMTP relay](../how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365.md#option-3-configure-a-connector-to-send-mail-using-microsoft-365-or-office-365-smtp-relay) <p> **Note**: Instead of Office 365 SMTP relay, you can use [direct send](../how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365.md#option-2-send-mail-directly-from-your-printer-or-application-to-microsoft-365-or-office-365-direct-send) to send email from your apps or devices. But, direct send introduces other issues (for example, graylisting or throttling).|Optional|**Only one connector for incoming email:** <ul><li>**From**: Your organization's email server</li><li>**To**: Office 365</li></ul>|
 |You frequently exchange sensitive information with business partners, and you want to apply security restrictions.|You want to use Transport Layer Security (TLS) to encrypt sensitive information or you want to limit the source (IP addresses) for email from the partner domain. <p> For details, see [Set up connectors for secure mail flow with a partner organization](set-up-connectors-for-secure-mail-flow-with-a-partner.md).|Optional|**Connector for incoming email:** <ul><li>**From**: Partner organization</li><li>**To**: Office 365</li></ul> <p> **Connector for outgoing email:** <ul><li>**From**: Office 365</li><li>To: Partner organization</li></ul>|
-|
 
 > [!NOTE]
 > If you don't have Exchange Online or EOP and are looking for information about Send connectors and Receive connectors in Exchange 2016 or Exchange 2019, see [Connectors](../../../ExchangeServer/mail-flow/connectors/connectors.md).
@@ -65,10 +60,6 @@ Exchange Online is ready to send and receive email from the internet right away.
 
 If you have Exchange Online or EOP and your own on-premises email servers, you definitely need connectors. This is more complicated and has more options as described in the following table:
 
-<br>
-
-****
-
 |Your on-premises email organization is|Your service subscription is|Have you completed an Exchange hybrid deployment?|Do I need to set up connectors manually?|
 |---|---|---|---|
 |Exchange 2010 or later|Exchange Online Protection|Not available|Yes. Follow the instructions in [Set up connectors to route mail between Microsoft 365 or Office 365 and your own email servers](set-up-connectors-to-route-mail.md).|
@@ -76,7 +67,6 @@ If you have Exchange Online or EOP and your own on-premises email servers, you d
 |Exchange 2010 or later|Exchange Online|Yes|No. The Hybrid Configuration wizard creates connectors for you. To view or edit those connectors, go to the **Connectors** page in the Exchange admin center (EAC), or rerun the Hybrid Configuration wizard.|
 |Exchange 2007 or earlier|Exchange Online Protection or Exchange Online|Not available|Yes. Follow the instructions in [Set up connectors to route mail between Microsoft 365 or Office 365 and your own email servers](set-up-connectors-to-route-mail.md). <p> In limited circumstances, you might have a hybrid configuration with Exchange Server 2007 and Microsoft 365 or Office 365. Check whether connectors are already set up for your organization by going to the **Connectors** page in the EAC.|
 |Non-Microsoft SMTP server|Exchange Online Protection or Exchange Online|Not available|Yes. Follow the instructions in [Set up connectors to route mail between Microsoft 365 or Office 365 and your own email servers](set-up-connectors-to-route-mail.md).|
-|
 
 ### How connectors work with my on-premises email servers
 

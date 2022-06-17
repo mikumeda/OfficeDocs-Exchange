@@ -5,6 +5,8 @@ ms:assetid: c514c6d0-0157-4c52-9ec6-441d9a30f3df
 ms:mtpsurl: https://technet.microsoft.com/library/Dd351130(v=EXCHG.150)
 ms:contentKeyID: 49289404
 ms.reviewer: 
+ms.topic: article
+description: About the View-only Organization Management management role in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -79,15 +81,15 @@ For more information about role assignments and management scopes, see the follo
 
 ### Management roles assigned to this role group
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -104,7 +106,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="monitoring-role-exchange-2013-help.md">Monitoring role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -113,7 +115,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="view-only-configuration-role-exchange-2013-help.md">View-Only Configuration role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>None</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -122,7 +124,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="view-only-recipients-role-exchange-2013-help.md">View-Only Recipients role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>None</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

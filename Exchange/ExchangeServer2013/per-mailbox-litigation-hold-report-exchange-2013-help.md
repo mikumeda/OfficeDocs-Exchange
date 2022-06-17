@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: If your organization is involved in a legal action, you may have to take steps to preserve relevant data.
 ms.assetid: 98c46226-2f48-42c6-a741-34bb5944f519
 f1.keywords:
 - NOCSH
@@ -47,7 +49,7 @@ For each of these change types, the report includes the user who made the change
 > [!TIP]
 > Want to narrow the search results? Select the start date, end date, or both, and select specific mailboxes to search. Click **Search** to re-run the report.
 
-## How do you know this worked?
+### How do you know this worked?
 
 To verify that you've successfully run a litigation hold report, mailboxes that had litigation hold changes within the date range are displayed in the search results pane. If there are no results, then no changes to litigation hold have taken place within the date range or recent changes haven't taken effect yet.
 

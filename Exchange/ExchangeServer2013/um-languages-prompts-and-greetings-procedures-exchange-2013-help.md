@@ -5,6 +5,8 @@ ms:assetid: 935bcf76-f27d-406e-962b-3adb014cf76e
 ms:mtpsurl: https://technet.microsoft.com/library/JJ863293(v=EXCHG.150)
 ms:contentKeyID: 50387248
 ms.reviewer: 
+ms.topic: article
+description: Unified Messaging languages, prompts, and greetings procedures in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

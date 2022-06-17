@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: When moving a mailbox database that has been copied to at least one other location, follow the procedures in this topic to move the path for the copy.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 324f255c-d95d-4a8a-a134-c8cee5c5b9cb
 ms.reviewer:
 title: Move the mailbox database path for a mailbox database copy

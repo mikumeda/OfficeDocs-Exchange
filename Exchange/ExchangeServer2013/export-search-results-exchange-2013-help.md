@@ -73,7 +73,10 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
    - Click the **Include unsearchable items** checkbox to include mailbox items that couldn't be searched (for example, messages with attachments of file types that couldn't be indexed by Exchange Search). Unsearchable items are exported to a separate PST file.
 
      > [!IMPORTANT]
-     > Including unsearchable items when you export eDiscovery search results takes longer when mailboxes contain a lot of unsearchable items. To reduce the time it takes to export search results and prevent large PST export files, consider the following recommendations: <br/>• Create multiple eDiscovery searches that each search a fewer number of source mailboxes. <br/>• If you're exporting all mailbox content within a specific date range (by not specifying any keywords in the search criteria), then all unsearchable items within that date range will be automatically included in the search results. Therefore, don't select the **Include unsearchable items** checkbox.
+     > Including unsearchable items when you export eDiscovery search results takes longer when mailboxes contain a lot of unsearchable items. To reduce the time it takes to export search results and prevent large PST export files, consider the following recommendations:
+     >
+     > - Create multiple eDiscovery searches that each search a fewer number of source mailboxes.
+     > - If you're exporting all mailbox content within a specific date range (by not specifying any keywords in the search criteria), then all unsearchable items within that date range will be automatically included in the search results. Therefore, don't select the **Include unsearchable items** checkbox.
 
 4. Click **Start** to export the search results to a PST file.
 
@@ -103,8 +106,8 @@ You can use the eDiscovery Export tool in the Exchange admin center (EAC) to exp
 
 ## Troubleshooting
 
-|**Symptom**|**Possible cause**|
-|:-----|:-----|
+|Symptom|Possible cause|
+|---|---|
 |Cannot export to a PST file.| There is no active mailbox attached to the account. To export the PST, you must have an active account.  <br/>  Your version of Internet Explorer is out of date. Try updating IE to version 10 or later. Or try a different browser.  <br/>  Search criteria entered in the **Filter based on criteria** query is incorrect. For example, a username is entered instead of an email address. For more information about how to filter based on criteria, see [Modify an In-Place eDiscovery search](modify-an-in-place-ediscovery-search-exchange-2013-help.md).|
 |Unable to export search results on a specific machine. Export works as expected on a different machine.|The wrong Windows credentials were saved in the **Credential Manager**. Clear your credentials and log in again.|
 |eDiscovery PST Export Tool won't start.|Local intranet zone settings aren't set up correctly in Internet Explorer. Make sure that \*.outlook.com, \*.office365.com, \*.sharepoint.com and \*.onmicrosoft.com are added to the Local intranet zone trusted sites.  <br/> To add these sites to the Trusted zone in IE, see [Security zones: adding or removing websites](https://windows.microsoft.com/windows/security-zones-adding-removing-websites#1TC=windows-7).|

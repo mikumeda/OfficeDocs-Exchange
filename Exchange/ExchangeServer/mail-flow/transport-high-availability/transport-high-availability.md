@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn about transport high availability in Exchange 2016 and Exchange 2019 and the features that improve the reliability of message delivery.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: e9ec6d05-f441-4cca-8592-8f7469948299
 ms.reviewer: 
 title: Transport high availability in Exchange Server

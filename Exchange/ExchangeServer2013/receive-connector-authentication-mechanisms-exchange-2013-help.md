@@ -5,6 +5,8 @@ ms:assetid: 926424e1-83e3-4c4b-b2dd-bf814d81e877
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657472(v=EXCHG.150)
 ms:contentKeyID: 49289352
 ms.reviewer: 
+ms.topic: article
+description: About Receive connector authentication mechanisms in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -21,8 +23,8 @@ The Receive connector authentication mechanisms are the following:
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

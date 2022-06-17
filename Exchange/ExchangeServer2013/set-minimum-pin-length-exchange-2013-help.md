@@ -4,6 +4,8 @@ TOCTitle: Set the minimum PIN length for voice mail
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: how-to
+description: How to set the minimum PIN length for voice mail in Microsoft Exchange Server
 ms.reviewer:
 ms.assetid: b2ecab54-42e6-45af-8322-615cc1f68dd9
 f1.keywords:

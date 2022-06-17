@@ -5,6 +5,8 @@ ms:assetid: a4621e45-53db-42f7-a5d7-c1900a154b4e
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657476(v=EXCHG.150)
 ms:contentKeyID: 49289361
 ms.reviewer: 
+ms.topic: article
+description: About UserApplication management role the in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -37,15 +39,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -61,7 +63,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tbody>
 <tr class="odd">
 <td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>

@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/Bb125224(v=EXCHG.150)
 ms:contentKeyID: 48385726
 ms.reviewer: 
 manager: serdars
+ms.topic: article
+description: How to prepare Active Directory and domains before you install Microsoft Exchange Server
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
@@ -206,12 +208,9 @@ The following table shows you the Exchange 2013 objects in Active Directory that
 - **objectVersion (Default)** is the **objectVersion** attribute located in the **Default naming context** in the properties of the **Microsoft Exchange System Objects** container.
 - **objectVersion (Configuration)** is the **objectVersion** attribute located in the **Configuration** naming context in **Services** \> **Microsoft Exchange** in the properties of the **\<Your Exchange Organization Name\>** container.
 
-<br>
-
-****
-
 |Exchange 2013 version|rangeUpper|objectVersion<br>(Default)|objectVersion<br>(Configuration)|
 |---|:---:|:---:|:---:|
+|Exchange 2013 CU23 with KB5014260|15312|13238|16133|
 |Exchange 2013 CU23 with KB5004778|15312|13237|16133|
 |Exchange 2013 CU23|15312|13237|16133|
 |Exchange 2013 CU22|15312|13236|16131|
@@ -226,4 +225,3 @@ The following table shows you the Exchange 2013 objects in Active Directory that
 |Exchange 2013 CU2|15281|13236|15688|
 |Exchange 2013 CU1|15254|13236|15614|
 |Exchange 2013 RTM|15137|13236|15449|
-|

@@ -4,6 +4,8 @@ TOCTitle: Protocol logging
 ms:assetid: 40da446b-bcc3-4a97-ace7-a54f6ddebd79
 ms:mtpsurl: https://technet.microsoft.com/library/Aa997624(v=EXCHG.150)
 ms:contentKeyID: 49287003
+ms.topic: article
+description: Protocol logging records the SMTP conversations that occur between messaging servers as part of message delivery.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
@@ -25,11 +27,11 @@ The following options are available for the protocol logs of all Send connectors
 
 - Specify the location of the Send connector or the Receive connector protocol log files.
 
-- Specify a maximum size for the Send connector or the Receive connector protocol log files. The default size is 10 megabytes (MB).
+- Specify a maximum size for the Send connector or the Receive connector protocol log files. The default size is 10 megabytes (MB).
 
-- Specify a maximum size for the directory that contains the Send connector or Receive connector protocol log files. The default size is 250 MB.
+- Specify a maximum size for the directory that contains the Send connector or Receive connector protocol log files. The default size is 250 MB.
 
-- Specify a maximum age for the Send connector or Receive connector protocol log files. The default age is 30 days.
+- Specify a maximum age for the Send connector or Receive connector protocol log files. The default age is 30 days.
 
 By default, Exchange uses circular logging to limit the protocol logs based on file size and file age to help control the hard disk space used by the log files.
 
@@ -69,7 +71,7 @@ The naming convention for log files in each protocol log directory is *prefixyyy
 
 - The placeholder *prefix* is SEND for Send connectors or RECV for Receive connectors.
 
-- The placeholder *yyyymmdd* is the Coordinated Universal Time (UTC) date on which the log file was created. The placeholder *yyyy* = year, *mm* = month, and *dd* = day.
+- The placeholder *yyyymmdd* is the Coordinated Universal Time (UTC) date on which the log file was created. The placeholder *yyyy* = year, *mm* = month, and *dd* = day.
 
 - The placeholder *nnnn* is an instance number that starts at the value of 1 for each day.
 
@@ -95,8 +97,8 @@ The protocol log stores each SMTP protocol event on a single line in the protoco
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col  />
+<col  />
 </colgroup>
 <thead>
 <tr class="header">
@@ -123,21 +125,21 @@ The protocol log stores each SMTP protocol event on a single line in the protoco
 </tr>
 <tr class="odd">
 <td><p><strong>local-endpoint</strong></p></td>
-<td><p>Local endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
+<td><p>Local endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>remote-endpoint</strong></p></td>
-<td><p>Remote endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
+<td><p>Remote endpoint of an SMTP session. This consists of an IP address and TCP port number formatted as <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
 </tr>
 <tr class="odd">
 <td><p><strong>event</strong></p></td>
 <td><p>Single character that represents the protocol event. The possible values for the event are as follows:</p>
 <ul>
-<li><p><strong>+</strong>   Connect</p></li>
-<li><p><strong>-</strong>   Disconnect</p></li>
-<li><p><strong>&gt;</strong>   Send</p></li>
-<li><p><strong>&lt;</strong>   Receive</p></li>
-<li><p><strong>*</strong>   Information</p></li>
+<li><p><strong>+</strong>   Connect</p></li>
+<li><p><strong>-</strong>   Disconnect</p></li>
+<li><p><strong>&gt;</strong>   Send</p></li>
+<li><p><strong>&lt;</strong>   Receive</p></li>
+<li><p><strong>*</strong>   Information</p></li>
 </ul></td>
 </tr>
 <tr class="even">

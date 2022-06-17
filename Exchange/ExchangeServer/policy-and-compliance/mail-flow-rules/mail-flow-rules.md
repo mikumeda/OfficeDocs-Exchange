@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn about mail flow rules (transport rules) and their components in Exchange 2016 and Exchange 2019.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: c3d2031c-fb7b-4866-8ae1-32928d0138ef
 ms.reviewer:
 title: Mail flow rules in Exchange Server
@@ -54,8 +54,8 @@ A rule is made of conditions, exceptions, actions, and properties:
 
 The following table shows how multiple conditions, condition values, exceptions, and actions are handled in a rule.
 
-|**Component**|**Logic**|**Comments**|
-|:-----|:-----|:-----|
+|Component|Logic|Comments|
+|---|---|---|
 |Multiple conditions|AND|A message must match all the conditions in the rule. If you need to match one condition or another, use separate rules for each condition. For example, if you want to add the same disclaimer to messages with attachments and messages that contain specific text, create one rule for each condition. In the EAC, you can easily copy a rule.|
 |One condition with multiple values|OR|Some conditions allow you to specify more than one value. The message must match any one (not all) of the specified values. For example, if an email message has the subject Stock price information, and the **The subject includes any of these words** condition is configured to match the words Contoso or stock, the condition is satisfied because the subject contains at least one of the specified values.|
 |Multiple exceptions|OR|If a message matches any one of the exceptions, the actions are not applied to the message. The message doesn't have to match all the exceptions.|
@@ -65,8 +65,8 @@ The following table shows how multiple conditions, condition values, exceptions,
 
 The following table describes the rule properties that are available in mail flow rules.
 
-|**Property name in the EAC**|**Parameter name in the Exchange Management Shell**|**Description**|
-|:-----|:-----|:-----|
+|Property name in the EAC|Parameter name in the Exchange Management Shell|Description|
+|---|---|---|
 |**Priority**|_Priority_|Indicates the order that the rules are applied to messages. The default priority is based on when the rule is created (older rules have a higher priority than newer rules), and higher priority rules are processed before lower priority rules. <br/> You change the rule priority in the EAC by moving the rule up or down in the list of rules. In the Exchange Management Shell, you set the priority number (0 is the highest priority). <br/> For example, if you have one rule to reject messages that include a credit card number, and another one requiring approval, you'll want the reject rule to happen first, and stop applying other rules. <br/> For more information, see [Set the priority of mail flow rules](mail-flow-rule-procedures.md#set-the-priority-of-mail-flow-rules).|
 |**Audit this rule with severity level**|_SetAuditSeverity_|Sets the severity level of the incident report and the corresponding entry that's written to the message tracking log when messages violate DLP policies. Valid values are DoNotAudit, Low, Medium, and High.|
 |**Mode**|_Mode_|You can specify whether you want the rule to start processing messages immediately, or whether you want to test rules without affecting the delivery of the message (with or without Data Loss Prevention or DLP Policy Tips). <br/> Policy Tips are similar to MailTips, and can be configured to present a brief note in Outlook or Outlook on the web that provides information about possible policy violations to the person that's creating the message. For more information, see [Policy Tips](../../../ExchangeServer2013/policy-tips-exchange-2013-help.md).For more information about the modes, see [Test a mail flow rule](../../../ExchangeServer2013/test-transport-rules-exchange-2013-help.md).|
@@ -81,8 +81,8 @@ The following table describes the rule properties that are available in mail flo
 
 Mail flow rules are applied by a transport agent on Mailbox servers and Edge Transport servers. On Mailbox servers, rules are applied by the Transport Rule agent. On Edge Transport servers, rules are applied by Edge Rule agent. Although similar in functionality, the agents have some differences. The important differences are summarized in the following table:
 
-|**Transport agent**|**SMTP or categorizer event where rules are invoked**|**Where rules are stored**|
-|:-----|:-----|:-----|
+|Transport agent|SMTP or categorizer event where rules are invoked|Where rules are stored|
+|---|---|---|
 |**Transport Rule agent on Mailbox servers**|The **OnResolvedMessage** categorizer event. <br/> In Exchange 2010, the Transport Rule agent was invoked on the **OnRoutedMessage** categorizer event. The change to **OnResolvedMessage** allowed new rule actions that can change how a message is routed (for example, require TLS).|In Active Directory. Rules are available to all Mailbox servers in the Active Directory forest.|
 |**Edge Rule agent on Edge Transport servers**|The **OnEndOfData** SMTP event|In the local instance of Active Directory Lightweight Directory Services (AD LDS) on the server. Rules are only applied to messages that flow through the local server.|
 
@@ -92,13 +92,11 @@ For more information about transport agents, see [Transport Agents in Exchange S
 
 There are several types of messages that flow through an organization. The following table shows which messages types can be processed by mail flow rules.
 
-****
-
-|**Type of message**|**Can a rule be applied?**|
-|:-----|:-----|
+|Type of message|Can a rule be applied?|
+|---|---|
 |**Regular messages** Messages that contain a single rich text format (RTF), HTML, or plain text message body or a multipart or alternative set of message bodies. |Yes |
 |**S/MIME encrypted messages**|Rules can only access envelope headers and process messages based on conditions that inspect those headers. <br/> Rules with conditions that require inspection of the message's content, or actions that modify the message's content can't be processed. |
-|**RMS Protected messages**: Messages that are protected by applying an Active Directory Rights Management Services (AD RMS) rights policy template.|Rules can always access envelope headers and process messages based on conditions that inspect those headers.For a rule to inspect or modify a protected message's content, your need to: <br/>• Have transport decryption set to **Mandatory** or **Optional**. By default, Transport decryption is set to **Optional**. <br/>• Have the encryption key.|
+|**RMS Protected messages**: Messages that are protected by applying an Active Directory Rights Management Services (AD RMS) rights policy template.|Rules can always access envelope headers and process messages based on conditions that inspect those headers.For a rule to inspect or modify a protected message's content, your need to: <ul><li>Have transport decryption set to **Mandatory** or **Optional**. By default, Transport decryption is set to **Optional**.</li><li>Have the encryption key</li></ul>.|
 |**Clear-signed messages**: Messages that have been signed but not encrypted.|Yes|
 |**UM messages**: Messages that are created or processed by the Unified Messaging service in Exchange 2016, such as voice mail, fax, missed call notifications, and messages created or forwarded by using Microsoft Outlook Voice Access. (**Note**: Unified Messaging is not available in Exchange 2019.)|Yes|
 |**Anonymous messages**: Messages that were sent by anonymous senders.|Yes|

@@ -49,13 +49,13 @@ The syntax to import files in Exchange 2013 is used any time you want to send a 
 The Shell must know what file you want to send to the Exchange 2013 cmdlet, and what parameter will accept the data. To do so, use the following syntax.
 
 ```powershell
-<Cmdlet> -FileData ([Byte[]]$(Get-Content -Path <local path to file> -Encoding Byte -ReadCount 0))
+<Cmdlet> -FileData ([System.IO.File]::ReadAllBytes('<local path to file>'))
 ```
 
 For example, the following command imports the file C:\\MyData.dat into the *FileData* parameter on the **Import-SomeData** fictional cmdlet.
 
 ```powershell
-Import-SomeData -FileData (Byte[]]$(Get-Content -Path "C:\MyData.dat" -Encoding Byte -ReadCount 0))
+Import-SomeData -FileData ([System.IO.File]::ReadAllBytes('C:\MyData.dat'))
 ```
 
 The following actions occur when the command is run:
@@ -64,18 +64,18 @@ The following actions occur when the command is run:
 
 2. Remote Shell evaluates the command and determines that there's an embedded command in the value being provided to the *FileData* parameter.
 
-3. Remote Shell stops evaluating the **Import-SomeData** command and runs the **Get-Content** command. The **Get-Content** command reads the data from the MyData.dat file.
+3. Remote Shell stops evaluating the **Import-SomeData** command and runs the **\[System.IO.File\]::ReadAllBytes** command. The command reads the data from the MyData.dat file.
 
-4. Remote Shell temporarily stores the data from the **Get-Content** command as a `Byte[]` object so that it can be passed to the **Import-SomeData** cmdlet.
+4. Remote Shell temporarily stores the data from the **\[System.IO.File\]::ReadAllBytes** command as a `Byte[]` object so that it can be passed to the **Import-SomeData** cmdlet.
 
-5. Execution of the **Import-SomeData** command resumes. Remote Shell sends the request to run the **Import-SomeData** cmdlet to the remote Exchange 2013 server, along with the object created by the **Get-Content** cmdlet.
+5. Execution of the **Import-SomeData** command resumes. Remote Shell sends the request to run the **Import-SomeData** cmdlet to the remote Exchange 2013 server, along with the object created by the **\[System.IO.File\]::ReadAllBytes** command.
 
-6. On the remote Exchange 2013 server, the **Import-SomeData** cmdlet is run, and the data stored in the temporary object created by the **Get-Content** cmdlet is passed to the *FileData* parameter. The **Import-SomeData** cmdlet processes the input and performs whatever actions are required.
+6. On the remote Exchange 2013 server, the **Import-SomeData** cmdlet is run, and the data stored in the temporary object created by the **\[System.IO.File\]::ReadAllBytes** command is passed to the *FileData* parameter. The **Import-SomeData** cmdlet processes the input and performs whatever actions are required.
 
-Some cmdlets use the following alternate syntax that accomplishes the same thing as the preceding syntax.
+Or, use the following alternate syntax that accomplishes the same thing as the preceding syntax.
 
 ```powershell
-[Byte[]]$Data = Get-Content -Path <local path to file> -Encoding Byte -ReadCount 0
+$Data = [System.IO.File]::ReadAllBytes('<local path to file>')
 Import-SomeData -FileData $Data
 ```
 
@@ -91,9 +91,9 @@ Limits must be set when importing data in remote Shell to preserve the integrity
 
 For these reasons, the amount of data that's transferred to a remote Exchange 2013 server from a local computer or server is limited to the following:
 
-- 500 megabytes (MB) for each cmdlet that's run
+- 500 megabytes (MB) for each cmdlet that's run
 
-- 75 MB for each object that's passed to a cmdlet
+- 75 MB for each object that's passed to a cmdlet
 
 If you exceed either of the limits, the execution of the cmdlet and its associated pipeline will stop and you'll receive an error. Consider the examples in the following table to understand how these limits work.
 
@@ -119,19 +119,19 @@ If you exceed either of the limits, the execution of the cmdlet and its associat
 <td><p>10</p></td>
 <td><p>40</p></td>
 <td><p>400</p></td>
-<td><p>The operation is successful because neither the size of the individual objects exceeds 75 MB nor the total amount of data passed to the cmdlet exceeds 500 MB.</p></td>
+<td><p>The operation is successful because neither the size of the individual objects exceeds 75 MB nor the total amount of data passed to the cmdlet exceeds 500 MB.</p></td>
 </tr>
 <tr class="even">
 <td><p>5</p></td>
 <td><p>80</p></td>
 <td><p>400</p></td>
-<td><p>The operation fails because, although the total amount of data passed to the cmdlet is only 400 MB, the size of each individual object exceeds the 75 MB limit.</p></td>
+<td><p>The operation fails because, although the total amount of data passed to the cmdlet is only 400 MB, the size of each individual object exceeds the 75 MB limit.</p></td>
 </tr>
 <tr class="odd">
 <td><p>120</p></td>
 <td><p>5</p></td>
 <td><p>600</p></td>
-<td><p>The operation fails because, although each individual object is only 5 MB, the total amount of data passed to the cmdlet exceeds the 500 MB limit.</p></td>
+<td><p>The operation fails because, although each individual object is only 5 MB, the total amount of data passed to the cmdlet exceeds the 500 MB limit.</p></td>
 </tr>
 </tbody>
 </table>
@@ -147,30 +147,25 @@ The syntax to export files in Exchange 2013 is used any time you want to accept 
 The Shell must know that you want to save the data stored in the **FileData** property to your local computer. To do so, use the following syntax.
 
 ```powershell
-<cmdlet> | ForEach {<cmdlet> | ForEach {$_.FileData | Add-Content <local path to file> -Encoding Byte}.FileData | Add-Content <local path to file> -Encoding Byte}
+$Variable = <cmdlet>
+[System.IO.File]::WriteAllBytes('<local path to file>', $Variable.FileData)
 ```
 
 For example, the following command exports the data stored in the **FileData** property on the object created by the **Export-SomeData** fictional cmdlet. The exported data is stored in a file you specify on the local computer, in this case MyData.dat.
 
-> [!NOTE]
-> This procedure uses the <STRONG>ForEach</STRONG> cmdlet, objects, and pipelining. For more information about each, see <A href="/powershell/module/microsoft.powershell.core/about/about_pipelines">Pipelining</A> and <A href="/powershell/module/microsoft.powershell.core/about/about_objects">Structured data</A>.
-
 ```powershell
-Export-SomeData | ForEach {Export-SomeData | ForEach {$_.FileData | Add-Content C:\MyData.dat -Encoding Byte}.FileData | Add-Content C:\MyData.dat -Encoding Byte}
+$Data = Export-SomeData
+[System.IO.File]::WriteAllBytes('C:\MyData.dat', $Data.FileData)
 ```
 
 The following actions occur when the command is run:
 
 1. The command is accepted by remote Shell.
 
-2. Remote Shell calls the **Export-SomeData** cmdlet on the remote Exchange 2013 server.
+2. Remote Shell calls the **Export-SomeData** cmdlet on the remote Exchange 2013 server and stores the results locally in the $Data variable.
 
-3. The output object created by the **Export-SomeData** cmdlet is passed back to the local Shell session via the pipeline.
+3. The **\[System.IO.File\]::WriteAllBytes** command reads the data contained within the **FileData** property.
 
-4. The output object is then piped to the **ForEach** cmdlet, which has a script block.
-
-5. Within the script block, the **FileData** property on the current object in the pipeline is accessed. The data contained within the **FileData** property is piped to the **Add-Content** cmdlet.
-
-6. The **Add-Content** cmdlet saves the data piped from the **FileData** property to the file MyData.dat on the local file system.
+4. The **\[System.IO.File\]::WriteAllBytes** command saves the data from the **FileData** property to the file MyData.dat on the local file system.
 
 For specific information about how to export data from Exchange 2013, see the Help topics for the feature you're managing.

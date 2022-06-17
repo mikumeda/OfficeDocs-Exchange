@@ -5,6 +5,7 @@ ms:assetid: 3a857185-ee16-4ee7-9e57-8be95f7e753a
 ms:mtpsurl: https://technet.microsoft.com/library/Dd302432(v=EXCHG.150)
 ms:contentKeyID: 49319907
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 description: How to create a Transport Protection Rule in Exchange Server
@@ -35,7 +36,7 @@ For additional management tasks related to Information Rights Management (IRM), 
 
 - If you configure transport protection rules to protect messages using IRM, and you also use journaling, consider enabling journal report decryption to allow the Journaling agent to save an unencrypted copy of the message in the journal report. To learn more, see [Journal report decryption](journal-report-decryption-exchange-2013-help.md).
 
-- After you create a transport protection rule, if the rule can't be applied to messages because an AD RMS server is unavailable, messages will be queued by the Transport service on Mailbox servers. Depending on the volume of these messages, additional disk space may be consumed on Mailbox servers. Exchange will attempt to IRM-protect the message three times. After these attempts, if the AD RMS server is unreachable or the message can't be IRM-protected, a non-delivery report (NDR) is sent to the sender.
+- After you create a transport protection rule, if the rule can't be applied to messages because an AD RMS server is unavailable, messages will be queued by the Transport service on Mailbox servers. Depending on the volume of these messages, additional disk space may be consumed on Mailbox servers. Exchange will attempt to IRM-protect the message three times. After these attempts, if the AD RMS server is unreachable or the message can't be IRM-protected, a non-delivery report (NDR) is sent to the sender.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
@@ -65,7 +66,7 @@ For additional management tasks related to Information Rights Management (IRM), 
 
 ## Use the Shell to create a transport protection rule
 
-- To create a transport protection rule, you must have existing RMS templates in your AD RMS deployment. This example retrieves the available templates from your AD RMS cluster.
+- To create a transport protection rule, you must have existing RMS templates in your AD RMS deployment. This example retrieves the available templates from your AD RMS cluster.
 
     ```powershell
     Get-RMSTemplate | format-list

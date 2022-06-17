@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about managing mailbox database copies in the Mailbox server in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 28cedf1d-365a-4e36-b2ba-6bf81af8684f
 ms.reviewer:
 title: Manage mailbox database copies
@@ -215,8 +215,8 @@ The required number of healthy copies, the free disk space threshold, and the nu
 
 Enabling loose truncation and configuring loose truncation parameters is performed by editing the Windows registry on each DAG member. There are three registry values that can be configured, that are all stored under HKLM\Software\Microsoft\ExchangeServer\v15\BackupInformation. The BackupInformation key the following DWORD values do not exist by default and must be manually created. The DWORD registry values under BackupInformation are described in the following table:
 
-|**Registry Value**|**Description**|**Default Value**|
-|:-----|:-----|:-----|
+|Registry Value|Description|Default Value|
+|---|---|---|
 |LooseTruncation_MinCopiesToProtect|This key is used to enable loose truncation. It represents the number of passive copies to protect from loose truncation on the active copy of a database. Setting the value of this key to 0 disables loose truncation.|0|
 |LooseTruncation_MinDiskFreeSpaceThresholdInMB|Available disk space (in MB) threshold for triggering loose truncation. If free disk space falls below this value, loose truncation is triggered.|If this registry value is not configured, the default value used by loose truncation is 200 GB.|
 |LooseTruncation_MinLogsToProtect|The minimum number of log files to retain on healthy copies whose logs are being truncated. If this registry value is configured, then the configured value applies to both active and passive copies.|If this registry value is not configured, then default values of 100,000 for passive database copies and 10,000 for active database copies is used.|
@@ -281,10 +281,8 @@ In all scenarios, the passive database copy must meet the following conditions:
 
 - Have an average copy queue length less than 10 logs. The average copy queue length is computed based on the number of times the application has queried the database status.
 
-****
-
-|**If the _DataMoveReplicationConstraint_ parameter is set to...**|**Then, for a given database...**|
-|:-----|:-----|
+|If the _DataMoveReplicationConstraint_ parameter is set to...|Then, for a given database...|
+|---|---|
 | `SecondCopy`|At least one passive database copy for a replicated database must meet the previously described conditions.|
 | `SecondDatacenter`|At least one passive database copy in another Active Directory site must meet the previously described conditions.|
 | `AllDatacenters`|The active copy must be mounted, and a passive copy in each Active Directory site must meet the previously described conditions.|
@@ -296,8 +294,8 @@ The Data Guarantee API can also be used to validate that a prerequisite number o
 
 Before moving large numbers of mailboxes to or from replication databases within a DAG, we recommend that you configure the _DataMoveReplicationConstraint_ parameter on each mailbox database according to the following:
 
-|**If you're deploying...**|**Set DataMoveReplicationConstraint to...**|
-|:-----|:-----|
+|If you're deploying...|Set DataMoveReplicationConstraint to...|
+|---|---|
 |Mailbox databases that don't have any database copies| `None`|
 |A DAG within a single Active Directory site| `SecondCopy`|
 |A DAG in multiple datacenters using a stretched Active Directory site| `SecondCopy`|
@@ -312,8 +310,8 @@ Due to the inherent nature of DAGs, as the result of database switchovers and fa
 
 **DAG with unbalanced active copy distribution**
 
-|**Server**|**Number of active databases**|**Number of passive databases**|**Number of mounted databases**|**Number of dismounted databases**|**Preference count list**|
-|:-----|:-----|:-----|:-----|:-----|:-----|
+|Server|Number of active databases|Number of passive databases|Number of mounted databases|Number of dismounted databases|Preference count list|
+|---|---|---|---|---|---|
 |EX1|5|11|5|0|4, 4, 3, 5|
 |EX2|1|15|1|0|1, 8, 6, 1|
 |EX3|12|4|12|0|13, 2, 1, 0|
@@ -335,8 +333,8 @@ After running the script with the first option, the preceding unbalanced DAG bec
 
 **DAG with balanced active copy distribution**
 
-|**Server**|**Number of active databases**|**Number of passive databases**|**Number of mounted databases**|**Number of dismounted databases**|**Preference count list**|
-|:-----|:-----|:-----|:-----|:-----|:-----|
+|Server|Number of active databases|Number of passive databases|Number of mounted databases|Number of dismounted databases|Preference count list|
+|---|---|---|---|---|---|
 |EX1|4|12|4|0|4, 4, 4, 4|
 |EX2|4|12|4|0|4, 4, 4, 4|
 |EX3|4|12|4|0|4, 4, 4, 4|
@@ -348,8 +346,8 @@ The following table lists the available parameters for the RedistributeActiveDat
 
 **RedistributeActiveDatabases.ps1 script parameters**
 
-|**Parameter**|**Description**|
-|:-----|:-----|
+|Parameter|Description|
+|---|---|
 | _DagName_|Specifies the name of the DAG you want to rebalance. If this parameter is omitted, the DAG of which the local server is a member is used.|
 | _BalanceDbsByActivationPreference_|Specifies that the script should move databases to their most preferred copy without regard to the Active Directory site.|
 | _BalanceDbsBySiteAndActivationPreference_|Specifies that the script should attempt to move active databases to their most preferred copy, while also trying to balance active databases within each Active Directory site.|

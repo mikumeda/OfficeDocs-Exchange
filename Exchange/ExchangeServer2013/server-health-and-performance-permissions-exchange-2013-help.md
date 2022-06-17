@@ -5,6 +5,8 @@ ms:assetid: 00b23fd3-6679-4b06-a3d4-51df3112b9cd
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150479(v=EXCHG.150)
 ms:contentKeyID: 47559932
 ms.reviewer: 
+ms.topic: article
+description: Server health and performance permissions in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -43,8 +45,8 @@ Users who are assigned the View-Only Management role group can view the configur
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -75,8 +77,8 @@ Users who are assigned the View-Only Management role group can view the configur
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

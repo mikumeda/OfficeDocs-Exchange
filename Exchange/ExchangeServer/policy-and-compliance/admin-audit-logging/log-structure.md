@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about the contents of the administrator audit log in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 87e259c9-c884-4d53-bd78-d13f2300d73e
 ms.reviewer: 
 title: Administrator audit log structure  in Exchange Server
@@ -24,8 +24,8 @@ Administrator audit logs contain a record of all the cmdlets and parameters that
 
 The audit logs are XML files and can contain multiple audit log entries. The following table describes each XML tag and its associated attributes.
 
-|**Element**|**Attribute**|**Description**|
-|:-----|:-----|:-----|
+|Element|Attribute|Description|
+|---|---|---|
 | `<?xml version="1.0" encoding="utf-8"?>`|N/A|This is the XML document declaration tag. It's included in every audit log XML file and contains the XML version number and the character encoding value.|
 | `SearchResults`|N/A|This tag contains all the audit log entries in the XML file. The `Event` tag is a child of this tag.  <br/> There is only one `SearchResults` tag per XML file.|
 | `Event`||This tag contains the audit log entry for an individual cmdlet. This tag contains the `Caller`, `Cmdlet`, `ObjectModified`, `RunDate`, `Succeeded`, `Error`, and `OriginatingServer` attributes. The `CmdletParameters` and `ModifiedProperties` tags are children of this tag.  <br/> There is one `Event` tag per audit log entry.|

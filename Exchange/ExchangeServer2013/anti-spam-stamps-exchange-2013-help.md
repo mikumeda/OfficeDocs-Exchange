@@ -4,6 +4,7 @@ TOCTitle: Anti-spam stamps
 ms:assetid: 28d3a5c2-8509-4b25-9876-763536e77c27
 ms:mtpsurl: https://technet.microsoft.com/library/Aa996878(v=EXCHG.150)
 ms:contentKeyID: 49248677
+description: Anti-spam stamps help you diagnose spam-related problems in Microsoft Exchange
 ms.topic: article
 ms.reviewer: 
 manager: serdars
@@ -60,13 +61,13 @@ The following table describes the filter information that can appear in an anti-
 <td><p>SID</p></td>
 <td><p>The Sender ID (SID) stamp is based on the sender policy framework (SPF) that authorizes the use of domains in email. The SPF is displayed in the message envelope as <code>Received-SPF</code>. The Sender ID evaluation process generates a Sender ID status for the message. This status can be returned as one of the following values:</p>
 <ul>
-<li><p><strong>Pass</strong>   Both the IP address and Purported Responsible Address (PRA) passed the Sender ID verification check.</p></li>
-<li><p><strong>Neutral</strong>   Published Sender ID data is explicitly inconclusive.</p></li>
-<li><p><strong>Soft fail</strong>   The IP address for the PRA may be in the not permitted set.</p></li>
-<li><p><strong>Fail</strong>   The IP Address is not permitted; no PRA is found in the incoming mail or the sending domain does not exist.</p></li>
-<li><p><strong>None</strong>   No published SPF data exists in the sender's DNS.</p></li>
-<li><p><strong>TempError</strong>   A temporary DNS failure occurred, such as an unavailable DNS server.</p></li>
-<li><p><strong>PermError</strong>   The DNS record is invalid, such as an error in the record format.</p></li>
+<li><p><strong>Pass</strong>   Both the IP address and Purported Responsible Address (PRA) passed the Sender ID verification check.</p></li>
+<li><p><strong>Neutral</strong>   Published Sender ID data is explicitly inconclusive.</p></li>
+<li><p><strong>Soft fail</strong>   The IP address for the PRA may be in the not permitted set.</p></li>
+<li><p><strong>Fail</strong>   The IP Address is not permitted; no PRA is found in the incoming mail or the sending domain does not exist.</p></li>
+<li><p><strong>None</strong>   No published SPF data exists in the sender's DNS.</p></li>
+<li><p><strong>TempError</strong>   A temporary DNS failure occurred, such as an unavailable DNS server.</p></li>
+<li><p><strong>PermError</strong>   The DNS record is invalid, such as an error in the record format.</p></li>
 </ul>
 <p>The Sender ID stamp is displayed as an X-Header in the message envelope as follows:</p>
 
@@ -89,13 +90,13 @@ The following table describes the filter information that can appear in an anti-
 <td><p>PCL</p></td>
 <td><p>The phishing confidence level (PCL) stamp displays the rating of the message based on its content and is applied when the message is processed by the Content Filter agent. This status can be returned as one of the following values:</p>
 <ul>
-<li><p><strong>Neutral</strong>   The message's content isn't likely to be phishing.</p></li>
-<li><p><strong>Suspicious</strong>   The message's content is likely to be phishing.</p></li>
+<li><p><strong>Neutral</strong>   The message's content isn't likely to be phishing.</p></li>
+<li><p><strong>Suspicious</strong>   The message's content is likely to be phishing.</p></li>
 </ul>
 <p>The PCL value can range from 1 through 8. A PCL rating from 1 through 3 returns a status of <code>Neutral</code>. This means that the message's content isn't likely to be phishing. A PCL rating from 4 through 8 returns a status of <code>Suspicious</code>. This means that the message is likely to be phishing.</p>
 <p>The values are used to determine what action Outlook takes on messages. Outlook uses the PCL stamp to block the content of suspicious messages.</p>
 <p>The PCL stamp is displayed as an X-header in the message envelope as follows:</p>
-<code>X-MS-Exchange-Organization-PCL:\<status\></code>
+<code>X-MS-Exchange-Organization-PCL:<status\></code>
 </td>
 </tr>
 <tr class="even">

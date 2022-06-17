@@ -5,6 +5,8 @@ ms:assetid: 0338980f-3a64-49d3-bc3c-bf6f10f88cb4
 ms:mtpsurl: https://technet.microsoft.com/library/JJ837174(v=EXCHG.150)
 ms:contentKeyID: 49940598
 ms.reviewer: 
+ms.topic: article
+description: How to register Filter Pack IFilters with Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,22 +19,22 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Transport rules with attachment scanning conditions perform text extraction when analyzing the content of attachments. Exchange 2013 can scan most commonly used attachment types natively. Additional attachment types can be included by registering IFilters with Exchange 2013. This topic shows you how to register IFilters released by Microsoft and third-party providers.
+Transport rules with attachment scanning conditions perform text extraction when analyzing the content of attachments. Exchange 2013 can scan most commonly used attachment types natively. More attachment types can be included by registering IFilters with Exchange 2013. This topic shows you how to register IFilters released by Microsoft and third-party providers.
 
 After you register an IFilter for a specific file type, transport rules with attachment processing conditions will be able to scan these attachments. As a result, these file types will no longer trigger the *AttachmentIsUnsupported* condition.
 
 > [!WARNING]
 > The procedures listed in this topic involve modifying the registry on your Exchange servers. Incorrectly editing the registry can cause serious problems that may require you to reinstall your operating system. Problems resulting from editing the registry incorrectly may not be able to be resolved. Before editing the registry, back up any valuable data.<BR>These procedures also require you to stop and restart the Microsoft Exchange Transport service on your Mailbox servers.
 
-For additional management tasks related to Transport rules, see [Manage transport rules in Exchange 2013](manage-transport-rules-exchange-2013-help.md).
+For more management tasks related to Transport rules, see [Manage transport rules in Exchange 2013](manage-transport-rules-exchange-2013-help.md).
 
 ## What do you need to know before you begin?
 
 - Estimated time to complete each procedure: 5 minutes per server.
 
-- You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange server configuration settings" entry in the [Exchange and Shell infrastructure permissions](exchange-and-shell-infrastructure-permissions-exchange-2013-help.md) topic.
+- You must be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Exchange server configuration settings" entry in the [Exchange and Shell infrastructure permissions](exchange-and-shell-infrastructure-permissions-exchange-2013-help.md) topic.
 
-- You must perform the procedures below on servers that already have Exchange 2013 Mailbox server role installed. If you add additional Mailbox servers after you perform these procedures, you must perform them again on the newly provisioned servers.
+- You must do the procedures below on servers that already have Exchange 2013 Mailbox server role installed. If you add more Mailbox servers after you perform these procedures, you must perform them again on the newly provisioned servers.
 
 - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
@@ -55,7 +57,7 @@ Deploying the Office 2010 Filter Pack consists of two main steps:
 
 - Downloading and installing the Filter Pack, which registers the IFilters with Windows (Search).
 
-- Modifying the registry so the IFilters are also registered with Exchange 2013. This allows Exchange to support attachment scanning for the file formats.
+- Modifying the registry so the IFilters are also registered with Exchange 2013. This step allows Exchange to support attachment scanning for the file formats.
 
 > [!IMPORTANT]
 > You must perform this procedure on all Mailbox servers in your organization.
@@ -128,7 +130,7 @@ Deploying the Office 2010 Filter Pack consists of two main steps:
 
     4. Start the Microsoft Exchange Transport service.
 
-## How do you know this worked?
+### How do you know this worked?
 
 To verify that you have successfully registered the Microsoft Office 2010 Filter Pack IFilters, do the following:
 
@@ -142,14 +144,14 @@ To verify that you have successfully registered the Microsoft Office 2010 Filter
 
 2. Create a OneNote file that contains the phrase "Testing IFilters", attach it to a new email message, and send it to yourself.
 
-3. Verify that you receive a Transport rule incident report for the rule you just created. This confirms that the rules engine was able to analyze the contents of the OneNote file.
+3. Verify that you receive a Transport rule incident report for the rule you just created. This step confirms that the rules engine was able to analyze the contents of the OneNote file.
 
 4. Repeat Steps 2 and 3 with a Publisher file.
 
 ## Register third-party IFilters to support additional file formats
 
 You can extend the attachment scanning capability for additional file types by registering additional third-party IFilters. Support for additional files can be added by installing and registering the file type's IFilter on each of your Mailbox servers.
-
+    
 > [!IMPORTANT]
 > Microsoft hasn't tested third-party IFilters with transport rules, therefore we recommend that you deploy and test any third-party IFilters in a test environment before deploying into your production environment.
 
@@ -158,7 +160,7 @@ You can extend the attachment scanning capability for additional file types by r
 This procedure shows how to deploy the [Adobe PDF IFilter](https://www.adobe.com/support/downloads/detail.jsp?ftpid=4025) to support processing of PDF attachments in transport rules.
 
 > [!NOTE]
-> By default, Exchange 2013 supports the scanning of PDF files in transport rules. The PDF example here is used simply to illustrate how you can extend support for additional file types using third-party IFilters.
+> By default, Exchange 2013 supports the scanning of PDF files in transport rules. The PDF example here is used simply to illustrate how you can extend support for other file types using third-party IFilters.
 
 1. Download the [Adobe PDF IFilter](https://www.adobe.com/support/downloads/detail.jsp?ftpid=4025)and then follow the installation instructions.
 
@@ -205,9 +207,9 @@ This procedure shows how to deploy the [Adobe PDF IFilter](https://www.adobe.com
 
    4. Start the Microsoft Exchange Transport service.
 
-## How do you know this worked?
+### How do you know this worked?
 
-Use the same procedure listed in the How do you know this worked? section earlier in this topic, substituting Publisher files with Adobe PDF files.
+Use the same procedure listed in the "How do you know this worked?" section earlier in this topic, substituting Publisher files with Adobe PDF files.
 
 ## For more information
 

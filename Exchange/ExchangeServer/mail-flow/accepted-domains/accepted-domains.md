@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about the three types of accepted domains in Exchange Server 2016 or Exchange Server 2019: authoritative, internal relay, and external relay.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: c1839a5b-49f9-4c53-b247-f4e5d78efc45
 ms.reviewer: 
 title: Accepted domains in Exchange, Exchange acceepted domains, exchange authoritative domain, Internal relay domain, Exchange external relay, Exchange external relay domain
@@ -81,8 +81,8 @@ Recipient filtering on a subscribed Edge Transport server can block messages tha
 
 You can enable or disable Recipient Lookup for an accepted domain by using the _AddressBookEnabled_ parameter on the **Set-AcceptedDomain** cmdlet. The default value for each accepted domain type is described in the following table:
 
-|**Accepted domain type**|**Default Recipient Lookup (_AddressBookEnabled_ parameter) value**|**Comments**|
-|:-----|:-----|:-----|
+|Accepted domain type|Default Recipient Lookup (_AddressBookEnabled_ parameter) value|Comments|
+|---|---|---|
 |Authoritative domain|Enabled (`$true`)|All recipients in an authoritative domain exist in the Exchange organization, so Recipient Lookup for the domain is enabled by default.|
 |Internal relay domain|Disabled (`$false`)|If all recipients in the internal relay domain exist in the Exchange organization (including mail contacts and mail users), you can enable Recipient Lookup for the domain. <br/> If some or none of the recipients in the internal relay domain exist in the Exchange organization, you shouldn't enable Recipient Lookup for the domain.|
 |External relay domain|Disabled (`$false`)|No recipients in the authoritative domain exist in the Exchange organization, so you shouldn't enable Recipient Lookup for the domain.|

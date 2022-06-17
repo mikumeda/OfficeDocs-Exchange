@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: About dial tone portability, which enables users to have a temporary mailbox for sending and receiving email while their original mailbox is being restored or repaired.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: ea62fae0-5e0a-460c-beb6-52532c8c8dbc
 ms.reviewer:
 title: Dial tone portability

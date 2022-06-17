@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: You must join the local computer to an Active Directory domain before you can install Exchange Server 2013.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

@@ -74,8 +74,8 @@ In the credit card rule, there is a section of XML code for patterns, which incl
 
 The five steps here represent actions that Exchange takes to compare your rule with email messages. For our credit card rule example, the following steps are taken.
 
-|**Step**|**Action**|
-|:-----|:-----|
+|Step|Action|
+|---|---|
 |1. Get Content|Spencer Badillo  <br/> Visa: 4111 1111 1111 1111  <br/> Expires: 2/2012|
 |2. Regular Expression Analysis|4111 1111 1111 1111 -\> a 16-digit number is detected|
 |3. Function Analysis| 4111 1111 1111 1111 -\> matches checksum  <br/>  1234 1234 1234 1234 -\> doesn't match|
@@ -90,7 +90,7 @@ The way this rule is set up by Microsoft makes it mandatory that corroborating e
 
 You can use a custom rule that defines a pattern without extra evidence, as shown in the next example. This would detect messages with only credit card number and no corroborating evidence.
 
-```powershell
+```xml
       <Pattern confidenceLevel="85">
          <IdMatch idRef="Func_credit_card" />
       </Pattern>
@@ -101,10 +101,7 @@ The illustration of credit cards in this article can be extended to other sensit
 
 ```powershell
 $rule_collection = Get-ClassificationRuleCollection
-```
-
-```powershell
-$rule_collection[0].SerializedClassificationRuleCollection | Set-Content oob_classifications.xml -Encoding byte
+[System.IO.File]::WriteAllBytes('oob_classifications.xml', $rule_collection[0].SerializedClassificationRuleCollection)
 ```
 
 ## For more information

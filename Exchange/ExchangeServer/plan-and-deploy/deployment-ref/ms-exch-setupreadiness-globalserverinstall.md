@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: Exchange Server 2016 or Exchange Server 2019 Setup can't continue because the user account doesn't have the required permissions.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.GlobalServerInstall
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 17c4667b-7db1-4e0a-b824-1f6d51d980a9
 ms.reviewer: 
 title: Cannot write to the Exchange organization container [GlobalServerInstall]

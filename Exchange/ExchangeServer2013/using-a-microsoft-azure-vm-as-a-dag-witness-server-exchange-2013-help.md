@@ -5,6 +5,8 @@ ms:assetid: 03d1e215-518b-4b48-bfcd-8d187ff8f5ef
 ms:mtpsurl: https://technet.microsoft.com/library/Dn903504(v=EXCHG.150)
 ms:contentKeyID: 63886642
 ms.reviewer: 
+ms.topic: article
+description: Using a Microsoft Azure VM as a DAG witness server with Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

@@ -28,8 +28,8 @@ Although there are both private (internal network) and public (external network)
 
 The Outlook on the web mailbox policy parameters in the following table should be set to `$true` to enable an admin to control attachment handling for public computers and networks.
 
-|**Parameter***|**Description**|
-|:-----|:-----|
+|Parameter*|Description|
+|---|---|
 |_DirectFileAccessOnPublicComputersEnabled_|Specifies left-click and other options available for attachments when the user has signed in to Outlook on the web from a computer outside of a private or corporate network. If this parameter is set to `$true`, **Open** and other options are available. If it's set to `$false`, the **Open** option is disabled.|
 |_ForceWacViewingFirstOnPublicComputers_|Specifies whether a user who signed in to Outlook on the web from a computer outside of a private or corporate network can open an Office file directly without first viewing it as a webpage.|
 |_WacViewingOnPublicComputersEnabled_|Specifies whether a user who has signed into Outlook on the web from a computer outside of the corporate network can view supported Office files using Outlook on the web.|

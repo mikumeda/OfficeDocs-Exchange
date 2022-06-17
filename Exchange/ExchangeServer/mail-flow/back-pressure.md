@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how back pressure monitors system resources on Exchange 2016 and 2019 servers to prevent servers from being overwhelmed by the volume of incoming messages.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 03003544-e802-4988-9427-5fc4da64dcb8
 ms.reviewer: 
 title: Understanding back pressure
@@ -211,10 +211,6 @@ Exchange keeps a history of version bucket resource utilization. If the resource
 
 The following table summarizes the actions taken by back pressure when a monitored resource is under pressure.
 
-<br><br>
-
-****
-
 |Resource under pressure|Utilization level|Actions taken|
 |---|---|---|
 |**DatabaseUsedSpace**|Medium|Reject incoming messages from non-Exchange servers. <p> Reject message submissions from the Pickup directory and the Replay directory. <p> Message resubmission is paused. <p> Shadow Redundancy rejects messages. For more information about Shadow Redundancy, see [Shadow redundancy in Exchange Server](transport-high-availability/shadow-redundancy.md).|
@@ -231,7 +227,6 @@ The following table summarizes the actions taken by back pressure when a monitor
 |**UsedDiskSpace** (content conversion)|High|All actions taken at the medium utilization level. <p> Reject incoming messages from other Exchange servers. <p> Reject message submissions from mailbox databases by the Microsoft Exchange Mailbox Transport Submission service on Mailbox servers.|
 |**UsedVersionBuckets**|Medium|Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire version bucket history depth, take the following actions: <ul><li>Reject incoming messages from non-Exchange servers.</li><li>Reject message submissions from the Pickup directory and the Replay directory.</li></ul>|
 |**UsedVersionBuckets**|High|All actions taken at the medium utilization level. <p> Reject incoming messages from other Exchange servers. <p> Reject message submissions from mailbox databases by the Microsoft Exchange Mailbox Transport Submission service on Mailbox servers. <p> Stop processing outgoing messages. <p> Remote delivery is paused.|
-|
 
 ## View back pressure resource thresholds and utilization levels
 <a name="Pressure"> </a>
@@ -256,17 +251,12 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 
 ### General back pressure settings
 
-****
-
 |Key name|Default value|
 |---|---|
 | _ResourceMeteringInterval_| `00:00:02` (2 seconds)|
 | _DehydrateMessagesUnderMemoryPressure_|true|
-|
 
 ### DatabaseUsedSpace settings
-
-****
 
 |Key name|Default value (%)|
 |---|---|
@@ -274,11 +264,8 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 | _DatabaseUsedSpace.MediumToHigh_|99|
 | _DatabaseUsedSpace.HighToMedium_|97|
 | _DatabaseUsedSpace.MediumToLow_|94|
-|
 
 ### PrivateBytes settings
-
-****
 
 |Key name|Default value (%)|
 |---|---|
@@ -287,11 +274,8 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 | _PrivateBytes.HighToMedium_|73|
 | _PrivateBytes.MediumToLow_|71|
 | _PrivateBytesHistoryDepth_|30|
-|
 
 ### QueueLength[SubmissionQueue] settings
-
-****
 
 |Key name|Default value|
 |---|---|
@@ -300,11 +284,8 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 | _QueueLength[SubmissionQueue].HighToMedium_|10000|
 | _QueueLength[SubmissionQueue].MediumToLow_|2000|
 | _SubmissionQueueHistoryDepth_|300 (after 10 minutes)|
-|
 
 ### SystemMemory settings
-
-****
 
 |Key name|Default value (%)|
 |---|---|
@@ -312,11 +293,8 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 | _SystemMemory.MediumToHigh_|94|
 | _SystemMemory.HighToMedium_|89|
 | _SystemMemory.MediumToLow_|84|
-|
 
 ### UsedDiskSpace settings (message queue database transaction logs)
-
-****
 
 |Key name|Default value (%)|
 |---|---|
@@ -324,14 +302,11 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 | _UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data\Queue].MediumToHigh_|99|
 | _UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data\Queue].HighToMedium_|90|
 | _UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data\Queue].MediumToLow_|80|
-|
 
 > [!NOTE]
 > Values that contain only `UsedDiskSpace` (for example, `UsedDiskSpace.MediumToHigh`) apply to the message queue database transaction logs and to content conversion.
 
 ### UsedDiskSpace settings (content conversion)
-
-****
 
 |Key name|Default value (%)|
 |---|---|
@@ -340,11 +315,8 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 | _UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data].HighToMedium_|90|
 | _UsedDiskSpace[%ExchangeInstallPath%TransportRoles\data].MediumToLow_|80|
 |TemporaryStoragePath| `%ExchangeInstallPath%TransportRoles\data\Temp`|
-|
 
 ### UsedVersionBuckets settings
-
-****
 
 |Key name|Default value|
 |---|---|
@@ -353,7 +325,6 @@ All configuration options for back pressure are done in the `%ExchangeInstallPat
 | _UsedVersionBuckets.HighToMedium_|1000|
 | _UsedVersionBuckets.MediumToLow_|800|
 | _VersionBucketsHistoryDepth_|10|
-|
 
 ## Back pressure logging information
 <a name="Information"> </a>

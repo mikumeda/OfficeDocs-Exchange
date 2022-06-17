@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How to configure the properties of a mailbox database copy in Exchange Server, and what those properties are.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: cf186561-ab2c-45c0-90f5-8d3ecfabeeac
 ms.reviewer:
 title: Configure mailbox database copy properties

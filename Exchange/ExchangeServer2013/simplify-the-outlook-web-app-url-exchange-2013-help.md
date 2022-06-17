@@ -5,6 +5,8 @@ ms:assetid: 5fb6a873-f3cf-4f82-87d1-2ff6e47a0080
 ms:mtpsurl: https://technet.microsoft.com/library/Aa998359(v=EXCHG.150)
 ms:contentKeyID: 53957625
 ms.reviewer: 
+ms.topic: how-to
+description: How to simplify the Outlook Web App URL in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

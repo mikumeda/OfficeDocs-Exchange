@@ -4,6 +4,8 @@ TOCTitle: Specify the administrators and users who can install and manage add-in
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: how-to
+description: How to specify the administrators and users who can install and manage add-ins for Outlook in Microsoft Exchange
 ms.reviewer:
 ms.assetid: 7ee4302d-b8bb-40a0-9810-10d3a0271bcb
 f1.keywords:

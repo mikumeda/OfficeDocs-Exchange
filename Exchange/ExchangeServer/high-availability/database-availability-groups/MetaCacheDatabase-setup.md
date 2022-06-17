@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about the MetaCacheDatabase (MCDB) feature in Exchange Server 2019, and how to configure it in your organization.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 monikerRange: exchserver-2019
 title: MetaCacheDatabase (MCDB) setup
 ms.collection: exchange-server
@@ -134,7 +134,7 @@ This command sets the local state on each DAG member to allow/disallow MCDB popu
 **Parameters**:
 
 | Parameter|Required|Description|
-|:-------|:-----|:---|
+|:-------|---|:---|
 |DagName|True|Name of the Database availability group.|
 |ServerName|True|Specifies the server to enable MetaCacheDatabase on.|
 |ForceFailover|Optional|This Boolean switch can be utilized to cause all databases on a server to fail over. This is required to make all configuration changes take effect and to begin utilizing MCDB after mount points and database instances have been successfully created in [Step 4: Run Manage-MCDB -ConfigureMCDBOnServer](#step-4-run-manage-mcdb--configuremcdbonserver). It is also needed to disable SSD acceleration.|

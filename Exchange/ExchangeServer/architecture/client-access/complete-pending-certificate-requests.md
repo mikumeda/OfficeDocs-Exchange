@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to complete a pending certificate request in Exchange Server after you receive the certificate from the certification authority.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 3d2a8747-4afa-4db8-94d7-dcce6d90d21f
 ms.reviewer:
 title: Complete a pending Exchange Server certificate request
@@ -69,24 +69,21 @@ The certificate request becomes a certificate in the list of Exchange certificat
 
 ## Use the Exchange Management Shell to complete a pending certificate request
 
-The syntax that you use to complete a pending certificate request in the Exchange Management Shell depends on the type of certificate file or files that you were issued.
-
-To import a binary certificate file (PKCS #12 files that have .cer, .crt, .der, .p12, or .pfx filename extensions), use the following syntax:
+To complete a pending certificate request, use the following syntax:
 
 ```PowerShell
-Import-ExchangeCertificate -FileName "<FilePathOrUNCPath>\<FileName>" [-Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force)] [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
+Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('<FilePathOrUNCPath>')) [-Password (ConvertTo-SecureString -String '<Password> ' -AsPlainText -Force)] [-PrivateKeyExportable <$true | $false>] [-Server <ServerIdentity>]
 ```
+
+You use this syntax with the following types of certificate files:
+
+- Binary certificate files (PKCS #12 files that have .cer, .crt, .der, .p12, or .pfx filename extensions).
+- Chain of certificates files (PKCS #7 text files that have .p7b or .p7c filename extensions).
 
 This example imports the binary certificate file `\\FileServer01\Data\Contoso Cert.cer` that's protected by the password P@ssw0rd1 on the local Exchange server.
 
 ```PowerShell
-Import-ExchangeCertificate -FileName "\\FileServer01\Data\Contoso Cert.cer" -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
-```
-
-To import a chain of certificates file (PKCS #7 text files that have .p7b or .p7c filename extensions), use the following syntax:
-
-```PowerShell
-Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('<FilePathOrUNCPath>'))
+Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('\\FileServer01\Data\Contoso Cert.cer')) -Password (ConvertTo-SecureString -String 'P@ssw0rd1' -AsPlainText -Force)
 ```
 
 This example imports the text certificate file `\\FileServer01\Data\Chain of Certificates.p7b` on the local Exchange server.
@@ -97,10 +94,8 @@ Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('\\FileServ
 
 **Notes:**
 
-- The _FileName_ and _FileData_ parameters accept local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path.
-
+- The _FileData_ parameter accepts local paths if the certificate file is located on the Exchange server where you're running the command, and this is the same server where you want to import the certificate. Otherwise, use a UNC path.
 - If you want to be able to export the certificate from the server where you're importing it, you need to use the _PrivateKeyExportable_ parameter with the value `$true`.
-
 - For more information, see [Import-ExchangeCertificate](/powershell/module/exchange/import-exchangecertificate).
 
 ## How do you know this worked?

@@ -5,6 +5,8 @@ ms:assetid: 20f9f7c2-a8e5-468e-b1a8-c87c562a2be7
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876857(v=EXCHG.150)
 ms:contentKeyID: 49289191
 ms.reviewer: 
+ms.topic: article
+description: About the Cmdlet Extension Agents role in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -37,15 +39,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

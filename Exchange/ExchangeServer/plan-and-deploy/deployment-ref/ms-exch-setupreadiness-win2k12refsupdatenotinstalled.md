@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: Microsoft Exchange Server 2016 Setup has detected that the computer you're attempting to install Exchange 2016 on doesn't have a recommended Windows update installed. We strongly recommend that you install this Windows update before installing Exchange 2016 to avoid any issues resolved by the update.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.Win2k12RefsUpdateNotInstalled
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 50b23c15-53b8-46ee-a334-94534bd76e2c
 ms.reviewer: 
 title: Running 'dir' on an ReFS-formatted disk could cause the computer to freeze [Win2k12RefsUpdateNotInstalled]

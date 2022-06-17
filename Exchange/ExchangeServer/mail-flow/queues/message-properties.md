@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about the filterable properties for messages in queues in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 8e6187c1-76f0-49da-bc24-2ab57cfb3c2c
 ms.reviewer:
 title: Properties of messages in queues
@@ -31,10 +31,6 @@ For more information about Queue Viewer, see [Queue Viewer](queue-viewer.md). Fo
 ## Message properties to use as filters
 
 The following table describes the message properties that you can use as filters in Queue Viewer and the Exchange Management Shell.
-
-<br><br>
-
-****
 
 |Queue Viewer|Exchange Management Shell|Comparison operators|Description|
 |---|---|---|---|
@@ -64,4 +60,3 @@ The following table describes the message properties that you can use as filters
 |**Subject**|`Subject`|**Equals** (`-eq`) <p> **Does Not Equal** (`-ne`) <p> **Contains** (`-contains`) <p> **Is Present** <br/> **Is Not Present**|The subject of the message (from the **Subject:** header field).|
 |n/a|`TrafficType`|n/a|This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations. <p> In on-premises Exchange, this property is blank or has the value `Email`.|
 |n/a|`TrafficSubType`|n/a|This property is reserved for internal Microsoft use, and isn't used in on-premises Exchange organizations.|
-|

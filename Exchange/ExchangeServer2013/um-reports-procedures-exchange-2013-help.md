@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: Unified Messaging reports procedures in Microsoft Exchange Server
 ms.assetid: 5b58a2ed-3780-4a0e-87f6-e19e6e49640c
 f1.keywords:
 - NOCSH

@@ -108,7 +108,7 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Web components**
 
-    - For servers using Internet Information Services (IIS) 7.0, the compression folder that is used with Microsoft Outlook Web App. By default, the compression folder for IIS 7.0 is located at %SystemDrive%\\inetpub\\temp\\IIS Temporary Compressed Files.
+    - For servers using Internet Information Services (IIS) 7.0, the compression folder that is used with Microsoft Outlook Web App. By default, the compression folder for IIS 7.0 is located at %SystemDrive%\\inetpub\\temp\\IIS Temporary Compressed Files.
 
     - IIS system files in the %SystemRoot%\\System32\\Inetsrv folder
 

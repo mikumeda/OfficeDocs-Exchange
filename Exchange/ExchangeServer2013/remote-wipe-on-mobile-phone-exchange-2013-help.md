@@ -4,6 +4,8 @@ TOCTitle: Perform a remote wipe on a mobile phone
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: article
+description: How to do remote wipe on a mobile phone in Microsoft Exchange
 ms.reviewer:
 f1.keywords:
 - CSH

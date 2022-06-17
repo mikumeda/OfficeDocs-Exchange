@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how Edge Transport servers provide Internet mail flow, antispam, and mail flow rules for your Exchange Server organization'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: cfff9f59-afac-447c-8297-afcebe49a52d
 ms.reviewer: 
 title: Edge Transport servers

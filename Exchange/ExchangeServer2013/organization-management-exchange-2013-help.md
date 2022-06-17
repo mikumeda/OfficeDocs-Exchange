@@ -4,6 +4,8 @@ TOCTitle: Organization Management
 ms:assetid: 0bfd21c1-86ac-4369-86b7-aeba386741c8
 ms:mtpsurl: https://technet.microsoft.com/library/Dd335087(v=EXCHG.150)
 ms:contentKeyID: 49289160
+ms.topic: article
+description: Organization Management management role group is part of RBAC.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
@@ -17,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The Organization Management management role group is one of several built-in role groups that make up the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. Role groups are assigned one or more management roles that contain the permissions required to perform a given set of tasks. The members of a role group are granted access to the management roles assigned to the role group. For more information about role groups, see [Understanding management role groups](understanding-management-role-groups-exchange-2013-help.md).
+The Organization Management management role group is one of several built-in role groups that make up the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. Role groups are assigned one or more management roles that contain the permissions required to perform a given set of tasks. The members of a role group are granted access to the management roles assigned to the role group. For more information about role groups, see [Understanding management role groups](understanding-management-role-groups-exchange-2013-help.md).
 
 Administrators that are members of the Organization Management role group have administrative access to the entire Exchange 2013 organization and can perform almost any task against any Exchange 2013 object, with some exceptions. By default, members of this role group can't perform mailbox searches and management of unscoped top-level management roles. For more information, see the "Delegating Only Role Assignments" section later in this topic.
 
@@ -123,15 +125,15 @@ For more information about role assignments and management scopes, see the follo
 
 ### Management roles assigned to this role group
 
-<table style="width:100%;">
+<table >
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col  />
+<col  />
+<col  />
+<col  />
+<col  />
+<col  />
+<col  />
 </colgroup>
 <thead>
 <tr class="header">
@@ -165,7 +167,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="applicationimpersonation-role-exchange-2013-help.md">ApplicationImpersonation role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -345,7 +347,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="legalholdapplication-role-exchange-2013-help.md">LegalHoldApplication role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -390,7 +392,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="mailbox-import-export-role-exchange-2013-help.md">Mailbox Import Export role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -399,7 +401,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="mailbox-search-role-exchange-2013-help.md">Mailbox Search role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -408,7 +410,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="mailboxsearchapplication-role-exchange-2013-help.md">MailboxSearchApplication role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -453,7 +455,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="officeextensionapplication-role-exchange-2013-help.md">OfficeExtensionApplication role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -534,7 +536,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="reset-password-role-exchange-2013-help.md">Reset Password role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -579,7 +581,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="support-diagnostics-role-exchange-2013-help.md">Support Diagnostics role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -588,7 +590,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="teammailboxlifecycleapplication-role-exchange-2013-help.md">TeamMailboxLifecycleApplication role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -651,7 +653,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="unscoped-role-management-role-exchange-2013-help.md">Unscoped Role Management role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -669,7 +671,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="userapplication-role-exchange-2013-help.md">UserApplication role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -723,7 +725,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="my-custom-apps-role-exchange-2013-help.md">My Custom Apps role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -732,7 +734,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="my-marketplace-apps-role-exchange-2013-help.md">My Marketplace Apps role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -741,7 +743,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="mybaseoptions-role-exchange-2013-help.md">MyBaseOptions role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -750,7 +752,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="mycontactinformation-role-exchange-2013-help.md">MyContactInformation role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -759,7 +761,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="mydiagnostics-role-exchange-2013-help.md">MyDiagnostics role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -768,7 +770,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="mydistributiongroupmembership-role-exchange-2013-help.md">MyDistributionGroupMembership role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>MyGAL</code></p></td>
 <td><p><code>MyGAL</code></p></td>
@@ -777,7 +779,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="mydistributiongroups-role-exchange-2013-help.md">MyDistributionGroups role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>MyGAL</code></p></td>
 <td><p><code>MyDistributionGroups</code></p></td>
@@ -786,7 +788,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="myprofileinformation-role-exchange-2013-help.md">MyProfileInformation role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -795,7 +797,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="myretentionpolicies-role-exchange-2013-help.md">MyRetentionPolicies role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -804,7 +806,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="myteammailboxes-role-exchange-2013-help.md">MyTeamMailboxes role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
@@ -813,7 +815,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="odd">
 <td><p><a href="mytextmessaging-role-exchange-2013-help.md">MyTextMessaging role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>
@@ -822,7 +824,7 @@ For more information about role assignments and management scopes, see the follo
 </tr>
 <tr class="even">
 <td><p><a href="myvoicemail-role-exchange-2013-help.md">MyVoiceMail role</a></p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p>X</p></td>
 <td><p><code>Self</code></p></td>
 <td><p><code>Self</code></p></td>

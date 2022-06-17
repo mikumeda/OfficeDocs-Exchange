@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: How to create a resource mailbox called a room mailbox, a room list, and how to change room mailbox properties.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: f70752ad-fce0-4e14-8428-fc5ac63f6c54
 ms.reviewer:
 title: Create and manage room mailboxes
@@ -314,7 +314,10 @@ Get-User -ResultSize unlimited -Filter "(RecipientTypeDetails -eq 'RoomMailbox')
 If you're planning to have more to have hundreds of rooms, use multiple room lists to help you organize your rooms. If your company has several buildings with rooms that can be booked for meetings, it might help to create room lists for each building. Room lists are specially marked distribution groups that you can use the same way you use distribution groups. However, you can only create room lists using the Exchange Management Shell.
 
 > [!NOTE]
-> Although there is no hard limit to the number of rooms you can have in a Room List, the maximum number of rooms that can be returned in request for a Room List is 100. A possible workaround would be to further break down your rooms into smaller lists.
+> Although there is no hard limit to the number of rooms you can have in a Room List, the maximum number of rooms that can be returned in a request for a Room List is 100 (including when you're using Microsoft Teams to create a meeting invite). A possible workaround would be to further break down your rooms into smaller lists.
+
+> [!NOTE]
+> When using Microsoft Teams, the list of rooms displays in random order. The internal process to get the list doesn't sort the output, so the list may not be in alphabetical order.
 
 ### Use the Exchange Management Shell to create a room list
 

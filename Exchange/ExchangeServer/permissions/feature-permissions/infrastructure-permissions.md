@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about permissions that are required to perform tasks to configure various components of Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 3646a4e8-36b2-41fb-89a4-79b0963fcb11
 ms.reviewer:
 title: Exchange infrastructure and PowerShell permissions
@@ -42,8 +42,6 @@ The following table lists the permissions required to perform tasks that configu
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-****
-
 |Feature|Permissions required|
 |---|---|
 |Administrator audit logging|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Records Management](../../../ExchangeServer2013/records-management-exchange-2013-help.md)|
@@ -56,15 +54,12 @@ Users who are assigned the View-Only Management role group can view the configur
 |Test system health|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Server Management](../../../ExchangeServer2013/server-management-exchange-2013-help.md)|
 |View-only administrator audit logging|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Records Management](../../../ExchangeServer2013/records-management-exchange-2013-help.md) <br/> **Note**: You can also manually assign the View-Only Audit Logs management role to a management role group. For more information, see [View-Only Audit Logs](../../../ExchangeServer2013/view-only-audit-logs-role-exchange-2013-help.md).|
 |Write to audit log|Users that are members of any role group or assigned any management role can write to the administrator audit log.|
-|
 
 ## Exchange PowerShell infrastructure permissions
 
 The following table lists the permissions required to perform tasks that configure features that control how the Exchange Management Shell runs.
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
-
-****
 
 |Feature|Permissions required|
 |---|---|
@@ -73,15 +68,12 @@ Users who are assigned the View-Only Management role group can view the configur
 |PowerShell virtual directories|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Server Management](../../../ExchangeServer2013/server-management-exchange-2013-help.md)|
 |PowerShell and WinRM installation|Local Server Administrator|
 |Remote PowerShell|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
-|
 
 ## Federation and certificates permissions
 
 The following table lists permissions required for performing tasks related to federation trusts, OAuth configuration, certificate management, and hybrid deployment configuration.
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
-
-****
 
 |Feature|Permissions required|
 |---|---|

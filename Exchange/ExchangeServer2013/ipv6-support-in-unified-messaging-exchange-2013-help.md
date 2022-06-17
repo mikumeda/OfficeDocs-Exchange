@@ -5,6 +5,8 @@ ms:assetid: 91242c85-ce4e-422a-954e-ab623d3d6939
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150536(v=EXCHG.150)
 ms:contentKeyID: 47560052
 ms.reviewer: 
+ms.topic: article
+description: About IPv6 support in Unified Messaging in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

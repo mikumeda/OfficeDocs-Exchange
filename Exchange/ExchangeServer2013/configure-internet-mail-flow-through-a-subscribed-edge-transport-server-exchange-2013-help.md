@@ -35,7 +35,7 @@ If you don't want to subscribe the Edge Transport server to an Active Directory 
 
   - Before you subscribe an Edge Transport server to your organization, you will first need to configure authoritative domains and email address policies for your Exchange organization.
 
-  - Enable the secure LDAP port 50636/TCP through the firewall separating your perimeter network from the Exchange organization. The Edge Transport server needs to be able to communicate with all Exchange 2013 Mailbox servers in the subscribed Active Directory site.
+  - Enable the secure LDAP port 50636/TCP through the firewall separating your perimeter network from the Exchange organization. The Edge Transport server needs to be able to communicate with all Exchange 2013 Mailbox servers in the subscribed Active Directory site.
 
   - For information about keyboard shortcuts that may apply to the procedures in this topic, see [Keyboard shortcuts in the Exchange admin center](keyboard-shortcuts-in-the-exchange-admin-center-2013-help.md).
 
@@ -61,13 +61,13 @@ If you don't want to subscribe the Edge Transport server to an Active Directory 
 3. On the Mailbox server, to import the Edge Subscription file, use the following syntax.
 
     ```powershell
-    New-EdgeSubscription -FileData ([byte[]]$(Get-Content -Path "<FileName>.xml" -Encoding Byte -ReadCount 0)) -Site <SiteName>
+    New-EdgeSubscription -FileData ([System.IO.File]::WriteAllBytes('<FileName>.xml', $file.FileData)) -Site <SiteName>
     ```
 
     This example imports the Edge Subscription file named EdgeSubscriptionInfo.xml from the folder D:\\Data, and subscribes the Edge Transport server to the Active Directory site named "Default-First-Site-Name".
 
     ```powershell
-    New-EdgeSubscription -FileData ([byte[]]$(Get-Content -Path "D:\Data\EdgeSubscriptionInfo.xml" -Encoding Byte -ReadCount 0)) -Site "Default-First-Site-Name"
+    New-EdgeSubscription -FileData ([System.IO.File]::WriteAllBytes('D:\Data\EdgeSubscriptionInfo.xml', $file.FileData)) -Site "Default-First-Site-Name"
     ```
 
     > [!NOTE]

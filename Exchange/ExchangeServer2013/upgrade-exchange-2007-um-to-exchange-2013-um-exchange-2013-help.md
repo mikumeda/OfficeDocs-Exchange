@@ -5,6 +5,8 @@ ms:assetid: 642c922d-7e85-40f0-bb9b-0f20da692be3
 ms:mtpsurl: https://technet.microsoft.com/library/Dn169227(v=EXCHG.150)
 ms:contentKeyID: 53382781
 ms.reviewer: 
+ms.topic: article
+description: How to upgrade Microsoft Exchange 2007 Unified Messaging to Exchange 2013 Unified Messaging
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -220,7 +222,7 @@ If required, you can create a UM dial plan by using the EAC:
 
 2. On the **New UM Dial Plan** page, complete the following:
 
-   - **Name**: Type the name of the dial plan. A UM dial plan name is required and must be unique. However, the name you type is used only for display purposes in the EAC and the Shell. The maximum length of a UM dial plan name is 64 characters, and it can include spaces. However, it can't include any of the following characters: " / \\ \[ \] : ; | = , + \* ? \< \>.
+   - **Name**: Type the name of the dial plan. A UM dial plan name is required and must be unique. However, the name you type is used only for display purposes in the EAC and the Shell. The maximum length of a UM dial plan name is 64 characters, and it can include spaces. However, it can't include any of the following characters: " / \\ \[ \] : ; | = , + \* ? \< \>.
 
      Although the box for the name of the dial plan can accept 64 characters, the name of the dial plan can't be longer than 49 characters. If you try to create a dial plan name that contains more than 49 characters, you'll receive an error message. The message will say that the UM mailbox policy couldn't be generated because the UM dial plan name is too long. This happens because, when you create a dial plan a default UM mailbox policy named *\<DialPlanName\>* **Default Policy** is also created. When the 15 characters in the default policy are added to the name of the dial plan, the total characters exceed the limit. The *name* parameter for both the UM dial plan and UM mailbox policy can be 64 characters. However, if the name of the dial plan is longer than 49 characters, the name of the default UM mailbox policy will be longer than 64 characters, and this isn't allowed by the system.
 
@@ -245,7 +247,7 @@ If required, you can create a UM dial plan by using the EAC:
 
      - **Unsecured**: By default, when you create a UM dial plan, it is set to not encrypt the SIP signaling or RTP traffic. In unsecured mode, the Client Access and Mailbox servers associated the UM dial plan send and receive data from VoIP gateways, IP PBXs, SBCs and other Client Access and Mailbox servers using no encryption. In unsecured mode, neither the Realtime Transport Protocol (RTP) media channel nor the SIP signaling information is encrypted.
 
-     - **SIP secured**  When you select **SIP secured**, only the SIP signaling traffic is encrypted, and the RTP media channels still use TCP, which isn't encrypted. With SIP secured, Mutual Transport Layer Security (TLS) is used to encrypt the SIP signaling traffic and VoIP data.
+     - **SIP secured**  When you select **SIP secured**, only the SIP signaling traffic is encrypted, and the RTP media channels still use TCP, which isn't encrypted. With SIP secured, Mutual Transport Layer Security (TLS) is used to encrypt the SIP signaling traffic and VoIP data.
 
      - **Secured**: When you select **Secured**, both the SIP signaling traffic and the RTP media channels are encrypted. Both the secure signaling media channel that uses Secure Realtime Transport Protocol (SRTP) and the SIP signaling traffic use mutual TLS to encrypt the VoIP data.
 
@@ -293,7 +295,7 @@ If required, you can create a UM IP gateway by using the EAC, as follows:
 
    - **Address**: You can configure a UM IP gateway with either an IPv4 or IPv6 address or an FQDN. Use this box to specify the IP address or FQDN configured on the VoIP gateway, IP PBX, or SIP-enabled PBX. This box accepts only FQDNs that are valid and formatted correctly.
 
-     You can enter alphabetical and numeric characters. IPv4 addresses, IPv6 addresses, and FQDNs are supported. If you want to use mutual TLS between a UM IP gateway and a dial plan operating in either SIP secured or Secured mode, you must configure the UM IP gateway with an FQDN. You must also configure it to listen on port 5061 and verify that any VoIP gateways or IP PBXs have also been configured to listen for mutual TLS requests on port 5061. To configure a UM IP gateway, run the following command in the Shell: `Set-UMIPGateway -identity MyUMIPGateway -Port 5061`
+     You can enter alphabetical and numeric characters. IPv4 addresses, IPv6 addresses, and FQDNs are supported. If you want to use mutual TLS between a UM IP gateway and a dial plan operating in either SIP secured or Secured mode, you must configure the UM IP gateway with an FQDN. You must also configure it to listen on port 5061 and verify that any VoIP gateways or IP PBXs have also been configured to listen for mutual TLS requests on port 5061. To configure a UM IP gateway, run the following command in the Shell: `Set-UMIPGateway -identity MyUMIPGateway -Port 5061`
 
      If you use an FQDN, you must also make sure that you've correctly configured a DNS host record for the VoIP gateway, IP PBX, or SIP-enabled PBX so that the host name will be correctly resolved to an IP address. Also, if you use an FQDN instead of an IP address, and the DNS configuration for the UM IP gateway is changed, you must disable and then enable the UM IP gateway to make sure that configuration information for the UM IP gateway is updated correctly.
 
@@ -333,7 +335,7 @@ If required, you can create a UM hunt group by using the EAC:
 
 3. On the **New UM Hunt Group** page, enter the following information:
 
-   - **Name**: Use this box to create the display name for the UM hunt group. A UM hunt group name is required and must be unique, but it's used only for display purposes in the EAC and the Shell. If you have to change the display name of the hunt group after it's been created, you must first delete the existing hunt group and then create another hunt group that has the appropriate name. If your organization uses multiple hunt groups, we recommend that you use meaningful names for your hunt groups. The maximum length of a UM hunt group name is 64 characters, and it can include spaces. However, it can't include any of the following characters: " / \\ \[ \] : ; | = , + \* ? \< \>.
+   - **Name**: Use this box to create the display name for the UM hunt group. A UM hunt group name is required and must be unique, but it's used only for display purposes in the EAC and the Shell. If you have to change the display name of the hunt group after it's been created, you must first delete the existing hunt group and then create another hunt group that has the appropriate name. If your organization uses multiple hunt groups, we recommend that you use meaningful names for your hunt groups. The maximum length of a UM hunt group name is 64 characters, and it can include spaces. However, it can't include any of the following characters: " / \\ \[ \] : ; | = , + \* ? \< \>.
 
    - **UM IP Gateway**: Use this box to select a UM IP gateway. This box shows the name of the UM IP gateway that will be linked with the UM hunt group. To link a UM IP gateway to the UM hunt group, click **Browse**.
 
@@ -372,7 +374,7 @@ If required, you can create a UM auto attendant by using the EAC, as follows:
 
    - **Set the auto attendant to respond to voice commands**: Select this check box to speech-enable the UM auto attendant. If the auto attendant is speech-enabled, callers can respond to the system or custom prompts used by the UM auto attendant using touchtone or voice inputs. By default, the auto attendant isn't speech-enabled when it's created. For callers to use a speech-enabled auto attendant in a language other than U.S. English (en-US), you must install the appropriate UM language pack and configure the properties of the auto attendant to use this language. The en-US UM language pack is installed by default when you install an Exchange 2013 Mailbox server.
 
-   - **Access numbers**: Enter the extension or telephone numbers that callers will use to reach the auto attendant. Type an extension number or telephone number in the box, and then click **Add ** to add the number to the list. The number of digits in the extension number or telephone number that you provide doesn't have to match the number of digits for an extension number configured on the associated UM dial plan. This is because direct calls are allowed to UM auto attendants.
+   - **Access numbers**: Enter the extension or telephone numbers that callers will use to reach the auto attendant. Type an extension number or telephone number in the box, and then click **Add ** to add the number to the list. The number of digits in the extension number or telephone number that you provide doesn't have to match the number of digits for an extension number configured on the associated UM dial plan. This is because direct calls are allowed to UM auto attendants.
 
      The number of extension or access numbers you can enter is unlimited. However, you may create a new auto attendant without listing an extension number or telephone number. An extension number or telephone number isn't required. You can edit or remove an existing extension number or pilot identifier. To edit an existing extension number or telephone number, click **Edit**. To remove an existing extension number or telephone number from the list, click **Remove**.
 

@@ -72,6 +72,7 @@ To convert a mailbox, use the following syntax:
 
 ```PowerShell
 Set-Mailbox -Identity <MailboxIdentity> -Type <Regular | Room | Equipment | Shared>
+```
 
 This example converts the shared mailbox named MarketingDept1 to a user mailbox.
 
@@ -86,7 +87,7 @@ For detailed syntax and parameter information, see [Set-Mailbox](/powershell/mod
 To verify that you have successfully converted the mailbox, replace \<MailboxIdentity\> with the alias or email address of the mailbox, and run the following command in Exchange Online PowerShell:
 
 ```PowerShell
-Get-Mailbox -Identity <MailboxIdentity | Format-List RecipientTypeDetails
+Get-Mailbox -Identity <MailboxIdentity> | Format-List RecipientTypeDetails
 ```
 
 The value for _RecipientTypeDetails_ should be `UserMailbox`.

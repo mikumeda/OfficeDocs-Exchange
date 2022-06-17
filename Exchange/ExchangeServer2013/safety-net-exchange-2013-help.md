@@ -5,6 +5,8 @@ ms:assetid: d0abb807-3b12-4c7d-bc7e-769b87c84ccb
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657495(v=EXCHG.150)
 ms:contentKeyID: 49289415
 ms.reviewer: 
+ms.topic: article
+description: Safety Net is the transport dumpster in Microsoft Exchange 2013
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -25,13 +27,13 @@ Here's how Safety Net is similar to the transport dumpster in Exchange 2010:
 
 - Safety Net is a queue that's associated with the Transport service on a Mailbox server. This queue stores copies of messages that were successfully processed by the server.
 
-- You can specify how long Safety Net stores copies of the successfully processed messages before they expire and are automatically deleted. The default is 2 days.
+- You can specify how long Safety Net stores copies of the successfully processed messages before they expire and are automatically deleted. The default is 2 days.
 
 Here's how Safety Net is different in Exchange 2013:
 
 - Safety Net doesn't require DAGs. For Mailbox servers that don't belong to a DAGs, Safety Net stores copies of the delivered messages on other Mailbox servers in the local Active Directory site.
 
-- Safety Net itself is now redundant, and is no longer a single point of failure. This introduces the concept of the *Primary Safety Net* and the *Shadow Safety Net*. If the Primary Safety Net is unavailable for more than 12 hours, resubmit requests become shadow resubmit requests, and messages are re-delivered from the Shadow Safety Net.
+- Safety Net itself is now redundant, and is no longer a single point of failure. This introduces the concept of the *Primary Safety Net* and the *Shadow Safety Net*. If the Primary Safety Net is unavailable for more than 12 hours, resubmit requests become shadow resubmit requests, and messages are re-delivered from the Shadow Safety Net.
 
 - Safety Net takes over some responsibility from shadow redundancy in DAG environments. Shadow redundancy doesn't need to keep another copy of the delivered message in a shadow queue while it waits for the delivered message to replicate to the passive copies of mailbox database on the other Mailbox servers in the DAG. The copy of the delivered message is already stored in Safety Net, so the message can be resubmitted from Safety Net if necessary.
 
@@ -49,9 +51,9 @@ The parameters used by Safety Net are described in the following table.
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

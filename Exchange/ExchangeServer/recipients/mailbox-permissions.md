@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to assign permissions for mailboxes and groups in Exchange Server 2016 or Exchange Server 2019 so other users can open the mailbox, send mail from the mailbox, or send mail from the group.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 749cdfe3-496b-453f-96eb-20a0bf28fd52
 ms.reviewer:
 title: Manage permissions for recipients
@@ -18,17 +18,17 @@ manager: serdars
 
 # Manage permissions for recipients
 
-In Exchange Server, you can use the Exchange admin center (EAC) or the Exchange Management Shell to assign permissions to a mailbox or group so that other users can access the mailbox (the Full Access permission), or send email messages that appear to come from the mailbox or group (the Send As or Send on Behalf permissions). The users that are assigned these permissions on other mailboxes or groups are called *delegates*.
+In Exchange Server, you can use the Exchange admin center (EAC) or the Exchange Management Shell to assign permissions to a mailbox or group so that other users can access the mailbox (the Full Access permission), or send email messages that appear to come from the mailbox or group (the Send As or Send on Behalf permissions). The users that are assigned these permissions on other mailboxes or groups are called _delegates_.
 
 The permissions that you can assign to delegates for mailboxes and groups in Exchange Server are described in the following table:
 
  **Note**: Although you can use the Exchange Management Shell to assign some or all of these permissions to other delegate types on other kinds of recipient objects, this topic focuses on the delegate and recipient object types that produce useful results.
 
-|**Permission**|**Description**|**Recipient types in the EAC**|**Additional recipient types in PowerShell**|**Delegate types in the EAC**|**Additional delegate types in the PowerShell**|
-|:-----|:-----|:-----|:-----|:-----|:-----|
-|**Full Access**| Allows the delegate to open the mailbox, and view, add and remove the contents of the mailbox. Doesn't allow the delegate to send messages from the mailbox. <br/><br/> If you assign the Full Access permission to a mailbox that's hidden from address lists, the delegate won't be able to open the mailbox. By default, arbitration and discovery mailboxes are hidden from address lists. <br/><br/> By default, the mailbox auto-mapping feature uses Autodiscover to automatically open the mailbox in the delegate's Outlook profile (in addition to their own mailbox). Note that auto-mapping will only work for individual users granted the proper permissions and will not work for any kind of group. If you don't want mailboxes to be auto-mapped, you need to take one of the following actions: <br/><br/>• Use the **Add-MailboxPermission** cmdlet in the Exchange Management Shell to assign the Full Access permission with the `-AutoMapping $false` setting. For more information, see the [Use the Exchange Management Shell to assign the Full Access permission to mailboxes](#use-the-exchange-management-shell-to-assign-the-full-access-permission-to-mailboxes) section in this topic. <br/><br/>• Assign the Full Access permission to a (mail-enabled) security group. The mailbox won't open in the Outlook profile of each member.|User mailboxes <br/><br/> Linked mailboxes <br/><br/> Resource mailboxes <br/><br/> Shared mailboxes|Arbitration mailboxes <br/><br/> Discovery mailboxes|Mailboxes with user accounts <br/><br/> Mail users with accounts <br/><br/> Mail-enabled security groups|User accounts that aren't mail-enabled. <br/><br/> Universal, global, and domain local security groups that aren't mail-enabled.|
-|**Send As**|Allows the delegate to send messages as if they came directly from the mailbox or group. There's no indication that the message was sent by the delegate. <br/><br/> Doesn't allow the delegate to read the contents of the mailbox. <br/><br/> If you assign the Send As permission to a mailbox that's hidden from address lists, the delegate won't be able to send messages from the mailbox.|User mailboxes <br/><br/> Linked mailboxes <br/><br/> Resource mailboxes <br/><br/> Shared mailboxes <br/><br/> Distribution groups <br/><br/> Dynamic distribution groups <br/><br/> Mail-enabled security groups|n/a|Mailboxes with user accounts <br/><br/> Mail users with accounts <br/><br/> Mail-enabled security groups|n/a|
-|**Send on Behalf**|Allows the delegate to send messages from the mailbox or group. The From address of these messages clearly shows that the message was sent by the delegate (" _\<Delegate\>_ on behalf of _\<MailboxOrGroup\>_"). However, replies to these messages are sent to the mailbox or group, not to the delegate. <br/><br/> Doesn't allow the delegate to read the contents of the mailbox. <br/><br/> If you assign the Send on Behalf permission to a mailbox that's hidden from address lists, the delegate won't be able to send messages from the mailbox.|User mailboxes <br/><br/> Linked mailboxes <br/><br/> Resource mailboxes <br/><br/> Distribution groups <br/><br/> Dynamic distribution groups <br/><br/> Mail-enabled security groups|Shared mailboxes|Mailboxes with user accounts <br/><br/> Mail users with accounts <br/><br/> Mail-enabled security groups <br/><br/> Distribution groups|n/a|
+|Permission|Description|Recipient types in the EAC|Additional recipient types in PowerShell|Delegate types in the EAC|Additional delegate types in the PowerShell|
+|---|---|---|---|---|---|
+|**Full Access**| Allows the delegate to open the mailbox, and view, add and remove the contents of the mailbox. Doesn't allow the delegate to send messages from the mailbox. <p> If you assign the Full Access permission to a mailbox that's hidden from address lists, the delegate won't be able to open the mailbox. By default, arbitration and discovery mailboxes are hidden from address lists. <p> By default, the mailbox auto-mapping feature uses Autodiscover to automatically open the mailbox in the delegate's Outlook profile (in addition to their own mailbox). Note that auto-mapping will only work for individual users granted the proper permissions and will not work for any kind of group. If you don't want mailboxes to be auto-mapped, you need to take one of the following actions: <ul><li>Use the **Add-MailboxPermission** cmdlet in the Exchange Management Shell to assign the Full Access permission with the `-AutoMapping $false` setting. For more information, see the [Use the Exchange Management Shell to assign the Full Access permission to mailboxes](#use-the-exchange-management-shell-to-assign-the-full-access-permission-to-mailboxes) section in this topic.</li><li>Assign the Full Access permission to a (mail-enabled) security group. The mailbox won't open in the Outlook profile of each member.</li></ul>|User mailboxes <p> Linked mailboxes <p> Resource mailboxes <p> Shared mailboxes|Arbitration mailboxes <p> Discovery mailboxes|Mailboxes with user accounts <p> Mail users with accounts <p> Mail-enabled security groups|User accounts that aren't mail-enabled. <p> Universal, global, and domain local security groups that aren't mail-enabled.|
+|**Send As**|Allows the delegate to send messages as if they came directly from the mailbox or group. There's no indication that the message was sent by the delegate. <p> Doesn't allow the delegate to read the contents of the mailbox. <p> If you assign the Send As permission to a mailbox that's hidden from address lists, the delegate won't be able to send messages from the mailbox.|User mailboxes <p> Linked mailboxes <p> Resource mailboxes <p> Shared mailboxes <p> Distribution groups <p> Dynamic distribution groups <p> Mail-enabled security groups|n/a|Mailboxes with user accounts <p> Mail users with accounts <p> Mail-enabled security groups|n/a|
+|**Send on Behalf**|Allows the delegate to send messages from the mailbox or group. The From address of these messages clearly shows that the message was sent by the delegate (" _\<Delegate\>_ on behalf of _\<MailboxOrGroup\>_"). However, replies to these messages are sent to the mailbox or group, not to the delegate. <p> Doesn't allow the delegate to read the contents of the mailbox. <p> If you assign the Send on Behalf permission to a mailbox that's hidden from address lists, the delegate won't be able to send messages from the mailbox.|User mailboxes <p> Linked mailboxes <p> Resource mailboxes <p> Distribution groups <p> Dynamic distribution groups <p> Mail-enabled security groups|Shared mailboxes|Mailboxes with user accounts <p> Mail users with accounts <p> Mail-enabled security groups <p> Distribution groups|n/a|
 
 > [!NOTE]
 > If a user has both Send As and Send on Behalf permissions to a mailbox or group, the Send As permission is always used.|User mailboxes
@@ -175,10 +175,8 @@ For more information, see [Add-AdPermission](/powershell/module/exchange/add-adp
  **Notes**:
 
 - The _Identity_ parameter requires you to use the **Name** or **DistinguishedName** (DN) value of the mailbox or group.
-
-   - **Name**: This value may or may not be the same as the display name. For example, `Felipe Apodaca`.
-
-   - **DistinguishedName**: This value always contains the **Name** value and uses Active Directory LDAP syntax. For example, `CN=Felipe Apodaca,CN=Users,DC=contoso,DC=com`.
+  - **Name**: This value may or may not be the same as the display name. For example, `Felipe Apodaca`.
+  - **DistinguishedName**: This value always contains the **Name** value and uses Active Directory LDAP syntax. For example, `CN=Felipe Apodaca,CN=Users,DC=contoso,DC=com`.
 
    To find these values for a mailbox or group, you can use the **Get-Recipient** cmdlet, which accepts many different values for the _Identity_ parameter. For example:
 
@@ -270,19 +268,19 @@ To verify that you've successfully assigned or removed the Send on Behalf permis
 
 - Replace _\<MailboxIdentity\>_ or _\<GroupIdentity\>_ with the identity of the mailbox or group and run the one of the following commands in the Exchange Management Shell to verify that the delegate is or isn't listed.
 
-   - Mailbox:
+  - Mailbox:
 
      ```PowerShell
      Get-Mailbox -Identity <MailboxIdentity> | Format-List GrantSendOnBehalfTo
      ```
 
-   - Group:
+  - Group:
 
      ```PowerShell
      Get-DistributionGroup -Identity <GroupIdentity> | Format-List GrantSendOnBehalfTo
      ```
 
-   - Dynamic distribution group:
+  - Dynamic distribution group:
 
      ```PowerShell
      Get-DynamicDistributionGroup -Identity <GroupIdentity> | Format-List GrantSendOnBehalfTo

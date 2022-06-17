@@ -4,6 +4,8 @@ TOCTitle: Use favorite public folders in Outlook Web App
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: article
+description: How to use favorite public folders in Outlook Web App in Microsoft Exchange 2013
 ms.reviewer: 
 ms.assetid: f6f1db72-4465-4eb8-b525-ac2c1fa10a69
 f1.keywords:

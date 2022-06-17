@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: About Outlook Web App mailbox policies in Microsoft Exchange
 ms.assetid: 213b8b7a-1c29-49ee-8c98-d0364ddf4f9d
 f1.keywords:
 - NOCSH

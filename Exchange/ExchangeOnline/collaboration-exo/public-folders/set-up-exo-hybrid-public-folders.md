@@ -44,10 +44,10 @@ This article describes how to enable users in your Exchange Server on-premises e
 
    2. To download the November 2012 Outlook Update for Outlook 2007, see [Update for Microsoft Office Outlook 2007 (KB2687404)](https://www.catalog.update.microsoft.com/Search.aspx?q=outlook+2007) and download the update in preferred language.
 
-5. Outlook 2011 for Mac and Outlook for Mac for Office 365 are not supported for cross-premises public folders. Users must be in the same location as the public folders to access them with Outlook 2011 for Mac or Outlook for Mac for Office 365. In addition, users whose mailboxes are in Exchange Online won't be able to access on-premises public folders using Outlook on the web (formerly known as Outlook Web App).
+5. Outlook 2016 and 2019 for Mac and Outlook for Mac for Office 365 supports cross-premises public folders. For more information, see [Accessing public folders with Outlook 2016 and 2019 for Mac](/exchange/collaboration-exo/public-folders/access-public-folders-with-outlook-2016-for-mac).
 
-   > [!NOTE]
-   > Outlook 2016 for Mac is supported for cross-premises public folders. If clients in your organization use Outlook 2016 for Mac, make sure they have installed the April 2016 update. Otherwise, those users will not be able to access public folders in a co-existence or hybrid topology. For more information, see [Accessing public folders with Outlook 2016 for Mac](access-public-folders-with-outlook-2016-for-mac.md).
+ > [!Important]
+ > Users whose mailboxes are in Exchange Online won't be able to access on-premises public folders using Outlook on the web (formerly known as Outlook Web App).
 
 ## Step 1: Download the scripts
 

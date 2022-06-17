@@ -27,7 +27,7 @@ In Exchange 2013, the Mailbox server role interacts directly with Active Directo
 
   - The Client Access server sends requests from clients to the Mailbox server and returns data from the Mailbox server to the clients. The Client Access server also accesses online address book (OAB) files on the Mailbox server through NetBIOS file sharing. The Client Access server sends messages, free/busy data, client profile settings, and OAB data between the client and the Mailbox server.
 
-  - Outlook clients inside your firewall access the Client Access server to send and retrieve messages. Outlook clients outside the firewall can access the Client Access server by using Outlook Anywhere (which uses the RPC over HTTP Proxy component).
+  - Outlook clients inside your firewall access the Client Access server to send and retrieve messages. Outlook clients outside the firewall can access the Client Access server by using Outlook Anywhere (which uses the RPC over HTTP Proxy component).
 
   - Public folder mailboxes are accessible via RPC over HTTP, regardless of whether the client is outside or inside the firewall.
 

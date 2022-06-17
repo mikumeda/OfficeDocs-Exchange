@@ -57,7 +57,7 @@ Consider the following before you implement an Exchange hybrid deployment:
 
 - **Exchange ActiveSync clients**: When you move a mailbox from your on-premises Exchange organization to Exchange Online, all of the clients that access the mailbox need to be updated to use Exchange Online; this includes Exchange ActiveSync devices. Most Exchange ActiveSync clients will now be automatically reconfigured when the mailbox is moved to Exchange Online, however some older devices might not update correctly. For more information, see [Exchange ActiveSync device settings with Exchange hybrid deployments](activesync-settings.md).
 
-- **Mailbox permissions migration**: On-premises mailbox permissions such as Send As, Full Access, Send on Behalf, and folder permissions, that are explicitly applied on the mailbox are migrated to Exchange Online. Inherited (non-explicit) mailbox permissions and permissions granted to objects that aren't mail enabled in Exchange Online are not migrated. You should ensure all permissions are explicitly granted and all objects are mail enabled prior to migration. Therefore, you have to plan for configuring these permissions in Exchange Online if applicable for your organization. In the case of Send As permissions, if the user and the resource attempting to be sent as aren't moved at the same time, you'll need to explicitly add the Send As permission in Exchange Online using the **Add-RecipientPermission** cmdlet.
+- **Mailbox permissions migration**: On-premises mailbox permissions such as Send As, Full Access, Send on Behalf, and folder permissions, that are explicitly applied on the mailbox are migrated to Exchange Online. Inherited (non-explicit) mailbox permissions and permissions granted to objects that aren't mail enabled in Exchange Online are not migrated. You should ensure all permissions are explicitly granted and all objects are mail enabled prior to migration. Therefore, you have to plan for configuring these permissions in Exchange Online if applicable for your organization.
 
 - **Support for cross-premises mailbox permissions**: Exchange hybrid deployments support the use of the Full Access and Send on Behalf Of permissions between mailboxes located in an on-premises Exchange organization and mailboxes located in Exchange Online. Additional steps are required for Send As permissions. Also, some additional configuration may be required to support cross-premises mailbox permissions depending on the version of Exchange installed in your on-premises organization. For more information, see [Delegate mailbox permissions](permissions.md#delegate-mailbox-permissions) in [Permissions in Exchange hybrid deployments](permissions.md) and [Configure Exchange to support delegated mailbox permissions in a hybrid deployment](hybrid-deployment/set-up-delegated-mailbox-permissions.md).
 
@@ -79,7 +79,7 @@ A hybrid deployment involves several different services and components:
    > We don't support the installation of Exchange servers running the Mailbox or Client Access server roles in a perimeter network.
 
    > [!IMPORTANT]
-   > We recommend using the Exchange Server with the latest CU and SU for configuring Hybrid.
+   > Hybrid deployments require the latest Cumulative Update (CU) or Update Rollup (RU) that's available for your version of Exchange. We recommend using the Exchange Server with the latest CU and SU for configuring Hybrid. If you can't install the latest update, the immediately previous release is also supported.
 
 - **Office 365 or Microsoft 365**: Several Office 365 and Microsoft 365 service subscriptions include an Exchange Online organization. Organizations configuring a hybrid deployment need to purchase a license for each mailbox that's migrated to or created in the Exchange Online organization.
 
@@ -120,8 +120,8 @@ Let's say that you're the network administrator for Contoso, and you're interest
 
 If you compare Contoso's existing organization configuration and the hybrid deployment configuration, you'll see that configuring a hybrid deployment has added servers and services that support additional communication and features that are shared between the on-premises and Exchange Online organizations. Here's an overview of the changes that a hybrid deployment has made from the initial on-premises Exchange organization.
 
-|**Configuration**|**Before hybrid deployment**|**After hybrid deployment**|
-|:-----|:-----|:-----|
+|Configuration|Before hybrid deployment|After hybrid deployment|
+|---|---|---|
 |Mailbox location|Mailboxes on-premises only.|Mailboxes on-premises and in Exchange Online.|
 |Message transport|On-premises Mailbox servers handle all inbound and outbound message routing.|On-premises Mailbox servers handle internal message routing between the on-premises and Exchange Online organization.|
 |Outlook on the web|On-premises Mailbox servers receive all Outlook on the web requests and displays mailbox information.|On-premises Mailbox servers redirect Outlook on the web requests to either on-premises Exchange 2016 Mailbox servers or provides a link to log on to Exchange Online.|
@@ -260,8 +260,8 @@ The following list provides you with definitions of the core components associat
 
 The following table contains links to topics that will help you learn about and manage hybrid deployments in Microsoft Exchange.
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[Hybrid Configuration wizard](hybrid-configuration-wizard.md)|Learn how the Hybrid Configuration wizard and the Hybrid Configuration Engine configure a hybrid deployment.|
 |[Hybrid deployment prerequisites](hybrid-deployment-prerequisites.md)|Learn more about hybrid deployment prerequisites, including compatible Exchange Server organizations, Microsoft 365 or Office 365 requirements, and other on-premises configuration requirements.|
 |[Certificate requirements for hybrid deployments](certificate-requirements.md)|Learn more about the requirements for digital certificates in hybrid deployments.|

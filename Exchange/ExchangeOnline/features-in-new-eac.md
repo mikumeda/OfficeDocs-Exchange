@@ -65,10 +65,6 @@ You can personalize your home page by selecting a theme, setting your language, 
 
 Here are the features available in the left-hand navigation.
 
-<br>
-
-****
-
 |Area|What you do here|
 |---|---|
 |**Recipients**|View and manage your mailboxes (both user and shared mailboxes), groups, resource mailboxes, and contacts.|
@@ -79,7 +75,6 @@ Here are the features available in the left-hand navigation.
 |**Insights**|Use the recommendations to discover trends and/or insights, and take actions to fix issues related to mailbox and mail flow.|
 |**Organization**|Manage organization sharing and apps for Outlook.|
 |**Public folders**|Manage public folders and public folder mailboxes.|
-|
 
 > [!NOTE]
 > You can also access **Classic Exchange admin center** and **Microsoft 365 admin center**, by selecting them at the bottom of left navigation panel.

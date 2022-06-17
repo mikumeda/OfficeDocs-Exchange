@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: Setup can't continue because the organization contains one or more Exchange 2013 servers that aren't running the minimum required version of Exchange.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.E16E15CoexistenceMinVersionRequirement
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 81658d0d-f132-4dbf-9cb6-467e3e3536df
 ms.reviewer: 
 title: Exchange 2013 CU10 or later is required for coexistence with Exchange 2016 or later [E16E15CoexistenceMinVersionRequirement]

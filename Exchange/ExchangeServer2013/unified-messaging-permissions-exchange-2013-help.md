@@ -1,6 +1,8 @@
 ---
 title: 'Unified Messaging permissions: Exchange 2013 Help'
 TOCTitle: Unified Messaging permissions
+ms.topic: article
+description: Learn about the permissions required to perform Unified Messaging tasks on Client Access servers and Mailbox servers.
 ms:assetid: d326c3bc-8f33-434a-bf02-a83cc26a5498
 ms:mtpsurl: https://technet.microsoft.com/library/Dd638193(v=EXCHG.150)
 ms:contentKeyID: 48385578
@@ -40,8 +42,8 @@ Users who are assigned the View-Only Management role group can view the configur
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

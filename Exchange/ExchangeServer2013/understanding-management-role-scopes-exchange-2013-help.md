@@ -5,6 +5,8 @@ ms:assetid: 24ed4a38-438a-4223-9f9c-5d4dea4b046b
 ms:mtpsurl: https://technet.microsoft.com/library/Dd335146(v=EXCHG.150)
 ms:contentKeyID: 49289199
 ms.reviewer: 
+ms.topic: article
+description: About management role scopes in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -66,8 +68,8 @@ The following tables list all of the implicit scopes that can be defined on mana
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -125,11 +127,11 @@ Expand the following table to see a list of all the built-in management roles an
 
 <table>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -733,8 +735,8 @@ Exchange 2013 provides several predefined relative write scopes that you can use
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -839,9 +841,9 @@ Some cmdlets may use configuration scopes that aren't immediately obvious. The f
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

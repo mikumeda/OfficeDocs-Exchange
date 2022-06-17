@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn how to create a Send connector in Exchange 2016 and Exchange 2019 that's configured to route outbound mail through a smart host.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 4a9ef08e-bd62-4c6b-8790-d24fb0f8f24b
 ms.reviewer:
 title: Create a Send connector to route outbound mail through a smart host
@@ -59,8 +59,8 @@ Instead of routing all outbound messages directly to the Internet, you may need 
 
 5. On the next page, in the **Route mail through smart hosts** section, select the authentication method that's required by the smart host. Valid values are:
 
-   |**Authentication mechanism**|**Description**|
-   |:-----|:-----|
+   |Authentication mechanism|Description|
+   |---|---|
    |**None**|No authentication. For example, when access to the smart host is restricted by the source IP address.|
    |**Basic authentication**|Basic authentication. Requires a username and password. The username and password are sent in clear text.|
    |**Offer basic authentication only after starting TLS**|Basic authentication that's encrypted with TLS. This requires a server certificate on the smart host that contains the exact FQDN of the smart host that's defined on the Send connector.|

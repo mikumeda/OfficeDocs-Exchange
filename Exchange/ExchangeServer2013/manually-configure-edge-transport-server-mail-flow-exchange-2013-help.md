@@ -33,7 +33,7 @@ Only Mailbox servers located in the subscribed Active Directory site can transfe
 
 ## Create additional Send connectors after Edge subscription
 
-After an Edge Transport server is subscribed to an Active Directory site, cmdlets for creating and modifying Send connectors on the Edge Transport server are disabled. If you want to create a Send connector whose source server is the Edge Transport server, you can create the Send connector inside the Exchange organization. You can specify one or more Edge Subscriptions as the source server for a Send connector. You can't specify both Mailbox servers and Edge Subscriptions as source servers for the same Send connector. The Send connector will be replicated to the AD LDS instance on the Edge Transport server that's configured as a source server the next time configuration data is synchronized by EdgeSync. If you list more than one Edge Subscription as a source server, connections to that Send connector will be load balanced between the subscribed Edge Transport servers. Edge Transport servers need to be subscribed to the same Active Directory site for load balancing to occur. If Edge Subscriptions in different Active Directory sites are configured as source servers on the same Send connector, Edge Transport servers will route only to the closest source server.
+After an Edge Transport server is subscribed to an Active Directory site, cmdlets for creating and modifying Send connectors on the Edge Transport server are disabled. If you want to create a Send connector whose source server is the Edge Transport server, you can create the Send connector inside the Exchange organization. You can specify one or more Edge Subscriptions as the source server for a Send connector. You can't specify both Mailbox servers and Edge Subscriptions as source servers for the same Send connector. The Send connector will be replicated to the AD LDS instance on the Edge Transport server that's configured as a source server the next time configuration data is synchronized by EdgeSync. If you list more than one Edge Subscription as a source server, connections to that Send connector will be load balanced between the subscribed Edge Transport servers. Edge Transport servers need to be subscribed to the same Active Directory site for load balancing to occur. If Edge Subscriptions in different Active Directory sites are configured as source servers on the same Send connector, Edge Transport servers will route only to the closest source server.
 
 You will need to manually create Send connectors if:
 
@@ -52,13 +52,13 @@ If you decide to partition the inbound and outbound mail processing between two 
 - For the outbound Edge Transport server, run the following command on the Mailbox server.
 
   ```powershell
-  New-EdgeSubscription -FileData ([byte[]]$(Get-Content -Path "C:\EdgeServerSubscription.xml" -Encoding Byte -ReadCount 0)) -Site "Site-A" -CreateInboundSendConnector $false -CreateInternetSendConnector $true
+  New-EdgeSubscription -FileData ([System.IO.File]::ReadAllBytes('C:\EdgeServerSubscription.xml')) -Site "Site-A" -CreateInboundSendConnector $false -CreateInternetSendConnector $true
   ```
 
 - For the inbound Edge Transport server, run the following command on the Mailbox server.
 
   ```powershell
-  New-EdgeSubscription -FileData ([byte[]]$(Get-Content -Path "C:\EdgeServerSubscription.xml" -Encoding Byte -ReadCount 0)) -Site "Site-A" -CreateInboundSendConnector $true -CreateInternetSendConnector $false
+  New-EdgeSubscription -FileData ([System.IO.File]::ReadAllBytes('C:\EdgeServerSubscription.xml')) -Site "Site-A" -CreateInboundSendConnector $true -CreateInternetSendConnector $false
   ```
 
 ## Route outbound email to a smart host
@@ -68,10 +68,10 @@ If your Exchange organization routes all outbound email through a smart host, th
 Run the following command on the Mailbox server to suppress automatic creation of the Send connector to the Internet.
 
 ```powershell
-New-EdgeSubscription -FileData ([byte[]]$(Get-Content -Path "C:\EdgeServerSubscription.xml" -Encoding Byte -ReadCount 0)) -Site "Site-A" -CreateInternetSendConnector $false
+New-EdgeSubscription -FileData ([System.IO.File]::ReadAllBytes('C:\EdgeServerSubscription.xml')) -Site "Site-A" -CreateInternetSendConnector $false
 ```
 
-After the Edge Subscription process is complete, manually create a Send connector to the Internet. Create the Send connector inside the Exchange organization, and select the Edge Subscription as the source server for the connector. Select the `Custom` usage type and configure one or more smart hosts. This new Send connector will be replicated to the AD LDS instance on the Edge Transport server the next time EdgeSync synchronizes configuration data. You can force immediate EdgeSync synchronization by running the **Start-EdgeSynchronization** cmdlet on a Mailbox server.
+After the Edge Subscription process is complete, manually create a Send connector to the Internet. Create the Send connector inside the Exchange organization, and select the Edge Subscription as the source server for the connector. Select the `Custom` usage type and configure one or more smart hosts. This new Send connector will be replicated to the AD LDS instance on the Edge Transport server the next time EdgeSync synchronizes configuration data. You can force immediate EdgeSync synchronization by running the **Start-EdgeSynchronization** cmdlet on a Mailbox server.
 
 Example: Using the Shell to configure a Send connector for a subscribed Edge Transport server to route messages for all Internet address spaces through a smart host. Run this task on a Mailbox server inside the Exchange organization, not on the Edge Transport server.
 

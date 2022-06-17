@@ -4,10 +4,12 @@ TOCTitle: Remove a database availability group
 ms:assetid: 071296e9-31b0-40f4-9a02-177d97486ebd
 ms:mtpsurl: https://technet.microsoft.com/library/Dd335069(v=EXCHG.150)
 ms:contentKeyID: 48384792
-ms.reviewer: 
+ms.reviewer:
+ms.topic: article
+description: How to remove a database availability group in Microsoft Exchange
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

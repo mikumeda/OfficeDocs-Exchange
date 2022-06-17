@@ -25,8 +25,8 @@ The following is a list of the updated parameters and new cmdlets for Exchange 2
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

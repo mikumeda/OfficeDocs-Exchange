@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: How to select the language for an auto attendant in Microsoft Exchange Server
 ms.assetid: 3a1c1ec0-c726-41fb-a294-59faab205609
 f1.keywords:
 - NOCSH

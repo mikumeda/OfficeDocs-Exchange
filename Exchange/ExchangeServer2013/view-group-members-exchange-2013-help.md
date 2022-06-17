@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to view members of a dynamic distribution group in Microsoft Exchange Server
 ms.assetid: 40b100c6-864e-4c82-9f98-08dd5c83e378
 f1.keywords:
 - NOCSH

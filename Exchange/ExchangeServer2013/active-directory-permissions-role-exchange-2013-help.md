@@ -18,7 +18,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The `Active Directory Permissions` management role enables administrators to configure Active Directory permissions in an organization. Some features that use Active Directory permissions or an access control list (ACL) include transport Receive and Send connectors, and Send As and Send on behalf of permissions for mailboxes.
+The `Active Directory Permissions` management role enables administrators to configure Active Directory permissions in an organization. Some features that use Active Directory permissions or an access control list (ACL) include transport Receive and Send connectors, and Send As and Send on behalf of permissions for mailboxes.
 
 > [!NOTE]
 > Permissions set directly on Active Directory objects may not be enforced through Role Based Access Control (RBAC).

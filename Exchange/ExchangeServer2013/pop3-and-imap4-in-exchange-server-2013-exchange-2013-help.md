@@ -5,6 +5,8 @@ ms:assetid: a7dc91ee-2919-4db3-ae9c-cd665d2e09ea
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657728(v=EXCHG.150)
 ms:contentKeyID: 49300645
 ms.reviewer: 
+ms.topic: article
+description: POP3 and IMAP4 in Microsoft Exchange Server 2013
 manager: serdars
 ms.author: serdars
 author: msdmaguire

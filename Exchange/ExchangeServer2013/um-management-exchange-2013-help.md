@@ -5,6 +5,8 @@ ms:assetid: c91f0387-615c-4a1d-87d4-133ddac1e407
 ms:mtpsurl: https://technet.microsoft.com/library/Dd351142(v=EXCHG.150)
 ms:contentKeyID: 49289406
 ms.reviewer: 
+ms.topic: article
+description: Administrators who are members of the UM Management role group in Microsoft Exchange Server can manage UM features in the Exchange organization such as service configuration, properties on mailboxes, prompts, and auto attendant configuration  
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The UM Management management role group is one of several built-in role groups that make up the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. Role groups are assigned one or more management roles that contain the permissions required to perform a given set of tasks. The members of a role group are granted access to the management roles assigned to the role group. For more information about role groups, see [Understanding management role groups](understanding-management-role-groups-exchange-2013-help.md).
+The UM Management management role group is one of several built-in role groups that make up the Role Based Access Control (RBAC) permissions model in Microsoft Exchange Server 2013. Role groups are assigned one or more management roles that contain the permissions required to perform a given set of tasks. The members of a role group are granted access to the management roles assigned to the role group. For more information about role groups, see [Understanding management role groups](understanding-management-role-groups-exchange-2013-help.md).
 
 Administrators who are members of the UM Management role group can manage features in the Exchange organization such as Unified Messaging (UM) service configuration, UM properties on mailboxes, UM prompts, and UM auto attendant configuration.
 
@@ -79,15 +81,15 @@ For more information about role assignments and management scopes, see the follo
 
 ### Management roles assigned to this role group
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
 </colgroup>
 <thead>
 <tr class="header">
@@ -104,7 +106,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="um-mailboxes-role-exchange-2013-help.md">UM Mailboxes role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -113,7 +115,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="even">
 <td><p><a href="um-prompts-role-exchange-2013-help.md">UM Prompts role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -122,7 +124,7 @@ For more information about role assignments and management scopes, see the follo
 <tr class="odd">
 <td><p><a href="unified-messaging-role-exchange-2013-help.md">Unified Messaging role</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

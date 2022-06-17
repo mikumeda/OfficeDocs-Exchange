@@ -60,11 +60,11 @@ To experience all Outlook Web App features, use one of the operating system and 
 
 In the table below, the following definitions apply:
 
-- Best: All Outlook Web App features are supported.
+- Best: All Outlook Web App features are supported.
 
-- Good: Most Outlook Web App features are supported.
+- Good: Most Outlook Web App features are supported.
 
-- Light: The browser displays the light version of Outlook Web App
+- Light: The browser displays the light version of Outlook Web App
 
 ### Windows operating system and browser combination
 
@@ -188,9 +188,9 @@ In the table below, the following definitions apply:
 
 You can use the web browser on a tablet or smartphone to sign in to Outlook Web App. The available Outlook Web App features depends on the operating system and browser combination in use, as follows:
 
-- Best: All Outlook Web App features for smartphones and tablets are supported.
+- Best: All Outlook Web App features for smartphones and tablets are supported.
 
-- Light: The browser displays the light version of Outlook Web App.
+- Light: The browser displays the light version of Outlook Web App.
 
 ### Outlook Web App features available on tablets and smartphones
 
@@ -248,7 +248,7 @@ To learn more about OWA for iPhone and OWA for iPad, see [OWA for iPhone and OWA
 <td><p><strong>OS version required</strong></p></td>
 </tr>
 <tr class="even">
-<td><p>iPhone 4S, iPhone 5, iPhone 5c or iPhone 5s. This app is optimized for iPhone 5.</p></td>
+<td><p>iPhone 4S, iPhone 5, iPhone 5c or iPhone 5s. This app is optimized for iPhone 5.</p></td>
 <td><p>iOS 6 or later versions</p></td>
 </tr>
 <tr class="odd">

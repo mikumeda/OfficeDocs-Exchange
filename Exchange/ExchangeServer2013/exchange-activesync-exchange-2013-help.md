@@ -105,7 +105,7 @@ In addition to the ability to configure security options for communications betw
 
 - **Device password policies**: Exchange ActiveSync lets you configure several options for device passwords. The device password options include the following:
 
-  - **Minimum password length (characters)**: This option specifies the length of the password for the mobile device. The default length is 4 characters, but as many as 18 can be included.
+  - **Minimum password length (characters)**: This option specifies the length of the password for the mobile device. The default length is 4 characters, but as many as 18 can be included.
 
   - **Minimum number of character sets**: Use this text box to specify the complexity of the alphanumeric password and force users to use a number of different sets of characters from among the following: lowercase letters, uppercase letters, symbols, and numbers.
 
@@ -115,7 +115,7 @@ In addition to the ability to configure security options for communications betw
 
   - **Enforce password history**: Select this check box to force the mobile phone to prevent the user from reusing their previous passwords. The number that you set determines the number of past passwords that the user won't be allowed to reuse.
 
-  - **Enable password recovery**: Select this check box to enable password recovery for the mobile device.  Administrators can use the **Get-ActiveSyncDeviceStatistics** cmdlet to look up the user's recovery password.
+  - **Enable password recovery**: Select this check box to enable password recovery for the mobile device.  Administrators can use the **Get-ActiveSyncDeviceStatistics** cmdlet to look up the user's recovery password.
 
   - **Wipe device after failed (attempts)**: This option lets you specify whether you want the phone's memory to be wiped after multiple failed password attempts.
 

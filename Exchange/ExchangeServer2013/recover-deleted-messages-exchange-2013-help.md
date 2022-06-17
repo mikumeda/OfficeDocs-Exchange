@@ -2,8 +2,10 @@
 title: 'Recover deleted messages in a mailbox: Exchange 2013 Help'
 TOCTitle: Recover deleted messages in a user's mailbox
 ms.author: serdars
-author: msdmaguire
+author: serdars
 manager: serdars
+ms.topic: article
+description: How to recover deleted messages in a mailbox in Microsoft Exchange
 ms.reviewer:
 ms.assetid: 9e0e34ce-efc5-454e-8d15-57b4da867f12
 f1.keywords:

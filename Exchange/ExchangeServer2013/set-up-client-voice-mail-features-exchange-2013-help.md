@@ -5,6 +5,8 @@ ms:assetid: 5e661cfd-d34e-4caa-91a5-967bbecb75eb
 ms:mtpsurl: https://technet.microsoft.com/library/JJ673529(v=EXCHG.150)
 ms:contentKeyID: 49315432
 ms.reviewer: 
+ms.topic: article
+description: Microsoft Exchange client features that give users who are enabled for Exchange Unified Messaging (UM) access to the email and voice mail messages in their mailbox
 manager: serdars
 ms.author: serdars
 author: msdmaguire

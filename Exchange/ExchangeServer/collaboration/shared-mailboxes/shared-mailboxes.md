@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: An overview of shared mailboxes.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: fbd93b77-637b-4237-a824-8e95166cde11
 ms.reviewer: 
 title: Shared mailboxes

@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: Microsoft Exchange Server 2016 Setup can't continue because it detected an incompatible operating system. You must install a compatible operating system on this computer before you install Exchange 2016. The following table shows the operating systems that are compatible with Exchange 2016.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.ValidOSVersion
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: a3a948d9-4991-4088-9013-0a4c944295e4
 ms.reviewer: 
 title: An incompatible operating system was found [ValidOSVersion]
@@ -25,12 +25,12 @@ Microsoft Exchange Server 2016 Setup can't continue because it detected an incom
 > [!IMPORTANT]
 > Exchange 2016 doesn't support the Server Core installation option of Windows Server.
 
- **Supported operating systems for Exchange 2016**
+**Supported operating systems for Exchange 2016**:
 
-|**Component**|**Requirement**|
-|:-----|:-----|
+|Component|Requirement|
+|---|---|
 |Mailbox and Edge Transport server roles|Windows Server 2016 Standard or Datacenter<sup>\*</sup> <br/> Windows Server 2012 R2 Standard or Datacenter <br/> Windows Server 2012 Standard or Datacenter|
-|Management tools|One of the following: <br/>• Windows Server 2016 Standard or Datacenter<sup>\*</sup> <br/>• Windows Server 2012 R2 Standard or Datacenter <br/>• Windows Server 2012 Standard or Datacenter <br/>• 64-bit edition of Windows 10 <br/>• 64-bit edition of Windows 8.1|
+|Management tools|One of the following: <ul><li>Windows Server 2016 Standard or Datacenter<sup>\*</sup></li><li>Windows Server 2012 R2 Standard or Datacenter</li><li>Windows Server 2012 Standard or Datacenter</li><li>64-bit edition of Windows 10</li><li>64-bit edition of Windows 8.1</li></ul>|
 
 <sup>\*</sup> Requires Exchange Server 2016 Cumulative Update 3 or later.
 

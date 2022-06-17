@@ -5,9 +5,11 @@ ms:assetid: efc48fb4-2ed8-4d05-93af-f3505fbc389d
 ms:mtpsurl: https://technet.microsoft.com/library/Ee364755(v=EXCHG.150)
 ms:contentKeyID: 49289452
 ms.reviewer: 
+ms.topic: article
+description: About the Recoverable Items folder in Microsoft Exchange
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -49,7 +51,7 @@ Knowledge of the following terms will help you understand the content in this to
 
 ## Recoverable Items folder
 
-The Recoverable Items folder resides in the non-IPM subtree of each mailbox. The non-IPM subtree is a storage area within the mailbox that contains operational data about the mailbox. This subtree isn't visible to users using Outlook, Microsoft Office Outlook Web App, or other email clients.
+The Recoverable Items folder resides in the non-IPM subtree of each mailbox. The non-IPM subtree is a storage area within the mailbox that contains operational data about the mailbox. This subtree isn't visible to users using Outlook, Microsoft Office Outlook Web App, or other email clients.
 
 This architectural change provides the following key benefits:
 
@@ -115,11 +117,11 @@ The following table lists the contents of and actions that can be performed in t
 
 <table>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -162,11 +164,11 @@ The following table lists the contents of and actions that can be performed in t
 
 <table>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -211,8 +213,8 @@ The following table lists the message properties that trigger copy-on-write page
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -255,9 +257,9 @@ When a mailbox is no longer on In-Place Hold or litigation hold, copies of modif
 
 ## Recoverable Items mailbox quotas
 
-When an item is moved to the Recoverable Items folder, its size is deducted from the mailbox quota and added to the size of the Recoverable Items folder. In Exchange 2013, mailbox databases have a configurable Recoverable Items warning quota (*soft limit*) of 20 GB and a Recoverable Items quota (*hard limit*) of 30 GB. By default, these limits are inherited by all mailboxes in the database. However, you can configure individual mailboxes with different quotas. To learn more, see [Configure Deleted Item retention and Recoverable Items quotas](configure-deleted-item-retention-and-recoverable-items-quotas-exchange-2013-help.md).
+When an item is moved to the Recoverable Items folder, its size is deducted from the mailbox quota and added to the size of the Recoverable Items folder. In Exchange 2013, mailbox databases have a configurable Recoverable Items warning quota (*soft limit*) of 20 GB and a Recoverable Items quota (*hard limit*) of 30 GB. By default, these limits are inherited by all mailboxes in the database. However, you can configure individual mailboxes with different quotas. To learn more, see [Configure Deleted Item retention and Recoverable Items quotas](configure-deleted-item-retention-and-recoverable-items-quotas-exchange-2013-help.md).
 
-In Exchange Online, the default limits for the Recoverable Items quota are the same as Exchange 2013; a soft limit of 20 GB and a hard limit of 30 GB. However, the quotas for the Recoverable Items folder are automatically increased to 90 GB and 100 GB, respectively, when you place a mailbox on Litigation Hold or In-Place Hold.
+In Exchange Online, the default limits for the Recoverable Items quota are the same as Exchange 2013; a soft limit of 20 GB and a hard limit of 30 GB. However, the quotas for the Recoverable Items folder are automatically increased to 90 GB and 100 GB, respectively, when you place a mailbox on Litigation Hold or In-Place Hold.
 
 When the Recoverable Items folder for a mailbox reaches the Recoverable Items quota, no more items can be stored in the folder. This impacts mailbox functionality in the following ways:
 
@@ -279,10 +281,10 @@ The following table lists the events logged when the Recoverable Items folder re
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

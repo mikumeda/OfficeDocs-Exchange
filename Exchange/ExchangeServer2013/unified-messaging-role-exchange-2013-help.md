@@ -1,4 +1,6 @@
 ---
+ms.topic: article
+description: This article describes the roles that enable administrators to manage Unified Messaging (UM) services in an organization.
 title: 'Unified Messaging role: Exchange 2013 Help'
 TOCTitle: Unified Messaging role
 ms:assetid: bf24aa04-5843-4cf3-83e7-3a5fa7bd3522
@@ -43,15 +45,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -77,7 +79,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="even">
 <td><p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

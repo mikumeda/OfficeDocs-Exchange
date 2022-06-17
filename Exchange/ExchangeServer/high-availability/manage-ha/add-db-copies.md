@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Use these steps to create a copy of a mailbox database in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 784bf48f-8af5-422c-a63f-2f01fc0cf151
 ms.reviewer: 
 title: Add a mailbox database copy in Exchange Server

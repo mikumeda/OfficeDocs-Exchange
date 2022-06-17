@@ -5,6 +5,8 @@ ms:assetid: f36835f2-1e5f-4e5a-88bc-0672af1e3498
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125191(v=EXCHG.150)
 ms:contentKeyID: 49315560
 ms.reviewer: 
+ms.topic: article
+description: Unified Messaging services in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -65,6 +67,6 @@ In Exchange 2007 and Exchange 2010, there was a status parameter that could be u
 
 Although the Client Access and Mailbox servers are set to enabled when they're installed, neither server can correctly process and route incoming calls to UM-enabled users until a UM dial plan is linked with at least one UM IP gateway.
 
-After a dial plan is linked with a UM IP gateway, the Client Access and Mailbox servers locate all UM IP gateways that are associated with the UM dial plan and VoIP gateways, IP PBXs, and SBCs. To detect and identify any configuration changes on either UM dial plans or UM IP gateways, the Client Access or Mailbox servers check the configuration every 10 minutes.
+After a dial plan is linked with a UM IP gateway, the Client Access and Mailbox servers locate all UM IP gateways that are associated with the UM dial plan and VoIP gateways, IP PBXs, and SBCs. To detect and identify any configuration changes on either UM dial plans or UM IP gateways, the Client Access or Mailbox servers check the configuration every 10 minutes.
 
 If the UM IP gateway identifies any changes to the configuration, the Client Access or Mailbox server reacts accordingly, and either starts using or stops using the appropriate VoIP gateway, IP PBX, or SBC. After the Client Access and Mailbox servers answer incoming calls for users linked with a UM dial plan and they're correctly communicating with VoIP gateways, IP PBXs, and SBCs, you can run a set of diagnostic operations to verify that they're operating correctly and that connectivity between the Exchange servers and VoIP gateways, IP PBXs, or SBCs is working correctly.

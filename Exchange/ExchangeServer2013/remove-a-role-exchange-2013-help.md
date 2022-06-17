@@ -5,6 +5,8 @@ ms:assetid: 2fb6f453-f37a-4636-8353-3f9927f81298
 ms:mtpsurl: https://technet.microsoft.com/library/Dd335178(v=EXCHG.150)
 ms:contentKeyID: 49289213
 ms.reviewer: 
+ms.topic: how-to
+description: How to remove a management role from your Microsoft Exchange organization
 manager: serdars
 ms.author: serdars
 author: msdmaguire

@@ -5,6 +5,8 @@ ms:assetid: c4c34235-d545-41e7-ac2f-1dd43aaa3708
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124512(v=EXCHG.150)
 ms:contentKeyID: 49248689
 ms.reviewer: 
+ms.topic: article
+description: Sender reputation is Microsoft Exchange anti-spam functionality that blocks messages according to characteristics of the sender
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -79,7 +81,7 @@ For more information about how to enable and configure detection of open proxy s
 
 The SRL is a number from 0 through 9 that predicts the probability that a specific sender is a spammer or otherwise malicious user. You must set a threshold for sender blocking by SRL. This SRL block threshold defines the SRL value that must be exceeded for sender reputation to block a sender. By default, the SRL is set at 7. You should monitor the effectiveness of the agent at the default level. You may find that you can adjust the value to meet the needs of your organization. If you set other anti-spam agents aggressively, you may be able to set a higher SRL threshold for sender reputation than you would if the other anti-spam agents weren't set aggressively. For more information about how to adjust anti-spam configurations so that they work together to reduce spam, see [Anti-spam protection](anti-spam-protection-exchange-2013-help.md).
 
-On an Edge Transport server, if the SRL block threshold is exceeded for a particular sender, sender reputation adds the sender to the IP Block list on the Connection Filter agent. Sometimes, spammers send batches of spam from a single sender. In this scenario, if sender reputation calculates an SRL that exceeds the SRL block threshold, the sender is added to the Sender Block List for a configurable duration of time. The default duration is 24 hours. After 24 hours, the sender is removed from the Sender Block List and can send messages again.
+On an Edge Transport server, if the SRL block threshold is exceeded for a particular sender, sender reputation adds the sender to the IP Block list on the Connection Filter agent. Sometimes, spammers send batches of spam from a single sender. In this scenario, if sender reputation calculates an SRL that exceeds the SRL block threshold, the sender is added to the Sender Block List for a configurable duration of time. The default duration is 24 hours. After 24 hours, the sender is removed from the Sender Block List and can send messages again.
 
 When a sender is added to the IP Block list, sender reputation deletes the profile for the sender. Sender reputation deletes the profile because the blocked sender's existing profile indicates that the sender's SRL exceeds the SRL block threshold. This would cause the blocked sender to be added to the IP Block list again as soon as the duration for sender blocking ends.
 

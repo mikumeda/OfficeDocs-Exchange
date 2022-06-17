@@ -65,7 +65,7 @@ The migration administrator must have the necessary administrative privileges in
 
     or
 
-  - A member of the Exchange Recipients Administrators group in Active Directory in the on-premises organization.
+  - A member of the Exchange Recipient Administrators group in Active Directory in the on-premises organization.
 
     or
 

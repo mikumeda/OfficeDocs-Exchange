@@ -5,6 +5,8 @@ ms:assetid: a52db4bd-69a6-47b2-acf3-d9d8571c7a87
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124022(v=EXCHG.150)
 ms:contentKeyID: 49315251
 ms.reviewer: 
+ms.topic: how-to
+description: How to start and stop the IMAP4 services in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -17,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-By default, the two IMAP4 services, the Microsoft Exchange IMAP4 service and the Microsoft Exchange IMAP4 Backend service, aren't started on computers running Microsoft Exchange Server 2013. You must start these two services to allow your email clients to connect to Exchange using IMAP4. When these services are running, Exchange 2013 accepts unsecured IMAP4 client communications on port 143 and over port 993 using Secure Sockets Layer (SSL).
+By default, the two IMAP4 services, the Microsoft Exchange IMAP4 service and the Microsoft Exchange IMAP4 Backend service, aren't started on computers running Microsoft Exchange Server 2013. You must start these two services to allow your email clients to connect to Exchange using IMAP4. When these services are running, Exchange 2013 accepts unsecured IMAP4 client communications on port 143 and over port 993 using Secure Sockets Layer (SSL).
 
 The Microsoft Exchange IMAP4 service runs on Exchange 2013 computers that are running the Client Access server role. The Microsoft Exchange IMAP4 Backend service runs on the Exchange 2013 computer that's running the Mailbox server role. In environments where the Client Access and Mailbox server roles are running on the same computer, you manage both services on the same computer.
 

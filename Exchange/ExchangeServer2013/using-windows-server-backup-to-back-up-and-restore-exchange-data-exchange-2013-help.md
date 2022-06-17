@@ -45,8 +45,8 @@ The following table describes the supportability of the backup and recovery opti
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

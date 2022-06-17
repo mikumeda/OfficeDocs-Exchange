@@ -41,7 +41,7 @@ The following list describes the available configuration options:
 
 2. **Direct send**
    - Your printer is connected to a Microsoft 365 or Office 365 server whose name ends with mail.protection.outlook.com.
-   - There is no connector in Microsoft 365 or Office 365 for mail sent from your on-premises organization to Microsoft 365 or Office 365.
+   - There's no connector in Microsoft 365 or Office 365 for mail sent from your on-premises organization to Microsoft 365 or Office 365.
    - The printer can send email only to people in your organization; the printer can't send email to recipients outside your organization.
 
    ![Shows how a multifunction printer uses your Microsoft 365 or Office 365 MX endpoint to send email directly to recipients in your organization only.](../media/cb07aae7-ca31-43a7-a468-74c293b37a66.png)
@@ -60,27 +60,22 @@ The following list describes the available configuration options:
 
 1. Check the settings that were entered directly into the printer:
 
-   <br>
-
-   ****
-
    |Printer setting|Value|
    |---|---|
    |Server/smart host|smtp.office365.com|
    |Port|Port 587 (recommended) or port 25|
    |TLS/StartTLS|Enabled|
-   |Username/email address and password|Login credentials of Microsoft 365 or Office 365 mailbox the printer uses|
-   |
+   |Username/email address and password|Sign in credentials of Microsoft 365 or Office 365 mailbox the printer uses|
 
-2. If your printer didn't require a password for the username/email address that you entered, then your printer is trying to send email without logging on to Microsoft 365 or Office 365. SMTP client submission requires your printer to log on to Microsoft 365 or Office 365. Direct send and Microsoft 365 or Office 365 SMTP relay do not require a logon; consider one of these options instead.
+2. If your printer didn't require a password for the username/email address that you entered, then your printer is trying to send email without logging on to Microsoft 365 or Office 365. SMTP client submission requires your printer to sign in to Microsoft 365 or Office 365. Direct send and Microsoft 365 or Office 365 SMTP relay don't require a logon; consider one of these options instead.
 
 3. Your printer or application must send email from the same email address that you entered as logon credentials during email setup. If the printer or application tries to send email from a different account, this results in an error similar to:
 
    > 5.7.60 SMTP; Client does not have permissions to send as this sender.
 
-   For example, if you entered login credentials for sales@contoso.com in your printer or application settings, but the printer tries to send email from salesperson1@contoso.com, this configuration is not supported. For this scenario, use Microsoft 365 or Office 365 SMTP relay instead.
+   For example, if you entered login credentials for sales@contoso.com in your printer or application settings, but the printer tries to send email from salesperson1@contoso.com, this configuration isn't supported. For this scenario, use Microsoft 365 or Office 365 SMTP relay instead.
 
-4. Test the username and password by logging on to Outlook on the web, and try to send a test email to make sure the account is not blocked. If the user is blocked, see, [Remove blocked users from the Restricted Users portal](/microsoft-365/security/office-365-security/removing-user-from-restricted-users-portal-after-spam).
+4. Test the username and password by logging on to Outlook on the web, and try to send a test email to make sure the account isn't blocked. If the user is blocked, see, [Remove blocked users from the Restricted Users portal](/microsoft-365/security/office-365-security/removing-user-from-restricted-users-portal-after-spam).
 
 5. Next, test that you can connect to Microsoft 365 or Office 365 from your network by doing the following steps:
 
@@ -88,7 +83,7 @@ The following list describes the available configuration options:
 
    2. Run the tool from the command line by typing **telnet**.
 
-   3. Type **open smtp.office365.com 587** (or substitute **25** for **587** if you are using that port setting instead).
+   3. Type **open smtp.office365.com 587** (or substitute **25** for **587** if you're using that port setting instead).
 
    4. If you connected successfully to an Office 365 server, expect to receive a response line similar to this:
 
@@ -96,9 +91,19 @@ The following list describes the available configuration options:
 
    5. If you can't connect to Microsoft 365 or Office 365, your network firewall or Internet Service Provider (ISP) might have blocked port 587 or 25. Correct this so you can send email from your printer.
 
-6. If none of these issues apply to your device, it might not meet requirements for Transport Layer Security (TLS) encryption. Your device must support TLS version 1.2 or above. Update the firmware on the device or try one of the other configuration options where TLS is optional.
+6. If none of these issues apply to your device, it might not meet requirements for Transport Layer Security (TLS) encryption.
 
-   For more information about TLS, see [How Exchange Online uses TLS to secure email connections](/microsoft-365/compliance/exchange-online-uses-tls-to-secure-email-connections) and for detailed technical information about how Exchange Online uses TLS with cipher suite ordering, see [Enhancing mail flow security for Exchange Online](https://www.microsoft.com/microsoft-365/blog/2015/06/29/enhancing-mail-flow-security-for-exchange-online/).
+   Recently, we started rejecting a percentage of connections to smtp.office365.com that uses TLS1.0/1.1 for SMTP AUTH.
+
+   Your device must support TLS version 1.2 or above. Update the firmware on the device or try one of the other configuration options where TLS is optional. If you need to utilize TLS 1.0/1.1 for SMTP AUTH to retain legacy clients and devices, you must opt-in by:
+
+   - Set the AllowLegacyTLSClients parameter on the Set-TransportConfig cmdlet to True. Or from Exchange admin center, go to Settings > Mail Flow and (under Security) check "Turn on use of legacy TLS clients" and click on Save.
+   - Legacy clients and devices need to be configured to submit to the new endpoint smtp-legacy.office365.com.
+
+To learn more, see [New opt-in endpoint available for SMTP AUTH clients still needing legacy TLS](https://techcommunity.microsoft.com/t5/exchange-team-blog/new-opt-in-endpoint-available-for-smtp-auth-clients-still/ba-p/2659652)
+
+For more information about TLS, see [How Exchange Online uses TLS to secure email connections](/microsoft-365/compliance/exchange-online-uses-tls-to-secure-email-connections).
+For detailed technical information about how Exchange Online uses TLS with cipher suite ordering, see [Enhancing mail flow security for Exchange Online](https://www.microsoft.com/microsoft-365/blog/2015/06/29/enhancing-mail-flow-security-for-exchange-online/).
 
 ### I receive an authentication error when my device tries to send email
 
@@ -134,7 +139,7 @@ There are a few things you should check:
 2. Disable Multi-Factor Authentication (MFA) on the licensed mailbox that's being used:
    - In the Microsoft 365 admin center, in the left navigation menu, choose **Users** > **Active users**.
    - On the Active users page, choose **Multi-Factor Authentication**.
-   - On the Multi-Factor Authentication page, select the user and disable the Multi-Factor Authentication status.
+   - On the multi-factor authentication page, select the user and disable the Multi-Factor Authentication status.
 
 3. Disable the [Azure Security Defaults](/azure/active-directory/fundamentals/concept-fundamentals-security-defaults) by toggling the **Enable Security Defaults** to **No**:
 
@@ -213,3 +218,17 @@ This error indicates that email sent from your application or device is not corr
 ### Email from my device is marked as junk by Microsoft 365 or Office 365
 
 Microsoft 365 or Office 365 SMTP relay requires your device to send email from a static IP address. Check that your SPF record is set up with your static IP address. A network or ISP change could change your static IP address. Update your SPF record to reflect this change. If you aren't sending from your own static IP address, consider SMTP client submission instead.
+
+## Run diagnostic to setup applications or devices sending email using Microsoft 365
+
+> [!NOTE]
+> This feature requires a Microsoft 365 administrator account.
+
+If you still need help to fix issues with applications or devices sending email using Microsoft 365, you can run an automated diagnostic.
+
+To run the diagnostic check, select the following button:
+
+> [!div class="nextstepaction"]
+> [Run Tests: Send email using Microsoft 365](https://aka.ms/smtprelay)
+
+A flyout page opens in the Microsoft 365 admin center. Select the appropriate option that you are looking for, eg. new setup or troubleshooting existing setup.

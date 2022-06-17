@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/Bb123712(v=EXCHG.150)
 ms:contentKeyID: 50395402
 ms.reviewer: 
 manager: serdars
+ms.topic: article
+description: How to set connection limits for IMAP4 in Microsoft Exchange
 ms.author: serdars
 author: msdmaguire
 f1.keywords:

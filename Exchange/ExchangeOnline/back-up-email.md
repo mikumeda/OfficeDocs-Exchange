@@ -61,7 +61,7 @@ However, if you need to provide additional storage for user emails, the best way
 
 For more information about Exchange Online Archiving, see:
 
-- [Enable archive mailboxes in the Microsoft 365 security and compliance centers](/microsoft-365/compliance/enable-archive-mailboxes)
+- [Enable archive mailboxes in the compliance portal](/microsoft-365/compliance/enable-archive-mailboxes)
 
 - [Unlimited archiving in Office 365](/microsoft-365/compliance/unlimited-archiving)
 

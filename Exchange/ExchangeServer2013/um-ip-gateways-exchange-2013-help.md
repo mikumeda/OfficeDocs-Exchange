@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: Unified Messaging IP gateways in Microsoft Exchange Server
 ms.assetid: 991d77e0-3995-44ab-bedf-52ff7a0301ab
 f1.keywords:
 - NOCSH

@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: Supported character sets for remote domains in Microsoft Exchange Server
 ms.assetid: 66023a62-1fd3-4019-be2b-4e7147db148a
 f1.keywords:
 - NOCSH
@@ -23,8 +25,8 @@ The following character sets can be specified for messages sent to remote domain
 
 **Supported character sets for remote domain configuration**
 
-|**Name**|**Description**|
-|:-----|:-----|
+|Name|Description|
+|---|---|
 |big5|Chinese Traditional (Big5)|
 |DIN_66003|German (IA5)|
 |euc-jp|Japanese (EUC)|

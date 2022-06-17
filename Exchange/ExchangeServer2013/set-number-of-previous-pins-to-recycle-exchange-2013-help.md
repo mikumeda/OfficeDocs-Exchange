@@ -4,6 +4,8 @@ TOCTitle: Set the number of previous voice mail PINs to recycle
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: how-to
+description: How to set the number of previous voice mail PINs to recycle in Microsoft Exchange Server
 ms.reviewer:
 ms.assetid: b094e68e-c493-4576-a6b1-4c780e635405
 f1.keywords:

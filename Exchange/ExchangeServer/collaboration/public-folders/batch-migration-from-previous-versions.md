@@ -1,30 +1,28 @@
 ---
+title: Use batch migration to migrate Exchange 2010 public folders to Exchange 2016 or Exchange 2019
 ms.localizationpriority: medium
 monikerRange: exchserver-2016
-ms.author: serdars
+ms.author: jhendr
 manager: serdars
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 ms.prod: exchange-server-it-pro
-ms.assetid: da808e27-d2b7-4fbd-915c-a600751f526c
 ms.reviewer:
 ms.collection: exchange-server
-description: 'Summary: Learn how to migrate Exchange 2010 public folders to Exchange 2016.'
+description: 'Summary: Learn how to migrate Exchange 2010 public folders to Exchange 2016 or Exchange 2019.'
 f1.keywords:
 - NOCSH
 audience: ITPro
-title: Use batch migration to migrate Exchange 2010 public folders to Exchange 2016
+
 
 ---
 
-# Use batch migration to migrate Exchange 2010 public folders to Exchange 2016
+# Use batch migration to migrate Exchange 2010 public folders to Exchange 2016 or Exchange 2019
 
-Migrate your public folders from Exchange Server 2010 SP3 RU8 to Exchange Server 2016 within the same forest.
+Migrate your public folders from Exchange Server 2010 SP3 RU8 to Exchange Server 2016or Exchange 2019 within the same forest.
 
 We refer to the Exchange 2010 SP3 RU8 or later server as the *legacy Exchange server*.
 
-> [!NOTE]
-> The batch migration method described in this article is the only supported method for migrating legacy public folders to Exchange Server. The old serial migration method for migrating public folders is being deprecated and is no longer supported by Microsoft.
 
 You'll perform the migration by using the **\*MigrationBatch** cmdlets, and the **\*PublicFolderMigrationRequest** cmdlets for troubleshooting. In addition, you'll use the following PowerShell scripts:
 
@@ -50,7 +48,7 @@ Exchange supports moving your public folders from the following legacy versions 
 
 - Exchange 2010 SP3 RU8 or later
 
-You can't migrate public folders directly from Exchange 2003. If you're running Exchange 2003 in your organization, you need to move all public folder databases and replicas to Exchange 2010 SP3 RU8 or later. No public folder replicas can remain on Exchange 2003. Additionally, mail destined for an Exchange 2016 public folder can't be routed through an Exchange 2003 server.
+
 
 ## What do you need to know before you begin?
 
@@ -68,7 +66,6 @@ You can't migrate public folders directly from Exchange 2003. If you're running 
 
 - Before you migrate, move all user mailboxes to Exchange 2016, because users with Exchange 2010 mailboxes will not have access to public folders on Exchange 2016. For details, see [Mailbox moves in Exchange Server](../../recipients/mailbox-moves.md).
 
-- In a multiple-domain environment, mail-enabled public folders will stop working after migration to Exchange 2016 if Exchange is running in a child domain. This is because in Exchange 2016, mail-enabled public folder objects are required to be under the root domain. To resolve this, you need to mail-disable your mail-enabled public folders and then mail-enable them again, which will allow you to move them to the correct domain location.
 
 - After the migration is complete, if you want external senders to send mail to the migrated mail-enabled public folders, the **Anonymous** user needs to be granted at least the **Create Items** permission. If you don't do this, external senders will receive a delivery failure notification and the messages won't be delivered to the migrated mail-enabled public folder. To read more about how to set permissions on the Anonymous user, see [Mail-enable or mail-disable a public folder](mail-enable-or-disable.md).
 
@@ -413,7 +410,7 @@ In [Step 2: Prepare for the migration](#step-2-prepare-for-the-migration), you w
 
 ## Remove public folder databases from the Exchange 2010 servers
 
-After the migration is complete, and you have verified that your Exchange 2016 public folders are working as expected, you should remove the public folder databases on the Exchange 2010 servers.
+After the migration is complete, and you have verified that your Exchange 2016 or Exchange 2019 public folders are working as expected, you should remove the public folder databases on the Exchange 2010 servers.
 
 For details about how to remove public folder databases from Exchange 2010 servers, see [Remove Public Folder Databases](/previous-versions/office/exchange-server-2010/dd876883(v=exchg.141)).
 
@@ -422,7 +419,7 @@ For details about how to remove public folder databases from Exchange 2010 serve
 If you run into issues with the migration and need to reactivate your Exchange 2010 public folders, perform the following steps.
 
 > [!CAUTION]
-> If you roll your migration back to the Exchange 2010 servers, you will lose any email that was sent to mail-enabled public folders or content that was posted to public folders in Exchange 2016 after the migration. To save this content, you need to export the public folder content to a .pst file and then import it to the Exchange 2010 public folders when the rollback is complete.
+> If you roll your migration back to the Exchange 2010 servers, you will lose any email that was sent to mail-enabled public folders or content that was posted to public folders in Exchange 2016 or Exchange 2019 after the migration. To save this content, you need to export the public folder content to a .pst file and then import it to the Exchange 2010 public folders when the rollback is complete.
 
 1. On the Exchange 2010 server, run the following command to unlock the migrated public folders. This process may take several hours.
 

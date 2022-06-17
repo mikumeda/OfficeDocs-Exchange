@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: After you understand telephony basics, you can integrate UM into an concepts and telephony components.
 ms.assetid: b8790117-b040-4c84-9d34-005c75088e76
 f1.keywords:
 - NOCSH

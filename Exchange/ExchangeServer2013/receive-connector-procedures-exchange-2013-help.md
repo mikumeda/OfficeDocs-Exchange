@@ -5,6 +5,8 @@ ms:assetid: 86f7d6e7-a869-4c90-a570-0239fd0e5872
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657465(v=EXCHG.150)
 ms:contentKeyID: 49289331
 ms.reviewer: 
+ms.topic: article
+description: Receive connector procedures in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

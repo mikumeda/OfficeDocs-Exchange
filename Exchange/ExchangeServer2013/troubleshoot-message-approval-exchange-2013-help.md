@@ -4,6 +4,8 @@ TOCTitle: Manage and troubleshoot message approval
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: article
+description: How to manage and troubleshoot message approval in Microsoft Exchange
 ms.reviewer:
 ms.assetid: 860df43f-a05b-4da3-83f1-68d3123a923d
 f1.keywords:

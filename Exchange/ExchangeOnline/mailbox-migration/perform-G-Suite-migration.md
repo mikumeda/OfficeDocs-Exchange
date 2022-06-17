@@ -29,9 +29,9 @@ All procedures in this article assume that your Microsoft 365 or Office 365 doma
    > [!NOTE]
    > Google Workspace migration is not currently available for Office 365 US Government GCC High or DoD.
 
-## Migration modalities
+## Select your method of migration
 
-You can migrate from Google Workspace using the following modalities:
+You can migrate from Google Workspace using any of the following methods:
 
 - [Automated - through the New Exchange admin center](automated-migration-neweac.md)
 - [Manual - through the New Exchange admin center as well as Classic Exchange admin center](manual-gspace-migration-overview.md)
@@ -46,10 +46,6 @@ Throughput limitations for contacts and calendars completely depend on the quota
 
 Other migration limitations are described in the following table:
 
-<br>
-
-****
-
 |Data type|Limitations|
 |---|---|
 |Mail|Vacation settings, Automatic reply settings|
@@ -57,7 +53,6 @@ Other migration limitations are described in the following table:
 |Calendar|Shared calendars, cloud attachments, and event colors will not be migrated|
 |Contacts|A maximum of three email addresses per contact are migrated over|
 |Contacts|Gmail tags, contact URLs, and custom tags will not be migrated|
-|
 
 > [!TIP]
 >Rules will be migrated and remain turned off by default. We advise users to verify the rules on Outlook before enabling them.

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to renew Exchange self-signed certificate or create certificate renewal requests for a certification authority in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 356ca7cd-b9d4-487d-aa21-3b38e91bde58
 ms.reviewer:
 title: Renew an Exchange Server certificate
@@ -61,11 +61,21 @@ The certificate request appears in the list of Exchange certificates with a stat
 
 ### Use the Exchange Management Shell to create a certificate renewal request for a certification authority
 
-To create a certificate renewal request for a certification authority on the local Exchange server, use the following syntax:
+To create a new certificate renewal request for a certification authority, use the following syntax:
 
-```PowerShell
-Get-ExchangeCertificate -Thumbprint <Thumbprint> | New-ExchangeCertificate -GenerateRequest -RequestFile <FilePathOrUNCPath>\<FileName>.req
-```
+- If you need to send the _content_ of the certificate renewal request file to the CA, use the following syntax to create a Base64 encoded request file:
+
+  ```PowerShell
+  $txtrequest = Get-ExchangeCertificate -Thumbprint <Thumbprint> | New-ExchangeCertificate -GenerateRequest [-KeySize <1024 | 2048 | 4096>] [-Server <ServerIdentity>]
+  [System.IO.File]::WriteAllBytes('<FilePathOrUNCPath>\<FileName>.req', [System.Text.Encoding]::Unicode.GetBytes($txtrequest))
+  ```
+
+- If you need to send the _certificate renewal request file_ to the CA, use the following syntax to create a DER encoded request file:
+
+  ```PowerShell
+  $binrequest = Get-ExchangeCertificate -Thumbprint <Thumbprint> | New-ExchangeCertificate -GenerateRequest -BinaryEncoded [-KeySize <1024 | 2048 | 4096>] [-Server <ServerIdentity>]
+  [System.IO.File]::WriteAllBytes('<FilePathOrUNCPath>\<FileName>.pfx', $binrequest.FileData)
+  ```
 
 To find the thumbprint value of the certificate that you want to renew, run the following command:
 
@@ -73,27 +83,28 @@ To find the thumbprint value of the certificate that you want to renew, run the 
 Get-ExchangeCertificate | where {$_.Status -eq "Valid" -and $_.IsSelfSigned -eq $false} | Format-List FriendlyName,Subject,CertificateDomains,Thumbprint,NotBefore,NotAfter
 ```
 
-This example creates a certificate renewal request with the following properties:
+For detailed syntax and parameter information, see [Get-ExchangeCertificate](/powershell/module/exchange/get-exchangecertificate) and [New-ExchangeCertificate](/powershell/module/exchange/new-exchangecertificate).
 
-- **Certificate to renew**: `5DB9879E38E36BCB60B761E29794392B23D1C054`
+**Notes:**
 
-- **RequestFile**: `\\FileServer01\Data\ContosoCertRenewal.req`
+- If you don't use the _KeySize_ parameter, the certificate request has a 2048 bit RSA public key.
+- If you don't use the _Server_ parameter, the command is run the local Exchange server.
+
+This example creates a Base64 encoded certificate renewal request for the existing certificate with the Thumbprint value `5DB9879E38E36BCB60B761E29794392B23D1C054`:
 
 ```PowerShell
-Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | New-ExchangeCertificate -GenerateRequest -RequestFile \\FileServer01\Data\ContosoCertRenewal.req
+$txtrequest = Get-ExchangeCertificate -Thumbprint 5DB9879E38E36BCB60B761E29794392B23D1C054 | New-ExchangeCertificate -GenerateRequest
+[System.IO.File]::WriteAllBytes('\\FileServer01\Data\ContosoCertRenewal.req', [System.Text.Encoding]::Unicode.GetBytes($txtrequest))
 ```
 
- **Notes:**
+This example creates a DER (binary) encoded certificate renewal request for the same certificate:
 
-- The _RequestFile_ parameter accepts a local path or a UNC path.
+```PowerShell
+$binrequest = Get-ExchangeCertificate -Thumbprint <Thumbprint> | New-ExchangeCertificate -GenerateRequest -BinaryEncoded
+[System.IO.File]::WriteAllBytes('\\FileServer01\Data\ContosoCertRenewal.pfx', $binrequest.FileData)
+```
 
-- We didn't use the _BinaryEncoded_ switch, so the request is Base64 encoded. The information that's displayed onscreen is also written to the file, and the contents of the file are what we need to send to the CA. If we had used the _BinaryEncoded_ switch, the request would have been encoded by DER, and the certificate request file itself is what we would need to send to the CA.
-
-- We didn't use the _KeySize_ parameter, so the certificate request has a 2048 bit RSA public key.
-
-- For more information, see [Get-ExchangeCertificate](/powershell/module/exchange/get-exchangecertificate) and [New-ExchangeCertificate](/powershell/module/exchange/new-exchangecertificate).
-
-### How do you know this worked?
+### How do you know that you successfully created a certificate renewal request?
 
 To verify that you have successfully created a certificate renewal request for a certification authority, perform either of the following steps:
 
@@ -136,16 +147,14 @@ Get-ExchangeCertificate | where {$_.IsSelfSigned -eq $true} | Format-List Friend
 This example renews a self-signed certificate on the local Exchange server, and uses the following settings:
 
 - The thumbprint value of the existing self-signed certificate to renew is `BC37CBE2E59566BFF7D01FEAC9B6517841475F2D`
-
 - The _Force_ switch replaces the original self-signed certificate without a confirmation prompt.
-
 - The private key is exportable. This allows you to export the certificate and import it on other servers.
 
 ```PowerShell
 Get-ExchangeCertificate -Thumbprint BC37CBE2E59566BFF7D01FEAC9B6517841475F2D | New-ExchangeCertificate -Force -PrivateKeyExportable $true
 ```
 
-### How do you know this worked?
+### How do you know that you've successfully renewed an Exchange self-signed certificate?
 
 To verify that you have successfully renewed an Exchange self-signed certificate, use either of the following procedures:
 

@@ -1,9 +1,9 @@
 ---
 description: 'Summary: Learn the tasks that Exchange Server 2016 and Exchange Server 2019 administrators need to know to manage address lists and global address lists (GAL).'
 ms.localizationpriority: medium
-ms.author: serdars
+ms.author: jhendr
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 ms.prod: exchange-server-it-pro
 ms.assetid: 236e8530-62dd-4c43-8a5d-8465623252e6
 ms.collection: exchange-server

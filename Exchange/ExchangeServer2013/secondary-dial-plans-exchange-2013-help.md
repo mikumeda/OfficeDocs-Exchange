@@ -5,6 +5,8 @@ ms:assetid: ecf474c2-042d-4aaf-9f5b-d5138c56ef39
 ms:mtpsurl: https://technet.microsoft.com/library/Ff629383(v=EXCHG.150)
 ms:contentKeyID: 54817012
 ms.reviewer: 
+ms.topic: article
+description: Secondary dial plans in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -50,8 +52,8 @@ The following table defines terms that are used when discussing primary and seco
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -91,7 +93,7 @@ The following table defines terms that are used when discussing primary and seco
 
 In most deployments, only one extension is configured per UM-enabled user. However, there are some more advanced deployments that require you to add secondary extensions for your users.
 
-When Microsoft Lync Server is used for Enterprise Voice, Unified Messaging can provide the voice mail system. However, the UM dial plan used for Enterprise Voice must be a SIP URI dial plan that's specific to UM configurations with Lync Server. In these deployments, the user's extension is provided by a Microsoft Unified Communications endpoint, such as Microsoft Office Communicator, running on the user's computer, or Office Communicator Phone Edition, running on a supported IP phone device. Thus, in most cases, the user's primary dial plan must be the same SIP URI dial plan used with Lync Server. But if the user requires more extension numbers, you shouldn't add another secondary extension to the primary dial plan. You must add a secondary dial plan and then add the secondary extension or EUM proxy address to the UM-enabled user.
+When Microsoft Lync Server is used for Enterprise Voice, Unified Messaging can provide the voice mail system. However, the UM dial plan used for Enterprise Voice must be a SIP URI dial plan that's specific to UM configurations with Lync Server. In these deployments, the user's extension is provided by a Microsoft Unified Communications endpoint, such as Microsoft Office Communicator, running on the user's computer, or Office Communicator Phone Edition, running on a supported IP phone device. Thus, in most cases, the user's primary dial plan must be the same SIP URI dial plan used with Lync Server. But if the user requires more extension numbers, you shouldn't add another secondary extension to the primary dial plan. You must add a secondary dial plan and then add the secondary extension or EUM proxy address to the UM-enabled user.
 
 For more information about adding, removing, or changing extensions, see one of the following:
 
@@ -175,23 +177,21 @@ In Outlook Web App, Play on Phone uses the VoIP gateway that's associated with t
 
 ## Directory search (Outlook Voice Access)
 
-A search of the directory for a user who's been authenticated will follow these rules:
+- A search of the directory for a user who's been authenticated will follow these rules:
 
-- The ability to search for a user and then leave a voice message or call a user will be available only if the user conducting the search is UM enabled and has a primary extension on the same dial plan as the user that's being called. If so, a search by name, alias, and primary extension will locate the user. However, searching by using the secondary extension won't locate the user.
+   - The ability to search for a user and then leave a voice message or call a user will be available only if the user conducting the search is UM enabled and has a primary extension on the same dial plan as the user that's being called. If so, a search by name, alias, and primary extension will locate the user. However, searching by using the secondary extension won't locate the user.
 
-- If the user being searched for is UM enabled and has a secondary extension on the called dial plan, then a search by name, alias, and secondary extension will find the user. However, although options to leave a voice message and call the contact will be offered, the call contact option won't succeed. In this case, a search by primary extension won't find the user.
+   - If the user being searched for is UM enabled and has a secondary extension on the called dial plan, then a search by name, alias, and secondary extension will find the user. However, although options to leave a voice message and call the contact will be offered, the call contact option won't succeed. In this case, a search by primary extension won't find the user.
 
-- To find and be able to either call or leave a voice message for the user they're searching for, the UM-enabled user should use Outlook Voice Access through their primary dial plan's Outlook Voice Access number and search by name, alias, or primary extension. If the searched-for user is called using the secondary dial plan's Outlook Voice Access number, the user will only be found if the search is made by name, alias, or secondary extension. If the primary extension is used, the only option that will be available is for the user to leave a voice mail.
+   - To find and be able to either call or leave a voice message for the user they're searching for, the UM-enabled user should use Outlook Voice Access through their primary dial plan's Outlook Voice Access number and search by name, alias, or primary extension. If the searched-for user is called using the secondary dial plan's Outlook Voice Access number, the user will only be found if the search is made by name, alias, or secondary extension. If the primary extension is used, the only option that will be available is for the user to leave a voice mail.
 
-## Directory search (Outlook Voice Access)
+- A search of the directory for a user who hasn't been authenticated will follow these rules:
 
-A search of the directory for a user who hasn't been authenticated will follow these rules:
+   - The user being searched for will be found and the option to leave a voice message or call the user will be offered only if the user is UM enabled and has a primary extension on the called dial plan. If so, a search by name, alias, and primary extension will find the user. However, a search by secondary extension won't find the user.
 
-- The user being searched for will be found and the option to leave a voice message or call the user will be offered only if the user is UM enabled and has a primary extension on the called dial plan. If so, a search by name, alias, and primary extension will find the user. However, a search by secondary extension won't find the user.
+   - If the user being searched for is UM enabled, has a secondary extension on the called dial plan, and the option **Transfer and search** \> **Allow callers to** \> **Leave voice messages without ringing a user's phone** is selected on the called dial plan, then a search by name, alias, and secondary extension will find them. However, the option to leave voice mail will be offered to the caller, and there will be no option to call them.
 
-- If the user being searched for is UM enabled, has a secondary extension on the called dial plan, and the option **Transfer and search** \> **Allow callers to** \> **Leave voice messages without ringing a user's phone** is selected on the called dial plan, then a search by name, alias, and secondary extension will find them. However, the option to leave voice mail will be offered to the caller, and there will be no option to call them.
-
-- To find and be able to either call or leave a voice message for a user, the caller must call the Outlook Voice Access number of the user's primary dial plan and search by name, alias, or the user's secondary extension. If the user's secondary Outlook Voice Access number is called, they will only be found if the **Allow callers to search by name of alias** option is set to **In the entire organization**. In this case, only the option to leave a voice message will be provided.
+   - To find and be able to either call or leave a voice message for a user, the caller must call the Outlook Voice Access number of the user's primary dial plan and search by name, alias, or the user's secondary extension. If the user's secondary Outlook Voice Access number is called, they will only be found if the **Allow callers to search by name of alias** option is set to **In the entire organization**. In this case, only the option to leave a voice message will be provided.
 
 ## Call the Sender (Outlook Voice Access)
 

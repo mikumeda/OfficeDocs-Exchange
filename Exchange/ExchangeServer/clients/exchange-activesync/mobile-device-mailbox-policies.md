@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about managing mobile device mailbox policies in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 9317b3bc-44a1-4e54-bc51-4f0b194b6a55
 ms.reviewer: 
 title: Mobile device mailbox policies
@@ -25,13 +25,9 @@ In Exchange Server, you can create mobile device mailbox policies to apply a com
 You can use mobile device mailbox policies to manage many different settings. These include the following:
 
 - Require a password
-
 - Specify the minimum password length
-
 - Require a number or special character in the password
-
 - Designate how long a device can be inactive before requiring the user to re-enter a password
-
 - Wipe a device after a specific number of failed password attempts
 
 For more information about all the settings you can configure, see Mobile device policy settings.
@@ -52,30 +48,30 @@ Android 9.0 and earlier versions utilize Android's device admin functionality to
 
 With Android 10.0 and later, Android has removed device admin functionality. Instead, apps that require a screen lock query the device's (or the work profile's) screen lock complexity. Apps that require a stronger screen lock direct the user to the system screen lock settings, allowing the user to update the security settings to become compliant. At no time is the app aware of the user's password; the app is only aware of the password complexity level. Android supports the following four password complexity levels:
 
-|Password complexity level |Password requirements  |
-|---------|---------|
-|None     |No password requirements are configured         |
-|Low     |Password can be a pattern or a PIN with either repeating (4444) or ordered (1234, 4321, 2468) sequences         |
-|Medium     |Passwords that meet one of the following criteria:<br/><br/>- PIN with no repeating (4444) or ordered (1234, 4321, 2468) sequences with a minimum length of 4 characters <br/>- Alphabetic passwords with a minimum length of 4 characters<br/>- Alphanumeric passwords with a minimum length of 4 characters        |
-|High     |Passwords that meet one of the following criteria:<br/><br/>- PIN with no repeating (4444) or ordered (1234, 4321, 2468) sequences with a minimum length of 8 characters<br/>- Alphabetic passwords with a minimum length of 6 characters<br/>- Alphanumeric passwords with a minimum length of 6 characters         |
+|Password complexity level|Password requirements|
+|---|---|
+|None|No password requirements are configured|
+|Low|Password can be a pattern or a PIN with either repeating (4444) or ordered (1234, 4321, 2468) sequences|
+|Medium|Passwords that meet one of the following criteria: <ul><li>PIN with no repeating (4444) or ordered (1234, 4321, 2468) sequences with a minimum length of 4 characters</li><li>Alphabetic passwords with a minimum length of 4 characters</li><li>Alphanumeric passwords with a minimum length of 4 characters</li></ul>|
+|High|Passwords that meet one of the following criteria: <ul><li>PIN with no repeating (4444) or ordered (1234, 4321, 2468) sequences with a minimum length of 8 characters</li><li>Alphabetic passwords with a minimum length of 6 characters</li><li>Alphanumeric passwords with a minimum length of 6 characters</li></ul>|
 
 From the perspective of an Exchange mobile device mailbox policy, Android's password complexity levels are mapped to the following policy settings:
 
-|Mobile device mailbox policy setting  |Android password complexity level  |
-|---------|---------|
-|Password enabled = false     | None        |
-|Allow simple password = true<br/>Min password length < 4      |Low         |
-|Allow simple password = true<br/>Min password length < 6      |Medium         |
-|Allow simple password = false<br/>Alphanumeric password required = true<br/>Min password length < 6      |Medium         |
-|Allow simple password = true<br/>Min password length > 6      |High         |
-|Allow simple password = false<br/>Alphanumeric password required = true<br/>Min password length >= 6      |High         |
+|Mobile device mailbox policy setting|Android password complexity level|
+|---|---|
+|Password enabled = false|None|
+|Allow simple password = true <br/> Min password length < 4|Low|
+|Allow simple password = true <br/> Min password length < 6|Medium|
+|Allow simple password = false <br/> Alphanumeric password required = true <br/> Min password length < 6|Medium|
+|Allow simple password = true <br/> Min password length > 6|High|
+|Allow simple password = false <br/> Alphanumeric password required = true <br/> Min password length >= 6|High|
 
 ## Mobile device mailbox policy settings
 
 The following table summarizes the settings you can specify using mobile device mailbox policies.
 
-|**Setting**|**Description**|
-|:-----|:-----|
+|Setting|Description|
+|---|---|
 |Allow Bluetooth|This setting specifies whether a mobile device allows Bluetooth connections. The available options are Disable, HandsFree Only, and Allow. The default value is Allow.|
 |Allow Browser|This setting specifies whether Pocket Internet Explorer is allowed on the mobile device. This setting doesn't affect third-party browsers installed on the mobile device. The default value is `$true`.|
 |Allow Camera|This setting specifies whether the mobile device camera can be used. The default value is `$true`.|
@@ -104,13 +100,13 @@ The following table summarizes the settings you can specify using mobile device 
 |Device policy refresh interval|This setting specifies how often the mobile device mailbox policy is sent from the server to the mobile device.|
 |IRM enabled|This setting specifies whether Information Rights Management (IRM) is enabled on the mobile device.|
 |Max attachment size|This setting controls the maximum size of attachments that can be downloaded to the mobile device. The default value is Unlimited.|
-|Max calendar age filter|This setting specifies the maximum range of calendar days that can be synchronized to the mobile device. The following values are accepted: <br/> 1: All <br/> 2: OneDay <br/> 3: ThreeDays <br/> 4: OneWeek <br/> 5: TwoWeeks <br/> 6: OneMonth|
-|Max email age filter|This setting specifies the maximum number of days of email items to synchronize to the mobile device. The following values are accepted: <br/> 1: All <br/> 2: OneDay <br/> 3: ThreeDays <br/> 4: OneWeek <br/> 5: TwoWeeks <br/> 6: OneMonth|
+|Max calendar age filter|This setting specifies the maximum range of calendar days that can be synchronized to the mobile device. The following values are accepted:  <br/> 1: All  <br/> 2: OneDay  <br/> 3: ThreeDays  <br/> 4: OneWeek  <br/> 5: TwoWeeks  <br/> 6: OneMonth|
+|Max email age filter|This setting specifies the maximum number of days of email items to synchronize to the mobile device. The following values are accepted:  <br/> 1: All  <br/> 2: OneDay  <br/> 3: ThreeDays  <br/> 4: OneWeek  <br/> 5: TwoWeeks  <br/> 6: OneMonth|
 |Max email body truncation size|This setting specifies the maximum size at which email messages are truncated when synchronized to the mobile device. The value is in kilobytes (KB).|
 |Max email HTML body truncation size|This setting specifies the maximum size at which HTML email messages are truncated when synchronized to the mobile device. The value is in kilobytes (KB).|
 |Max inactivity time lock|This value specifies the length of time that the mobile device can be inactive before a password is required to reactivate it. You can enter any interval between 30 seconds and 1 hour. The default value is 15 minutes.|
 |Max password failed attempts|This setting specifies the number of attempts a user can make to enter the correct password for the mobile device. You can enter any number from 4 through 16. The default value is 8.|
-|Min password complex characters|This setting specifies the number of character sets that are required in the password of the mobile device. The character sets are: <br/> * Lower case letters. <br/> * Upper case letters. <br/> * Digits 0 through 9. <br/> * Special characters (for example, exclamation marks). <br/> You can enter any number from 1 through 4. The default value is 1.|
+|Min password complex characters|This setting specifies the number of character sets that are required in the password of the mobile device. The character sets are: <ul><li>Lower case letters.</li><li>Upper case letters.</li><li>Digits 0 through 9.</li><li>Special characters (for example, exclamation marks).</li></ul> <br/><br/> You can enter any number from 1 through 4. The default value is 1.|
 |Min password length|This setting specifies the minimum number of characters in the mobile device password. You can enter any number from 1 through 16. The default value is 4.|
 |Password enabled|This setting enables the mobile device password.|
 |Password expiration|This setting enables the administrator to configure a length of time after which a mobile device password must be changed.|

@@ -53,7 +53,7 @@ The DataProtection Health service is monitored by using the following probes and
 <td><p>ClusterGroupProbe</p></td>
 <td><p>DataProtection</p></td>
 <td><p>Active Directory</p></td>
-<td><p>ClusterGroupMonitor        </p></td>
+<td><p>ClusterGroupMonitor        </p></td>
 </tr>
 <tr class="odd">
 <td><p>ClusterNetworkProbe</p></td>
@@ -86,10 +86,10 @@ The DataProtection Health service is monitored by using the following probes and
 <td><p>ServiceHealthMSExchangeReplEndpointMonitor</p></td>
 </tr>
 <tr class="even">
-<td><p>ServiceHealthMSExchangeReplCrashProbe </p></td>
+<td><p>ServiceHealthMSExchangeReplCrashProbe </p></td>
 <td><p>DataProtection</p></td>
 <td><p>Active Directory</p></td>
-<td><p>ServiceHealthMSExchangeReplCrashMonitor </p></td>
+<td><p>ServiceHealthMSExchangeReplCrashMonitor </p></td>
 </tr>
 <tr class="odd">
 <td><p>ServerSiteFailureProbe</p></td>

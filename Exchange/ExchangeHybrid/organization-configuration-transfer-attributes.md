@@ -23,8 +23,8 @@ The following attributes can be copied from an on-premises Exchange organization
 
 ## OWA Mailbox Policy
 
-|**OWAMailboxPolicy**|**Available In**|
-|:-----|:-----|
+|OWAMailboxPolicy|Available In|
+|---|---|
 |ActionForUnknownFileAndMIMETypes|Exchange 2010, 2013, 2016|
 |ActiveSyncIntegrationEnabled|Exchange 2010, 2013, 2016|
 |AllAddressListsEnabled|Exchange 2010, 2013, 2016|
@@ -87,8 +87,8 @@ The following attributes can be copied from an on-premises Exchange organization
 
 ## Retention Policy
 
-|**Retention Policy**|**Available In**|
-|:-----|:-----|
+|Retention Policy|Available In|
+|---|---|
 |Identity|Exchange 2010, 2013, 2016|
 |IsDefault|Exchange 2013, 2016|
 |IsDefaultArbitrationMailbox|Exchange 2013, 2016|
@@ -98,8 +98,8 @@ The following attributes can be copied from an on-premises Exchange organization
 
 ## Retention Policy Tags**
 
-|**RetentionPolicyTag**|**Available In**|
-|:-----|:-----|
+|RetentionPolicyTag|Available In|
+|---|---|
 |AgeLimitForRetention|Exchange 2010, 2013, 2016|
 |Comment|Exchange 2010, 2013, 2016|
 |Identity|Exchange 2010, 2013, 2016|
@@ -119,8 +119,8 @@ The following attributes can be copied from an on-premises Exchange organization
 
 ### Mobile Device Mailbox Policy
 
-|**MobileDeviceMailboxPolicy**|**Available In**|
-|:-----|:-----|
+|MobileDeviceMailboxPolicy|Available In|
+|---|---|
 |AllowBluetooth|Exchange 2010, 2013, 2016|
 |AllowBrowser|Exchange 2010, 2013, 2016|
 |AllowCamera|Exchange 2010, 2013, 2016|
@@ -177,8 +177,8 @@ The following attributes can be copied from an on-premises Exchange organization
 
 ## Active Sync Mailbox Policy**
 
-|**ActiveSyncMailboxPolicy**|**Available In**|
-|:-----|:-----|
+|ActiveSyncMailboxPolicy|Available In|
+|---|---|
 |AllowApplePushNotifications|Exchange 2013, 2016|
 |AllowBluetooth|Exchange 2010, 2013, 2016|
 |AllowBrowser|Exchange 2010, 2013, 2016|

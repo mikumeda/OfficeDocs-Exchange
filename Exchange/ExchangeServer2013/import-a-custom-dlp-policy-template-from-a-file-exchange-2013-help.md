@@ -58,7 +58,7 @@ Use the following procedure to import a custom DLP policy template from a file. 
 This example imports a custom DLP policy template file in the file C:\My Documents\DLP Backup.xml. Importing a DLP policy collection from an XML file removes or overwrites all pre-existing DLP policies that were defined in your organization. Make sure that you have a backup of your current DLP policy collection before you import and overwrite your current DLP policies.
 
 ```powershell
-Import-DlpPolicyCollection -FileData ([Byte[]]$(Get-Content -Path " C:\My Documents\DLP Backup.xml " -Encoding Byte -ReadCount 0))
+Import-DlpPolicyCollection -FileData ([System.IO.File]::ReadAllBytes('C:\My Documents\DLP Backup.xml'))
 ```
 
 ## For more information

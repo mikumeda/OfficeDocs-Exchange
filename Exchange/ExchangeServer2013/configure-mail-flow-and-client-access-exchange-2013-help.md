@@ -169,7 +169,7 @@ Before clients can connect to your new server from the Internet, you need to con
 
 8. Go to **Servers** \> **Virtual directories** and then click **Configure external access domain** ![Configure icon.](images/JJ218640.a9c33f23-3d44-44e7-a5d0-8446200c746e(EXCHG.150).gif "Configure icon").
 
-9. Under **Select the Client Access servers to use with the external URL**, click **Add** ![Add Icon.](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon")
+9. Under **Select the Client Access servers to use with the external URL**, click **Add** ![Add Icon.](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif "Add Icon")
 
 10. Select the Client Access servers you want to configure and then click **Add**. After you've added all of the Client Access servers you want to configure, click **OK**.
 

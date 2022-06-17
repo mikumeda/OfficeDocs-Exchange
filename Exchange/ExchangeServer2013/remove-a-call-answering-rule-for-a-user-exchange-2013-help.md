@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to remove a call answering rule for a user in Microsoft Exchange Server
 ms.assetid: 1da3c5bc-7227-4b37-96f6-67ceefc084d5
 f1.keywords:
 - NOCSH

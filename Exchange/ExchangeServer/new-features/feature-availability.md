@@ -1,7 +1,7 @@
 ---
 title: "Feature availability for Exchange Server"
-ms.author: office365servicedesc
-author: pamelaar
+ms.author: jhendr
+author: JoanneHendrickson
 manager: gailw
 audience: ITPro
 ms.topic: reference
@@ -19,7 +19,7 @@ description: Learn about the major Exchange Server features available across dif
 The following table lists the major Exchange Server features available across different supported versions (certain caveats apply -- see the footnotes for further information -- this table may change without notice).
 
 | Feature | Description | Exchange Server 2013 | Exchange Server 2016 | Exchange Server 2019 |
-|:-----|:-----|:-----|:-----|:-----|
+|---|---|---|---|---|
 |[Anti-spam and anti-malware protection](/exchange/antispam-and-antimalware/antispam-and-antimalware)|Built-in anti-spam and anti-malware protection|Yes|Yes|Yes|
 ||Customize anti-spam and anti-malware policies|Yes<sup>via PowerShell</sup>|Yes<sup>via PowerShell</sup>|Yes<sup>via PowerShell</sup>|
 ||Quarantine - administrator management|Yes|Yes|Yes|
@@ -84,7 +84,7 @@ The following table lists the major Exchange Server features available across di
 <sup>4</sup> Requires an Exchange Online Archiving subscription for each on-premises mailbox user that has a cloud-based archive. <br/>
 <sup>5</sup> BitLocker drive encryption is supported for Exchange Server, but an administrator needs to enable the feature. <br/>
 <sup>6</sup> Windows Server AD RMS is an on-premises server that must be purchased and managed separately in order to enable the supported IRM features. <br/>
-<sup>7</sup> Supported for customers running Exchange Server 2013 or later on-premises customers who purchase Azure Information Protection. Office 365 Message Encryption requires on-premises customers to route email through Exchange Online, either by using Exchange Online Protection for email filtering, or by establishing hybrid mail flow.<br/>
+<sup>7</sup> Supported for customers running Exchange Server 2013 or later on-premises customers who purchase Azure Information Protection. Microsoft Purview Message Encryption requires on-premises customers to route email through Exchange Online, either by using Exchange Online Protection for email filtering, or by establishing hybrid mail flow.<br/>
 <sup>8</sup> Transport rules are made up of flexible criteria, which allow you to define conditions and exceptions, and actions to take based on the criteria. <br/>
 <sup>9</sup> For Exchange 2013, DLP requires an Exchange Enterprise Client Access License (CAL). <br/>
 <sup>10</sup> Customers running Exchange Server 2013 or later need to download and install the latest cumulative update (CU) or the immediately previous CU, to access Document Fingerprinting and Policy Tips in OWA and OWA for Devices. <br/>

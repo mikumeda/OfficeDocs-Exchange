@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about Role Based Access Control in Exchange Server 2016 and Exchange Server 2019'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d8dd605e-0af1-4e18-9ce6-e51d04e161ba
 ms.reviewer:
 title: Exchange Server permissions, permissions Exchange Server, Exchange Admin roles, Exchange admin permissions, role assignment policy Exchange
@@ -66,8 +66,8 @@ Exchange Server includes several built-in role groups, each one providing permis
 
 **Built-in role groups**
 
-|**Role group**|**Description**|
-|:-----|:-----|
+|Role group|Description|
+|---|---|
 |[Organization Management](../../ExchangeServer2013/organization-management-exchange-2013-help.md)|Administrators who are members of the Organization Management role group have administrative access to the entire Exchange Server organization and can perform almost any task against any Exchange Server object, with some exceptions, such as the `Discovery Management` role.  <br/> **Important**: Because the Organization Management role group is a powerful role, only users or USGs that perform organizational-level administrative tasks that can potentially impact the entire Exchange organization should be members of this role group.|
 |[View-Only Organization Management](../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md)|Administrators who are members of the View Only Organization Management role group can view the properties of any object in the Exchange organization.|
 |[Recipient Management](../../ExchangeServer2013/recipient-management-exchange-2013-help.md)|Administrators who are members of the Recipient Management role group have administrative access to create or modify Exchange Server recipients within the Exchange Server organization.|

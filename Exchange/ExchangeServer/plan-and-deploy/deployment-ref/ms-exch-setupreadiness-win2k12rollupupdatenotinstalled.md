@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: Microsoft Exchange Server 2016 Setup has detected that the computer you're attempting to install Exchange 2016 on doesn't have a recommended Windows update installed. We strongly recommend that you install this Windows update before installing Exchange 2016 to avoid any issues resolved by the update.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.Win2k12RollupUpdateNotInstalled
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 8412a371-b5b1-42d9-9e75-ddef3a98dd26
 ms.reviewer: 
 title: A Windows Server 2012 update rollup hasn't been installed [Win2k12RollupUpdateNotInstalled]

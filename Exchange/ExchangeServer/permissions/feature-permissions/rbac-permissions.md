@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about permissions that are required to manage role management in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: cb9591c4-fbb3-4199-8007-6bbfdfd5a2e9
 ms.reviewer:
 title: Role management permissions
@@ -37,8 +37,8 @@ If you want to delegate the ability to manage a feature to another user, see [De
 
 You can use the features in the following table to manage the management role groups, roles, assignment policies, assignments, scopes that define the permissions you can apply to administrators, and end users. Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Management roles|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|
 |Unscoped management roles|[Unscoped Role Management](../../../ExchangeServer2013/unscoped-role-management-role-exchange-2013-help.md) management role|
 |Role groups|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md)|

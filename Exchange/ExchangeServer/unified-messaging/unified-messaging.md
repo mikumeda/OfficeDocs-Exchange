@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Administrators can learn about Unified Messaging in Exchange Server 2016.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 004b5d1a-cae8-4034-ab65-db41bd2f7b97
 monikerRange: exchserver-2016
 title: Unified Messaging in Exchange Server 2016

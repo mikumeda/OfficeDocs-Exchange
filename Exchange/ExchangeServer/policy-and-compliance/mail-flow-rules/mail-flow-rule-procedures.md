@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to create, view, modify, delete, import, and export mail flow rules (transport rules) in Exchange 2016 and Exchange 2019'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: e7a81372-b6d7-4d1f-bc9e-a845a7facac2
 ms.reviewer:
 title: Procedures for mail flow rules in Exchange Server
@@ -48,7 +48,7 @@ On Mailbox servers, you can manage mail flow rules in the Exchange admin center 
 
   - [Manage message approval](../../../ExchangeServer2013/manage-message-approval-exchange-2013-help.md)
 
-- Data Loss Prevention (DLP) policies are collections of mail flow rules. To create DLP policies, see [Exchange Server DLP Procedures](../../../ExchangeServer2013/dlp-procedures-exchange-2013-help.md).
+- Data loss prevention (DLP) policies are collections of mail flow rules. To create DLP policies, see [Exchange Server DLP Procedures](../../../ExchangeServer2013/dlp-procedures-exchange-2013-help.md).
 
 ### Use the EAC to create mail flow rules
 

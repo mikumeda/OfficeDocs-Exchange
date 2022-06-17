@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: You can remove the primary extension number that was added when the user was enabled for UM or a secondary extension number that was added later.
 ms.assetid: c2b896cf-21f7-4453-a4e6-b23d236a6dd3
 f1.keywords:
 - NOCSH

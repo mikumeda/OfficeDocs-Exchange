@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to create an In-Place eDiscovery search in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: feedc0c9-4a44-4bb2-8520-cc29d66d4fc3
 ms.reviewer:
 title: Create an In-Place eDiscovery search in Exchange Server

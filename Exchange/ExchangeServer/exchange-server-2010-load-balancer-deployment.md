@@ -3,10 +3,10 @@ f1.keywords:
 - NOCSH
 audience: ITPro
 ms.localizationpriority: high
-ms.author: serdars
+ms.author: jhendr
 manager: serdars
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.prod: exchange-server-it-pro
 ms.collection: exchange-server
 description: This page describes which server load balancer partners have completed solution testing with Exchange Server 2010 and contains pointers to accompanying deployment white papers hosted by the partner.
@@ -72,7 +72,7 @@ Listed below are hardware load balancers that have been tested by the vendor and
 Listed below are software load balancers that have been tested by the vendor and reviewed by Microsoft to meet Exchange Server 2010 requirements. It's recommended that you visit the vendor's web site for the latest information about product specifications, capacity, country support and documentation including release notes and known issues. Contact the vendor for more information on these products.
 
 |Vendor|Qualified Product|Software Version Tested|Vendor's Exchange Page|
-|---------|---------|---------|---------|
+|---|---|---|---|
 |[A10 Networks](http://www.a10networks.com/solutions/application_solutions_microsoft.php)|64-bit AX Series: SoftAX|2.4.3|[AX Series for Exchange 2010 Overview and Deployment Guide](http://www.loadbalancersolutions.com/download/exchange-2010/A10-Exchange-2010-deployment-guide.pdf)|
 |AVANU, Inc.|WebMux Network Traffic Manager|V11|[WebMux User Guide for Microsoft Exchange Server 2010 and 2013](http://avanu.com/load-balancing-microsoft-exchange-server)|
 |[Citrix Systems](https://www.citrix.com/community.html)|Netscaler VPX|9.1.102.8|[Netscaler for Microsoft Exchange](https://www.citrix.com/community.html)|

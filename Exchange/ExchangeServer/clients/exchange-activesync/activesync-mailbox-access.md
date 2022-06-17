@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: Learn how administrators can enable or disable Exchange ActiveSync access to specific mailboxes in Exchange Server 2016 or Exchange Server 2019.
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: dcf7c05b-b1b9-4b0f-800d-fec9f2ddc9e4
 ms.reviewer:
 title: Enable or disable Exchange ActiveSync access to mailboxes in Exchange Server

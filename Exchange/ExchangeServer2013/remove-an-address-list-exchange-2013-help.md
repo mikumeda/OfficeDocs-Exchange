@@ -5,6 +5,8 @@ ms:assetid: 39a313f3-41d4-4c8f-af67-df2316f3687f
 ms:mtpsurl: https://technet.microsoft.com/library/Aa997294(v=EXCHG.150)
 ms:contentKeyID: 49289233
 ms.reviewer: 
+ms.topic: how-to
+description: How to remove an address list in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

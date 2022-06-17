@@ -31,17 +31,12 @@ The following prerequisites are required for configuring a hybrid deployment:
 
 - **On-premises Exchange organization**:  The version of Exchange you have installed in your on-premises organization determines the hybrid deployment version you can install. You should typically configure the newest hybrid deployment version that's supported in your organization as described in the following table:
 
-<br>
-
-****
-
 |On-premises environment|Exchange 2019-based hybrid deployment|Exchange 2016-based hybrid deployment|Exchange 2013-based hybrid deployment|Exchange 2010-based hybrid deployment|
 |---|:---:|:---:|:---:|:---:|
 |Exchange 2019|Supported|Not supported|Not supported|Not supported|
 |Exchange 2016|Supported|Supported|Not supported|Not supported|
 |Exchange 2013|Supported|Supported|Supported|Not supported|
 |Exchange 2010|Not supported|Supported|Supported|Supported|
-|
 
 - **Exchange server releases**: Hybrid deployments require the latest Cumulative Update (CU) or Update Rollup (RU) that's available for your version of Exchange. If you can't install the latest update, the immediately previous release is also supported.
 
@@ -119,23 +114,14 @@ You need to configure the following protocols, ports, and connection endpoints i
   > [!NOTE]
   > The ports required for mail flow and client connectivity in your on-premises Exchange organization not related to the hybrid configuration are described in [Network ports for clients and mail flow in Exchange](../ExchangeServer/plan-and-deploy/deployment-ref/network-ports.md).
 
-<br>
-
-****
-
 |Source|Protocol/Port|Target|Comments|
 |---|---|---|---|
 |Exchange Online endpoints|TCP/25 (SMTP/TLS)|Exchange 2019/2016 Mailbox/Edge <p> Exchange 2013 CAS/Edge <p> Exchange 2010 Hub/Edge|On-premises Exchange Servers configured to host receive connectors for secure mail transport with Exchange Online in the Hybrid Configuration wizard|
 |Exchange 2019/2016 Mailbox/Edge <p> Exchange 2013 CAS/Edge <p> Exchange 2010 Hub/Edge|TCP/25 (SMTP/TLS)|Exchange Online endpoints|On-premises Exchange Servers configured to host send connectors for secure mail transport with Exchange Online in the Hybrid Configuration wizard|
 |Exchange Online endpoints|TCP/443 (HTTPS)|Exchange 2019/2016 Mailbox <p> Exchange 2013/2010 CAS|On-premises Exchange Servers used to publish Exchange Web Services and Autodiscover to Internet|
 |Exchange 2019/2016 Mailbox <p> Exchange 2013/2010 CAS|TCP/443 (HTTPS)|Exchange Online endpoints|On-premises Exchange Servers used to publish Exchange Web Services and Autodiscover to Internet|
-|
 
 The following table provides more detailed information about the involved on-premises endpoints:
-
-<br>
-
-****
 
 |Description|Port and protocol|On-premises endpoint|Authentication Provider|Authorization Method|Pre-Auth Supported?|
 |---|---|---|---|---|---|
@@ -147,7 +133,6 @@ The following table provides more detailed information about the involved on-pre
 |OAuth (Autodiscover and EWS)|TCP 443 (HTTPS)|Exchange 2019/2016 Mailbox <br>or<br> Exchange 2013/2010 CAS: <p> /ews/exchange.asmx/wssecurity <p> /autodiscover/autodiscover.svc/wssecurity <p> /autodiscover/autodiscover.svc|Auth Server|WS-Security Authentication|No|
 |AD FS (Windows Server)|TCP 443 (HTTPS)|Windows 2012 R2/2016 Server: /adfs/\*|Azure AD authentication system|Varies per config.|2-factor|
 |AAD Connect|TCP 443 (HTTPS)|Windows 2012 R2/2016 Server (AD FS): /adfs/\*|Azure AD authentication system|Varies per config.|2-factor|
-|
 
 For even more detail about this information, see [Deep Dive: How Hybrid Authentication Really Works](https://techcommunity.microsoft.com/t5/exchange-team-blog/deep-dive-how-hybrid-authentication-really-works/ba-p/606780), [Demystifying and troubleshooting hybrid mail flow: when is a message internal?](https://techcommunity.microsoft.com/t5/exchange-team-blog/demystifying-and-troubleshooting-hybrid-mail-flow-when-is-a/ba-p/1420838), [Transport routing in Exchange hybrid deployments](./transport-routing.md), [Configure mail flow using connectors](../ExchangeOnline/mail-flow-best-practices/use-connectors-to-configure-mail-flow/use-connectors-to-configure-mail-flow.md), and [Manage mail flow with mailboxes in multiple locations (Exchange Online and on-premises)](../ExchangeOnline/mail-flow-best-practices/manage-mail-flow-for-multiple-locations.md).
 

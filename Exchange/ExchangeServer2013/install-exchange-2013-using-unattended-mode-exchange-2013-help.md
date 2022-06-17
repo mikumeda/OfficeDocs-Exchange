@@ -5,6 +5,8 @@ ms:assetid: 386465e9-41da-4e26-9816-b3b69be1f8bf
 ms:mtpsurl: https://technet.microsoft.com/library/Aa997281(v=EXCHG.150)
 ms:contentKeyID: 48384985
 ms.reviewer: 
+ms.topic: article
+description: How to install Microsoft Exchange 2013 using unattended mode
 manager: serdars
 ms.author: serdars
 author: msdmaguire

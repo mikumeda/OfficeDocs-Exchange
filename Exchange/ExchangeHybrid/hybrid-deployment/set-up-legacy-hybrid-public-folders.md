@@ -45,16 +45,11 @@ When you complete this procedure, your on-premises and Microsoft 365 or Office 3
 
 The following table describes the version and location combinations of user mailboxes and public folders that are supported. "Hybrid not applicable" is still a supported scenario, but is not considered a hybrid scenario since both the public folders and the users are residing in the same location.
 
-<br>
-
-****
-
 |Version|On-Premises Exchange 2010 User Mailbox|On-Premises Exchange 2013 User Mailbox|Exchange Online User Mailbox|
-|----|----|----|----|
+|---|---|---|---|
 |On-Premises Exchange 2010 Public Folders|Hybrid not applicable|Hybrid not applicable|Supported|
 |On-Premises Exchange 2013 Public Folders|Hybrid not applicable|Hybrid not applicable|Supported|
 |Exchange Online Public Folders|Not supported|Supported|Hybrid not applicable|
-|
 
 A hybrid configuration with Exchange 2003 public folders is not supported. If you're running Exchange 2003 in your organization, you must move all public folder databases and replicas to Exchange 2010 SP3 or later. No public folder replicas can remain on Exchange 2003.
 

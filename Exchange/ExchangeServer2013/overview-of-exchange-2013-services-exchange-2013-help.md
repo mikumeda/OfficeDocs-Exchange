@@ -5,6 +5,8 @@ ms:assetid: 2ed45d18-2ff3-4099-b841-050eb16a416b
 ms:mtpsurl: https://technet.microsoft.com/library/Ee423542(v=EXCHG.150)
 ms:contentKeyID: 74479247
 ms.reviewer: 
+ms.topic: article
+description: Description of services in Microsoft Exchange 2013
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -27,15 +29,15 @@ The sections in this topic describe the various services that are installed by E
 
 The following table describes the Exchange services that are installed on Mailbox servers.
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -50,7 +52,7 @@ The following table describes the Exchange services that are installed on Mailbo
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>MSExchangeADTopology</p></td>
 <td><p>Provides Active Directory topology information to Exchange services. If this service is stopped, most Exchange services can't start.</p></td>
 <td><p>Automatic</p></td>
@@ -69,7 +71,7 @@ The following table describes the Exchange services that are installed on Mailbo
 </td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 <tr class="odd">
@@ -78,7 +80,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Provides storage and database layout management for Mailbox servers in database availability groups (DAGs).</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p>
+<td><p>Microsoft Exchange Active Directory Topology</p>
 <p>Net.TCP Port Sharing Service</p></td>
 <td><p>Required</p></td>
 </tr>
@@ -98,7 +100,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <p>If you don't have any subscribed Edge Transport servers, you can disable this service.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 <tr class="even">
@@ -118,7 +120,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <p>If you don't have any IMAP4 clients, you can disable this service.</p></td>
 <td><p>Manual</p></td>
 <td><p>Network Service</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 <tr class="even">
@@ -127,7 +129,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Manages the mailbox databases on the server. If this service is stopped, mailbox databases on the server are unavailable.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p>
+<td><p>Microsoft Exchange Active Directory Topology</p>
 <p>Remote Procedure Call (RPC)</p>
 <p>Server</p>
 <p>Windows Event Log</p>
@@ -140,7 +142,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Performs background processing of mailboxes in mailbox databases on the server.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="even">
@@ -149,7 +151,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Processes mailbox moves and move requests.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p>
+<td><p>Microsoft Exchange Active Directory Topology</p>
 <p>Net.TCP Port Sharing Service</p></td>
 <td><p>Required</p></td>
 </tr>
@@ -159,7 +161,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Receives SMTP messages from the Microsoft Exchange Transport service (on the local or remote Mailbox servers) and delivers them to a local mailbox database using RPC.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Network Service</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="even">
@@ -168,7 +170,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Receives RPC messages from a local mailbox database, and submits them over SMTP to the Microsoft Exchange Transport service (on the local or remote Mailbox servers).</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="odd">
@@ -177,7 +179,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Receives proxied client connections from the POP3 service on Client Access servers. By default, this service isn't running, so POP3 clients can't connect to the Exchange server until this service is started.</p></td>
 <td><p>Manual</p></td>
 <td><p>Network Service</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 <tr class="even">
@@ -186,7 +188,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Provides replication functionality for mailbox databases in a database availability groups (DAGs).</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="odd">
@@ -195,7 +197,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Manages client RPC connections for Exchange.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Network Service</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="even">
@@ -204,7 +206,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Provides indexing of mailbox content, which improves the performance of content search.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="odd">
@@ -231,7 +233,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Provides a service host for Exchange components that don't have their own services.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="even">
@@ -240,7 +242,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Provides user workload management that limits the rate of user operations (formerly known as user throttling).</p></td>
 <td><p>Automatic</p></td>
 <td><p>Network Service</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="odd">
@@ -249,7 +251,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Provides SMTP server and transport stack.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Network Service</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p>
+<td><p>Microsoft Exchange Active Directory Topology</p>
 <p>Microsoft Filtering Management Service</p></td>
 <td><p>Required</p></td>
 </tr>
@@ -259,7 +261,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Provides remote search capability for transport log files (for example, message tracking).</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 <tr class="odd">
@@ -270,7 +272,7 @@ The following table describes the Exchange services that are installed on Mailbo
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
 <td><p>CNG Key Isolation</p>
-<p>Microsoft Exchange Active Directory Topology</p></td>
+<p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 </tbody>
@@ -280,15 +282,15 @@ The following table describes the Exchange services that are installed on Mailbo
 
 The following table describes the Exchange services that are installed on Client Access servers.
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -303,7 +305,7 @@ The following table describes the Exchange services that are installed on Client
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>MSExchangeADTopology</p></td>
 <td><p>Provides Active Directory topology information to Exchange services. If this service is stopped, most Exchange services can't start.</p></td>
 <td><p>Automatic</p></td>
@@ -326,7 +328,7 @@ The following table describes the Exchange services that are installed on Client
 <td><p>Proxies SMTP connections from external hosts to the Microsoft Exchange Transport service on Mailbox servers.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="even">
@@ -346,7 +348,7 @@ The following table describes the Exchange services that are installed on Client
 <p>If you don't have any IMAP4 clients, you can disable this service.</p></td>
 <td><p>Manual</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 <tr class="even">
@@ -355,7 +357,7 @@ The following table describes the Exchange services that are installed on Client
 <td><p>Proxies POP3 client connections to the IMAP4 service on Mailbox servers. By default, this service isn't running, so POP3 clients can't connect to the Exchange server until this service is started.</p></td>
 <td><p>Manual</p></td>
 <td><p>Network Service</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 <tr class="odd">
@@ -373,7 +375,7 @@ The following table describes the Exchange services that are installed on Client
 <td><p>Provides a service host for Exchange components that don't have their own services.</p></td>
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
-<td><p>Microsoft Exchange Active Directory Topology</p></td>
+<td><p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Required</p></td>
 </tr>
 <tr class="odd">
@@ -384,7 +386,7 @@ The following table describes the Exchange services that are installed on Client
 <td><p>Automatic</p></td>
 <td><p>Local System</p></td>
 <td><p>CNG Key Isolation</p>
-<p>Microsoft Exchange Active Directory Topology</p></td>
+<p>Microsoft Exchange Active Directory Topology</p></td>
 <td><p>Optional</p></td>
 </tr>
 </tbody>
@@ -394,15 +396,15 @@ The following table describes the Exchange services that are installed on Client
 
 The following table describes the Exchange services that are installed on Edge Transport servers.
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

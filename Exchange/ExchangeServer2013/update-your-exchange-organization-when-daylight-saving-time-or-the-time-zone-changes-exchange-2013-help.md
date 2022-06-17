@@ -5,6 +5,8 @@ ms:assetid: 5b12615c-24cf-4f46-bf3c-2334dc734ef8
 ms:mtpsurl: https://technet.microsoft.com/library/Hh530051(v=EXCHG.150)
 ms:contentKeyID: 66452205
 ms.reviewer:
+ms.topic: how-to
+description: How to update your Exchange organization when Daylight Saving Time or the time zone changes
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -47,7 +49,7 @@ Make sure all client and desktop computers have installed the Windows DST update
 
 The following table shows when users should [change time zone in Microsoft Outlook](https://support.microsoft.com/office/5ab3e10e-5a6c-46af-ab48-156fedf70c04). Find which version your organization's servers are running and then determine which client programs your users are running.
 
-<table summary="table">
+<table>
 <tbody>
 <tr>
  <td> <p></p> </td>

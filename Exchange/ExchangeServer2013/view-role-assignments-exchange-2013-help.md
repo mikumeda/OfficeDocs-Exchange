@@ -5,6 +5,8 @@ ms:assetid: 0be4def9-af6d-476a-9c97-7155ae11b587
 ms:mtpsurl: https://technet.microsoft.com/library/Dd335086(v=EXCHG.150)
 ms:contentKeyID: 49289159
 ms.reviewer: 
+ms.topic: how-to
+description: How to view role assignments in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

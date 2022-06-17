@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: "Summary: Learn about the Exchange admin center, the web-based management console that's available in Exchange Server."
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: a9aea11a-6ba3-4f4a-a76e-79072e7cfc7d
 ms.reviewer:
 title: Exchange admin center in Exchange Server
@@ -192,8 +192,8 @@ The **Setup** tab allows you to run the Hybrid Configuration Wizard or modify th
 
 When you click most tabs, you'll see a toolbar. The toolbar has icons that perform specific actions. The following table describes the most common icons and their actions. To see the action that's associated with an icon (the icon's title), simply hover over the icon.
 
-|**Icon**|**Name**|**Action**|
-|:-----|:-----|:-----|
+|Icon|Name|Action|
+|---|---|---|
 |![Add icon.](../../media/ITPro_EAC_AddIcon.png)|Add, New|Create a new object.  <br/>  Some of these icons have an associated down arrow you can click to show additional objects you can create. For example, in **Recipients** \> **Mailboxes**, clicking the down arrow displays **User mailbox** and **Linked mailbox** as additional options.|
 |![Edit icon.](../../media/ITPro_EAC_EditIcon.png)|Edit|Edit an object.|
 |![Delete icon.](../../media/ITPro_EAC_DeleteIcon.png)|Delete|Delete an object. Some delete icons have a down arrow you can click to show additional options.|
@@ -263,12 +263,10 @@ The levels of support for operating system and browser combinations that you can
 
 - Third-party plug-ins might cause issues with the EAC for supported browsers.
 
-**Client operating systems**
-
-****
+**Client operating systems**:
 
 |Web browser|Windows 7|Windows 8.1|Windows 10|Mac OS X|Linux|
-|:-----|:-----|:-----|:-----|:-----|:-----|
+|---|---|---|---|---|---|
 |Internet Explorer 9|Unsupported|n/a|n/a|n/a|n/a|
 |Internet Explorer 10|Unsupported|n/a|n/a|n/a|n/a|
 |Internet Explorer 11|Supported|Supported|Supported|n/a|n/a|
@@ -277,12 +275,10 @@ The levels of support for operating system and browser combinations that you can
 |Apple Safari 6 or later versions|n/a|n/a|n/a|Supported|n/a|
 |Google Chrome latest version or one previous|Supported|Supported|Supported|Supported|Supported|
 
-**Windows Server operating systems**
-
-****
+**Windows Server operating systems**:
 
 |Web browser|Windows Server 2008 R2|Windows Server 2012|Windows Server 2012 R2|Windows Server 2016|
-|:-----|:-----|:-----|:-----|:-----|
+|---|---|---|---|---|
 |Internet Explorer 9|Unsupported|n/a|n/a|n/a|
 |Internet Explorer 10|Unsupported|Supported|n/a|n/a|
 |Internet Explorer 11|Supported|n/a|Supported|Supported|

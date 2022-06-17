@@ -35,8 +35,8 @@ The following sections step you through the configuration of Exchange 2013 and E
 
 What you need to do to enable support for delegated mailbox permissions depends on a few factors. If you moved mailboxes to Microsoft 365 or Office 365 and at that time:
 
-|**The following was installed...**|**And ACLable object synchronization at the organization was...**|**Then you need to...**|
-|:-----|:-----|:-----|
+|The following was installed...|And ACLable object synchronization at the organization was...|Then you need to...|
+|---|---|---|
 |Exchange 2013 CU9 or earlier|This feature isn't available in Exchange 2013 CU9 and earlier.|Manually configure each mailbox to support ACLs|
 |Exchange 2013 CU10 or later|Disabled|Enable ACLable object synchronization at the organization level <br/> Manually enable ACLs on each mailbox moved to Microsoft 365 or Office 365 before ACLable object synchronization was enabled at the organization level. <br/> No additional configuration is needed for mailboxes moved to Microsoft 365 or Office 365 after ACLable object synchronization is enabled at the organization level.|
 |Exchange 2013 CU10 or later|Enabled|No additional configuration is needed|

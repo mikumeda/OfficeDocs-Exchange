@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Exchange Management Shell cmdlets that can help you monitor the health of your Exchange organization.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: a4f84312-6cfa-4f17-9707-676aadab1143
 ms.reviewer:
 title: Manage health sets and server health

@@ -1,9 +1,9 @@
 ---
 description: 'Summary: Learn about administrative tasks for managing Outlook on the web (Outlook Web App) in Exchange Server 2016 or Exchange Server 2019.'
 ms.localizationpriority: medium
-ms.author: serdars
+ms.author: jhendr
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 ms.prod: exchange-server-it-pro
 ms.assetid: 3814b665-01e8-4881-9a44-163f14789ee4
 ms.collection: exchange-server
@@ -35,8 +35,8 @@ If you're looking for information about Outlook on the web in Microsoft 365 or O
 
 The configuration and management tasks that are documented for Outlook on the web in Outlook 2016 are listed in the following table.
 
-|**Topic**|**Description**|
-|:-----|:-----|
+|Topic|Description|
+|---|---|
 |[View or configure Outlook on the web virtual directories in Exchange Server](virtual-directories.md)|View and configure the properties of Outlook on the web for all users that connect to the server.|
 |[Configure http to https redirection for Outlook on the web in Exchange Server](http-to-https-redirection.md)|Redirect Outlook on the web unencrypted http requests to https.|
 |[Create a theme for Outlook on the web in Exchange Server](themes.md)|Outlook on the web comes with built-in themes that define the colors and icons that are used in Outlook on the web, but you can also create your own themes.|

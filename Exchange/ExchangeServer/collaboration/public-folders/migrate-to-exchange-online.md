@@ -1,8 +1,9 @@
 ---
+title: Batch migrate Exchange Server public folders to Microsoft 365 or Office 365
 ms.localizationpriority: medium
-ms.author: serdars
+ms.author: jhendr
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 manager: serdars
 ms.prod: exchange-server-it-pro
 ms.collection:
@@ -12,7 +13,6 @@ description: 'Summary: This article tells you how to move modern public folders 
 f1.keywords:
 - NOCSH
 audience: ITPro
-title: Batch migrate Exchange Server public folders to Microsoft 365 or Office 365
 
 ---
 
@@ -343,10 +343,8 @@ A number of commands now need to be run both in your Exchange Server on-premises
 1. From any of your Exchange 2016 or Exchange 2019 servers hosting public folder mailboxes, execute the following script. This script will synchronize mail-enabled public folders from your local Active Directory to Exchange Online. Make sure that you have downloaded the latest version of this script and that you're running it from Exchange Management Shell.
 
    ```PowerShell
-   .\Sync-ModernMailPublicFolders.ps1 -Credential (Get-Credential) -CsvSummaryFile:sync_summary.csv
+   .\Sync-ModernMailPublicFolders.ps1 -CsvSummaryFile:sync_summary.csv
    ```
-
-   - `Credential` is your Exchange Online administrative username and password.
 
    - `CsvSummaryFile` is the file path to where you want your log file of synchronization operations and errors located. The log will be in .csv format.
 
@@ -375,8 +373,9 @@ A number of commands now need to be run both in your Exchange Server on-premises
 
    > 91edc6dd-478a-497c-8731-b0b793f5a986
 
-   > [!NOTE]
-The public folder mailbox GUID mentioned in the previous command must be obtained from the on-premises server; if it is obtained from Exchange Online, the migration batch will fail with the error "Cannot find a recipient that has mailbox GUID".
+> [!NOTE]
+The public folder mailbox GUID mentioned in the previous command must be obtained from the on-premises server; if it is obtained from Exchange Online, the migration batch will fail with transient error.
+
 
 5. In Exchange Online PowerShell, run the following commands to create the public folder migration endpoint and the public folder migration request:
 
@@ -390,6 +389,8 @@ The public folder mailbox GUID mentioned in the previous command must be obtaine
 
    Separate multiple email addresses with commas.
 
+   > [!NOTE]
+You may notice the above command failing with the error "Cannot find a recipient that has mailbox GUID" with the GUID mentioned of public folder mailbox in EXO. This can happen because of AD replication latency. In such case, wait for an hour and retry the command again.
 
 6. Finally, start the migration using the following command in Exchange Online PowerShell:
 
@@ -461,12 +462,12 @@ The expected result if public folders are locked is:
 
 You need to check the following items before you can complete your public folder migration:
 
-1. Confirm that there are no other public folder mailbox moves or public folder moves going on in your on-premises Exchange environment. To do this, use the **Get-MoveRequest** and **Get-PublicFolderMoveRequest** cmdlets to list any existing public folder moves. If there are any moves in progress, or in the **Completed** state, remove them.
+1. Confirm that there are no other public folder mailbox moves or public folder moves going on in your on-premises Exchange environment. To do this, use the **Get-MoveRequest** and **Get-PublicFolderMoveRequest** cmdlets to list any existing public folder moves. If there are any moves [i](/exchange/troubleshoot/public-folders/migrationbatch-fails-no-public-folder-mailboxes)n progress, or in the **Completed** state, remove them.
 
 2. At this point, we recommend re-running the following script to ensure that any new mail-enabled public folders are synchronized with Exchange Online:
 
    ```PowerShell
-   .\Sync-ModernMailPublicFolders.ps1 -Credential (Get-Credential) -CsvSummaryFile:sync_summary.csv
+   .\Sync-ModernMailPublicFolders.ps1 -CsvSummaryFile:sync_summary.csv
    ```
 
 3. If your environment has multiple active directory domains, ensure the steps in ["No active public folder mailboxes were found" error and migration batch fails at Complete-MigrationBatch command](/exchange/troubleshoot/public-folders/migrationbatch-fails-no-public-folder-mailboxes) are followed before initiating completing.

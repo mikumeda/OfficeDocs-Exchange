@@ -32,7 +32,6 @@ The destination email server that generated the 5.1.0 error won't accept message
 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 |---|---|---|---|---|---|
 |![Email user icon.](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How do I fix this?](#im-an-email-admin-how-do-i-fix-this)|![Help symbol](../../media/5bf13e77-0400-4dda-a569-b99b8a918b48.png)|[Details for error code 5.1.0](#details-for-error-code-510)|
-|
 
 ## I got this bounce message. How do I fix it?
 

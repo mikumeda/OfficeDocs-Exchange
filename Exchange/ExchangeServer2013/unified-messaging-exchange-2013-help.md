@@ -1,6 +1,8 @@
 ---
 title: 'Unified Messaging: Exchange 2013 Help'
 TOCTitle: Unified Messaging
+ms.topic: article
+description:  Learn about the features, including new features, of Unified Messaging (UM) in Exchange Server 2013.
 ms:assetid: 004b5d1a-cae8-4034-ab65-db41bd2f7b97
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150478(v=EXCHG.150)
 ms:contentKeyID: 47559933
@@ -43,9 +45,9 @@ The voice mail features found in Unified Messaging offer benefits for both end u
 
 ## Features for end users
 
-When you deploy Unified Messaging, users can access voice mail, email, and calendar information that's located in their mailbox from an email client, for example, Outlook or Microsoft Outlook Web App, from a mobile phone with Microsoft Exchange ActiveSync set up, or from a telephone. Additionally, users can use the following features:
+When you deploy Unified Messaging, users can access voice mail, email, and calendar information that's located in their mailbox from an email client, for example, Outlook or Microsoft Outlook Web App, from a mobile phone with Microsoft Exchange ActiveSync set up, or from a telephone. Additionally, users can use the following features:
 
-- **Access to Exchange information**: UM-enabled users can access a full set of voice mail features from Internet-capable mobile phones, Microsoft Office Outlook 2007 or later versions, and Outlook Web App. These features include many voice mail configuration options and the ability to play a voice message from either the Reading Pane, using an integrated Windows Media Player, or the message list, using computer speakers.
+- **Access to Exchange information**: UM-enabled users can access a full set of voice mail features from Internet-capable mobile phones, Microsoft Office Outlook 2007 or later versions, and Outlook Web App. These features include many voice mail configuration options and the ability to play a voice message from either the Reading Pane, using an integrated Windows Media Player, or the message list, using computer speakers.
 
 - **Play on Phone**: The Play on Phone feature lets UM-enabled users play voice messages over a telephone. If the user works in an office cubicle, is using a public computer or a computer that isn't enabled for multimedia, or is listening to a voice message that's confidential, they might not want to or be able to listen to a voice message through computer speakers. They can play the voice message using any telephone, including a home, office, or mobile telephone.
 
@@ -111,7 +113,7 @@ Exchange 2013 Unified Messaging offers administrators:
 
 - **A complete voice mail system**: Unified Messaging offers a complete voice mail solution using a single store, transport, and directory infrastructure. The store is provided by a Mailbox server and forwarding of incoming calls from a VoIP gateway or IP PBX is handled by a Client Access server. All email and voice mail messages can be managed from a single management point, using a single administration interface and tool set.
 
-- **An Exchange security model**: The Microsoft Exchange Unified Messaging service on a Mailbox server and the Microsoft Exchange Unified Messaging Call Router service on a Client Access server run as a single Exchange server account.
+- **An Exchange security model**: The Microsoft Exchange Unified Messaging service on a Mailbox server and the Microsoft Exchange Unified Messaging Call Router service on a Client Access server run as a single Exchange server account.
 
 - **Consolidation of voice mail systems**: Currently, most voice messaging systems require that all the voice messaging components be installed in every physical office location in an organization. In this kind of arrangement, the voice messaging systems in branch offices are located outside the central office and must be administered onsite. This frequently results in increased administration costs and complexity. Unified Messaging lets you manage your voice mail system from a central location. To create a centralized management system for Unified Messaging, you can place some of your Exchange servers in a datacenter or other location, and the remainder of your Exchange servers on-premises and then deploy VoIP gateways, IP PBXs, or Session Border Controllers (SBCs) in each of your branch offices to replace the voice messaging system for each branch office. Deploying a centralized voice messaging system this way can result in a significant savings in hardware and administrative costs.
 
@@ -127,7 +129,7 @@ Exchange 2013 Unified Messaging offers administrators:
 
     Customers who require a fax solution will have to deploy a fax partner solution. Fax partner solutions are available from several fax partners. The fax partner solutions are designed to be tightly integrated with Exchange and enable UM-enabled users to receive incoming fax messages.
 
-- **Support for multiple languages**:    All available language packs contain the Text-to-Speech (TTS) engine and the prerecorded prompts for a specified language and ASR support. However, only some language packs contain support for Voice Mail Preview. The US English (en-US) language pack is included on the installation media and additional UM language packs can be downloaded from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=35368).
+- **Support for multiple languages**:    All available language packs contain the Text-to-Speech (TTS) engine and the prerecorded prompts for a specified language and ASR support. However, only some language packs contain support for Voice Mail Preview. The US English (en-US) language pack is included on the installation media and additional UM language packs can be downloaded from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=35368).
 
 - **Auto attendant**: An auto attendant is a set of voice prompts that gives external and internal users access to the voice mail system. Users can use the telephone keypad or speech inputs to move through the auto attendant menu, place a call to a user, or locate a user in your organization and then place a call to them. An auto attendant gives the administrator the ability to:
 
@@ -205,8 +207,8 @@ The following table contains links to topics that will help you learn about and 
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

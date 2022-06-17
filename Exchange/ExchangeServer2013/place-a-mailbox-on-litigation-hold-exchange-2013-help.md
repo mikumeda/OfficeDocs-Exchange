@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: How to place a mailbox on Litigation Hold in Microsoft Exchange
 ms.assetid: adee4621-3626-4aec-aa53-00b35ff0d0b0
 f1.keywords:
 - NOCSH

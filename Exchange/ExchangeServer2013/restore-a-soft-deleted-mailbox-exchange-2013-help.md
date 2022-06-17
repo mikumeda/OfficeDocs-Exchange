@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Use the Shell to connect a soft-deleted mailbox to an Active Directory user account.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

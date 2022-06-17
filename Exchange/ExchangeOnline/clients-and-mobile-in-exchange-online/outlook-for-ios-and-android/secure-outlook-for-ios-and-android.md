@@ -158,8 +158,7 @@ Outlook for iOS and Android supports the following mobile device mailbox policy 
 
 For information on how to create or modify an existing mobile device mailbox policy, see [Mobile device mailbox policies in Exchange Online](../../clients-and-mobile-in-exchange-online/exchange-activesync/mobile-device-mailbox-policies.md).
 
-In addition, Outlook for iOS and Android supports Exchange Online's device-wipe capability. With Outlook, a remote wipe only wipes data within the Outlook app itself and does not trigger a full device wipe. For more information on how to perform a remote wipe, see [Perform a remote wipe on a mobile phone](../mobile-access/remote-wipe-on-mobile-phone.md).
-
+In addition, Outlook for iOS and Android supports Exchange Online's device-wipe capability. With Outlook, a remote wipe only wipes data within the Outlook app itself and does not trigger a full device wipe. For more information on how to perform a remote wipe, see [Perform a remote wipe on a mobile phone in Exchange Online](../exchange-activesync/remote-wipe-on-mobile-phone.md).
 
 ### Device access policy
 
@@ -278,8 +277,8 @@ The `New-ActiveSyncDeviceAccessRule` cmdlet has a `Characteristic` parameter, an
 
 The values for each characteristic are displayed in the following table:
 
-|**Characteristic**|**String for iOS**|**String for Android**|
-|:-----|:-----|:-----|
+|Characteristic|String for iOS|String for Android|
+|---|---|---|
 |DeviceModel|Outlook for iOS and Android|Outlook for iOS and Android|
 |DeviceType|Outlook|Outlook|
 |UserAgent|Outlook-iOS/2.0|Outlook-Android/2.0|

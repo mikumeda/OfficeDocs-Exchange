@@ -5,6 +5,8 @@ ms:assetid: 887b0a64-84b1-4b8c-9547-e456ea6f5dbd
 ms:mtpsurl: https://technet.microsoft.com/library/Dd298116(v=EXCHG.150)
 ms:contentKeyID: 49289340
 ms.reviewer: 
+ms.topic: article
+description: Understand management roles in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -141,8 +143,8 @@ The wildcard character (\*) can be used in the role entry name to return all of 
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -206,10 +208,10 @@ The following table lists all of the administrative management role types in Exc
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -473,13 +475,13 @@ The following table lists all of the administrative management role types in Exc
 <td><p>This role type is associated with roles that enable administrators to manage organization-wide transport settings, such as system messages, Active Directory site configuration, and other organization-wide transport settings in an organization.</p>
 <p>This role doesn't enable you to create or manage transport Receive or Send connectors, queues, hygiene, agents, remote and accepted domains, or rules. To create or manage each of the transport features, you must be assigned roles associated with the following role types:</p>
 <ul>
-<li><p><strong>Receive connectors</strong>   <code>ReceiveConnectors</code></p></li>
-<li><p><strong>Send connectors</strong>   <code>SendConnectors</code></p></li>
-<li><p><strong>Transport queues</strong>   <code>TransportQueues</code></p></li>
-<li><p><strong>Transport hygiene</strong>   <code>TransportHygiene</code></p></li>
-<li><p><strong>Transport agents</strong>   <code>TransportAgents</code></p></li>
-<li><p><strong>Remote and accepted domains</strong>   <code>RemoteAndAcceptedDomains</code></p></li>
-<li><p><strong>Transport rules</strong>   <code>TransportRules</code></p></li>
+<li><p><strong>Receive connectors</strong>   <code>ReceiveConnectors</code></p></li>
+<li><p><strong>Send connectors</strong>   <code>SendConnectors</code></p></li>
+<li><p><strong>Transport queues</strong>   <code>TransportQueues</code></p></li>
+<li><p><strong>Transport hygiene</strong>   <code>TransportHygiene</code></p></li>
+<li><p><strong>Transport agents</strong>   <code>TransportAgents</code></p></li>
+<li><p><strong>Remote and accepted domains</strong>   <code>RemoteAndAcceptedDomains</code></p></li>
+<li><p><strong>Transport rules</strong>   <code>TransportRules</code></p></li>
 </ul></td>
 <td><p>Organization</p></td>
 </tr>
@@ -665,9 +667,9 @@ The following table lists all of the user-focused management role types and thei
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

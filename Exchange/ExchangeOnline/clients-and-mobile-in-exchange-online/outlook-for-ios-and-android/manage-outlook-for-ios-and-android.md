@@ -66,7 +66,7 @@ Key features of the Enterprise Mobility + Security suite with Outlook for iOS an
 
 - **Conditional access**. Azure Active Directory ensures that Exchange Online email can be accessed only when the conditional access requirements are met. For more information on device enrollment, see [Conditional access in Azure Active Directory](/azure/active-directory/active-directory-conditional-access-azure-portal).
 
-- **Intune app protection**. Outlook for iOS and Android allows you to protect your corporate data with Intune app protection policies. This is a great option for "bring your own device" (BYOD) scenarios where you want to keep corporate data safe without managing a users' devices. For more information on Intune app protection policies, see [Protect app data using mobile app management policies with Microsoft Intune](/intune/deploy-use/protect-app-data-using-mobile-app-management-policies-with-microsoft-intune).
+- **Intune app protection**. Outlook for iOS and Android allows you to protect your corporate data with Intune app protection policies. This is a great option for "bring your own device" (BYOD) scenarios where you want to keep corporate data safe without managing a user's devices. For more information on Intune app protection policies, see [Protect app data using mobile app management policies with Microsoft Intune](/mem/intune/apps/app-protection-policy).
 
 - **Device enrollment**. Intune lets you manage your workforce's devices and apps, and how they access your company data. In this model, Outlook for iOS and Android ensures that Exchange Online email can be accessed only on phones and tablets that are managed by your company and are compliant with your organization's policy. When users log on to the Outlook app on an unmanaged mobile device, Outlook prompts users to enroll the device in Intune by leveraging the Azure conditional access policy, and then validates that the device meets organizational standards of device compliance.
 
@@ -86,7 +86,7 @@ For detailed information, see the following resources:
 
 - [Overview of Basic Mobility and Security for Microsoft 365](https://support.microsoft.com/office/faa7d8e5-645d-4d59-839c-c8d4c1869e4a).
 
-- [Manage settings and features on your devices with Microsoft Intune policies](/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies)
+- [Manage settings and features on your devices with Microsoft Intune policies](/mem/intune/configuration/device-profiles)
 
 - Instructions for your end-users to enroll a device in Basic Mobility and Security: [Enroll your mobile device using Basic Mobility and Security](https://support.microsoft.com/office/c8ac722d-dcaf-4135-8345-3e6327f5d3c5)
 

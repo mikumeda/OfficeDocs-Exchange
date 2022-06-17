@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to retrieve Exchange statistics for public folders to help make decisions to retain or delete those folders.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 4e412710-9a74-4649-ab01-502e969a7eda
 ms.reviewer:
 title: View statistics for public folders and public folder items

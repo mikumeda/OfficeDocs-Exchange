@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: An overview of enhancements and additions to high availability and site resilience capabilities since Exchange 2010.
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: de53c00b-091c-4a31-aacc-1bd40c756ce2
 ms.reviewer:
 title: Changes to high availability and site resilience over previous versions of Exchange Server
@@ -172,16 +172,16 @@ Automatic recovery from storage failures allows the system to recover from failu
 
 Even in JBOD environments, storage array controllers can have issues, such as crashing or hanging. The following table lists features that provide hung I/O detection and recovery features that provide enhanced resilience.
 
-|**Name**|**Check**|**Action**|**Threshold**|
-|:-----|:-----|:-----|:-----|
+|Name|Check|Action|Threshold|
+|---|---|---|---|
 |ESE Database Hung IO Detection|ESE checks for outstanding I/Os|Generates a failure item in the crimson channel to restart the server|240 seconds|
 |Failure Item Channel Heartbeat|Ensures failure items can be written to and read from crimson channel|Replication service heartbeats crimson channel and restart server on failures|30 seconds|
 |System Disk Heartbeat|Verifies server's system disk state|Periodically sends unbuffered I/O to system disk; restarts server on heartbeat time out|120 seconds|
 
 Exchange 2013 and later enhances server and storage resilience by including behaviors for other serious conditions. These conditions and behaviors are described in the following table.
 
-|**Name**|**Check**|**Action**|**Threshold**|
-|:-----|:-----|:-----|:-----|
+|Name|Check|Action|Threshold|
+|---|---|---|---|
 |System bad state|No threads, including non-managed threads, can be scheduled|Restart the server|302 seconds|
 |Long I/O times|I/O operation latency measurements|Restart the server|41 seconds|
 |Replication service memory use|Measure the working set of MSExchangeRepl.exe|1: Log event 4395 in the crimson channel with a service termination request  <br/> 2: Initiate termination of MSExchangeRepl.exe  <br/> 3: If service termination fails, restart the server|4 gigabyte (GB)|

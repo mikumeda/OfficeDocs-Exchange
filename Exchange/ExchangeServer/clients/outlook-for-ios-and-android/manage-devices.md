@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: This article describes how to manage mobile devices with Outlook for iOS and Android in your Exchange on-premises organization when using Basic authentication with the Exchange ActiveSync protocol.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 title: Managing devices for Outlook for iOS and Android for Exchange Server
 ms.collection: exchange-server
 ms.reviewer: smithre4
@@ -154,8 +154,8 @@ The `New-ActiveSyncDeviceAccessRule` cmdlet has a `Characteristic` parameter, an
 
 The values for each characteristic are displayed in the following table:
 
-|**Characteristic**|**String for iOS**|**String for Android**|
-|:-----|:-----|:-----|
+|Characteristic|String for iOS|String for Android|
+|---|---|---|
 |DeviceModel|Outlook for iOS and Android|Outlook for iOS and Android|
 |DeviceType|Outlook|Outlook|
 |UserAgent|Outlook-iOS-Android/1.0|Outlook-iOS-Android/1.0|

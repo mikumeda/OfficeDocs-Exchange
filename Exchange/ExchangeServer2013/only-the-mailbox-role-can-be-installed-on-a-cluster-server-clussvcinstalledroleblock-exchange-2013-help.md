@@ -23,8 +23,8 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because its attempt to install a role other than the Mailbox Server role on this clustered server failed.
+Microsoft® Exchange Server 2007 setup cannot continue because its attempt to install a role other than the Mailbox Server role on this clustered server failed.
 
-Microsoft Exchange does not support Exchange 2007 roles other than the Mailbox Server role on servers that have the Cluster service installed.
+Microsoft Exchange does not support Exchange 2007 roles other than the Mailbox Server role on servers that have the Cluster service installed.
 
-To address this issue, see "High Availability for Exchange 2007" in the Exchange Server 2007 Operations Guide ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/bb124721(v=exchg.80)](/previous-versions/office/exchange-server-2007/bb124721(v=exchg.80))).
+To address this issue, see "High Availability for Exchange 2007" in the Exchange Server 2007 Operations Guide ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/bb124721(v=exchg.80)](/previous-versions/office/exchange-server-2007/bb124721(v=exchg.80))).

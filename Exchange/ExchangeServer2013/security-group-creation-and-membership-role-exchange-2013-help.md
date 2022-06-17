@@ -5,6 +5,8 @@ ms:assetid: 257eb517-339f-4895-9e08-f772408a41cf
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876860(v=EXCHG.150)
 ms:contentKeyID: 49289198
 ms.reviewer: 
+ms.topic: article
+description: About the Security Group Creation and Membership role in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -43,15 +45,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

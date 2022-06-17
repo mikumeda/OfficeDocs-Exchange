@@ -2,8 +2,8 @@
 localization_priority: Critical
 description: 'Summary: Learn about the architecture of Exchange Server 2016 and Exchange Server 2019'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 1aacc1c9-c81b-47d4-b222-ee73956cf968
 ms.reviewer: 
 title: Exchange Server architecture
@@ -18,7 +18,7 @@ manager: serdars
 
 # Exchange architecture
 
-Exchange use a single building block architecture that provides email services for deployments at all sizes, from small organizations to the largest multi-national corporations. This architecture is describe in the following diagram.
+Exchange uses a single building block architecture that provides email services for deployments of all sizes, from small organizations to the largest multi-national corporations. This architecture is described in the following diagram.
 
 ![Exchange architecture.](../media/72f56401-0a52-43d0-9d3d-03e84f2f93ba.png)
 

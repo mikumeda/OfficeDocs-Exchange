@@ -5,6 +5,8 @@ ms:assetid: 2cea59fb-69b7-4a2f-833f-de4d93cf1810
 ms:mtpsurl: https://technet.microsoft.com/library/Ee861103(v=EXCHG.150)
 ms:contentKeyID: 49360509
 ms.reviewer: 
+ms.topic: article
+description: How to prepare mailboxes in Exchange 2013 for cross-forest moves by using the Prepare-MoveRequest.ps1 script in the Exchange Management Shell
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -72,9 +74,9 @@ The following table describes the parameter set for the script.
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -242,7 +244,7 @@ When the script attempts to create a target mail-enabled user from the source ma
 
 The script prompts the user about the duplicate objects.
 
-If the target mail-enabled object is a mail-enabled user or contact, which is most likely created by a cross-forest (Identity Lifecycle Management 2007 Service Pack 1-based) global address list (GAL) synchronization deployment, the user can run the script again with the *UseLocalObject* parameter to use the target mail-enabled object for mailbox migration.
+If the target mail-enabled object is a mail-enabled user or contact, which is most likely created by a cross-forest (Identity Lifecycle Management 2007 Service Pack 1-based) global address list (GAL) synchronization deployment, the user can run the script again with the *UseLocalObject* parameter to use the target mail-enabled object for mailbox migration.
 
 ## Mail-enabled user
 

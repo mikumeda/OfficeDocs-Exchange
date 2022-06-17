@@ -4,6 +4,8 @@ TOCTitle: Set the maximum delivery delay for a Voice Mail Preview partner
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: how-to
+description: How to set the maximum delivery delay for a Voice Mail Preview partner in Microsoft Exchange Server
 ms.reviewer:
 ms.assetid: c9a07f6d-6f7f-4036-9a4a-d668d21e2c76
 f1.keywords:

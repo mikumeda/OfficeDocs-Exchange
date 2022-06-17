@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about connectivity logging and how it records outbound connection activity for transmitting messages in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: c31fd710-4ae4-4d9a-8936-d056e7ca2748
 ms.reviewer: 
 title: Connectivity logging in Exchange Server
@@ -82,13 +82,13 @@ The connectivity log files are text files that contain data in the comma-separat
 
 Connectivity logging stores each outbound connection event on a single line in the log. The information on each line is organized by fields, and these fields are separated by commas. The following table describes the fields that are used to classify each outgoing connection event.
 
-|**Field name**|**Description**|
-|:-----|:-----|
+|Field name|Description|
+|---|---|
 |**date-time**|UTC date-time of the connection event. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.|
 |**session**|A GUID value. The value is the same for every event that's associated with the session, but different for each session.|
-|**source**|One of these values:  <br/> **SMTP** for SMTP connections.  <br/> **MapiDelivery** for connections from the local mailbox database by the Mailbox Transport Delivery service.  <br/> **MapiSubmission** for connections from the local mailbox database by the Mailbox Transport Submission service.|
-|**destination**|These are some examples of values you'll see here:  <br/> **In the Transport service**:  <br/> • The FQDN of the destination messaging server  <br/> • `shadowredundancy` (on Mailbox servers only)  <br/> **In the Front End Transport service**:  <br/> • `internalproxy` <br/> • `client proxy` <br/> **In the Mailbox Transport Delivery service**: The GUID of the destination mailbox database.  <br/> **In the Mailbox Transport Submission service**:  <br/> • The GUID of the destination mailbox database.  <br/> • `mailboxtransportsubmissioninternalproxy`|
-|**direction**|Single character that represents the start, middle, or end of the connection. The values you'll see here are:  <br/> `+`: Connect  <br/> `-`: Disconnect  <br/> `>`: Send|
-|**description**|Text information that's associated with the connection event. For example:  <br/> Number and size of messages that were transmitted.  <br/> DNS MX resource record resolution information for destination domains.  <br/> DNS resolution information for destination Mailbox servers.  <br/> Connection establishment messages.  <br/> Connection failure messages.|
+|**source**|One of these values: <ul><li>**SMTP** for SMTP connections.</li><li>**MapiDelivery** for connections from the local mailbox database by the Mailbox Transport Delivery service.</li><li>**MapiSubmission** for connections from the local mailbox database by the Mailbox Transport Submission service.</li></ul>|
+|**destination**|These are some examples of values you'll see here: <ul><li>**In the Transport service**:<ul><li>The FQDN of the destination messaging server</li><li>`shadowredundancy` (on Mailbox servers only)</li></ul></li><li>**In the Front End Transport service**:<ul><li>`internalproxy`</li><li>`client proxy`</li></ul></li><li>**In the Mailbox Transport Delivery service**: <ul><li>The GUID of the destination mailbox database.</li></ul></li><li>**In the Mailbox Transport Submission service**:<ul><li>The GUID of the destination mailbox database.</li><li> `mailboxtransportsubmissioninternalproxy`</li></ul></li></ul>|
+|**direction**|Single character that represents the start, middle, or end of the connection. The values you'll see here are: <ul><li>`+`: Connect </li><li>`-`: Disconnect</li><li>`>`: Send</li></ul>|
+|**description**|Text information that's associated with the connection event. For example: <ul><li>Number and size of messages that were transmitted.</li><li>DNS MX resource record resolution information for destination domains.</li><li>DNS resolution information for destination Mailbox servers.</li><li>Connection establishment messages.</li><li> Connection failure messages.</li></ul>|
 
 The transport services connect to and transmit messages to multiple destinations simultaneously. Entries in the log file from different connection events are interlaced (they typically aren't grouped together as one uninterrupted series of connection events). However you can use the fields (in particular, the unique **session** field value for a connection) to organize and arrange the log entries for each separate connection from start to finish.

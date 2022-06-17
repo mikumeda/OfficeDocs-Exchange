@@ -5,9 +5,11 @@ ms:assetid: 31af7139-6823-411b-81b3-e42edd83ee6c
 ms:mtpsurl: https://technet.microsoft.com/library/JJ673053(v=EXCHG.150)
 ms:contentKeyID: 49289221
 ms.reviewer: 
+ms.topic: article
+description: About Receive connector permissions in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -21,8 +23,8 @@ The following table lists permission types and a description for each.
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

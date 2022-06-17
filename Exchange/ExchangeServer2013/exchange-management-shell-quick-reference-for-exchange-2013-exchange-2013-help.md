@@ -216,14 +216,16 @@ The following commands are associated with various tasks that you can use when a
 <td><p>This command closes the remote Shell session between a local computer and the remote Exchange 2013 server.</p></td>
 </tr>
 <tr class="even">
-<td><p>Import-RecipientDataProperty -Identity &quot;Tony Smith&quot; -SpokenName -FileData <em>([Byte[]]$(Get-Content -Path &quot;M:\AudioFiles\TonySmith.wma&quot; -Encoding Byte -ReadCount 0))</em></p></td>
+<td><p>Import-RecipientDataProperty -Identity &quot;Tony Smith&quot; -SpokenName -FileData <em>([System.IO.File]::ReadAllBytes('M:\AudioFiles\TonySmith.wma'))</em></p></td>
 <td><p>This command shows an example of the syntax, shown in italics, required to import a file into a remote Exchange 2013 server using the FileData parameter on a cmdlet. The syntax encapsulates the data contained in the <em>M:\AudioFiles\TonySmith.wma</em> file and streams the data to the FileData property on the Import-RecipientDataProperty cmdlet.</p>
 <p>The FileData parameter accepts data from a file on your local computer using this syntax on most cmdlets.</p></td>
 </tr>
 <tr class="odd">
-<td><p>Export-RecipientDataProperty -Identity tony@contoso.com -SpokenName <em>| ForEach {$_.FileData | Add-Content C:\tonysmith.wma -Encoding Byte}</em></p></td>
+<td><p>$SN = Export-RecipientDataProperty -Identity tonys@contoso.com -SpokenName <p> <em>[System.IO.File]::WriteAllBytes('C:\tonysmith.wma', $SN.FileData)</em></p></td>
 <td><p>This command shows an example of the syntax, shown in italics, required to export a file from a remote Exchange 2013 server. The syntax encapsulates the data stored in the FileData property on the object returned by the cmdlet and then streams the data to your local computer. The data is then stored in the <em>C:\tonysmith.wma</em> file.</p>
 <p>Most cmdlets that output objects with a FileData property use this syntax to export data to a file on your local computer.</p></td>
 </tr>
 </tbody>
 </table>
+
+

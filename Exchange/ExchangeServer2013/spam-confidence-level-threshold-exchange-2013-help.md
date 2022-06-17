@@ -5,6 +5,8 @@ ms:assetid: 0009b4af-be6d-41d2-98bc-b5487272c74a
 ms:mtpsurl: https://technet.microsoft.com/library/Aa995744(v=EXCHG.150)
 ms:contentKeyID: 49248673
 ms.reviewer: 
+ms.topic: article
+description: Define specific actions according to spam confidence level (SCL) thresholds in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -64,8 +66,8 @@ You can configure the SCL delete, reject, quarantine, and Junk Email folder sett
 
     <table>
     <colgroup>
-    <col style="width: 50%" />
-    <col style="width: 50%" />
+    <col/>
+    <col/>
     </colgroup>
     <thead>
     <tr class="header">
@@ -108,8 +110,8 @@ You can configure the SCL delete, reject, quarantine, and Junk Email folder sett
 
     <table>
     <colgroup>
-    <col style="width: 50%" />
-    <col style="width: 50%" />
+    <col/>
+    <col/>
     </colgroup>
     <thead>
     <tr class="header">
@@ -152,8 +154,8 @@ You can configure the SCL delete, reject, quarantine, and Junk Email folder sett
 
     <table>
     <colgroup>
-    <col style="width: 50%" />
-    <col style="width: 50%" />
+    <col/>
+    <col/>
     </colgroup>
     <thead>
     <tr class="header">

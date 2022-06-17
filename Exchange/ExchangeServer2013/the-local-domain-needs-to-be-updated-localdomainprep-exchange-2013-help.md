@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Setup cannot continue because the logged on user does not have the account permissions required for domain preparation.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -21,10 +23,10 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 setup cannot continue because the logged on user does not have the account permissions that are required for domain preparation.
+Microsoft Exchange Server 2007 setup cannot continue because the logged on user does not have the account permissions that are required for domain preparation.
 
-Exchange setup requires that the user who is logged on when **Setup /PrepareDomain** is run be a member of the Domain Administrators and Exchange Organization Administrators groups, or the Enterprise Admins group.
+Exchange setup requires that the user who is logged on when **Setup /PrepareDomain** is run be a member of the Domain Administrators and Exchange Organization Administrators groups, or the Enterprise Admins group.
 
-To resolve this issue, grant the logged on user Domain Admins and Exchange Organization Administrator permissions, enroll them in the Enterprise Admins group, or log on with an account that has those permissions and rerun Exchange 2007 setup.
+To resolve this issue, grant the logged on user Domain Admins and Exchange Organization Administrator permissions, enroll them in the Enterprise Admins group, or log on with an account that has those permissions and rerun Exchange 2007 setup.
 
 For more information about Active Directory permissions that are needed with Microsoft Exchange, see "Working with Active Directory Permissions in Exchange Server" ([https://docs.microsoft.com/previous-versions/tn-archive/bb124223(v=exchg.65)](/previous-versions/tn-archive/bb124223(v=exchg.65))).

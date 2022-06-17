@@ -4,6 +4,8 @@ TOCTitle: UM dial plans [ONP]
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: article
+description: Unified Messaging dial plans in Microsoft Exchange Server
 ms.reviewer: 
 ms.assetid: ed7afc03-94af-4b23-8745-6a61f203c149
 f1.keywords:

@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: Setup can't continue because the organization contains one or more Exchange 2007 servers.
 ms.topic: reference
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - ms.exch.setupreadiness.E16E12CoexistenceMinVersionRequirement
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 4e1b9510-3188-43eb-9252-7c64cb2bc0e3
 ms.reviewer: 
 title: Can't install Exchange 2016 or later in a forest that contains Exchange 2007 [E16E12CoexistenceMinVersionRequirement]
@@ -42,8 +42,8 @@ The upgrade steps from Exchange 2007 are:
 
 The coexistence (and therefore, upgrade) options for Exchange are described in the following table:
 
-|**Current Exchange version**|**Latest Exchange version for coexistence**|
-|:-----|:-----|:-----|
+|Current Exchange version|Latest Exchange version for coexistence|
+|---|---|---|
 |Exchange 2000|Exchange 2007|
 |Exchange 2003|Exchange 2010|
 |Exchange 2007|Exchange 2013|

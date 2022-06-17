@@ -5,6 +5,8 @@ ms:assetid: b069f8db-fbe1-4047-ad97-d00172ee6a12
 ms:mtpsurl: https://technet.microsoft.com/library/Dn497703(v=EXCHG.150)
 ms:contentKeyID: 61310597
 ms.reviewer: 
+ms.topic: article
+description: Using OAuth authentication to support eDiscovery in a Microsoft Exchange hybrid deployment
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -37,8 +39,8 @@ The follow table identifies the eDiscovery scenarios in an Exchange hybrid deplo
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

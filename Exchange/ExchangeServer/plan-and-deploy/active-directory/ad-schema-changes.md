@@ -3,8 +3,8 @@ localization_priority: Critical
 monikerRange: exchserver-2016 || exchserver-2019
 description: 'Summary: Learn about the new and modified schema classes and attributes that are added to Active Directory by Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: conceptual
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 7e879e4e-1124-4a41-94d2-c64500beb24e
 ms.reviewer: 
 title: Active Directory schema changes in Exchange Server
@@ -27,18 +27,17 @@ Exchange schema updates are cumulative. Each Cumulative Update (CU) includes all
 
 ::: moniker range="exchserver-2019"
 
-<br>
-
-****
-
 |Current Exchange 2019 release installed|New Exchange 2019 release being installed|Are schema updates required?|
 |---|---|---|
 |Release to Manufacturing|Cumulative Update 4 <br> through <br> Cumulative Update 9|**Yes**, schema updates are required. <br> You need to apply the CU8 schema updates.|
 |Cumulative Update 8|Cumulative Update 9 <br> through <br> Cumulative Update 11|**Yes**, schema updates are required. <br> You need to apply the CU10 schema updates.|
-|
 
 > [!NOTE]
 > The Active Directory schema changes that are described in this topic might not apply to all editions of an Exchange 2019 version. To verify that Active Directory has been successfully prepared, see the [Exchange Active Directory versions](../prepare-ad-and-domains.md#exchange-active-directory-versions) section in [Prepare Active Directory and domains for Exchange 2019](../prepare-ad-and-domains.md).
+
+## Exchange 2019 CU12 Active Directory schema changes
+
+No changes are made to the Active Directory schema in Exchange 2019 CU12.
 
 ## Exchange 2019 CU11 Active Directory schema changes
 
@@ -54,14 +53,9 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes modified in Exchange 2019 CU10.
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`ms-Exch-Storage-Group`|delete: `possSuperiors`|`computer`|
-|
 
 ## Exchange 2019 CU9 Active Directory schema changes
 
@@ -78,14 +72,9 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes modified in Exchange 2019 CU8.
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`ms-Exch-Auth-Auth-Server`|add: `mayContain`|`msExchCoexistenceDomains`|
-|
 
 ### Attributes added by Exchange 2019 CU8
 
@@ -143,10 +132,6 @@ This section summarizes the changes that are made to the Active Directory schema
 
 ### Classes added by Exchange 2019 RTM
 
-<br>
-
-****
-
 |Class|Change|
 |---|---|
 |`Exch-Mapi-Virtual-Directory`|`ntdsSchemaAdd`|
@@ -182,13 +167,8 @@ This section summarizes the changes that are made to the Active Directory schema
 |`ms-Exch-Unified-Policy`|`ntdsSchemaAdd`|
 |`ms-Exch-Unified-Rule`|`ntdsSchemaAdd`|
 |`ms-Exch-Workload-Policy`|`ntdsSchemaAdd`|
-|
 
 ### Classes modified by Exchange 2019 RTM
-
-<br>
-
-****
 
 |Class|Change|Attribute/Class|
 |---|---|---|
@@ -405,7 +385,6 @@ This section summarizes the changes that are made to the Active Directory schema
 |`ms-Exch-Transport-Settings`|add:`mayContain`|`msExchConfigurationXML`|
 |`ms-Exch-Virtual-Directory`|add:`mayContain`|`msExchMRSProxyFlags`|
 |`ms-Exch-Virtual-Directory`|add:`mayContain`|`msExchMRSProxyMaxConnections`|
-|
 
 ### Attributes added by Exchange 2019 RTM
 
@@ -690,10 +669,6 @@ This section summarizes the changes that are made to the Active Directory schema
 
 ### Attributes modified by Exchange 2019 RTM
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`Exch-Configuration-Unit-Container`|`rangeUpper`|15254|
@@ -728,7 +703,6 @@ This section summarizes the changes that are made to the Active Directory schema
 |`ms-Exch-Smtp-TLS-Certificate`|replace: `rangeUpper`|1024|
 |`ms-Exch-Sync-Cookie`|`rangeUpper`|262144|
 |`Top`|Replace: `mayContain`|`msExchUGMemberBL`|
-|
 
 ### Object IDs added by Exchange 2019 RTM
 
@@ -968,10 +942,6 @@ The following attribute object IDs are added when you install Exchange 2019 RTM:
 
 ### Indexed attributes added by Exchange 2019 RTM
 
-<br>
-
-****
-
 |Attribute|Search flag value|
 |---|---|
 |`ms-DS-GeoCoordinates-Altitude`|1|
@@ -1027,7 +997,6 @@ The following attribute object IDs are added when you install Exchange 2019 RTM:
 |`ms-Exch-Team-Mailbox-Show-In-Client-List`|16|
 |`ms-Exch-Transport-Rule-Immutable-Id`|1|
 |`ms-Exch-When-Soft-Deleted-Time`|17|
-|
 
 ### Property sets modified by Exchange 2019 RTM
 
@@ -1046,22 +1015,13 @@ The following MAPI IDs are added when you install Exchange 2019 RTM:
 
 The following table lists the extended rights that are added when you install Exchange 2019 RTM. Installing Exchange 2019 RTM doesn't modify any existing extended rights.
 
-<br>
-
-****
-
 |Identifier|Values|
 |---|---|
 |`CN=ms-Exch-SMTP-Accept-XProxyFrom,CN=Extended-Rights,<ConfigurationContainerDN>`|`changetype: ntdsSchemaAdddisplayName: Accept XProxyFromobjectClass: controlAccessRightrightsGuid: 5bee2b72-50d7-49c7-ba66-39a25daa1e92validAccesses: 256`|
-|
 
 ::: moniker-end
 
 ::: moniker range="exchserver-2016"
-
-<br>
-
-****
 
 |Current Exchange 2016 release installed|New Exchange 2016 release being installed|Are schema updates required?|
 |---|---|---|
@@ -1072,10 +1032,13 @@ The following table lists the extended rights that are added when you install Ex
 |Cumulative Update 7|Cumulative Update 8 <br> through <br> Cumulative Update 18|**No**, no schema updates are required. <br> No schema changes are made in CU8 through CU18.|
 |Cumulative Update 14|Cumulative Update 18 <br> through <br> Cumulative Update 20|**Yes**, schema updates are required. <br> You need to apply the CU19 schema updates.|
 |Cumulative Update 19|Cumulative Update 20 <br> through <br> Cumulative Update 22|**Yes**, schema updates are required. <br> You need to apply the CU21 schema updates.|
-|
 
 > [!NOTE]
 > The Active Directory schema changes that are described in this topic might not apply to all editions of an Exchange 2016 version. To verify that Active Directory has been successfully prepared, see the [Exchange Active Directory versions](../prepare-ad-and-domains.md#exchange-active-directory-versions) section in [Prepare Active Directory and domains for Exchange Server](../prepare-ad-and-domains.md).
+
+## Exchange 2016 CU23 Active Directory schema changes
+
+No changes are made to the Active Directory schema in Exchange 2016 in CU23.
 
 ## Exchange 2016 CU22 Active Directory schema changes
 
@@ -1091,14 +1054,9 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes modified in Exchange 2016 CU21.
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`ms-Exch-Storage-Group`|delete: `possSuperiors`|`computer`|
-|
 
 ## Exchange 2016 CU20 Active Directory schema changes
 
@@ -1115,14 +1073,9 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes modified in Exchange 2016 CU19.
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`ms-Exch-Auth-Auth-Server`|add: `mayContain`|`msExchCoexistenceDomains`|
-|
 
 ### Attributes added by Exchange 2016 CU19
 
@@ -1190,27 +1143,17 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes added in Exchange 2016 CU7.
 
-<br>
-
-****
-
 |Class|Change|
 |---|---|
 |`ms-Exch-Http-Delivery-Connector`|`ntdsSchemaAdd`|
-|
 
 ### Classes modified by Exchange 2016 CU7
 
 This section contains the classes modified in Exchange 2016 CU7.
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`Mail-Recipient`|add: `mayContain`|`msExchImmutableSid`|
-|
 
 ### Attributes added by Exchange 2016 CU7
 
@@ -1222,14 +1165,9 @@ This section contains the attributes added in Exchange 2016 CU7.
 
 This section contains the classes modified in Exchange 2016 CU7.
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`ms-Exch-Group-Security-Flags`|`ntdsSchemaModify`|replace: `mapiId: 36111`|
-|
 
 ### Object IDs added by Exchange 2016 CU7
 
@@ -1263,15 +1201,10 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes modified in Exchange 2016 CU3.
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`Mail-Recipient`|add: `mayContain`|`msExchUGEventSubscriptionLink`|
 |`Top`|add: `mayContain`|`msExchUGEventSubscriptionBL`|
-|
 
 ### Attributes added by Exchange 2016 CU3
 
@@ -1307,17 +1240,12 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes modified in Exchange 2016 CU2.
 
-<br>
-
-****
-
 |Class|Change|Attribute/Class|
 |---|---|---|
 |`Mail-Recipient`|add: `mayContain`|`msExchAdministrativeUnitLink`|
 |`ms-Exch-Container`|add: `mayContain`|`msExchScopeFlags`|
 |`Top`|add: `mayContain`|`msExchAdministrativeUnitBL`|
 |`ms-Exch-Base-Class`|add: `mayContain`|`msExchUserHoldPolicies`|
-|
 
 ### Attributes added by Exchange 2016 CU2
 
@@ -1355,23 +1283,14 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes added in Exchange 2016 CU1.
 
-<br>
-
-****
-
 |Class|Change|
 |---|---|
 |`ms-Exch-Mailbox-Policy`|`ntdsSchemaAdd`|
 |`ms-Exch-Auth-Policy`|`ntdsSchemaAdd`|
-|
 
 ### Classes modified by Exchange 2016 CU1
 
 This section contains the classes modified in Exchange 2016 CU1.
-
-<br>
-
-****
 
 |Class|Change|Attribute/Class|
 |---|---|---|
@@ -1382,7 +1301,6 @@ This section contains the classes modified in Exchange 2016 CU1.
 |`Mail-Recipient`|add: `mayContain`|`msExchAuthPolicyLink`|
 |`ms-Exch-Configuration-Unit-Container`|add: `mayContain`|`msExchAuthPolicyLink`|
 |`ms-Exch-Configuration-Unit-Container`|add: `mayContain`|`msExchMSOForwardSyncReplayList`|
-|
 
 ### Attributes added by Exchange 2016 CU1
 
@@ -1397,14 +1315,9 @@ This section contains the attributes added in Exchange 2016 CU1.
 
 This section contains the indexed attributes added in Exchange 2016 CU1.
 
-<br>
-
-****
-
 |Attribute|Search flag value|
 |---|---|
 |`ms-Exch-Data-Encryption-Policy-Link`|1|
-|
 
 ### Global catalog attributes added by Exchange 2016 CU1
 
@@ -1450,10 +1363,6 @@ This section summarizes the changes that are made to the Active Directory schema
 
 This section contains the classes added in Exchange 2016 RTM.
 
-<br>
-
-****
-
 |Class|Change|
 |---|---|
 |`Exch-Mapi-Virtual-Directory`|`ntdsSchemaAdd`|
@@ -1486,15 +1395,10 @@ This section contains the classes added in Exchange 2016 RTM.
 |`ms-Exch-Unified-Policy`|`ntdsSchemaAdd`|
 |`ms-Exch-Unified-Rule`|`ntdsSchemaAdd`|
 |`ms-Exch-Workload-Policy`|`ntdsSchemaAdd`|
-|
 
 ### Classes modified by Exchange 2016 RTM
 
 This section contains the classes modified in Exchange 2016 RTM.
-
-<br>
-
-****
 
 |Class|Change|Attribute/Class|
 |---|---|---|
@@ -1697,7 +1601,6 @@ This section contains the classes modified in Exchange 2016 RTM.
 |`ms-Exch-Transport-Settings`|add:`mayContain`|`msExchConfigurationXML`|
 |`ms-Exch-Virtual-Directory`|add:`mayContain`|`msExchMRSProxyFlags`|
 |`ms-Exch-Virtual-Directory`|add:`mayContain`|`msExchMRSProxyMaxConnections`|
-|
 
 ### Attributes added by Exchange 2016 RTM
 
@@ -2369,10 +2272,6 @@ The following **attribute object IDs** are added when you install Exchange 2016 
 
 The following table lists the attributes that are added to the list of indexed attributes when you install Exchange 2016 RTM.
 
-<br>
-
-****
-
 |Attribute|Search flag value|
 |---|---|
 |`ms-DS-GeoCoordinates-Altitude`|1|
@@ -2427,7 +2326,6 @@ The following table lists the attributes that are added to the list of indexed a
 |`ms-Exch-Team-Mailbox-Show-In-Client-List`|16|
 |`ms-Exch-Transport-Rule-Immutable-Id`|1|
 |`ms-Exch-When-Soft-Deleted-Time`|17|
-|
 
 ### Property sets modified by Exchange 2016 RTM
 
@@ -2446,13 +2344,8 @@ The following MAPI IDs are added when you install Exchange 2016 RTM:
 
 The following table lists the extended rights that are added when you install Exchange 2016 RTM. Installing Exchange 2016 RTM doesn't modify any existing extended rights.
 
-<br>
-
-****
-
 |Identifier|Values|
 |---|---|
 |`CN=ms-Exch-SMTP-Accept-XProxyFrom,CN=Extended-Rights,<ConfigurationContainerDN>`|`changetype: ntdsSchemaAdd` <br> `displayName: Accept XProxyFrom` <br> `objectClass: controlAccessRight` <br> `rightsGuid: 5bee2b72-50d7-49c7-ba66-39a25daa1e92` <br> `validAccesses: 256`|
-|
 
 ::: moniker-end

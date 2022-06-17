@@ -62,8 +62,8 @@ Other encryption technologies work together to provide protection for messages a
   - Encrypts the connection between email clients and email servers.
 - **BitLocker**: Encrypts data on hard drives in client computers and servers. If an unauthorized party somehow gains access, they can't read the data on the drives.
 
-[Office 365 Message Encryption](/microsoft-365/compliance/email-encryption) is a direct competitor to S/MIME, and has the following advantages over S/MIME:
+[Microsoft Purview Message Encryption](/microsoft-365/compliance/email-encryption) is a direct competitor to S/MIME, and has the following advantages over S/MIME:
 
 - It's a policy-based encryption service that's configured by an admin to encrypt messages that are sent to anyone inside or outside of the organization. In contrast, users are required to decide whether to apply or not apply S/MIME to messages that they send.
 - It's an online service that's built on Azure Rights Management (Azure RMS) and does not rely on a public key infrastructure. In contrast, S/MIME requires a certificate and certificate publishing infrastructure.
-- Office 365 Message Encryption provides additional capabilities. For example, you can customize messages with your organization's brand.
+- Microsoft Purview Message Encryption provides additional capabilities. For example, you can customize messages with your organization's brand.

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about ways to help enterprises meet compliance and regulatory requirements using Exchange 2016, SharePoint Server 2016, and Skype for Business Server.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 056b29f6-e0e9-4974-b763-002518857a93
 ms.reviewer:
 title: Plan Exchange 2016 integration with SharePoint and Skype for Business
@@ -108,8 +108,8 @@ In on-premises deployments, Exchange 2016, SharePoint Server 2016, and Skype for
 
 **Auth metadata URLs**
 
-|**Server**|**AuthMetadataUrl**|
-|:-----|:-----|
+|Server|AuthMetadataUrl|
+|---|---|
 | Exchange 2016| `https://<serverfqdn>/autodiscover/metadata/json/1`|
 |SharePoint Server 2016| `https://<serverfqdn>/_layouts/15/metadata/json/1`|
 |Skype for Business| `https://<serverfqdn>/metadata/json/1`|

@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: You can remove public folders that are no longer being used in your organization.
 ms.assetid: 334b831d-e372-4d85-a407-5c8a5d0e78de
 f1.keywords:
 - NOCSH

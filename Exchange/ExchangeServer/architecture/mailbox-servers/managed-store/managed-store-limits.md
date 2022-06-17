@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about the Managed Store limits in Exchange Server 2016 and 2019 and how to change them.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: bea9ec15-bfb5-4716-b14e-010e389c9f9e
 ms.reviewer: 
 title: Managed Store Limits  in Exchange 2016 and Exchange 2019
@@ -23,7 +23,9 @@ The Managed Store in Exchange Server 2016 and Exchange Server 2019 is the name f
 For more information about the Managed Store, see [Managed Store in Exchange Server](managed-store.md).
 
 > [!NOTE]
-> Connections by administrator accounts have maximum session limits of 64000. <br/><br/> Exchange Online limits (including Managed Store limits) are described in the [Exchange Online Limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits).
+> Connections by administrator accounts have maximum session limits of 64000.
+>
+> Exchange Online limits (including Managed Store limits) are described in the [Exchange Online Limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits).
 
 ## Terminology
 
@@ -51,8 +53,8 @@ The types of connection limits are:
 
 The types of client connections to the Managed Store and the limits based on those connections are described in the following table.
 
-|**Client type**|**Max sessions per mailbox database**|**Default number of user sections per mailbox database**|
-|:-----|:-----|:-----|
+|Client type|Max sessions per mailbox database|Default number of user sessions per mailbox database|
+|---|---|---|
 |Admin|10000|n/a|
 |Availability service|10000|16|
 |Content indexing|10000|n/a|
@@ -110,8 +112,8 @@ Open item limits are limits placed on the number of items that can be opened by 
 
 The open item limits are described in the following table
 
-|**Item type**|**Registry object type**|**Max opened per session**|
-|:-----|:-----|:-----|
+|Item type|Registry object type|Max opened per session|
+|---|---|---|
 |ACL View|objtACLView|500|
 |Attachment|objtAttachment|500|
 |Attachment View|objtAttachmentView|500|
@@ -167,7 +169,7 @@ You can limit the maximum number of resources that a MAPI client (for example, O
 
 Item size limits are the limits placed on items within a user's mailbox. You configure these limits by using the *MaxSendSize* and *MaxReceiveSize* parameters on the [Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet in the Exchange Management Shell.
 
-|**Item type**|**Limit**|
-|:-----|:-----|
+|Item type|Limit|
+|---|---|
 |Message (saved)|Maximum size of the SendLimit, ReceiveLimit|
 |Message (sent)|Maximum size of the SendLimit|

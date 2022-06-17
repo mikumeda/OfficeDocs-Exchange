@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: You can remove Client Access and Mailbox servers from SIP URI dial plans.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

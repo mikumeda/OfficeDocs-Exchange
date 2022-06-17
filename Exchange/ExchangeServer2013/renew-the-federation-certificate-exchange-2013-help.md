@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: How to update the self-signed federation certificate that's used in a federation trust.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Step-by-step guidance for restoring a recovery database in Exchange Server 2016 or Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: d64c18e7-16af-4bd8-a5c5-01206984d4d1
 ms.reviewer:
 title: Restore data using a recovery database

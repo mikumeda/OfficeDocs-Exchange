@@ -5,6 +5,8 @@ ms:assetid: e1678327-bcd5-42d4-a363-67f33067fe9a
 ms:mtpsurl: https://technet.microsoft.com/library/Bb124926(v=EXCHG.150)
 ms:contentKeyID: 50646519
 ms.reviewer: 
+ms.topic: how-to
+description: How to search message tracking logs in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

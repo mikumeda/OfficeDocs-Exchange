@@ -25,10 +25,6 @@ Hybrid Configuration Wizard (HCW) has changed a lot since it was released as par
 > [!NOTE]
 > This table is an expanded version of the one which was originally published in Chapter 13 in the book, Microsoft Office 365 Administration Inside Out, 2nd Edition. Reference- Fisher, Ed; Guilmette, Aaron; Kegg, Darryl; Mandich, Lou. Microsoft Office 365 Administration Inside Out (Includes Current Book Service), 2nd ed. Pearson Education, Inc., 2017. Print.
 
-<br>
-
-****
-
 |Exchange Hybrid Configuration Options|Classic Minimal|Classic Express|Classic Full|Modern Minimal|Modern Full|
 |---|---|---|---|---|---|
 |E-mail Address Policy and Domain configuration|Yes|Yes|Yes|Yes|Yes|
@@ -52,7 +48,6 @@ Hybrid Configuration Wizard (HCW) has changed a lot since it was released as par
 |Third-Party Certificate Required- Autodiscover/Transport/EWS for Exchange On-Premises, Exchange Server 2013/2016/2019|Yes|Yes|Yes|Yes for Autodiscover if needed, No for Hybrid Agent|Yes for Autodiscover and Transport if needed, No for Hybrid Agent|
 |Exchange Server Edge 2013/2016/2019 with Edge Sync and Edge Third-Party Certificate for Transport Option, TCP Port 25 in/out at network egress|No|No|Yes|No|Yes|
 |Exchange Server Edge 2013/2016/2019 without Edge Sync and Edge Third-Party Certificate for Transport Option, TCP Port 25 in/out at network egress|No|No|No|No|No|
-|
 
 > [!NOTE]
 > Depending on the your topology and configuration, you may still need to publish Autodiscover records in external DNS or open TCP Port 25 inbound and outbound to your Exchange environments for other reasons, such as Exchange Active Sync Clients using the legacy mail client in Android or iOS (although we highly recommend Microsoft Outlook for iOS and Android as the mobile messaging application). Another reason might be using a feature like Exchange Server Hybrid Modern Authentication. Make sure to review the limitations of the hybrid agent and modern hybrid topology covered in the article [Microsoft Hybrid Agent](hybrid-deployment/hybrid-agent.md).

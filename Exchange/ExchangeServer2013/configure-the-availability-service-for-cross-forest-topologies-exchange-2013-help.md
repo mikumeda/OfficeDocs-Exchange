@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The Availability service improves information workers' free/busy information by providing secure, consistent, and up-to-date free/busy information to clients that are running Microsoft Outlook. By default, this service is installed with Exchange Server 2013. In cross-forest topologies where all connecting clients are running Outlook, the Availability service is the only method of retrieving free/busy information. You can use the Shell to configure the Availability service for cross-forest topologies.
+The Availability service improves information workers' free/busy information by providing secure, consistent, and up-to-date free/busy information to clients that are running Microsoft Outlook. By default, this service is installed with Exchange Server 2013. In cross-forest topologies where all connecting clients are running Outlook, the Availability service is the only method of retrieving free/busy information. You can use the Shell to configure the Availability service for cross-forest topologies.
 
 > [!NOTE]
 > You can't use the EAC to configure the Availability service for cross-forest topologies.

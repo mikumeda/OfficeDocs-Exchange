@@ -5,9 +5,11 @@ ms:assetid: bb6b8524-aaee-4be8-a04e-e61cd2ab3465
 ms:mtpsurl: https://technet.microsoft.com/library/Mt829264(v=EXCHG.150)
 ms:contentKeyID: 74518107
 ms.reviewer: 
+ms.topic: article
+description: How to recreate arbitration mailboxes in Microsoft Exchange
 manager: serdars
 ms.author: serdars
-author: msdmaguire
+author: serdars
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -21,10 +23,10 @@ Exchange 2013 comes with five system mailboxes known as *arbitration mailboxes*.
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

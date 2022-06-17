@@ -5,6 +5,8 @@ ms:assetid: 1d71c01b-e261-408e-a633-1d1c9d00032a
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150498(v=EXCHG.150)
 ms:contentKeyID: 47559964
 ms.reviewer: 
+ms.topic: article
+description: How to use shared mailboxes in Microsoft Exchange Server and how to convert a delegated mailbox to an Exchange shared mailbox
 manager: serdars
 ms.author: serdars
 author: msdmaguire

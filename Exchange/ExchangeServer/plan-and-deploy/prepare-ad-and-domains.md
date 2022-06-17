@@ -3,8 +3,8 @@ localization_priority: Critical
 monikerRange: exchserver-2016 || exchserver-2019
 description: 'Summary: Learn how to prepare Active Directory for Exchange 2016 or Exchange 2019.'
 ms.topic: conceptual
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: f895e1ce-d766-4352-ac46-ec959c9954a9
 ms.reviewer: 
 title: Prepare Active Directory and domains for Exchange Server, Active Directory Exchange Server, Exchange Server Active Directory, Exchange 2019 Active Directory
@@ -24,6 +24,9 @@ manager: serdars
 Exchange uses Active Directory to store information about mailboxes and the configuration of Exchange servers in the organization. Before you install Exchange Server 2016 or Exchange Server 2019 (even if you have earlier versions of Exchange installed in your organization), you need to prepare your Active Directory forest and its domains for the new version of Exchange. There are two ways to do this:
 
 - **Let the Exchange Setup wizard do it for you**: If you don't have a large Active Directory deployment, and you don't have a separate team that manages Active Directory, we recommend using the Setup wizard. Your account needs to be a member of both the Schema Admins and Enterprise Admins security groups. For more information about how to use the Setup wizard, check out [Install Exchange Mailbox servers using the Setup wizard](deploy-new-installations/install-mailbox-role.md).
+
+> [!IMPORTANT]
+> If Exchange is deployed in a multi-site Active Directory environment and is not in the same site as the domain controller that holds the Schema Master role, you cannot prepare Active Directory using the wizard. Instead, follow Step 1 and Step 2 in this topic. 
 
 - **Follow the steps in this topic**: If you have a large Active Directory deployment, or if a separate team manages Active Directory, this topic is for you. Following the steps in this topic gives you much more control over each stage of preparation, and who can do each step. For example, Exchange administrators might not have the required permissions to extend the Active Directory schema.
 
@@ -105,7 +108,7 @@ When you prepare Active Directory for Exchange, the following requirements apply
 - Your account needs to be a member of the Enterprise Admins security group. If you skipped Step 1 because you want the _/PrepareAD_ command to extend the schema, the account also needs to be a member of the Schema Admins security group.
 - The computer needs to be a member of the same Active Directory domain and site as the schema master, and must be able to contact all of the domains in the forest on TCP port 389.
 - Wait until Active Directory has finished replicating the schema changes from Step 1 to all domain controllers before you try to prepare Active Directory.
-- You need to select a name for the Exchange organization. The organization name is used internally by Exchange, isn't typically seen by users, doesn't affect the functionality of Exchange, and doesn't determine what you can use for email addresses.
+- If you install a new Exchange organization you need to select a name for the Exchange organization. The organization name is used internally by Exchange, isn't typically seen by users, doesn't affect the functionality of Exchange, and doesn't determine what you can use for email addresses.
   - The organization name can't contain more than 64 characters, and can't be blank.
   - Valid characters are A to Z, a to z, 0 to 9, hyphen or dash (-), and space, but leading or trailing spaces aren't allowed.
   - You can't change the organization name after it's set.
@@ -113,7 +116,7 @@ When you prepare Active Directory for Exchange, the following requirements apply
 To prepare Active Directory for Exchange, run the following command in a Windows Command Prompt window:
 
 ```console
-<Virtual DVD drive letter>:\Setup.exe /IAcceptExchangeServerLicenseTerms_DiagnosticDataON /PrepareAD  /OrganizationName:"<Organization name>"
+<Virtual DVD drive letter>:\Setup.exe /IAcceptExchangeServerLicenseTerms_DiagnosticDataON /PrepareAD /OrganizationName:"<Organization name>"
 ```
 
 This example uses the Exchange installation files on drive E: and names the Exchange organization "Contoso Corporation".
@@ -124,6 +127,8 @@ E:\Setup.exe /IAcceptExchangeServerLicenseTerms_DiagnosticDataON /PrepareAD /Org
 
 > [!IMPORTANT]
 > If you have a hybrid deployment configured between your on-premises organization and Exchange Online, add the _/TenantOrganizationConfig_ switch to the command.
+>
+> For existing environments, you don't need to use the _/OrganizationName_ and _/TenantOrganizationConfig_ switches.
 
 As in Step 1, you'll need to wait while Active Directory replicates the changes from this step to all of your domain controllers before you proceed, and you can use the `repadmin` tool to check the progress of the replication.
 
@@ -215,12 +220,10 @@ The tables in the following sections contain the Exchange objects in Active Dire
 ::: moniker range="exchserver-2019"
 ### Exchange 2019 Active Directory versions
 
-<br>
-
-****
-
 |Exchange 2019 version|rangeUpper|objectVersion<br>(Default)|objectVersion<br>(Configuration)|
 |---|:---:|:---:|:---:|
+|Exchange 2019 CU12|17003|13243|16760|
+|Exchange 2019 CU11 with KB5014260|17003|13243|16759|
 |Exchange 2019 CU11|17003|13242|16759|
 |Exchange 2019 CU10|17003|13241|16758|
 |Exchange 2019 CU9|17002|13240|16757|
@@ -234,7 +237,6 @@ The tables in the following sections contain the Exchange objects in Active Dire
 |Exchange 2019 CU1|17000|13236|16752|
 |Exchange 2019 RTM|17000|13236|16751|
 |Exchange 2019 Preview|15332|13236|16213|
-|
 
 ::: moniker-end
 
@@ -242,12 +244,10 @@ The tables in the following sections contain the Exchange objects in Active Dire
 
 ### Exchange 2016 Active Directory versions
 
-<br>
-
-****
-
 |Exchange 2016 version|rangeUpper|objectVersion<br>(Default)|objectVersion<br>(Configuration)|
 |---|:---:|:---:|:---:|
+|Exchange 2016 CU23|15334|13243|16223|
+|Exchange 2016 CU22 with KB5014260|15334|13243|16222|
 |Exchange 2016 CU22|15334|13242|16222|
 |Exchange 2016 CU21|15334|13241|16221|
 |Exchange 2016 CU20|15333|13240|16220|
@@ -272,6 +272,5 @@ The tables in the following sections contain the Exchange objects in Active Dire
 |Exchange 2016 CU1|15323|13236|16211|
 |Exchange 2016 RTM|15317|13236|16210|
 |Exchange 2016 Preview|15317|13236|16041|
-|
 
 ::: moniker-end

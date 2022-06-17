@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how address rewriting on Edge Transport servers in Exchange Server can modify sender and recipient email addresses on email messages in transit.'
 ms.topic: overview
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 23f1eaf6-247a-4671-ad72-aae19d9b511d
 ms.reviewer: 
 title: "Exchange Server: Address rewriting on Edge Transport servers"
@@ -24,6 +24,9 @@ The *address rewrite entry*, which you create, specifies the internal addresses 
 
 > [!IMPORTANT]
 > Regardless of how you plan to use address rewriting, you need to verify that the resulting email addresses are unique in your organization so you don't end up with duplicates. Address rewriting doesn't verify the uniqueness of a rewritten email address.
+
+> [!IMPORTANT]
+> DKIM signing is not supported for outbound email messages using rewritten addresses as it happens before the address rewriting process. If your organization requires DKIM signing for outbound email, be aware that DKIM validation will fail after implementing address rewriting.
 
 To configure address rewriting, see [Address rewriting procedures on Edge Transport servers](address-rewriting-procedures.md).
 
@@ -69,8 +72,8 @@ Address rewriting changes an email address by rewriting specific fields in the m
 
 **Message fields rewritten on outbound and inbound messages**
 
-|**Field name**|**Location**|**Outbound messages**|**Inbound messages**|
-|:-----|:-----|:-----|:-----|
+|Field name|Location|Outbound messages|Inbound messages|
+|---|---|---|---|
 |**MAIL FROM**|Message envelope|Rewritten|Not rewritten|
 |**RCPT TO**|Message envelope|Not rewritten|Rewritten|
 |**To**|Message header|Not Rewritten|Rewritten|

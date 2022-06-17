@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Correct this warning by making the Exchange server a global catalog server.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -21,11 +23,11 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft® Exchange Server 2007 setup cannot continue because the local computer is a domain controller for a child domain.
+Microsoft® Exchange Server 2007 setup cannot continue because the local computer is a domain controller for a child domain.
 
-Exchange 2007 setup will not install on to a domain controller for a child domain unless the domain controller is a global catalog server.
+Exchange 2007 setup will not install on to a domain controller for a child domain unless the domain controller is a global catalog server.
 
-To resolve this issue, promote the domain controller to a global catalog server or install Exchange 2007 to a non-domain controller, a member server, in the child domain, and then rerun the Microsoft Exchange setup.
+To resolve this issue, promote the domain controller to a global catalog server or install Exchange 2007 to a non-domain controller, a member server, in the child domain, and then rerun the Microsoft Exchange setup.
 
 **To correct this warning by making the Exchange server a global catalog server**
 

@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: how-to
+description: How to set Outlook Voice Access PIN policies in Microsoft Exchange Server
 ms.assetid: 5b2800b7-bfa6-4282-975c-0706ae25ad64
 f1.keywords:
 - NOCSH

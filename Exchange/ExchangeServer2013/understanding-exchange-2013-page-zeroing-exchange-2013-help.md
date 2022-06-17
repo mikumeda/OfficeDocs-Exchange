@@ -5,6 +5,8 @@ ms:assetid: 0ca7b188-efbc-4c0d-bcfe-5138cffc803c
 ms:mtpsurl: https://technet.microsoft.com/library/Gg549096(v=EXCHG.150)
 ms:contentKeyID: 62279321
 ms.reviewer: 
+ms.topic: article
+description: Page zeroing in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -38,8 +40,8 @@ Page zeroing writes a binary pattern over a hard-deleted record. The page-zeroin
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -69,8 +71,8 @@ The following table lists the fill patterns that correspond to specific operatio
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -100,7 +102,7 @@ The following table lists the fill patterns that correspond to specific operatio
 
 ## Background Database Maintenance
 
-Background database maintenance is a process that continuously checksums and scans each database. Its primary function is to checksum database pages, but it also handles cleaning up space and zeroing out records and pages that were not zeroed out because of a Store crash. Background database maintenance processes approximately 1 MB per second per database. If timely page zeroing is a priority, you can reduce database sizes to ensure page zeroing occurs for the crash recovery cases in a shorter time period (for example, 24 hours).
+Background database maintenance is a process that continuously checksums and scans each database. Its primary function is to checksum database pages, but it also handles cleaning up space and zeroing out records and pages that were not zeroed out because of a Store crash. Background database maintenance processes approximately 1 MB per second per database. If timely page zeroing is a priority, you can reduce database sizes to ensure page zeroing occurs for the crash recovery cases in a shorter time period (for example, 24 hours).
 
 Background database maintenance is a continuous process, so there are no events associated with its start and completion. You can track the progress of background database maintenance by reading the value of a performance counter:
 
@@ -116,8 +118,8 @@ The following table discusses database delete scenarios, and when page zeroing f
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

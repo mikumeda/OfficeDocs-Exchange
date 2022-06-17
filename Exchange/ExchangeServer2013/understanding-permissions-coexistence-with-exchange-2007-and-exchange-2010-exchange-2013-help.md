@@ -5,6 +5,8 @@ ms:assetid: 28ab1433-23ee-4914-8f21-9a32578792e5
 ms:mtpsurl: https://technet.microsoft.com/library/Dd335157(v=EXCHG.150)
 ms:contentKeyID: 56278647
 ms.reviewer:
+ms.topic: article
+description: How permissions will work in the new organization when you install Microsoft Exchange Server 2013 into an existing Exchange Server 2010 or 2007 organization
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -61,9 +63,9 @@ The Exchange 2013 RBAC permissions model consists of management role groups assi
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -173,10 +175,10 @@ In Exchange 2007, you can separate administrators by assigning them various role
 
 <table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -192,7 +194,7 @@ In Exchange 2007, you can separate administrators by assigning them various role
 <td><p>The Administrator account or the account used to install the first Exchange 2007 server</p></td>
 <td><p>Exchange Recipient Administrator</p>
 <p>Administrators local group of <em>&lt;server name&gt;</em></p></td>
-<td><p>Full control of the Microsoft Exchange container in Active Directory</p></td>
+<td><p>Full control of the Microsoft Exchange container in Active Directory</p></td>
 </tr>
 <tr class="even">
 <td><p>Exchange View-Only Administrator</p></td>
@@ -256,8 +258,8 @@ The following table describes the mapping between Exchange 2007 administrator ro
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">

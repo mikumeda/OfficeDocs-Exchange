@@ -2,9 +2,11 @@
 title: 'DTMF interface: Exchange 2013 Help'
 TOCTitle: DTMF interface
 ms.author: serdars
+description: About the DTMF interface in Microsoft Exchange Server
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
 ms.assetid: 2c7c9d8a-ed12-4dcf-a5b7-3cea0e785e49
 f1.keywords:
 - NOCSH
@@ -66,8 +68,8 @@ The following table shows the DTMF map values that would be stored in Active Dir
 
  **DTMF values stored for a UM-enabled user named Tony Smith**
 
-|**Directory entry**|**User's name**|
-|:-----|:-----|
+|Directory entry|User's name|
+|---|---|
 | firstNameLastName:866976484|tonysmith|
 | lastNameFirstName:764848669|smithtony|
 | emailAddress:876484|tsmith|

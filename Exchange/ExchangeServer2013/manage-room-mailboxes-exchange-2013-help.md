@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: How to create and manage room mailboxes in Microsoft Exchange
 ms.assetid: f70752ad-fce0-4e14-8428-fc5ac63f6c54
 f1.keywords:
 - NOCSH
@@ -212,7 +214,9 @@ Use the **Email Address** section to view or change the email addresses associat
   - **Custom address type**: Click this button and type one of the supported non-SMTP email address types in the **\* Email address** box.
 
     > [!NOTE]
-    > With the exception of X.400 addresses, Exchange doesn't validate custom addresses for correct formatting. You must make sure that the custom address you specify complies with the format requirements for that address type. <br/><br/> When you add a new email address, you have the option to make it the primary SMTP address.
+    > With the exception of X.400 addresses, Exchange doesn't validate custom addresses for correct formatting. You must make sure that the custom address you specify complies with the format requirements for that address type.
+    >
+    > When you add a new email address, you have the option to make it the primary SMTP address.
 
 - **Automatically update email addresses based on the email address policy applied to this recipient**: Select this check box to have the recipient's email addresses automatically updated based on changes made to email address policies in your organization.
 

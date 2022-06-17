@@ -2,10 +2,10 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about dynamic distribution groups and how to create and manage them.'
 ms.topic: article
-author: msdmaguire
+author: JoanneHendrickson
 ms.custom:
 - Microsoft.Exchange.Management.SnapIn.Esm.Recipients.CreateDynamicGroupWizardForm.CreateDynamicGroupInformationWizardPage
-ms.author: serdars
+ms.author: jhendr
 ms.assetid: 8ef85d0a-41df-4b5c-b8e7-ca8d09c048ca
 ms.reviewer:
 title: Manage dynamic distribution groups
@@ -83,8 +83,8 @@ Unlike regular distribution groups that contain a defined set of members, the me
 
 5. Select one of the following recipient attributes from the drop-down list and provide a value. If the value for the selected attribute matches that value you define, the recipient receives a message sent to this group.
 
-    |**Attribute**|**Send message to a recipient if...**|
-    |:-----|:-----|
+    |Attribute|Send message to a recipient if...|
+    |---|---|
     |**Recipient container**|The recipient object resides in the specified domain or OU.|
     |**State or province**|The specified value matches the recipient's State or province property.|
     |**Company**|The specified value matches the recipient's Company property.|

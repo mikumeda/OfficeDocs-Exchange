@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: Voice Mail Preview procedures in Microsoft Exchange Server
 ms.assetid: 3154be11-1a9d-4e51-a2d0-592ddbcca7b1
 f1.keywords:
 - NOCSH

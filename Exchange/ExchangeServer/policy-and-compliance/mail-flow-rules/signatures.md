@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about using mail flow rules (transport rules) to add disclaimers to email messages in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: e45e33c9-e53b-427c-ada5-70901bc399b8
 ms.reviewer:
 title: Organization-wide disclaimers, signatures, footers, or headers in Exchange Server
@@ -28,8 +28,8 @@ Looking for procedures? See [Procedures for mail flow rules in Exchange Server](
 
  **Note**: The examples in this topic are not intended for use as-is. Modify them for your needs.
 
-|**Type**|**Sample text added**|
-|:-----|:-----|
+|Type|Sample text added|
+|---|---|
 |Legal - outgoing messages|This email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed. If you have received this email in error, please notify the system manager.|
 |Legal - incoming messages|Employees are expressly required not to make defamatory statements and not to infringe or authorize any infringement of copyright or any other legal right by email communications. Employees who receive such an email must notify their supervisor immediately.|
 |Notice that message was sent to an alias|This message was sent to the Sales discussion group.|
@@ -48,8 +48,8 @@ In the Exchange Management Shell, you use the _ApplyHtmlDisclaimerTextLocation_ 
 
 Here's the formatting that you can use in your disclaimer text.
 
-|**Type of information**|**Description**|
-|:-----|:-----|
+|Type of information|Description|
+|---|---|
 |Plain text|The maximum length is 5,000 characters, including any HTML tags and inline Cascading Style Sheets (CSS).|
 |HTML and inline CSS|You can use HTML and inline CSS styles to format the text. For example, use the `<HR>` tag to add a line before the disclaimer.  <br/> HTML is ignored if the disclaimer is added to a plain text message.|
 |Images|Use the `<IMG>` tag to point to an image available on the Internet. For example, `<IMG src="http://contoso.com/images/companylogo.gif" alt="Contoso logo">`.  <br/> By default, Outlook and Outlook on the web (formerly known as Outlook Web App) block external web content, including images. Users need to acknowledge and download the blocked external content. We recommend that you test disclaimers that have `IMG` tags to verify they display the way you want.|
@@ -95,8 +95,8 @@ As you work on your disclaimers, consider which messages they should apply to. F
 
 Here are some examples of the conditions and exceptions you can use.
 
-|**Description**|**Conditions and exceptions in EAC**|**Conditions and exceptions in the Exchange Management Shell for the New-TransportRule or Set-TransportRule cmdlets**|
-|:-----|:-----|:-----|
+|Description|Conditions and exceptions in EAC|Conditions and exceptions in the Exchange Management Shell for the New-TransportRule or Set-TransportRule cmdlets|
+|---|---|---|
 |The recipient is located outside your Exchange organization. An exception is configured so messages that already contain the disclaimer text "CONTOSO LEGAL NOTICE" don't have the disclaimer applied again.|Condition: **The recipient is located** \> **Outside the organization** <br/> Exception: **The subject or body** \> **Subject or body matches these text patterns** \> CONTOSO LEGAL NOTICE| `-FromScope NotInOrganization -ExceptIf -SubjectOrBodyMatches "CONTOSO LEGAL NOTICE"`|
 |Incoming messages with executable attachments|Condition 1: **The sender is located** \> **Outside the organization** <br/> Condition 2: **Any attachment** \> **has executable content**| `-FromScope NotInOrganization -AttachmentHasExecutableContent`|
 |Sender is in the marketing department|Condition: **The sender** \> **is a member of this group** \> _group name_| `-FromMemberOf "Marketing Team"`|

@@ -4,6 +4,8 @@ TOCTitle: Voice Mail Preview advisor
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: article
+description: The Voice Mail Preview feature of Microsoft Exchange Unified Messaging uses automatic speech recognition to add a text version of the voice mail audio file to voice mail messages
 ms.reviewer:
 ms.assetid: 0957dd54-df6d-4b50-9db5-4757f548b899
 f1.keywords:

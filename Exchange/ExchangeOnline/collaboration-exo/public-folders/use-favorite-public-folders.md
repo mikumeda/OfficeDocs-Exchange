@@ -18,9 +18,9 @@ manager: serdars
 
 ---
 
-# Use favorite public folders in Outlook on the web in Exchange Online
+# Use favorite public folders in Outlook on the web and the new Outlook for Windows in Exchange Online
 
-In the Outlook client, users in your organization can add public folders to their **Favorites** folders. Then, depending on your organization's policies, they can use Outlook on the web to add those same public folders to their Favorites and perform certain functions in Outlook on the web that they use in the Outlook client.
+In the Outlook client, users in your organization can add public folders to their **Favorites** folders. Then, depending on your organization's policies, they can use Outlook on the web or the new Outlook for Windows to add those same public folders to their Favorites and perform certain functions in Outlook on the web that they use in the Outlook client.
 
 ## Add public folders to Favorites in Outlook
 
@@ -49,11 +49,11 @@ In order for users to perform certain tasks on public folders in their **Favorit
 > [!IMPORTANT]
 > There are several types of public folders. In order for users to be able to work with a favorite public folder in Outlook on the web, the public folder must be of type Mail and Post items, Calendar items, or Contact items.
 
-## Add favorite public folders in Outlook on the web
+## Add favorite public folders in Outlook on the web and the new Outlook for Windows
 
-In order for users to access their Outlook favorite public folders, they must also add them to their Favorites in Outlook on the web. The Outlook client does not automatically sync public folders with Outlook on the web.
+In order for users to access their Outlook favorite public folders, they must also add them to their Favorites in Outlook on the web or the new Outlook for Windows. The Outlook client does not automatically sync public folders with Outlook on the web or the new Outlook for Windows.
 
-- To add a public folder in Outlook on the web, right-click **Folders**, and then choose **Add public folder to Favorites**. Locate the folder and click **Add**.
+- To add a public folder in Outlook on the web or the new Outlook for Windows, right-click **Folders**, and then choose **Add public folder to Favorites**. Locate the folder and click **Add**.
 
     ![Add public folder to Favorites.](../../media/dc2af75b-d1c3-4024-8759-00558799d34a.png)
 

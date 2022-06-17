@@ -42,8 +42,8 @@ In the following figure, Address Book Policy A consists of a subset of the vario
 
  You can use the following methods to assign ABPs to individual mailbox users:
 
-|**New or existing mailbox?**|**Shell**|
-|:-----|:-----|
+|New or existing mailbox?|Shell|
+|---|---|
 |New|[New-Mailbox](/powershell/module/exchange/new-mailbox) cmdlet with the _AddressBookPolicy_ parameter|
 |Existing|[Set-Mailbox](/powershell/module/exchange/set-mailbox) cmdlet with the _AddressBookPolicy_ parameter|
 

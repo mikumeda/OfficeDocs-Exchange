@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: Each time you create a transport rule, you should test it before turning it on.
 ms.assetid: 3d949e2a-8ba4-4261-8cfb-736fd2446ea1
 f1.keywords:
 - NOCSH

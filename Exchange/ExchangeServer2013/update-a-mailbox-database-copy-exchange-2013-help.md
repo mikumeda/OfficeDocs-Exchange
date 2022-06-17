@@ -5,6 +5,8 @@ ms:assetid: bead3cc5-7d50-446f-95b7-e432bcb7968e
 ms:mtpsurl: https://technet.microsoft.com/library/Dd351100(v=EXCHG.150)
 ms:contentKeyID: 48385503
 ms.reviewer: 
+ms.topic: how-to
+description: How to update a mailbox database copy in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

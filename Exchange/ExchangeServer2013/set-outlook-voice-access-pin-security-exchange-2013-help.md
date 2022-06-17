@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
+description: Outlook Voice Access PIN security in Microsoft Exchange Server
 ms.assetid: ef6d9151-d333-4f52-9338-273f7a291e54
 f1.keywords:
 - NOCSH

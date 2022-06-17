@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about permissions that are required to manage workloads and event logs in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: reference
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 00b23fd3-6679-4b06-a3d4-51df3112b9cd
 ms.reviewer:
 title: Server health and performance permissions
@@ -42,8 +42,8 @@ The following table lists the permissions required to perform tasks that manage 
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |User throttling|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Recipient Management](../../../ExchangeServer2013/recipient-management-exchange-2013-help.md) <br/> [View-Only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md)|
 |Exchange workload throttling|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [View-Only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md)|
 
@@ -53,6 +53,6 @@ The following table lists the permissions required to perform tasks that manage 
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md).
 
-|**Feature**|**Permissions required**|
-|:-----|:-----|
+|Feature|Permissions required|
+|---|---|
 |Exchange event log management|[Organization Management](../../../ExchangeServer2013/organization-management-exchange-2013-help.md) <br/> [Server Management](../../../ExchangeServer2013/server-management-exchange-2013-help.md) <br/> [View-Only Organization Management](../../../ExchangeServer2013/view-only-organization-management-exchange-2013-help.md) <br/> [UM Management](../../../ExchangeServer2013/um-management-exchange-2013-help.md)|

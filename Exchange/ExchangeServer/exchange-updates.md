@@ -1,9 +1,9 @@
 ---
 ms.localizationpriority: medium
-ms.author: serdars
+ms.author: jhendr
 manager: serdars
 ms.topic: how-to
-author: msdmaguire
+author: JoanneHendrickson
 ms.prod: exchange-server-it-pro
 ms.collection: exchange-server
 description: 'Summary: Updates to Exchange Server and Exchange Online content.'

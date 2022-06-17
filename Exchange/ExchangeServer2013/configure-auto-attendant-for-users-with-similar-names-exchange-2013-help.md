@@ -5,7 +5,9 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer:
+ms.topic: article
 ms.assetid: 2e7318a0-67f9-4d7b-8300-5f0ef77656a8
+description: How to configure an auto attendant for users who have similar names in Exchange Server
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

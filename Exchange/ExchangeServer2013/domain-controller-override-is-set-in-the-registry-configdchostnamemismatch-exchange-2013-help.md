@@ -23,7 +23,7 @@ The content in this topic hasn't been updated for Microsoft Exchange Server 2013
 
 Having problems? Ask for help in the Exchange forums. Visit the forums at [Exchange Server](https://social.technet.microsoft.com/forums/office/home?category=exchangeserver).
 
-Microsoft Exchange Server 2007 setup can't continue because its attempt to use the specified domain controller failed. A domain controller has been statically mapped in the registry.
+Microsoft Exchange Server 2007 setup can't continue because its attempt to use the specified domain controller failed. A domain controller has been statically mapped in the registry.
 
 Exchange 2007 setup requires that the domain controller that's specified in the setup command matches the domain controller that has been statically mapped using a registry override.
 

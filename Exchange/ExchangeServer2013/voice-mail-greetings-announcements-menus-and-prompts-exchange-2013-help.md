@@ -6,6 +6,8 @@ ms:mtpsurl: https://technet.microsoft.com/library/Bb124902(v=EXCHG.150)
 ms:contentKeyID: 49315544
 ms.reviewer: 
 manager: serdars
+ms.topic: article
+description: Voice mail greetings, announcements, menus, and prompts in Microsoft Exchange Server
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
@@ -31,8 +33,8 @@ The following table summarizes the prompts and greetings used with UM dial plans
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -62,8 +64,8 @@ The following table summarizes the prompts and greetings used with UM auto atten
 
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -126,7 +128,7 @@ Unified Messaging is installed with a set of default audio prompts for use with 
 
 After you install the Mailbox server and create a UM dial plan, you have the option to use the audio files for the default system prompts that are created during installation or to create customized audio files that can be used with UM dial plans.
 
-UM dial plans have a welcome greeting and an optional informational announcement you can modify. The welcome greeting is used when an Outlook Voice Access user or another caller calls the subscriber access number. The callers hear a default welcome greeting that says, "Welcome, you are connected to Microsoft Exchange." You might want to change this default greeting and provide an alternative welcome greeting specific to your company, for example, "Welcome to Outlook Voice Access for Woodgrove Bank." If you customize this greeting, you can record the customized greeting and save it as a .wav file, and then you can configure the dial plan to use this customized greeting.
+UM dial plans have a welcome greeting and an optional informational announcement you can modify. The welcome greeting is used when an Outlook Voice Access user or another caller calls the subscriber access number. The callers hear a default welcome greeting that says, "Welcome, you are connected to Microsoft Exchange." You might want to change this default greeting and provide an alternative welcome greeting specific to your company, for example, "Welcome to Outlook Voice Access for Woodgrove Bank." If you customize this greeting, you can record the customized greeting and save it as a .wav file, and then you can configure the dial plan to use this customized greeting.
 
 Unified Messaging allows for an informational announcement to follow the welcome greeting. By default, there is no informational announcement configured. However, you may want to provide one for callers. You can use the informational announcement for general announcements that change more often than the welcome greeting or for announcements required by corporate compliance policies. When it's important that the whole informational announcement is heard, you can configure it to be uninterruptible. This prevents a caller from pressing a key or speaking a command to interrupt and stop the informational announcement.
 
@@ -136,9 +138,9 @@ The following table describes the UM dial plan greetings and informational annou
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -150,7 +152,7 @@ The following table describes the UM dial plan greetings and informational annou
 <tbody>
 <tr class="odd">
 <td><p>Welcome greeting</p></td>
-<td><p>&quot;Welcome, you are connected to Microsoft Exchange.&quot;</p></td>
+<td><p>&quot;Welcome, you are connected to Microsoft Exchange.&quot;</p></td>
 <td><p>&quot;Welcome to Outlook Voice Access for Woodgrove Bank.&quot;</p></td>
 </tr>
 <tr class="even">
@@ -167,9 +169,9 @@ When you are customizing and configuring greetings and announcements, make sure 
 
 As with UM dial plans, UM auto attendants have a welcome greeting, an optional informational announcement, and an optional custom menu prompt. You can configure different versions of the welcome greeting and menu prompt for business hours and non-business hours. You can modify all of them.
 
-The welcome greeting is the first thing a caller hears when a UM auto attendant answers the call. By default, this says, "Welcome to the Microsoft Exchange auto attendant." The audio file that is played for the call is the default system prompt for the UM auto attendant. However, you may want to provide an alternative greeting specific to your company, for example, "Thank you for calling Woodgrove Bank." To customize this welcome greeting, record the customized greeting and save it as a .wav file, and then configure the auto attendant to use this customized greeting. As with the welcome greetings, you can also customize the menu prompts.
+The welcome greeting is the first thing a caller hears when a UM auto attendant answers the call. By default, this says, "Welcome to the Microsoft Exchange auto attendant." The audio file that is played for the call is the default system prompt for the UM auto attendant. However, you may want to provide an alternative greeting specific to your company, for example, "Thank you for calling Woodgrove Bank." To customize this welcome greeting, record the customized greeting and save it as a .wav file, and then configure the auto attendant to use this customized greeting. As with the welcome greetings, you can also customize the menu prompts.
 
-Unified Messaging also allows for an informational announcement to follow a business hours greeting or a non-business hour greeting. By default, no informational announcement is configured, but you may want to provide one to callers. The informational announcement can announce your company's business hours, for example, "Our business hours are 8:00 A.M. to 5:00 P.M., Monday through Friday, and 8:30 A.M. to 1:00 P.M. on Saturday." The informational announcement can also provide information required for compliance with corporate policies, for example, "Calls may be monitored for training purposes." When it's important that the whole informational announcement is heard, you can configure it to be uninterruptible. This prevents the caller from pressing a key or speaking a command to interrupt and stop the informational announcement.
+Unified Messaging also allows for an informational announcement to follow a business hours greeting or a non-business hour greeting. By default, no informational announcement is configured, but you may want to provide one to callers. The informational announcement can announce your company's business hours, for example, "Our business hours are 8:00 A.M. to 5:00 P.M., Monday through Friday, and 8:30 A.M. to 1:00 P.M. on Saturday." The informational announcement can also provide information required for compliance with corporate policies, for example, "Calls may be monitored for training purposes." When it's important that the whole informational announcement is heard, you can configure it to be uninterruptible. This prevents the caller from pressing a key or speaking a command to interrupt and stop the informational announcement.
 
 The following table describes the UM auto attendant greetings and informational announcements.
 
@@ -177,9 +179,9 @@ The following table describes the UM auto attendant greetings and informational 
 
 <table>
 <colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -197,7 +199,7 @@ The following table describes the UM auto attendant greetings and informational 
 <tr class="even">
 <td><p>Non-business hours greeting</p></td>
 <td><p>No default non-business hours greeting is played until you configure the business hours for the auto attendant. However, the business hours greeting is played for callers during all times of the day.</p></td>
-<td><p>&quot;You have reached Woodgrove Bank after business hours. Our business hours are from 8:00 A.M. until 5:00 P.M., Monday through Friday.&quot;</p></td>
+<td><p>&quot;You have reached Woodgrove Bank after business hours. Our business hours are from 8:00 A.M. until 5:00 P.M., Monday through Friday.&quot;</p></td>
 </tr>
 <tr class="odd">
 <td><p>Informational announcement</p></td>

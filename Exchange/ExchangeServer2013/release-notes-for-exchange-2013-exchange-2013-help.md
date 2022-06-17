@@ -5,6 +5,8 @@ ms:assetid: 1879fd5e-3d63-4264-9cc2-9c050c6ab3c5
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150489(v=EXCHG.150)
 ms:contentKeyID: 47559950
 ms.reviewer: 
+ms.topic: article
+description: Release notes for Microsoft Exchange 2013
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -75,7 +77,7 @@ For more information about how to install Exchange 2013, see [Planning and deplo
 
   - **Exchange 2016** 15.1 (Build xxx.xx)
 
-- **Mailbox size increase when migrating from previous Exchange versions**: When you move a mailbox from a previous version of Exchange to Exchange 2013, the mailbox size reported may increase 30 percent to 40 percent. Disk space used by the mailbox database has not increased, only the attribution of space used by each mailbox has increased. The increase in mailbox size is due to the inclusion of all item properties into quota calculations, providing a more accurate computation of space consumed by items within their mailbox. This increase may cause some users to exceed their mailbox size quotas when their mailbox is moved to Exchange 2013.
+- **Mailbox size increase when migrating from previous Exchange versions**: When you move a mailbox from a previous version of Exchange to Exchange 2013, the mailbox size reported may increase 30 percent to 40 percent. Disk space used by the mailbox database has not increased, only the attribution of space used by each mailbox has increased. The increase in mailbox size is due to the inclusion of all item properties into quota calculations, providing a more accurate computation of space consumed by items within their mailbox. This increase may cause some users to exceed their mailbox size quotas when their mailbox is moved to Exchange 2013.
 
   To prevent users from exceeding their mailbox size quotas, increase the database or mailbox quota values to accommodate the new quota calculation. To configure database or mailbox quota values, use the *IssueWarningQuota*, *ProhibitSendQuota*, and *ProhibitSendReceiveQuota* parameters on the **Set-MailboxDatabase** and **Set-Mailbox** cmdlets, respectively.
 
@@ -113,7 +115,7 @@ For more information about how to install Exchange 2013, see [Planning and deplo
 
 ## Mail flow
 
-- **TransportAgent cmdlets on Client Access servers require local Windows PowerShell**: An issue exists with the **\*-TransportAgent** cmdlets that prevents those cmdlets from installing, uninstalling, and managing transport agents on Client Access servers using the Exchange Management Shell. To install, uninstall, and manage transport agents on Client Access servers, you must manually load the Exchange Windows PowerShell snap-in and then run the **\*-TransportAgent** cmdlets. If you attempt to install, uninstall, or manage transport agents using the Exchange Management Shell, your changes will be applied to the Exchange 2013 Mailbox server you're connected to.
+- **TransportAgent cmdlets on Client Access servers require local Windows PowerShell**: An issue exists with the **\*-TransportAgent** cmdlets that prevents those cmdlets from installing, uninstalling, and managing transport agents on Client Access servers using the Exchange Management Shell. To install, uninstall, and manage transport agents on Client Access servers, you must manually load the Exchange Windows PowerShell snap-in and then run the **\*-TransportAgent** cmdlets. If you attempt to install, uninstall, or manage transport agents using the Exchange Management Shell, your changes will be applied to the Exchange 2013 Mailbox server you're connected to.
 
   To install, uninstall, or manage transport agents on Client Access servers, do the following on the Client Access server you want to manage:
 
@@ -207,6 +209,6 @@ For more information about how to install Exchange 2013, see [Planning and deplo
 
     - The Exchange 2010 Client Access server was upgraded to Exchange 2010 SP3 from the release to manufacturing (RTM) version of Exchange 2010 or a previous Exchange 2010 service pack.
 
-  If all the conditions above are true, the user won't be able to access the other user's Exchange 2010 Outlook Web App options and a blank page may appear.
+  If all the conditions above are true, the user won't be able to access the other user's Exchange 2010 Outlook Web App options and a blank page may appear.
 
   To work around this issue, install Exchange 2010 SP3 Update Rollup 1 or later on each Exchange 2010 server.

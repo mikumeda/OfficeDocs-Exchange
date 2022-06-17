@@ -4,6 +4,8 @@ TOCTitle: Mobile phone and tablet features
 ms:assetid: ad54d9e6-7a1c-4fb0-b5a9-0b042b98ada3
 ms:mtpsurl: https://technet.microsoft.com/library/Bb232162(v=EXCHG.150)
 ms:contentKeyID: 50396326
+ms.topic: article
+description: Access email, calendar, contacts, and task information on mobile devices with Microsoft Exchange ActiveSync.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars

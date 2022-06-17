@@ -81,12 +81,14 @@ For more information, see [Overview of delegation in an Office 365 hybrid enviro
   ```PowerShell
   Add-ADPermission -Identity EXO1 -User ONPREM1 -AccessRights ExtendedRight -ExtendedRights "Send As"
   ```
+For detailed syntax and parameter information, see [Add-ADPermission](/powershell/module/exchange/Add-ADPermission).
 
   Then run the corresponding command in Exchange Online PowerShell:
 
   ```PowerShell
   Add-RecipientPermission -Identity EXO1 -Trustee ONPREM1 -AccessRights SendAs
   ```
+For detailed syntax and parameter information, see [Add-RecipientPermission](/powershell/module/exchange/Add-RecipientPermission).
 
   > [!NOTE]
   > Send As permission is also needed to comply with the on-premises Exchange server and AAD Connect requirements in the next two sections.
@@ -100,8 +102,6 @@ Any mailboxes that receive these permissions from another mailbox need to be mov
 ### Configuring your on-premises Exchange servers to support hybrid mailbox permissions
 
 To enable Full Access and Send on Behalf permissions in a hybrid deployment, more configuration changes might be necessary depending on the version of Exchange you have installed. The following table shows which versions of Exchange support delegated mailbox permissions in a hybrid deployment with Microsoft 365 or Office 365 and what additional configuration is needed. For steps on how to configure Exchange 2013 and 2010 servers and mailboxes to support ACLs, see [Configure Exchange to support delegated mailbox permissions in a hybrid deployment](hybrid-deployment/set-up-delegated-mailbox-permissions.md).
-
-****
 
 |Exchange version|Prerequisites|
 |---|---|
@@ -131,8 +131,6 @@ For more information, see [Manage Role Assignment Policies](../ExchangeServer/pe
 
 The following table lists the permissions granted by the default role assignment policies in the Exchange Online organization.
 
-****
-
 |Management role|Description|
 |---|---|
 |MyTeamMailboxes|The `MyTeamMailboxes` management role enables individual users to create site mailboxes and connect them to Microsoft SharePoint sites.|
@@ -148,4 +146,3 @@ The following table lists the permissions granted by the default role assignment
 |MyVoiceMail|The `MyVoiceMail` management role enables individual users to view and modify their voice mail settings.|
 |My ReadWriteMailbox Apps|The `My ReadWriteMailbox Apps` management role enables users to install apps with ReadWriteMailbox permissions.|
 |My Custom Apps|The `My Custom Apps` management role enables users to view and modify their custom apps.|
-|

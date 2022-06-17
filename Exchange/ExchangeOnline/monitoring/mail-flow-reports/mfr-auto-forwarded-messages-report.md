@@ -1,5 +1,5 @@
 ---
-title: "Auto forwarded messages report in the new EAC in Exchange Online"
+title: "Auto forwarded messages report in the new Exchange admin center (EAC) in Exchange Online"
 f1.keywords:
 - NOCSH
 ms.author: chrisda
@@ -35,13 +35,13 @@ If you hover over a specific color in the chart, you'll see the associated numbe
 
 ![Overview of the Auto forwarded messages report.](../../media/mfr-auto-forwarded-messages-report.png)
 
-The **Auto forwarded message details** section shows the following information about each specific forwarder (the user account that's doing the forwarding):
+The **Auto forwarded message details** section shows the following information about each-specific forwarder (the user account that's doing the forwarding):
 
 - **Forwarders**
 - **Forwarding type**
 - **Recipient name**
 - **Recipient domain**
-- **Details**: If the message was auto-forwarded by an Inbox rule, the ID of the rule is shown. Otherwise, this value is blank. In [Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell), you can use the [Get-InboxRule](/powershell/module/exchange/get-inboxrule) cmdlet to identify the rule by running the following command: `Get-InboxRule -Identity <MailboxAlias>\<RuleID>`. For example, `Get-InboxRule -Identity lila\8754395095991580000`.
+- **Details**: If the message was auto-forwarded by a Transport rule, the ID of the rule is shown. Otherwise, this value is blank. In [Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell), you can use the [Get-TransportRule](/powershell/module/exchange/get-transportrule) cmdlet to identify the rule by running the following command: `Get-TransportRule -Identity <RuleIDParameter>`. For example, `Get-TransportRule -Identity 8754395095991580000`.
 - **Forward count**
 - **First forward date**
 

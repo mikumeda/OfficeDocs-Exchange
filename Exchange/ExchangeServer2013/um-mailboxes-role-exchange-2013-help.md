@@ -5,6 +5,8 @@ ms:assetid: 6c9442dc-e674-4474-888e-e2f391a8eb57
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876901(v=EXCHG.150)
 ms:contentKeyID: 49289292
 ms.reviewer: 
+ms.topic: article
+description: The UM Mailboxes management role in Microsoft Exchange Server enables administrators to manage the Unified Messaging configuration of mailboxes and other recipients in an organization 
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -37,15 +39,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
 </colgroup>
 <thead>
 <tr class="header">
@@ -71,7 +73,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="even">
 <td><p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

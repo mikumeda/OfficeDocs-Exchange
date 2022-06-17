@@ -5,6 +5,8 @@ ms:assetid: 2d0f31dc-eb32-451a-8852-591269026506
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876864(v=EXCHG.150)
 ms:contentKeyID: 48384931
 ms.reviewer: 
+ms.topic: how-to
+description: How to use Windows Server Backup to restore a backup of Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

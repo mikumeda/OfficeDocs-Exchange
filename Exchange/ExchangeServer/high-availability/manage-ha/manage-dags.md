@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to create, configure, and manage database availability group (DAG) in Exchange 2016 and Exchange 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 74be3f97-ec0f-4d2a-b5d8-7770cc489919
 ms.reviewer:
 title: Manage database availability groups
@@ -70,12 +70,12 @@ The placement of a DAG's witness server will depend on your business requirement
 
 The following table lists general witness server placement recommendations for different deployment scenarios.
 
-|**Deployment Scenario**|**Recommendations**|
-|:-----|:-----|
+|Deployment Scenario|Recommendations|
+|---|---|
 |Single DAG deployed in a single datacenter|Locate witness server in the same datacenter as DAG members|
-|Single DAG deployed across two datacenters; no additional locations available|Locate witness server on a Microsoft Azure virtual network to enable automatic datacenter failover, or <br/> Locate witness server in primary datacenter|
-|Multiple DAGs deployed in a single datacenter|Locate witness server in the same datacenter as DAG members. Additional options include: <br/> • Using the same witness server for multiple DAGs <br/> • Using a DAG member to act as a witness server for a different DAG|
-|Multiple DAGs deployed across two datacenters|Locate witness server on a Microsoft Azure virtual network to enable automatic datacenter failover, or <br/> Locate witness server in the datacenter that is considered primary for each DAG. Additional options include: <br/> • Using the same witness server for multiple DAGs <br/> • Using a DAG member to act as a witness server for a different DAG|
+|Single DAG deployed across two datacenters; no additional locations available|Locate witness server on a Microsoft Azure virtual network to enable automatic datacenter failover, or <p> Locate witness server in primary datacenter|
+|Multiple DAGs deployed in a single datacenter|Locate witness server in the same datacenter as DAG members. Additional options include: <ul><li>Using the same witness server for multiple DAGs</li><li>Using a DAG member to act as a witness server for a different DAG</li></ul>|
+|Multiple DAGs deployed across two datacenters|Locate witness server on a Microsoft Azure virtual network to enable automatic datacenter failover, or <p> Locate witness server in the datacenter that is considered primary for each DAG. Additional options include: <ul><li>Using the same witness server for multiple DAGs</li><li>Using a DAG member to act as a witness server for a different DAG</li></ul>|
 |Single or Multiple DAGs deployed across more than two datacenters|In this configuration, the witness server should be located in the datacenter where you want the majority of quorum votes to exist.|
 
 When a DAG has been deployed across two datacenters, you can now use a third location for hosting the witness server. If your organization has a third location with a network infrastructure that is isolated from network failures that affect the two datacenters in which your DAG is deployed, then you can deploy the DAG's witness server in that third location, thereby configuring your DAG with the ability automatically failover databases to the other datacenter in response to a datacenter-level failure event. If your organization only has two physical locations, you can use a Microsoft Azure virtual network as a third location to place your witness server.
@@ -86,7 +86,7 @@ When creating a DAG, you must provide a name for the DAG. You can optionally als
 
 When creating a DAG, the following combinations of options and behaviors are available:
 
-- You can specify only a name for the DAG, and leave the **Witness server** and **Witness directory** fields blank. In this scenario, the wizard searches the local Active Directory site for a Client Access server that doesn't have the Mailbox server installed, and it automatically creates the default directory (%SystemDrive%:\DAGFileShareWitnesses\\< _DAGFQDN_\>) and default share (\< _DAGFQDN_\>) on that server and uses that Client Access server as the witness server. For example, consider the witness server CAS3 on which the operating system has been installed onto drive C. A DAG named DAG1 in the contoso.com domain would use a default witness directory of C:\DAGFileShareWitnesses\DAG1.contoso.com, which would be shared as \\CAS3\DAG1.contoso.com.
+- You can specify only a name for the DAG, and leave the **Witness server** and **Witness directory** fields blank. In this scenario, the wizard searches the local Active Directory site for a Client Access server that doesn't have the Mailbox server installed, and it automatically creates the default directory (%SystemDrive%:\DAGFileShareWitnesses\\<_DAGFQDN_\>) and default share (\<_DAGFQDN_\>) on that server and uses that Client Access server as the witness server. For example, consider the witness server CAS3 on which the operating system has been installed onto drive C. A DAG named DAG1 in the contoso.com domain would use a default witness directory of C:\DAGFileShareWitnesses\DAG1.contoso.com, which would be shared as \\CAS3\DAG1.contoso.com.
 
 - You can specify a name for the DAG, the witness server that you want to use, and the directory you want created and shared on the witness server.
 
@@ -212,8 +212,8 @@ DAGs support the use of encryption by leveraging the encryption capabilities of 
 
 Network encryption is a property of the DAG and not a DAG network. You can configure DAG network encryption using the **Set-DatabaseAvailabilityGroup** cmdlet in the Exchange Management Shell. The possible encryption settings for DAG network communications are shown in the following table.
 
-|**Setting**|**Description**|
-|:-----|:-----|
+|Setting|Description|
+|---|---|
 |Disabled|Network encryption isn't used.|
 |Enabled|Network encryption is used on all DAG networks for replication and seeding.|
 |InterSubnetOnly|Network encryption is used on DAG networks when replicating across different subnets. This is the default setting.|
@@ -225,8 +225,8 @@ DAGs support built-in compression. When compression is enabled, DAG network comm
 
 As with network encryption, network compression is also a property of the DAG and not a DAG network. You configure DAG network compression by using the [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/set-databaseavailabilitygroup) cmdlet in the Exchange Management Shell. The possible compression settings for DAG network communications are shown in the following table.
 
-|**Setting**|**Description**|
-|:-----|:-----|
+|Setting|Description|
+|---|---|
 |Disabled|Network compression isn't used.|
 |Enabled|Network compression is used on all DAG networks for replication and seeding.|
 |InterSubnetOnly|Network compression is used on DAG networks when replicating across different subnets. This is the default setting.|
@@ -266,8 +266,8 @@ For example, consider DAG1, a two-member DAG where each member has two network a
 
 **Example network adapter settings**
 
-|**Server-network adapter**|**IP address/subnet mask**|**Default gateway**|
-|:-----|:-----|:-----|
+|Server-network adapter|IP address/subnet mask|Default gateway|
+|---|---|---|
 |EX1-MAPI|192.168.1.15/24|192.168.1.1|
 |EX1-Replication|10.0.0.15/24|Not applicable|
 |EX2-MAPI|192.168.1.16|192.168.1.1|
@@ -277,8 +277,8 @@ In the following configuration, there are two subnets configured in the DAG: 192
 
 **Enumerated DAG network settings for a single-subnet DAG**
 
-|**Name**|**Subnets**|**Interfaces**|**MAPI access enabled**|**Replication enabled**|
-|:-----|:-----|:-----|:-----|:-----|
+|Name|Subnets|Interfaces|MAPI access enabled|Replication enabled|
+|---|---|---|---|---|
 |MapiDagNetwork|192.168.1.0/24|EX1 (192.168.1.15) <br/> EX2 (192.168.1.16)|True|True|
 |ReplicationDagNetwork01|10.0.0.0/24|EX1 (10.0.0.15) <br/> EX2 (10.0.0.16)|False|True|
 
@@ -298,8 +298,8 @@ For example, consider DAG2, a two-member DAG where each member has two network a
 
 **Example network adapter settings for a multi-subnet DAG**
 
-|**Server-network adapter**|**IP address/subnet mask**|**Default gateway**|
-|:-----|:-----|:-----|
+|Server-network adapter|IP address/subnet mask|Default gateway|
+|---|---|---|
 |EX1-MAPI|192.168.0.15/24|192.168.0.1|
 |EX1-Replication|10.0.0.15/24|Not applicable|
 |EX2-MAPI|192.168.1.15|192.168.1.1|
@@ -309,8 +309,8 @@ In the following configuration, there are four subnets configured in the DAG: 19
 
 **Enumerated DAG network settings for a multi-subnet DAG**
 
-|**Name**|**Subnets**|**Interfaces**|**MAPI access enabled**|**Replication enabled**|
-|:-----|:-----|:-----|:-----|:-----|
+|Name|Subnets|Interfaces|MAPI access enabled|Replication enabled|
+|---|---|---|---|---|
 |MapiDagNetwork|192.168.0.0/24 <br/> 192.168.1.0/24|EX1 (192.168.0.15) <br/> EX2 (192.168.1.15)|True|True|
 |ReplicationDagNetwork01|10.0.0.0/24 <br/> 10.0.1.0/24|EX1 (10.0.0.15) <br/> EX2 (10.0.1.15)|False|True|
 

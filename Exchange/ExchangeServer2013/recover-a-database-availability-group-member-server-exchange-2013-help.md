@@ -5,6 +5,8 @@ ms:assetid: eccd8f61-9706-4bb7-a62a-ec7c166f8019
 ms:mtpsurl: https://technet.microsoft.com/library/Dd638206(v=EXCHG.150)
 ms:contentKeyID: 48385683
 ms.reviewer: 
+ms.topic: article
+description: How to recover a database availability group member server in Microsoft Exchange Server
 manager: serdars
 ms.author: serdars
 author: msdmaguire

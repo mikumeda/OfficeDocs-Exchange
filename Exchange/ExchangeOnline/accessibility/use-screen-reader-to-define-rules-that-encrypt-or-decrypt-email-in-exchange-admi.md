@@ -6,7 +6,7 @@ ms.author: jhendr
 ms.assetid: 3d8f2b49-c27e-40c9-808b-4bc48f3cdb07
 ms.reviewer: 
 manager: serdars
-description: Admins can learn how to use a screen reader to create mail flow rules (also known as transport rules) in the Classic Exchange admin center (Classic EAC) that use Office 365 Message Encryption (OME) to encrypt and decrypt messages in Exchange Online.
+description: Admins can learn how to use a screen reader to create mail flow rules (also known as transport rules) in the Classic Exchange admin center (Classic EAC) that use mMessage encryption to encrypt and decrypt messages in Exchange Online.
 title: Use a screen reader to define rules that encrypt or decrypt email messages in the Classic Exchange admin center in Exchange Online
 ms.collection: 
 - exchange-online
@@ -21,7 +21,7 @@ ms.service: exchange-online
 
 # Use a screen reader to define rules that encrypt or decrypt email messages in the Classic Exchange admin center in Exchange Online
 
-In the Classic Exchange admin center (Classic EAC) in Exchange Online, you can create mail flow rules (also known as transport rules) to enable or disable Office 365 Message Encryption (OME). This lets you encrypt outgoing email messages and remove encryption from encrypted messages coming from inside your organization or from replies to encrypted messages sent from your organization.
+In the Classic Exchange admin center (Classic EAC) in Exchange Online, you can create mail flow rules (also known as transport rules) to enable or disable Microsoft Purview Message Encryption. This lets you encrypt outgoing email messages and remove encryption from encrypted messages coming from inside your organization or from replies to encrypted messages sent from your organization.
 
  **Note**: To learn more about message encryption, go to [Encryption](/microsoft-365/compliance/encryption). Your organization must have [Set up new Message Encryption capabilities](/microsoft-365/compliance/set-up-new-message-encryption-capabilities) to complete the tasks in this topic.
 

@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Restart the computer so Setup can continue.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150

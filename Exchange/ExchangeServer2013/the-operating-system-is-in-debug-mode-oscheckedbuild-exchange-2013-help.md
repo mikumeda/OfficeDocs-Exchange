@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Running Exchange Server on a computer where Windows is running in debug mode is not recommended.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -41,4 +43,4 @@ To eliminate this error, edit the Boot.ini file and remove the **/debug** parame
 
 5. Save and close the file, and then restart the Exchange Server computer for the change to take effect.
 
-For more information about the parameters that can be used in the Boot.ini file, see the Microsoft Knowledge Base article 833721, [Available switch options for the Windows XP and Windows Server 2003 Boot.ini files](https://support.microsoft.com/help/833721).
+For more information about the parameters that can be used in the Boot.ini file, see the Microsoft Knowledge Base article 833721, [Available switch options for the Windows XP and Windows Server 2003 Boot.ini files](https://support.microsoft.com/help/833721).

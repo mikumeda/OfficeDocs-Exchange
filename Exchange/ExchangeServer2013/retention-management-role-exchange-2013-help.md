@@ -8,6 +8,8 @@ ms.reviewer:
 manager: serdars
 ms.author: serdars
 author: msdmaguire
+ms.topic: article
+description: Default management role assignments.
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
@@ -37,15 +39,15 @@ This role has role assignments to one or more role assignees. The following tabl
 
 ### Default management role assignments for this role
 
-<table style="width:100%;">
+<table >
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
+<col  />
+<col  />
+<col  />
+<col  />
+<col  />
+<col  />
+<col  />
 </colgroup>
 <thead>
 <tr class="header">
@@ -62,7 +64,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="odd">
 <td><p><a href="compliance-management-exchange-2013-help.md">Compliance Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>
@@ -80,7 +82,7 @@ This role has role assignments to one or more role assignees. The following tabl
 <tr class="odd">
 <td><p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
 <td><p>X</p></td>
-<td><p> </p></td>
+<td><p> </p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>Organization</code></p></td>
 <td><p><code>OrganizationConfig</code></p></td>

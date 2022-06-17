@@ -4,6 +4,8 @@ TOCTitle: Mailbox database copies
 ms:assetid: ce748bca-3e24-493b-b9e6-153157bffd6a
 ms:mtpsurl: https://technet.microsoft.com/library/Dd979802(v=EXCHG.150)
 ms:contentKeyID: 48385558
+ms.topic: article
+description: Learn about mailbox database copies.
 ms.reviewer: 
 manager: serdars
 ms.author: serdars

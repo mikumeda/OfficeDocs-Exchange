@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about recipient resolution in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: 09deda5a-d405-45b1-a3ff-fefd3d76cdea
 ms.reviewer:
 title: Recipient resolution in Exchange Server
@@ -72,10 +72,6 @@ For each message, the sender's email address and all recipient addresses are add
 
 The Active Directory recipient objects that are used by Exchange are described in the following table. For more information about Exchange recipient types, see [Recipients](../../recipients/recipients.md).
 
-<br><br>
-
-****
-
 |Active Directory recipient type|Description|
 |---|---|
 |DistributionGroup|Any mail-enabled group object. The distribution group object types are: <ul><li>**MailUniversalDistributionGroup**: A universal distribution group object</li><li>**MailUniversalSecurityGroup**: A universal security group (USG) object that has an email address</li></ul>|
@@ -86,7 +82,6 @@ The Active Directory recipient objects that are used by Exchange are described i
 |MailPublicFolder|A public folder object that has an email address. For more information, see [Public folders](../../collaboration/public-folders/public-folders.md).|
 |MicrosoftExchangeRecipient|An object that has the Active Directory class **msExchExchangeServerRecipient**. For more information about the Exchange recipient object, see [Recipients](../../recipients/recipients.md).|
 |SystemMailbox|A user object that has an email address and is located in the Microsoft Exchange System Objects container. There should be one system mailbox for each mailbox database in the Exchange organization.|
-|
 
 The Active Directory query classifies an object with missing or malformed critical properties as an invalid object (for example, a dynamic distribution group object without an email address). Messages sent to recipients that are classified as invalid objects generate a non-delivery report (also known as an NDR or bounce message).
 
@@ -195,16 +190,11 @@ The expansion process also enforces any message restrictions that are configured
 
 For more information on message size limits, see [Recipient limits](../message-size-limits.md#recipient-limits) and [Organizational limits](../message-size-limits.md#organizational-limits).
 
-<br><br>
-
-****
-
 |Restriction|EAC configuration|Exchange Management Shell configuration|Description|
 |---|---|---|---|
 |Maximum size of a message received|Organization: **Mail flow** \> **Receive connectors** \> **More options** ![More Options icon.](../../media/ITPro_EAC_MoreOptionsIcon.png) \> **Organization transport settings** \> **Limits** tab \> **Maximum receive message size (MB)** <p> Mailboxes: **Recipients** \> **Mailboxes** \> select the mailbox \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** \> **Mail flow** section \> **Message size restrictions** section \> **View details** \> **Received messages** section \> **Maximum message size (KB)** <p> Mail users: **Recipients** \> **Contacts** \> select the mail user \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message size restrictions** section \> **View details** \> **Received messages** section \> **Maximum message size (KB)**|Organization cmdlet: **Set-TransportConfig** <p> Recipient cmdlets: **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, and **Set-MailUser** <p> Parameter: _MaxReceiveSize_|Specifies the maximum size of a message, which includes the message header, the message body, and any attachments. Whenever Exchange checks the message size, the lower value of the current message size or the original message size (the **X-MS-Exchange-Organization-OriginalSize:** message header) is used. The size of the message can change because of content conversion, encoding, and transport agent processing. <p> **Note**: The specified maximum message size is inflated by approximately 33% to account for Base64 encoding (for example, the specified value 64 MB results in a realistic maximum message size of approximately 48 MB). <p> For more information, see [Message size and recipient limits in Exchange Server](../../mail-flow/message-size-limits.md).|
 |The recipient can only accept messages from internal senders, and must reject messages from external senders|Mailboxes: **Recipients** \> **Mailboxes** \> select the mailbox \> **Edit** ![Edit icon.](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** \> **Mail flow** section \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section \> check or uncheck **Require that all senders are authenticated** <p> Remote mailboxes: **Recipients** \> **Mailboxes** \> select the Microsoft 365 or Office 365 mailbox \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section \> check or uncheck **Require that all senders are authenticated** <p> Mail users: **Recipients** \> **Contacts** \> select the mail user \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section \> check or uncheck **Require that all senders are authenticated** <p> Groups: **Recipients** \> **Groups** \> select the group \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Delivery management** \> select **Only senders inside my organization** or **Senders inside and outside of my organization**|Cmdlets: **New-DistributionGroup**, **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, **Set-MailUser**, and **Set-RemoteMailbox** <p> Parameter: _RequireSenderAuthenticationEnabled_|You can configure the recipient to only accept messages from authenticated (internal) senders, or to accept messages from authenticated and unauthenticated (external) senders.|
 |Senders who are allowed or aren't allowed to send messages to the recipient|Mailboxes: **Recipients** \> **Mailboxes** \> select the mailbox \> **Edit** ![Edit icon.](../../media/ITPro_EAC_EditIcon.png) \> **Mailbox features** \> **Mail flow** section \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <p> Remote mailboxes: **Recipients** \> **Mailboxes** \> select the Microsoft 365 or Office 365 mailbox \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <p> Mail users: **Recipients** \> **Contacts** \> select the mail user \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Mail flow settings** \> **Message delivery restrictions** section \> **View details** \> **Accept messages from** section: **All senders** or **Only senders in the following list** or **Reject messages from** section: **No senders** or **Senders in the following list** <p> Groups: **Recipients** \> **Groups** \> select the group \> **Edit** ![Edit icon](../../media/ITPro_EAC_EditIcon.png) \> **Delivery management** \> click **Add** ![Add icon](../../media/ITPro_EAC_AddIcon.png) or **Remove** ![Remove icon](../../media/ITPro_EAC_RemoveIcon.png) to specify users or group members who can send to the group (messages from others senders are rejected).|Cmdlets: **Set-DistributionGroup**, **Set-DynamicDistributionGroup**, **Set-Mailbox**, **Set-MailContact**, **Set-MailPublicFolder**, **Set-MailUser**, and **Set-RemoteMailbox** <p> Accept parameters: _AcceptMessagesOnlyFromSendersOrMembers_ (or _AcceptMessagesOnlyFrom_ for individual recipients only and _AcceptMessagesOnlyFromDLMembers_ for group members only) <p> Reject parameters: _RejectMessagesFromSendersOrMembers_ (or _RejectMessagesOnlyFrom_ for individual recipients only and _RejectMessagesOnlyFromDLMembers_ for group members only)|The categorizer checks the recipient permission in two passes. The first pass determines whether the sender is present in the accept or reject lists. If the sender isn't found in either list, the distribution groups in those parameters are fully expanded. This complete group expansion might take some time, so we recommend that you minimize the depth of nested groups in the accept or reject lists.|
-|
 
 Certain types of messages that are sent by authenticated senders are exempt from restrictions. The following list describes the messages that are exempt from recipient restrictions:
 
@@ -245,11 +235,7 @@ Exchange provides reporting and diagnostic information for recipient resolution 
 
 The performance counters that are available for recipient resolution are described in this table.
 
-<br><br>
-
-****
-
-|**Counter name**|**Display name**|**Description**|
+|Counter name|Display name|Description|
 |---|---|---|
 |AmbiguousRecipientsTotal|Ambiguous Recipients|The total number of ambiguous recipients that were detected during recipient resolution. Ambiguous recipients are different recipients that have matching **legacyExchangeDN** Active Directory attributes or matching **proxyAddresses** Active Directory attributes.|
 |AmbiguousSendersTotal|Ambiguous Senders|This is the number of ambiguous senders that were detected during recipient resolution. Ambiguous senders are different senders that have matching **legacyExchangeDN** Active Directory attributes or matching **proxyAddresses** Active Directory attributes.|
@@ -260,23 +246,17 @@ The performance counters that are available for recipient resolution are describ
 |MessagesRetriedTotal|Messages Retried|The number of messages that were scheduled for retry during recipient resolution.|
 |UnresolvedOrgRecipientsTotal|Unresolved Org Recipients|The number of unresolved recipients from an authoritative domain that were detected during recipient resolution.|
 |UnresolvedOrgSendersTotal|Unresolved Org Senders|The number of unresolved senders from an authoritative domain that were detected during recipient resolution.|
-|
 
 ### Recipient resolution events in the message tracking log
 
 The recipient resolution events that are written in the message tracking log are described in this table.
 
-<br><br>
-
-****
-
 |Message tracking event|Description|
-|:-----|:-----|
+|---|---|
 |**EXPAND**|A distribution group was expanded.|
 |**REDIRECT**|A message was redirected to the forwarding address that's configured on the mailbox or mail-enabled public folder.|
 |**RESOLVE**|A recipient's email address was changed to the primary SMTP email address of the corresponding Active Directory recipient object (in other words, the message was sent to a proxy address of the recipient).|
 |**TRANSFER**|Message bifurcation or chipping occurred (for example, due to content conversion, message recipient limits, or transport agents).|
-|
 
 For more information about message tracking, see [Message tracking](../../mail-flow/transport-logs/message-tracking.md).
 

@@ -68,7 +68,9 @@ Looking for other information related to lagged mailbox database copies? Check o
    ```
 
    > [!IMPORTANT]
-   > In the preceding example, e_XX_ is the log generation prefix for the database (for example, E00, E01, E02, and so on) <br/><br/> This step may take a considerable amount of time, depending on several factors, such as the length of the replay lag time, the number of log files generated during that period, and the speed at which your hardware can replay those logs into the database being recovered..
+   > In the preceding example, e_XX_ is the log generation prefix for the database (for example, E00, E01, E02, and so on)
+   >
+   > This step may take a considerable amount of time, depending on several factors, such as the length of the replay lag time, the number of log files generated during that period, and the speed at which your hardware can replay those logs into the database being recovered..
 
 6. After log replay is finished, the database is in a clean shutdown state and can be copied and used for recovery purposes.
 
@@ -95,7 +97,7 @@ For detailed syntax and parameter information, see [Suspend-MailboxDatabaseCopy]
         > [!NOTE]
         > At this point, continuing to perform this procedure on the existing volume would incur a copy on write performance penalty. If this isn't desirable, you can copy the database and log files to another volume to perform the recovery.
 
-2. This example activates the lagged mailbox database copy using the [Move-ActiveMailboxDatabase](/powershell/module/exchange/Move-ActiveMailboxDatabase) cmdlet with the *SkipLagChecks* parameter.
+2. This example activates the lagged mailbox database copy using the [Move-ActiveMailboxDatabase](/powershell/module/exchange/Move-ActiveMailboxDatabase) cmdlet with the _SkipLagChecks_ parameter.
 
     ```powershell
     Move-ActiveMailboxDatabase DB1 -ActivateOnServer EX3 -SkipLagChecks

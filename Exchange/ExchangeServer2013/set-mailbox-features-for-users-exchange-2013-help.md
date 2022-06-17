@@ -4,6 +4,8 @@ TOCTitle: Set mailbox features for Outlook Voice Access users
 ms.author: serdars
 author: msdmaguire
 manager: serdars
+ms.topic: how-to
+description: How to set mailbox features for Outlook Voice Access users in Microsoft Exchange Server
 ms.reviewer:
 ms.assetid: 10960bf0-65cf-4d0b-bae5-d203c53662db
 f1.keywords:

@@ -5,6 +5,8 @@ ms:assetid: 01aa5dab-689b-4738-afab-0d2f11a60b39
 ms:mtpsurl: https://technet.microsoft.com/library/Dn169226(v=EXCHG.150)
 ms:contentKeyID: 53382778
 ms.reviewer: 
+ms.topic: how-to
+description: How to upgrade Exchange 2010 Unified Messaging to Exchange 2013 Unified Messaging
 manager: serdars
 ms.author: serdars
 author: msdmaguire
@@ -86,31 +88,31 @@ Custom greetings, announcements, menus, and prompts are audio files (in .wav or 
 
 When you're exporting and importing custom greetings, announcements, menus, and prompts from Exchange 2010 to Exchange 2013, you must use the **Export-UMPrompt** and **Import-UMPrompt** cmdlets. You can't use the EAC to export or import custom prompts. On an Exchange 2010 server, use the **Export-UMPrompt** cmdlet to export the Exchange 2010 dial plan and auto attendant prompts. After you've exported the prompts, you can import them to the Exchange 2013 Mailbox server. When you run the **Export-UMPrompt** cmdlet from your Exchange 2010 server, the command performs a GUID or object identifier lookup for the dial plan or auto attendant in Active Directory and queries it to determine if there are any custom greetings, announcements, menus, or prompts. If found, the custom greetings, announcements, menus, or prompts will be saved to the directory that you specify. After you've exported all custom greetings, announcements, menus, and prompts, use the **Import-UMPrompt** cmdlet to import the prompts into your Exchange 2013 system mailbox.
 
-This example exports the welcome greeting for the UM dial plan `MyUMDialPlan` and saves it as the file `welcomegreeting.wav`.
+This example exports the welcome greeting for the UM dial plan `MyUMDialPlan` and saves it as the file `welcomegreeting.wav` in D:\\DialPlanPrompts.
 
 ```powershell
 $prompt = Export-UMPrompt -PromptFileName "customgreeting.wav" -UMDialPlan MyUMDialPlan
-set-content -Path "d:\DialPlanPrompts\welcomegreeting.wav" -Value $prompt.AudioData -Encoding Byte
+[System.IO.File]::WriteAllBytes('D:\DialPlanPrompts\welcomegreeting.wav', $prompt.AudioData)
 ```
 
-This example imports the welcome greeting `welcomegreeting.wav` from d:\\UMPrompts into the UM dial plan `MyUMDialPlan`.
+This example imports the welcome greeting `welcomegreeting.wav` from D:\\UMPrompts into the UM dial plan `MyUMDialPlan`.
 
 ```powershell
-[byte[]]$c = Get-content -Path "d:\UMPrompts\welcomegreeting.wav" -Encoding Byte -ReadCount 0
+$c = [System.IO.File]::ReadAllBytes('D:\UMPrompts\welcomegreeting.wav')
 Import-UMPrompt -UMDialPlan MyUMDialPlan -PromptFileName "welcomegreeting.wav" -PromptFileData $c
 ```
 
-This example exports a custom greeting for the UM auto attendant `MyUMAutoAttendant` and saves it to the file `welcomegreetingbackup.wav`.
+This example exports a custom greeting for the UM auto attendant `MyUMAutoAttendant` and saves it to the file `welcomegreetingbackup.wav` in E:\UMPromptsBackup.
 
 ```powershell
-Export-UMPrompt -PromptFileName "welcomegreeting.wav" -UMAutoAttendant MyUMAutoAttendant
-set-content -Path "e:\UMPromptsBackup\welcomegreeting.wav" -Value $prompt.AudioData -Encoding Byte
+$prompt = Export-UMPrompt -PromptFileName "welcomegreeting.wav" -UMAutoAttendant MyUMAutoAttendant
+[System.IO.File]::WriteAllBytes('E:\UMPromptsBackup\welcomegreeting.wav', $prompt.AudioData)
 ```
 
-This example imports the welcome greeting `welcomegreeting.wav` from d:\\UMPrompts into the UM auto attendant `MyUMAutoAttendant`.
+This example imports the welcome greeting `welcomegreeting.wav` from D:\\UMPrompts into the UM auto attendant `MyUMAutoAttendant`.
 
 ```powershell
-[byte[]]$c = Get-content -Path "d:\UMPrompts\welcomegreeting.wav" -Encoding Byte -ReadCount 0
+$c = [System.IO.File]::ReadAllBytes('D:\UMPrompts\welcomegreeting.wav')
 Import-UMPrompt -UMAutoAttendant MyUMAutoAttendant -PromptFileName "welcomegreeting.wav" -PromptFileData $c
 ```
 
@@ -260,7 +262,7 @@ If required, you can create a UM dial plan by using the EAC:
 
 2. On the **New UM Dial Plan** page, complete the following boxes:
 
-   - **Name**: Type the name of the dial plan. A UM dial plan name is required and must be unique. However, the name you type is used only for display purposes in the EAC and the Shell. The maximum length of a UM dial plan name is 64 characters, and it can include spaces. However, it can't include any of the following characters: " / \\ \[ \] : ; | = , + \* ? \< \>.
+   - **Name**: Type the name of the dial plan. A UM dial plan name is required and must be unique. However, the name you type is used only for display purposes in the EAC and the Shell. The maximum length of a UM dial plan name is 64 characters, and it can include spaces. However, it can't include any of the following characters: " / \\ \[ \] : ; | = , + \* ? \< \>.
 
      Although the box for the name of the dial plan can accept 64 characters, the name of the dial plan can't be longer than 49 characters. If you try to create a dial plan name that contains more than 49 characters, you'll receive an error message. The message will say that the UM mailbox policy couldn't be generated because the UM dial plan name is too long. This happens because, when you create a dial plan a default UM mailbox policy named *\<DialPlanName\>* **Default Policy** is also created. When the 15 characters in the default policy are added to the name of the dial plan, the total characters exceed the limit. The *name* parameter for both the UM dial plan and UM mailbox policy can be 64 characters. However, if the name of the dial plan is longer than 49 characters, the name of the default UM mailbox policy will be longer than 64 characters, and this isn't allowed by the system.
 
@@ -285,7 +287,7 @@ If required, you can create a UM dial plan by using the EAC:
 
      - **Unsecured**: By default, when you create a UM dial plan, it is set to not encrypt the SIP signaling or RTP traffic. In unsecured mode, the Client Access and Mailbox servers associated the UM dial plan send and receive data from VoIP gateways, IP PBXs, SBCs and other Client Access and Mailbox servers using no encryption. In unsecured mode, neither the Realtime Transport Protocol (RTP) media channel nor the SIP signaling information is encrypted.
 
-     - **SIP secured**  When you select **SIP secured**, only the SIP signaling traffic is encrypted, and the RTP media channels still use TCP, which isn't encrypted. With SIP secured, Mutual Transport Layer Security (TLS) is used to encrypt the SIP signaling traffic and VoIP data.
+     - **SIP secured**  When you select **SIP secured**, only the SIP signaling traffic is encrypted, and the RTP media channels still use TCP, which isn't encrypted. With SIP secured, Mutual Transport Layer Security (TLS) is used to encrypt the SIP signaling traffic and VoIP data.
 
      - **Secured**: When you select **Secured**, both the SIP signaling traffic and the RTP media channels are encrypted. Both the secure signaling media channel that uses Secure Realtime Transport Protocol (SRTP) and the SIP signaling traffic use mutual TLS to encrypt the VoIP data.
 
@@ -373,7 +375,7 @@ If required, you can To create a UM hunt group by using the EAC, as follows:
 
 3. On the **New UM Hunt Group** page, enter the following information:
 
-      - **Name**: Use this box to create the display name for the UM hunt group. A UM hunt group name is required and must be unique, but it's used only for display purposes in the EAC and the Shell. If you have to change the display name of the hunt group after it's been created, you must first delete the existing hunt group and then create another hunt group that has the appropriate name. If your organization uses multiple hunt groups, we recommend that you use meaningful names for your hunt groups. The maximum length of a UM hunt group name is 64 characters, and it can include spaces. However, it can't include any of the following characters: " / \\ \[ \] : ; | = , + \* ? \< \>.
+      - **Name**: Use this box to create the display name for the UM hunt group. A UM hunt group name is required and must be unique, but it's used only for display purposes in the EAC and the Shell. If you have to change the display name of the hunt group after it's been created, you must first delete the existing hunt group and then create another hunt group that has the appropriate name. If your organization uses multiple hunt groups, we recommend that you use meaningful names for your hunt groups. The maximum length of a UM hunt group name is 64 characters, and it can include spaces. However, it can't include any of the following characters: " / \\ \[ \] : ; | = , + \* ? \< \>.
 
       - **UM IP Gateway**: Use this box to select a UM IP gateway. This box shows the name of the UM IP gateway that will be linked with the UM hunt group. To link a UM IP gateway to the UM hunt group, click **Browse**.
 
@@ -412,7 +414,7 @@ If required, you can create a UM auto attendant by using the EAC, as follows:
 
       - **Set the auto attendant to respond to voice commands**: Select this check box to speech-enable the UM auto attendant. If the auto attendant is speech-enabled, callers can respond to the system or custom prompts used by the UM auto attendant using touchtone or voice inputs. By default, the auto attendant isn't speech-enabled when it's created. For callers to use a speech-enabled auto attendant in a language other than U.S. English (en-US), you must install the appropriate UM language pack and configure the properties of the auto attendant to use this language. The en-US UM language pack is installed by default when you install an Exchange 2013 Mailbox server.
 
-      - **Access numbers**: Enter the extension or telephone numbers that callers will use to reach the auto attendant. Type an extension number or telephone number in the box, and then click **Add ** to add the number to the list. The number of digits in the extension number or telephone number that you provide doesn't have to match the number of digits for an extension number configured on the associated UM dial plan. This is because direct calls are allowed to UM auto attendants.
+      - **Access numbers**: Enter the extension or telephone numbers that callers will use to reach the auto attendant. Type an extension number or telephone number in the box, and then click **Add ** to add the number to the list. The number of digits in the extension number or telephone number that you provide doesn't have to match the number of digits for an extension number configured on the associated UM dial plan. This is because direct calls are allowed to UM auto attendants.
 
         The number of extension or access numbers you can enter is unlimited. However, you may create a new auto attendant without listing an extension number or telephone number. An extension number or telephone number isn't required. You can edit or remove an existing extension number or pilot identifier. To edit an existing extension number or telephone number, click **Edit**. To remove an existing extension number or telephone number from the list, click **Remove**.
 

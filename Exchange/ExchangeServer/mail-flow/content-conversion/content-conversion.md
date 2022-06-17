@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn about content conversion (message formatting and encoding options) in Exchange Server 2016 and Exchange Server 2019.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: bc367eb3-0306-4da9-9a84-4341caef77af
 ms.reviewer:
 title: Content conversion
@@ -18,7 +18,7 @@ manager: serdars
 
 # Content conversion in Exchange Server
 
- *Content conversion* is the process of correctly formatting a message for each recipient. The decision to perform content conversion on a message depends on the destination and format of the message. They types of content conversion that occur in Exchange 2016 and Exchange 2019 are unchanged from Exchange 2013:
+ *Content conversion* is the process of correctly formatting a message for each recipient. The decision to perform content conversion on a message depends on the destination and format of the message. The types of content conversion that occur in Exchange 2016 and Exchange 2019 are unchanged from Exchange 2013:
 
 - **Message conversion for external recipients**: This type of content conversion includes the Transport Neutral Encapsulation Format (TNEF) conversion options and message encoding options for external recipients. Messages sent to recipients inside the Exchange organization don't require this type of content conversion. This type of content conversion is handled by the categorizer in the Transport service on a Mailbox server. Categorization on each message happens after a newly arrived message is put in the Submission queue. In addition to recipient resolution and routing resolution, content conversion is performed on the message before the message is put in a delivery queue. If a single message contains multiple recipients, the categorizer determines the appropriate encoding for each message recipient. Content conversion tracing doesn't capture any content conversion failures that the categorizer encounters as it converts messages sent to external recipients.
 

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to enable and configure IMAP4 on an Exchange server 2016 or 2019 for access by IMAP4 clients.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: c1ae10dd-14da-4400-b38d-2aeafde8abe6
 ms.reviewer:
 title: Enable and configure IMAP4 on an Exchange server

@@ -2,8 +2,8 @@
 ms.localizationpriority: medium
 description: 'Summary: Learn how to use the Open Authorization (OAuth) authentication protocol to authenticate applications to Exchange. The other applications need to be configured as partner applications in Exchange 2016.'
 ms.topic: article
-author: msdmaguire
-ms.author: serdars
+author: JoanneHendrickson
+ms.author: jhendr
 ms.assetid: ca3c78a3-80cc-4df2-859f-0106bbd57a07
 ms.reviewer:
 title: Configure OAuth authentication with SharePoint 2013 and Lync 2013

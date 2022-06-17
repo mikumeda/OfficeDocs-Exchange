@@ -5,6 +5,8 @@ ms:assetid: 0f697cee-bcaa-4c69-b80c-7a2afd1817d2
 ms:mtpsurl: https://technet.microsoft.com/library/Aa996299(v=EXCHG.150)
 ms:contentKeyID: 49289169
 ms.reviewer: 
+ms.topic: article
+description: How to to use Active Directory sites for routing mail in Microsoft Exchange
 manager: serdars
 ms.author: serdars
 author: msdmaguire

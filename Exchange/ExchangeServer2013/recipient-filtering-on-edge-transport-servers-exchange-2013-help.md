@@ -7,6 +7,8 @@ ms:contentKeyID: 49248685
 ms.reviewer: 
 manager: serdars
 ms.author: serdars
+ms.topic: article
+description: About recipient filtering on Edge Transport servers in Microsoft Exchange
 author: msdmaguire
 f1.keywords:
 - NOCSH
@@ -31,15 +33,15 @@ The Recipient Filter agent acts on recipients stored in one or both of the follo
 
 - **Recipient Block list**: An administrator-defined list of recipients who should never receive messages from the Internet.
 
-- **Recipient Lookup**: Queries Active Directory to verify the recipient exists in the organization. On an Edge Transport server, Recipient Lookup requires access to Active Directory information provided by EdgeSync to the local instance of Active Directory Lightweight Directory Services (AD LDS).
+- **Recipient Lookup**: Queries Active Directory to verify the recipient exists in the organization. On an Edge Transport server, Recipient Lookup requires access to Active Directory information provided by EdgeSync to the local instance of Active Directory Lightweight Directory Services (AD LDS).
 
 When you enable the Recipient Filter agent, one of the following actions is taken on inbound messages according to the characteristics of the recipients. These recipients are indicated by the RCPT TO header.
 
-- If the inbound message contains a recipient that is on the Recipient Block list, the Exchange server sends a `550 5.1.1 User unknown` SMTP session error to the sending server.
+- If the inbound message contains a recipient that is on the Recipient Block list, the Exchange server sends a `550 5.1.1 User unknown` SMTP session error to the sending server.
 
-- If the inbound message contains a recipient that doesn't match any recipients in Recipient Lookup, the Exchange server sends a `550 5.1.1 User unknown` SMTP session error to the sending server.
+- If the inbound message contains a recipient that doesn't match any recipients in Recipient Lookup, the Exchange server sends a `550 5.1.1 User unknown` SMTP session error to the sending server.
 
-- If the recipient isn't on the Recipient Block list and the recipient is in Recipient Lookup, the Exchange server sends a `250 2.1.5 Recipient OK` SMTP response to the sending server, and the next anti-spam agent in the chain processes the message.
+- If the recipient isn't on the Recipient Block list and the recipient is in Recipient Lookup, the Exchange server sends a `250 2.1.5 Recipient OK` SMTP response to the sending server, and the next anti-spam agent in the chain processes the message.
 
 ## Configuring recipient lookup
 
@@ -49,23 +51,23 @@ If you have an Edge Transport server installed in your perimeter network, it's a
 
 ## Tarpitting functionality
 
-Recipient Lookup functionality enables the sending server to determine whether an email address is valid or invalid. As mentioned earlier, when the recipient of an inbound message is a known recipient, the Exchange server sends back a `250 2.1.5 Recipient OK` SMTP response to the sending server. This functionality provides an ideal environment for a directory harvest attack.
+Recipient Lookup functionality enables the sending server to determine whether an email address is valid or invalid. As mentioned earlier, when the recipient of an inbound message is a known recipient, the Exchange server sends back a `250 2.1.5 Recipient OK` SMTP response to the sending server. This functionality provides an ideal environment for a directory harvest attack.
 
-A *directory harvest attack* is an attempt to collect valid email addresses from a particular organization so that the email addresses can be added to a spam database. Because all spam income relies on trying to make people open email messages, addresses known to be active are a commodity that malicious users, or *spammers*, pay for. Because the SMTP protocol provides feedback for known senders and unknown senders, a spammer can write an automated program that uses common names or dictionary terms to construct email addresses to a specific domain. The program collects all email addresses that return a `250 2.1.5 Recipient OK` SMTP response and discards all email addresses that return a `550 5.1.1 User unknown` SMTP session error. The spammer can then sell the valid email addresses or use them as recipients for unsolicited messages.
+A *directory harvest attack* is an attempt to collect valid email addresses from a particular organization so that the email addresses can be added to a spam database. Because all spam income relies on trying to make people open email messages, addresses known to be active are a commodity that malicious users, or *spammers*, pay for. Because the SMTP protocol provides feedback for known senders and unknown senders, a spammer can write an automated program that uses common names or dictionary terms to construct email addresses to a specific domain. The program collects all email addresses that return a `250 2.1.5 Recipient OK` SMTP response and discards all email addresses that return a `550 5.1.1 User unknown` SMTP session error. The spammer can then sell the valid email addresses or use them as recipients for unsolicited messages.
 
 To combat directory harvest attacks, Exchange 2013 includes tarpitting functionality. *Tarpitting* is the practice of artificially delaying server responses for specific SMTP communication patterns that indicate high volumes of spam or other unwelcome messages. The intent of tarpitting is to slow down the communication process for such email traffic so that the cost of sending spam increases for the person or organization sending the spam. Tarpitting makes directory harvest attacks too costly to automate efficiently.
 
-If tarpitting isn't configured, the Exchange server immediately returns a `550 5.1.1 User unknown` SMTP session error to the sender when a recipient isn't located in Recipient Lookup. Alternatively, if tarpitting is configured, SMTP waits a specified number of seconds before it returns the `550 5.1.1 User unknown` error. This pause in the SMTP session makes automating a directory harvest attack more difficult and less cost-effective for the spammer. By default, tarpitting is configured for 5 seconds on Receive connectors.
+If tarpitting isn't configured, the Exchange server immediately returns a `550 5.1.1 User unknown` SMTP session error to the sender when a recipient isn't located in Recipient Lookup. Alternatively, if tarpitting is configured, SMTP waits a specified number of seconds before it returns the `550 5.1.1 User unknown` error. This pause in the SMTP session makes automating a directory harvest attack more difficult and less cost-effective for the spammer. By default, tarpitting is configured for 5 seconds on Receive connectors.
 
-To configure the delay before SMTP returns the `550 5.1.1 User unknown` error, you set the tarpitting interval using the *TarpitInterval* parameter on the **Set-ReceiveConnector** cmdlet. The syntax is:
+To configure the delay before SMTP returns the `550 5.1.1 User unknown` error, you set the tarpitting interval using the *TarpitInterval* parameter on the **Set-ReceiveConnector** cmdlet. The syntax is:
 
 ```powershell
 Set-ReceiveConnector <Receive Connector> -TarpitInterval <00:00:00 to 00:10:00>
 ```
 
-The default value is `00:00:05` or 5 seconds. The name of the default Receive connector on an Edge Transport server is `Default internal receive connector <server name>`.
+The default value is `00:00:05` or 5 seconds. The name of the default Receive connector on an Edge Transport server is `Default internal receive connector <server name>`.
 
-Use caution if you decide to change the tarpitting interval. An overly long interval could disrupt ordinary mail flow, whereas an overly brief interval may not be as effective in thwarting a directory harvest attack. If you change the tarpitting interval, do so in small increments and verify the results. For example, if 5 seconds isn't effective, try changing the interval to 10 seconds.
+Use caution if you decide to change the tarpitting interval. An overly long interval could disrupt ordinary mail flow, whereas an overly brief interval may not be as effective in thwarting a directory harvest attack. If you change the tarpitting interval, do so in small increments and verify the results. For example, if 5 seconds isn't effective, try changing the interval to 10 seconds.
 
 ## Multiple namespaces
 

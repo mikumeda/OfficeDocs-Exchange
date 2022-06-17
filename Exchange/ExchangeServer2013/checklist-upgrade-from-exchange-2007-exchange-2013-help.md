@@ -46,23 +46,23 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 </tr>
 <tr class="even">
 <td><p></p></td>
-<td><p>1. Read the release notes.</p></td>
+<td><p>1. Read the release notes.</p></td>
 <td><p><a href="release-notes-for-exchange-2013-exchange-2013-help.md">Release notes for Exchange 2013</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
+<td> </td>
 <td><p>2. Verify system requirements</p></td>
 <td><p><a href="exchange-2013-system-requirements-exchange-2013-help.md">Exchange 2013 system requirements</a></p></td>
 </tr>
 <tr class="even">
-<td> </td>
-<td><p>3. Confirm prerequisite steps are done</p></td>
+<td> </td>
+<td><p>3. Confirm prerequisite steps are done</p></td>
 <td><p><a href="exchange-2013-prerequisites-exchange-2013-help.md">Exchange 2013 prerequisites</a></p>
 <p><a href="deployment-security-checklist-exchange-2013-help.md">Deployment security checklist</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>4. Configure disjoint namespace</p>
+<td> </td>
+<td><p>4. Configure disjoint namespace</p>
 
 > [!NOTE]
 > This step is optional. It's only necessary if your organization is running a disjoint namespace.
@@ -81,8 +81,8 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 <td><p><a href="/previous-versions/exchange-server/exchange-150/dn130105(v=exchg.150)">Create a legacy Exchange host name</a></p></td>
 </tr>
 <tr class="even">
-<td> </td>
-<td><p>7. Install Exchange 2013</p></td>
+<td> </td>
+<td><p>7. Install Exchange 2013</p></td>
 <td><p><a href="install-exchange-2013-using-the-setup-wizard-exchange-2013-help.md">Install Exchange 2013 using the Setup wizard</a></p>
 <p><a href="install-the-exchange-2013-edge-transport-role-using-the-setup-wizard-exchange-2013-help.md">Install the Exchange 2013 Edge Transport role using the Setup wizard</a></p>
 <p><a href="verify-an-exchange-2013-installation-exchange-2013-help.md">Verify an Exchange 2013 installation</a></p></td>
@@ -93,8 +93,8 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 <td><p><a href="create-user-mailboxes-exchange-2013-help.md">Create user mailboxes</a></p></td>
 </tr>
 <tr class="even">
-<td><p> </p></td>
-<td><p>9. Configure Exchange-related virtual directories</p>
+<td><p> </p></td>
+<td><p>9. Configure Exchange-related virtual directories</p>
 
 > [!NOTE]
 > This step is necessary if you want to use Exchange Web Services, Outlook Anywhere, or the offline address book. It also may be required if you need to change any of the default settings for Exchange Control Panel, Microsoft Office&nbsp;Outlook Web App, or Exchange ActiveSync.<BR>
@@ -104,9 +104,9 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 <p></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>10. Configure Exchange 2013 certificates</p></td>
-<td><p><a href="digital-certificates-and-ssl-exchange-2013-help.md">Digital certificates and SSL</a> </p>
+<td> </td>
+<td><p>10. Configure Exchange 2013 certificates</p></td>
+<td><p><a href="digital-certificates-and-ssl-exchange-2013-help.md">Digital certificates and SSL</a> </p>
 <p></p></td>
 </tr>
 <tr class="even">
@@ -125,8 +125,8 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 <td><p><a href="configure-internet-mail-flow-through-a-subscribed-edge-transport-server-exchange-2013-help.md">Configure Internet mail flow through a subscribed Edge Transport server</a></p></td>
 </tr>
 <tr class="even">
-<td> </td>
-<td><p>13. Configure Unified Messaging</p>
+<td> </td>
+<td><p>13. Configure Unified Messaging</p>
 
 > [!NOTE]
 > This step is optional. It's only necessary if you want to use Unified Messaging in your organization.
@@ -156,13 +156,13 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 <td><p><a href="/previous-versions/exchange-server/exchange-150/dn283988(v=exchg.150)">Configure DNS records for Exchange 2007 multiple-server install</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>18. Move mailboxes from Exchange 2007 to Exchange 2013</p></td>
+<td> </td>
+<td><p>18. Move mailboxes from Exchange 2007 to Exchange 2013</p></td>
 <td><p><a href="mailbox-moves-in-exchange-2013-exchange-2013-help.md">Mailbox moves in Exchange 2013</a></p></td>
 </tr>
 <tr class="even">
-<td> </td>
-<td><p>19. Move public folder data from Exchange 2007 to Exchange 2013</p>
+<td> </td>
+<td><p>19. Move public folder data from Exchange 2007 to Exchange 2013</p>
 
 > [!NOTE]
 > This step is optional. It's only necessary if your organization is uses public folders.
@@ -172,8 +172,8 @@ This checklist is generic in that it provides guidance for a typical upgrade sce
 <p><a href="/previous-versions/exchange-server/exchange-150/jj150486(v=exchg.150)">Use serial migration to migrate public folders to Exchange 2013 from previous versions</a></p></td>
 </tr>
 <tr class="odd">
-<td> </td>
-<td><p>20. Post-installation tasks</p></td>
+<td> </td>
+<td><p>20. Post-installation tasks</p></td>
 <td><p><a href="exchange-2013-post-installation-tasks-exchange-2013-help.md">Exchange 2013 post-Installation tasks</a></p></td>
 </tr>
 </tbody>

@@ -5,6 +5,8 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
+description: Unified Messaging hunt groups in Microsoft Exchange Server
 ms.assetid: 026129a1-b0b5-410a-bed6-2d49f85205b3
 f1.keywords:
 - NOCSH
