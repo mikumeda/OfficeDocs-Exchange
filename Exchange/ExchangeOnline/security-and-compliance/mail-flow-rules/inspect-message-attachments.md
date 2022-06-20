@@ -84,7 +84,7 @@ The following conditions can be used in mail flow rules to inspect different pro
 > [!NOTE]
 >
 > If you would like to block certain files using the file condition _AttachmentNameMatchesPatterns_ or _AttachmentExtensionMatchesWords_, be aware that this condition is inspecting the actual file name extension and not the file properties. Which is different, than the earlier mentioned file content inspection of other conditions. 
-> If you need to block a file based on the system file proterty detection, e.g. the file is renamed, please use the "common attachment filter" feature of the [Anti-Mailware policy](https://docs.microsoft.com/microsoft-365/security/office-365-security/anti-malware-protection?#anti-malware-policies) instead.
+> If you need to block a file based on the system file proterty detection, e.g. the file is renamed, please use the "common attachment filter" feature of the [Anti-Mailware policy](/microsoft-365/security/office-365-security/anti-malware-protection?#anti-malware-policies) instead.
 
 |Condition name in the EAC|Condition name in Exchange Online PowerShell|Description|
 |---|---|---|
