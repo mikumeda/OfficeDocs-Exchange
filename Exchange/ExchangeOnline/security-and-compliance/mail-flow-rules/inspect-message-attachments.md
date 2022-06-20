@@ -81,6 +81,11 @@ The following table lists the file types supported by mail flow rules. The syste
 
 The following conditions can be used in mail flow rules to inspect different properties of files that are attached to messages. To start using these conditions when inspecting messages, you need to add them to a mail flow rule. For more information about creating or changing rules, see [Manage mail flow rules](manage-mail-flow-rules.md).
 
+> [!NOTE]
+>
+> If you would like to block certain files using the file condition _AttachmentNameMatchesPatterns_ or _AttachmentExtensionMatchesWords_, be aware that this condition is inspecting the actual file name extension and not the file properties. Which is different, than the earlier mentioned file content inspection of other conditions. 
+> If you need to block a file based on the system file proterty detection, e.g. the file is renamed, please use the "common attachment filter" feature of the [Anti-Mailware policy](/microsoft-365/security/office-365-security/anti-malware-protection?#anti-malware-policies) instead.
+
 |Condition name in the EAC|Condition name in Exchange Online PowerShell|Description|
 |---|---|---|
 |**Any attachment's file name matches** <p> **Any attachment** \> **file name matches these text patterns**|_AttachmentNameMatchesPatterns_|This condition matches messages with attachments whose file name contains the characters you specify.|
