@@ -91,16 +91,20 @@ If your environment includes a single Exchange server running solely for cloud r
    ```
 
    > [!NOTE]
-   > In you already removed the Exchange server or never had an Exchange Server, you access the Set-Remotedomain and New-RemoteDomain cmdlets via the Microsoft.Exchange.Management.PowerShell.E2010 snapin:
-   > 
+   > If you already removed the last Exchange server or never had one, you can access the Set-RemoteDomain and New-RemoteDomain cmdlets via the Exchange snapin. Install the Exchange Management Tools from the last Cumulative Update for Exchange Server 2019 on any domain-joined machine and run the following command in Windows PowerShell:
+   >
    > ```PowerShell
-   > Add-PSSnapIn Microsoft.Exchange.Management.PowerShell.E2010
+   > Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn
    > ```
+   >
+   > This method of manually enabling the Exchange snapin is only supported for this specific case.
+   >
+   > Installing the Exchange Management Tools in an environment that never had an Exchange Server will create a new Exchange organization, and it will prepare Active Directory for Exchange. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Server](/Exchange/plan-and-deploy/prepare-ad-and-domains) to prepare AD.
 
 3. [Install the Exchange Management Tools](/exchange/plan-and-deploy/post-installation-tasks/install-management-tools) role using the Exchange Server 2019 April 2022 Cumulative Update Setup. The updated tools can be installed on any domain-joined computer in an Exchange 2013 or later Exchange organization.
 
    > [!NOTE]
-   > Installing the updated Exchange Management Tools in an environment with only Exchange 2013 and/or Exchange 2016 will upgrade the Exchange organization to Exchange Server 2019, and it will perform an AD schema update. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Serve](/Exchange/plan-and-deploy/prepare-ad-and-domains) to perform the schema update.
+   > Installing the updated Exchange Management Tools in an environment with only Exchange 2013 and/or Exchange 2016 will upgrade the Exchange organization to Exchange Server 2019, and it will perform an AD schema update. If you have a large AD deployment, or if a separate team manages AD, use the steps here: [Prepare Active Directory and domains for Exchange Server](/Exchange/plan-and-deploy/prepare-ad-and-domains) to perform the schema update.
 
 4. Install the Windows Remote Server Administration Tools using the steps in this article: [Install, uninstall and turn off/on RSAT tools](/windows-server/remote/remote-server-administration-tools#install-uninstall-and-turn-offon-rsat-tools).
 
@@ -113,7 +117,7 @@ If your environment includes a single Exchange server running solely for cloud r
    2. Load the Recipient Management snap-in by running the following command:
 
       ```PowerShell
-      Add-PSSnapin *RecipientManagement.
+      Add-PSSnapin *RecipientManagement
       ```
 
    3. Run Add-PermissionForEMT.ps1 from the $env:ExchangeInstallPath\Scripts folder. The script creates a security group called Recipient Management EMT. Members of this group have recipient management permissions. All admins without domain admin rights need to perform recipient management should be added to this security group.
@@ -121,7 +125,7 @@ If your environment includes a single Exchange server running solely for cloud r
 7. Sign in to the computer with the Management Tools update with the appropriate permissions (domain admin or member of Recipient Management EMT) and load the Recipient Management snap-in by running:
 
    ```powershell
-   Add-PSSnapin *RecipientManagement.
+   Add-PSSnapin *RecipientManagement
    ```
 
    You need to do this step every time you manage recipients.
@@ -155,7 +159,7 @@ If you intend to permanently shut down your last Exchange Server, we recommend t
    To remove the certificate thumbprint, run:
 
    ```powershell
-   Remove-ExchangeCertificate –Thumbprint $fedThumbprint
+   Remove-ExchangeCertificate -Thumbprint $fedThumbprint
    ```
 
 5. Remove the service principal credentials created for OAuth. To do this, you need to determine which KeyId matches the key value of the OAuth certificate. To find the KeyId that matches, follow these steps:
@@ -184,7 +188,7 @@ If you intend to permanently shut down your last Exchange Server, we recommend t
    3. To remove the service principal credential, run the following command:
 
       ```powershell
-      Remove-MsolServicePrincipalCredential –KeyIds @($keyId) -AppPrincipalId $p.AppPrincipalId
+      Remove-MsolServicePrincipalCredential -KeyIds @($keyId) -AppPrincipalId $p.AppPrincipalId
       ```
 
 6. Uninstall the Hybrid agent. If your environment has a Modern Hybrid configuration, follow the steps below to remove it.
