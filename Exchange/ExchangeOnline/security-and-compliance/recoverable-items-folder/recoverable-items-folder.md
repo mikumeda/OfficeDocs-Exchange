@@ -158,7 +158,7 @@ When a mailbox is no longer on In-Place Hold or Litigation Hold, copies of modif
 
 ## Recoverable Items mailbox quotas
 
-When an item is moved to the Recoverable Items folder, its size is deducted from the mailbox quota and added to the size of the Recoverable Items folder. In Exchange Online, the default limits for the Recoverable Items quota are: a soft limit of 20 GB and a hard limit of 30 GB. However, the quotas for the Recoverable Items folder are automatically increased to 90 GB and 100 GB, respectively, when you place a mailbox on Litigation Hold or In-Place Hold or if a Microsoft 365 or Office 365 retention policy is applied to the mailbox. For more information, see [Increase the Recoverable Items quota for mailboxes on hold](/microsoft-365/compliance/increase-the-recoverable-quota-for-mailboxes-on-hold).
+When an item is moved to the Recoverable Items folder, its size is deducted from the mailbox quota and added to the size of the Recoverable Items folder (quota available is reduced). In Exchange Online, the default limits for the Recoverable Items quota are: a soft limit of 20 GB and a hard limit of 30 GB. However, the quotas for the Recoverable Items folder are automatically increased to 90 GB and 100 GB, respectively, when you place a mailbox on Litigation Hold or In-Place Hold or if a Microsoft 365 or Office 365 retention policy is applied to the mailbox. For more information, see [Increase the Recoverable Items quota for mailboxes on hold](/microsoft-365/compliance/increase-the-recoverable-quota-for-mailboxes-on-hold).
 
 If the Recoverable Items folder for a mailbox reaches the Recoverable Items quota, no more items can be stored in the folder. This impacts mailbox functionality in the following ways:
 

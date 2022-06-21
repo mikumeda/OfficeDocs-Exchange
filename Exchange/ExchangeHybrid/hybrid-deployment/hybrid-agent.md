@@ -69,7 +69,7 @@ Having the HCW download and install the Agent MSI automatically is ideal if you'
 - Ports TCP ports 443, 80, 5985, and 5986 must be open between the computer where the Hybrid Agent is installed and the CAS that's selected in the Hybrid Configuration wizard.
 
 > [!IMPORTANT]
-> Free/busy requests from on-premises users to Exchange Online users do not traverse the Hybrid Agent. All Exchange Servers (or Exchange 2013 Client Access Servers) must be able to communicate with the Microsoft 365 or Office 365 endpoints via HTTPS (TCP port 443). The required URLs, IP addresses, and ports are described [here](/microsoft-365/enterprise/urls-and-ip-address-ranges).
+> Free/busy requests from on-premises users to Exchange Online users do not traverse the Hybrid Agent. All Exchange Mailbox Servers (including Exchange 2013 Mailbox Servers) must be able to communicate with the Microsoft 365 or Office 365 endpoints via HTTPS (TCP port 443). The required URLs, IP addresses, and ports are described [here](/microsoft-365/enterprise/urls-and-ip-address-ranges).
 
 ### Proxy server considerations
 
@@ -459,4 +459,4 @@ To uninstall the Hybrid Agent, re-run Hybrid Configuration wizard from the same 
 
 You can switch to Modern Hybrid (Hybrid Agent) after successfully configuring Classic Hybrid (publishing the EWS namespace and allowing inbound). But, we only recommend switching if you're blocked from migrating mailboxes to the cloud after this setup is complete. If you chose to revert to Modern Hybrid, see the previous [Constraints](#constraints) section, because not all hybrid features or experiences are supported with the Hybrid Agent.
 
-If you have weighed the pros and cons of switching from Classic to Modern, you proceed by deleting your existing migration batches and migration endpoint and re-running the Hybrid Configuration wizard and selecting **Modern Hybrid**.
+If you have weighed the pros and cons of switching from Classic to Modern, you proceed by deleting your existing migration batches and migration endpoint in Exchange Online and re-running the Hybrid Configuration wizard and selecting **Modern Hybrid**.
