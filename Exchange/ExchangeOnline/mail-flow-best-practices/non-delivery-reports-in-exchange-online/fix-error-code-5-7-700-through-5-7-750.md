@@ -51,7 +51,7 @@ Common causes are compromised on-premises servers or compromised admin accounts 
 
 To remove this block, you need to understand and explain the cause to a support agent, as well as correct the underlying problem.
 
-In rare cases, this could also happen if you renew your subscription after it has already expired. It takes time for the service to sync the new subscription information (typically, no more than one day), but your organization could be blocked from sending email in the meantime. The best way to prevent this is to make sure your subscription does not expire. For more information, please see ["Tenant has exceeded threshold" NDR when mail is sent from your organization](/office365/troubleshoot/antispam/tenant-has-exceeded-threshold).
+In rare cases, this could also happen if you renew your subscription after it has already expired. It takes time for the service to sync the new subscription information (typically, no more than one day), but your organization could be blocked from sending email in the meantime. The best way to prevent this is to make sure your subscription does not expire.
 
 ### 5.7.708 Access denied, traffic not accepted from this IP
 
