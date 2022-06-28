@@ -16,7 +16,7 @@ audience: ITPro
 ---
 # Remove public folder deployment from Exchange Server 2013 or later 
 
-After you've migrated all the on-premises users and public folders to Exchange Online, you're now ready to remove the public folders deployment at on-premises. Performing clean removal of the on-premises public folders deployment is an essential step as improper removal can lead to issues like orphaned **Mail Enabled Public Folders (MEPFs)** and blocked SMTP addresses in Microsoft Azure Active Directory (Azure AD) or Exchange Online. 
+After you've migrated all the on-premises users and public folders to Exchange Online, you're now ready to remove the public folders deployment at on-premises. Performing clean removal of the on-premises public folder deployment is essential. Improper removal can lead to issues like orphaned **Mail Enabled Public Folders (MEPFs)** and blocked SMTP addresses in Microsoft Azure Active Directory (Azure AD) or Exchange Online. 
 
 This article lists the steps to safely remove public folders and related data from an on-premises deployment of Exchange Server 2013 or later versions.
 
@@ -36,7 +36,7 @@ Before you begin, make sure that:
 ## Clean-up mail enabled public folders
 
 Use the Exchange Management Shell to run the PowerShell commands listed in these steps.
-1. Backup the MEPF details. Mail Enabled Public folders don't hold any data themselves but are objects in Active Directory that are linked to public folder that hosts the actual data. Run:
+1. Back up the MEPF details. Mail Enabled Public folders don't hold any data themselves but are objects in Active Directory that are linked to public folder that hosts the actual data. Run:
 
 ```powershell
 
@@ -64,7 +64,7 @@ Get-MailPublicFolder
 
 ```
 
-4. Clear the box MEPF sync from Azure AD connect tool, if you were using the Azure AD connect tool to synchronize on-premises directory to Azure AD (this should have been unchecked already when you started the migration, but it's good to verify)
+4. Verify the **Exchange Mail Public Folders** checkbox is cleared from the Azure AD connect tool.
 
 ![mail public folders](/Exchange/ExchangeServer/media/exchange-mail-public-folders-aad.png)
 
