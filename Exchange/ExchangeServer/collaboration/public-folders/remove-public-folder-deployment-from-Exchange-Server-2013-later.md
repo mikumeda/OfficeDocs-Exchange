@@ -66,7 +66,7 @@ Get-MailPublicFolder
 
 4. Clear the box MEPF sync from Azure AD connect tool, if you were using the Azure AD connect tool to synchronize on-premises directory to Azure AD (this should have been unchecked already when you started the migration, but it's good to verify)
 
-:::image type="content" source="///media/exchange-mail-public-folders-aad.png" alt-text="mail public folders":::
+![mail public folders](///media/exchange-mail-public-folders-aad.png)
 
 5. Perform the Azure AD connect sync.
 
