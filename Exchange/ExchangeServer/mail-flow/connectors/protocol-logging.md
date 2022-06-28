@@ -73,11 +73,11 @@ By default, the protocol log files exist in the following locations:
 
   - **Send connectors**: `%ExchangeInstallPath%TransportRoles\Logs\Edge\ProtocolLog\SmtpSend`
 
-The naming convention for log files is `SENDyyyymmdd-nnnn.log` for Send connectors and `RECVyyyymmdd-nnnn.log` for Receive connectors. The placeholders represent the following information:
+The naming convention for log files is `SENDyyyymmddhh-nnnn.log` for Send connectors and `RECVyyyymmddhh-nnnn.log` for Receive connectors. The placeholders represent the following information:
 
-- _yyyymmdd_ is the coordinated universal time (UTC) date when the log file was created. _yyyy_ = year, _mm_ = month, and _dd_ = day.
+- _yyyymmddhh_ is the coordinated universal time (UTC) date when the log file was created. _yyyy_ = year, _mm_ = month, _dd_ = day and _hh_ = hour.
 
-- _nnnn_ is an instance number that starts at the value 1 every day.
+- _nnnn_ is an instance number that starts at the value 1 every hour.
 
 Information is written to the log file until the file reaches its maximum size. Then, a new log file that has an incremented instance number is opened (the first log file is -1, the next is -2, and so on). Circular logging deletes the oldest log files when either of the following conditions is true:
 
