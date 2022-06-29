@@ -16,7 +16,7 @@ audience: ITPro
 ---
 # Remove public folder deployment from Exchange Server 2013 or later 
 
-After you've migrated all the on-premises users and public folders to Exchange Online, you're now ready to remove the public folders deployment at on-premises. Performing clean removal of the on-premises public folder deployment is essential. Improper removal can lead to issues like orphaned **Mail Enabled Public Folders (MEPFs)** and blocked SMTP addresses in Microsoft Azure Active Directory (Azure AD) or Exchange Online. 
+After you've migrated all the on-premises users and public folders to Exchange Online, you need to remove the on-premises public folders deployment. Performing a clean removal of the on-premises public folder deployment is critical as an improper removal can lead to issues like orphaned **Mail Enabled Public Folders (MEPFs)** and blocked SMTP addresses in Microsoft Azure Active Directory (Azure AD) or Exchange Online. 
 
 This article lists the steps to safely remove public folders and related data from an on-premises deployment of Exchange Server 2013 or later versions.
 
