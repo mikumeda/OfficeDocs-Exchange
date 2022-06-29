@@ -20,8 +20,8 @@ description: "Learn how to fix email delivery for error code 5.1.8 (550 5.1.8 Ac
 ---
 
 # Fix email delivery issues for error code 5.1.8 (550 5.1.8 Access denied) in Exchange Online
-
-It's frustrating when you get an error after sending an email message. This topic describes what you can do if you see error code 550 5.1.8 Access denied in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN), and mail isn't delivered.
+ 
+Getting an error message that means the mail you sent wasn't delivered is frustrating. This topic tells you what to do if you get error code 550 5.1.8 Access denied in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN), and mail isn't delivered.
 
 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 |---|---|---|---|
