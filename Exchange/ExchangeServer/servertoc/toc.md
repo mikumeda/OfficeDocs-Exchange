@@ -266,6 +266,7 @@
 ##### [Configure legacy public folders for hybrid](../collaboration/public-folders/configure-legacy-public-folders-for-hybrid.md)
 ##### [Batch migration from previous versions](../collaboration/public-folders/batch-migration-from-previous-versions.md)
 ##### [Migrate to Exchange Online](../collaboration/public-folders/migrate-to-exchange-online.md)
+##### [Remove public folder deployment](../collaboration/public-folders/remove-public-folder-deployment-from-Exchange-Server-2013-later.md)
 ###### [Roll back Exchange Online migration](../collaboration/public-folders/roll-back-exchange-online-migration.md)
 ###### [Migrate Exchange 2010 public folders to Exchange Online](../../ExchangeOnline/collaboration-exo/public-folders/batch-migration-of-legacy-public-folders.md)
 ##### [Batch migration to Microsoft 365 Groups](../collaboration/public-folders/batch-migration-to-microsoft-365-groups.md)
