@@ -2,6 +2,14 @@
 
 
 
+## Week of June 27, 2022
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 6/29/2022 | [Remove public folder deployment from Exchange Server 2013 or later versions](/Exchange/collaboration/public-folders/remove-public-folder-deployment-from-exchange-server-2013-later?view=exchserver-2016) | added |
+
+
 ## Week of June 13, 2022
 
 
@@ -30,23 +38,3 @@
 | Published On |Topic title | Change |
 |------|------------|--------|
 | 6/3/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
-
-
-## Week of May 23, 2022
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 5/24/2022 | [Google Workspace migration prerequisites in Exchange Online](/Exchange/mailbox-migration/googleworkspace-migration-prerequisites) | modified |
-| 5/25/2022 | [Alert policies in Exchange Online](/Exchange/monitoring/mail-flow-insights/alert-policy-and-its-configuration) | modified |
-
-
-## Week of May 16, 2022
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 5/16/2022 | [Microsoft Hybrid Agent](/Exchange/hybrid-deployment/hybrid-agent) | modified |
-| 5/16/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
-| 5/20/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
-| 5/20/2022 | [Sender Rewriting Scheme (SRS) in Microsoft 365](/Exchange/mail-flow-best-practices/sender-rewriting-scheme) | added |
