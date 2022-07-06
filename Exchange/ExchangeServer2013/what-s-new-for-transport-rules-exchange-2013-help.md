@@ -5,12 +5,14 @@ ms:assetid: 0c2fc0b5-3cd2-4d79-aa2b-0c7622ae15a8
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150483(v=EXCHG.150)
 ms:contentKeyID: 47559940
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about what's new in transport rules in Exchange 2013.
 ---
 
 # What's new for transport rules
@@ -61,10 +63,10 @@ For detailed information about using these new predicates and actions, see [Tran
 
 ## Other changes in Transport rules
 
-  - **Support for extended regular expression syntax**: Transport rules in Exchange 2013 are based on the Microsoft.NET Framework regular expression (regex) functionality and now support extended regular expression syntax.
+- **Support for extended regular expression syntax**: Transport rules in Exchange 2013 are based on the Microsoft.NET Framework regular expression (regex) functionality and now support extended regular expression syntax.
 
-  - **Transport rules agent invocation**: The key architectural change in Exchange 2013 for Transport rules is the Transport Rules Agent is invoked on onResolvedMessage. In previous versions of Exchange, the Rules Agent was invoked on onRoutedMessage. This change allowed us to add new actions, such as requiring TLS, which can change how a message is routed. To learn more about the transport rules architecture in Exchange 2013, see [Mail flow or transport rules](mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help.md).
+- **Transport rules agent invocation**: The key architectural change in Exchange 2013 for Transport rules is the Transport Rules Agent is invoked on onResolvedMessage. In previous versions of Exchange, the Rules Agent was invoked on onRoutedMessage. This change allowed us to add new actions, such as requiring TLS, which can change how a message is routed. To learn more about the transport rules architecture in Exchange 2013, see [Mail flow or transport rules](mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help.md).
 
-  - **Detailed Transport rule information in message tracking logs**: Detailed information about Transport rules is now included in message tracking logs. The information includes which rules were triggered for a specific message and the actions taken as a result of processing those rules.
+- **Detailed Transport rule information in message tracking logs**: Detailed information about Transport rules is now included in message tracking logs. The information includes which rules were triggered for a specific message and the actions taken as a result of processing those rules.
 
-  - **New rule monitoring functionality**: Exchange 2013 monitors Transport rules that are configured and measures the cost of running these rules both when you're creating the rule and also during regular operation. Exchange can detect and generate alerts for rules that are causing delays in mail delivery.
+- **New rule monitoring functionality**: Exchange 2013 monitors Transport rules that are configured and measures the cost of running these rules both when you're creating the rule and also during regular operation. Exchange can detect and generate alerts for rules that are causing delays in mail delivery.

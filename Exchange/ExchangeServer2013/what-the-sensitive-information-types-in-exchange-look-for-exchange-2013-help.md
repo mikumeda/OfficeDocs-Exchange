@@ -5,12 +5,14 @@ ms:assetid: 98b81f9c-87bb-4905-8e53-04621c3ae74d
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150541(v=EXCHG.150)
 ms:contentKeyID: 47560060
 ms.reviewer:
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about sensitive information types in DLP policies in Exchange 2013.
 ---
 
 # What the sensitive information types in Exchange 2013 look for

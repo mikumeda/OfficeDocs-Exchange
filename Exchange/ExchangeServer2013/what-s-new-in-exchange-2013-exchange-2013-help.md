@@ -5,12 +5,14 @@ ms:assetid: 97501135-2149-4590-8373-98e638ac8eb1
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150540(v=EXCHG.150)
 ms:contentKeyID: 47560059
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about what's new in Exchange 2013.
 ---
 
 # What's new in Exchange 2013
