@@ -13,7 +13,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
-description: 
+description: Learn about the split permissions model in Exchange 2013.
 ---
 
 # Understanding split permissions
