@@ -5,12 +5,14 @@ ms:assetid: 629792e4-7a8f-4447-b031-1c7d7c994b8a
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876893(v=EXCHG.150)
 ms:contentKeyID: 49289276
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the Transport Hygiene role in Exchange 2013.
 ---
 
 # Transport Hygiene role

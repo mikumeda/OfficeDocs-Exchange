@@ -5,12 +5,14 @@ ms:assetid: 262928e8-b938-404f-b941-a636f4d18169
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876861(v=EXCHG.150)
 ms:contentKeyID: 49289201
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the UM Prompts role in Exchange 2013.
 ---
 
 # UM Prompts role

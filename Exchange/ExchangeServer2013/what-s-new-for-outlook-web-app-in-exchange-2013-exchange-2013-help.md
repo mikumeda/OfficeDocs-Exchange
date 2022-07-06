@@ -5,12 +5,14 @@ ms:assetid: 7010e116-9daf-4e76-9a37-964ffde27ee6
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150522(v=EXCHG.150)
 ms:contentKeyID: 47560022
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about what's new in Outlook Web App in Exchange 2013.
 ---
 
 # What's new for Outlook Web App in Exchange 2013

@@ -5,12 +5,14 @@ ms:assetid: 8320e1a5-d3f5-4615-878d-b23e2aaa6b1e
 ms:mtpsurl: https://technet.microsoft.com/library/Bb123533(v=EXCHG.150)
 ms:contentKeyID: 49289327
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about output from commands in the Exchange Management Shell.
 ---
 
 # Working with command output

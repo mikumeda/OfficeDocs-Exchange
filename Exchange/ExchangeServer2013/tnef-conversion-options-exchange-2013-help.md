@@ -5,12 +5,14 @@ ms:assetid: 989a62fc-4bc1-448f-90c8-7c7b56fe1084
 ms:mtpsurl: https://technet.microsoft.com/library/Bb310786(v=EXCHG.150)
 ms:contentKeyID: 50934221
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the TNEF (Rich Text Format) message options in Exchange 2013.
 ---
 
 # TNEF conversion options

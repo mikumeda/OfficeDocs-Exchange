@@ -5,12 +5,14 @@ ms:assetid: 0ac0001c-b314-4108-b895-d9c0e271b489
 ms:mtpsurl: https://technet.microsoft.com/library/JJ619283(v=EXCHG.150)
 ms:contentKeyID: 49289156
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about what's discontinued in Exchange 2013 as compared to Exchange 2010 and Exchange 2007.
 ---
 
 # What's discontinued in Exchange 2013

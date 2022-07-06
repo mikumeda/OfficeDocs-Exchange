@@ -1,16 +1,18 @@
 ---
-title: 'Upgrade from Exchange 2010  to Exchange 2013: Exchange 2013 Help'
-TOCTitle: Upgrade from Exchange 2010  to Exchange 2013
+title: 'Upgrade from Exchange 2010 to Exchange 2013: Exchange 2013 Help'
+TOCTitle: Upgrade from Exchange 2010 to Exchange 2013
 ms:assetid: c0558850-d583-4c4e-a9a0-0d3593f84fcc
 ms:mtpsurl: https://technet.microsoft.com/library/JJ898583(v=EXCHG.150)
 ms:contentKeyID: 50874011
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: How to upgrade from Microsoft Exchange 2010 to Exchange 2013
 ---
 
 # Upgrade from Exchange 2010 to Exchange 2013

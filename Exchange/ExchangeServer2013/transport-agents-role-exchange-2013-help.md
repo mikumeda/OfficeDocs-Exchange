@@ -5,12 +5,14 @@ ms:assetid: 1679402e-158f-4630-8ef1-01ab5c7ce811
 ms:mtpsurl: https://technet.microsoft.com/library/Dd876853(v=EXCHG.150)
 ms:contentKeyID: 49289183
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the Transport Agents role in Exchange 2013.
 ---
 
 # Transport Agents role

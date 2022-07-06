@@ -5,12 +5,14 @@ ms:assetid: e7389d63-3172-40d5-bf53-0d7cd7e78340
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125012(v=EXCHG.150)
 ms:contentKeyID: 48385663
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the transport agents in Exchange 2013.
 ---
 
 # Transport agents

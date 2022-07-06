@@ -5,12 +5,14 @@ ms:assetid: d5c90eae-95c3-44b0-add5-a97337d17743
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657498(v=EXCHG.150)
 ms:contentKeyID: 49289423
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the WorkloadManagement role in Exchange 2013.
 ---
 
 # WorkloadManagement role
