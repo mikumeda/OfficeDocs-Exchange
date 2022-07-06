@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: "Information about the ApplicationImpersonation role."
 ---
 
 # ApplicationImpersonation role
