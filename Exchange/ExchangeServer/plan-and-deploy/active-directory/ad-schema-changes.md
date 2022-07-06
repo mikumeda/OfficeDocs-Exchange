@@ -1873,176 +1873,41 @@ The following global catalog attributes are added by Exchange 2016 RTM:
 
 ### Attributes modified by Exchange 2016 RTM
 
-This section contains the attributes modified in Exchange 2016 RTM. 
+This section contains the attributes modified in Exchange 2016 RTM.
 
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Change</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Exch-Configuration-Unit-Container</code></td>
-<td><code>rangeUpper</code></td>
-<td>15254</td>
-</tr>
-<tr>
-<td><code>Exch-Mailflow-Policy-Transport-Rules-Template-Xml</code></td>
-<td><code>rangeUpper</code></td>
-<td>256000</td>
-</tr>
-<tr>
-<td><code>Mail-Recipient</code></td>
-<td>Replace: <code>mayContain</code></td>
-<td><code>msExchUGMemberLink</code></td>
-</tr>
-<tr>
-<td><code>Ms-exch-schema-version-pt</code></td>
-<td><code>rangeUpper</code></td>
-<td>15292</td>
-</tr>
-<tr>
-<td><code>Top</code></td>
-<td>Replace: <code>mayContain</code></td>
-<td><code>msExchUGMemberBL</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-Accepted-Domain-Name</code></td>
-<td>replace: <code>searchFlags</code></td>
-<td>9</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Archive-GUID</code></td>
-<td>replace: <code>searchFlags</code></td>
-<td>9</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Bypass-Audit</code></td>
-<td>replace: <code>searchFlags</code></td>
-<td>19</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Coexistence-On-Premises-Smart-Host</code></td>
-<td><code>ntdsSchemaAdd</code></td>
-<td><code>attributeID: 1.2.840.113556.1.4.7000.102.51992 isMemberOfPartialAttributeSet: FALSE</code> (not in global catalog) <code>searchFlags: 0</code> (no index)</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Coexistence-Secure-Mail-Certificate-Thumbprint</code></td>
-<td><code>ntdsSchemaAdd</code></td>
-<td><code>attributeID: 1.2.840.113556.1.4.7000.102.51991 isMemberOfPartialAttributeSet: FALSE</code> (not in global catalog) <code>searchFlags: 0</code> (no index)</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Coexistence-Secure-Mail-Certificate-Thumbprintms-Exch-Sync-Cookie</code></td>
-<td><code>rangeUpper</code></td>
-<td>1024</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Coexistence-Transport-Servers</code></td>
-<td><code>ntdsSchemaAdd</code></td>
-<td><code>attributeID: 1.2.840.113556.1.4.7000.102.51990 isMemberOfPartialAttributeSet: FALSE</code> (not in global catalog) <code>searchFlags: 0</code> (no index)</td>
-</tr>
-<tr>
-<td><code>ms-Exch-ELC-Mailbox-Flags</code></td>
-<td>replace: <code>attributeSecurityGuid</code></td>
-<td><code>F6SzsVXskUGzJ7cuM+OK8g==</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-Extension-Custom-Attribute-1</code></td>
-<td><code>isMemberOfPartialAttributeSet:</code></td>
-<td><code>TRUE</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-Extension-Custom-Attribute-2</code></td>
-<td><code>isMemberOfPartialAttributeSet:</code></td>
-<td><code>TRUE</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-Extension-Custom-Attribute-3</code></td>
-<td><code>isMemberOfPartialAttributeSet:</code></td>
-<td><code>TRUE</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-Extension-Custom-Attribute-4</code></td>
-<td><code>isMemberOfPartialAttributeSet:</code></td>
-<td><code>TRUE</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-Extension-Custom-Attribute-5</code></td>
-<td><code>isMemberOfPartialAttributeSet</code></td>
-<td><code>TRUE</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-Group-External-Member-Count</code></td>
-<td><code>ntdsSchemaModify</code></td>
-<td><code>isMemberOfPartialAttributeSet: TRUE MAPIID:36066</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-Group-Member-Count</code></td>
-<td><code>ntdsSchemaModify</code></td>
-<td>replace: <code>isMemberOfPartialAttributeSetisMemberOfPartialAttributeSet: TRUE MAPIID: 36067</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-HAB-Root-DepaPreviewent-Link</code></td>
-<td>replace: <code>isMemberOfPartialAttributeSet</code></td>
-<td><code>TRUE</code></td>
-</tr>
-<tr>
-<td><code>ms-Exch-MSO-Forward-Sync-Non-Recipient-Cookie</code></td>
-<td><code>rangeUpper</code></td>
-<td>20480</td>
-</tr>
-<tr>
-<td><code>ms-Exch-MSO-Forward-Sync-Recipient-Cookie</code></td>
-<td><code>rangeUpper</code></td>
-<td>20480</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Mailbox-Audit-Enable</code></td>
-<td>replace: <code>searchFlags</code></td>
-<td>19</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Malware-Filtering-Update-Frequency</code></td>
-<td><code>rangeUpper</code></td>
-<td>`38880</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Role-Entries</code></td>
-<td><code>rangeUpper</code></td>
-<td>8192</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Schema-Version-Pt</code></td>
-<td><code>rangeUpper</code></td>
-<td>15137</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Schema-Version-Pt</code></td>
-<td><code>rangeUpper</code></td>
-<td>15281</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Smtp-Receive-Tls-Certificate-Name</code></td>
-<td>Replace: <code>rangeUpper</code></td>
-<td>1024</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Smtp-TLS-Certificate</code></td>
-<td>replace: <code>rangeUpper</code></td>
-<td>1024</td>
-</tr>
-<tr>
-<td><code>ms-Exch-Sync-Cookie</code></td>
-<td><code>rangeUpper</code></td>
-<td>262144</td>
-</tr>
-</tbody>
-</table>
-
-
+|Attribute|Change|Value|
+|---|---|---|
+|`Exch-Configuration-Unit-Container`|`rangeUpper`|15254|
+|`Exch-Mailflow-Policy-Transport-Rules-Template-Xml`|`rangeUpper`|256000|
+|`Mail-Recipient`|Replace: `mayContain`|`msExchUGMemberLink`|
+|`Ms-exch-schema-version-pt`|`rangeUpper`|15292|
+|`Top`|Replace: `mayContain`|`msExchUGMemberBL`|
+|`ms-Exch-Accepted-Domain-Name`|replace: `searchFlags`|9|
+|`ms-Exch-Archive-GUID`|replace: `searchFlags`|9|
+|`ms-Exch-Bypass-Audit`|replace: `searchFlags`|19|
+|`ms-Exch-Coexistence-On-Premises-Smart-Host`|`ntdsSchemaAdd`|`attributeID: 1.2.840.113556.1.4.7000.102.51992 isMemberOfPartialAttributeSet: FALSE` (not in global catalog) `searchFlags: 0` (no index)|
+|`ms-Exch-Coexistence-Secure-Mail-Certificate-Thumbprint`|`ntdsSchemaAdd`|`attributeID: 1.2.840.113556.1.4.7000.102.51991 isMemberOfPartialAttributeSet: FALSE` (not in global catalog) `searchFlags: 0` (no index)|
+|`ms-Exch-Coexistence-Secure-Mail-Certificate-Thumbprintms-Exch-Sync-Cookie`|`rangeUpper`|1024|
+|`ms-Exch-Coexistence-Transport-Servers`|`ntdsSchemaAdd`|`attributeID: 1.2.840.113556.1.4.7000.102.51990 isMemberOfPartialAttributeSet: FALSE` (not in global catalog) `searchFlags: 0` (no index)|
+|`ms-Exch-ELC-Mailbox-Flags`|replace: `attributeSecurityGuid`|`F6SzsVXskUGzJ7cuM+OK8g==`|
+|`ms-Exch-Extension-Custom-Attribute-1`|`isMemberOfPartialAttributeSet:`|`TRUE`|
+|`ms-Exch-Extension-Custom-Attribute-2`|`isMemberOfPartialAttributeSet:`|`TRUE`|
+|`ms-Exch-Extension-Custom-Attribute-3`|`isMemberOfPartialAttributeSet:`|`TRUE`|
+|`ms-Exch-Extension-Custom-Attribute-4`|`isMemberOfPartialAttributeSet:`|`TRUE`|
+|`ms-Exch-Extension-Custom-Attribute-5`|`isMemberOfPartialAttributeSet`|`TRUE`|
+|`ms-Exch-Group-External-Member-Count`|`ntdsSchemaModify`|`isMemberOfPartialAttributeSet: TRUE MAPIID:36066`|
+|`ms-Exch-Group-Member-Count`|`ntdsSchemaModify`|replace: `isMemberOfPartialAttributeSetisMemberOfPartialAttributeSet: TRUE MAPIID: 36067`|
+|`ms-Exch-HAB-Root-DepaPreviewent-Link`|replace: `isMemberOfPartialAttributeSet`|`TRUE`|
+|`ms-Exch-MSO-Forward-Sync-Non-Recipient-Cookie`|`rangeUpper`|20480|
+|`ms-Exch-MSO-Forward-Sync-Recipient-Cookie`|`rangeUpper`|20480|
+|`ms-Exch-Mailbox-Audit-Enable`|replace: `searchFlags`|19|
+|`ms-Exch-Malware-Filtering-Update-Frequency`|`rangeUpper`|38880|
+|`ms-Exch-Role-Entries`|`rangeUpper`|8192|
+|`ms-Exch-Schema-Version-Pt`|`rangeUpper`|15137|
+|`ms-Exch-Schema-Version-Pt`|`rangeUpper`|15281|
+|`ms-Exch-Smtp-Receive-Tls-Certificate-Name`|Replace: `rangeUpper`|1024|
+|`ms-Exch-Smtp-TLS-Certificate`|replace: `rangeUpper`|1024|
+|`ms-Exch-Sync-Cookie`|`rangeUpper`|262144|
 
 ### Object IDs added by Exchange 2016 RTM
 
