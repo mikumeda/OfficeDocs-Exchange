@@ -5,12 +5,14 @@ ms:assetid: a42c6643-67ed-4003-854a-ac1d66efb965
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150557(v=EXCHG.150)
 ms:contentKeyID: 47560083
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: An overview of the updated parameters in UM cmdlets in Exchange 2013.
 ---
 
 # Unified Messaging cmdlet updates in Exchange Server
@@ -23,97 +25,24 @@ Many of the Unified Messaging (UM) cmdlets that existed in Exchange Server 2010 
 
 The following is a list of the updated parameters and new cmdlets for Exchange 2013.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Cmdlet</th>
-<th>Parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>New-UMIPGateway</p></td>
-<td><p><code>[-IPAddressFamily &lt;IPv4Only | IPv6Only | Any&gt;]</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Set-UMIPGateway</p></td>
-<td><p><code>[-IPAddressFamily &lt;IPv4Only | IPv6Only | Any&gt;]</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Get-UMMailbox</p></td>
-<td><p><code>[-AccountPartition &lt;AccountPartitionIdParameter&gt;]</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Set-UMMailbox</p></td>
-<td><p><code>[-ImListMigrationCompleted &lt;$true | $false&gt; -VoiceMailAnalysisEnabled &lt;$true | $false&gt;]</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Test-Connectivity</p></td>
-<td><p><code>[-CallRouter &lt;SwitchParameter&gt;]</code></p></td>
-</tr>
-<tr class="even">
-<td><p>New-UMCallAnsweringRule</p></td>
-<td><p><code>[-Name &lt;String&gt; [-CallerIds &lt;MultiValuedProperty&gt;] [-CallersCanInterruptGreeting &lt;$true | $false&gt;] [-CheckAutomaticReplies &lt;$true | $false&gt;] [-Confirm [&lt;SwitchParameter&gt;]] [-DomainController &lt;Fqdn&gt;] [-ExtensionsDialed &lt;MultiValuedProperty&gt;] [-KeyMappings &lt;MultiValuedProperty&gt;] [-Mailbox &lt;MailboxIdParameter&gt;] [-Organization &lt;OrganizationIdParameter&gt;] [-Priority &lt;Int32&gt;] [-ScheduleStatus &lt;Int32&gt;] [-TimeOfDay &lt;TimeOfDay&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Remove-UMCallAnsweringRule</p></td>
-<td><p><code>[-Identity &lt;UMCallAnsweringRuleIdParameter&gt; [-Confirm [&lt;SwitchParameter&gt;]] [-DomainController &lt;Fqdn&gt;] [-Mailbox &lt;MailboxIdParameter&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Get-UMCallAnsweringRule</p></td>
-<td><p><code>[-Identity &lt;UMCallAnsweringRuleIdParameter&gt;] [-DomainController &lt;Fqdn&gt;] [-Mailbox &lt;MailboxIdParameter&gt;]</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Set-UMCallAnsweringRule</p></td>
-<td><p><code>[-Identity &lt;UMCallAnsweringRuleIdParameter&gt; [-CallerIds &lt;MultiValuedProperty&gt;] [-CallersCanInterruptGreeting &lt;$true | $false&gt;] [-CheckAutomaticReplies &lt;$true | $false&gt;] [-Confirm [&lt;SwitchParameter&gt;]] [-DomainController &lt;Fqdn&gt;] [-ExtensionsDialed &lt;MultiValuedProperty&gt;] [-KeyMappings &lt;MultiValuedProperty&gt;] [-Mailbox &lt;MailboxIdParameter&gt;] [-Name &lt;String&gt;] [-Priority &lt;Int32&gt;] [-ScheduleStatus &lt;Int32&gt;] [-TimeOfDay &lt;TimeOfDay&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Enable-UMCallAnsweringRule</p></td>
-<td><p><code>[-Identity &lt;UMCallAnsweringRuleIdParameter&gt; [-Confirm [&lt;SwitchParameter&gt;]] [-DomainController &lt;Fqdn&gt;] [-Mailbox &lt;MailboxIdParameter&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Disable-UMCallAnsweringRule</p></td>
-<td><p><code>[-Identity &lt;UMCallAnsweringRuleIdParameter&gt; [-Confirm [&lt;SwitchParameter&gt;]] [-DomainController &lt;Fqdn&gt;] [-Mailbox &lt;MailboxIdParameter&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Get-UMCallRouterSettings</p></td>
-<td><p><code>[-DomainController &lt;Fqdn&gt;] [-Server &lt;ServerIdParameter&gt;]</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Set-UMCallRouterSettings</p></td>
-<td><p><code>Set-UMCallRouterSettings [-Confirm [&lt;SwitchParameter&gt;]] [-DialPlans &lt;MultiValuedProperty&gt;] [-DomainController &lt;Fqdn&gt;] [-IPAddressFamily &lt;IPv4Only | IPv6Only | Any&gt;] [-IPAddressFamilyConfigurable &lt;$true | $false&gt;] [-Server &lt;ServerIdParameter&gt;] [-SipTcpListeningPort &lt;Int32&gt;] [-SipTlsListeningPort &lt;Int32&gt;] [-UMPodRedirectTemplate &lt;String&gt;] [-UMStartupMode &lt;TCP | TLS | Dual&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Disable-UMService</p></td>
-<td><p><code>-Identity &lt;UMServerIdParameter&gt; [-Confirm [&lt;SwitchParameter&gt;]] [-DomainController &lt;Fqdn&gt;] [-Immediate &lt;$true | $false&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p>
-
-> [!NOTE]
-> This cmdlet only works with Exchange 2007 and 2010 UM servers.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p>Enable-UMService</p></td>
-<td><p><code>-Identity &lt;UMServerIdParameter&gt; [-Confirm [&lt;SwitchParameter&gt;]] [-DomainController &lt;Fqdn&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p>
-
-> [!NOTE]
-> This cmdlet only works with Exchange 2007 and 2010 UM servers.
-
-</td>
-</tr>
-<tr class="even">
-<td><p>Get-UMService</p></td>
-<td><p><code>[-Identity &lt;UMServerIdParameter&gt;] [-DomainController &lt;Fqdn&gt;]</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Set-UMService</p></td>
-<td><p><code>Set-UMService -Identity &lt;UMServerIdParameter&gt; [-Confirm [&lt;SwitchParameter&gt;]] [-DialPlans &lt;MultiValuedProperty&gt;] [-DomainController &lt;Fqdn&gt;] [-GrammarGenerationSchedule &lt;ScheduleInterval[]&gt;] [-IPAddressFamily &lt;IPv4Only | IPv6Only | Any&gt;] [-IPAddressFamilyConfigurable &lt;$true | $false&gt;] [-IrmLogEnabled &lt;$true | $false&gt;] [-IrmLogMaxAge &lt;EnhancedTimeSpan&gt;] [-IrmLogMaxDirectorySize &lt;Unlimited&gt;] [-IrmLogMaxFileSize &lt;ByteQuantifiedSize&gt;] [-IrmLogPath &lt;LocalLongFullPath&gt;] [-MaxCallsAllowed &lt;Int32&gt;] [-SIPAccessService &lt;ProtocolConnectionSettings&gt;] [-UMStartupMode &lt;TCP | TLS | Dual&gt;] [-WhatIf [&lt;SwitchParameter&gt;]]</code></p></td>
-</tr>
-</tbody>
-</table>
+|Cmdlet|Parameters|
+|---|---|
+|New-UMIPGateway|`[-IPAddressFamily <IPv4Only | IPv6Only | Any>]`|
+|Set-UMIPGateway|`[-IPAddressFamily <IPv4Only | IPv6Only | Any>]`|
+|Get-UMMailbox|`[-AccountPartition <AccountPartitionIdParameter>]`|
+|Set-UMMailbox|`[-ImListMigrationCompleted <$true | $false> -VoiceMailAnalysisEnabled <$true | $false>]`|
+|Test-Connectivity|`[-CallRouter <SwitchParameter>]`|
+|New-UMCallAnsweringRule|`[-Name <String> [-CallerIds <MultiValuedProperty>] [-CallersCanInterruptGreeting <$true | $false>] [-CheckAutomaticReplies <$true | $false>] [-Confirm [<SwitchParameter>]] [-DomainController <Fqdn>] [-ExtensionsDialed <MultiValuedProperty>] [-KeyMappings <MultiValuedProperty>] [-Mailbox <MailboxIdParameter>] [-Organization <OrganizationIdParameter>] [-Priority <Int32>] [-ScheduleStatus <Int32>] [-TimeOfDay <TimeOfDay>] [-WhatIf [<SwitchParameter>]]`|
+|Remove-UMCallAnsweringRule|`[-Identity <UMCallAnsweringRuleIdParameter> [-Confirm [<SwitchParameter>]] [-DomainController <Fqdn>] [-Mailbox <MailboxIdParameter>] [-WhatIf [<SwitchParameter>]]`|
+|Get-UMCallAnsweringRule|`[-Identity <UMCallAnsweringRuleIdParameter>] [-DomainController <Fqdn>] [-Mailbox <MailboxIdParameter>]`|
+|Set-UMCallAnsweringRule|`[-Identity <UMCallAnsweringRuleIdParameter> [-CallerIds <MultiValuedProperty>] [-CallersCanInterruptGreeting <$true | $false>] [-CheckAutomaticReplies <$true | $false>] [-Confirm [<SwitchParameter>]] [-DomainController <Fqdn>] [-ExtensionsDialed <MultiValuedProperty>] [-KeyMappings <MultiValuedProperty>] [-Mailbox <MailboxIdParameter>] [-Name <String>] [-Priority <Int32>] [-ScheduleStatus <Int32>] [-TimeOfDay <TimeOfDay>] [-WhatIf [<SwitchParameter>]]`|
+|Enable-UMCallAnsweringRule|`[-Identity <UMCallAnsweringRuleIdParameter> [-Confirm [<SwitchParameter>]] [-DomainController <Fqdn>] [-Mailbox <MailboxIdParameter>] [-WhatIf [<SwitchParameter>]]`|
+|Disable-UMCallAnsweringRule|`[-Identity <UMCallAnsweringRuleIdParameter> [-Confirm [<SwitchParameter>]] [-DomainController <Fqdn>] [-Mailbox <MailboxIdParameter>] [-WhatIf [<SwitchParameter>]]`|
+|Get-UMCallRouterSettings|`[-DomainController <Fqdn>] [-Server <ServerIdParameter>]`|
+|Set-UMCallRouterSettings|`Set-UMCallRouterSettings [-Confirm [<SwitchParameter>]] [-DialPlans <MultiValuedProperty>] [-DomainController <Fqdn>] [-IPAddressFamily <IPv4Only | IPv6Only | Any>] [-IPAddressFamilyConfigurable <$true | $false>] [-Server <ServerIdParameter>] [-SipTcpListeningPort <Int32>] [-SipTlsListeningPort <Int32>] [-UMPodRedirectTemplate <String>] [-UMStartupMode <TCP | TLS | Dual>] [-WhatIf [<SwitchParameter>]]`|
+|Disable-UMService|`-Identity <UMServerIdParameter> [-Confirm [<SwitchParameter>]] [-DomainController <Fqdn>] [-Immediate <$true | $false>] [-WhatIf [<SwitchParameter>]]` <p> **Note**: This cmdlet only works with Exchange 2007 and 2010 UM servers.|
+|Enable-UMService|`-Identity <UMServerIdParameter> [-Confirm [<SwitchParameter>]] [-DomainController <Fqdn>] [-WhatIf [<SwitchParameter>]]` <p> **Note**: This cmdlet only works with Exchange 2007 and 2010 UM servers.|
+|Get-UMService|`[-Identity <UMServerIdParameter>] [-DomainController <Fqdn>]`|
+|Set-UMService|`Set-UMService -Identity <UMServerIdParameter> [-Confirm [<SwitchParameter>]] [-DialPlans <MultiValuedProperty>] [-DomainController <Fqdn>] [-GrammarGenerationSchedule <ScheduleInterval[]>] [-IPAddressFamily <IPv4Only | IPv6Only | Any>] [-IPAddressFamilyConfigurable <$true | $false>] [-IrmLogEnabled <$true | $false>] [-IrmLogMaxAge <EnhancedTimeSpan>] [-IrmLogMaxDirectorySize <Unlimited>] [-IrmLogMaxFileSize <ByteQuantifiedSize>] [-IrmLogPath <LocalLongFullPath>] [-MaxCallsAllowed <Int32>] [-SIPAccessService <ProtocolConnectionSettings>] [-UMStartupMode <TCP | TLS | Dual>] [-WhatIf [<SwitchParameter>]]`|
 
 For details about all UM cmdlets, see [Exchange PowerShell](/powershell/exchange/).

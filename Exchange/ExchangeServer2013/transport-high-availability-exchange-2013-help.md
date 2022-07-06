@@ -5,12 +5,14 @@ ms:assetid: e9ec6d05-f441-4cca-8592-8f7469948299
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657506(v=EXCHG.150)
 ms:contentKeyID: 49289447
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: An overview of transport high availability in Exchange 2013.
 ---
 
 # Transport high availability
@@ -21,23 +23,23 @@ In Microsoft Exchange Server 2013, transport high availability is responsible fo
 
 Here's a summary of the major transport high availability improvements in Exchange 2013:
 
-  - Shadow redundancy creates a redundant copy of the message on another server before the message is accepted or acknowledged. The sending server's support or lack of support for shadow redundancy is irrelevant.
+- Shadow redundancy creates a redundant copy of the message on another server before the message is accepted or acknowledged. The sending server's support or lack of support for shadow redundancy is irrelevant.
 
-  - Shadow redundancy recognizes both database availability groups (DAGs) and Active Directory sites as transport high availability boundaries. This reduces the number of servers that can hold redundant copies of messages, and eliminates unnecessary redundant message maintenance traffic across DAGs or Active Directory sites.
+- Shadow redundancy recognizes both database availability groups (DAGs) and Active Directory sites as transport high availability boundaries. This reduces the number of servers that can hold redundant copies of messages, and eliminates unnecessary redundant message maintenance traffic across DAGs or Active Directory sites.
 
-    For more information, see [Shadow redundancy](shadow-redundancy-exchange-2013-help.md).
+  For more information, see [Shadow redundancy](shadow-redundancy-exchange-2013-help.md).
 
-  - The transport dumpster has been improved and is now named *Safety Net*. Safety Net stores messages that were successfully processed by the Transport service on Mailbox servers. Safety Net works best for Mailbox servers in a DAG, but Safety Net also works for multiple Mailbox servers in the same Active Directory site that don't belong to a DAG.
+- The transport dumpster has been improved and is now named _Safety Net_. Safety Net stores messages that were successfully processed by the Transport service on Mailbox servers. Safety Net works best for Mailbox servers in a DAG, but Safety Net also works for multiple Mailbox servers in the same Active Directory site that don't belong to a DAG.
 
-  - Safety Net itself is now made redundant on another server. This is important to avoid a single point of failure in Exchange 2013, because the Transport service and the mailbox databases are both located on the Mailbox server.
+- Safety Net itself is now made redundant on another server. This is important to avoid a single point of failure in Exchange 2013, because the Transport service and the mailbox databases are both located on the Mailbox server.
 
-    For more information, see [Safety Net](safety-net-exchange-2013-help.md).
+  For more information, see [Safety Net](safety-net-exchange-2013-help.md).
 
 The following diagram provides a high-level overview of how transport high availability works in Exchange 2013.
 
 ![Transport high availability overview.](images/JJ657506.88f2284d-8afe-4c8f-94a6-cd4c097a55d8(EXCHG.150).gif "Transport high availability overview")
 
-1. An Exchange 2013 Mailbox server named Mailbox01 receives a message from an SMTP server that's outside the transport high availability boundary. The *transport high availability boundary* is a DAG or an Active Directory site in non-DAG environments. The message could come from a third-party SMTP server, from an Internet SMTP server proxied through a Client Access server, or from another Exchange 2013 server.
+1. An Exchange 2013 Mailbox server named Mailbox01 receives a message from an SMTP server that's outside the transport high availability boundary. The _transport high availability boundary_ is a DAG or an Active Directory site in non-DAG environments. The message could come from a third-party SMTP server, from an Internet SMTP server proxied through a Client Access server, or from another Exchange 2013 server.
 
 2. Before acknowledging receipt of the message, Mailbox01 initiates a new SMTP session to another Exchange 2013 Mailbox server named Mailbox03 that's within the Transport high availability boundary, and Mailbox03 makes a shadow copy of the message. In DAG environments, a shadow server in a remote Active Directory site is preferred. Mailbox01 is the primary server holding the primary message, and Mailbox03 is the shadow server holding the shadow message.
 

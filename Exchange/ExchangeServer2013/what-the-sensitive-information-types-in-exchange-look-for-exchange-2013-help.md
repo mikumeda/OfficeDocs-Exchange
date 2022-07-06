@@ -5,12 +5,14 @@ ms:assetid: 98b81f9c-87bb-4905-8e53-04621c3ae74d
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150541(v=EXCHG.150)
 ms:contentKeyID: 47560060
 ms.reviewer:
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about sensitive information types in DLP policies in Exchange 2013.
 ---
 
 # What the sensitive information types in Exchange 2013 look for
@@ -25,7 +27,7 @@ A sensitive information type is defined by a pattern that can be identified by a
 
 ### Format
 
-9 digits which may be in a formatted or unformatted pattern
+Nine digits, which may be in a formatted or unformatted pattern.
 
 ### Pattern
 
@@ -39,7 +41,7 @@ Formatted:
 
 Unformatted:
 
-- 9 consecutive digits beginning with 0, 1, 2, 3, 6, 7, or 8
+- Nine consecutive digits beginning with 0, 1, 2, 3, 6, 7, or 8
 
 ### Checksum
 
@@ -314,8 +316,8 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 - First digit is in the range 2-6
 - Ninth digit is a check digit
-- Tenth digit is the issue digit
-- Eleventh digit (optional) is the individual number
+- 10th digit is the issue digit
+- 11th digit (optional) is the individual number
 
 ### Checksum
 
@@ -538,11 +540,11 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
 ### Format
 
-Seven or twelve digits
+Seven or 12 digits
 
 ### Pattern
 
-A Canada Bank Account Number is seven or twelve digits.
+A Canada Bank Account Number is seven or 12 digits.
 
 A Canada bank account transit number is:
 
@@ -1044,7 +1046,7 @@ Yes
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
 
 - The function `Func_canadian_sin` finds content that matches the pattern.
-- At least two of any combination of the following:
+- At least two of any combination of the following items:
 
   - A keyword from **Keyword_sin** is found.
   - A keyword from **Keyword_sin_collaborative** is found.
@@ -1112,7 +1114,7 @@ Two letters followed by seven digits
 
 ### Pattern
 
-Pattern must include all of the following:
+Pattern must include all of the following items:
 
 - One letter (not case sensitive) from this set of possible letters: abcdefghjklmnprstux, which is a registrant code
 - One letter (not case sensitive), which is the first letter of the registrant's last name
@@ -1161,7 +1163,7 @@ Yes
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
 
 - The function `Func_eu_debit_card` finds content that matches the pattern.
-- At least one of the following is true:
+- At least one of the following statements is true:
 
   - A keyword from **Keyword_eu_debit_card** is found.
   - A keyword from **Keyword_card_terms_dict** is found.
@@ -1503,12 +1505,12 @@ Six digits plus a character indicating a century plus three digits plus a check 
 
 ### Pattern
 
-Pattern must include all of the following:
+Pattern must include all of the items:
 
-- Six digits in the format format DDMMYY which are a date of birth
+- Six digits in the format format DDMMYY, which are a date of birth
 - Century marker (either '-', '+' or 'a')
 - Three-digit personal identification number
-- A digit or letter (case insensitive) which is a check digit
+- A digit or letter (case insensitive), which is a check digit
 
 ### Checksum
 
@@ -1603,7 +1605,7 @@ No
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
 
 - The function `Func_french_drivers_license` finds content that matches the pattern.
-- At least one of the following is true:
+- At least one of the following statements is true:
 
   - A keyword from **Keyword_french_drivers_license** is found.
   - The function `Func_eu_date` finds a date in the right date format.
@@ -1829,7 +1831,7 @@ Yes
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
 
 - The function `Func_german_drivers_license` finds content that matches the pattern.
-- At least one of the following is true:
+- At least one of the followingstatements is true:
 
   - A keyword from **Keyword_german_drivers_license_number** is found.
   - A keyword from **Keyword_german_drivers_license_collaborative** is found.
@@ -1957,7 +1959,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 ### Pattern
 
-Pattern must include all of the following:
+Pattern must include all of the  items:
 
 - First character is a digit or a letter from this set (C, F, G, H, J, K)
 - Three digits
@@ -2045,7 +2047,7 @@ Country code (two letters) plus check digits (two digits) plus bban number (up t
 
 ### Pattern
 
-Pattern must include all of the following:
+Pattern must include all of the  items:
 
 - Two-letter country code
 - Two check digits (followed by an optional space)
@@ -2054,7 +2056,7 @@ Pattern must include all of the following:
 
 The format for each country is slightly different. The IBAN sensitive information type covers these 60 countries:
 
-ad, ae, al, at, az, ba, be, bg, bh, ch, cr, cy, cz, de, dk, do, ee, es, fi, fo, fr, gb, ge, gi, gl, gr, hr, hu, ie, il, is, it, kw, kz, lb, li, lt, lu, lv, mc, md, me, mk, mr, mt, mu, nl, no, pl, pt, ro, rs, sa, se, si, sk, sm, tn, tr, vg
+`ad, ae, al, at, az, ba, be, bg, bh, ch, cr, cy, cz, de, dk, do, ee, es, fi, fo, fr, gb, ge, gi, gl, gr, hr, hu, ie, il, is, it, kw, kz, lb, li, lt, lu, lv, mc, md, me, mk, mr, mt, mu, nl, no, pl, pt, ro, rs, sa, se, si, sk, sm, tn, tr, vg`
 
 ### Checksum
 
@@ -2085,11 +2087,11 @@ None
 
 IPv4:
 
-- Complex pattern which accounts for formatted (periods) and unformatted (no periods) versions of the IPv4 addresses.
+- Complex pattern, which accounts for formatted (periods) and unformatted (no periods) versions of the IPv4 addresses.
 
 IPv6:
 
-- Complex pattern which accounts for formatted IPv6 numbers (which include colons).
+- Complex pattern, which accounts for formatted IPv6 numbers (which include colons).
 
 ### Pattern
 
@@ -2316,7 +2318,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
 - The function `Func_jp_bank_account` finds content that matches the pattern.
 - A keyword from **Keyword_jp_bank_account**is found.
-- One of the following is true:
+- One of the following statements is true:
 
   - The function `Func_jp_bank_account_branch_code` finds content that matches the pattern.
   - A keyword from **Keyword_jp_bank_branch_code** is found.
@@ -2922,7 +2924,7 @@ No
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
 
 - The regular expression Regex_sweden_passport_number finds content that matches the pattern.
-- One of the following is true:
+- One of the following statements is true:
 
   - A keyword from **Keyword_passport** is found.
   - A keyword from **Keyword_sweden_passport** is found.
@@ -3227,7 +3229,7 @@ Yes
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
 
 - The function `Func_uk_nhs_number` finds content that matches the pattern.
-- One of the following is true:
+- One of the following statements is true:
 
   - A keyword from **Keyword_uk_nhs_number** is found.
   - A keyword from **Keyword_uk_nhs_number1** is found.
@@ -3276,7 +3278,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 
 ### Format
 
-7 characters or 9 characters separated by spaces or dashes
+Seven characters or nine characters separated by spaces or dashes
 
 ### Pattern
 
@@ -3653,7 +3655,7 @@ No
 A DLP policy is 85% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
 
 - The function `Func_formatted_itin` finds content that matches the pattern.
-- At least one of the following is true:
+- At least one of the following statements is true:
 
   - A keyword from **Keyword_itin** is found.
   - The function `Func_us_address` finds an address in the right date format.
@@ -3663,7 +3665,7 @@ A DLP policy is 85% confident that it's detected this type of sensitive informat
 A DLP policy is 75% confident that it's detected this type of sensitive information if, within a proximity of 300 characters:
 
 - The function `Func_unformatted_itin` finds content that matches the pattern.
-- At least one of the following is true:
+- At least one of the following statements is true:
 
   - A keyword from **Keyword_itin_collaborative** is found.
   - The function `Func_us_address` finds an address in the right date format.
@@ -3722,7 +3724,7 @@ A DLP policy is 75% confident that it's detected this type of sensitive informat
 
 ### Format
 
-9 digits, which may be in a formatted or unformatted pattern
+Nine digits, which may be in a formatted or unformatted pattern
 
 > [!NOTE]
 > If issued before mid-2011, an SSN has strong formatting where certain parts of the number must fall within certain ranges to be valid (but there's no checksum).
