@@ -1901,7 +1901,7 @@ This section contains the attributes modified in Exchange 2016 RTM.
 |`ms-Exch-MSO-Forward-Sync-Non-Recipient-Cookie`|`rangeUpper`|20480|
 |`ms-Exch-MSO-Forward-Sync-Recipient-Cookie`|`rangeUpper`|20480|
 |`ms-Exch-Mailbox-Audit-Enable`|replace: `searchFlags`|19|
-|`ms-Exch-Malware-Filtering-Update-Frequency`|`rangeUpper`|`38880|
+|`ms-Exch-Malware-Filtering-Update-Frequency`|`rangeUpper`|38880|
 |`ms-Exch-Role-Entries`|`rangeUpper`|8192|
 |`ms-Exch-Schema-Version-Pt`|`rangeUpper`|15137|
 |`ms-Exch-Schema-Version-Pt`|`rangeUpper`|15281|

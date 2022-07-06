@@ -124,7 +124,8 @@ You can download the OWA for iPhone and OWA for iPad apps from the Apple App Sto
 
 To learn more about OWA for iPhone and OWA for iPad, see [OWA for iPhone and OWA for iPad](https://support.microsoft.com/office/7edbf8c6-1a0e-4be8-a374-2809e754eaaf).
 
-|**Device**|**OS version required**|
+|Device|OS version required|
+|---|---|
 |iPhone 4S, iPhone 5, iPhone 5c or iPhone 5s. This app is optimized for iPhone 5.|iOS 6 or later versions|
 |iPad Wi-Fi (3rd generation), iPad Wi-Fi + Cellular (3rd generation), iPad Wi-Fi (4th generation), iPad Wi-Fi + Cellular (4th generation), iPad mini Wi-Fi, iPad mini Wi-Fi + Cellular, iPad Air, iPad Air Wi-Fi + Cellular, iPad mini with Retina display, iPad mini with Retina display Wi-Fi + Cellular|iOS 6 or later versions|
 
