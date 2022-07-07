@@ -25,7 +25,7 @@ Getting an error message that means the mail you sent wasn't delivered is frustr
 
 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 |---|---|---|---|
-|![Email user icon.](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How do I fix this email delivery issue?](#im-an-email-admin-how-do-i-fix-this)|
+|![Email user icon.](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How do I fix this email delivery issue?](#im-an-email-admin-how-do-i-fix-this-email-delivery-issue)|
 
 ## What is 550 5.1.8 and why did I get this bounce message?
 

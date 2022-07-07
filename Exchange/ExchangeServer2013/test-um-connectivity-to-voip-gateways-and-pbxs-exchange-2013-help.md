@@ -5,12 +5,14 @@ ms:assetid: 2aca8631-a99a-4e29-aff0-e462385f03b2
 ms:mtpsurl: https://technet.microsoft.com/library/Aa996906(v=EXCHG.150)
 ms:contentKeyID: 55129209
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Procedures to test UM connectivity to VoIP gateways and PBXs in Exchange 2013.
 ---
 
 # Test UM connectivity to VoIP gateways and PBXs in Exchange Server

@@ -5,12 +5,14 @@ ms:assetid: df35765a-0bef-4561-9846-d91d69c0269c
 ms:mtpsurl: https://technet.microsoft.com/library/JJ863440(v=EXCHG.150)
 ms:contentKeyID: 50387725
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn how to permanently delete mailboxes in Exchange 2013.
 ---
 
 # Permanently delete a mailbox
@@ -60,7 +62,7 @@ Remove-Mailbox -Identity <identity> -Permanent $true
 
 For detailed syntax and parameter information, see [Remove-Mailbox](/powershell/module/exchange/Remove-Mailbox).
 
-## How do you know this worked?
+## How do know you've permanently deleted an active mailbox?
 
 To verify that you've permanently deleted an active mailbox, do the following:
 
@@ -122,7 +124,7 @@ Get-MailboxStatistics -Database MBD01 | where {$_.DisconnectReason -eq "SoftDele
 
 For detailed syntax and parameter information, see [Remove-StoreMailbox](/powershell/module/exchange/Remove-StoreMailbox) and [Get-MailboxStatistics](/powershell/module/exchange/Get-MailboxStatistics).
 
-## How do you know this worked?
+## How do you know you've permanently deleted a disconnected mailbox?
 
 To verify that you've permanently deleted a disconnected mailbox and that it was successfully purged from the Exchange mailbox database, replace _\<DisplayName\>_ with the display name of the mailbox, and run the following commands.
 
