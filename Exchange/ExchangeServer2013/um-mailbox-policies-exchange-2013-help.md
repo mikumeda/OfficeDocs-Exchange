@@ -5,10 +5,12 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
 ms.assetid: dfae629e-ee89-4494-a3ed-9655b67eb87e
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about UM mailbox policies in Exchange 2013.
 ---
 
 # UM mailbox policies in Exchange Server

@@ -5,12 +5,14 @@ ms:assetid: 8320e1a5-d3f5-4615-878d-b23e2aaa6b1e
 ms:mtpsurl: https://technet.microsoft.com/library/Bb123533(v=EXCHG.150)
 ms:contentKeyID: 49289327
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about output from commands in the Exchange Management Shell.
 ---
 
 # Working with command output
@@ -43,11 +45,11 @@ If you call formatting cmdlets at the end of the pipeline, you can override the 
 
 ## Format-List
 
-The **Format-List** cmdlet takes input from the pipeline and outputs a vertical columned list of all the specified properties of each object. You can specify which properties you want to display by using the *Property* parameter. If the **Format-List** cmdlet is called without any parameters specified, all properties are output. The **Format-List** cmdlet wraps lines instead of truncating them. One of the best uses for the **Format-List** cmdlet is to override the default output of a cmdlet so that you can retrieve additional or more focused information.
+The **Format-List** cmdlet takes input from the pipeline and outputs a vertical columned list of all the specified properties of each object. You can specify which properties you want to display by using the _Property_ parameter. If the **Format-List** cmdlet is called without any parameters specified, all properties are output. The **Format-List** cmdlet wraps lines instead of truncating them. One of the best uses for the **Format-List** cmdlet is to override the default output of a cmdlet so that you can retrieve additional or more focused information.
 
 For example, when you call the **Get-Mailbox** cmdlet, you only see a limited amount of information in table format. If you pipe the output of the **Get-Mailbox** cmdlet to the **Format-List** cmdlet and add parameters for the additional or more focused information that you want to view, you can retrieve the output that you want.
 
-You can also specify a wildcard character "\*" with a partial property name. If you include a wildcard character, you can match multiple properties without having to type each property name individually. For example, `Get-Mailbox | Format-List -Property Email* `returns all properties that begin with `Email`.
+You can also specify a wildcard character "\*" with a partial property name. If you include a wildcard character, you can match multiple properties without having to type each property name individually. For example, `Get-Mailbox | Format-List -Property Email*` returns all properties that begin with `Email`.
 
 The following examples show the different ways that you can view the same data returned by the **Get-Mailbox** cmdlet.
 
@@ -81,7 +83,7 @@ EmailAddressPolicyEnabled : True
 
 In the last example, the output of the **Get-Mailbox** cmdlet is piped to the **Format-List** cmdlet as in the second example. However, in the last example, a wildcard character is used to match all properties that start with `Email`.
 
-If more than one object is passed to the **Format-List** cmdlet, all specified properties for an object are displayed and grouped by object. The display order depends on the default parameter for the cmdlet. The default parameter is most frequently the *Name* parameter or the *Identity* parameter. For example, when the **Get-Childitem** cmdlet is called, the default display order is file names in alphabetical order. To change this behavior, you must call the **Format-List** cmdlet, together with the *GroupBy* parameter, and the name of a property value by which you want to group the output. For example, the following command lists all files in a directory and then groups these files by extension.
+If more than one object is passed to the **Format-List** cmdlet, all specified properties for an object are displayed and grouped by object. The display order depends on the default parameter for the cmdlet. The default parameter is most frequently the _Name_ parameter or the _Identity_ parameter. For example, when the **Get-Childitem** cmdlet is called, the default display order is file names in alphabetical order. To change this behavior, you must call the **Format-List** cmdlet, together with the _GroupBy_ parameter, and the name of a property value by which you want to group the output. For example, the following command lists all files in a directory and then groups these files by extension.
 
 ```powershell
 Get-Childitem | Format-List Name,Length -GroupBy Extension
@@ -111,15 +113,15 @@ Name   : Text_02.txt
 Length : 9835
 ```
 
-In this example, the **Format-List** cmdlet has grouped the items by the *Extension* property that is specified by the *GroupBy* parameter. You can use the *GroupBy* parameter with any valid property for the objects in the pipeline stream.
+In this example, the **Format-List** cmdlet has grouped the items by the _Extension_ property that is specified by the _GroupBy_ parameter. You can use the _GroupBy_ parameter with any valid property for the objects in the pipeline stream.
 
 ## Format-Table
 
-The **Format-Table** cmdlet lets you display items in a table format with label headers and columns of property data. By default, many cmdlets, such as the **Get-Process** and **Get-Service** cmdlets, use the table format for output. Parameters for the **Format-Table** cmdlet include the *Properties* and *GroupBy* parameters. These parameters work exactly as they do with the **Format-List** cmdlet.
+The **Format-Table** cmdlet lets you display items in a table format with label headers and columns of property data. By default, many cmdlets, such as the **Get-Process** and **Get-Service** cmdlets, use the table format for output. Parameters for the **Format-Table** cmdlet include the _Properties_ and _GroupBy_ parameters. These parameters work exactly as they do with the **Format-List** cmdlet.
 
-The **Format-Table** cmdlet also uses the *Wrap* parameter. This parameter enables long lines of property information to display completely instead of truncating at the end of a line. To see how the *Wrap* parameter is used to display returned information, compare the output of the **Get-Command** command in the following two examples.
+The **Format-Table** cmdlet also uses the _Wrap_ parameter. This parameter enables long lines of property information to display completely instead of truncating at the end of a line. To see how the _Wrap_ parameter is used to display returned information, compare the output of the **Get-Command** command in the following two examples.
 
-In the first example, when the **Get-Command** cmdlet is used to display command information about the **Get-Process** cmdlet, the information for the *Definition* property is truncated.
+In the first example, when the **Get-Command** cmdlet is used to display command information about the **Get-Process** cmdlet, the information for the _Definition_ property is truncated.
 
 ```powershell
 Get-Command Get-Process | Format-Table Name,Definition
@@ -129,7 +131,7 @@ Name                                    Definition
 get-process                             get-process [[-ProcessName] String[]...
 ```
 
-In the second example, the *Wrap* parameter is added to the command to force the complete contents of the *Definition* property to display.
+In the second example, the _Wrap_ parameter is added to the command to force the complete contents of the _Definition_ property to display.
 
 ```powershell
 Get-Command Get-Process | Format-Table Name,Definition -Wrap
@@ -188,7 +190,7 @@ Text_10.txt                             Text_11.txt
 Text_12.txt
 ```
 
-Generally, calling the **Get-Childitem** cmdlet without any parameters displays the names of all files in the directory in a table of properties. In this example, by piping the output of the **Get-Childitem** cmdlet to the **Format-Wide** cmdlet, the output was displayed in two columns of names. Notice that only one property type can be displayed at a time, specified by a property name that follows the **Format-Wide** cmdlet. If you add the *Autosize* parameter, the output is changed from two columns to as many columns as can fit the screen width.
+Generally, calling the **Get-Childitem** cmdlet without any parameters displays the names of all files in the directory in a table of properties. In this example, by piping the output of the **Get-Childitem** cmdlet to the **Format-Wide** cmdlet, the output was displayed in two columns of names. Notice that only one property type can be displayed at a time, specified by a property name that follows the **Format-Wide** cmdlet. If you add the _Autosize_ parameter, the output is changed from two columns to as many columns as can fit the screen width.
 
 ```powershell
 Get-ChildItem | Format-Wide -AutoSize
@@ -203,7 +205,7 @@ Text_06.txt     Text_07.txt     Text_08.txt     Text_09.txt     Text_10.txt
 Text_11.txt     Text_12.txt
 ```
 
-In this example, the table is arranged in five columns, instead of two columns. The *Column* parameter offers more control by letting you specify the maximum number of columns to display information as follows:
+In this example, the table is arranged in five columns, instead of two columns. The _Column_ parameter offers more control by letting you specify the maximum number of columns to display information as follows:
 
 ```powershell
 Get-ChildItem | Format-Wide -Column 4
@@ -219,7 +221,7 @@ Text_06.txt         Text_07.txt         Text_08.txt         Text_09.txt
 Text_10.txt         Text_11.txt         Text_12.txt
 ```
 
-In this example, the number of columns is forced to four by using the *Column* parameter.
+In this example, the number of columns is forced to four by using the _Column_ parameter.
 
 ## How to output data
 
@@ -263,7 +265,7 @@ $Ie
 To use this script, save it to the `C:\Program Files\Microsoft\Exchange Server\V15\Scripts` directory on the computer where the script will be run. Name the file `Out-Ie.ps1`. After you save the file, you can then use the script as a regular cmdlet.
 
 > [!NOTE]
-> To run scripts in Exchange 2013, scripts must be added to an unscoped management role and you must be assigned the management role either directly or through a management role group. For more information, see <A href="understanding-management-roles-exchange-2013-help.md">Understanding management roles</A>.
+> To run scripts in Exchange 2013, scripts must be added to an unscoped management role and you must be assigned the management role either directly or through a management role group. For more information, see [Understanding management roles](understanding-management-roles-exchange-2013-help.md).
 
 The `Out-Ie` script assumes that the data it receives is valid HTML. To convert the data that you want to view into HTML, you must pipe the results of your command to the **ConvertTo-Html** cmdlet. You can then pipe the results of that command to the `Out-Ie` script. The following example shows how to view a directory listing in an Internet Explorer window:
 
@@ -285,59 +287,14 @@ The Shell gives you access to a large quantity of information about your servers
 
 The implementation of server-side filtering is specific to the cmdlet on which it is supported. Server-side filtering is enabled only on specific properties on the objects that are returned. For more information, see the Help for the following cmdlets:
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Get-ActiveSyncDevice</p></td>
-<td><p>Get-ActiveSyncDeviceClass</p></td>
-<td><p>Get-CASMailbox</p></td>
-<td><p>Get-Contact</p></td>
-<td><p>Get-DistributionGroup</p></td>
-</tr>
-<tr class="even">
-<td><p>Get-DynamicDistributionGroup</p></td>
-<td><p>Get-Group</p></td>
-<td><p>Get-Mailbox</p></td>
-<td><p>Get-MailboxStatistics</p></td>
-<td><p>Get-MailContact</p></td>
-</tr>
-<tr class="odd">
-<td><p>Get-MailPublicFolder</p></td>
-<td><p>Get-MailUser</p></td>
-<td><p>Get-Message</p></td>
-<td><p>Get-MobileDevice</p></td>
-<td><p>Get-Queue</p></td>
-</tr>
-<tr class="even">
-<td><p>Get-QueueDigest</p></td>
-<td><p>Get-Recipient</p></td>
-<td><p>Get-RemoteMailbox</p></td>
-<td><p>Get-RoleGroup</p></td>
-<td><p>Get-SecurityPrincipal</p></td>
-</tr>
-<tr class="odd">
-<td><p>Get-StoreUsageStatistics</p></td>
-<td><p>Get-UMMailbox</p></td>
-<td><p>Get-User</p></td>
-<td><p>Get-UserPhoto</p></td>
-<td><p>Remove-Message</p></td>
-</tr>
-<tr class="even">
-<td><p>Resume-Message</p></td>
-<td><p>Resume-Queue</p></td>
-<td><p>Retry-Queue</p></td>
-<td><p>Suspend-Message</p></td>
-<td><p>Suspend-Queue</p></td>
-</tr>
-</tbody>
-</table>
+|&nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;|
+|---|---|---|---|---|
+|**Get-ActiveSyncDevice**|**Get-ActiveSyncDeviceClass**|**Get-CASMailbox**|**Get-Contact**|**Get-DistributionGroup**|
+|**Get-DynamicDistributionGroup**|**Get-Group**|**Get-Mailbox**|**Get-MailboxStatistics**|**Get-MailContact**|
+|**Get-MailPublicFolder**|**Get-MailUser**|**Get-Message**|**Get-MobileDevice**|**Get-Queue**|
+|**Get-QueueDigest**|**Get-Recipient**|**Get-RemoteMailbox**|**Get-RoleGroup**|**Get-SecurityPrincipal**|
+|**Get-StoreUsageStatistics**|**Get-UMMailbox**|**Get-User**|**Get-UserPhoto**|**Remove-Message**|
+|**Resume-Message**|**Resume-Queue**|**Retry-Queue**|**Suspend-Message**|**Suspend-Queue**|
 
 ## Client-side filtering
 
@@ -360,40 +317,13 @@ The **Get-Alias** cmdlet and the **Where** command work together to return the l
 
 ### Elements of the Where command
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Element</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><code>{ }</code></p></td>
-<td><p>Braces enclose the script block that defines the filter.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>$_</code></p></td>
-<td><p>This special variable automatically initiates and binds to the objects in the pipeline.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>Definition</code></p></td>
-<td><p>The <code>Definition</code> property is the property of the current pipeline objects that stores the name of the alias definition. When <code>Definition</code> is used with the <code>$_</code> variable, a period comes before the property name.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>-eq</code></p></td>
-<td><p>This comparison operator for "equal to" is used to specify that the results must exactly match the property value that is supplied in the expression.</p></td>
-</tr>
-<tr class="odd">
-<td><p>&quot;<strong>Clear-Host</strong>&quot;</p></td>
-<td><p>In this example, &quot;<strong>Clear-Host</strong>&quot; is the value for which the command is parsing.</p></td>
-</tr>
-</tbody>
-</table>
+|Element|Description|
+|---|---|
+|`{ }`|Braces enclose the script block that defines the filter.|
+|`$_`|This special variable automatically initiates and binds to the objects in the pipeline.|
+|`Definition`|The `Definition` property is the property of the current pipeline objects that stores the name of the alias definition. When `Definition` is used with the `$_` variable, a period comes before the property name.|
+|`-eq`|This comparison operator for "equal to" is used to specify that the results must exactly match the property value that is supplied in the expression.|
+|"**Clear-Host**"|In this example, "**Clear-Host**" is the value for which the command is parsing.|
 
 In the example, the objects that are returned by the **Get-Alias** cmdlet represent all the defined aliases on the system. Even though you don't see them from the command line, the aliases are collected and passed to the **Where** cmdlet through the pipeline. The **Where** cmdlet uses the information in the script block to apply a filter to the alias objects.
 

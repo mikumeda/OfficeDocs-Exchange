@@ -6,12 +6,14 @@ ms:assetid: 2b709e15-63a2-4841-94bc-b289b71166d0
 ms:mtpsurl: https://technet.microsoft.com/library/Dd638106(v=EXCHG.150)
 ms:contentKeyID: 49289207
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the split permissions model in Exchange 2013.
 ---
 
 # Understanding split permissions
@@ -60,31 +62,10 @@ The shared permissions model is the default model for Exchange 2013. You don't n
 
 The following table shows the roles that enable the creation of security principals in Exchange and the management role groups they're assigned to by default.
 
-### Security principal management roles
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Management role</th>
-<th>Role group</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="mail-recipient-creation-role-exchange-2013-help.md">Mail Recipient Creation role</a></p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="security-group-creation-and-membership-role-exchange-2013-help.md">Security Group Creation and Membership role</a></p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Management role|Role group|
+|---|---|
+|[Mail Recipient Creation role](mail-recipient-creation-role-exchange-2013-help.md)|[Organization Management](organization-management-exchange-2013-help.md) <p> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|[Security Group Creation and Membership role](security-group-creation-and-membership-role-exchange-2013-help.md)|[Organization Management](organization-management-exchange-2013-help.md)|
 
 Only role groups, users, or USGs that are assigned the Mail Recipient Creation role can create security principals such as Active Directory users. By default, the Organization Management and Recipient Management role groups are assigned this role. Therefore members of these role groups can create security principals.
 
@@ -141,33 +122,14 @@ RBAC split permissions is a good choice for your organization if the following a
 
 If your organization requires a complete separation of Exchange and Active Directory administration where no Active Directory administration can be performed using Exchange management tools or by Exchange services, see the Active Directory Split Permissions section later in this topic.
 
-Switching from shared permissions to RBAC split permissions is a manual process where you remove the permissions required to create security principals from the role groups that are granted them by default. The following table shows the roles that enable the creation of security principals in Exchange and the management role groups they're assigned to by default.
+Switching from shared permissions to RBAC split permissions is a manual process where you remove the permissions required to create security principals from the role groups that are granted them by default.
 
-### Security principal management roles
+The following table shows the roles that enable the creation of security principals in Exchange and the management role groups they're assigned to by default.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Management role</th>
-<th>Role group</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="mail-recipient-creation-role-exchange-2013-help.md">Mail Recipient Creation role</a></p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="security-group-creation-and-membership-role-exchange-2013-help.md">Security Group Creation and Membership role</a></p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Management role|Role group|
+|---|---|
+|[Mail Recipient Creation role](mail-recipient-creation-role-exchange-2013-help.md)|[Organization Management](organization-management-exchange-2013-help.md) <p> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|[Security Group Creation and Membership role](security-group-creation-and-membership-role-exchange-2013-help.md)|[Organization Management](organization-management-exchange-2013-help.md)|
 
 By default, members of the Organization Management and Recipient Management role groups can create security principals. You must transfer the ability to create security principals from the built-in role groups to a new role group that you create.
 
@@ -188,19 +150,12 @@ To configure RBAC split permissions, you must do the following:
 After doing this, only members of the new role group that you create will be able to create security principals, such as mailboxes. The new group will only be able to create the objects. It won't be able to configure the Exchange attributes on the new object. An Active Directory administrator, who is a member of the new group, will need to create the object, and then an Exchange administrator will need to configure the Exchange attributes on the object. Exchange administrators won't be able to use the following cmdlets:
 
 - **New-Mailbox**
-
 - **New-MailContact**
-
 - **New-MailUser**
-
 - **New-RemoteMailbox**
-
 - **Remove-Mailbox**
-
 - **Remove-MailContact**
-
 - **Remove-MailUser**
-
 - **Remove-RemoteMailbox**
 
 Exchange administrators will, however, be able to create and manage Exchange-specific objects, such as transport rules, distribution groups, and so on and manage Exchange-related attributes on any object.
@@ -236,10 +191,15 @@ Active Directory split permissions is a good choice for your organization if the
 - You don't want Exchange servers, or third-party programs that use Exchange on their behalf, to create security principals.
 
 > [!IMPORTANT]
-> Switching to Active Directory split permissions is a choice that you can make when you install Exchange 2013 either by using the Setup wizard or by using the <EM>ActiveDirectorySplitPermissions</EM> parameter while running <CODE>setup.exe</CODE> from the command line. You can also enable or disable Active Directory split permissions after you've installed Exchange 2013 by rerunning <CODE>setup.exe</CODE> from the command line. To enable Active Directory split permissions, set the <EM>ActiveDirectorySplitPermissions</EM> parameter to <CODE>true</CODE>. To disable it, set it to <CODE>false</CODE>. You must always specify the <EM>PrepareAD</EM> switch along with the <EM>ActiveDirectorySplitPermissions</EM> parameter.<BR>If you have multiple domains within the same forest, you must also either specify the <EM>PrepareAllDomains</EM> switch when you apply Active Directory split permissions or run setup with the <EM>PrepareDomain</EM> switch in each domain. If you choose to run setup with the <EM>PrepareDomain</EM> switch in each domain rather than use the <EM>PrepareAllDomains</EM> switch, you must prepare every domain that contains Exchange servers, mail-enabled objects, or global catalog servers that could be accessed by an Exchange server.
-
-> [!IMPORTANT]
-> You can't enable Active Directory split permissions if you've installed Exchange 2010 or Exchange 2013 on a domain controller.<BR>After you enable or disable Active Directory split permissions, we recommend that you restart the Exchange 2010 and Exchange 2013 servers in your organization to force them to pick up the new Active Directory access token with the updated permissions.
+> Switching to Active Directory split permissions is a choice that you can make when you install Exchange 2013 either by using the Setup wizard or by using the _ActiveDirectorySplitPermissions_ parameter while running `setup.exe` from the command line. You can also enable or disable Active Directory split permissions after you've installed Exchange 2013 by rerunning `setup.exe` from the command line.
+>
+> To enable Active Directory split permissions, set the _ActiveDirectorySplitPermissions_ parameter to `true`. To disable it, set it to `false`. You must always specify the _PrepareAD_ switch along with the _ActiveDirectorySplitPermissions_ parameter.
+>
+> If you have multiple domains within the same forest, you must also either specify the _PrepareAllDomains_ switch when you apply Active Directory split permissions or run setup with the _PrepareDomain_ switch in each domain. If you choose to run setup with the _PrepareDomain_ switch in each domain rather than use the _PrepareAllDomains_ switch, you must prepare every domain that contains Exchange servers, mail-enabled objects, or global catalog servers that could be accessed by an Exchange server.
+>
+> You can't enable Active Directory split permissions if you've installed Exchange 2010 or Exchange 2013 on a domain controller.
+>
+> After you enable or disable Active Directory split permissions, we recommend that you restart the Exchange 2010 and Exchange 2013 servers in your organization to force them to pick up the new Active Directory access token with the updated permissions.
 
 Exchange 2013 achieves Active Directory split permissions by removing permissions and membership from the Exchange Windows Permissions security group. This security group, in shared permissions and RBAC split permissions, is given permissions to many non-Exchange objects and attributes throughout Active Directory. By removing the permissions and membership to this security group, Exchange administrators and services are prevented from creating or modifying those non-Exchange Active Directory objects.
 
@@ -250,106 +210,29 @@ For a list of changes that occur to the Exchange Windows Permissions security gr
 
 ### Active Directory split permissions changes
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Action</th>
-<th>Changes made by Exchange</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Enable Active Directory split permissions during first Exchange 2013 server installation</p></td>
-<td><p>The following happens when you enable Active Directory split permissions either through the Setup wizard or by running <code>setup.exe</code> with the <code>/PrepareAD</code> and <code>/ActiveDirectorySplitPermissions:true</code> parameters:</p>
-<ul>
-<li><p>An organizational unit (OU) called <strong>Microsoft Exchange Protected Groups</strong> is created.</p></li>
-<li><p>The <strong>Exchange Windows Permissions</strong> security group is created in the <strong>Microsoft Exchange Protected Groups</strong> OU.</p></li>
-<li><p>The <strong>Exchange Trusted Subsystem</strong> security group isn't added to the <strong>Exchange Windows Permissions</strong> security group.</p></li>
-<li><p>Creation of non-delegating management role assignments to management roles with the following management role types is skipped:</p>
-<ul>
-<li><p><code>MailRecipientCreation</code></p></li>
-<li><p><code>SecurityGroupCreationandMembership</code></p></li>
-</ul></li>
-<li><p>Access control entries (ACEs) that would have been assigned to the <strong>Exchange Windows Permissions</strong> security group aren't added to the Active Directory domain object.</p></li>
-</ul>
-<p>If you run setup with the <em>PrepareAllDomains</em> or <em>PrepareDomain</em> switch, the following happens in each child domain that's prepared:</p>
-<ul>
-<li><p>All ACEs assigned to the <strong>Exchange Windows Permissions</strong> security group are removed from the domain object.</p></li>
-<li><p>ACEs are set in each domain with the exception of any ACEs assigned to the <strong>Exchange Windows Permissions</strong> security group.</p></li>
-</ul>
-<p></p></td>
-</tr>
-<tr class="even">
-<td><p>Switch from shared permissions or RBAC split permissions to Active Directory split permissions</p></td>
-<td><p>The following happens when you run the <code>setup.exe</code> command with the <code>/PrepareAD</code> and <code>/ActiveDirectorySplitPermissions:true</code> parameters:</p>
-<ul>
-<li><p>An OU called <strong>Microsoft Exchange Protected Groups</strong> is created.</p></li>
-<li><p>The <strong>Exchange Windows Permissions</strong> security group is moved to the <strong>Microsoft Exchange Protected</strong> Groups OU.</p></li>
-<li><p>The <strong>Exchange Trusted Subsystem</strong> security group is removed from the <strong>Exchange Windows Permissions</strong> security group.</p></li>
-<li><p>Any non-delegating role assignments to management roles with the following role types are removed:</p>
-<ul>
-<li><p><code>MailRecipientCreation</code></p></li>
-<li><p><code>SecurityGroupCreationandMembership</code></p></li>
-</ul></li>
-<li><p>All ACEs assigned to the <strong>Exchange Windows Permissions</strong> security group are removed from the domain object.</p></li>
-</ul>
-<p>If you run setup with either the <em>PrepareAllDomains</em> or <em>PrepareDomain</em> switch, the following happens in each child domain that's prepared:</p>
-<ul>
-<li><p>All ACEs assigned to the <strong>Exchange Windows Permissions</strong> security group are removed from the domain object.</p></li>
-<li><p>ACEs are set in each domain with the exception of any ACEs assigned to the <strong>Exchange Windows Permissions</strong> security group.</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Switch from Active Directory split permissions to shared permissions or RBAC split permissions</p></td>
-<td><p>The following happens when you run the <code>setup.exe</code> command with the <code>/PrepareAD</code> and <code>/ActiveDirectorySplitPermissions:false</code> parameters:</p>
-<ul>
-<li><p>The <strong>Exchange Windows Permissions</strong> security group is moved to the <strong>Microsoft Exchange Security Groups</strong> OU.</p></li>
-<li><p>The <strong>Microsoft Exchange Protected Groups</strong> OU is removed.</p></li>
-<li><p>The <strong>Exchange Trusted Subsystems</strong> security group is added to the <strong>Exchange Windows Permissions</strong> security group.</p></li>
-<li><p>ACEs are added to the domain object for the <strong>Exchange Windows Permissions</strong> security group.</p></li>
-</ul>
-<p>If you run setup with either the <em>PrepareAllDomains</em> or <em>PrepareDomain</em> switch, the following happens in each child domain that's prepared:</p>
-<ul>
-<li><p>ACEs are added to the domain object for the <strong>Exchange Windows Permissions</strong> security group.</p></li>
-<li><p>ACEs are set in each domain including ACEs assigned to the <strong>Exchange Windows Permissions</strong> security group.</p></li>
-</ul>
-<p>Role assignments to the Mail Recipient Creation and Security Group Creation and Membership roles aren't automatically created when switching from Active Directory split to shared permissions. If delegating role assignments were customized prior to Active Directory split permissions being enabled, those customizations are left intact. To create role assignments between these roles and the Organization Management role group, see <a href="configure-exchange-2013-for-shared-permissions-exchange-2013-help.md">Configure Exchange 2013 for shared permissions</a>.</p></td>
-</tr>
-</tbody>
-</table>
+|Action|Changes made by Exchange|
+|---|---|
+|Enable Active Directory split permissions during first Exchange 2013 server installation|The following happens when you enable Active Directory split permissions either through the Setup wizard or by running `setup.exe` with the `/PrepareAD` and `/ActiveDirectorySplitPermissions:true` parameters: <ul><li>An organizational unit (OU) called **Microsoft Exchange Protected Groups** is created.</li><li>The **Exchange Windows Permissions** security group is created in the **Microsoft Exchange Protected Groups** OU.</li><li>The **Exchange Trusted Subsystem** security group isn't added to the **Exchange Windows Permissions** security group.</li><li>Creation of non-delegating management role assignments to management roles with the following management role types is skipped:<ul><li>`MailRecipientCreation`</li><li>`SecurityGroupCreationandMembership`</li></ul></li><li>Access control entries (ACEs) that would have been assigned to the **Exchange Windows Permissions** security group aren't added to the Active Directory domain object.</li></ul> <p> If you run setup with the _PrepareAllDomains_ or _PrepareDomain_ switch, the following happens in each child domain that's prepared: <ul><li>All ACEs assigned to the **Exchange Windows Permissions** security group are removed from the domain object.</li><li>ACEs are set in each domain with the exception of any ACEs assigned to the **Exchange Windows Permissions** security group.</li></ul>|
+|Switch from shared permissions or RBAC split permissions to Active Directory split permissions|The following happens when you run the `setup.exe` command with the `/PrepareAD` and `/ActiveDirectorySplitPermissions:true` parameters: <ul><li>An OU called **Microsoft Exchange Protected Groups** is created.</li><li>The **Exchange Windows Permissions** security group is moved to the **Microsoft Exchange Protected** Groups OU.</li><li>The **Exchange Trusted Subsystem** security group is removed from the **Exchange Windows Permissions** security group.</li><li>Any non-delegating role assignments to management roles with the following role types are removed:<ul><li>`MailRecipientCreation`</li><li>`SecurityGroupCreationandMembership`</li></ul></li><li>All ACEs assigned to the **Exchange Windows Permissions** security group are removed from the domain object.</li></ul> <p> If you run setup with either the _PrepareAllDomains_ or _PrepareDomain_ switch, the following happens in each child domain that's prepared: <ul><li>All ACEs assigned to the **Exchange Windows Permissions** security group are removed from the domain object.</li><li>ACEs are set in each domain with the exception of any ACEs assigned to the **Exchange Windows Permissions** security group.</li></ul>|
+|Switch from Active Directory split permissions to shared permissions or RBAC split permissions|The following happens when you run the `setup.exe` command with the `/PrepareAD` and `/ActiveDirectorySplitPermissions:false` parameters: <ul><li>The **Exchange Windows Permissions** security group is moved to the **Microsoft Exchange Security Groups** OU.</li><li>The **Microsoft Exchange Protected Groups** OU is removed.</li><li>The **Exchange Trusted Subsystems** security group is added to the **Exchange Windows Permissions** security group.</li><li>ACEs are added to the domain object for the **Exchange Windows Permissions** security group.</li></ul> <p> If you run setup with either the _PrepareAllDomains_ or _PrepareDomain_ switch, the following happens in each child domain that's prepared: <ul><li>ACEs are added to the domain object for the **Exchange Windows Permissions** security group.</li><li>ACEs are set in each domain including ACEs assigned to the **Exchange Windows Permissions** security group.</li></ul> <p> Role assignments to the Mail Recipient Creation and Security Group Creation and Membership roles aren't automatically created when switching from Active Directory split to shared permissions. If delegating role assignments were customized prior to Active Directory split permissions being enabled, those customizations are left intact. To create role assignments between these roles and the Organization Management role group, see [Configure Exchange 2013 for shared permissions](configure-exchange-2013-for-shared-permissions-exchange-2013-help.md).|
 
 After you enable Active Directory split permissions, the following cmdlets are no longer available:
 
 - **New-Mailbox**
-
 - **New-MailContact**
-
 - **New-MailUser**
-
 - **New-RemoteMailbox**
-
 - **Remove-Mailbox**
-
 - **Remove-MailContact**
-
 - **Remove-MailUser**
-
 - **Remove-RemoteMailbox**
 
 After you enable Active Directory split permissions, the following cmdlets are accessible but you cannot use them to create distribution groups or modify distribution group membership:
 
 - **Add-DistributionGroupMember**
-
 - **New-DistributionGroup**
-
 - **Remove-DistributionGroup**
-
 - **Remove-DistributionGroupMember**
-
 - **Update-DistributionGroupMember**
 
 Some cmdlets, although still available, may offer only limited functionality when used with Active Directory split permissions. This is because they may allow you to configure recipient objects that are in the domain Active Directory partition and Exchange configuration objects that are in the configuration Active Directory partition. They may also allow you to configure Exchange-related attributes on objects stored in the domain partition. Attempts to use the cmdlets to create objects, or modify non-Exchange-related attributes on objects, in the domain partition will result in an error. For example, the **Add-ADPermission** cmdlet will return an error if you attempt to add permissions to a mailbox. However, the **Add-ADPermission** cmdlet will succeed if you configure permissions on a Receive connector. This is because a mailbox is stored in the domain partition while Receive connectors are stored in the configuration partition.

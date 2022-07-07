@@ -5,12 +5,14 @@ ms:assetid: afa54c8e-f3ab-4f5f-85ad-fb2a905ecfa9
 ms:mtpsurl: https://technet.microsoft.com/library/JJ657481(v=EXCHG.150)
 ms:contentKeyID: 49289372
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Links to public folder procedure topics in Exchange 2013.
 ---
 
 # Public folder procedures

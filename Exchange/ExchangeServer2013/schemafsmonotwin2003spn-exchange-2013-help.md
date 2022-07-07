@@ -5,15 +5,17 @@ ms:assetid: 644a85ca-7b36-4ed0-bd21-c64f2742df70
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.schemafsmonotwin2003spn(v=EXCHG.150)
 ms:contentKeyID: 46628975
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Explanation for the error, The schema master isn't running Windows Server 2003 Service Pack 1 or later.
 ---
 
-# The schema master isno't running Windows Server 2003 Service Pack 1 or later\_SchemaFSMONotWin2003SPn
+# The schema master isn't running Windows Server 2003 Service Pack 1 or later\_SchemaFSMONotWin2003SPn
 
 _**Applies to:** Exchange Server 2013_
 
@@ -29,14 +31,14 @@ The FSMO controls all updates and modifications to the Active Directory schema.
 
 To resolve this issue, use one or more of the following methods:
 
-  - Upgrade the FSMO domain controller to Windows Server 2003 SP1 or a later version and rerun Microsoft Exchange setup.
+- Upgrade the FSMO domain controller to Windows Server 2003 SP1 or a later version and rerun Microsoft Exchange setup.
 
-  - If there's an FSMO domain controller running Microsoft Windows Server 2003 Service Pack 1 (SP1) or a later version in the Exchange organization, run Exchange 2007 setup with the /domaincontroller parameter pointing to that FSMO domain controller:
+- If there's an FSMO domain controller running Microsoft Windows Server 2003 Service Pack 1 (SP1) or a later version in the Exchange organization, run Exchange 2007 setup with the `/domaincontroller` parameter pointing to that FSMO domain controller:
 
-    \[*/DomainController*, or */dc* *\<FQDN of domain controller\>*\]
+  `/DomainController`, or `/dc <FQDN of domain controller>`
 
-    Use the */DomainController* parameter to specify the domain controller to use to read from and write to Active Directory during setup. You can use NetBIOS or the fully qualified domain name (FQDN) format.
+    Use the `/DomainController` parameter to specify the domain controller to use to read from and write to Active Directory during setup. You can use NetBIOS or the fully qualified domain name (FQDN) format.
 
 To obtain the latest service pack for Windows Server 2003, see [KB889100](https://support.microsoft.com/help/889100).
 
-For more information about Exchange Server 2007 Setup parameters, see "How to Install Exchange 2007 in Unattended Mode" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/aa997281(v=exchg.80)](/previous-versions/office/exchange-server-2007/aa997281(v=exchg.80))) in the Exchange Server 2007 product documentation.
+For more information about Exchange Server 2007 Setup parameters, see [How to Install Exchange 2007 in Unattended Mode](/previous-versions/office/exchange-server-2007/aa997281(v=exchg.80)) in the Exchange Server 2007 product documentation.

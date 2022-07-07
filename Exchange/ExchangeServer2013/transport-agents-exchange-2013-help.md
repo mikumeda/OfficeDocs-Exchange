@@ -5,12 +5,14 @@ ms:assetid: e7389d63-3172-40d5-bf53-0d7cd7e78340
 ms:mtpsurl: https://technet.microsoft.com/library/Bb125012(v=EXCHG.150)
 ms:contentKeyID: 48385663
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the transport agents in Exchange 2013.
 ---
 
 # Transport agents
@@ -65,158 +67,38 @@ The following tables list the SMTP events that provide access to messages in the
 
 ### SMTP Receive events
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sequence</th>
-<th>SMTP event</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>1</p></td>
-<td><p><strong>OnConnectEvent</strong></p></td>
-<td><p>This event is triggered by the initial connection from a remote SMTP host.</p></td>
-</tr>
-<tr class="even">
-<td><p>2</p></td>
-<td><p><strong>OnHeloCommand</strong></p></td>
-<td><p>This event is triggered when the <code>HELO</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="odd">
-<td><p>3</p></td>
-<td><p><strong>OnEhloCommand</strong></p></td>
-<td><p>This event is triggered when the <code>EHLO</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="even">
-<td><p>4</p></td>
-<td><p><strong>OnStartTlsCommand</strong></p></td>
-<td><p>This event is triggered when the <code>STARTTLS</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="odd">
-<td><p>5</p></td>
-<td><p><strong>OnAuthCommand</strong></p></td>
-<td><p>This event is triggered when the <code>AUTH</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="even">
-<td><p>6</p></td>
-<td><p><strong>OnProcessAuthentication</strong></p></td>
-<td><p>This event is triggered when authentication with the remote SMTP host is being processed.</p></td>
-</tr>
-<tr class="odd">
-<td><p>7</p></td>
-<td><p><strong>OnEndOfAuthentication</strong></p></td>
-<td><p>This event is triggered when the remote SMTP host has completed authentication.</p></td>
-</tr>
-<tr class="even">
-<td><p>8</p></td>
-<td><p><strong>OnXSessionParamsCommand</strong></p></td>
-<td><p>This event is triggered when the <code>XSESSIONPARAMS</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="odd">
-<td><p>9</p></td>
-<td><p><strong>OnMailCommand</strong></p></td>
-<td><p>This event is triggered when the <code>MAIL FROM</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="even">
-<td><p>10</p></td>
-<td><p><strong>OnRcptToCommand</strong></p></td>
-<td><p>This event is triggered when the <code>RCPT TO</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="odd">
-<td><p>11</p></td>
-<td><p><strong>OnDataCommand</strong></p></td>
-<td><p>This event is triggered when the <code>DATA</code> (text) or <code>BDAT</code> (binary data) command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="even">
-<td><p>12</p></td>
-<td><p><strong>OnEndOfHeaders</strong></p></td>
-<td><p>This event is triggered when the remote SMTP host has completed submitting the email message headers. This is indicated by a blank line (<code>&lt;CRLF&gt;</code>) that separates the message headers and the message body.</p></td>
-</tr>
-<tr class="odd">
-<td><p>13</p></td>
-<td><p><strong>OnProxyInboundMessage</strong></p></td>
-<td><p>This event is triggered when an inbound SMTP session is relayed or <em>proxied</em> by the Front End Transport service on a Client Access server to the Transport service on a Mailbox server.</p></td>
-</tr>
-<tr class="even">
-<td><p>14</p></td>
-<td><p><strong>OnEndOfData</strong></p></td>
-<td><p>This event is triggered when the remote SMTP host issues an end of data command. For text sessions started by the <code>DATA</code> command, the end of data indicator is <code>&lt;CRLF&gt;.&lt;CRLF&gt;</code>. For binary sessions started by the <code>BDAT</code> command, the end of data indicator is <code>BDAT LAST</code>.</p></td>
-</tr>
-<tr class="odd">
-<td><p>**</p></td>
-<td><p><strong>OnHelpCommand</strong></p></td>
-<td><p>This event is triggered if the <code>HELP</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="even">
-<td><p>**</p></td>
-<td><p><strong>OnNoopCommand</strong></p></td>
-<td><p>This event is triggered if the <code>NOOP</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-<tr class="odd">
-<td><p>**</p></td>
-<td><p><strong>OnReject</strong></p></td>
-<td><p>This event is triggered if the receiving SMTP host issues a temporary or permanent delivery status notification (DSN) code to the sending SMTP host.</p></td>
-</tr>
-<tr class="even">
-<td><p>**</p></td>
-<td><p><strong>OnRsetCommand</strong></p></td>
-<td><p>This event is triggered if the <code>RSET</code> command is issued by the sending SMTP host.</p></td>
-</tr>
-<tr class="odd">
-<td><p>15</p></td>
-<td><p><strong>OnDisconnectEvent</strong></p></td>
-<td><p>This event is triggered by the disconnection of the SMTP conversation by either the receiving or sending SMTP host. Typically, this happens when the <code>QUIT</code> command is issued by the remote SMTP host.</p></td>
-</tr>
-</tbody>
-</table>
+|Sequence|SMTP event|Description|
+|:---:|---|---|
+|1|**OnConnectEvent**|This event is triggered by the initial connection from a remote SMTP host.|
+|2|**OnHeloCommand**|This event is triggered when the `HELO` command is issued by the remote SMTP host.|
+|3|**OnEhloCommand**|This event is triggered when the `EHLO` command is issued by the remote SMTP host.|
+|4|**OnStartTlsCommand**|This event is triggered when the `STARTTLS` command is issued by the remote SMTP host.|
+|5|**OnAuthCommand**|This event is triggered when the `AUTH` command is issued by the remote SMTP host.|
+|6|**OnProcessAuthentication**|This event is triggered when authentication with the remote SMTP host is being processed.|
+|7|**OnEndOfAuthentication**|This event is triggered when the remote SMTP host has completed authentication.|
+|8|**OnXSessionParamsCommand**|This event is triggered when the `XSESSIONPARAMS` command is issued by the remote SMTP host.|
+|9|**OnMailCommand**|This event is triggered when the `MAIL FROM` command is issued by the remote SMTP host.|
+|10|**OnRcptToCommand**|This event is triggered when the `RCPT TO` command is issued by the remote SMTP host.|
+|11|**OnDataCommand**|This event is triggered when the `DATA` (text) or `BDAT` (binary data) command is issued by the remote SMTP host.|
+|12|**OnEndOfHeaders**|This event is triggered when the remote SMTP host has completed submitting the email message headers. This is indicated by a blank line (`<CRLF>`) that separates the message headers and the message body.|
+|13|**OnProxyInboundMessage**|This event is triggered when an inbound SMTP session is relayed or _proxied_ by the Front End Transport service on a Client Access server to the Transport service on a Mailbox server.|
+|14|**OnEndOfData**|This event is triggered when the remote SMTP host issues an end of data command. For text sessions started by the `DATA` command, the end of data indicator is `<CRLF>.<CRLF>`. For binary sessions started by the `BDAT` command, the end of data indicator is `BDAT LAST`.|
+|\*\*|**OnHelpCommand**|This event is triggered if the `HELP` command is issued by the remote SMTP host.|
+|\*\*|**OnNoopCommand**|This event is triggered if the `NOOP` command is issued by the remote SMTP host.|
+|\*\*|**OnReject**|This event is triggered if the receiving SMTP host issues a temporary or permanent delivery status notification (DSN) code to the sending SMTP host.|
+|\*\*|**OnRsetCommand**|This event is triggered if the `RSET` command is issued by the sending SMTP host.|
+|15|**OnDisconnectEvent**|This event is triggered by the disconnection of the SMTP conversation by either the receiving or sending SMTP host. Typically, this happens when the `QUIT` command is issued by the remote SMTP host.|
 
 \*\* These events can occur at any time after **OnConnectEvent** but before **OnDisconnectEvent**.
 
 ### Categorizer events
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sequence</th>
-<th>Categorizer event</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>1</p></td>
-<td><p><strong>OnSubmittedMessage</strong></p></td>
-<td><p>This event is triggered when a message arrives in the Submission queue in the Transport service on the receiving Mailbox server or Edge Transport server.</p></td>
-</tr>
-<tr class="even">
-<td><p>2</p></td>
-<td><p><strong>OnResolvedMessage</strong></p></td>
-<td><p>This event is triggered after all the recipients have been resolved, but before the next hop has been determined for each recipient. The <strong>OnResolvedMessage</strong> routing event enables subsequent events to override the default routing behavior by using the per-recipient <strong>SetRoutingOverride</strong> method.</p></td>
-</tr>
-<tr class="odd">
-<td><p>3</p></td>
-<td><p><strong>OnRoutedMessage</strong></p></td>
-<td><p>This event is triggered after messages have been categorized, distribution lists have been expanded, and recipients have been resolved.</p></td>
-</tr>
-<tr class="even">
-<td><p>4</p></td>
-<td><p><strong>OnCategorizedMessage</strong></p></td>
-<td><p>This event is triggered when the categorizer completes processing the message.</p></td>
-</tr>
-</tbody>
-</table>
+|Sequence|SMTP event|Description|
+|:---:|---|---|
+|1|**OnSubmittedMessage**|This event is triggered when a message arrives in the Submission queue in the Transport service on the receiving Mailbox server or Edge Transport server.|
+|2|**OnResolvedMessage**|This event is triggered after all the recipients have been resolved, but before the next hop has been determined for each recipient. The **OnResolvedMessage** routing event enables subsequent events to override the default routing behavior by using the per-recipient **SetRoutingOverride** method.|
+|3|**OnRoutedMessage**|This event is triggered after messages have been categorized, distribution lists have been expanded, and recipients have been resolved.|
+|4|**OnCategorizedMessage**|This event is triggered when the categorizer completes processing the message.|
 
 ## Priority of transport agents
 
@@ -242,78 +124,17 @@ The more interesting built-in transport agents on Mailbox servers are described 
 
 ### Interesting built-in transport agents on Mailbox servers
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Agent name</th>
-<th>Manageable?</th>
-<th>Priority</th>
-<th>SMTP or categorizer events</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Transport Rule Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>1</p></td>
-<td><p><strong>OnResolvedMessage</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Malware Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>2</p></td>
-<td><p><strong>OnSubmittedMessage</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>Text Messaging Routing Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>3</p></td>
-<td><p><strong>OnSubmittedMessage</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Text Messaging Delivery Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>4</p></td>
-<td><p>n/a</p></td>
-</tr>
-<tr class="odd">
-<td><p>Journal Agent</p></td>
-<td><p>No</p></td>
-<td><p>Not configurable</p></td>
-<td><p><strong>OnRoutedMessage</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Journal Report Decryption Agent</p></td>
-<td><p>No</p></td>
-<td><p>Not configurable</p></td>
-<td><p><strong>OnCategorizedMessage</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>RMS Decryption Agent</p></td>
-<td><p>No</p></td>
-<td><p>Not configurable</p></td>
-<td><p><strong>OnSubmittedMessage</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>RMS Encryption Agent</p></td>
-<td><p>No</p></td>
-<td><p>Not configurable</p></td>
-<td><p><strong>OnSubmittedMessage</strong>, <strong>OnRoutedMessage</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>RMS Protocol Decryption Agent</p></td>
-<td><p>No</p></td>
-<td><p>Not configurable</p></td>
-<td><p><strong>OnEndOfData</strong></p></td>
-</tr>
-</tbody>
-</table>
+|Agent name|Manageable?|Priority|SMTP or categorizer events|
+|---|:---:|:---:|---|
+|Transport Rule Agent|Yes|1|**OnResolvedMessage**|
+|Malware Agent|Yes|2|**OnSubmittedMessage**|
+|Text Messaging Routing Agent|Yes|3|**OnSubmittedMessage**|
+|Text Messaging Delivery Agent|Yes|4|n/a|
+|Journal Agent|No|Not configurable|**OnRoutedMessage**|
+|Journal Report Decryption Agent|No|Not configurable|**OnCategorizedMessage**|
+|RMS Decryption Agent|No|Not configurable|**OnSubmittedMessage**|
+|RMS Encryption Agent|No|Not configurable|**OnSubmittedMessage** <br> **OnRoutedMessage**|
+|RMS Protocol Decryption Agent|No|Not configurable|**OnEndOfData**|
 
 On Edge Transport servers, most of the built-in transport agents are visible and manageable by the transport agent management cmdlets or by other feature-specific cmdlets.
 
@@ -321,86 +142,20 @@ The more interesting built-in transport agents on Edge Transport servers are des
 
 ### Interesting built-in transport agents on Edge Transport servers
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Agent name</th>
-<th>Manageable?</th>
-<th>Priority</th>
-<th>SMTP or categorizer events</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Connection Filtering Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>1</p></td>
-<td><p><strong>OnConnectEvent</strong>, <strong>OnMailCommand</strong>, <strong>OnRcptComand</strong>, <strong>OnEndOfHeaders</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Address Rewriting Inbound Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>2</p></td>
-<td><p><strong>OnRcptCommand</strong>, <strong>OnEndOfHeaders</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>Edge Rule Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>3</p></td>
-<td><p><strong>OnEndOfData</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Content Filter Agent*</p></td>
-<td><p>Yes</p></td>
-<td><p>4</p></td>
-<td><p><strong>OnEndOfData</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>Sender ID Agent*</p></td>
-<td><p>Yes</p></td>
-<td><p>5</p></td>
-<td><p><strong>OnEndOfHeaders</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Sender Filter Agent*</p></td>
-<td><p>Yes</p></td>
-<td><p>6</p></td>
-<td><p><strong>OnMailCommand</strong>, <strong>OnEndOfHeaders</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>Recipient Filter Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>7</p></td>
-<td><p><strong>OnRcptCommand</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Protocol Analysis Agent*</p></td>
-<td><p>Yes</p></td>
-<td><p>8</p></td>
-<td><p><strong>OnConnectEvent</strong>, <strong>OnEndOfHeaders</strong>, <strong>OnEndOfData</strong>, <strong>OnReject</strong>, <strong>OnRsetCommand</strong>, <strong>OnDisconnectEvent</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>Attachment Filtering Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>9</p></td>
-<td><p><strong>OnEndOfData</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Address Rewriting Outbound Agent</p></td>
-<td><p>Yes</p></td>
-<td><p>10</p></td>
-<td><p><strong>OnSubmittedMessage</strong>, <strong>OnRoutedMessage</strong></p></td>
-</tr>
-</tbody>
-</table>
+|Agent name|Manageable?|Priority|SMTP or categorizer events|
+|---|:---:|:---:|---|
+|Connection Filtering Agent|Yes|1|**OnConnectEvent** <br> **OnMailCommand** <br> **OnRcptComand** <br> **OnEndOfHeaders**|
+|Address Rewriting Inbound Agent|Yes|2|**OnRcptComand** <br> **OnEndOfHeaders**|
+|Edge Rule Agent|Yes|3|**OnEndOfData**|
+|Content Filter Agent<sup>*</sup>|Yes|4|**OnEndOfData**|
+|Sender ID Agent<sup>*</sup>|Yes|5|**OnEndOfHeaders**|
+|Sender Filter Agent<sup>*</sup>|Yes|6|**OnMailCommand** <br> **OnEndOfHeaders**|
+|Recipient Filter Agent|Yes|7|**OnRcptCommand**|
+|Protocol Analysis Agent<sup>*</sup>|Yes|8|**OnConnectEvent** <br> **OnEndOfHeaders** <br> **OnEndOfData** <br> **OnReject** <br> **OnRsetCommand** <br> **OnDisconnectEvent**|
+|Attachment Filtering Agent|Yes|9|**OnEndOfData**|
+|Address Rewriting Outbound Agent|Yes|10|**OnSubmittedMessage** <br> **OnRoutedMessage**|
 
-\* You can also install and configure these anti-spam agents on Mailbox servers. For more information, see [Enable anti-spam functionality on Mailbox servers](enable-anti-spam-functionality-on-mailbox-servers-exchange-2013-help.md).
+<sup>\*</sup> You can also install and configure these anti-spam agents on Mailbox servers. For more information, see [Enable anti-spam functionality on Mailbox servers](enable-anti-spam-functionality-on-mailbox-servers-exchange-2013-help.md).
 
 ## Troubleshoot transport agents
 

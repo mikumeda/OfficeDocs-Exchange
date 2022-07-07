@@ -20,9 +20,7 @@ Looking for help with migrating your Exchange organization to Microsoft 365, Off
 [![Launch Deployment Assistant.](media/ExchangeDeploymentAssistant.png)](https://assistants.microsoft.com/)
 
 
-
-|     |     |     |
-| --- | --- | --- |
-| Exchange 2019 scenarios<br>----------------------- | Exchange 2016 scenarios<br>----------------------- | Exchange 2013 scenarios<br>----------------------- |
-| The following deployment scenarios are available for Exchange Server 2019: | The following deployment scenarios are available for Exchange Server 2016: | The following deployment scenarios are available for Exchange Server 2013: |
-| * New installation of Exchange Server 2019<br>* Upgrade from Exchange 2013 to Exchange 2019<br>* Upgrade from Exchange 2016 to Exchange 2019<br>* Upgrade from mixed Exchange 2013 and Exchange 2016 to Exchange 2019 | * New installation of Exchange Server 2016<br>* Upgrade from Exchange 2010 to Exchange 2016<br>* Upgrade from Exchange 2013 to Exchange 2016<br>* Upgrade from mixed Exchange 2010 and Exchange 2013 to Exchange 2016 | * New installation of Exchange Server 2013<br>* Upgrade from Exchange 2007 to Exchange 2013<br>* Upgrade from Exchange 2010 to Exchange 2013<br>* Upgrade from mixed Exchange 2007 and Exchange 2010 to Exchange 2013 |
+|Exchange 2019 scenarios|Exchange 2016 scenarios|Exchange 2013|
+|---|---|---|
+|The following deployment scenarios are available for Exchange Server 2019:|The following deployment scenarios are available for Exchange Server 2016:|The following deployment scenarios are available for Exchange Server 2013:|
+|<ul><li>New installation of Exchange Server 2019</li><li>Upgrade from Exchange 2013 to Exchange 2019</li><li>Upgrade from Exchange 2016 to Exchange 2019</li><li>Upgrade from mixed Exchange 2013 and Exchange 2016 to Exchange 2019</li></ul>|<ul><li>New installation of Exchange Server 2016</li><li> Upgrade from Exchange 2010 to Exchange 2016</li><li>Upgrade from Exchange 2013 to Exchange 2016</li><li>Upgrade from mixed Exchange 2010 and Exchange 2013 to Exchange 2016</li></ul>|<ul><li>New installation of Exchange Server 2013</li><li>Upgrade from Exchange 2007 to Exchange 2013</li><li>Upgrade from Exchange 2010 to Exchange 2013</li><li>Upgrade from mixed Exchange 2007 and Exchange 2010 to Exchange 2013</li></ul>|

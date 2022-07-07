@@ -5,12 +5,14 @@ ms:assetid: 989a62fc-4bc1-448f-90c8-7c7b56fe1084
 ms:mtpsurl: https://technet.microsoft.com/library/Bb310786(v=EXCHG.150)
 ms:contentKeyID: 50934221
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the TNEF (Rich Text Format) message options in Exchange 2013.
 ---
 
 # TNEF conversion options
@@ -29,55 +31,29 @@ When you configure TNEF conversion options for a remote domain, those TNEF conve
 
 For remote domains in your organization, you have the following configuration options for TNEF conversion:
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>In the EAC</th>
-<th>In the Shell</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Use TNEF for all messages sent to the remote domain.</p></td>
-<td><p><strong>Always</strong></p></td>
-<td><p><code>$true</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Never use TNEF for any messages sent to the remote domain.</p></td>
-<td><p><strong>Never</strong></p></td>
-<td><p><code>$false</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>TNEF messages aren't specifically allowed or prevented for recipients in the remote domain. Whether TNEF messages are sent to recipients in the remote domain depends on the specific setting on the mail contact or mail user, or the setting specified by the sender in Outlook. This is the default value.</p></td>
-<td><p><strong>Follow user settings</strong></p></td>
-<td><p><code>$null</code> (blank)</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|In the EAC|In the Shell|
+|---|---|---|
+|Use TNEF for all messages sent to the remote domain.|**Always**|`$true`|
+|Never use TNEF for any messages sent to the remote domain.|**Never**|`$false`|
+|TNEF messages aren't specifically allowed or prevented for recipients in the remote domain. Whether TNEF messages are sent to recipients in the remote domain depends on the specific setting on the mail contact or mail user, or the setting specified by the sender in Outlook. This is the default value.|**Follow user settings**|`$null` (blank)|
 
 For more information about remote domains, see [Remote domains](remote-domains-exchange-2013-help.md) or [Remote domains in Exchange Online](../ExchangeOnline/mail-flow-best-practices/remote-domains/remote-domains.md).
 
 ## TNEF conversion options for mail users and mail contacts
 
-When you configure TNEF conversion options for a mail contact or a mail user, those TNEF conversion options are applied to all messages sent to that specific recipient. You use the *UseMapiRichTextFormat* parameter on the **Set-MailUser** and **Set-MailContact** cmdlets to configure the TNEF conversion options for mail users and mail contacts.
+When you configure TNEF conversion options for a mail contact or a mail user, those TNEF conversion options are applied to all messages sent to that specific recipient. You use the _UseMapiRichTextFormat_ parameter on the **Set-MailUser** and **Set-MailContact** cmdlets to configure the TNEF conversion options for mail users and mail contacts.
 
 For mail users and mail contacts in your organization, you have the following configuration options for TNEF conversion:
 
-- **Always**: TNEF is used for all messages sent to the recipient. The corresponding value for the *UseMapiRichTextFormat* parameter is `Always`.
+- **Always**: TNEF is used for all messages sent to the recipient. The corresponding value for the _UseMapiRichTextFormat_ parameter is `Always`.
 
-- **Never**: TNEF is never used for any messages sent to the recipient. The corresponding value for the *UseMapiRichTextFormat* parameter is `Never`.
+- **Never**: TNEF is never used for any messages sent to the recipient. The corresponding value for the _UseMapiRichTextFormat_ parameter is `Never`.
 
-- **Use default settings**: TNEF messages aren't specifically allowed or prevented for the mail user or mail contact. Whether TNEF messages are sent to the recipient depends on the specific setting for the corresponding remote domain or the setting specified by the sender in Outlook. The corresponding value for the *UseMapiRichTextFormat* parameter is `UseDefaultSettings`. This is the default setting.
+- **Use default settings**: TNEF messages aren't specifically allowed or prevented for the mail user or mail contact. Whether TNEF messages are sent to the recipient depends on the specific setting for the corresponding remote domain or the setting specified by the sender in Outlook. The corresponding value for the _UseMapiRichTextFormat_ parameter is `UseDefaultSettings`. This is the default setting.
 
 ## TNEF conversion options in Outlook
 
-Senders can control the default TNEF message conversion options for TNEF messages sent to all recipients outside the Exchange organization. These options are called *Internet message format* options. The options only apply to remote recipients, and not to recipients in the Exchange organization.
+Senders can control the default TNEF message conversion options for TNEF messages sent to all recipients outside the Exchange organization. These options are called _Internet message format_ options. The options only apply to remote recipients, and not to recipients in the Exchange organization.
 
 > [!NOTE]
 > The following options define how messages containing Outlook rich text are handled when sent to external recipients. If the message format you're using is HTML or plain text, these settings don't apply.
