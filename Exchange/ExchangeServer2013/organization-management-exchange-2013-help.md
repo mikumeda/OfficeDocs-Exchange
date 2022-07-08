@@ -56,25 +56,22 @@ The roles assigned to this role group are given default management scopes. Manag
 
 For more information about how to customize this role group, see the following topics:
 
-  - [Manage role groups](manage-role-groups-exchange-2013-help.md)
-
-  - [Manage role group members](manage-role-group-members-exchange-2013-help.md)
+- [Manage role groups](manage-role-groups-exchange-2013-help.md)
+- [Manage role group members](manage-role-group-members-exchange-2013-help.md)
 
 If you want to create a role group and assign some of the roles that are assigned to this role group to the new role group, see the "Create a role group" section in [Manage role groups](manage-role-groups-exchange-2013-help.md).
 
 The following are some ways you might want to customize this role:
 
-  - **Permissions owner**: If the permissions in your organization are controlled by a specific group other than the Exchange administrators, you can create a role group and move the regular and delegating role assignments for the Role Management role to the new role group. Doing so prevents members of the Organization Management role group from managing any RBAC permissions.
-
-  - **Active Directory split permissions**: If the creation of security principals in your organization, such as user accounts, is controlled by a specific group other than the Exchange administrators, you can create a role group and move the regular and delegating role assignments for the Mail Recipient Creation role and the Security Group Creation and Membership role to the new role group. Doing so prevents members of the Organization Management role group from creating Active Directory objects. They can, however, continue to mail-enable the new Active Directory objects. For more information about split permissions, see [Understanding split permissions](understanding-split-permissions-exchange-2013-help.md).
+- **Permissions owner**: If the permissions in your organization are controlled by a specific group other than the Exchange administrators, you can create a role group and move the regular and delegating role assignments for the Role Management role to the new role group. Doing so prevents members of the Organization Management role group from managing any RBAC permissions.
+- **Active Directory split permissions**: If the creation of security principals in your organization, such as user accounts, is controlled by a specific group other than the Exchange administrators, you can create a role group and move the regular and delegating role assignments for the Mail Recipient Creation role and the Security Group Creation and Membership role to the new role group. Doing so prevents members of the Organization Management role group from creating Active Directory objects. They can, however, continue to mail-enable the new Active Directory objects. For more information about split permissions, see [Understanding split permissions](understanding-split-permissions-exchange-2013-help.md).
 
 ## Customization limitations
 
 Any role can be added to or removed from this role group, with the following limitations:
 
-  - Every role must have at least one delegating role assignment to a role group or USG before the delegating role assignment can be removed from this role group.
-
-  - The Role Management role must have at least one regular role assignment to a role group or USG before the regular role assignment can be removed from this role group.
+- Every role must have at least one delegating role assignment to a role group or USG before the delegating role assignment can be removed from this role group.
+- The Role Management role must have at least one regular role assignment to a role group or USG before the regular role assignment can be removed from this role group.
 
 These limitations are intended to help prevent you from inadvertently locking yourself out of the system. By requiring that at least one delegating role assignment exists between every role and one or more role groups or USGs, you will always be able to assign roles to role assignees. By requiring that at least one regular role assignment exists between the Role Management role and one or more role groups or USGs, you will always be able to configure role groups and role assignments.
 
@@ -97,739 +94,100 @@ The permissions granted to members of the Organization Management role group are
 
 The following tasks are granted permissions by way of ACLs on Active Directory objects and not by management roles assigned to the Organization Management role group:
 
-  - Running DomainPrep and ForestPrep using Setup.exe
-
-  - Deploying additional servers in the organization
+- Running DomainPrep and ForestPrep using Setup.exe
+- Deploying additional servers in the organization
 
 ## Management roles assigned to this role group
 
 The following table lists all the management roles that are assigned to this role group and the following attributes of each role assignment:
 
-  - **Regular assignment**: Enables members of the role group to access the management role entries made available by the associated management role.
-
-  - **Delegating assignment**: Gives members of the role group the ability to assign the specified role to other role groups, role assignment policies, users, or USGs.
-
-  - **Recipient read scope**: Determines what recipient objects members of the role group are allowed to read from Active Directory.
-
-  - **Recipient write scope**: Determines what recipient objects members of the role group are allowed to modify in Active Directory.
-
-  - **Configuration read scope**: Determines what configuration and server objects members of the role group are allowed to read from Active Directory.
-
-  - **Configuration write scope**: Determines what organizational and server objects members of the role group are allowed to modify in Active Directory.
+- **Regular assignment**: Enables members of the role group to access the management role entries made available by the associated management role.
+- **Delegating assignment**: Gives members of the role group the ability to assign the specified role to other role groups, role assignment policies, users, or USGs.
+- **Recipient read scope**: Determines what recipient objects members of the role group are allowed to read from Active Directory.
+- **Recipient write scope**: Determines what recipient objects members of the role group are allowed to modify in Active Directory.
+- **Configuration read scope**: Determines what configuration and server objects members of the role group are allowed to read from Active Directory.
+- **Configuration write scope**: Determines what organizational and server objects members of the role group are allowed to modify in Active Directory.
 
 For more information about role assignments and management scopes, see the following topics:
 
-  - [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
+- [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
+- [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
 
-  - [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
-
-### Management roles assigned to this role group
-
-<table >
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Management role</th>
-<th>Regular assignment</th>
-<th>Delegating assignment</th>
-<th>Recipient read scope</th>
-<th>Recipient write scope</th>
-<th>Configuration read scope</th>
-<th>Configuration write scope</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="active-directory-permissions-role-exchange-2013-help.md">Active Directory Permissions role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="address-lists-role-exchange-2013-help.md">Address Lists role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="applicationimpersonation-role-exchange-2013-help.md">ApplicationImpersonation role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>None</code></p></td>
-<td><p><code>None</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="archiveapplication-role-exchange-2013-help.md">ArchiveApplication role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="audit-logs-role-exchange-2013-help.md">Audit Logs role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="cmdlet-extension-agents-role-exchange-2013-help.md">Cmdlet Extension Agents role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="data-loss-prevention-role-exchange-2013-help.md">Data Loss Prevention role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="database-availability-groups-role-exchange-2013-help.md">Database Availability Groups role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="database-copies-role-exchange-2013-help.md">Database Copies role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="databases-role-exchange-2013-help.md">Databases role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="disaster-recovery-role-exchange-2013-help.md">Disaster Recovery role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="distribution-groups-role-exchange-2013-help.md">Distribution Groups role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="edge-subscriptions-role-exchange-2013-help.md">Edge Subscriptions role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="e-mail-address-policies-role-exchange-2013-help.md">E-Mail Address Policies role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="exchange-connectors-role-exchange-2013-help.md">Exchange Connectors role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="exchange-server-certificates-role-exchange-2013-help.md">Exchange Server Certificates role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="exchange-servers-role-exchange-2013-help.md">Exchange Servers role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="exchange-virtual-directories-role-exchange-2013-help.md">Exchange Virtual Directories role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="federated-sharing-role-exchange-2013-help.md">Federated Sharing role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="information-rights-management-role-exchange-2013-help.md">Information Rights Management role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="journaling-role-exchange-2013-help.md">Journaling role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="legal-hold-role-exchange-2013-help.md">Legal Hold role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>None</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="legalholdapplication-role-exchange-2013-help.md">LegalHoldApplication role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="mail-enabled-public-folders-role-exchange-2013-help.md">Mail Enabled Public Folders role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="mail-recipient-creation-role-exchange-2013-help.md">Mail Recipient Creation role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="mail-recipients-role-exchange-2013-help.md">Mail Recipients role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="mail-tips-role-exchange-2013-help.md">Mail Tips role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="mailbox-import-export-role-exchange-2013-help.md">Mailbox Import Export role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="mailbox-search-role-exchange-2013-help.md">Mailbox Search role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>None</code></p></td>
-<td><p><code>None</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="mailboxsearchapplication-role-exchange-2013-help.md">MailboxSearchApplication role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="message-tracking-role-exchange-2013-help.md">Message Tracking role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="migration-role-exchange-2013-help.md">Migration role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="monitoring-role-exchange-2013-help.md">Monitoring role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="move-mailboxes-role-exchange-2013-help.md">Move Mailboxes role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="officeextensionapplication-role-exchange-2013-help.md">OfficeExtensionApplication role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="organization-client-access-role-exchange-2013-help.md">Organization Client Access role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="organization-configuration-role-exchange-2013-help.md">Organization Configuration role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="organization-transport-settings-role-exchange-2013-help.md">Organization Transport Settings role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="pop3-and-imap4-protocols-role-exchange-2013-help.md">POP3 and IMAP4 Protocols role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="public-folders-role-exchange-2013-help.md">Public Folders role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="receive-connectors-role-exchange-2013-help.md">Receive Connectors role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="recipient-policies-role-exchange-2013-help.md">Recipient Policies role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="remote-and-accepted-domains-role-exchange-2013-help.md">Remote and Accepted Domains role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="reset-password-role-exchange-2013-help.md">Reset Password role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="retention-management-role-exchange-2013-help.md">Retention Management role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="role-management-role-exchange-2013-help.md">Role Management role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="security-group-creation-and-membership-role-exchange-2013-help.md">Security Group Creation and Membership role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="send-connectors-role-exchange-2013-help.md">Send Connectors role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="support-diagnostics-role-exchange-2013-help.md">Support Diagnostics role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="teammailboxlifecycleapplication-role-exchange-2013-help.md">TeamMailboxLifecycleApplication role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="transport-agents-role-exchange-2013-help.md">Transport Agents role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="transport-hygiene-role-exchange-2013-help.md">Transport Hygiene role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="transport-queues-role-exchange-2013-help.md">Transport Queues role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="transport-rules-role-exchange-2013-help.md">Transport Rules role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="um-mailboxes-role-exchange-2013-help.md">UM Mailboxes role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="um-prompts-role-exchange-2013-help.md">UM Prompts role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="unscoped-role-management-role-exchange-2013-help.md">Unscoped Role Management role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="unified-messaging-role-exchange-2013-help.md">Unified Messaging role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="userapplication-role-exchange-2013-help.md">UserApplication role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="user-options-role-exchange-2013-help.md">User Options role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="view-only-audit-logs-role-exchange-2013-help.md">View-Only Audit Logs role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>None</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>None</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="view-only-configuration-role-exchange-2013-help.md">View-Only Configuration role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>None</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>None</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="view-only-recipients-role-exchange-2013-help.md">View-Only Recipients role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>None</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>None</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="workloadmanagement-role-exchange-2013-help.md">WorkloadManagement role</a></p></td>
-<td><p>X</p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="my-custom-apps-role-exchange-2013-help.md">My Custom Apps role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="my-marketplace-apps-role-exchange-2013-help.md">My Marketplace Apps role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="mybaseoptions-role-exchange-2013-help.md">MyBaseOptions role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="mycontactinformation-role-exchange-2013-help.md">MyContactInformation role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="mydiagnostics-role-exchange-2013-help.md">MyDiagnostics role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="mydistributiongroupmembership-role-exchange-2013-help.md">MyDistributionGroupMembership role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>MyGAL</code></p></td>
-<td><p><code>MyGAL</code></p></td>
-<td><p><code>None</code></p></td>
-<td><p><code>None</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="mydistributiongroups-role-exchange-2013-help.md">MyDistributionGroups role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>MyGAL</code></p></td>
-<td><p><code>MyDistributionGroups</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>None</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="myprofileinformation-role-exchange-2013-help.md">MyProfileInformation role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="myretentionpolicies-role-exchange-2013-help.md">MyRetentionPolicies role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="myteammailboxes-role-exchange-2013-help.md">MyTeamMailboxes role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="mytextmessaging-role-exchange-2013-help.md">MyTextMessaging role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="myvoicemail-role-exchange-2013-help.md">MyVoiceMail role</a></p></td>
-<td><p> </p></td>
-<td><p>X</p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>Self</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-</tbody>
-</table>
+|Management role|Regular assignment|Delegating assignment|Recipient read scope|Recipient write scope|Configuration read scope|Configuration write scope|
+|---|:---:|:---:|---|---|---|---|
+|[Active Directory Permissions role](active-directory-permissions-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Address Lists role](address-lists-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[ApplicationImpersonation role](applicationimpersonation-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`None`|`None`|
+|[ArchiveApplication role](archiveapplication-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Audit Logs role](audit-logs-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Cmdlet Extension Agents role](cmdlet-extension-agents-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Data Loss Prevention role](data-loss-prevention-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Database Availability Groups role](database-availability-groups-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Database Copies role](database-copies-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Databases role](databases-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Disaster Recovery role](disaster-recovery-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Distribution Groups role](distribution-groups-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Edge Subscriptions role](edge-subscriptions-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[E-Mail Address Policies role](e-mail-address-policies-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Exchange Connectors role](exchange-connectors-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Exchange Server Certificates role](exchange-server-certificates-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Exchange Servers role](exchange-servers-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Exchange Virtual Directories role](exchange-virtual-directories-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Federated Sharing role](federated-sharing-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Information Rights Management role](information-rights-management-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Journaling role](journaling-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Legal Hold role](legal-hold-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`None`|
+|[LegalHoldApplication role](legalholdapplication-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Mail Enabled Public Folders role](mail-enabled-public-folders-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Mail Recipient Creation role](mail-recipient-creation-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Mail Recipients role](mail-recipients-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Mail Tips role](mail-tips-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Mailbox Import Export role](mailbox-import-export-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Mailbox Search role](mailbox-search-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`None`|`None`|
+|[MailboxSearchApplication role](mailboxsearchapplication-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Message Tracking role](message-tracking-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Migration role](migration-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Monitoring role](monitoring-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Move Mailboxes role](move-mailboxes-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[OfficeExtensionApplication role](officeextensionapplication-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[Organization Client Access role](organization-client-access-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Organization Configuration role](organization-configuration-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Organization Transport Settings role](organization-transport-settings-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[POP3 and IMAP4 Protocols role](pop3-and-imap4-protocols-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Public Folders role](public-folders-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Receive Connectors role](receive-connectors-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Recipient Policies role](recipient-policies-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Remote and Accepted Domains role](remote-and-accepted-domains-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Reset Password role](reset-password-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Retention Management role](retention-management-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Role Management role](role-management-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Security Group Creation and Membership role](security-group-creation-and-membership-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Send Connectors role](send-connectors-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Support Diagnostics role](support-diagnostics-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[TeamMailboxLifecycleApplication role](teammailboxlifecycleapplication-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[Transport Agents role](transport-agents-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Transport Hygiene role](transport-hygiene-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Transport Queues role](transport-queues-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Transport Rules role](transport-rules-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[UM Mailboxes role](um-mailboxes-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[UM Prompts role](um-prompts-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Unscoped Role Management role](unscoped-role-management-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Unified Messaging role](unified-messaging-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[UserApplication role](userapplication-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[User Options role](user-options-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[View-Only Audit Logs role](view-only-audit-logs-role-exchange-2013-help.md)|X|X|`Organization`|`None`|`OrganizationConfig`|`None`|
+|[View-Only Configuration role](view-only-configuration-role-exchange-2013-help.md)|X|X|`Organization`|`None`|`OrganizationConfig`|`None`|
+|[View-Only Recipients role](view-only-recipients-role-exchange-2013-help.md)|X|X|`Organization`|`None`|`OrganizationConfig`|`None`|
+|[WorkloadManagement role](workloadmanagement-role-exchange-2013-help.md)|X|X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[My Custom Apps role](my-custom-apps-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[My Marketplace Apps role](my-marketplace-apps-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[MyBaseOptions role](mybaseoptions-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[MyContactInformation role](mycontactinformation-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[MyDiagnostics role](mydiagnostics-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[MyDistributionGroupMembership role](mydistributiongroupmembership-role-exchange-2013-help.md)||X|`MyGAL`|`MyGAL`|`None`|`None`|
+|[MyDistributionGroups role](mydistributiongroups-role-exchange-2013-help.md)||X|`MyGAL`|`MyDistributionGroups`|`OrganizationConfig`|`None`|
+|[MyProfileInformation role](myprofileinformation-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[MyRetentionPolicies role](myretentionpolicies-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[MyTeamMailboxes role](myteammailboxes-role-exchange-2013-help.md)||X|`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[MyTextMessaging role](mytextmessaging-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
+|[MyVoiceMail role](myvoicemail-role-exchange-2013-help.md)||X|`Self`|`Self`|`OrganizationConfig`|`OrganizationConfig`|
