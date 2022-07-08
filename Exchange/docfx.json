@@ -138,18 +138,20 @@
         "extendBreadcrumb": "true",
         "recommendations": true,
         "uhfHeaderId": "MSDocsHeader-M365-IT",
-        "feedback_system": "none",
-        "feedback_github_repo": "none",
-        "feedback_product_url": "none", 
-        "contributors_to_exclude": [ 
-          "rjagiewich", 
-          "traya1", 
-          "rmca14", 
-          "claydetels19", 
+        "contributors_to_exclude": [
+          "rjagiewich",
+          "traya1",
+          "rmca14",
+          "claydetels19",
           "jborsecnik",
           "tiburd",
+          "AngelaMotherofDragons",
+          "v-dihans",
           "garycentric"
-        ]
+        ],
+        "feedback_system": "none",
+        "feedback_github_repo": "none",
+        "feedback_product_url": "none"
     },
     "fileMetadata": {
         "hideEdit": {
