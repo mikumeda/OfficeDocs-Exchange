@@ -9,12 +9,10 @@ ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
-ms.topic: article
 description: Exchange Server deployment permissions reference
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
-description: Learn about permissions that are required to set up an Exchange 2013 organization.
 ---
 
 # Exchange 2013 deployment permissions reference
