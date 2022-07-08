@@ -13,7 +13,6 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
-description: Active directory schema changes in Exchange 2013.
 ---
 
 # Exchange 2013 Active Directory schema changes
