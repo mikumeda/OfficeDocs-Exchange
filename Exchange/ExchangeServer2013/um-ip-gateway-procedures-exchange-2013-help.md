@@ -5,10 +5,12 @@ ms.author: serdars
 author: msdmaguire
 manager: serdars
 ms.reviewer: 
+ms.topic: article
 ms.assetid: 298e51f5-9e42-4395-b9ea-6f16c28a8422
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Links to UM IP gateway procedure topis in Exchange 2013.
 ---
 
 # UM IP gateway procedures in Exchange Server

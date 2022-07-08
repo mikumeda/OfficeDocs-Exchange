@@ -5,12 +5,14 @@ ms:assetid: 187967b2-cb28-45d7-8858-2a083c1ebe58
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.interrupteduninstallnotcontinued(v=EXCHG.150)
 ms:contentKeyID: 46628824
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Explanation for the Setup failure occurred while uninstalling a server role error.
 ---
 
 # Setup failure occurred while uninstalling a server role\_InterruptedUninstallNotContinued

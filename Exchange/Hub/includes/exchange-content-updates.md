@@ -2,6 +2,27 @@
 
 
 
+## Week of June 27, 2022
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 6/29/2022 | [Remove public folder deployment from Exchange Server 2013 or later versions](/Exchange/collaboration/public-folders/remove-public-folder-deployment-from-exchange-server-2013-later?view=exchserver-2016) | added |
+
+
+## Week of June 13, 2022
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 6/13/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
+| 6/13/2022 | [Sender Rewriting Scheme (SRS) in Microsoft 365](/Exchange/mail-flow-best-practices/sender-rewriting-scheme) | modified |
+| 6/14/2022 | [Outlook for iOS and Android](/Exchange/clients/outlook-for-ios-and-android/outlook-for-ios-and-android?view=exchserver-2016) | modified |
+| 6/14/2022 | [Manage mail flow rules in Exchange Online](/Exchange/security-and-compliance/mail-flow-rules/manage-mail-flow-rules) | modified |
+| 6/15/2022 | [Manage address lists in Exchange Online](/Exchange/address-books/address-lists/manage-address-lists) | modified |
+| 6/15/2022 | [Safety Net in Exchange Server](/Exchange/mail-flow/transport-high-availability/safety-net?view=exchserver-2016) | modified |
+
+
 ## Week of June 06, 2022
 
 
@@ -17,36 +38,3 @@
 | Published On |Topic title | Change |
 |------|------------|--------|
 | 6/3/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
-
-
-## Week of May 23, 2022
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 5/24/2022 | [Google Workspace migration prerequisites in Exchange Online](/Exchange/mailbox-migration/googleworkspace-migration-prerequisites) | modified |
-| 5/25/2022 | [Alert policies in Exchange Online](/Exchange/monitoring/mail-flow-insights/alert-policy-and-its-configuration) | modified |
-
-
-## Week of May 16, 2022
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 5/16/2022 | [Microsoft Hybrid Agent](/Exchange/hybrid-deployment/hybrid-agent) | modified |
-| 5/16/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
-| 5/20/2022 | [Manage recipients in Exchange Server 2019 Hybrid environments](/Exchange/manage-hybrid-exchange-recipients-with-management-tools) | modified |
-| 5/20/2022 | [Sender Rewriting Scheme (SRS) in Microsoft 365](/Exchange/mail-flow-best-practices/sender-rewriting-scheme) | added |
-
-
-## Week of May 09, 2022
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 5/10/2022 | [Exchange ActiveSync in Exchange Online](/Exchange/clients-and-mobile-in-exchange-online/exchange-activesync/exchange-activesync) | modified |
-| 5/10/2022 | [Mobile device mailbox policies in Exchange Online](/Exchange/clients-and-mobile-in-exchange-online/exchange-activesync/mobile-device-mailbox-policies) | modified |
-| 5/10/2022 | Mobile access in Exchange Online | removed |
-| 5/10/2022 | [Exchange Server supportability matrix](/Exchange/plan-and-deploy/supportability-matrix?view=exchserver-2016) | modified |
-| 5/10/2022 | [Enable or disable access to the new Outlook for Windows](/Exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/enable-disable-employee-access-new-outlook) | modified |
-| 5/12/2022 | [Microsoft Hybrid Agent](/Exchange/hybrid-deployment/hybrid-agent) | modified |

@@ -1,11 +1,11 @@
 ---
-title: Fix email delivery issues for error code 5.1.8 in Exchange Online
+title: How to fix error code 5.1.8 (550 5.1.8 Access denied) in Exchange Online
 ms.author: jhendr
 author: JoanneHendrickson
 manager: serdars
 ms.reviewer: 
 audience: Admin
-ms.topic: article
+ms.topic: how-to
 ms.prod: office-online-server
 ms.localizationpriority: medium
 f1.keywords:
@@ -16,18 +16,18 @@ search.appverid:
 - MOE150
 - MET150
 ms.assetid: 303238b8-658d-46b6-8f45-a789acd2173b
-description: "Learn how to fix email issues for error code 5.1.8 in Exchange Online (the account has been blocked for sending too much spam)."
+description: "Learn how to fix email delivery for error code 5.1.8 (550 5.1.8 Access denied) in Exchange Online (the account has been blocked for sending too much spam), when mail is not delivered."
 ---
 
-# Fix email delivery issues for error code 5.1.8 in Exchange Online
-
-It's frustrating when you get an error after sending an email message. This topic describes what you can do if you see error code 550 5.1.8 in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN).
+# Fix email delivery issues for error code 5.1.8 (550 5.1.8 Access denied) in Exchange Online
+ 
+Getting an error message that means the mail you sent wasn't delivered is frustrating. This topic tells you what to do if you get error code 550 5.1.8 Access denied in a non-delivery report (also known as an NDR, bounce message, delivery status notification, or DSN), and mail isn't delivered.
 
 |&nbsp;|&nbsp;|&nbsp;|&nbsp;|
 |---|---|---|---|
-|![Email user icon.](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How can I fix this?](#im-an-email-admin-how-do-i-fix-this)|
+|![Email user icon.](../../media/31425afd-41a9-435e-aa85-6886277c369b.png)|[I got this bounce message. How do I fix it?](#i-got-this-bounce-message-how-do-i-fix-it)|![Email admin icon](../../media/3d4c569e-b819-4a29-86b1-4b9619cf2acf.png)|[I'm an email admin. How do I fix this email delivery issue?](#im-an-email-admin-how-do-i-fix-this-email-delivery-issue)|
 
-## Why did I get this bounce message?
+## What is 550 5.1.8 and why did I get this bounce message?
 
 You received this NDR with error code 5.1.8 because your account has been blocked for sending too much spam. Typically, this problem occurs because your account has been compromised (hacked) by phishing or malware.
 
@@ -37,7 +37,7 @@ First, you need to reset your password and scan your devices for malware. Howeve
 
 Then, you need to tell your email admin that you think your account has been compromised. Your admin will need to unblock your account before you can send email again.
 
-## I'm an email admin. How do I fix this?
+## I'm an email admin. How do I fix this email delivery issue?
 
 The sending account might be compromised. You'll need to:
 

@@ -5,12 +5,14 @@ ms:assetid: 7010e116-9daf-4e76-9a37-964ffde27ee6
 ms:mtpsurl: https://technet.microsoft.com/library/JJ150522(v=EXCHG.150)
 ms:contentKeyID: 47560022
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about what's new in Outlook Web App in Exchange 2013.
 ---
 
 # What's new for Outlook Web App in Exchange 2013
@@ -20,7 +22,9 @@ _**Applies to:** Exchange Server 2013_
 For Microsoft Exchange Server 2013, we've added several new features to Microsoft Outlook Web App and updated its design.
 
 > [!NOTE]
-> For more details about using Outlook Web App in your Exchange Server 2013 organization, see <A href="outlook-web-app-exchange-2013-help.md">Outlook Web App</A>.<BR>Outlook Web App users in your organization now have the ability to add public folders to, or remove them from, their Favorites. Previously, this could only be done in Outlook.
+> For more details about using Outlook Web App in your Exchange Server 2013 organization, see [Outlook Web App](outlook-web-app-exchange-2013-help.md).
+>
+> Outlook Web App users in your organization now have the ability to add public folders to, or remove them from, their Favorites. Previously, this could only be done in Outlook.
 
 ## Apps in Outlook Web App
 
@@ -68,118 +72,29 @@ In the table below, the following definitions apply:
 
 ### Windows operating system and browser combination
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Web browser</p></td>
-<td><p>Windows XP and Windows Server 2003</p></td>
-<td><p>Windows Vista and Windows Server 2008</p></td>
-<td><p>Windows 7</p></td>
-<td><p>Windows 8</p></td>
-</tr>
-<tr class="even">
-<td><p>Internet Explorer 7</p></td>
-<td><p>Light</p></td>
-<td><p>Not available</p></td>
-<td><p>Not available</p></td>
-<td><p>Not available</p></td>
-</tr>
-<tr class="odd">
-<td><p>Internet Explorer 8</p></td>
-<td><p>Light</p></td>
-<td><p>Good</p></td>
-<td><p>Good</p></td>
-<td><p>Not available</p></td>
-</tr>
-<tr class="even">
-<td><p>Internet Explorer 9</p></td>
-<td><p>Not available</p></td>
-<td><p>Best</p></td>
-<td><p>Best</p></td>
-<td><p>Not available</p></td>
-</tr>
-<tr class="odd">
-<td><p>Internet Explorer 10</p></td>
-<td><p>Not available</p></td>
-<td><p>Not available</p></td>
-<td><p>Best - plus offline access</p></td>
-<td><p>Best - plus offline access</p></td>
-</tr>
-<tr class="even">
-<td><p>Internet Explorer 11</p></td>
-<td><p>Not available</p></td>
-<td><p>Not available</p></td>
-<td><p>Best - plus offline access</p></td>
-<td><p>Best - plus offline access</p></td>
-</tr>
-<tr class="odd">
-<td><p>Firefox 17 or later</p></td>
-<td><p>Good</p></td>
-<td><p>Good</p></td>
-<td><p>Best</p></td>
-<td><p>Best</p></td>
-</tr>
-<tr class="even">
-<td><p>Safari 5 or later</p></td>
-<td><p>Light</p></td>
-<td><p>Light</p></td>
-<td><p>Light</p></td>
-<td><p>Light</p></td>
-</tr>
-<tr class="odd">
-<td><p>Chrome 24 or later</p></td>
-<td><p>Good - plus offline access</p></td>
-<td><p>Good - plus offline access</p></td>
-<td><p>Best - plus offline access</p></td>
-<td><p>Best - plus offline access</p></td>
-</tr>
-</tbody>
-</table>
+|Web browser|Windows XP and<br>Windows Server 2003|Windows Vista and<br>Windows Server 2008|Windows 7|Windows 8|
+|---|---|---|---|---|
+|Internet Explorer 7|Light|Not available|Not available|Not available|
+|Internet Explorer 8|Light|Good|Good|Not available|
+|Internet Explorer 9|Not available|Best|Best|Not available|
+|Internet Explorer 10|Not available|Not available|Best - plus offline access|Best - plus offline access|
+|Internet Explorer 11|Not available|Not available|Best - plus offline access|Best - plus offline access|
+|Firefox 17 or later|Good|Good|Best|Best|
+|Safari 5 or later|Light|Light|Light|Light|
+|Chrome 24 or later|Good - plus offline access|Good - plus offline access|Best - plus offline access|Best - plus offline access|
 
 > [!NOTE]
-> 
+>
 > - In previous versions, Outlook Web App had a built-in spell checker. In Exchange Server 2013, Outlook Web App relies on the web browser for spell checking, which Internet Explorer prior to version 10 doesn't provide.
-> 
 > - Microsoft 365 users will be limited to the light version of Outlook Web App when using Internet Explorer 8. Users whose mailboxes are on a locally managed Exchange server will continue to see the standard version of Outlook Web App when using Internet Explorer 8, but may experience slow or otherwise unsatisfactory performance.
 
 ### Other Windows operating system and browser combination
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Web browser</p></td>
-<td><p>Mac OS X v10.7 or later</p></td>
-<td><p>Linux</p></td>
-</tr>
-<tr class="even">
-<td><p>Firefox 23 or later versions</p></td>
-<td><p>Best - plus offline access</p></td>
-<td><p>Best - plus offline access</p></td>
-</tr>
-<tr class="odd">
-<td><p>Safari 6 or later versions</p></td>
-<td><p>Best - plus offline access</p></td>
-<td><p>Not available</p></td>
-</tr>
-<tr class="even">
-<td><p>Chrome 24 or later versions</p></td>
-<td><p>Best - plus offline access</p></td>
-<td><p>Best - plus offline access</p></td>
-</tr>
-</tbody>
-</table>
+|Web Browser|Mac OS X v10.7 or later|Linux|
+|---|---|---|
+|Firefox 23 or later versions|Best - plus offline access|Best - plus offline access|
+|Safari 6 or later versions|Best - plus offline access|Not available|
+|Chrome 24 or later versions|Best - plus offline access|Best - plus offline access|
 
 > [!NOTE]
 > Operating system and browser combinations not listed display the light version of Outlook Web App.
@@ -194,40 +109,12 @@ You can use the web browser on a tablet or smartphone to sign in to Outlook Web 
 
 ### Outlook Web App features available on tablets and smartphones
 
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Device</p></td>
-<td><p>Application</p></td>
-<td><p>Support</p></td>
-</tr>
-<tr class="even">
-<td><p>Windows 8 tablet</p></td>
-<td><p>Web browser</p></td>
-<td><p>Best</p></td>
-</tr>
-<tr class="odd">
-<td><p>iOS 6 or later for iPhone 4s or later</p></td>
-<td><p>Web browser</p></td>
-<td><p>Best</p></td>
-</tr>
-<tr class="even">
-<td><p>iOS 6 or later for iPad 2 or later</p></td>
-<td><p>Web browser</p></td>
-<td><p>Best</p></td>
-</tr>
-<tr class="odd">
-<td><p>All other smartphones and tablets</p></td>
-<td><p>Web browser</p></td>
-<td><p>Light</p></td>
-</tr>
-</tbody>
-</table>
+|Device|Application|Support|
+|---|---|---|
+|Windows 8 tablet|Web browser|Best|
+|iOS 6 or later for iPhone 4s or later|Web browser|Best|
+|iOS 6 or later for iPad 2 or later|Web browser|Best|
+|All other smartphones and tablets|Web browser|Light|
 
 ## OWA for Devices app
 
@@ -237,26 +124,10 @@ You can download the OWA for iPhone and OWA for iPad apps from the Apple App Sto
 
 To learn more about OWA for iPhone and OWA for iPad, see [OWA for iPhone and OWA for iPad](https://support.microsoft.com/office/7edbf8c6-1a0e-4be8-a374-2809e754eaaf).
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>Device</strong></p></td>
-<td><p><strong>OS version required</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>iPhone 4S, iPhone 5, iPhone 5c or iPhone 5s. This app is optimized for iPhone 5.</p></td>
-<td><p>iOS 6 or later versions</p></td>
-</tr>
-<tr class="odd">
-<td><p>iPad Wi-Fi (3rd generation), iPad Wi-Fi + Cellular (3rd generation), iPad Wi-Fi (4th generation), iPad Wi-Fi + Cellular (4th generation), iPad mini Wi-Fi, iPad mini Wi-Fi + Cellular, iPad Air, iPad Air Wi-Fi + Cellular, iPad mini with Retina display, iPad mini with Retina display Wi-Fi + Cellular</p></td>
-<td><p>iOS 6 or later versions</p></td>
-</tr>
-</tbody>
-</table>
+|Device|OS version required|
+|---|---|
+|iPhone 4S, iPhone 5, iPhone 5c or iPhone 5s. This app is optimized for iPhone 5.|iOS 6 or later versions|
+|iPad Wi-Fi (3rd generation), iPad Wi-Fi + Cellular (3rd generation), iPad Wi-Fi (4th generation), iPad Wi-Fi + Cellular (4th generation), iPad mini Wi-Fi, iPad mini Wi-Fi + Cellular, iPad Air, iPad Air Wi-Fi + Cellular, iPad mini with Retina display, iPad mini with Retina display Wi-Fi + Cellular|iOS 6 or later versions|
 
 ## OWA for Android
 

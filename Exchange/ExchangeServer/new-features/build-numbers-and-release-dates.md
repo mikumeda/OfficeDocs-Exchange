@@ -58,6 +58,9 @@ Open the Exchange Management Shell, and run the following command:
 Get-ExchangeServer | Format-List Name,Edition,AdminDisplayVersion
 ```
 
+> [!NOTE]
+> This option does not reflect the installed Security Update (SU), only the Cumulative Update (CU). To verify it, use option 1 or 2.
+
 ## Exchange Server 2019
 
 The table in this section provides build numbers and general release dates for each version of Microsoft Exchange Server 2019.

@@ -63,8 +63,10 @@ In Exchange Online, there's a limit to the number of journal rules that you can 
 You can use a journal rule to journal only internal messages, only external messages, or both. The following list describes these scopes:
 
 - **Internal messages only**: Journal rules with the scope set to journal internal messages sent between the recipients inside your Exchange organization.
-- **External messages only**: Journal rules with the scope set to journal external messages sent to recipients or received from senders outside your Exchange organization.
+- **External messages only**<sup>1</sup>: Journal rules with the scope set to journal external messages sent to recipients or received from senders outside your Exchange organization.
 - **All messages**: Journal rules with the scope set to journal all messages that pass through your organization regardless of origin or destination. These include messages that may have already been processed by journal rules in the Internal and External scopes.
+
+<sup>1</sup>If the sender and recipients are both in [accepted domains](/exchange/mail-flow-best-practices/manage-accepted-domains/manage-accepted-domains) of the same organization, the messages are not honored as external, even if the `x-ms-exchange-crosstenant-authas` header in the messages has the value `anonymous`. Accordingly, these messages are not journaled as external.
 
 ### Journal recipient
 

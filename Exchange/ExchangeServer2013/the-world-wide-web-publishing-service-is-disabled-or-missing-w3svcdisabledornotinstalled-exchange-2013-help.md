@@ -5,12 +5,14 @@ ms:assetid: 2d26d778-ddf1-4225-b5e2-f6b49d819c94
 ms:mtpsurl: https://technet.microsoft.com/library/ms.exch.setupreadiness.w3svcdisabledornotinstalled(v=EXCHG.150)
 ms:contentKeyID: 46628847
 ms.reviewer: 
+ms.topic: article
 manager: serdars
 ms.author: serdars
 author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Explanation for The World Wide Web Publishing Service is disabled or missing error.
 ---
 
 # The World Wide Web Publishing Service is disabled or missing\_W3SVCDisabledOrNotInstalled
@@ -27,7 +29,7 @@ Exchange 2007 setup requires the computer that you are installing Microsoft Exch
 
 To resolve this issue, verify that the World Wide Web Publishing service is installed and not disabled on the local computer, and then rerun Microsoft Exchange setup.
 
-**To verify that the World Wide Web Publishing Service is installed and not disabled**
+## To verify that the World Wide Web Publishing Service is installed and not disabled
 
 1. Right-click **My Computer** on the desktop, and then click **Manage**.
 
@@ -45,7 +47,7 @@ To resolve this issue, verify that the World Wide Web Publishing service is inst
 
 7. Click **Apply**, and then click **OK**.
 
-**To install the World Wide Web Publishing Service**
+## To install the World Wide Web Publishing Service
 
 1. On the **Start** menu, select **Settings**, **Control Panel**, and then click **Add or Remove Programs**
 
