@@ -94,6 +94,13 @@ Looking for other management tasks related to DAGs? Check out [Manage database a
    Add-MailboxDatabaseCopy -Identity DB3 -MailboxServer MBX1 -ReplayLagTime 3.00:00:00 -TruncationLagTime 3.00:00:00
    ```
 
+> [!NOTE]
+> You will need to reconfigure the Virtual Directories on the recovered server.
+> You will need to re-create any customizations you may have made.
+> You may need to perform additional recovery steps depending on your configuration.
+> See [Deploy the ASA credential to another Exchange server running CLient Access services](https://docs.microsoft.com/en-us/exchange/architecture/client-access/kerberos-auth-for-load-balanced-client-access?view=exchserver-2019#deploy-the-asa-credential-to-another-exchange-server-running-client-access-services)
+> Import the AD FS signing certificate. See [Step 1: Review the certificate requirements for AD FS](https://docs.microsoft.com/en-us/exchange/clients/outlook-on-the-web/ad-fs-claims-based-auth?view=exchserver-2019#step-1-review-the-certificate-requirements-for-ad-fs)
+
 ## How do you know this fix worked?
 
 To verify that you've successfully recovered the DAG member, use the following method:
