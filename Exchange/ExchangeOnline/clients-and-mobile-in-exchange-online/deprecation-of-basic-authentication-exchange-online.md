@@ -61,7 +61,8 @@ In 2020, we released OAuth 2.0 support for POP, IMAP, and SMTP AUTH. Updates to 
 
 Application developers who have built apps that send, read, or otherwise process email using these protocols will be able to keep the same protocol, but need to implement secure, Modern authentication experiences for their users. This functionality is built on top of [Microsoft Identity platform v2.0](/azure/active-directory/develop/v2-overview) and supports access to Microsoft 365 email accounts.
 
-If your in-house application needs to access IMAP, POP and SMTP AUTH protocols in Exchange Online, follow these step-by-step instructions to implement OAuth 2.0 authentication:  [Authenticate an IMAP, POP, or SMTP connection using OAuth](/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth).
+If your in-house application needs to access IMAP, POP and SMTP AUTH protocols in Exchange Online, follow these step-by-step instructions to implement OAuth 2.0 authentication:  [Authenticate an IMAP, POP, or SMTP connection using OAuth](/exchange/client-developer/legacy-protocols/how-to-authenticate-an-imap-pop-smtp-application-by-using-oauth). Additionaly use this powershell script [Get-IMAPAccesstoken.ps1](https://github.com/DanijelkMSFT/ThisandThat/blob/main/Get-IMAPAccessToken.ps1) to test IMAP access after your OAuth enablement on your own in a simple way including the shared mailbox use case. If this is successful, just make a confident next step talk to your application owner of your vendor or internal business partner. 
+
 
 Work with your vendor to update any apps or clients that you use that could be impacted.
 
