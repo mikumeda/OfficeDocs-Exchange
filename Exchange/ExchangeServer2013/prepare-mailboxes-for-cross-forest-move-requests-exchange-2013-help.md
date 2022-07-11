@@ -64,7 +64,7 @@ The following table lists the minimum set of attributes that need to be configur
 ### Mail user's attributes
 
 |Mail user's Active Directory attributes|Action|
-|---|---|
+|---|---|---|
 |**displayName**|Copy the corresponding attribute of the source mailbox or generate a new value.|
 |**Mail**|Directly copy the corresponding attribute of the source mailbox.|
 |**mailNickname**|Copy the corresponding attribute of the source mailbox or generate a new value.|
