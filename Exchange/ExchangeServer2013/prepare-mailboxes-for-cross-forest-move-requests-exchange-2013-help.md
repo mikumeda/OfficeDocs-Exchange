@@ -64,7 +64,7 @@ The following table lists the minimum set of attributes that need to be configur
 ### Mail user's attributes
 
 |Mail user's Active Directory attributes|Action|
-|---|---|---|
+|---|---|
 |**displayName**|Copy the corresponding attribute of the source mailbox or generate a new value.|
 |**Mail**|Directly copy the corresponding attribute of the source mailbox.|
 |**mailNickname**|Copy the corresponding attribute of the source mailbox or generate a new value.|
@@ -78,7 +78,7 @@ The following table lists the minimum set of attributes that need to be configur
 |**proxyAddresses**|Copy source mailbox's **proxyAddresses** attribute. Additionally, copy source mailbox's **LegacyExchangeDN** as an X500 address in the **proxyAddresses** attribute of the target mail user. <br><br> **Note**: The **proxyAddresses** of the source mailbox user must contain an SMTP address that matches the authoritative domain of the target forest. This allows the **New-MoveRequest** cmdlet to correctly select the **targetAddress** of the source mail-enabled user (converted from the source mailbox user after the mailbox move request is complete) to ensure that mail routing is still functional.|
 |**sAMAccountName**|Copy the corresponding attribute of the source mailbox or generate a new value. <br><br> Ensure that the value is unique within the target forest domain that the target mail user belongs to.|
 |**targetAddress**|Set to an SMTP address in the **proxyAddresses** attribute of the source mailbox. <br><br> This SMTP address must belong to the authoritative domain of the source forest.|
-|**userAccountControl**|Constant: 514 //equivalent to 0x202, ACCOUNTDISABLE | NORMAL_ACCOUNT.|
+|**userAccountControl**|Constant: 514 //equivalent to 0x202, ACCOUNTDISABLE \| NORMAL_ACCOUNT.|
 |**userPrincipalName**|Copy the corresponding attribute of the source mailbox or generate a new value. Because the mail user is logon disabled, this **userPrincipalName** isn't used.|
 
 ## Optional attributes
