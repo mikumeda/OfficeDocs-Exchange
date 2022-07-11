@@ -23,7 +23,7 @@ The following sections list helpful performance counters you can use when troubl
 
 ## Exchange Domain Controller Connectivity Counters
 
-The following tables displays acceptable thresholds and information about Exchange domain controller connectivity counters.
+The following table displays acceptable thresholds and information about Exchange domain controller connectivity counters.
 
 |Counter|Description|Threshold|
 |---|---|---|
@@ -34,11 +34,11 @@ The following tables displays acceptable thresholds and information about Exchan
 
 ## Processor and Process Counters
 
-The following tables displays acceptable thresholds and information about processors and process counters.
+The following table displays acceptable thresholds and information about processors and process counters.
 
 |Counter|Description|Threshold|
 |---|---|---|
-|Processor(\_Total)\% Processor Time|Shows the percentage of time that the processor is executing application or operating system processes. This is when the processor isn't idle.|Should be less than 75% on average.|
+|Processor(\_Total)\% Processor Time|Shows the percentage of time that the processor is executing application or operating system processes. This value is when the processor isn't idle.|Should be less than 75% on average.|
 |Processor(\_Total)\% User Time|Shows the percentage of processor time spent in user mode. User mode is a restricted processing mode designed for applications, environment subsystems, and integral subsystems.|Should be less than 75% on average.|
 |Processor(\_Total)\% Privileged Time|Shows the percentage of processor time spent in privileged mode. Privileged mode is a processing mode designed for operating system components and hardware-manipulating drivers. It allows direct access to hardware and all memory.|Should be less than 75% on average.|
 |System\Processor Queue Length (all instances)|Indicates the number of threads each processor is servicing. Processor Queue Length can be used to identify if processor contention or high CPU utilization is caused by the processor capacity being insufficient to handle the workloads assigned to it. Processor Queue Length shows the number of threads that are delayed in the Processor Ready Queue and are waiting to be scheduled for execution. The value listed is the last observed value at the time the measurement was taken.|Shouldn't be greater than 5 per processor.|
@@ -46,7 +46,7 @@ The following tables displays acceptable thresholds and information about proces
 
 ## Memory Counters
 
-The following tables displays acceptable thresholds and information about memory counters.
+The following table displays acceptable thresholds and information about memory counters.
 
 |Counter|Description|Threshold|
 |---|---|---|
@@ -55,32 +55,32 @@ The following tables displays acceptable thresholds and information about memory
 
 ## .NET Framework Counters
 
-The following tables displays acceptable thresholds and information about .NET Framework counters.
+The following table displays acceptable thresholds and information about .NET Framework counters.
 
 |Counter|Description|Threshold|
 |---|---|---|
 |.NET CLR Memory(\*)\% Time in GC|Shows when garbage collection has occurred. When the counter exceeds the threshold, it indicates that CPU is cleaning up and isn't being used efficiently for load. Adding memory to the server would improve this situation.|Should be below 10% on average.|
-|.NET CLR Exceptions(\*)\# of Exceps Thrown / sec|Displays the number of exceptions thrown per second. These include both .NET Framework exceptions and unmanaged exceptions that get converted into .NET Framework exceptions. For example, the null pointer reference exception in unmanaged code would get thrown again in managed code as a .NET Framework System.NullReferenceException. This counter includes both handled and unhandled exceptions.|Should be less than 5% of total requests per second (RPS) (Web Server(\_Total)\Connection Attempts/sec * .05).|
+|.NET CLR Exceptions(\*)\# of Exceps Thrown / sec|Displays the number of exceptions thrown per second. These exceptions include both .NET Framework exceptions and unmanaged exceptions that get converted into .NET Framework exceptions. For example, the null pointer reference exception in unmanaged code would get thrown again in managed code as a .NET Framework System.NullReferenceException. This counter includes both handled and unhandled exceptions.|Should be less than 5% of total requests per second (RPS) (`Web Server(_Total)\Connection Attempts/sec * .05)`.|
 |.NET CLR Memory(\*)\# Bytes in all Heaps|Shows the sum of four other counters: Gen 0 Heap Size, Gen 1 Heap Size, Gen 2 Heap Size, and Large Object Heap Size. This counter indicates the current memory allocated in bytes on the GC Heaps.|Not applicable|
 
 ## Network Counters
 
-The following tables displays acceptable thresholds and information about common network counters.
+The following table displays acceptable thresholds and information about common network counters.
 
 |Counter|Description|Threshold|
 |---|---|---|
-|Network Interface(\*)\Packets Outbound Errors|Indicates the number of outbound packets that couldn't be transmitted because of errors.|Should be 0 at all times.|
+|Network Interface(\*)\Packets Outbound Errors|Indicates the number of outbound packets that couldn't be transmitted because of errors.|Should always be 0.|
 |TCPv6\Connection Failures|Shows the number of times TCP connections have made a direct transition to the CLOSED state from the SYN-SENT state or the SYN-RCVD state, plus the number of times TCP connections have made a direct transition to the LISTEN state from the SYN-RCVD state.|An increasing number of failures, or a consistently increasing rate of failures, can indicate a bandwidth shortage.|
 |TCPv4\Connections Reset|Shows the number of times TCP connections have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state.|An increasing number of resets, or a consistently increasing rate of resets, can indicate a bandwidth shortage.|
 |TCPv6\Connections Reset|Shows the number of times TCP connections have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE-WAIT state.|An increasing number of resets, or a consistently increasing rate of resets, can indicate a bandwidth shortage.|
 
 ## Netlogon Counters
 
-The following tables displays acceptable thresholds and information about common counters for monitoring NTLM authentication issues and MaxConcurrentAPI issues. See the Microsoft Knowledge Base article [KB2688798](https://support.microsoft.com/help/2688798) for more information.
+The following table displays acceptable thresholds and information about common counters for monitoring NTLM authentication issues and MaxConcurrentAPI issues. For more information, see the Microsoft Knowledge Base article [KB2688798](https://support.microsoft.com/help/2688798).
 
 |Counter|Description|Threshold|
 |---|---|---|
-|\Netlogon\Semaphore Waiters|The number of the thread that is waiting to obtain the semaphore.|See the Microsoft Knowledge Base article [KB2688798](https://support.microsoft.com/help/2688798)|
+|\Netlogon\Semaphore Waiters|The number of the thread that is waiting to obtain the semaphore.|For more information, see the Microsoft Knowledge Base article [KB2688798](https://support.microsoft.com/help/2688798).|
 |\Netlogon\Semaphore Holders|The number of the thread that is holding the semaphore.|Not applicable|
 |\Netlogon\Semaphore Acquires|The total number of times that the semaphore has been obtained over the lifetime of the security channel connection, or since system startup for _Total.|Not applicable|
 |\Netlogon\Semaphore Timeouts|The total number of times that a thread has timed out while it waited for the semaphore over the lifetime of the security channel connection, or since system startup for \_Total.|Not applicable|
@@ -95,10 +95,10 @@ The following table shows active log I/O latency requirements counters and their
 
 |Counter|Description|Threshold|
 |---|---|---|
-|MSExchange Database ==> Instances(\*)\I/O Database Reads (Attached) Average Latency|Shows the average length of time, in milliseconds (ms), per database read operation.|Should be less than 20ms on average.|
-|MSExchange Database ==> Instances(\*)\I/O Database Writes (Attached) Average Latency|Shows the average length of time, in ms, per database write operation.|Should be less than 50ms on average.|
-|MSExchange Database ==> Instances(\*)\I/O Log Writes Average Latency|Shows the average length of time, in ms, per Log write operation.|Should be less than 10ms on average.|
-|MSExchange Database ==> Instances(\*)\I/O Database Reads (Recovery) Average Latency|Shows the average length of time, in ms, per passive database read operation.|Should be less than 200ms on average.|
+|MSExchange Database ==> Instances(\*)\I/O Database Reads (Attached) Average Latency|Shows the average length of time, in milliseconds (ms), per database read operation.|Should be less than 20 ms on average.|
+|MSExchange Database ==> Instances(\*)\I/O Database Writes (Attached) Average Latency|Shows the average length of time, in ms, per database write operation.|Should be less than 50 ms on average.|
+|MSExchange Database ==> Instances(\*)\I/O Log Writes Average Latency|Shows the average length of time, in ms, per Log write operation.|Should be less than 10 ms on average.|
+|MSExchange Database ==> Instances(\*)\I/O Database Reads (Recovery) Average Latency|Shows the average length of time, in ms, per passive database read operation.|Should be less than 200 ms on average.|
 |MSExchange Database ==> Instances(\*)\I/O Database Writes (Recovery) Average Latency|Shows the average length of time, in ms, per passive database write operation.|Should be less than the read latency for the same instance, as measured by the MSExchange Database ==> Instances(\*)\I/O Database Reads (Recovery) Average Latency counter.|
 |MSExchange Database ==> Instances(\*)\I/O Database Reads (Attached)/sec|Shows the number of database read operations per second for each attached database instance.|Not applicable|
 |MSExchange Database ==> Instances(\*)\I/O Database Writes (Attached)/sec|Shows the number of database write operations per second for each attached database instance.|Not applicable|
@@ -107,20 +107,20 @@ The following table shows active log I/O latency requirements counters and their
 
 ## ASP.NET
 
-The following tables displays acceptable thresholds and information about ASP.NET counters.
+The following table displays acceptable thresholds and information about ASP.NET counters.
 
 |Counter|Description|Threshold|
 |---|---|---|
-|ASP.NET\Application Restarts|Shows the number of times the application has been restarted during the Web server's lifetime.|Should be 0 at all times.|
-|ASP.NET\Worker Process Restarts|Shows the number of times a worker process has restarted on the computer.|Should be 0 at all times.|
-|ASP.NET\Request Wait Time|Shows the number of ms the most recent request was waiting in the queue.|Should be 0 at all times.|
-|ASP.NET Applications(\*)\Requests In Application Queue|Shows the number of requests in the application request queue.|Should be 0 at all times.|
+|ASP.NET\Application Restarts|Shows the number of times the application has been restarted during the Web server's lifetime.|Should always be 0.|
+|ASP.NET\Worker Process Restarts|Shows the number of times a worker process has restarted on the computer.|Should always be 0.|
+|ASP.NET\Request Wait Time|Shows the number of ms the most recent request was waiting in the queue.|Should always be 0.|
+|ASP.NET Applications(\*)\Requests In Application Queue|Shows the number of requests in the application request queue.|Should always be 0.|
 |ASP.NET Applications(\*)\Requests Executing|Shows the number of requests currently executing.|Not applicable|
 |ASP.NET Applications(\*)\Requests/Sec|Shows the number of requests executed per second.|Not applicable|
 
 ## RPC Client Access Counters
 
-The following tables displays acceptable thresholds and information about RPC Client Access counters.
+The following table displays acceptable thresholds and information about RPC Client Access counters.
 
 |Counter|Description|Threshold|
 |---|---|---|
@@ -133,7 +133,7 @@ The following tables displays acceptable thresholds and information about RPC Cl
 
 ## HTTP Proxy Counters
 
-The following tables displays information about HTTP Proxy counters.
+The following table displays information about HTTP Proxy counters.
 
 |Counter|Description|
 |---|---|
@@ -147,22 +147,22 @@ The following tables displays information about HTTP Proxy counters.
 
 ## Information Store Counters
 
-The following tables displays acceptable thresholds and information about Information Store counters.
+The following table displays acceptable thresholds and information about Information Store counters.
 
 > [!NOTE]
 > Normal storage latency guidance in Exchange 2013 is very similar to the guidance from Exchange 2010. Additional Information Store counters can be found in [Mailbox Server Counters](/previous-versions/office/exchange-server-2010/ff367871(v=exchg.141)).
 
 |Counter|Description|Threshold|
 |---|---|---|
-|MSExchangeIS Store(\*)\RPC Requests|Indicates the overall RPC requests currently executing within the information store process.|Should be below 70 at all times.|
+|MSExchangeIS Store(\*)\RPC Requests|Indicates the overall RPC requests currently executing within the information store process.|Should always be below 70.|
 |MSExchangeIS Client Type(\*)\RPC Average Latency|Shows a server RPC latency, in ms, averaged for the past 1,024 packets for a particular client protocol.|Should be less than 50 ms on average for each client.|
-|MSExchangeIS Store(\*)\RPC Average Latency|RPC Latency average (msec) is the average latency in milliseconds of RPC requests per database. Average is calculated over all RPCs since exrpc32 was loaded.|Should be less than 50ms at all times, with spikes less than 100ms.|
+|MSExchangeIS Store(\*)\RPC Average Latency|RPC Latency average (msec) is the average latency in milliseconds of RPC requests per database. Average is calculated over all RPCs since exrpc32 was loaded.|Should always be less than 50 ms, with spikes less than 100 ms.|
 |MSExchangeIS Store(\*)\RPC Operations/sec|Shows the number of RPC operations per second for each database instance.|Not applicable|
 |MSExchangeIS Client Type(\*)\RPC Operations/sec|Shows the number of RPC operations per second for each client type connection.|Not applicable|
 
 ## Client Access Server Counters
 
-The following tables displays information about client connection counters and Internet Information Services (IIS) counters.
+The following table displays information about client connection counters and Internet Information Services (IIS) counters.
 
 |Counter|Description|
 |---|---|
@@ -175,13 +175,13 @@ The following tables displays information about client connection counters and I
 |MSExchangeAutodiscover\Requests/sec|Shows the number of Autodiscover service requests processed each second. Determines current user load.|
 |MSExchangeWS\Requests/sec|Shows the number of requests processed each second. Determines current user load.|
 |Web Service(\_Total)\Current Connections|Shows the current number of connections established with the Web service. Determines current user load.|
-|Web Service(Default Web Site)\Current Connections|Shows the current number of connections established to the Default website which corresponds to the number of connections hitting the Front End CAS server role. Determines current user load.|
+|Web Service(Default Web Site)\Current Connections|Shows the current number of connections established to the Default website, which corresponds to the number of connections hitting the Front End CAS server role. Determines current user load.|
 |WebService(\_Total)\Connection Attempts/sec|Shows the rate that connections to the Web service are being attempted. Determines current user load.|
 |Web Service(\_Total)\Other Request Methods/sec|Shows the rate HTTP requests are made that don't use the OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, MOVE, COPY, MKCOL, PROPFIND, PROPPATCH, SEARCH, LOCK, or UNLOCK methods. Determines current user load.|
 
 ## Workload Management Counters
 
-The following tables displays information about Exchange Workload Management counters. These counters are important to monitor because workload management may run tasks in the background during off-peak times.
+The following table displays information about Exchange Workload Management counters. These counters are important to monitor because workload management may run tasks in the background during off-peak times.
 
 |Counter|Description|
 |---|---|
