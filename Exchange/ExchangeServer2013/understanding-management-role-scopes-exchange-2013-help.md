@@ -46,7 +46,7 @@ Each role can have the following types of scopes:
 - **Recipient read scope**: The implicit recipient read scope determines what recipient objects the user assigned the management role is allowed to read from Active Directory.
 - **Recipient write scope**: The implicit recipient write scope determines what recipient objects the user assigned the management role is allowed to modify in Active Directory.
 - **Configuration read scope**: The implicit configuration read scope determines what configuration objects the user assigned the management role is allowed to read from Active Directory.
-- **Configuration write scope**:  The implicit configuration write scope determines what organizational, database, and server objects the user assigned the management role is allowed to modify in Active Directory.
+- **Configuration write scope**: The implicit configuration write scope determines what organizational, database, and server objects the user assigned the management role is allowed to modify in Active Directory.
 
 Recipient objects include mailboxes, distribution groups, mail enabled users, and other objects. Configuration objects include servers running Microsoft Exchange Server 2013, and databases located on servers running Exchange. Each type of scope can be either an implicit scope or explicit scope.
 
