@@ -49,83 +49,14 @@ Make sure all client and desktop computers have installed the Windows DST update
 
 The following table shows when users should [change time zone in Microsoft Outlook](https://support.microsoft.com/office/5ab3e10e-5a6c-46af-ab48-156fedf70c04). Find which version your organization's servers are running and then determine which client programs your users are running.
 
-<table>
-<tbody>
-<tr>
- <td> <p></p> </td>
- <td> <p> <strong>Client Version</strong> </p> </td>
- <td><p>&nbsp;</p></td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>Organization version</strong> </p> </td>
- <td> <p> <strong>Outlook 2003 or Outlook 2007</strong> </p> </td>
- <td> <p> <strong>Outlook 2010</strong> </p> </td>
- <td> <p> <strong>Outlook 2013</strong> </p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>Exchange 2003 on premises</strong> </p> </td>
- <td> <p> <a href="https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04">Time Zone Data Update Tool for Microsoft Office Outlook</a> </p> </td>
- <td> <p>No action required</p> </td>
- <td> <p>No action required</p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>Exchange 2007 on premises</strong> </p> </td>
- <td> <p> <a href="https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04">Time Zone Data Update Tool for Microsoft Office Outlook</a> </p> </td>
- <td> <p>No action required</p> </td>
- <td> <p>No action required</p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>Exchange 2010 on premises</strong> </p> </td>
- <td> <p> <a href="https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04">Time Zone Data Update Tool for Microsoft Office Outlook</a> </p> </td>
- <td> <p>No action required</p> </td>
- <td> <p>No action required</p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>Exchange 2013 on premises</strong> </p> </td>
- <td> <p> <a href="https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04">Time Zone Data Update Tool for Microsoft Office Outlook</a> </p> </td>
- <td> <p>No action required</p> </td>
- <td> <p>No action required</p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>BPOS-S (Exchange 2007)</strong> </p> </td>
- <td> <p> <a href="https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04">Time Zone Data Update Tool for Microsoft Office Outlook</a> </p> </td>
- <td> <p>No action required</p> </td>
- <td> <p>No action required</p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>BPOS-D (Exchange 2010)</strong> </p> </td>
- <td> <p> <a href="https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04">Time Zone Data Update Tool for Microsoft Office Outlook</a> </p> </td>
- <td> <p>No action required</p> </td>
- <td> <p>No action required</p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>Microsoft 365 or Office 365 (Exchange 2010)</strong> </p> </td>
- <td> <p> <a href="https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04">Time Zone Data Update Tool for Microsoft Office Outlook</a> (not supported with Outlook 2003)</p> </td>
- <td> <p>No action required</p> </td>
- <td> <p>No action required</p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td> <p> <strong>Microsoft 365 or Office 365 (Exchange 2013)</strong> </p> </td>
- <td> <p> <a href="https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04">Time Zone Data Update Tool for Microsoft Office Outlook</a> (not supported with Outlook 2003)</p> </td>
- <td> <p>No action required</p> </td>
- <td> <p>No action required</p> </td>
- <td><p>&nbsp;</p></td>
- </tr>
-<tr>
- <td><p>&nbsp;</p></td>
- <td><p>&nbsp;</p></td>
- <td><p>&nbsp;</p></td>
- <td><p>&nbsp;</p></td>
- <td><p>&nbsp;</p></td>
- </tr>
- </tbody>
- </table>
+|&nbsp;|Client Version|&nbsp;|&nbsp;|
+|---|---|---|---|
+|**Organization version**|**Outlook 2003 or Outlook 2007**|**Outlook 2010**|**Outlook 2013**|
+|**Exchange 2003 on premises**|[Time Zone Data Update Tool for Microsoft Office Outlook](https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04)|No action required|No action required|
+|**Exchange 2007 on premises**|[Time Zone Data Update Tool for Microsoft Office Outlook](https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04)|No action required|No action required|
+|**Exchange 2010 on premises**|[Time Zone Data Update Tool for Microsoft Office Outlook](https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04)|No action required|No action required|
+|**Exchange 2013 on premises**|[Time Zone Data Update Tool for Microsoft Office Outlook](https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04)|No action required|No action required|
+|**BPOS-S (Exchange 2007)**|[Time Zone Data Update Tool for Microsoft Office Outlook](https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04)|No action required|No action required|
+|**BPOS-D (Exchange 2010)**|[Time Zone Data Update Tool for Microsoft Office Outlook](https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04)|No action required|No action required|
+|**Microsoft 365 or Office 365 (Exchange 2010)**|[Time Zone Data Update Tool for Microsoft Office Outlook](https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04) (not supported with Outlook 2003)|No action required|No action required|
+|**Microsoft 365 or Office 365 (Exchange 2013)**|[Time Zone Data Update Tool for Microsoft Office Outlook](https://support.microsoft.com/office/add-remove-or-change-time-zones-5ab3e10e-5a6c-46af-ab48-156fedf70c04) (not supported with Outlook 2003)|No action required|No action required|

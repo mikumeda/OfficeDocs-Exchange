@@ -4,11 +4,11 @@ TOCTitle: Exchange 2013 deployment permissions reference
 ms:assetid: b13412d0-0cc4-4c1d-bf31-cae3d3e211a9
 ms:mtpsurl: https://technet.microsoft.com/library/Ee681663(v=EXCHG.150)
 ms:contentKeyID: 56348434
-ms.reviewer: 
+ms.reviewer:
+ms.topic: article 
 manager: serdars
 ms.author: serdars
 author: msdmaguire
-ms.topic: article
 description: Exchange Server deployment permissions reference
 f1.keywords:
 - NOCSH
@@ -25,146 +25,40 @@ In some cases, the ACL isn't applied on the usual property, **ntSecurityDescript
 
 The columns of each permissions table include the following information:
 
-  - **Account**: The security principal granted or denied the permissions.
-
-  - **ACE type**: Access control entry (ACE) type
-
-      - **Allow ACE**: An allow ACE allows the user or group associated with the ACE to access an item.
-
-      - **Deny ACE**: A deny ACE prevents the user or group associated with the ACE from accessing an item.
-
-  - **Inheritance**: The type of inheritance used for child objects.
-
-      - **All** indicates that the permissions apply to the object and all sub-objects.
-
-      - **Desc** indicates the permissions apply to the object class listed in the On Property/Applies To row.
-
-      - **None** indicates those permissions only apply the object.
-
-  - **Permissions**: The permissions granted to the account.
-
-  - **On Property/Applies To**: In some cases, permissions apply only to a given property, property set, or object class. These limited permissions are specified here.
-
-  - **Comments**: When applicable, this column explains why the permissions are required or provides other information about the permissions.
+- **Account**: The security principal granted or denied the permissions.
+- **ACE type**: Access control entry (ACE) type
+  - **Allow ACE**: An allow ACE allows the user or group associated with the ACE to access an item.
+  - **Deny ACE**: A deny ACE prevents the user or group associated with the ACE from accessing an item.
+- **Inheritance**: The type of inheritance used for child objects.
+  - **All** indicates that the permissions apply to the object and all sub-objects.
+  - **Desc** indicates the permissions apply to the object class listed in the On Property/Applies To row.
+  - **None** indicates those permissions only apply the object.
+- **Permissions**: The permissions granted to the account.
+- **On Property/Applies To**: In some cases, permissions apply only to a given property, property set, or object class. These limited permissions are specified here.
+- **Comments**: When applicable, this column explains why the permissions are required or provides other information about the permissions.
 
 The permissions are generally listed in the table by the names that are used on the Active Directory Service Interfaces (ADSI) Edit (AdsiEdit.msc) **Security** property page in the **Advanced** view on the **View/Edit** tab. The ADSI Edit **Security** property page lists a much more condensed view of the permissions. The LDP tool (Ldp.exe) displays the access mask directly as a numeric value. The setup code refers to the permissions by predefined constants.
 
 The following table shows the relationships between these values.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>ADSI Edit Summary page</th>
-<th>ADSI Edit Advanced view, View/Edit tab</th>
-<th>ACL entries applied to a given object</th>
-<th>Binary value (access mask in LDP)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Full Control</p></td>
-<td><p>Full Control</p></td>
-<td><p><code>WRITE_OWNER | WRITE_DAC | READ_CONTROL | DELETE | ACTRL_DS_CONTROL_ACCESS | ACTRL_DS_LIST_OBJECT | ACTRL_DS_DELETE_TREE | ACTRL_DS_WRITE_PROP | ACTRL_DS_READ_PROP | ACTRL_DS_SELF | ACTRL_DS_LIST | ACTRL_DS_DELETE_CHILD | ACTRL_DS_CREATE_CHILD</code></p></td>
-<td><p><code>0x000F01FF</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Read</p></td>
-<td><p>List Contents + Read All Properties + Read Permissions</p></td>
-<td><p><code>ACTRL_DS_LIST | ACTRL_DS_READ_PROP | READ_CONTROL</code></p></td>
-<td><p><code>0x00020014</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Write</p></td>
-<td><p>Write All Properties + All Validated Writes</p></td>
-<td><p><code>ACTRL_DS_WRITE_PROP | ACTRL_DS_SELF</code></p></td>
-<td><p><code>0x00000028</code></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>List Contents</p></td>
-<td><p><code>ACTRL_DS_LIST</code></p></td>
-<td><p><code>0x00000004</code></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>Read All Properties</p></td>
-<td><p><code>ACTRL_DS_READ_PROP</code></p></td>
-<td><p><code>0x00000010</code></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>Write All Properties</p></td>
-<td><p><code>ACTRL_DS_WRITE_PROP</code></p></td>
-<td><p><code>0x00000020</code></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>Delete</p></td>
-<td><p><code>DELETE</code></p></td>
-<td><p><code>0x00010000</code></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>Delete Subtree</p></td>
-<td><p><code>ACTRL_DS_DELETE_TREE</code></p></td>
-<td><p><code>0x00000040</code></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>Read Permissions</p></td>
-<td><p><code>READ_CONTROL</code></p></td>
-<td><p><code>0x00020000</code></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>Modify Permissions</p></td>
-<td><p><code>WRITE_DAC</code></p></td>
-<td><p><code>0x00040000</code></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>Modify Owner</p></td>
-<td><p><code>WRITE_OWNER</code></p></td>
-<td><p><code>0x00080000</code></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>All Validated Writes</p></td>
-<td><p><code>ACTRL_DS_SELF</code></p></td>
-<td><p><code>0x00000008</code></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>All Extended Rights</p></td>
-<td><p><code>ACTRL_DS_CONTROL_ACCESS</code></p></td>
-<td><p><code>0x00000100</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Create All Child Objects</p></td>
-<td><p>Create All Child Objects</p></td>
-<td><p><code>ACTRL_DS_CREATE_CHILD</code></p></td>
-<td><p><code>0x00000001</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Delete All Child Objects</p></td>
-<td><p>Delete All Child Objects</p></td>
-<td><p><code>ACTRL_DS_DELETE_CHILD</code></p></td>
-<td><p><code>0x00000002</code></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p> </p></td>
-<td><p><code>ACTRL_DS_LIST_OBJECT</code></p></td>
-<td><p><code>0x00000080</code></p></td>
-</tr>
-</tbody>
-</table>
+|ADSI Edit Summary page|ADSI Edit Advanced view, View/Edit tab|ACL entries applied to a given object|Binary value (access mask in LDP)|
+|---|---|---|---|
+|Full Control|Full Control|`WRITE_OWNER | WRITE_DAC | READ_CONTROL | DELETE | ACTRL_DS_CONTROL_ACCESS | ACTRL_DS_LIST_OBJECT | ACTRL_DS_DELETE_TREE | ACTRL_DS_WRITE_PROP | ACTRL_DS_READ_PROP | ACTRL_DS_SELF | ACTRL_DS_LIST | ACTRL_DS_DELETE_CHILD | ACTRL_DS_CREATE_CHILD`|`0x000F01FF`|
+|Read|List Contents + Read All Properties + Read Permissions|`ACTRL_DS_LIST | ACTRL_DS_READ_PROP | READ_CONTROL`|`0x00020014`|
+|Write|Write All Properties + All Validated Writes|`ACTRL_DS_WRITE_PROP | ACTRL_DS_SELF`|`0x00000028`|
+||List Contents|`ACTRL_DS_LIST`|`0x00000004`|
+||Read All Properties|`ACTRL_DS_READ_PROP`|`0x00000010`|
+||Write All Properties|`ACTRL_DS_WRITE_PROP`|`0x00000020`|
+||Delete|`DELETE`|`0x00010000`|
+||Delete Subtree|`ACTRL_DS_DELETE_TREE`|`0x00000040`|
+||Read Permissions|`READ_CONTROL`|`0x00020000`|
+||Modify Permissions|`WRITE_DAC`|`0x00040000`|
+||Modify Owner|`WRITE_OWNER`|`0x00080000`|
+||All Validated Writes|`ACTRL_DS_SELF`|`0x00000008`|
+||All Extended Rights|`ACTRL_DS_CONTROL_ACCESS`|`0x00000100`|
+|Create All Child Objects|Create All Child Objects|`ACTRL_DS_CREATE_CHILD`|`0x00000001`|
+|Delete All Child Objects|Delete All Child Objects|`ACTRL_DS_DELETE_CHILD`|`0x00000002`|
+|||`ACTRL_DS_LIST_OBJECT`|`0x00000080`|
 
 Extended rights are custom rights specified by individual applications. They are specified in the ACL. However, they are meaningless to Active Directory. The specific application enforces any extended rights. Examples of Exchange extended rights are "Create public folder" or "Create named properties in the information store."
 
@@ -175,7 +69,7 @@ For information about permissions that are set during a Microsoft Exchange Serve
 The permissions tables in this section show the permissions set when you execute the `Setup /PrepareAD` command.
 
 > [!NOTE]
-> The permissions described in this section are the default permissions that are configured when you deploy Exchange 2013 using the shared permissions model. If you've deployed Exchange 2013 using the Active Directory split permissions model, the default permission are different. For more information on the changes to the default permissions when using Active Directory split permissions and the shared and split permissions models in general, see <A href="understanding-split-permissions-exchange-2013-help.md">Active Directory split permissions</A> in <A href="understanding-split-permissions-exchange-2013-help.md">Understanding split permissions</A>. If you don't choose to use Active Directory split permissions when you install Exchange, Exchange will use shared permissions.
+> The permissions described in this section are the default permissions that are configured when you deploy Exchange 2013 using the shared permissions model. If you've deployed Exchange 2013 using the Active Directory split permissions model, the default permission are different. For more information on the changes to the default permissions when using Active Directory split permissions and the shared and split permissions models in general, see [Active Directory split permissions](understanding-split-permissions-exchange-2013-help.md) in [Understanding split permissions](understanding-split-permissions-exchange-2013-help.md). If you don't choose to use Active Directory split permissions when you install Exchange, Exchange will use shared permissions.
 
 ## Microsoft Exchange Container Permissions
 
@@ -183,95 +77,16 @@ The following table shows the permissions that are set on the Microsoft Exchange
 
 ### Distinguished name of the object: CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Installation Account</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-<td><p>This is the account that is used to run <code>/PrepareAD</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>Read Property</p>
-<p>List Contents</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify Permissions</p></td>
-<td><p>msExchSmtpRceiveConnector</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Delegated Setup</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Installation Account|Allow ACE|All|Full Control||This is the account that is used to run `/PrepareAD`.|
+|Organization Management|Allow ACE|All|Full Control|||
+|Exchange Trusted Subsystem|Allow ACE|All|Full Control|||
+|Exchange Servers|Allow ACE|All|Read|||
+|Authenticated Users|Allow ACE|None|Read Property <br><br> List Contents|||
+|Exchange Trusted Subsystem|Allow ACE|All|Modify Permissions|`msExchSmtpRceiveConnector`||
+|Public Folder Management|Allow ACE|All|Read <br><br> List Object|||
+|Delegated Setup|Allow ACE|All|Read <br><br> List Object|||
 
 ## Microsoft Exchange Autodiscover Container Permissions
 
@@ -279,33 +94,9 @@ The following table shows the permissions set on the Microsoft Exchange Autodisc
 
 ### Distinguished name of the object: CN=Microsoft Exchange Autodiscover,CN=Services,CN=Configuration,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Exchange Servers|Allow ACE|All|Read||
 
 ## Microsoft Exchange Organization Container Permissions
 
@@ -313,710 +104,97 @@ The permissions tables in this section show the permissions set on the Microsoft
 
 ### Distinguished name of the object: CN=\<organization\>,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account(s)</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Enterprise Admins</p>
-<p>Root Domain Admins</p>
-<p>Installation Account</p>
-<p>Organization Management</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send As</p>
-<p>Receive As</p></td>
-<td><p> </p></td>
-<td><p>Windows administrators aren't allowed to open mailboxes.</p></td>
-</tr>
-<tr class="even">
-<td><p>Enterprise Admins</p>
-<p>Schema Admins</p>
-<p>Root Domain Admins</p>
-<p>Installation Account</p>
-<p>Organization Management</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Exchange Web Services Impersonation</p>
-<p>Exchange Web Services Token Serialization</p></td>
-<td><p> </p></td>
-<td><p>Extended right</p></td>
-</tr>
-<tr class="odd">
-<td><p>Enterprise Admins</p>
-<p>Schema Admins</p>
-<p>Root Domain Admins</p>
-<p>Installation Account</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Store Transport Access</p>
-<p>Store Constrained Delegation</p>
-<p>Store Read Access</p>
-<p>Store Read Write Access</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Local System</p></td>
-<td><p>Allow</p></td>
-<td><p>All</p></td>
-<td><p>All Extended Rights</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>msExchAvailabilityUserPassword / msExchAvailabilityAddressSpace</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow</p></td>
-<td><p>None</p></td>
-<td><p>Read</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>NT Authority\Network Service</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Managed Availability Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>All Extended Rights</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>groupType</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchOwningServer</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchMailboxSecurityDescriptor</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMServerWritableFlags</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchDatabaseCreated</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUserCulture</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchMobileMailboxFlags</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>siteFolderGUID</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>siteFolderServer</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchEDBOffline</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>userCertificate</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMDtmfMap</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchBlockedSendersHash</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Public Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchPatchMDB</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>publicDelegates</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMSpokenName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMPinChecksum</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>legacyExchangeDN</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchSafeSendersHash</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>thumbnailPhoto</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create top level public folder</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create top level public folder</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>View information store status</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>View information store status</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Administer information store</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Administer information store</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create named properties in the information store</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create named properties in the information store</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder ACL</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder ACL</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder quotas</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder quotas</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder admin ACL</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder admin ACL</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder expiry</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder expiry</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder replica list</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder replica list</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder deleted item retention</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Modify public folder deleted item retention</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create public folder</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create public folder</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Mail Enable Public Folder</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Everyone</p>
-<p>NT Authority\Anonymous Logon</p>
-<p></p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create named properties in the information store</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Everyone</p>
-<p>NT Authority\Anonymous Logon</p>
-<p></p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create public folder</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Everyone</p>
-<p>NT Authority\Anonymous Logon</p>
-<p></p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p><code>/ msExchPrivateMDB</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Everyone</p>
-<p>NT Authority\Anonymous Logon</p>
-<p></p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p><code>/ msExchPublicMDB</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p><code>/ siteAddressing</code></p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account(s)|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Enterprise Admins <br><br> Root Domain Admins <br><br> Installation Account <br><br> Organization Management|Deny ACE|All|Send As <br><br> Receive As||Windows administrators aren't allowed to open mailboxes.|
+|Enterprise Admins <br><br> Schema Admins <br><br> Root Domain Admins <br><br> Installation Account <br><br> Organization Management|Deny ACE|All|Exchange Web Services Impersonation <br><br> Exchange Web Services Token Serialization||Extended right|
+|Enterprise Admins <br><br> Schema Admins <br><br> Root Domain Admins <br><br> Installation Account|Deny ACE|All|Store Transport Access <br><br> Store Constrained Delegation <br><br> Store Read Access <br><br> Store Read Write Access|||
+|Local System|Allow|All|All Extended Rights|||
+|Authenticated Users|Deny ACE|Desc|Read Property|`msExchAvailabilityUserPassword / msExchAvailabilityAddressSpace`||
+|Authenticated Users|Allow|None|Read|||
+|Organization Management|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|||
+|Public Folder Management|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|||
+|NT Authority\Network Service|Allow ACE|All|Read|||
+|Managed Availability Servers|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|||
+|Exchange Servers|Allow ACE|All|All Extended Rights|||
+|Exchange Servers|Allow ACE|All|Write Property|`groupType`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchOwningServer`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchMailboxSecurityDescriptor`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMServerWritableFlags`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchDatabaseCreated`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUserCulture`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchMobileMailboxFlags`||
+|Exchange Servers|Allow ACE|All|Write Property|`siteFolderGUID`||
+|Exchange Servers|Allow ACE|All|Write Property|`siteFolderServer`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchEDBOffline`||
+|Exchange Servers|Allow ACE|All|Write Property|`userCertificate`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMDtmfMap`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchBlockedSendersHash`||
+|Exchange Servers|Allow ACE|All|Write Property|`Personal Information`||
+|Exchange Servers|Allow ACE|All|Write Property|`Public Information`||
+|Exchange Servers|Allow ACE|All|Write Property|`Exchange Information`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchPatchMDB`||
+|Exchange Servers|Allow ACE|All|Write Property|`publicDelegates`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMSpokenName`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMPinChecksum`||
+|Exchange Servers|Allow ACE|All|Write Property|`legacyExchangeDN`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchSafeSendersHash`||
+|Exchange Servers|Allow ACE|All|Write Property|`thumbnailPhoto`||
+|Organization Management|Allow ACE|All|Create top level public folder|||
+|Public Folder Management|Allow ACE|All|Create top level public folder|||
+|Organization Management|Allow ACE|All|View information store status|||
+|Public Folder Management|Allow ACE|All|View information store status|||
+|Organization Management|Allow ACE|All|Administer information store|||
+|Public Folder Management|Allow ACE|All|Administer information store|||
+|Organization Management|Allow ACE|All|Create named properties in the information store|||
+|Public Folder Management|Allow ACE|All|Create named properties in the information store|||
+|Organization Management|Allow ACE|All|Modify public folder ACL|||
+|Public Folder Management|Allow ACE|All|Modify public folder ACL|||
+|Organization Management|Allow ACE|All|Modify public folder quotas|||
+|Public Folder Management|Allow ACE|All|Modify public folder quotas|||
+|Organization Management|Allow ACE|All|Modify public folder admin ACL|||
+|Public Folder Management|Allow ACE|All|Modify public folder admin ACL|||
+|Organization Management|Allow ACE|All|Modify public folder expiry|||
+|Public Folder Management|Allow ACE|All|Modify public folder expiry|||
+|Organization Management|Allow ACE|All|Modify public folder replica list|||
+|Public Folder Management|Allow ACE|All|Modify public folder replica list|||
+|Organization Management|Allow ACE|All|Modify public folder deleted item retention|||
+|Public Folder Management|Allow ACE|All|Modify public folder deleted item retention|||
+|Organization Management|Allow ACE|All|Create public folder|||
+|Public Folder Management|Allow ACE|All|Create public folder|||
+|Public Folder Management|Allow ACE|All|Mail Enable Public Folder|||
+|Everyone <br><br> NT Authority\Anonymous Logon <br><br>|Allow ACE|All|Create named properties in the information store|||
+|Everyone <br><br> NT Authority\Anonymous Logon <br><br>|Allow ACE|All|Create public folder|||
+|Everyone <br><br> NT Authority\Anonymous Logon <br><br>|Allow ACE|Desc|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|`/ msExchPrivateMDB`||
+|Everyone <br><br> NT Authority\Anonymous Logon <br><br>|Allow ACE|Desc|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|`/ msExchPublicMDB`||
+|Exchange Servers|Allow ACE|Desc|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|`/ siteAddressing`||
 
 ### Distinguished name of the object: CN=All Address Lists,CN=Address Lists Container,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchLastAppliedRecipientFilter</code></p>
-<p><code>msExchRecipientFilterFlags</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchLastAppliedRecipientFilter</code></p>
-<p><code>msExchRecipientFilterFlags</code></p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated Users|Allow ACE|All|List Contents||
+|Organization Management|Allow ACE|All|Write Property|`msExchLastAppliedRecipientFilter` <br><br> `msExchRecipientFilterFlags`|
+|Public Folder Management|Allow ACE|All|Write Property|`msExchLastAppliedRecipientFilter` <br><br> `msExchRecipientFilterFlags`|
 
 ### Distinguished name of the object: CN=Offline Address Lists,CN=Address Lists Container, CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Download Offline Address Book</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated Users|Allow ACE|All|Download Offline Address Book||
 
 ### Distinguished name of the object: CN=Addressing,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated users|Allow ACE|All|Read||
 
 ### Distinguished name of the object: CN=Recipient Policies,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchLastAppliedRecipientFilter</code></p>
-<p><code>msExchRecipientFilterFlags</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchLastAppliedRecipientFilter</code></p>
-<p><code>msExchRecipientFilterFlags</code></p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Organization Management|Allow ACE|All|Write Property|`msExchLastAppliedRecipientFilter` <br><br> `msExchRecipientFilterFlags`|
+|Public Folder Management|Allow ACE|All|Write Property|`msExchLastAppliedRecipientFilter` <br><br> `msExchRecipientFilterFlags`|
 
 ## Configuration Partition Container Permissions
 
@@ -1024,222 +202,31 @@ The permissions tables in this section show the permissions set by the `Setup /P
 
 ### Distinguished name of the object: CN=Sites,CN=Configuration,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchVersion / site</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchVersion / site-link</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchPartnerId / site</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchMinorPartnerId / site</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchResponsibleforSites / site</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p></p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchTransportSiteFlags / site</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchCost / site-link</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p>
-<p>Local System</p>
-<p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p><code>/ msExchEdgeSyncEHFConnector</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p>
-<p>Local System</p>
-<p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p><code>/ msExchEdgeSyncMservConnector</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Children</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p>
-<p>Delete Tree</p></td>
-<td><p><code>msExchEdgeSyncServiceConfig / site</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p>
-<p>Local System</p>
-<p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p><code>/ msExchEdgeSyncServiceConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Children</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p>
-<p>Delete Tree</p></td>
-<td><p><code>msExchEdgeSyncMservConnector / msExchEdgeSyncServiceConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p>
-<p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Children</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p>
-<p>Delete Tree</p></td>
-<td><p><code>msExchEdgeSyncEHFConnector / msExchEdgeSyncServiceConfig</code></p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|All|Write Property|`msExchVersion / site`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|All|Write Property|`msExchVersion / site-link`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|All|Write Property|`msExchPartnerId / site`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|All|Write Property|`msExchMinorPartnerId / site`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|All|Write Property|`msExchResponsibleforSites / site`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE||Write Property|`msExchTransportSiteFlags / site`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|All|Write Property|`msExchCost / site-link`|
+|Organization Management <br><br> Exchange Trusted Subsystem <br><br> Local System <br><br> Exchange Servers|Allow ACE|Desc|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|`/ msExchEdgeSyncEHFConnector`|
+|Organization Management <br><br> Exchange Trusted Subsystem <br><br> Local System <br><br> Exchange Servers|Allow ACE|Desc|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|`/ msExchEdgeSyncMservConnector`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|Children|Create Child <br><br> Delete Child <br><br> Delete Tree|`msExchEdgeSyncServiceConfig / site`|
+|Organization Management <br><br> Exchange Trusted Subsystem <br><br> Local System <br><br> Exchange Servers|Allow ACE|Desc|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|`/ msExchEdgeSyncServiceConfig`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|Children|Create Child <br><br> Delete Child <br><br> Delete Tree|`msExchEdgeSyncMservConnector / msExchEdgeSyncServiceConfig`|
+|Organization Management <br><br> Exchange Trusted Subsystem|Allow ACE|Children|Create Child <br><br> Delete Child <br><br> Delete Tree|`msExchEdgeSyncEHFConnector / msExchEdgeSyncServiceConfig`|
 
 ### Distinguished name of the object: CN=Deleted Objects,CN=Configuration,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Administration</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Installation Account</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permission</p>
-<p>Write Permission</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p>This is the account that is used to run <code>/PrepareAD</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Network Service</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Exchange Servers|Allow ACE|All|List Contents|||
+|Organization Administration|Allow ACE|All|Read <br><br> List Object|||
+|Installation Account|Allow ACE|All|Read Permission <br><br> Write Permission <br><br> List Contents <br><br> Read Property <br><br> List Object||This is the account that is used to run `/PrepareAD`.|
+|Exchange Trusted Subsystem|Allow ACE|All|Read <br><br> List Object|||
+|Network Service|Allow ACE|All|List Contents|||
 
 ## Exchange Administrative Group Permissions
 
@@ -1247,243 +234,48 @@ The `Setup /PrepareAD` command also configures the following permissions on the 
 
 ### Distinguished name of the object: CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Access Recipient Update Service</p></td>
-<td><p><code>msExchExchangeServer</code></p></td>
-<td><p>Allows Exchange Recipient Administrators to stamp recipients with proxy address information.</p></td>
-</tr>
-<tr class="even">
-<td><p>Local System</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Access Recipient Update Service</p></td>
-<td><p><code>msExchExchangeServer</code></p></td>
-<td><p>Allows the servers to stamp recipients with proxy address information.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Access Recipient Update Service</p></td>
-<td><p><code>msExchExchangeServer</code></p></td>
-<td><p>Allows Exchange Public Folder Administrators to stamp recipients with proxy address information.</p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Organization Management|Allow ACE|Desc|Access Recipient Update Service|`msExchExchangeServer`|Allows Exchange Recipient Administrators to stamp recipients with proxy address information.|
+|Local System|Allow ACE|Desc|Access Recipient Update Service|`msExchExchangeServer`|Allows the servers to stamp recipients with proxy address information.|
+|Public Folder Management|Allow ACE|Desc|Access Recipient Update Service|`msExchExchangeServer`|Allows Exchange Public Folder Administrators to stamp recipients with proxy address information.|
 
 ### Distinguished name of the object: CN=Advanced Security Settings,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated Users|Allow ACE|None|List Contents||
 
 ### Distinguished name of the object: CN=Encryption,CN=Advanced Security Settings,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>Read Property</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated Users|Allow ACE|None|Read Property||
 
 ### Distinguished name of the object: CN=Arrays,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated Users|Allow ACE|None|List Contents||
 
 ### Distinguished name of the object: CN=Database Availability Groups,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated Users|Allow ACE|None|List Contents||
 
 ### Distinguished name of the object: CN=Databases,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated Users|Allow ACE|None|List Contents||
 
 ### Distinguished name of the object: CN=Servers,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Receive As</p></td>
-<td><p> </p></td>
-<td><p>Exchange Servers aren't allowed to open mailboxes.</p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Exchange Servers|Deny ACE|All|Receive As||Exchange Servers aren't allowed to open mailboxes.|
+|Authenticated Users|Allow ACE|None|List Contents|||
 
 ## Microsoft Exchange Security Groups Container Permissions
 
@@ -1491,1993 +283,278 @@ The permissions tables in this section show the permissions set on the Microsoft
 
 ### Distinguished name of the object: OU=Microsoft Exchange Security Groups,DC=\<root domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p></td>
-<td><p><code>/ Group</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Delete</p></td>
-<td><p><code>/ group</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Member / group</code></p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Organization Management|Allow ACE|All|Full Control||
+|Exchange Trusted Subsystem|Allow ACE|All|Create Child|`/ Group`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Delete|`/ group`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Write Property|`Member / group`|
 
 ### Distinguished name of the object: CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=\<root domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Organization Management|Allow ACE|All|Full Control||
 
 ### Distinguished name of the object: CN=Public Folder Management,OU=Microsoft Exchange Security Groups,DC=\<root domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Organization Management|Allow ACE|All|Full Control||
 
 ### Distinguished name of the object: CN=ExchangeLegacyInterop,OU=Microsoft Exchange Security Groups,DC=\<root domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Organization Management|Allow ACE|All|Full Control||
 
 ### Distinguished name of the object: CN=Exchange Servers,OU=Microsoft Exchange Security Groups,DC=\<root domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Root Domain Administrators</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Members</p>
-<p>Write Members</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Child Domain Administrators</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Members</p>
-<p>Write Members</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Organization Management|Allow ACE|All|Full Control||
+|Root Domain Administrators|Allow ACE|All|Read Members <br><br> Write Members||
+|Child Domain Administrators|Allow ACE|All|Read Members <br><br> Write Members||
 
 ## Prepare Domain
 
 The following tables show the permissions set when you execute the `Setup /PrepareDomain` command.
 
 > [!NOTE]
-> The permissions described in this section are the default permissions that are configured when you deploy Exchange 2013 using the shared permissions model. If you've deployed Exchange 2013 using the Active Directory split permissions model, the default permission are different. For more information on the changes to the default permissions when using Active Directory split permissions and the shared and split permissions models in general, see <A href="understanding-split-permissions-exchange-2013-help.md">Active Directory split permissions</A> in <A href="understanding-split-permissions-exchange-2013-help.md">Understanding split permissions</A>. If you don't choose to use Active Directory split permissions when you install Exchange, Exchange will use shared permissions.
+> The permissions described in this section are the default permissions that are configured when you deploy Exchange 2013 using the shared permissions model. If you've deployed Exchange 2013 using the Active Directory split permissions model, the default permission are different. For more information on the changes to the default permissions when using Active Directory split permissions and the shared and split permissions models in general, see [Active Directory split permissions](understanding-split-permissions-exchange-2013-help.md) in [Understanding split permissions](understanding-split-permissions-exchange-2013-help.md). If you don't choose to use Active Directory split permissions when you install Exchange, Exchange will use shared permissions.
 
 ### Distinguished name of the object: DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>NT AUTHORITY\NETWORK</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>Exchange Personal Information</code></p></td>
-<td><p>Grants Transport service read permissions.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>groupType</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchMailboxSecurityDescriptor</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMServerWritableFlags</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>Exchange Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUserCultulre</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>memberOf</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>garbageCollPeriod</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>userAccountControl</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>canonicalName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Replication Synchronization</p></td>
-<td><p> </p></td>
-<td><p>Extended right</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Chile</p>
-<p>List Children</p></td>
-<td><p><code>msExchActiveSyncDevices / User</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p>
-<p>List Children</p></td>
-<td><p><code>msExchActiveSyncDevices / inetOrgPerson</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchSafeSendersHash</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchMobileMailboxFlags</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchSafeRecipientsHash</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>userCertificate</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMDtmfMap</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchBlockedSendersHash</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMSpokenName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMPinChecksum</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>thumbnailPhoto</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>garbageCollPeriod</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>legacyExchangeDN</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>textEncodedORAddress</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>proxyAddresses</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>mail</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>displayNamePrintable</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>showInAddressBook</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p><code>/ msExchDynamicDistributionList</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>adminDisplayName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>displayName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>displayName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Public Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>adminDisplayName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p><code>/ msExchDynamicDistributionList</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>garbageCollPeriod</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>textEncodedORAddress</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>showInAddressBook</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>legacyExchangeDN</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>proxyAddresses</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>displayNamePrintable</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>mail</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>pwdLastSet</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>WriteDACL</p></td>
-<td><p><code>/ user</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>WriteDACL</p>
-<p></p></td>
-<td><p><code>/ inetOrgPerson</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Delete Tree</p></td>
-<td><p><code>/ user</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Delete Tree</p>
-<p></p></td>
-<td><p><code>/ inetOrgPerson</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>sAMAccountName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete</p></td>
-<td><p><code>/ contact</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete</p></td>
-<td><p><code>/ inetOrgPerson</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete</p></td>
-<td><p><code>/ user</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete</p></td>
-<td><p><code>/ organizationUnit</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete</p></td>
-<td><p><code>/ group</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p></td>
-<td><p><code>/ computer</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Member</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>wwwHomePage</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>countryCode</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>userAccountControl</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>managedBy</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Reset Password on Next Logon</p></td>
-<td><p> </p></td>
-<td><p>Extended right</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Change Password</p></td>
-<td><p><code> / user</code></p></td>
-<td><p>Extended right</p></td>
-</tr>
-<tr class="odd">
-<td><p>Delegated Setup</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>User Account Restrictions</code></p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Authenticated Users|Allow ACE|All|Read Property|`Exchange Information`||
+|NT AUTHORITY\NETWORK|Allow ACE|All|Read Property|`Exchange Personal Information`|Grants Transport service read permissions.|
+|Exchange Servers|Allow ACE|All|Write Property|`groupType`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchMailboxSecurityDescriptor`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMServerWritableFlags`||
+|Exchange Servers|Allow ACE|All|Read Property|`Exchange Personal Information`||
+|Exchange Servers|Allow ACE|All|Read Property|`Exchange Information`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUserCultulre`||
+|Exchange Servers|Allow ACE|All|Read Property|`memberOf`||
+|Exchange Servers|Allow ACE|All|Read Property|`garbageCollPeriod`||
+|Exchange Servers|Allow ACE|All|Read Property|`userAccountControl`||
+|Exchange Servers|Allow ACE|All|Read Property|`canonicalName`||
+|Exchange Servers|Allow ACE|All|Replication Synchronization||Extended right|
+|Exchange Servers|Allow ACE|All|Create Child <br><br> Delete Chile <br><br> List Children|`msExchActiveSyncDevices / User`||
+|Exchange Servers|Allow ACE|All|Create Child <br><br> Delete Child <br><br> List Children|`msExchActiveSyncDevices / inetOrgPerson`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchSafeSendersHash`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchPublicDelegates`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchMobileMailboxFlags`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchSafeRecipientsHash`||
+|Exchange Servers|Allow ACE|All|Write Property|`userCertificate`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMDtmfMap`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchBlockedSendersHash`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMSpokenName`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMPinChecksum`||
+|Exchange Servers|Allow ACE|All|Write Property|`thumbnailPhoto`||
+|Organization Management|Allow ACE|All|Read <br><br> List Object|||
+|Organization Management|Allow ACE|All|Write Property|`Exchange Information`||
+|Organization Management|Allow ACE|All|Write Property|`garbageCollPeriod`||
+|Organization Management|Allow ACE|All|Write Property|`legacyExchangeDN`||
+|Organization Management|Allow ACE|All|Write Property|`msExchPublicDelegates`||
+|Organization Management|Allow ACE|All|Write Property|`textEncodedORAddress`||
+|Organization Management|Allow ACE|All|Write Property|`proxyAddresses`||
+|Organization Management|Allow ACE|All|Write Property|`mail`||
+|Organization Management|Allow ACE|All|Write Property|`displayNamePrintable`||
+|Organization Management|Allow ACE|All|Write Property|`showInAddressBook`||
+|Organization Management|Allow ACE|All|Write Property|`Exchange Personal Information`||
+|Organization Management|Allow ACE|All|Full Control|`/ msExchDynamicDistributionList`||
+|Organization Management|Allow ACE|All|Write Property|`adminDisplayName`||
+|Organization Management|Allow ACE|All|Write Property|`displayName`||
+|Exchange Trusted Subsystem|Allow ACE|All|Read <br><br> List Object|||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`displayName`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`Public Information`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`msExchPublicDelegates`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`adminDisplayName`||
+|Exchange Trusted Subsystem|Allow ACE|All|Full Control|`/ msExchDynamicDistributionList`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`Exchange Information`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`Exchange Personal Information`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`garbageCollPeriod`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`textEncodedORAddress`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`showInAddressBook`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`legacyExchangeDN`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`Personal Information`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`proxyAddresses`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`displayNamePrintable`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`mail`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`pwdLastSet`||
+|Exchange Windows Permissions|Allow ACE|All|WriteDACL|`/ user`||
+|Exchange Windows Permissions|Allow ACE|All|WriteDACL|`/ inetOrgPerson`||
+|Exchange Windows Permissions|Allow ACE|All|Delete Tree|`/ user`||
+|Exchange Windows Permissions|Allow ACE|All|Delete Tree|`/ inetOrgPerson`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`sAMAccountName`||
+|Exchange Windows Permissions|Allow ACE|All|Create Child <br><br> Delete|`/ contact`||
+|Exchange Windows Permissions|Allow ACE|All|Create Child <br><br> Delete|`/ inetOrgPerson`||
+|Exchange Windows Permissions|Allow ACE|All|Create Child <br><br> Delete|`/ user`||
+|Exchange Windows Permissions|Allow ACE|All|Create Child <br><br> Delete|`/ organizationUnit`||
+|Exchange Windows Permissions|Allow ACE|All|Create Child <br><br> Delete|`/ group`||
+|Exchange Windows Permissions|Allow ACE|All|Create Child <br><br> Delete Child|`/ computer`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`Member`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`wwwHomePage`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`countryCode`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`userAccountControl`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`managedBy`||
+|Exchange Windows Permissions|Allow ACE|All|Reset Password on Next Logon||Extended right|
+|Exchange Windows Permissions|Allow ACE|All|Change Password|` / user`|Extended right|
+|Delegated Setup|Allow ACE|All|Read Property|`User Account Restrictions`||
 
 ### Distinguished name of the object: CN=AdminSDHolder,CN=System,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>NT AUTHORITY\NETWORK</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>Exchange Personal Information</code></p></td>
-<td><p>Grants Transport service read permissions.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>groupType</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchMailboxSecurityDescriptor</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMServerWritableFlags</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>Exchange Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUserCultulre</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>memberOf</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>garbageCollPeriod</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>userAccountControl</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>canonicalName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Replication Synchronization</p></td>
-<td><p> </p></td>
-<td><p>Extended right</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Chile</p>
-<p>List Children</p></td>
-<td><p><code>msExchActiveSyncDevices / User</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p>
-<p>List Children</p></td>
-<td><p><code>msExchActiveSyncDevices / inetOrgPerson</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchSafeSendersHash</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchMobileMailboxFlags</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchSafeRecipientsHash</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>userCertificate</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMDtmfMap</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchBlockedSendersHash</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMSpokenName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchUMPinChecksum</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>thumbnailPhoto</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>garbageCollPeriod</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>legacyExchangeDN</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>textEncodedORAddress</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>proxyAddresses</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>mail</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>displayNamePrintable</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>showInAddressBook</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p><code>/ msExchDynamicDistributionList</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>adminDisplayName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>displayName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>displayName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Public Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>adminDisplayName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p><code>/ msExchDynamicDistributionList</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Exchange Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>garbageCollPeriod</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>textEncodedORAddress</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>showInAddressBook</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>legacyExchangeDN</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Personal Information</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>proxyAddresses</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>displayNamePrintable</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>mail</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>pwdLastSet</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>sAMAccountName</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>Member</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>wwwHomePage</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>countryCode</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>userAccountControl</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Windows Permissions</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>managedBy</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Delegated Setup</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>User Account Restrictions</code></p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Authenticated Users|Allow ACE|All|Read Property|`Exchange Information`||
+|NT AUTHORITY\NETWORK|Allow ACE|All|Read Property|`Exchange Personal Information`|Grants Transport service read permissions.|
+|Exchange Servers|Allow ACE|All|Write Property|`groupType`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchMailboxSecurityDescriptor`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMServerWritableFlags`||
+|Exchange Servers|Allow ACE|All|Read Property|`Exchange Personal Information`||
+|Exchange Servers|Allow ACE|All|Read Property|`Exchange Information`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUserCultulre`||
+|Exchange Servers|Allow ACE|All|Read Property|`memberOf`||
+|Exchange Servers|Allow ACE|All|Read Property|`garbageCollPeriod`||
+|Exchange Servers|Allow ACE|All|Read Property|`userAccountControl`||
+|Exchange Servers|Allow ACE|All|Read Property|`canonicalName`||
+|Exchange Servers|Allow ACE|All|Replication Synchronization||Extended right|
+|Exchange Servers|Allow ACE|All|Create Child <br><br> Delete Chile <br><br> List Children|`msExchActiveSyncDevices / User`||
+|Exchange Servers|Allow ACE|All|Create Child <br><br> Delete Child <br><br> List Children|`msExchActiveSyncDevices / inetOrgPerson`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchSafeSendersHash`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchPublicDelegates`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchMobileMailboxFlags`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchSafeRecipientsHash`||
+|Exchange Servers|Allow ACE|All|Write Property|`userCertificate`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMDtmfMap`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchBlockedSendersHash`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMSpokenName`||
+|Exchange Servers|Allow ACE|All|Write Property|`msExchUMPinChecksum`||
+|Exchange Servers|Allow ACE|All|Write Property|`thumbnailPhoto`||
+|Organization Management|Allow ACE|All|Read <br><br> List Object|||
+|Organization Management|Allow ACE|All|Write Property|`Exchange Information`||
+|Organization Management|Allow ACE|All|Write Property|`garbageCollPeriod`||
+|Organization Management|Allow ACE|All|Write Property|`legacyExchangeDN`||
+|Organization Management|Allow ACE|All|Write Property|`msExchPublicDelegates`||
+|Organization Management|Allow ACE|All|Write Property|`textEncodedORAddress`||
+|Organization Management|Allow ACE|All|Write Property|`proxyAddresses`||
+|Organization Management|Allow ACE|All|Write Property|`mail`||
+|Organization Management|Allow ACE|All|Write Property|`displayNamePrintable`||
+|Organization Management|Allow ACE|All|Write Property|`showInAddressBook`||
+|Organization Management|Allow ACE|All|Write Property|`Exchange Personal Information`||
+|Organization Management|Allow ACE|All|Full Control|`/ msExchDynamicDistributionList`||
+|Organization Management|Allow ACE|All|Write Property|`adminDisplayName`||
+|Organization Management|Allow ACE|All|Write Property|`displayName`||
+|Exchange Trusted Subsystem|Allow ACE|All|Read <br><br> List Object|||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`displayName`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`Public Information`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`msExchPublicDelegates`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`adminDisplayName`||
+|Exchange Trusted Subsystem|Allow ACE|All|Full Control|`/ msExchDynamicDistributionList`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`Exchange Information`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`Exchange Personal Information`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`garbageCollPeriod`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`textEncodedORAddress`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`showInAddressBook`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`legacyExchangeDN`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`Personal Information`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`proxyAddresses`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`displayNamePrintable`||
+|Exchange Trusted Subsystem|Allow ACE|All|Write Property|`mail`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`pwdLastSet`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`sAMAccountName`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`Member`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`wwwHomePage`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`countryCode`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`userAccountControl`||
+|Exchange Windows Permissions|Allow ACE|All|Write Property|`managedBy`||
+|Delegated Setup|Allow ACE|All|Read Property|`User Account Restrictions`||
 
 ### Distinguished name of the object: CN=Deleted Objects,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>List Contents</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Exchange Servers|Allow ACE|All|List Contents||
 
 ### Distinguished name of the object: CN=Microsoft Exchange System Objects,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>NT AUTHORITY\NETWORK</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p>
-<p>List Contents</p>
-<p>Read Permissions</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>garbageCollPeriod</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>adminDisplayName</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>modifyTimeStamp</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Delete Tree</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read PropertyDelete Tree</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p></p></td>
-<td><p><code>/ msExchSystemMailbox</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p></td>
-<td><p><code>/ publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p></p></td>
-<td><p><code>/ user</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Delete Child</p>
-<p></p></td>
-<td><p><code>/ msExchSystemMailbox</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Delete Child</p>
-<p></p></td>
-<td><p><code>/ user</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>/ publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>/ msExchSystemMailbox</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>/ user</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Change Password</p>
-<p>Reset Password on Next Logon</p></td>
-<td><p><code>/ user</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>/ msExchSystemMailbox</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p></td>
-<td><p><code>/ msExchSystemMailbox</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>/ user</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p></td>
-<td><p><code>/ user</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>mail / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>displayNamePrintable / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>displayName / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>textEncodedORAddress / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>proxyAddresses / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>cn / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>showInAddressBook / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>Exchange Information / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p>legacyExchangeDN / publicFolder</p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>Exchange Personal Information / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msDSPhoneticDisplayName / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msExchPFContacts / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>garbageCollPeriod / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>name / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>mail / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>displayNamePrintable / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>displayName / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>textEncodedORAddress / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>proxyAddresses / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>cn / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>showInAddressBook / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>Exchange Information / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>legacyExchangeDN / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>Exchange Personal Information / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msDSPhoneticDisplayName / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msExchPFContacts / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>garbageCollPeriod / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>name / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>mail / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>displayNamePrintable / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>displayName / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>textEncodedORAddress / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>proxyAddresses / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>cn / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>showInAddressBook / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>Exchange Information / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>legacyExchangeDN / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>Exchange Personal Information / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msDSPhoneticDisplayName / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msExchPFContacts / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>garbageCollPeriod / publicFolder</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>name / publicFolder</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Trusted Subsystem</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p>
-<p>Write Property</p></td>
-<td><p><code>msExchPublicDelegates / publicFolder</code></p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|NT AUTHORITY\NETWORK|Allow ACE|All|Read Property <br><br> List Contents <br><br> Read Permissions||
+|Authenticated Users|Allow ACE|All|Read Permissions||
+|Authenticated Users|Allow ACE|All|Read Property|`garbageCollPeriod`|
+|Authenticated Users|Allow ACE|All|Read Property|`adminDisplayName`|
+|Authenticated Users|Allow ACE|All|Read Property|`modifyTimeStamp`|
+|Exchange Servers|Deny ACE|All|Delete Tree||
+|Exchange Servers|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read PropertyDelete Tree||
+|Exchange Servers|Allow ACE|All|Create Child|`/ msExchSystemMailbox`|
+|Exchange Servers|Allow ACE|All|Create Child <br><br> Delete Child|`/ publicFolder`|
+|Exchange Servers|Allow ACE|All|Create Child|`/ user`|
+|Exchange Servers|Allow ACE|All|Delete Child|`/ msExchSystemMailbox`|
+|Exchange Servers|Allow ACE|All|Delete Child|`/ user`|
+|Exchange Servers|Allow ACE|Desc|Write Property|`/ publicFolder`|
+|Exchange Servers|Allow ACE|Desc|Write Property|`/ msExchSystemMailbox`|
+|Exchange Servers|Allow ACE|Desc|Write Property|`/ user`|
+|Exchange Servers|Allow ACE|Desc|Change Password <br><br> Reset Password on Next Logon|`/ user`|
+|Organization Management|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property||
+|Organization Management|Allow ACE|Desc|Write Property|`/ msExchSystemMailbox`|
+|Organization Management|Allow ACE|All|Create Child <br><br> Delete Child|`/ msExchSystemMailbox`|
+|Organization Management|Allow ACE|Desc|Write Property|`/ user`|
+|Organization Management|Allow ACE|All|Create Child <br><br> Delete Child|`/ user`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`mail / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`displayNamePrintable / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`displayName / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`textEncodedORAddress / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`proxyAddresses / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`cn / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`showInAddressBook / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`Exchange Information / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|legacyExchangeDN / publicFolder|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`Exchange Personal Information / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`msDSPhoneticDisplayName / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`msExchPFContacts / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`garbageCollPeriod / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`name / publicFolder`|
+|Organization Management|Allow ACE|Desc|Read Property <br><br> Write Property|`msExchPublicDelegates / publicFolder`|
+|Public Folder Management|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property||
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`mail / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`displayNamePrintable / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`displayName / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`textEncodedORAddress / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`proxyAddresses / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`cn / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`showInAddressBook / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`Exchange Information / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`legacyExchangeDN / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`Exchange Personal Information / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`msDSPhoneticDisplayName / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`msExchPFContacts / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`garbageCollPeriod / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`name / publicFolder`|
+|Public Folder Management|Allow ACE|Desc|Read Property <br><br> Write Property|`msExchPublicDelegates / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property||
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`mail / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`displayNamePrintable / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`displayName / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`textEncodedORAddress / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`proxyAddresses / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`cn / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`showInAddressBook / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`Exchange Information / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`legacyExchangeDN / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`Exchange Personal Information / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`msDSPhoneticDisplayName / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`msExchPFContacts / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`garbageCollPeriod / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`name / publicFolder`|
+|Exchange Trusted Subsystem|Allow ACE|Desc|Read Property <br><br> Write Property|`msExchPublicDelegates / publicFolder`|
 
 ### Distinguished name of the object: CN=Exchange Install Domain Servers,CN=Microsoft Exchange System Objects,DC=\<domain\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Organization Management</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Organization Management|Allow ACE|All|Full Control||
 
 ## Server Role Installation
 
@@ -3487,124 +564,18 @@ The following permissions table shows the permissions set when you install the C
 
 ### Distinguished name of the object: CN=\<server\>,CN=Servers,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>MACHINE$</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>MACHINE$</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>Write Property</p></td>
-<td><p><code>msExchServerSite</code></p>
-<p><code>msExchEdgeSyncCredential</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Store Transport Access</p>
-<p>Store Constrained Delegation</p>
-<p>Store Read Only Access</p>
-<p>Store Read and Write Access</p></td>
-<td><p> </p></td>
-<td><p>Extended rights</p></td>
-</tr>
-<tr class="even">
-<td><p>NT AUTHORITY\NETWORK</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Exchange Web Services Token Serialization</p></td>
-<td><p> </p></td>
-<td><p>Extended right</p>
-<p>Only granted on Mailbox server role objects.</p></td>
-</tr>
-<tr class="odd">
-<td><p>NT AUTHORITY\NETWORK</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Local System</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Permissions</p>
-<p>List Contents</p>
-<p>Read Property</p>
-<p>List Object</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Delegated Setup</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Full Control</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Delegated Setup</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Create Child</p>
-<p>Delete Child</p></td>
-<td><p><code>/ msExchPublicMDB</code></p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Read Property</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Delegated Setup</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Receive As</p>
-<p>Send As</p></td>
-<td><p> </p></td>
-<td><p>Extended right</p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|MACHINE$|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|||
+|MACHINE$|Allow ACE|None|Write Property|`msExchServerSite` <br><br> `msExchEdgeSyncCredential`||
+|Exchange Servers|Allow ACE|All|Store Transport Access <br><br> Store Constrained Delegation <br><br> Store Read Only Access <br><br> Store Read and Write Access||Extended rights|
+|NT AUTHORITY\NETWORK|Allow ACE|All|Exchange Web Services Token Serialization||Extended right <br><br> Only granted on Mailbox server role objects.|
+|NT AUTHORITY\NETWORK|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|||
+|Local System|Allow ACE|All|Read Permissions <br><br> List Contents <br><br> Read Property <br><br> List Object|||
+|Delegated Setup|Allow ACE|All|Full Control|||
+|Delegated Setup|Deny ACE|All|Create Child <br><br> Delete Child|`/ msExchPublicMDB`||
+|Authenticated Users|Allow ACE|All|Read Property|||
+|Delegated Setup|Deny ACE|All|Receive As <br><br> Send As||Extended right|
 
 ## Database Availability Groups
 
@@ -3612,78 +583,20 @@ The permissions tables in this section show the permissions set with regards to 
 
 ### Distinguished name of the object: CN=\<DAGName\>,CN=Database Availability Groups,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>Read Property</p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|
+|---|---|---|---|---|
+|Authenticated Users|Allow ACE|None|Read Property||
 
 ## Edge Transport
 
 If you install an Edge Transport server and establish an Edge Subscription with the Exchange organization, the permissions in the following permissions table are set when the Edge Transport server is instantiated into the organization.
 
-### Distinguished name of the object: CN=\<server\>,CN=Servers,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
+### Distinguished name of the object in Edge Transport: CN=\<server\>,CN=Servers,CN=\<admin group\>,CN=Administrative Groups,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Write Property</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>None</p></td>
-<td><p>Read Properties</p></td>
-<td><p> </p></td>
-<td><p>ACE is defined in schema for <code>msExchExchangeServer</code> class objects <code>defaultSecurityDescriptor</code>.</p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Exchange Servers|Allow ACE|All|Write Property|||
+|Authenticated Users|Allow ACE|None|Read Properties||ACE is defined in schema for `msExchExchangeServer` class objects `defaultSecurityDescriptor`.|
 
 ## Mailbox Server Installation
 
@@ -3691,1310 +604,171 @@ During installation of the first Mailbox server, the following containers are cr
 
 ### Distinguished name of the object: CN=Availability Configuration,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>Desc</p></td>
-<td><p>Read Property</p></td>
-<td><p><code>msExchAvailabilityUserPassword / msExchAvailabilityAddressSpaceObjects</code></p></td>
-<td><p>Extended right</p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Exchange Servers|Allow ACE|Desc|Read Property|`msExchAvailabilityUserPassword / msExchAvailabilityAddressSpaceObjects`|Extended right|
 
 ### Distinguished name of the object: CN=Default \<Server\>,CN=SMTP Receive Connectors,CN=Protocols,CN=\<Server\>,CN=Servers,CN=\<admin group\>,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Deny ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Organization Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known security identifier (SID) for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept EXCH50</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept EXCH50</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept EXCH50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept EXCH50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept EXCH50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XShadow</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XShadow</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XSessionParams</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XSessionParams</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XSessionParams</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept xAttr</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept xAttr</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept xAttr</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XProxyFrom</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest XProxyFrom</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest XProxyFrom</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XSysProbe</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest XSysProbe</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest XSysProbe</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Extended Properties</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Extended Properties</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Extended Properties</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Fast Index</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Fast Index</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Fast Index</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext AD Recipient Cache</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext AD Recipient Cache</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext AD Recipient Cache</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Organization Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Organization Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Organization Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|ExchangeLegacyInterop|Deny ACE|All|Accept Forest Headers|||
+|ExchangeLegacyInterop|Deny ACE|All|Accept Organization Headers|||
+|Exchange Servers|Allow ACE|All|Accept Any Sender|||
+|ExchangeLegacyInterop|Allow ACE|All|Accept Any Sender|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Any Sender||This is the well-known security identifier (SID) for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Any Sender||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Any Sender||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept EXCH50|||
+|ExchangeLegacyInterop|Allow ACE|All|Accept EXCH50|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept EXCH50||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept EXCH50||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept EXCH50||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Submit Messages to any Recipient|||
+|ExchangeLegacyInterop|Allow ACE|All|Submit Messages to any Recipient|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Submit Messages to any Recipient||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Submit Messages to any Recipient||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Submit Messages to any Recipient||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept XShadow|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept XShadow||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept Routing Headers|||
+|ExchangeLegacyInterop|Allow ACE|All|Accept Routing Headers|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Routing Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Routing Headers||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Routing Headers||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept XSessionParams|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept XSessionParams||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept XSessionParams||This is the well-known SID for Mailbox servers.|
+|Exchange Servers|Allow ACE|All|Accept Forest Headers|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Forest Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Forest Headers||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept xAttr|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept xAttr||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept xAttr||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept XProxyFrom|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Forest XProxyFrom||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Forest XProxyFrom||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept XSysProbe|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Forest XSysProbe||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Forest XSysProbe||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Send XMessageContext Extended Properties|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send XMessageContext Extended Properties||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send XMessageContext Extended Properties||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Send XMessageContext Fast Index|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send XMessageContext Fast Index||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send XMessageContext Fast Index||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Send XMessageContext AD Recipient Cache|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send XMessageContext AD Recipient Cache||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send XMessageContext AD Recipient Cache||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept Authentication Flag|||
+|ExchangeLegacyInterop|Allow ACE|All|Accept Authentication Flag|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Authentication Flag||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Authentication Flag||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Authentication Flag||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Bypass Anti-Spam|||
+|ExchangeLegacyInterop|Allow ACE|All|Bypass Anti-Spam|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Bypass Anti-Spam||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Bypass Anti-Spam||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Bypass Anti-Spam||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Bypass Message Size Limit|||
+|ExchangeLegacyInterop|Allow ACE|All|Bypass Message Size Limit|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Bypass Message Size Limit||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Bypass Message Size Limit||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Bypass Message Size Limit||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept Organization Headers|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Organization Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Organization Headers||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Submit Messages to Server|||
+|ExchangeLegacyInterop|Allow ACE|All|Submit Messages to Server|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Submit Messages to Server||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Submit Messages to Server||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Submit Messages to Server||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept Authoritative Domain Sender|||
+|ExchangeLegacyInterop|Allow ACE|All|Accept Authoritative Domain Sender|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Authoritative Domain Sender||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Authoritative Domain Sender||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Authoritative Domain Sender||This is the well-known SID for externally secured servers.|
+|Authenticated Users|Allow ACE|All|Submit Messages to any Recipient|||
+|Authenticated Users|Allow ACE|All|Accept Routing Headers|||
+|Authenticated Users|Allow ACE|All|Bypass Anti-Spam|||
+|Authenticated Users|Allow ACE|All|Submit Messages to Server|||
 
 ### Distinguished name of the object: CN=Client \<Server\>,CN=SMTP Receive Connectors,CN=Protocols,CN=\<Server\>,CN=Servers,CN=\<admin group\>,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Authenticated Users</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XSessionParams</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XSessionParams</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XSessionParams</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known security identifier (SID) for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Any Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Exch50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Exch50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Exch50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Exch50</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to any Recipient</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XShadow</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XShadow</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>ExchangeLegacyInterop</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept xAttr</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept xAttr</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept xAttr</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XProxyFrom</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest XProxyFrom</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest XProxyFrom</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept XSysProbe</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest XSysProbe</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Forest XSysProbe</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authentication Flag</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Anti-Spam</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Extended Properties</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Extended Properties</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Extended Properties</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Fast Index</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Fast Index</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext Fast Index</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Bypass Message Size Limit</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Organization Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Organization Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Organization Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext AD Recipient Cache</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext AD Recipient Cache</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XMessageContext AD Recipient Cache</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Submit Messages to Server</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Accept Authoritative Domain Sender</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p></p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|Authenticated Users|Allow ACE|All|Submit Messages to any Recipient|||
+|Authenticated Users|Allow ACE|All|Accept Routing Headers|||
+|Authenticated Users|Allow ACE|All|Bypass Anti-Spam|||
+|Authenticated Users|Allow ACE|All|Submit Messages to Server|||
+|Exchange Servers|Allow ACE|All|Accept XSessionParams|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept XSessionParams||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept XSessionParams||This is the well-known SID for Mailbox servers.|
+|Exchange Servers|Allow ACE|All|Accept Any Sender|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Any Sender||This is the well-known security identifier (SID) for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Any Sender||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Any Sender||This is the well-known SID for externally secured servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Exch50||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Exch50||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Exch50||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept Exch50|||
+|Exchange Servers|Allow ACE|All|Submit Messages to any Recipient|||
+|ExchangeLegacyInterop|Allow ACE|All|Submit Messages to any Recipient|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Submit Messages to any Recipient||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Submit Messages to any Recipient||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Submit Messages to any Recipient||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept XShadow|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept XShadow||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept Routing Headers|||
+|ExchangeLegacyInterop|Allow ACE|All|Accept Routing Headers|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Routing Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Routing Headers||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Routing Headers||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept Forest Headers|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Forest Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Forest Headers||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept xAttr|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept xAttr||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept xAttr||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept XProxyFrom|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Forest XProxyFrom||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Forest XProxyFrom||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Accept Authentication Flag|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Authentication Flag||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Authentication Flag||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Authentication Flag||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept XSysProbe|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Forest XSysProbe||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Forest XSysProbe||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Authentication Flag||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Bypass Anti-Spam|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Bypass Anti-Spam||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Bypass Anti-Spam||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Bypass Anti-Spam||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Send XMessageContext Extended Properties|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send XMessageContext Extended Properties||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send XMessageContext Extended Properties||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Send XMessageContext Fast Index|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send XMessageContext Fast Index||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send XMessageContext Fast Index||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Bypass Message Size Limit|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Bypass Message Size Limit||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Bypass Message Size Limit||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Bypass Message Size Limit||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept Organization Headers|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Organization Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Organization Headers||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Send XMessageContext AD Recipient Cache|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send XMessageContext AD Recipient Cache||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send XMessageContext AD Recipient Cache||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Submit Messages to Server|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Submit Messages to Server||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Submit Messages to Server||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Submit Messages to Server||This is the well-known SID for externally secured servers.|
+|Exchange Servers|Allow ACE|All|Accept Authoritative Domain Sender|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Accept Authoritative Domain Sender||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Accept Authoritative Domain Sender||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Accept Authoritative Domain Sender||This is the well-known SID for externally secured servers.|
 
 ## SMTP Send Connector Creation
 
@@ -5002,193 +776,26 @@ The following table shows the permissions set when you create Send connectors.
 
 ### Distinguished name of the object: CN=\<Connector Name\>,CN=Connections,CN=\<routing group\>,CN=Routing Groups, CN=\<admin group\>,CN=\<organization\>
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Account</th>
-<th>ACE type</th>
-<th>Inheritance</th>
-<th>Permissions</th>
-<th>On property/ Applies to</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>NT AUTHORITY\ANONYMOUS LOGON</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Routing Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Organization Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Organization Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Organization Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Forest Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Forest Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Forest Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XShadow</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XShadow</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send XShadow</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Routing Headers</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-10</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for partner servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-24</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Routing Headers</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Legacy Exchange Servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Servers</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Exch50</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-21</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Exch50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Mailbox servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-22</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Exch50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Edge Transport servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-23</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Exch50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for externally secured servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p>S-1-9-1419165041-1139599005-3936102811-1022490595-24</p></td>
-<td><p>Allow ACE</p></td>
-<td><p>All</p></td>
-<td><p>Send Exch50</p></td>
-<td><p> </p></td>
-<td><p>This is the well-known SID for Legacy Exchange Servers.</p></td>
-</tr>
-</tbody>
-</table>
+|Account|ACE type|Inheritance|Permissions|On property/ Applies to|Comments|
+|---|---|---|---|---|---|
+|NT AUTHORITY\ANONYMOUS LOGON|Allow ACE|All|Send Routing Headers|||
+|Exchange Servers|Allow ACE|All|Send Organization Headers|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send Organization Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send Organization Headers||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Send Forest Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send Forest Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send Forest Headers||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Send XShadow|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send XShadow||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send XShadow||This is the well-known SID for Edge Transport servers.|
+|Exchange Servers|Allow ACE|All|Send Routing Headers|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-10|Allow ACE|All|Send Routing Headers||This is the well-known SID for partner servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send Routing Headers||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send Routing Headers||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Send Routing Headers||This is the well-known SID for externally secured servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-24|Allow ACE|All|Send Routing Headers||This is the well-known SID for Legacy Exchange Servers.|
+|Exchange Servers|Allow ACE|All|Send Exch50|||
+|S-1-9-1419165041-1139599005-3936102811-1022490595-21|Allow ACE|All|Send Exch50||This is the well-known SID for Mailbox servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-22|Allow ACE|All|Send Exch50||This is the well-known SID for Edge Transport servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-23|Allow ACE|All|Send Exch50||This is the well-known SID for externally secured servers.|
+|S-1-9-1419165041-1139599005-3936102811-1022490595-24|Allow ACE|All|Send Exch50||This is the well-known SID for Legacy Exchange Servers.|
