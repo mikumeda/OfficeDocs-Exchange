@@ -94,6 +94,7 @@ The following table shows active log I/O latency requirements counters and their
 > Normal storage latency guidance in Exchange 2013 is very similar to the guidance from Exchange 2010. Additional database counters can be found in [Mailbox Server Counters](/previous-versions/office/exchange-server-2010/ff367871(v=exchg.141)).
 
 |Counter|Description|Threshold|
+|---|---|---|
 |MSExchange Database ==> Instances(\*)\I/O Database Reads (Attached) Average Latency|Shows the average length of time, in milliseconds (ms), per database read operation.|Should be less than 20ms on average.|
 |MSExchange Database ==> Instances(\*)\I/O Database Writes (Attached) Average Latency|Shows the average length of time, in ms, per database write operation.|Should be less than 50ms on average.|
 |MSExchange Database ==> Instances(\*)\I/O Log Writes Average Latency|Shows the average length of time, in ms, per Log write operation.|Should be less than 10ms on average.|
