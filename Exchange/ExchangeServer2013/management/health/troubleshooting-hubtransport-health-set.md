@@ -27,507 +27,105 @@ If you receive an alert that indicates that the **HubTransport** health set is u
 
 The **HubTransport** service is monitored using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ActiveQueueDrainFailureProbe</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ActiveQueueDrainFailureMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>DiagnosticsAggregationLocalSnapshotProbe</p></td>
-<td><p>HubTransport</p></td>
-<td><p>DiagnosticsAggregationLocalSnapshotMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>DiagnosticsAggregationWebServiceProbe</p></td>
-<td><p>HubTransport</p></td>
-<td><p>DiagnosticsAggregationWebServiceMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>HubAvailabilityProbe</p></td>
-<td><p>HubTransport</p></td>
-<td><p>HubAvailabilityMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>HubTransportServiceRunning</p></td>
-<td><p>HubTransport</p></td>
-<td><p>HubTransportServiceRunningMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>ShadowQueueDiscardDrainFailureProbe</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ShadowQueueDiscardDrainFailureMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>ThrottlingServiceRunning</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ThrottlingServiceRunningMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>TransportEdgeSync.Service.Probe</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportEdgeSync.Service.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>TransportLogSearchRunningProbe</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportLogSearchRunningMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>BootloaderOutstandingItemsTriggerMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>CrashEvent.edgetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>CrashEvent.msexchangethrottling</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>CrashEvent.msexchangetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>CrashEvent.msexchangetransportlogsearch</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>EdgeTransportBackpressureSustainedTimeMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>FederatedDecryptionAgentFailedToXDecryptMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>HubTransport.ServiceInconsistentState.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>IsMemberOfResolverExpandedGroupsCacheSizeMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>IsMemberOfResolverResolvedGroupsCacheSizeMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Messages.failed.to.be.made.redundant.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>MessagesDeferredDuringCategorizationMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>MessageTrackingLogsDirQuotaMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>PrivateWorkingSetError.edgetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>PrivateWorkingSetError.msexchahangetransportlogsearch</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>PrivateWorkingSetError.msexchangethrottling</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>PrivateWorkingSetError.msexchangetransport</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>PrivateWorkingSetWarning.edgetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>PrivateWorkingSetWarning.msexchangethrottling</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>PrivateWorkingSetWarning.msexchangetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>PrivateWorkingSetWarning.msexchangetransportlogsearch</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ProcessProcessorTimeError.edgetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ProcessProcessorTimeError.msexchangethrottling</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ProcessProcessorTimeError.msexchangetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ProcessProcessorTimeError.msexchangetransportlogsearch</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ProcessProcessorTimeWarning.edgetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ProcessProcessorTimeWarning.msexchangethrottling</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ProcessProcessorTimeWarning.msexchangetransport</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>ProcessProcessorTimeWarning.msexchangetransportlogsearch</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>QueueExternalAggregateMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>QueueInternalAggregateMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>QueueInternalAggregateNormalPriorityMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>QueueInternalHubRetryMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>QueueInternalHubRetryNormalPriorityMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>QueueMailboxRetryMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>QueueNonSMTPRetryMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>RuleEvaluationFailureEventLogMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>RuleEvaluationIgnoredFailureEventLogMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>RuleEvaluationIgnoredFipsFailureEventLogMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>RuleEvaluationSmallScaleFailureEventLogMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>RuleEvaluationSmallScaleFipsFailureEventLogMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>RuleExcessiveForkingEventLogMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>RuleLoadFailureEventLogMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>RuleLoadSmallScaleFailureEventLogMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>SmtpProxyEhloOptionsDoNotMatchContinueProxyingMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>SubmissionQueueMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TlsDomainClientCertificateSubjectMismatchMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Total.Shadow.Queue.Length.Above.Threshold.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TotalE2ELatencyHighForMSExchangeTransportMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TotalE2ELatencyLowForMSExchangeTransportMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TotalE2ELatencyNormalForMSExchangeTransportMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.CatExpiry.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.Critical.Storage.Recovery.Failed.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.DatabaseMoved.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.DomainSecureCert.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.DomainSecureCertAuth.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.DomainSecureServerCertFailed.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.DomainSecureServerDomainCertFailed.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.FailedToCreatePickupDirectory.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.InvalidAcceptedDomain.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.LowDiskSpace.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.Messages.Completing.Categorization.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.NDRForUnrestrictedLargeDL.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.PickupDelete.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.PickupIsBadmailingFile.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.SendConn.AuthKerb.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.SendConnAuth.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.SendConnTLS.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.ServerCertExpireSoon.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.ServerCertMismatch.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.ServiceStartError.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.SmtpSendDirectTrustFailed.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.TemplateDoesNotExist.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.TLSValidate.Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>Transport.UnknownTemplateInPublishingLicense.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportCategorizerJobAvailabilityMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportDatabaseCorruptMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportDeliveryFailures544Monitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportDeliveryFailuresDeliveryStoreDriver520Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportLogGenerationCheckpointDepthMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportLogSearchLogPathInvalidMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportMaxLocalLoopCountMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportPickupReadMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportPoisonMessageMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportRejectingMessageSubmissionsMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>TransportServerCertPersonalStoreMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>UnreachableQueueMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>HubTransport</p></td>
-<td><p>XProxyToTransientInvalidArgumentsMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Associated Monitors|
+|---|---|---
+|ActiveQueueDrainFailureProbe|HubTransport|ActiveQueueDrainFailureMonitor|
+|DiagnosticsAggregationLocalSnapshotProbe|HubTransport|DiagnosticsAggregationLocalSnapshotMonitor|
+|DiagnosticsAggregationWebServiceProbe|HubTransport|DiagnosticsAggregationWebServiceMonitor|
+|HubAvailabilityProbe|HubTransport|HubAvailabilityMonitor|
+|HubTransportServiceRunning|HubTransport|HubTransportServiceRunningMonitor|
+|ShadowQueueDiscardDrainFailureProbe|HubTransport|ShadowQueueDiscardDrainFailureMonitor|
+|ThrottlingServiceRunning|HubTransport|ThrottlingServiceRunningMonitor|
+|TransportEdgeSync.Service.Probe|HubTransport|TransportEdgeSync.Service.Monitor|
+|TransportLogSearchRunningProbe|HubTransport|TransportLogSearchRunningMonitor|
+|none (notification or check)|HubTransport|BootloaderOutstandingItemsTriggerMonitor|
+|none (notification or check)|HubTransport|CrashEvent.edgetransport|
+|none (notification or check)|HubTransport|CrashEvent.msexchangethrottling|
+|none (notification or check)|HubTransport|CrashEvent.msexchangetransport|
+|none (notification or check)|HubTransport|CrashEvent.msexchangetransportlogsearch|
+|none (notification or check)|HubTransport|EdgeTransportBackpressureSustainedTimeMonitor|
+|none (notification or check)|HubTransport|FederatedDecryptionAgentFailedToXDecryptMonitor|
+|none (notification or check)|HubTransport|HubTransport.ServiceInconsistentState.Monitor|
+|none (notification or check)|HubTransport|IsMemberOfResolverExpandedGroupsCacheSizeMonitor|
+|none (notification or check)|HubTransport|IsMemberOfResolverResolvedGroupsCacheSizeMonitor|
+|none (notification or check)|HubTransport|Messages.failed.to.be.made.redundant.Monitor|
+|none (notification or check)|HubTransport|MessagesDeferredDuringCategorizationMonitor|
+|none (notification or check)|HubTransport|MessageTrackingLogsDirQuotaMonitor|
+|none (notification or check)|HubTransport|PrivateWorkingSetError.edgetransport|
+|none (notification or check)|HubTransport|PrivateWorkingSetError.msexchahangetransportlogsearch|
+|none (notification or check)|HubTransport|PrivateWorkingSetError.msexchangethrottling|
+|none (notification or check)|HubTransport|PrivateWorkingSetError.msexchangetransport|
+|none (notification or check)|HubTransport|PrivateWorkingSetWarning.edgetransport|
+|none (notification or check)|HubTransport|PrivateWorkingSetWarning.msexchangethrottling|
+|none (notification or check)|HubTransport|PrivateWorkingSetWarning.msexchangetransport|
+|none (notification or check)|HubTransport|PrivateWorkingSetWarning.msexchangetransportlogsearch|
+|none (notification or check)|HubTransport|ProcessProcessorTimeError.edgetransport|
+|none (notification or check)|HubTransport|ProcessProcessorTimeError.msexchangethrottling|
+|none (notification or check)|HubTransport|ProcessProcessorTimeError.msexchangetransport|
+|none (notification or check)|HubTransport|ProcessProcessorTimeError.msexchangetransportlogsearch|
+|none (notification or check)|HubTransport|ProcessProcessorTimeWarning.edgetransport|
+|none (notification or check)|HubTransport|ProcessProcessorTimeWarning.msexchangethrottling|
+|none (notification or check)|HubTransport|ProcessProcessorTimeWarning.msexchangetransport|
+|none (notification or check)|HubTransport|ProcessProcessorTimeWarning.msexchangetransportlogsearch|
+|none (notification or check)|HubTransport|QueueExternalAggregateMonitor|
+|none (notification or check)|HubTransport|QueueInternalAggregateMonitor|
+|none (notification or check)|HubTransport|QueueInternalAggregateNormalPriorityMonitor|
+|none (notification or check)|HubTransport|QueueInternalHubRetryMonitor|
+|none (notification or check)|HubTransport|QueueInternalHubRetryNormalPriorityMonitor|
+|none (notification or check)|HubTransport|QueueMailboxRetryMonitor|
+|none (notification or check)|HubTransport|QueueNonSMTPRetryMonitor|
+|none (notification or check)|HubTransport|RuleEvaluationFailureEventLogMonitor|
+|none (notification or check)|HubTransport|RuleEvaluationIgnoredFailureEventLogMonitor|
+|none (notification or check)|HubTransport|RuleEvaluationIgnoredFipsFailureEventLogMonitor|
+|none (notification or check)|HubTransport|RuleEvaluationSmallScaleFailureEventLogMonitor|
+|none (notification or check)|HubTransport|RuleEvaluationSmallScaleFipsFailureEventLogMonitor|
+|none (notification or check)|HubTransport|RuleExcessiveForkingEventLogMonitor|
+|none (notification or check)|HubTransport|RuleLoadFailureEventLogMonitor|
+|none (notification or check)|HubTransport|RuleLoadSmallScaleFailureEventLogMonitor|
+|none (notification or check)|HubTransport|SmtpProxyEhloOptionsDoNotMatchContinueProxyingMonitor|
+|none (notification or check)|HubTransport|SubmissionQueueMonitor|
+|none (notification or check)|HubTransport|TlsDomainClientCertificateSubjectMismatchMonitor|
+|none (notification or check)|HubTransport|Total.Shadow.Queue.Length.Above.Threshold.Monitor|
+|none (notification or check)|HubTransport|TotalE2ELatencyHighForMSExchangeTransportMonitor|
+|none (notification or check)|HubTransport|TotalE2ELatencyLowForMSExchangeTransportMonitor|
+|none (notification or check)|HubTransport|TotalE2ELatencyNormalForMSExchangeTransportMonitor|
+|none (notification or check)|HubTransport|Transport.CatExpiry.Monitor|
+|none (notification or check)|HubTransport|Transport.Critical.Storage.Recovery.Failed.Monitor|
+|none (notification or check)|HubTransport|Transport.DatabaseMoved.Monitor|
+|none (notification or check)|HubTransport|Transport.DomainSecureCert.Monitor|
+|none (notification or check)|HubTransport|Transport.DomainSecureCertAuth.Monitor|
+|none (notification or check)|HubTransport|Transport.DomainSecureServerCertFailed.Monitor|
+|none (notification or check)|HubTransport|Transport.DomainSecureServerDomainCertFailed.Monitor|
+|none (notification or check)|HubTransport|Transport.FailedToCreatePickupDirectory.Monitor|
+|none (notification or check)|HubTransport|Transport.InvalidAcceptedDomain.Monitor|
+|none (notification or check)|HubTransport|Transport.LowDiskSpace.Monitor|
+|none (notification or check)|HubTransport|Transport.Messages.Completing.Categorization.Monitor|
+|none (notification or check)|HubTransport|Transport.NDRForUnrestrictedLargeDL.Monitor|
+|none (notification or check)|HubTransport|Transport.PickupDelete.Monitor|
+|none (notification or check)|HubTransport|Transport.PickupIsBadmailingFile.Monitor|
+|none (notification or check)|HubTransport|Transport.SendConn.AuthKerb.Monitor|
+|none (notification or check)|HubTransport|Transport.SendConnAuth.Monitor|
+|none (notification or check)|HubTransport|Transport.SendConnTLS.Monitor|
+|none (notification or check)|HubTransport|Transport.ServerCertExpireSoon.Monitor|
+|none (notification or check)|HubTransport|Transport.ServerCertMismatch.Monitor|
+|none (notification or check)|HubTransport|Transport.ServiceStartError.Monitor|
+|none (notification or check)|HubTransport|Transport.SmtpSendDirectTrustFailed.Monitor|
+|none (notification or check)|HubTransport|Transport.TemplateDoesNotExist.Monitor|
+|none (notification or check)|HubTransport|Transport.TLSValidate.Monitor|
+|none (notification or check)|HubTransport|Transport.UnknownTemplateInPublishingLicense.Monitor|
+|none (notification or check)|HubTransport|TransportCategorizerJobAvailabilityMonitor|
+|none (notification or check)|HubTransport|TransportDatabaseCorruptMonitor|
+|none (notification or check)|HubTransport|TransportDeliveryFailures544Monitor|
+|none (notification or check)|HubTransport|TransportDeliveryFailuresDeliveryStoreDriver520Monitor|
+|none (notification or check)|HubTransport|TransportLogGenerationCheckpointDepthMonitor|
+|none (notification or check)|HubTransport|TransportLogSearchLogPathInvalidMonitor|
+|none (notification or check)|HubTransport|TransportMaxLocalLoopCountMonitor|
+|none (notification or check)|HubTransport|TransportPickupReadMonitor|
+|none (notification or check)|HubTransport|TransportPoisonMessageMonitor|
+|none (notification or check)|HubTransport|TransportRejectingMessageSubmissionsMonitor|
+|none (notification or check)|HubTransport|TransportServerCertPersonalStoreMonitor|
+|none (notification or check)|HubTransport|UnreachableQueueMonitor|
+|none (notification or check)|HubTransport|XProxyToTransientInvalidArgumentsMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
