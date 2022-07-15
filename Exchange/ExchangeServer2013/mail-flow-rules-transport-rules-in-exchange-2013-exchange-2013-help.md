@@ -63,173 +63,48 @@ A transport rule is made of conditions, exceptions, actions, and properties:
 
 The following table shows how multiple conditions, condition values, exceptions, and actions are handled in a rule.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Component</th>
-<th>Logic</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Multiple conditions</p></td>
-<td><p>AND</p></td>
-<td><p>A message must match all the conditions in the rule. If you need to match one condition or another, use separate rules for each condition. For example, if you want to add the same disclaimer to messages with attachments and messages that contain specific text, create one rule for each condition. In the EAC, you can easily copy a rule.</p></td>
-</tr>
-<tr class="even">
-<td><p>One condition with multiple values</p></td>
-<td><p>OR</p></td>
-<td><p>Some conditions allow you to specify more than one value. The message must match any one (not all) of the specified values. For example, if an email message has the subject <strong>Stock price information</strong>, and the <strong>The subject includes any of these words</strong> condition is configured to match the words <strong>Contoso</strong> or <strong>stock</strong>, the condition is satisfied because the subject contains at least one of the specified values.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Multiple exceptions</p></td>
-<td><p>OR</p></td>
-<td><p>If a message matches any one of the exceptions, the actions are not applied to the message. The message doesn't have to match all the exceptions.</p></td>
-</tr>
-<tr class="even">
-<td><p>Multiple actions</p></td>
-<td><p>AND</p></td>
-<td><p>Messages that match a rule's conditions get all the actions that are specified in the rule. For example, if the actions <strong>Prepend the subject of the message with</strong> and <strong>Add recipients to the Bcc box</strong> are selected, both actions are applied to the message.</p>
-<p>Keep in mind that some actions, such as the <strong>Delete the message without notifying anyone</strong> action, prevent subsequent rules from being applied to a message. Other actions such as <strong>Forward the message</strong> do not allow additional actions.</p>
-<p>You can also set an action on a rule so that when that rule is applied, subsequent rules are not applied to the message.</p></td>
-</tr>
-</tbody>
-</table>
+|Component|Logic|Comments|
+|---|---|---|
+|Multiple conditions|AND|A message must match all the conditions in the rule. If you need to match one condition or another, use separate rules for each condition. For example, if you want to add the same disclaimer to messages with attachments and messages that contain specific text, create one rule for each condition. In the EAC, you can easily copy a rule.|
+|One condition with multiple values|OR|Some conditions allow you to specify more than one value. The message must match any one (not all) of the specified values. For example, if an email message has the subject **Stock price information**, and the **The subject includes any of these words** condition is configured to match the words **Contoso** or **stock**, the condition is satisfied because the subject contains at least one of the specified values.|
+|Multiple exceptions|OR|If a message matches any one of the exceptions, the actions are not applied to the message. The message doesn't have to match all the exceptions.|
+|Multiple actions|AND|Messages that match a rule's conditions get all the actions that are specified in the rule. For example, if the actions **Prepend the subject of the message with** and **Add recipients to the Bcc box** are selected, both actions are applied to the message. <br/><br/> Keep in mind that some actions, such as the **Delete the message without notifying anyone** action, prevent subsequent rules from being applied to a message. Other actions such as **Forward the message** do not allow additional actions. <br/><br/> You can also set an action on a rule so that when that rule is applied, subsequent rules are not applied to the message.|
 
 ## Transport rule properties
 
 The following table describes the rule properties that are available in transport rules.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Property name in the EAC</th>
-<th>Parameter name in PowerShell</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Priority</strong></p></td>
-<td><p><em>Priority</em></p></td>
-<td><p>Indicates the order that the rules are applied to messages. The default priority is based on when the rule is created (older rules have a higher priority than newer rules, and higher priority rules are processed before lower priority rules).</p>
-<p>You change the rule priority in the EAC by moving the rule up or down in the list of rules. In the PowerShell, you set the priority number (0 is the highest priority).</p>
-<p>For example, if you have one rule to reject messages that include a credit card number, and another one requiring approval, you'll want the reject rule to happen first, and stop applying other rules.</p>
-<p>For more information, see [Set the priority of a transport rule](manage-transport-rules-exchange-2013-help.md#set-the-priority-of-a-transport-rule).</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Mode</strong></p></td>
-<td><p><em>Mode</em></p></td>
-<td><p>You can specify whether you want the rule to start processing messages immediately, or whether you want to test rules without affecting the delivery of the message (with or without Data Loss Prevention or DLP Policy Tips).</p>
-<p>Policy Tips present a brief note in Outlook or Outlook on the web that provides information about possible policy violations to the person that's creating the message. For more information, see <a href="/exchange/security-and-compliance/data-loss-prevention/policy-tips">Policy Tips</a>.</p>
-<p>For more information about the modes, see <a href="/exchange/security-and-compliance/mail-flow-rules/test-mail-flow-rules">Test a transport rule</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Activate this rule on the following date</strong></p>
-<p><strong>Deactivate this rule on the following date</strong></p></td>
-<td><p><em>ActivationDate</em></p>
-<p><em>ExpiryDate</em></p></td>
-<td><p>Specifies the date range when the rule is active.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>On</strong> check box selected or not selected</p></td>
-<td><p>New rules: <em>Enabled</em> parameter on the <strong>New-TransportRule</strong> cmdlet.</p>
-<p>Existing rules: Use the <strong>Enable-TransportRule</strong> or <strong>Disable-TransportRule</strong> cmdlets.</p>
-<p>The value is displayed in the <strong>State</strong> property of the rule.</p></td>
-<td><p>You can create a disabled rule, and enable it when you're ready to test it. Or, you can disable a rule without deleting it to preserve the settings.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Defer the message if rule processing doesn't complete</strong></p></td>
-<td><p><em>RuleErrorAction</em></p></td>
-<td><p>You can specify how the message should be handled if the rule processing can't be completed. By default, the rule will be ignored, but you can choose to resubmit the message for processing.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Match sender address in message</strong></p></td>
-<td><p><em>SenderAddressLocation</em></p></td>
-<td><p>If the rule uses conditions or exceptions that examine the sender's email address, you can look for the value in the message header, the message envelope, or both.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Stop processing more rules</strong></p></td>
-<td><p><em>SenderAddressLocation</em></p></td>
-<td><p>This is an action for the rule, but it looks like a property in the EAC. You can choose to stop applying additional rules to a message after a rule processes a message.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Comments</strong></p></td>
-<td><p><em>Comments</em></p></td>
-<td><p>You can enter descriptive comments about the rule.</p></td>
-</tr>
-</tbody>
-</table>
+|Property name in the EAC|Parameter name in PowerShell|Description|
+|---|---|---|
+|**Priority**|_Priority_|Indicates the order that the rules are applied to messages. The default priority is based on when the rule is created (older rules have a higher priority than newer rules, and higher priority rules are processed before lower priority rules). <br/><br/> You change the rule priority in the EAC by moving the rule up or down in the list of rules. In the PowerShell, you set the priority number (0 is the highest priority). <br/><br/> For example, if you have one rule to reject messages that include a credit card number, and another one requiring approval, you'll want the reject rule to happen first, and stop applying other rules. <br/><br/> For more information, see [Set the priority of a transport rule](manage-transport-rules-exchange-2013-help.md#set-the-priority-of-a-transport-rule).|
+|**Mode**|_Mode_|You can specify whether you want the rule to start processing messages immediately, or whether you want to test rules without affecting the delivery of the message (with or without Data Loss Prevention or DLP Policy Tips). <br/><br/> Policy Tips present a brief note in Outlook or Outlook on the web that provides information about possible policy violations to the person that's creating the message. For more information, see [Policy Tips](/exchange/security-and-compliance/data-loss-prevention/policy-tips). <br/><br/> For more information about the modes, see [Test a transport rule](/exchange/security-and-compliance/mail-flow-rules/test-mail-flow-rules).|
+|**Activate this rule on the following date** <br/><br/> **Deactivate this rule on the following date**|_ActivationDate_ <br/><br/> _ExpiryDate_|Specifies the date range when the rule is active.|
+|**On** check box selected or not selected|New rules: _Enabled_ parameter on the **New-TransportRule** cmdlet. <br/><br/> Existing rules: Use the **Enable-TransportRule** or **Disable-TransportRule** cmdlets. <br/><br/> The value is displayed in the **State** property of the rule.|You can create a disabled rule, and enable it when you're ready to test it. Or, you can disable a rule without deleting it to preserve the settings.|
+|**Defer the message if rule processing doesn't complete**|_RuleErrorAction_|You can specify how the message should be handled if the rule processing can't be completed. By default, the rule will be ignored, but you can choose to resubmit the message for processing.|
+|**Match sender address in message**|_SenderAddressLocation_|If the rule uses conditions or exceptions that examine the sender's email address, you can look for the value in the message header, the message envelope, or both.|
+|**Stop processing more rules**|_SenderAddressLocation_|This is an action for the rule, but it looks like a property in the EAC. You can choose to stop applying additional rules to a message after a rule processes a message.|
+|**Comments**|_Comments_|You can enter descriptive comments about the rule.|
 
 ## How transport rules are applied to messages
 
-UNRESOLVED\_TOKENBLOCK\_VAL(GENL\_TransportRules\_HowApplied)
+All messages that flow through your organization are evaluated against the enabled mail flow rules in your organization. Rules are processed in the order listed on the **Mail flow** \> **Rules** page in EAC, or based on the corresponding _Priority_ parameter value in the Exchange Management Shell.
+
+Each rule also offers the option of stopping processing more rules when the rule is matched. This setting is important for messages that match the conditions in multiple mail flow rules (which rule do you want applied to the message? All? Just one?).
 
 ## Differences in processing based on message type
 
 There are several types of messages that pass through an organization. The following table shows which messages types can be processed by transport rules.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Type of message</th>
-<th>Can a rule be applied?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Regular messages</strong>   Messages that contain a single rich text format (RTF), HTML, or plain text message body or a multipart or alternative set of message bodies.</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Microsoft 365 or Microsoft Purview Message Encryption</strong>    Messages encrypted by Microsoft 365 or Office 365. For more information, see <a href="/microsoft-365/compliance/encryption">Encryption</a>.</p></td>
-<td><p>Rules can always access envelope headers and process messages based on conditions that inspect those headers.</p>
-<p>For a rule to inspect or modify the contents of an encrypted message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="/exchange/enable-or-disable-transport-decryption-exchange-2013-help">Enable or disable transport decryption</a>.</p>
-<p>You can also create a rule that automatically decrypts encrypted messages. For more information, see <a href="/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email">Define mail flow rules to encrypt email messages</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>S/MIME encrypted messages</strong></p></td>
-<td><p>Rules can only access envelope headers and process messages based on conditions that inspect those headers.</p>
-<p>Rules with conditions that require inspection of the message's content, or actions that modify the message's content can't be processed.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>RMS protected messages</strong>   Messages that had an Active Directory Rights Management Services (AD RMS) or Azure Rights Management (RMS) policy applied.</p></td>
-<td><p>Rules can always access envelope headers and process messages based on conditions that inspect those headers.</p>
-<p>For a rule to inspect or modify the contents of an RMS protected message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see <a href="/exchange/enable-or-disable-transport-decryption-exchange-2013-help">Enable or disable transport decryption</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Clear-signed messages</strong>   Messages that have been signed but not encrypted.</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>UM messages</strong>   Messages that are created or processed by the Unified Messaging service, such as voice mail, fax, missed call notifications, and messages created or forwarded by using Microsoft Outlook Voice Access.</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Anonymous messages</strong>   Messages sent by anonymous senders.</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Read reports</strong>   Reports that are generated in response to read receipt requests by senders. Read reports have a message class of <code>IPM.Note*.MdnRead</code> or <code>IPM.Note*.MdnNotRead</code>.</p></td>
-<td><p>Yes</p></td>
-</tr>
-</tbody>
-</table>
+|Type of message|Can a rule be applied?|
+|---|---|
+|**Regular messages**: Messages that contain a single rich text format (RTF), HTML, or plain text message body or a multipart or alternative set of message bodies.|Yes|
+|**Microsoft 365 or Microsoft Purview Message Encryption**: Messages encrypted by Microsoft 365 or Office 365. For more information, see [Encryption](/microsoft-365/compliance/encryption).|Rules can always access envelope headers and process messages based on conditions that inspect those headers. <br/><br/> For a rule to inspect or modify the contents of an encrypted message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see [Enable or disable transport decryption](/exchange/enable-or-disable-transport-decryption-exchange-2013-help). <br/><br/> You can also create a rule that automatically decrypts encrypted messages. For more information, see [Define mail flow rules to encrypt email messages](/microsoft-365/compliance/define-mail-flow-rules-to-encrypt-email).|
+|**S/MIME encrypted messages**|Rules can only access envelope headers and process messages based on conditions that inspect those headers. <br/><br/> Rules with conditions that require inspection of the message's content, or actions that modify the message's content can't be processed.|
+|**RMS protected messages**: Messages that had an Active Directory Rights Management Services (AD RMS) or Azure Rights Management (RMS) policy applied.|Rules can always access envelope headers and process messages based on conditions that inspect those headers. <br/><br/> For a rule to inspect or modify the contents of an RMS protected message, you need to verify that transport decryption is enabled (Mandatory or Optional; the default is Optional). For more information, see [Enable or disable transport decryption](/exchange/enable-or-disable-transport-decryption-exchange-2013-help).|
+|**Clear-signed messages**: Messages that have been signed but not encrypted.|Yes|
+|**UM messages**: Messages that are created or processed by the Unified Messaging service, such as voice mail, fax, missed call notifications, and messages created or forwarded by using Microsoft Outlook Voice Access.|Yes|
+|**Anonymous messages**: Messages sent by anonymous senders.|Yes|
+|**Read reports**: Reports that are generated in response to read receipt requests by senders. Read reports have a message class of `IPM.Note*.MdnRead` or `IPM.Note*.MdnNotRead`.|Yes|
 
 ## Transport rules and group membership
 
@@ -260,13 +135,17 @@ There are two mixed environment scenarios that are common in Exchange 2013:
   In a hybrid environment, there's no replication of rules between your on-premises Exchange organization and Microsoft 365 or Office 365. Therefore, when you create a rule in Exchange, you need to create a matching rule in Microsoft 365 or Office 365. Rules you create in Microsoft 365 or Office 365 are stored in the cloud, whereas the rules you create in your on-premises organization are stored locally in Active Directory. When you manage rules in a hybrid environment, you need to keep the two sets of rules synchronized by making the change in both places, or making the change in one environment and then exporting the rules and importing them in the other environment.
 
   > [!IMPORTANT]
-  > Even though there is a substantial overlap between the conditions and actions that are available in no Microsoft 365 or Office 365 and Exchange Server, there are differences. If you plan on creating the same rule in both locations, make sure that all conditions and actions you plan to use are available. To see the list of available conditions and actions that are available in Microsoft 365 or Office 365, see the following topics:<BR><A href="/exchange/security-and-compliance/mail-flow-rules/conditions-and-exceptions">Transport rule conditions and exceptions (predicates) in Exchange Online</A><BR><A href="/exchange/security-and-compliance/mail-flow-rules/mail-flow-rule-actions">Mail flow rule actions in Exchange Online</A>
+  > Even though there is a substantial overlap between the conditions and actions that are available in no Microsoft 365 or Office 365 and Exchange Server, there are differences. If you plan on creating the same rule in both locations, make sure that all conditions and actions you plan to use are available. To see the list of available conditions and actions that are available in Microsoft 365 or Office 365, see the following topics:
+  >
+  > [Transport rule conditions and exceptions (predicates) in Exchange Online](/exchange/security-and-compliance/mail-flow-rules/conditions-and-exceptions)
+  >
+  > [Mail flow rule actions in Exchange Online](/exchange/security-and-compliance/mail-flow-rules/mail-flow-rule-actions)
 
 - **Coexistence with Exchange 2010 or Exchange 2007**
 
-  When you coexist with Exchange 2010 or Exchange 2007, all transport rules are stored in Active Directory and replicated across your organization, regardless of the Exchange Server version you used to create the rules. However, all transport rules are associated with the Exchange Server server version that was used to create them, and are stored in a version-specific container in Active Directory. When you first deploy Exchange 2013 in your organization, any existing rules are imported to Exchange 2013 as part of the setup process. However, any changes afterwards would need to be made with both versions. For example, if you change an existing rule in Exchange 2013 (Exchange Management Shell or the EAC), you need to make the same change in Exchange 2010 (Exchange Management Shell or the UNRESOLVED\_TOKEN\_VAL(exEMC)). Or, you can export the rules from Exchange 2013 and import them into Exchange 2010.
+  When you coexist with Exchange 2010 or Exchange 2007, all transport rules are stored in Active Directory and replicated across your organization, regardless of the Exchange Server version you used to create the rules. However, all transport rules are associated with the Exchange Server server version that was used to create them, and are stored in a version-specific container in Active Directory. When you first deploy Exchange 2013 in your organization, any existing rules are imported to Exchange 2013 as part of the setup process. However, any changes afterwards would need to be made with both versions. For example, if you change an existing rule in Exchange 2013 (Exchange Management Shell or the EAC), you need to make the same change in Exchange 2010 (Exchange Management Shell or the Exchange Management Console (EMC)). Or, you can export the rules from Exchange 2013 and import them into Exchange 2010.
 
-  Exchange 2010 can't process rules that have the **Version** or **RuleVersion** value 15.*n*.*n*.*n*. To be sure all your rules can be processed, only use rules that have the value 14.*n*.*n*.*n*.
+  Exchange 2010 can't process rules that have the **Version** or **RuleVersion** value 15._n_._n_._n_. To be sure all your rules can be processed, only use rules that have the value 14._n_._n_._n_.
 
 ## For more information
 
