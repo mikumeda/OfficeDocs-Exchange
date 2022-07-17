@@ -2,6 +2,23 @@
 
 
 
+## Week of July 11, 2022
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 7/11/2022 | [Exchange 2013 Performance Counters: Exchange 2013 Help](/Exchange/exchange-2013-performance-counters-exchange-2013-help) | modified |
+| 7/11/2022 | [Prepare mailboxes for cross-forest move requests: Exchange 2013 Help](/Exchange/prepare-mailboxes-for-cross-forest-move-requests-exchange-2013-help) | modified |
+| 7/11/2022 | [Understanding management role scopes: Exchange 2013 Help](/Exchange/understanding-management-role-scopes-exchange-2013-help) | modified |
+| 7/12/2022 | [Run a non-owner mailbox access report in Exchange Online](/Exchange/security-and-compliance/exchange-auditing-reports/non-owner-mailbox-access-report) | modified |
+| 7/15/2022 | [Transport rule conditions and exceptions (predicates) in Exchange 2013](/Exchange/mail-flow-rule-conditions-and-exceptions-predicates-in-exchange-2013-exchange-2013-help) | modified |
+| 7/15/2022 | [Transport rules in Exchange 2013: Exchange 2013 Help](/Exchange/mail-flow-rules-transport-rules-in-exchange-2013-exchange-2013-help) | modified |
+| 7/15/2022 | [Troubleshooting HubTransport Health Set](/Exchange/management/health/troubleshooting-hubtransport-health-set) | modified |
+| 7/15/2022 | [Message tracking: Exchange 2013 Help](/Exchange/message-tracking-exchange-2013-help) | modified |
+| 7/15/2022 | [Supported languages for system messages: Exchange 2013 Help](/Exchange/supported-languages-for-system-messages-exchange-2013-help) | modified |
+| 7/15/2022 | [Understanding management roles: Exchange 2013 Help](/Exchange/understanding-management-roles-exchange-2013-help) | modified |
+
+
 ## Week of July 04, 2022
 
 
@@ -136,12 +153,3 @@
 | 6/14/2022 | [Manage mail flow rules in Exchange Online](/Exchange/security-and-compliance/mail-flow-rules/manage-mail-flow-rules) | modified |
 | 6/15/2022 | [Manage address lists in Exchange Online](/Exchange/address-books/address-lists/manage-address-lists) | modified |
 | 6/15/2022 | [Safety Net in Exchange Server](/Exchange/mail-flow/transport-high-availability/safety-net?view=exchserver-2016) | modified |
-
-
-## Week of June 06, 2022
-
-
-| Published On |Topic title | Change |
-|------|------------|--------|
-| 6/7/2022 | [Email non-delivery reports and SMTP errors in Exchange Online](/Exchange/mail-flow-best-practices/non-delivery-reports-in-exchange-online/non-delivery-reports-in-exchange-online) | modified |
-| 6/9/2022 | [Clean up or delete items from the Recoverable Items folder in Exchange Online](/Exchange/security-and-compliance/recoverable-items-folder/clean-up-deleted-items) | modified |
