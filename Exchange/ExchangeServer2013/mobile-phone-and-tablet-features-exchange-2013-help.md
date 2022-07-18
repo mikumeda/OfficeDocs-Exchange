@@ -30,14 +30,9 @@ Users can take advantage of the rich features of Exchange ActiveSync by selectin
 
 Mobile phones that are compatible with Microsoft Exchange include the following:
 
-  - **Apple**: The Apple iPhone, iPod Touch, and iPad all support Exchange ActiveSync.
+- **Apple**: The Apple iPhone, iPod Touch, and iPad all support Exchange ActiveSync.
 
-  - **Android**: Many mobile phones and tablets with the Android operating system support Exchange ActiveSync. However, these mobile devices may not support all available mobile device mailbox policies. For more information, see [Mobile device mailbox policies](mobile-device-mailbox-policies-exchange-2013-help.md).
+- **Android**: Many mobile phones and tablets with the Android operating system support Exchange ActiveSync. However, these mobile devices may not support all available mobile device mailbox policies. For more information, see [Mobile device mailbox policies](mobile-device-mailbox-policies-exchange-2013-help.md).
 
 > [!WARNING]
-> If your organization uses other mobile device mailbox policy settings, you'll need to set the <STRONG>Allow non-provisionable devices</STRONG> policy to true. This can have security implications for your organization, because other mobile phones and devices that don't meet all the requirements of your mobile device policy settings will be allowed to synchronize. For more information, see <A href="mobile-device-mailbox-policies-exchange-2013-help.md">Mobile device mailbox policies</A>.
-
-</td>
-</tr>
-</tbody>
-</table>
+> If your organization uses other mobile device mailbox policy settings, you'll need to set the **Allow non-provisionable devices** policy to true. This can have security implications for your organization, because other mobile phones and devices that don't meet all the requirements of your mobile device policy settings will be allowed to synchronize. For more information, see [Mobile device mailbox policies](mobile-device-mailbox-policies-exchange-2013-help.md).
