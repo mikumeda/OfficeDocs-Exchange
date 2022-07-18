@@ -22,8 +22,8 @@ manager: serdars
 
 The management tools in Exchange Server 2016 and Exchange Server 2019 include the Exchange Management Shell and the Exchange Toolbox. You can install the management tools on other client computers or servers in the Active Directory domain to help you manage your Exchange organization. The management tools have similar operating system, .NET Framework, and Windows Management Framework (Windows PowerShell) requirements as an Exchange server. The notable exception is: you can install the management tools on client versions of Windows. For more information, see [Exchange Server system requirements](../../plan-and-deploy/system-requirements.md) and [Exchange Server prerequisites](../../plan-and-deploy/prerequisites.md).
 
->[!Tip]
->If you wish to use Exchange Management Tools for Recipient Management without keeping an Exchange Server, see [Manage on-premises recipients in a Hybrid Enviroment using Exchange Management tools](/exchange/manage-hybrid-exchange-recipients-with-management-tools)
+> [!TIP]
+> If you wish to use Exchange Management Tools for Recipient Management without keeping an Exchange Server, see [Manage on-premises recipients in a Hybrid Environment using Exchange Management tools](/exchange/manage-hybrid-exchange-recipients-with-management-tools)
 
 > [!NOTE]
 > The management tools don't include the Exchange admin center (EAC). The EAC is a web-based console that's hosted on Exchange 2016 Mailbox servers, and like any web site, you can access the EAC from other computers. For more information about the EAC, see [Exchange admin center in Exchange Server](../../architecture/client-access/exchange-admin-center.md).
@@ -128,6 +128,7 @@ For more information about the Exchange Management Shell, see [Exchange Server P
 2. To install the Exchange management tools from the command line, use the following syntax in elevated command prompt (a Command Prompt window you opened by selecting **Run as administrator**):
 
 > [!NOTE]
+>
 > - The previous _/IAcceptExchangeServerLicenseTerms_ switch will not work starting with the September 2021 Cumulative Updates (CUs). You now must use either _/IAcceptExchangeServerLicenseTerms_DiagnosticDataON_ or _/IAcceptExchangeServerLicenseTerms_DiagnosticDataOFF_ for unattended and scripted installs.
 >
 > - The examples below use the _/IAcceptExchangeServerLicenseTerms_DiagnosticDataON_ switch. It's up to you to change the switch to _/IAcceptExchangeServerLicenseTerms_DiagnosticDataOFF_.

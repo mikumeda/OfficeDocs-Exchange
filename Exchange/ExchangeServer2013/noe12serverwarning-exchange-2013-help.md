@@ -25,16 +25,9 @@ Having problems? Ask for help in the Exchange forums. Visit the forums at [Excha
 
 When you run Microsoft Exchange Server 2010 **Setup /PrepareAD**, the Microsoft Exchange Server Analyzer Tool queries the existing Active Directory topology to determine whether any Microsoft Exchange Server 2007 server roles exist. If Exchange 2007 server roles are not detected, you receive the following warning message:
 
-<table>
-<colgroup>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Setup is going to prepare the organization for Exchange Server 2010 via 'Setup /PrepareAD' and no Exchange Server 2007 roles have been detected in this topology. After this operation, it will be impossible to install any Exchange Server 2007 roles.</p></td>
-</tr>
-</tbody>
-</table>
+|&nbsp;|
+|---|
+|Setup is going to prepare the organization for Exchange Server 2010 via 'Setup /PrepareAD' and no Exchange Server 2007 roles have been detected in this topology. After this operation, it will be impossible to install any Exchange Server 2007 roles.|
 
 Before deploying Exchange Server 2010, consider the following factors that may require you to deploy an Exchange 2007 server with all server roles installed prior to deploying Exchange 2007:
 
