@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the 'Cannot find a recipient update service\_RUSMissing' error.
 ---
 
 # Cannot find a recipient update service\_RUSMissing
@@ -30,23 +31,6 @@ If an instance of the Recipient Update Service is missing for a domain, new user
 
 To resolve this issue, verify that an instance of the Recipient Update Service exists for each domain and create an instance of the Recipient Update Service for the domains that do not have one and then rerun Microsoft Exchange setup.
 
-<table>
-<colgroup>
-<col />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>To create a Recipient Update Service instance for a domain</p></td>
-</tr>
-<tr class="even">
-<td><ol>
-<li><p>Open Exchange System Manager.</p></li>
-<li><p>Expand <strong>Recipients</strong>.</p></li>
-<li><p>Right-click the <strong>Recipient Update Services</strong> node, click <strong>New</strong>, and then click <strong>Recipient Update Service</strong>.</p></li>
-<li><p>In the New Object window, click <strong>Browse</strong> to locate the name of the domain.</p></li>
-<li><p>Select the name of the domain and then click <strong>OK</strong>.</p></li>
-<li><p>In the New Object window, click <strong>Next</strong>, and then <strong>Finish</strong>.</p></li>
-</ol></td>
-</tr>
-</tbody>
-</table>
+|To create a Recipient Update Service instance for a domain|
+|---|
+|<ol><li>Open Exchange System Manager.</li><li>Expand **Recipients**.</li><li>Right-click the **Recipient Update Services** node, click **New**, and then click **Recipient Update Service**.</li><li>In the New Object window, click **Browse** to locate the name of the domain.</li><li>Select the name of the domain and then click **OK**.</li><li>In the New Object window, click **Next**, and then **Finish**.</li></ol>|

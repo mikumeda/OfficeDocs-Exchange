@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about back pressure in the Transport service in Exchange 2013.
 ---
 
 # Back pressure
@@ -54,30 +55,30 @@ The following sections explain how Exchange handles the situation when a specifi
 
 By default, the message queue database is stored at %ExchangeInstallPath%TransportRoles\\data\\Queue. Exchange monitors the hard drive space utilization for this location. The high level of hard drive space utilization is calculated by using the following formula:
 
-100 \* (*hard disk size* - *fixed constant*) / *hard drive size*
+100 \* (_hard disk size_ - _fixed constant_) / _hard drive size_
 
-The value of *fixed constant* is 500 megabytes (MB).
+The value of _fixed constant_ is 500 megabytes (MB).
 
 The results of this formula are expressed as a percentage of the total hard drive space that's being used. The results of the formula are always rounded down to the nearest integer. By default, the medium level of hard drive utilization is 2 percent less than the high level. By default, the normal level of hard drive utilization is 4 percent less than the high level.
 
 ## Free hard drive space for the message queue database transaction logs
 
-By default, the message queue database transaction logs are stored at %ExchangeInstallPath%TransportRoles\\data\\Queue. Exchange monitors the hard drive space utilization for this location. The %ExchangeInstallPath%Bin\\EdgeTransport.exe.config application configuration file contains a *DatabaseCheckPointDepthMax* key that has a default value of 384 MB. This key controls the total allowed size of all uncommitted transaction logs that exist on the hard drive. This key is used in the formula that calculates hard drive utilization.
+By default, the message queue database transaction logs are stored at %ExchangeInstallPath%TransportRoles\\data\\Queue. Exchange monitors the hard drive space utilization for this location. The %ExchangeInstallPath%Bin\\EdgeTransport.exe.config application configuration file contains a _DatabaseCheckPointDepthMax_ key that has a default value of 384 MB. This key controls the total allowed size of all uncommitted transaction logs that exist on the hard drive. This key is used in the formula that calculates hard drive utilization.
 
 > [!NOTE]
-> The value of the <EM>DatabaseCheckPointDepthMax</EM> key applies to all transport-related Extensible Storage Engine (ESE) databases that exist on the Mailbox server or Edge Transport server. This would include the message queue database and the IP filter database.
+> The value of the _DatabaseCheckPointDepthMax_ key applies to all transport-related Extensible Storage Engine (ESE) databases that exist on the Mailbox server or Edge Transport server. This would include the message queue database and the IP filter database.
 
 By default, the high level of disk utilization is calculated by using the following formula:
 
-100 \* (*hard drive size* - Min(5 GB, 3\**DatabaseCheckPointDepthMax*)) / *hard drive size*
+100 \* (_hard drive size_ - Min(5 GB, 3 \* _DatabaseCheckPointDepthMax_)) / _hard drive size_
 
 The results of the formula are always rounded down to the nearest integer. By default, the medium level of hard drive utilization is 2 percent less than the high level. The normal level of hard drive utilization is 4 percent less than the high level.
 
 ## Number of uncommitted message queue database transactions in memory
 
-A list of changes that are made to the message queue database is kept in memory until those changes can be committed to a transaction log. Then the list is committed to the message queue database itself. These outstanding message queue database transactions that are kept in memory are known as *version buckets*. The number of version buckets may increase to unacceptably high levels because of an unexpectedly high volume of incoming messages, spam attacks, problems with the message queue database integrity, or hard drive performance.
+A list of changes that are made to the message queue database is kept in memory until those changes can be committed to a transaction log. Then the list is committed to the message queue database itself. These outstanding message queue database transactions that are kept in memory are known as _version buckets_. The number of version buckets may increase to unacceptably high levels because of an unexpectedly high volume of incoming messages, spam attacks, problems with the message queue database integrity, or hard drive performance.
 
-When Exchange starts receiving messages, these messages are grouped together in batches and then prepared as version buckets. If an incoming message has a large attachment, it can be separated into multiple batches. These batches that are being processed are known as *batch points*. The number of outstanding batch points can exceed the set thresholds, especially when there's an unexpectedly high volume of incoming messages with large attachments.
+When Exchange starts receiving messages, these messages are grouped together in batches and then prepared as version buckets. If an incoming message has a large attachment, it can be separated into multiple batches. These batches that are being processed are known as _batch points_. The number of outstanding batch points can exceed the set thresholds, especially when there's an unexpectedly high volume of incoming messages with large attachments.
 
 When version buckets or batch points are under pressure, the Exchange server will start throttling incoming connections by delaying acknowledgement to incoming messages. Exchange will reduce the rate of inbound message flow by tarpitting, which introduces a delay to the **MAIL FROM** commands. If the resource pressure condition continues, Exchange will gradually increase the tarpitting delay. After the resource utilization returns to normal, Exchange will gradually start reducing the acknowledgement delay and ease into normal operation. By default, Exchange will start delaying message acknowledgements 10 seconds when under resource pressure. If the resources continue to be under pressure, the delay is increased in 5-second increments up to 55 seconds.
 
@@ -93,7 +94,7 @@ This calculation doesn't include virtual memory that's available on the hard dri
 
 By default, the medium level of memory utilization by the EdgeTransport.exe file is calculated as 73 percent of the total physical memory or 2 percent less than the value of the high level, whichever is less. By default, the normal level of memory utilization by the EdgeTransport.exe file is calculated as 71 percent of the total physical memory or 4 percent less than the value of the high level, whichever is less.
 
-If the memory utilization of the EdgeTransport.exe process is higher than the specified normal level, *garbage collection* is forced. Garbage collection is a process that checks for unused objects that exist in memory, and reclaims the memory that's used by those unused objects.
+If the memory utilization of the EdgeTransport.exe process is higher than the specified normal level, _garbage collection_ is forced. Garbage collection is a process that checks for unused objects that exist in memory, and reclaims the memory that's used by those unused objects.
 
 Exchange keeps a history of the memory utilization of the EdgeTransport.exe process. If the utilization doesn't go down to normal level for a specific number of polling intervals, known as the history depth, Exchange will start rejecting incoming messages until the resource utilization goes back to normal. By default, the history depth for EdgeTransport.exe memory utilization is 30 polling intervals.
 
@@ -101,7 +102,7 @@ Exchange keeps a history of the memory utilization of the EdgeTransport.exe proc
 
 By default, the high level of memory utilization by all processes is 94 percent of total physical memory. This value doesn't include virtual memory that's available on the hard drive in the paging file.
 
-When the specified memory utilization level is reached, *message dehydration* occurs. Message dehydration is the act of removing unnecessary elements of queued messages that are cached in memory. Complete messages are cached in memory for enhanced performance. Removal of the MIME content of queued messages from memory reduces the memory that's used at the expense of higher latency because the messages are read directly from the message queue database. By default, message dehydration is enabled.
+When the specified memory utilization level is reached, _message dehydration_ occurs. Message dehydration is the act of removing unnecessary elements of queued messages that are cached in memory. Complete messages are cached in memory for enhanced performance. Removal of the MIME content of queued messages from memory reduces the memory that's used at the expense of higher latency because the messages are read directly from the message queue database. By default, message dehydration is enabled.
 
 ## Number of messages in the Submission queue
 
@@ -117,161 +118,22 @@ The following table summarizes the actions taken by Exchange transport when a sp
 
 ### Back pressure actions taken by Mailbox and Edge Transport servers when responding to resource pressure
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Resource under pressure</th>
-<th>Utilization level</th>
-<th>Actions taken</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Hard drive space for message queue database</p></td>
-<td><p>Medium</p></td>
-<td><ul>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Hard drive space for message queue database</p></td>
-<td><p>High</p></td>
-<td><ul>
-<li><p>Reject incoming messages from other Exchange servers</p></li>
-<li><p>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</p></li>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Hard drive space for message queue database transaction logs</p></td>
-<td><p>Medium</p></td>
-<td><ul>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Hard drive space for message queue database transaction logs</p></td>
-<td><p>High</p></td>
-<td><ul>
-<li><p>Reject incoming messages from other Exchange servers</p></li>
-<li><p>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</p></li>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Version buckets</p></td>
-<td><p>Medium</p></td>
-<td><p>Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire version bucket history depth, take the following actions:</p>
-<ul>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Version buckets</p></td>
-<td><p>High</p></td>
-<td><p>Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire version bucket history depth, take the following actions:</p>
-<ul>
-<li><p>Reject incoming messages from other Exchange servers</p></li>
-<li><p>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</p></li>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Batch point</p></td>
-<td><p>Medium</p></td>
-<td><p>Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire batch point history depth, take the following actions:</p>
-<ul>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Batch point</p></td>
-<td><p>High</p></td>
-<td><p>Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire batch point history depth, take the following actions:</p>
-<ul>
-<li><p>Reject incoming messages from other Exchange servers</p></li>
-<li><p>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</p></li>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Memory used by EdgeTransport.exe process</p></td>
-<td><p>Medium</p></td>
-<td><ul>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-<li><p>Force garbage collection</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Memory used by EdgeTransport.exe process</p></td>
-<td><p>High</p></td>
-<td><ul>
-<li><p>Reject incoming messages from other Exchange servers</p></li>
-<li><p>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</p></li>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Memory used by all processes</p></td>
-<td><p>Medium</p></td>
-<td><ul>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-<li><p>Force garbage collection</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Memory used by all processes</p></td>
-<td><p>High</p></td>
-<td><ul>
-<li><p>Reject incoming messages from other Exchange servers</p></li>
-<li><p>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</p></li>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-<li><p>Flush enhanced DNS cache from memory</p></li>
-<li><p>Start message dehydration</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Number of messages in the Submission queue</p></td>
-<td><p>Medium</p></td>
-<td><p>Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire Submission queue history depth, take the following actions:</p>
-<ul>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-<li><p>Force garbage collection</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Number of messages in the Submission queue</p></td>
-<td><p>High</p></td>
-<td><p>Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire Submission queue history depth, take the following actions:</p>
-<ul>
-<li><p>Reject incoming messages from other Exchange servers</p></li>
-<li><p>Reject message submissions from mailbox databases by the Mailbox Transport Submissions service on Mailbox servers</p></li>
-<li><p>Reject incoming messages from non-Exchange servers</p></li>
-<li><p>Reject message submissions from Pickup and Replay directories</p></li>
-<li><p>Flush enhanced DNS cache from memory</p></li>
-<li><p>Start message dehydration</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+|Resource under pressure|Utilization level|Actions taken|
+|---|---|---|
+|Hard drive space for message queue database|Medium|<ul><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Hard drive space for message queue database|High|<ul><li>Reject incoming messages from other Exchange servers</li><li>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</li><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Hard drive space for message queue database transaction logs|Medium|<ul><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Hard drive space for message queue database transaction logs|High|<ul><li>Reject incoming messages from other Exchange servers</li><li>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</li><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Version buckets|Medium|Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire version bucket history depth, take the following actions: <ul><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Version buckets|High|Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire version bucket history depth, take the following actions: <ul><li>Reject incoming messages from other Exchange servers</li><li>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</li><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Batch point|Medium|Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire batch point history depth, take the following actions: <ul><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Batch point|High|Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire batch point history depth, take the following actions: <ul><li>Reject incoming messages from other Exchange servers</li><li>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</li><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Memory used by EdgeTransport.exe process|Medium|<ul><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li><li>Force garbage collection</li></ul>|
+|Memory used by EdgeTransport.exe process|High|<ul><li>Reject incoming messages from other Exchange servers</li><li>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</li><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li></ul>|
+|Memory used by all processes|Medium|<ul><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li><li>Force garbage collection</li></ul>|
+|Memory used by all processes|High|<ul><li>Reject incoming messages from other Exchange servers</li><li>Reject message submissions from mailbox databases by the Mailbox Transport Submission service on Mailbox servers</li><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li><li>Flush enhanced DNS cache from memory</li><li>Start message dehydration</li></ul>|
+|Number of messages in the Submission queue|Medium|Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire Submission queue history depth, take the following actions: <ul><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li><li>Force garbage collection</li></ul>|
+|Number of messages in the Submission queue|High|Introduce or increment the tarpitting delay to incoming messages. If normal level isn't reached for the entire Submission queue history depth, take the following actions: <ul><li>Reject incoming messages from other Exchange servers</li><li>Reject message submissions from mailbox databases by the Mailbox Transport Submissions service on Mailbox servers</li><li>Reject incoming messages from non-Exchange servers</li><li>Reject message submissions from Pickup and Replay directories</li><li>Flush enhanced DNS cache from memory</li><li>Start message dehydration</li></ul>|
 
 ## Back pressure configuration options in the EdgeTransport.exe.config file
 
@@ -282,156 +144,42 @@ All configuration options for back pressure are available in the %ExchangeInstal
 
 ### Back pressure configuration options
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Key name</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>EnableResourceMonitoring</em></p></td>
-<td><p>true</p></td>
-</tr>
-<tr class="even">
-<td><p><em>ResourceMonitoringInterval</em></p></td>
-<td><p><code>00:00:02</code> (2 seconds)</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>PercentageDatabaseDiskSpaceUsedHighThreshold</em></p></td>
-<td><p>0. This value indicates that the default formula will be used.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>PercentageDatabaseDiskSpaceUsedMediumThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseDiskSpaceUsedHighThreshold</em>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>PercentageDatabaseDiskSpaceUsedNormalThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseDiskSpaceUsedMediumThreshold</em>.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>PercentageDatabaseLoggingDiskSpaceUsedHighThreshold</em></p></td>
-<td><p>0. This value indicates that the default formula will be used.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>PercentageDatabaseLoggingDiskSpaceUsedMediumThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseLoggingDiskSpaceUsedHighThreshold</em>.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>PercentageDatabaseLoggingDiskSpaceUsedNormalThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentageDatabaseLoggingDiskSpaceUsedMediumThreshold</em>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>PercentagePrivateBytesUsedHighThreshold</em></p></td>
-<td><p>0. This value indicates that the default calculation will be used.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>PercentagePrivateBytesUsedMediumThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentagePrivateBytesUsedHighThreshold</em>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>PercentagePrivateBytesUsedNormalThreshold</em></p></td>
-<td><p>0. This value indicates that the actual value is 2 percent less than the value of <em>PercentagePrivateBytesUsedMediumThreshold</em>.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>VersionBucketsHighThreshold</em></p></td>
-<td><p>2500</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>VersionBucketsMediumThreshold</em></p></td>
-<td><p>2000</p></td>
-</tr>
-<tr class="even">
-<td><p><em>VersionBucketsNormalThreshold</em></p></td>
-<td><p>1750</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>VersionBucketsHistoryDepth</em></p></td>
-<td><p>10</p></td>
-</tr>
-<tr class="even">
-<td><p><em>BatchPointHighThreshold</em></p></td>
-<td><p>4000</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>BatchPointMediumThreshold</em></p></td>
-<td><p>2000</p></td>
-</tr>
-<tr class="even">
-<td><p><em>BatchPointNormalThreshold</em></p></td>
-<td><p>1000</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>BatchPointHistoryDepth</em></p></td>
-<td><p>300</p></td>
-</tr>
-<tr class="even">
-<td><p><em>BatchPointUseCostForPressure</em></p></td>
-<td><p>true</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>BatchPointBatchSize</em></p></td>
-<td><p>40</p></td>
-</tr>
-<tr class="even">
-<td><p><em>BatchPointBatchTimeout</em></p></td>
-<td><p><code>00:00:00.100</code> (0.1 seconds)</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>BatchPointItemExpiryInterval</em></p></td>
-<td><p><code>00:05:00</code> (5 minutes)</p></td>
-</tr>
-<tr class="even">
-<td><p><em>SMTPBaseThrottlingDelayInterval</em></p></td>
-<td><p><code>00:00:00</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>SMTPMaxThrottlingDelayInterval</em></p></td>
-<td><p><code>00:00:55</code> (55 seconds)</p></td>
-</tr>
-<tr class="even">
-<td><p><em>SMTPStepThrottlingDelayInterval</em></p></td>
-<td><p><code>00:00:05</code> (5 seconds)</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>SMTPStartThrottlingDelayInterval</em></p></td>
-<td><p><code>00:00:10</code> (10 seconds)</p></td>
-</tr>
-<tr class="even">
-<td><p><em>PercentagePhysicalMemoryUsedLimit</em></p></td>
-<td><p>94</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>DehydrateMessagesUnderMemoryPressure</em></p></td>
-<td><p>true</p></td>
-</tr>
-<tr class="even">
-<td><p><em>PrivateBytesHistoryDepth</em></p></td>
-<td><p>30</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>SubmissionQueueHighThreshold</em></p></td>
-<td><p>10000</p></td>
-</tr>
-<tr class="even">
-<td><p><em>SubmissionQueueMediumThreshold</em></p></td>
-<td><p>4000</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>SubmissionQueueNormalThreshold</em></p></td>
-<td><p>2000</p></td>
-</tr>
-<tr class="even">
-<td><p><em>SubmissionQueueHistoryDepth</em></p></td>
-<td><p>300</p></td>
-</tr>
-</tbody>
-</table>
+|Key name|Default value|
+|---|---|
+|_EnableResourceMonitoring_|true|
+|_ResourceMonitoringInterval_|`00:00:02` (2 seconds)|
+|_PercentageDatabaseDiskSpaceUsedHighThreshold_|0. This value indicates that the default formula will be used.|
+|_PercentageDatabaseDiskSpaceUsedMediumThreshold_|0. This value indicates that the actual value is 2 percent less than the value of _PercentageDatabaseDiskSpaceUsedHighThreshold_.|
+|_PercentageDatabaseDiskSpaceUsedNormalThreshold_|0. This value indicates that the actual value is 2 percent less than the value of _PercentageDatabaseDiskSpaceUsedMediumThreshold_.|
+|_PercentageDatabaseLoggingDiskSpaceUsedHighThreshold_|0. This value indicates that the default formula will be used.|
+|_PercentageDatabaseLoggingDiskSpaceUsedMediumThreshold_|0. This value indicates that the actual value is 2 percent less than the value of _PercentageDatabaseLoggingDiskSpaceUsedHighThreshold_.|
+|_PercentageDatabaseLoggingDiskSpaceUsedNormalThreshold_|0. This value indicates that the actual value is 2 percent less than the value of _PercentageDatabaseLoggingDiskSpaceUsedMediumThreshold_.|
+|_PercentagePrivateBytesUsedHighThreshold_|0. This value indicates that the default calculation will be used.|
+|_PercentagePrivateBytesUsedMediumThreshold_|0. This value indicates that the actual value is 2 percent less than the value of _PercentagePrivateBytesUsedHighThreshold_.|
+|_PercentagePrivateBytesUsedNormalThreshold_|0. This value indicates that the actual value is 2 percent less than the value of _PercentagePrivateBytesUsedMediumThreshold_.|
+|_VersionBucketsHighThreshold_|2500|
+|_VersionBucketsMediumThreshold_|2000|
+|_VersionBucketsNormalThreshold_|1750|
+|_VersionBucketsHistoryDepth_|10|
+|_BatchPointHighThreshold_|4000|
+|_BatchPointMediumThreshold_|2000|
+|_BatchPointNormalThreshold_|1000|
+|_BatchPointHistoryDepth_|300|
+|_BatchPointUseCostForPressure_|true|
+|_BatchPointBatchSize_|40|
+|_BatchPointBatchTimeout_|`00:00:00.100` (0.1 seconds)|
+|_BatchPointItemExpiryInterval_|`00:05:00` (5 minutes)|
+|_SMTPBaseThrottlingDelayInterval_|`00:00:00`|
+|_SMTPMaxThrottlingDelayInterval_|`00:00:55` (55 seconds)|
+|_SMTPStepThrottlingDelayInterval_|`00:00:05` (5 seconds)|
+|_SMTPStartThrottlingDelayInterval_|`00:00:10` (10 seconds)|
+|_PercentagePhysicalMemoryUsedLimit_|94|
+|_DehydrateMessagesUnderMemoryPressure_|true|
+|_PrivateBytesHistoryDepth_|30|
+|_SubmissionQueueHighThreshold_|10000|
+|_SubmissionQueueMediumThreshold_|4000|
+|_SubmissionQueueNormalThreshold_|2000|
+|_SubmissionQueueHistoryDepth_|300|
 
 ## Back pressure logging information
 
@@ -447,7 +195,7 @@ The following list describes the event log entries that are generated by specifi
 
     Event ID: 15004
 
-    Description: Resource pressure increased from *Previous Utilization Level* to *Current Utilization Level*.
+    Description: Resource pressure increased from _Previous Utilization Level_ to _Current Utilization Level_.
 
 - **Event log entry for a decrease in any resource utilization level**
 
@@ -459,7 +207,7 @@ The following list describes the event log entries that are generated by specifi
 
     Event ID: 15005
 
-    Description: Resource pressure decreased from *Previous Utilization Level* to *Current Utilization Level*.
+    Description: Resource pressure decreased from _Previous Utilization Level_ to _Current Utilization Level_.
 
 - **Event log entry for critically low available disk space**
 
