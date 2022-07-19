@@ -65,90 +65,19 @@ Address rewriting changes an email address by rewriting specific fields in the m
 
 ### Message fields rewritten on outbound and inbound messages
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field name</th>
-<th>Location</th>
-<th>Outbound messages</th>
-<th>Inbound messages</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>MAIL FROM</strong></p></td>
-<td><p>Message envelope</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>RCPT TO</strong></p></td>
-<td><p>Message envelope</p></td>
-<td><p>Not rewritten</p></td>
-<td><p>Rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>To</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Cc</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>From</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Sender</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Reply-To</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Return-Receipt-To</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Disposition-Notification-To</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Resent-From</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Resent-Sender</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-</tbody>
-</table>
+|Field name|Location|Outbound messages|Inbound messages|
+|---|---|---|---|
+|**MAIL FROM**|Message envelope|Rewritten|Not rewritten|
+|**RCPT TO**|Message envelope|Not rewritten|Rewritten|
+|**To**|Message header|Rewritten|Not rewritten|
+|**Cc**|Message header|Rewritten|Not rewritten|
+|**From**|Message header|Rewritten|Not rewritten|
+|**Sender**|Message header|Rewritten|Not rewritten|
+|**Reply-To**|Message header|Rewritten|Not rewritten|
+|**Return-Receipt-To**|Message header|Rewritten|Not rewritten|
+|**Disposition-Notification-To**|Message header|Rewritten|Not rewritten|
+|**Resent-From**|Message header|Rewritten|Not rewritten|
+|**Resent-Sender**|Message header|Rewritten|Not rewritten|
 
 ## What address rewriting doesn't change
 
