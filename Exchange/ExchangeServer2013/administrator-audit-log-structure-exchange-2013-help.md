@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the structure of the administrator audit log in Exchange 2013.
 ---
 
 # Administrator audit log structure

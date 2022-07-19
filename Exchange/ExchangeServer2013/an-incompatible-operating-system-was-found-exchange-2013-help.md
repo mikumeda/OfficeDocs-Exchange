@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the 'An incompatible operating system was found' error in Exchange 2013.
 ---
 
 # An incompatible operating system was found
@@ -22,7 +23,6 @@ Microsoft Exchange Server 2013 Setup can't continue because it detected an incom
 
 > [!IMPORTANT]
 > Exchange 2013 doesn't support the Server Core installation option of Windows Server 2008 R2, Windows Server 2012, or Windows Server 2012 R2.
-
 
 |Component|Requirement|
 |---|---|

@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about back pressure in the Transport service in Exchange 2013.
 ---
 
 # Back pressure

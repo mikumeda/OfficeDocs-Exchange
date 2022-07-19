@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the 'Cannot find a recipient update service\_RUSMissing' error.
 ---
 
 # Cannot find a recipient update service\_RUSMissing

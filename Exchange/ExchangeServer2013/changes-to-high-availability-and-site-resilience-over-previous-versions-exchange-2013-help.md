@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the changes to high availability and site resilience in Exchange 2013.
 ---
 
 # Changes to high availability and site resilience over previous versions

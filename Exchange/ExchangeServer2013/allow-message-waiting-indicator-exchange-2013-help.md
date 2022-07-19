@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the Message Waiting Indicator (WMI) in Exchange 2013.
 ---
 
 # Allow Message Waiting Indicator in Exchange Server
@@ -247,9 +248,9 @@ For text message notifications for voice mail and missed calls to work correctly
 
 1. Use either the EAC or the Shell to enable the user for UM and link them to the correct UM mailbox policy.
 
-2. On the UM mailbox policy that's linked to the user, verify that the *AllowSMSNotification* parameter is set to `$true`. To set the parameter to `$true`, run the following command: `Set-UMMailboxPolicy -id MyUMMailboxPolicy - AllowSMSNotification $true`.
+2. On the UM mailbox policy that's linked to the user, verify that the _AllowSMSNotification_ parameter is set to `$true`. To set the parameter to `$true`, run the following command: `Set-UMMailboxPolicy -id MyUMMailboxPolicy - AllowSMSNotification $true`.
 
-3. On the user's mailbox, enable text message notifications by setting the *UMSMSNotificationOption* parameter to `VoiceMailAndMissedCalls` or `VoiceMail`.
+3. On the user's mailbox, enable text message notifications by setting the _UMSMSNotificationOption_ parameter to `VoiceMailAndMissedCalls` or `VoiceMail`.
 
 4. Because the default setting is `None`, you must run the following command from the Shell and set the text message notification option to either `VoiceMailAndMissedCalls` or `VoiceMail`. For example: `Set-UMMailbox- -id MyUMMailbox -UMSMSNotificationOption VoiceMailAndMissedCalls`.
 

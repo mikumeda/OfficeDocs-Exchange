@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about agent logging in Exchange 2013.
 ---
 
 # Anti-spam agent logging
@@ -53,7 +54,7 @@ Exchange uses circular logging to limit the agent logs based on file size and fi
 
 ## Overview of transport agents
 
-Agents can only act upon messages at specific points in the SMTP command sequence used to transport the messages through the Transport service on a Mailbox server or an Edge Transport server. These access points in the SMTP command sequence are called *SMTP events*. Each agent has a priority value that can be assigned. However, the SMTP events must always occur in a specific order. Therefore, the agent priority depends on the SMTP event. If two agents can act on a message during the same SMTP event, the agent that has the highest priority will act on the message first.
+Agents can only act upon messages at specific points in the SMTP command sequence used to transport the messages through the Transport service on a Mailbox server or an Edge Transport server. These access points in the SMTP command sequence are called _SMTP events_. Each agent has a priority value that can be assigned. However, the SMTP events must always occur in a specific order. Therefore, the agent priority depends on the SMTP event. If two agents can act on a message during the same SMTP event, the agent that has the highest priority will act on the message first.
 
 The following table lists the SMTP events in order of occurrence and the agents that write information to the agent log in order of priority from highest to lowest for each SMTP event.
 

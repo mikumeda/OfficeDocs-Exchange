@@ -13,6 +13,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: A checklist to deploy Unified Messaging (UM) in Exchange 2013.
 ---
 
 # Checklist: Deploy Exchange 2013 UM

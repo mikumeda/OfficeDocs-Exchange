@@ -12,9 +12,10 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the 'Can't install Exchange 2013 in a forest containing Exchange 2000 or Exchange 2003 servers' error.
 ---
 
-# Can't install Exchange 2013 in a forest containing Exchange 2000 or Exchange 2003 servers.
+# Can't install Exchange 2013 in a forest containing Exchange 2000 or Exchange 2003 servers
 
 _**Applies to:** Exchange Server 2013_
 
