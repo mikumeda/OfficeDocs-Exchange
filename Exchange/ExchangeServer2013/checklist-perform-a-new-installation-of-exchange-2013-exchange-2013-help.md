@@ -34,7 +34,7 @@ This checklist is generic in that it provides guidance for a typical scenario.
 
 |Done?|Task|Topic|
 |:---:|---|---|
-|☐|1. Read the release notes.|[Release notes for Exchange 2013](release-notes-for-exchange-2013-exchange-2013-help.md")|
+|☐|1. Read the release notes.|[Release notes for Exchange 2013](release-notes-for-exchange-2013-exchange-2013-help.md)|
 |☐|2. Verify system requirements.|[Exchange 2013 system requirements](exchange-2013-system-requirements-exchange-2013-help.md)|
 |☐|3. Confirm prerequisite steps are done.|[Exchange 2013 prerequisites](exchange-2013-prerequisites-exchange-2013-help.md)|
 |☐|4. Configure disjoint namespace. <br/><br/> **Note**: This step is optional. It's only necessary if your organization is running a disjoint namespace.|
