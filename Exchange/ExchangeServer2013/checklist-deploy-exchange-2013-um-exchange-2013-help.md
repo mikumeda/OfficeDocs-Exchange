@@ -34,7 +34,7 @@ For step-by-step guidance about how to deploy UM and Microsoft Lync Server, see 
 ## Checklist for deploying Unified Messaging
 
 |Done?|Tasks|Topic|
-|---|---|---|
+|:---:|---|---|
 |☐|Deploy and configure telephony components.|[Connect UM to your telephone system](connect-um-to-your-telephone-system-exchange-2013-help.md)|
 |☐|Review the system requirements before installing Exchange 2013.|[Exchange 2013 system requirements](exchange-2013-system-requirements-exchange-2013-help.md)|
 |☐|Verify that you meet the prerequisites for installation.|[Exchange 2013 prerequisites](exchange-2013-prerequisites-exchange-2013-help.md)|

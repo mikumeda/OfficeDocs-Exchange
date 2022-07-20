@@ -49,9 +49,8 @@ The roles assigned to this role group are given default management scopes. Manag
 
 For more information about how to customize this role group, see the following topics:
 
-  - [Manage role groups](manage-role-groups-exchange-2013-help.md)
-
-  - [Manage role group members](manage-role-group-members-exchange-2013-help.md)
+- [Manage role groups](manage-role-groups-exchange-2013-help.md)
+- [Manage role group members](manage-role-group-members-exchange-2013-help.md)
 
 If you want to create a role group and assign some of the roles that are assigned to this role group to the new role group, see the "Create a role group" section in [Manage role groups](manage-role-groups-exchange-2013-help.md).
 
@@ -59,92 +58,22 @@ If you want to create a role group and assign some of the roles that are assigne
 
 The following table lists all the management roles that are assigned to this role group and the following attributes of each role assignment:
 
-  - **Regular assignment**: Enables members of the role group to access the management role entries made available by the associated management role.
-
-  - **Delegating assignment**: Gives members of the role group the ability to assign the specified role to other role groups, role assignment policies, users, or USGs.
-
-  - **Recipient read scope**: Determines what recipient objects members of the role group are allowed to read from Active Directory.
-
-  - **Recipient write scope**: Determines what recipient objects members of the role group are allowed to modify in Active Directory.
-
-  - **Configuration read scope**: Determines what configuration and server objects members of the role group are allowed to read from Active Directory.
-
-  - **Configuration write scope**: Determines what organizational and server objects members of the role group are allowed to modify in Active Directory.
+- **Regular assignment**: Enables members of the role group to access the management role entries made available by the associated management role.
+- **Delegating assignment**: Gives members of the role group the ability to assign the specified role to other role groups, role assignment policies, users, or USGs.
+- **Recipient read scope**: Determines what recipient objects members of the role group are allowed to read from Active Directory.
+- **Recipient write scope**: Determines what recipient objects members of the role group are allowed to modify in Active Directory.
+- **Configuration read scope**: Determines what configuration and server objects members of the role group are allowed to read from Active Directory.
+- **Configuration write scope**: Determines what organizational and server objects members of the role group are allowed to modify in Active Directory.
 
 For more information about role assignments and management scopes, see the following topics:
 
-  - [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
+- [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
+- [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
 
-  - [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
-
-### Management roles assigned to this role group
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Management role</th>
-<th>Regular assignment</th>
-<th>Delegating assignment</th>
-<th>Recipient read scope</th>
-<th>Recipient write scope</th>
-<th>Configuration read scope</th>
-<th>Configuration write scope</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="audit-logs-role-exchange-2013-help.md">Audit Logs role</a></p></td>
-<td><p>X</p></td>
-<td><p> </p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="journaling-role-exchange-2013-help.md">Journaling role</a></p></td>
-<td><p>X</p></td>
-<td><p> </p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="message-tracking-role-exchange-2013-help.md">Message Tracking role</a></p></td>
-<td><p>X</p></td>
-<td><p> </p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="even">
-<td><p><a href="retention-management-role-exchange-2013-help.md">Retention Management role</a></p></td>
-<td><p>X</p></td>
-<td><p> </p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="transport-rules-role-exchange-2013-help.md">Transport Rules role</a></p></td>
-<td><p>X</p></td>
-<td><p> </p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>Organization</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-<td><p><code>OrganizationConfig</code></p></td>
-</tr>
-</tbody>
-</table>
+|Management role|Regular assignment|Delegating assignment|Recipient read scope|Recipient write scope|Configuration read scope|Configuration write scope|
+|---|:---:|:---:|---|---|---|---|
+|[Audit Logs role](audit-logs-role-exchange-2013-help.md)|X||`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Journaling role](journaling-role-exchange-2013-help.md)|X||`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Message Tracking role](message-tracking-role-exchange-2013-help.md)|X||`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Retention Management role](retention-management-role-exchange-2013-help.md)|X||`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|
+|[Transport Rules role](transport-rules-role-exchange-2013-help.md)|X||`Organization`|`Organization`|`OrganizationConfig`|`OrganizationConfig`|

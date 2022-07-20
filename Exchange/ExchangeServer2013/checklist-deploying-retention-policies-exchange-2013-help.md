@@ -28,7 +28,7 @@ Use this checklist to deploy retention policies in your Microsoft Exchange Serve
 ## Checklist for deploying retention policies
 
 |Done?|Tasks|Resources|
-|---|---|---|
+|:---:|---|---|
 |☐|Assess messaging records management (MRM) requirements for different sets of users.|[Messaging records management](messaging-records-management-exchange-2013-help.md)|
 |☐|Determine which Microsoft Outlook client versions are in use.|Parse the RPC Client Access log files located at `%ExchangeInstallPath%Logging\RPC Client Access`.|
 |☐|Create retention tags.|[Create a Retention Policy](create-a-retention-policy-exchange-2013-help.md)|
