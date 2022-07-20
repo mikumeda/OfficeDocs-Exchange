@@ -19,19 +19,19 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Information workers in your organization handle many kinds of sensitive information during a typical day. *Document Fingerprinting* makes it easier for you to protect this information by identifying standard forms that are used throughout your organization. This topic describes the concepts behind Document Fingerprinting. If you'd like to learn how to create a document fingerprint, see [Protect form data with document fingerprinting](/exchange/security-and-compliance/data-loss-prevention/protect-data-with-fingerprinting).
+Information workers in your organization handle many kinds of sensitive information during a typical day. _Document Fingerprinting_ makes it easier for you to protect this information by identifying standard forms that are used throughout your organization. This topic describes the concepts behind Document Fingerprinting. If you'd like to learn how to create a document fingerprint, see [Protect form data with document fingerprinting](protect-data-with-fingerprinting-exchange-2013-help.md).
 
 ## Basic scenario for Document Fingerprinting
 
 Document Fingerprinting is a Data loss prevention (DLP) feature that converts a standard form into a sensitive information type, which you can use to define transport rules and DLP policies. For example, you can create a document fingerprint based on a blank patent template and then create a DLP policy that detects and blocks all outgoing patent templates with sensitive content filled in. Optionally, you can set up [Policy Tips](../ExchangeOnline/security-and-compliance/data-loss-prevention/policy-tips.md) to notify senders that they might be sending sensitive information, and the sender should verify that the recipients are qualified to receive the patents. This process works with any text-based forms used in your organization. Additional examples of forms that you can upload include:
 
-  - Government forms
+- Government forms
 
-  - Health Insurance Portability and Accountability Act (HIPAA) compliance forms
+- Health Insurance Portability and Accountability Act (HIPAA) compliance forms
 
-  - Employee information forms for Human Resources departments
+- Employee information forms for Human Resources departments
 
-  - Custom forms created specifically for your organization
+- Custom forms created specifically for your organization
 
 Ideally, your organization already has an established business practice of using certain forms to transmit sensitive information. After you upload an empty form to be converted to a document fingerprint and set up a corresponding policy, the DLP agent will detect any documents in outbound mail that match that fingerprint.
 
@@ -40,8 +40,6 @@ Ideally, your organization already has an established business practice of using
 You've probably already guessed that documents don't have actual fingerprints, but the name helps explain the feature. In the same way that a person's fingerprints have unique patterns, documents have unique word patterns. When you upload a file, the DLP agent identifies the unique word pattern in the document, creates a document fingerprint based on that pattern, and uses that document fingerprint to detect outbound documents containing the same pattern. That's why uploading a form or template creates the most effective type of document fingerprint. Everyone who fills out a form uses the same original set of words and then adds his or her own words to the document. As long as the outbound document isn't password protected and contains all the text from the original form, the DLP agent can determine if the document matches the document fingerprint.
 
 The following example shows what happens if you create a document fingerprint based on a patent template, but you can use any form as a basis for creating a document fingerprint.
-
-**Example of a patent document matching a document fingerprint of a patent template**
 
 ![A patent document matching a document fingerprint.](images/Dn635176.9c952770-2cd4-4f62-9735-6d073344be7f(EXCHG.150).png "A patent document matching a document fingerprint.")
 
@@ -55,15 +53,15 @@ Document Fingerprinting supports the same file types that are supported in trans
 
 The Document Fingerprinting DLP agent won't detect sensitive information in the following cases:
 
-  - Password protected files
+- Password protected files
 
-  - Files that contain only images
+- Files that contain only images
 
-  - Documents that don't contain all the text from the original form used to create the document fingerprint
+- Documents that don't contain all the text from the original form used to create the document fingerprint
 
 ## For more information
 
-[Protect form data with document fingerprinting](/exchange/security-and-compliance/data-loss-prevention/protect-data-with-fingerprinting)
+[Protect form data with document fingerprinting](protect-data-with-fingerprinting-exchange-2013-help.md)
 
 [Integrating sensitive information rules with transport rules](../ExchangeOnline/security-and-compliance/data-loss-prevention/integrate-sensitive-information-rules.md)
 

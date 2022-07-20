@@ -55,54 +55,18 @@ The Availability service is part of the Exchange 2013 programming interface. It'
 
 Using Network Load Balancing (NLB) on your Client Access servers that are running the Availability service can improve performance and reliability for your users who rely on free/busy information. Outlook discovers the Availability service URL using the Autodiscover service. To use NLB with the Availability service, you must make changes to your configuration.
 
-The internal URL is used from the intranet, and the external URL is used from the Internet. If you want to use the same URL for both internal and external traffic, make sure that DNS is correctly configured to route internal traffic directly to the internal URL. Also, make sure that the URL can be accessed both internally and externally. For the Autodiscover and Availability services to work, DNS must be configured so that mail.\<*domain name*\>.com and autodiscover.mail.\<*domain name*\>.com point to the virtual IP (VIP) of your load-balancing solution, where \<*domain name*\> is the name of your domain.
+The internal URL is used from the intranet, and the external URL is used from the Internet. If you want to use the same URL for both internal and external traffic, make sure that DNS is correctly configured to route internal traffic directly to the internal URL. Also, make sure that the URL can be accessed both internally and externally. For the Autodiscover and Availability services to work, DNS must be configured so that mail._\<domain name\>_.com and autodiscover.mail._\<domain name\>_.com point to the virtual IP (VIP) of your load-balancing solution, where _\<domain name\>_ is the name of your domain.
 
 > [!NOTE]
-> For more information, see <A href="/previous-versions/windows/it-pro/windows-server-2003/cc739506(v=ws.10)">Network Load Balancing Technical Reference</A> and <A href="/previous-versions/windows/it-pro/windows-server-2003/cc759510(v=ws.10)">Network Load Balancing Clusters</A>. You can also search for third-party load-balancing software websites.
+> For more information, see [Network Load Balancing Technical Reference](/previous-versions/windows/it-pro/windows-server-2003/cc739506(v=ws.10)) and [Network Load Balancing Clusters](/previous-versions/windows/it-pro/windows-server-2003/cc759510(v=ws.10)). You can also search for third-party load-balancing software websites.
 
 ## Methods used to retrieve free/busy information
 
 The following table lists the different methods used to retrieve free/busy information in different single-forest topologies.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Client</th>
-<th>Mailbox retrieving free/busy information is running</th>
-<th>Target mailbox is running</th>
-<th>Free/busy retrieval method</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Outlook 2013</p></td>
-<td><p>Exchange 2013, Exchange 2010, or Exchange 2007</p></td>
-<td><p>Exchange 2013, Exchange 2010, or Exchange 2007</p></td>
-<td><p>The Availability service reads free/busy information from the target mailbox.</p></td>
-</tr>
-<tr class="even">
-<td><p>Outlook 2007</p></td>
-<td><p>Exchange 2013, Exchange 2010, or Exchange 2007</p></td>
-<td><p>Exchange 2010 or Exchange 2007</p></td>
-<td><p>The Availability service reads free/busy information from the target mailbox.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Outlook 2007</p></td>
-<td><p>Exchange 2010 or Exchange 2007</p></td>
-<td><p>Exchange 2003</p></td>
-<td><p>The Availability service makes HTTP connections to the /public virtual directory of the Exchange 2003 mailbox.</p></td>
-</tr>
-<tr class="even">
-<td><p>Outlook Web App</p></td>
-<td><p>Exchange 2013, Exchange 2010, or Exchange 2007</p></td>
-<td><p>Exchange 2013, Exchange 2010, or Exchange 2007</p></td>
-<td><p>Outlook Web App in Exchange 2010 or Outlook Web Access in Exchange 2007 calls the Availability service API, which reads the free/busy information from the target mailbox.</p></td>
-</tr>
-</tbody>
-</table>
+|Client|Mailbox retrieving free/busy information is running|Target mailbox is running|Free/busy retrieval method|
+|---|---|---|---|
+|Outlook 2013|Exchange 2013, Exchange 2010, or Exchange 2007|Exchange 2013, Exchange 2010, or Exchange 2007|The Availability service reads free/busy information from the target mailbox.|
+|Outlook 2007|Exchange 2013, Exchange 2010, or Exchange 2007|Exchange 2010 or Exchange 2007|The Availability service reads free/busy information from the target mailbox.|
+|Outlook 2007|Exchange 2010 or Exchange 2007|Exchange 2003|The Availability service makes HTTP connections to the /public virtual directory of the Exchange 2003 mailbox.|
+|Outlook Web App|Exchange 2013, Exchange 2010, or Exchange 2007|Exchange 2013, Exchange 2010, or Exchange 2007|Outlook Web App in Exchange 2010 or Outlook Web Access in Exchange 2007 calls the Availability service API, which reads the free/busy information from the target mailbox.|

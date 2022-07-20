@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the exclusions you need to make when you run Windows anti-virus software on Exchange 2013 servers.
 ---
 
 # Anti-Virus Software in the Operating System on Exchange Servers
@@ -22,9 +23,9 @@ This topic describes the effects of file-level antivirus programs on computers t
 
 File-level scanners are frequently used. However, if they are configured incorrectly, they can cause problems in Exchange 2013. There are two types of file-level scanners:
 
-- *Memory-resident file-level scanning* refers to a part of file-level antivirus software that is loaded in memory at all times. It checks all the files that are used on the hard disk and in computer memory.
+- _Memory-resident file-level scanning_ refers to a part of file-level antivirus software that is loaded in memory at all times. It checks all the files that are used on the hard disk and in computer memory.
 
-- *On-demand file-level scanning* refers to a part of file-level antivirus software that you can configure to scan files on the hard disk manually or on a schedule. Some versions of antivirus software start the on-demand scan automatically after virus signatures are updated to make sure that all files are scanned with the latest signatures.
+- _On-demand file-level scanning_ refers to a part of file-level antivirus software that you can configure to scan files on the hard disk manually or on a schedule. Some versions of antivirus software start the on-demand scan automatically after virus signatures are updated to make sure that all files are scanned with the latest signatures.
 
 The following problems may occur when you use file-level scanners with Exchange 2013:
 
@@ -44,13 +45,13 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Mailbox databases**
 
-    - Exchange databases, checkpoint files, and log files. By default, these are located in sub-folders under the %ExchangeInstallPath%Mailbox folder. To determine the location of a mailbox database, transaction log, and checkpoint file, run the following command: `Get-MailboxDatabase -Server <servername>| Format-List *path*`
+    - Exchange databases, checkpoint files, and log files. By default, these are located in sub-folders under the %ExchangeInstallPath%Mailbox folder. To determine the location of a mailbox database, transaction log, and checkpoint file, run the following command: `Get-MailboxDatabase -Server <servername>| Format-List _path*`
 
     - Database content indexes. By default, these are located in the same folder as the database file.
 
     - Group Metrics files. By default, these files are located in the %ExchangeInstallPath%GroupMetrics folder.
 
-    - General log files, such as message tracking and calendar repair log files. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs folder and %ExchangeInstallPath%Logging folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-MailboxServer <servername> | Format-List *path*`
+    - General log files, such as message tracking and calendar repair log files. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs folder and %ExchangeInstallPath%Logging folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-MailboxServer <servername> | Format-List _path*`
 
     - The Offline Address Book files. By default, these are located in subfolders under the %ExchangeInstallPath%ClientAccess\\OAB folder.
 
@@ -66,9 +67,9 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Transport service**
 
-    - Log files, for example, message tracking and connectivity logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-TransportService <servername> | Format-List *logpath*,*tracingpath*`
+    - Log files, for example, message tracking and connectivity logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-TransportService <servername> | Format-List _logpath*,*tracingpath*`
 
-    - Pickup and Replay message directory folders. By default, these folders are located under the %ExchangeInstallPath%TransportRoles folder. To determine the paths being used, run the following command in the Exchange Management Shell: `Get-TransportService <servername>| Format-List *dir*path*`
+    - Pickup and Replay message directory folders. By default, these folders are located under the %ExchangeInstallPath%TransportRoles folder. To determine the paths being used, run the following command in the Exchange Management Shell: `Get-TransportService <servername>| Format-List _dir*path*`
 
     - The queue databases, checkpoints, and log files. By default, these are located in the %ExchangeInstallPath%TransportRoles\\Data\\Queue folder.
 
@@ -84,7 +85,7 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Mailbox Transport service**
 
-    - Log files, for example, connectivity logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs\\Mailbox folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-MailboxTransportService <servername> | Format-List *logpath*`
+    - Log files, for example, connectivity logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs\\Mailbox folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-MailboxTransportService <servername> | Format-List _logpath*`
 
   - **Unified Messaging**
 
@@ -102,7 +103,7 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Exchange Search service**
 
-    - Temporary files used by the Exchange Search service and Microsoft Filter Pack to perform file conversion in a sandboxed environment. These files are located in %SystemRoot%\\Temp\\OICE\_*\<GUID\>*\\.
+    - Temporary files used by the Exchange Search service and Microsoft Filter Pack to perform file conversion in a sandboxed environment. These files are located in %SystemRoot%\\Temp\\OICE\___\<GUID\>_\\.
 
 - **Client Access servers**
 
@@ -124,7 +125,7 @@ You must exclude specific directories for each Exchange server on which you run 
 
   - **Front End Transport service**
 
-    - Log files, for example, connectivity logs and protocol logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs\\FrontEnd folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-FrontEndTransportService <servername> | Format-List *logpath*`
+    - Log files, for example, connectivity logs and protocol logs. By default, these files are located in subfolders under the %ExchangeInstallPath%TransportRoles\\Logs\\FrontEnd folder. To determine the log paths being used, run the following command in the Exchange Management Shell: `Get-FrontEndTransportService <servername> | Format-List _logpath*`
 
   - **Setup**
 
@@ -134,321 +135,54 @@ You must exclude specific directories for each Exchange server on which you run 
 
 Many file-level scanners now support the scanning of processes, which can adversely affect Microsoft Exchange if the incorrect processes are scanned. Therefore, you should exclude the following processes from file-level scanners.
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Process</th>
-<th>Path</th>
-<th>Comments</th>
-<th>Servers</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Dsamain.exe</p></td>
-<td><p>%SystemRoot%\System32</p></td>
-<td><p>Active Directory Lightweight Directory Services (AD LDS) on subscribed Edge Transport servers.</p></td>
-<td><p>Edge Transport servers</p></td>
-</tr>
-<tr class="even">
-<td><p>EdgeTransport.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Transport service worker process</p></td>
-<td><p>Mailbox servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>fms.exe</p></td>
-<td><p>%ExchangeInstallPath%FIP-FS\Bin</p></td>
-<td><p>Content scanning component that's used by the Malware agent and DLP.</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>hostcontrollerservice.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin\Search\Ceres\HostController</p></td>
-<td><p>Microsoft Exchange Search Host Controller service (HostControllerService)</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>inetinfo.exe</p></td>
-<td><p>%SystemRoot%\System32\inetsrv</p></td>
-<td><p>Internet Information Services (IIS)</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.AntispamUpdateSvc.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Anti-spam Update service (MSExchangeAntispamUpdate)</p></td>
-<td><p>Mailbox servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft.Exchange.ContentFilter.Wrapper.exe</p></td>
-<td><p>%ExchangeInstallPath%TransportRoles\agents\Hygiene</p></td>
-<td><p>Content Filter agent</p></td>
-<td><p>Mailbox servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.Diagnostics.Service.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Diagnostics service (MSExchangeDiagnostics)</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft.Exchange.Directory.TopologyService.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Active Directory Topology service (MSExchangeADTopology)</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.EdgeCredentialSvc.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Credential service (MSExchangeEdgeCredential)</p></td>
-<td><p>Edge Transport servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft.Exchange.EdgeSyncSvc.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange EdgeSync service (MSExchangeEdgeSync)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.Imap4.exe</p></td>
-<td><p>ExchangeInstallPath%FrontEnd\PopImap</p></td>
-<td><p>Microsoft Exchange IMAP4 service (MSExchangeImap4)</p></td>
-<td><p>Client Access servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft.Exchange.Imap4service.exe</p></td>
-<td><p>%ExchangeInstallPath%ClientAccess\PopImap</p></td>
-<td><p>Microsoft Exchange IMAP4 Backend service (MSExchangeIMAP4BE)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.Pop3.exe</p></td>
-<td><p>%ExchangeInstallPath%FrontEnd\PopImap</p></td>
-<td><p>Microsoft Exchange POP3 service (MSExchangePop3)</p></td>
-<td><p>Client Access servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft.Exchange.Pop3service.exe</p></td>
-<td><p>%ExchangeInstallPath%ClientAccess\PopImap</p></td>
-<td><p>Microsoft Exchange POP3 Backend service (MSExchangePOP3BE)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.ProtectedServiceHost.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Service Host service (MSExchangeServiceHost)</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft.Exchange.RPCClientAccess.Service.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange RPC Client Access service (MSExchangeRPC)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.Search.Service.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Search service (MSExchangeFastSearch)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft.Exchange.Servicehost.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Service Host service (MSExchangeServiceHost)</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.Store.Service.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Information Store service (MSExchangeIS)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft.Exchange.Store.Worker.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Information Store service worker process</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft.Exchange.UM.CallRouter.exe</p></td>
-<td><p>%ExchangeInstallPath%FrontEnd\CallRouter</p></td>
-<td><p>Microsoft Exchange Unified Messaging Call Router service (MSExchangeUMCR)</p></td>
-<td><p>Client Access servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeDagMgmt.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange DAG Management service (MSExchangeDagMgmt)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeDelivery.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Mailbox Transport Delivery service (MSExchangeDelivery)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeFrontendTransport.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Frontend Transport service (MSExchangeFrontEndTransport)</p></td>
-<td><p>Client Access servers</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeHMHost.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Health Manager service (MSExchangeHM)</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeHMWorker.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Health Manager service worker process</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeMailboxAssistants.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Mailbox Assistants service (MSExchangeMailboxAssistants)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeMailboxReplication.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Mailbox Replication service (MSExchangeMailboxReplication)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeMigrationWorkflow.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Migration Workflow service (MSExchangeMigrationWorkflow)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeRepl.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Replication service (MSExchangeRepl)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeSubmission.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Mailbox Transport Submission service (MSExchangeSubmission)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeTransport.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Transport service (MSExchangeTransport)</p></td>
-<td><p>Mailbox servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeTransportLogSearch.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Transport Log Search service (MSExchangeTransportLogSearch)</p></td>
-<td><p>Mailbox servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeThrottling.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Throttling service (MSExchangeThrottling)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>Noderunner.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin\Search\Ceres\Runtime\1.0</p></td>
-<td><p>Microsoft Exchange Search service (MSExchangeFastSearch)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>OleConverter.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Converts rich text format (RTF) messages to MIME/HTML for external recipients.</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>ParserServer.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin\Search\Ceres\ParserServer</p></td>
-<td><p>Microsoft Exchange Search service (MSExchangeFastSearch)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>Powershell.exe</p></td>
-<td><p>C:\Windows\System32\WindowsPowerShell\v1.0</p></td>
-<td><p>Exchange Management Shell</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p>
-<p>Edge Transport servers</p></td>
-</tr>
-<tr class="even">
-<td><p>ScanEngineTest.exe</p></td>
-<td><p>%ExchangeInstallPath%FIP-FS\Bin</p></td>
-<td><p>Content scanning component that's used by the Malware agent and DLP.</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>ScanningProcess.exe</p></td>
-<td><p>%ExchangeInstallPath%FIP-FS\Bin</p></td>
-<td><p>Content scanning component that's used by the Malware agent and DLP.</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>TranscodingService.exe</p></td>
-<td><p>%ExchangeInstallPath%ClientAccess\Owa\Bin\DocumentViewing</p></td>
-<td><p>WebReady Document Viewing in Outlook Web App.</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>UmService.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Unified Messaging service (MSExchangeUM)</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>UmWorkerProcess.exe</p></td>
-<td><p>%ExchangeInstallPath%Bin</p></td>
-<td><p>Microsoft Exchange Unified Messaging service worker process</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="odd">
-<td><p>UpdateService.exe</p></td>
-<td><p>%ExchangeInstallPath%FIP-FS\Bin</p></td>
-<td><p>Content scanning component that's used by the Malware agent and DLP.</p></td>
-<td><p>Mailbox servers</p></td>
-</tr>
-<tr class="even">
-<td><p>W3wp.exe</p></td>
-<td><p>%SystemRoot%\System32\inetsrv</p></td>
-<td><p>Internet Information Services (IIS)</p></td>
-<td><p>Mailbox servers</p>
-<p>Client Access servers</p></td>
-</tr>
-</tbody>
-</table>
+|Process|Path|Comments|Servers|
+|---|---|---|---|
+|Dsamain.exe|%SystemRoot%\System32|Active Directory Lightweight Directory Services (AD LDS) on subscribed Edge Transport servers.|Edge Transport servers|
+|EdgeTransport.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Transport service worker process|Mailbox servers <br/><br/> Edge Transport servers|
+|fms.exe|%ExchangeInstallPath%FIP-FS\Bin|Content scanning component that's used by the Malware agent and DLP.|Mailbox servers|
+|hostcontrollerservice.exe|%ExchangeInstallPath%Bin\Search\Ceres\HostController|Microsoft Exchange Search Host Controller service (HostControllerService)|Mailbox servers <br/><br/> Client Access servers|
+|inetinfo.exe|%SystemRoot%\System32\inetsrv|Internet Information Services (IIS)|Mailbox servers <br/><br/> Client Access servers|
+|Microsoft.Exchange.AntispamUpdateSvc.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Anti-spam Update service (MSExchangeAntispamUpdate)|Mailbox servers <br/><br/> Edge Transport servers|
+|Microsoft.Exchange.ContentFilter.Wrapper.exe|%ExchangeInstallPath%TransportRoles\agents\Hygiene|Content Filter agent|Mailbox servers <br/><br/> Edge Transport servers|
+|Microsoft.Exchange.Diagnostics.Service.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Diagnostics service (MSExchangeDiagnostics)|Mailbox servers <br/><br/> Client Access servers <br/><br/> Edge Transport servers|
+|Microsoft.Exchange.Directory.TopologyService.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Active Directory Topology service (MSExchangeADTopology)|Mailbox servers <br/><br/> Client Access servers|
+|Microsoft.Exchange.EdgeCredentialSvc.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Credential service (MSExchangeEdgeCredential)|Edge Transport servers|
+|Microsoft.Exchange.EdgeSyncSvc.exe|%ExchangeInstallPath%Bin|Microsoft Exchange EdgeSync service (MSExchangeEdgeSync)|Mailbox servers|
+|Microsoft.Exchange.Imap4.exe|ExchangeInstallPath%FrontEnd\PopImap|Microsoft Exchange IMAP4 service (MSExchangeImap4)|Client Access servers|
+|Microsoft.Exchange.Imap4service.exe|%ExchangeInstallPath%ClientAccess\PopImap|Microsoft Exchange IMAP4 Backend service (MSExchangeIMAP4BE)|Mailbox servers|
+|Microsoft.Exchange.Pop3.exe|%ExchangeInstallPath%FrontEnd\PopImap|Microsoft Exchange POP3 service (MSExchangePop3)|Client Access servers|
+|Microsoft.Exchange.Pop3service.exe|%ExchangeInstallPath%ClientAccess\PopImap|Microsoft Exchange POP3 Backend service (MSExchangePOP3BE)|Mailbox servers|
+|Microsoft.Exchange.ProtectedServiceHost.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Service Host service (MSExchangeServiceHost)|Mailbox servers <br/><br/> Client Access servers <br/><br/> Edge Transport servers|
+|Microsoft.Exchange.RPCClientAccess.Service.exe|%ExchangeInstallPath%Bin|Microsoft Exchange RPC Client Access service (MSExchangeRPC)|Mailbox servers|
+|Microsoft.Exchange.Search.Service.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Search service (MSExchangeFastSearch)|Mailbox servers|
+|Microsoft.Exchange.Servicehost.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Service Host service (MSExchangeServiceHost)|Mailbox servers <br/><br/> Client Access servers <br/><br/> Edge Transport servers|
+|Microsoft.Exchange.Store.Service.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Information Store service (MSExchangeIS)|Mailbox servers|
+|Microsoft.Exchange.Store.Worker.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Information Store service worker process|Mailbox servers|
+|Microsoft.Exchange.UM.CallRouter.exe|%ExchangeInstallPath%FrontEnd\CallRouter|Microsoft Exchange Unified Messaging Call Router service (MSExchangeUMCR)|Client Access servers|
+|MSExchangeDagMgmt.exe|%ExchangeInstallPath%Bin|Microsoft Exchange DAG Management service (MSExchangeDagMgmt)|Mailbox servers|
+|MSExchangeDelivery.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Mailbox Transport Delivery service (MSExchangeDelivery)|Mailbox servers|
+|MSExchangeFrontendTransport.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Frontend Transport service (MSExchangeFrontEndTransport)|Client Access servers|
+|MSExchangeHMHost.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Health Manager service (MSExchangeHM)|Mailbox servers <br/><br/> Client Access servers <br/><br/> Edge Transport servers|
+|MSExchangeHMWorker.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Health Manager service worker process|Mailbox servers <br/><br/> Client Access servers <br/><br/> Edge Transport servers|
+|MSExchangeMailboxAssistants.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Mailbox Assistants service (MSExchangeMailboxAssistants)|Mailbox servers|
+|MSExchangeMailboxReplication.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Mailbox Replication service (MSExchangeMailboxReplication)|Mailbox servers|
+|MSExchangeMigrationWorkflow.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Migration Workflow service (MSExchangeMigrationWorkflow)|Mailbox servers|
+|MSExchangeRepl.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Replication service (MSExchangeRepl)|Mailbox servers|
+|MSExchangeSubmission.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Mailbox Transport Submission service (MSExchangeSubmission)|Mailbox servers|
+|MSExchangeTransport.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Transport service (MSExchangeTransport)|Mailbox servers <br/><br/> Edge Transport servers|
+|MSExchangeTransportLogSearch.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Transport Log Search service (MSExchangeTransportLogSearch)|Mailbox servers <br/><br/> Edge Transport servers|
+|MSExchangeThrottling.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Throttling service (MSExchangeThrottling)|Mailbox servers|
+|Noderunner.exe|%ExchangeInstallPath%Bin\Search\Ceres\Runtime\1.0|Microsoft Exchange Search service (MSExchangeFastSearch)|Mailbox servers|
+|OleConverter.exe|%ExchangeInstallPath%Bin|Converts rich text format (RTF) messages to MIME/HTML for external recipients.|Mailbox servers|
+|ParserServer.exe|%ExchangeInstallPath%Bin\Search\Ceres\ParserServer|Microsoft Exchange Search service (MSExchangeFastSearch)|Mailbox servers|
+|Powershell.exe|C:\Windows\System32\WindowsPowerShell\v1.0|Exchange Management Shell|Mailbox servers <br/><br/> Client Access servers <br/><br/> Edge Transport servers|
+|ScanEngineTest.exe|%ExchangeInstallPath%FIP-FS\Bin|Content scanning component that's used by the Malware agent and DLP.|Mailbox servers|
+|ScanningProcess.exe|%ExchangeInstallPath%FIP-FS\Bin|Content scanning component that's used by the Malware agent and DLP.|Mailbox servers|
+|TranscodingService.exe|%ExchangeInstallPath%ClientAccess\Owa\Bin\DocumentViewing|WebReady Document Viewing in Outlook Web App.|Mailbox servers|
+|UmService.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Unified Messaging service (MSExchangeUM)|Mailbox servers|
+|UmWorkerProcess.exe|%ExchangeInstallPath%Bin|Microsoft Exchange Unified Messaging service worker process|Mailbox servers|
+|UpdateService.exe|%ExchangeInstallPath%FIP-FS\Bin|Content scanning component that's used by the Malware agent and DLP.|Mailbox servers|
+|W3wp.exe|%SystemRoot%\System32\inetsrv|Internet Information Services (IIS)|Mailbox servers <br/><br/> Client Access servers|
 
 ## File name extension exclusions
 

@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about agent logging in Exchange 2013.
 ---
 
 # Anti-spam agent logging
@@ -53,51 +54,19 @@ Exchange uses circular logging to limit the agent logs based on file size and fi
 
 ## Overview of transport agents
 
-Agents can only act upon messages at specific points in the SMTP command sequence used to transport the messages through the Transport service on a Mailbox server or an Edge Transport server. These access points in the SMTP command sequence are called *SMTP events*. Each agent has a priority value that can be assigned. However, the SMTP events must always occur in a specific order. Therefore, the agent priority depends on the SMTP event. If two agents can act on a message during the same SMTP event, the agent that has the highest priority will act on the message first.
+Agents can only act upon messages at specific points in the SMTP command sequence used to transport the messages through the Transport service on a Mailbox server or an Edge Transport server. These access points in the SMTP command sequence are called _SMTP events_. Each agent has a priority value that can be assigned. However, the SMTP events must always occur in a specific order. Therefore, the agent priority depends on the SMTP event. If two agents can act on a message during the same SMTP event, the agent that has the highest priority will act on the message first.
 
 The following table lists the SMTP events in order of occurrence and the agents that write information to the agent log in order of priority from highest to lowest for each SMTP event.
 
 ### SMTP events in order of occurrence and the agents that write information to the agent log in order of priority for each SMTP event
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>SMTP event</th>
-<th>Agent</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>OnConnect</strong></p></td>
-<td><p>Connection Filtering agent</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>OnMailCommand</strong></p></td>
-<td><p>Connection Filtering agent</p>
-<p>Sender Filter agent</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>OnRcptCommand</strong></p></td>
-<td><p>Connection Filtering agent</p>
-<p>Recipient Filter agent</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>OnEndOfHeaders</strong></p></td>
-<td><p>Connection Filtering agent</p>
-<p>Sender ID agent</p>
-<p>Sender Filter agent</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>OnEndOfData</strong></p></td>
-<td><p>Edge Rules agent</p>
-<p>Content Filtering agent</p></td>
-</tr>
-</tbody>
-</table>
+|SMTP event|Agent|
+|---|---|
+|**OnConnect**|Connection Filtering agent|
+|**OnMailCommand**|Connection Filtering agent <br/><br/> Sender Filter agent|
+|**OnRcptCommand**|Connection Filtering agent <br/><br/> Recipient Filter agent|
+|**OnEndOfHeaders**|Connection Filtering agent <br/><br/> Sender ID agent <br/><br/> Sender Filter agent|
+|**OnEndOfData**|Edge Rules agent <br/><br/> Content Filtering agent|
 
 > [!NOTE]
 > The Connection Filtering agent and the Edge Rules agent aren't available on Mailbox servers.
@@ -108,11 +77,11 @@ For more information about agents, SMTP events, and agent priority, see [Transpo
 
 The agent logs exist in %ExchangeInstallPath%TransportRoles\\Logs\\Hub\\AgentLog.
 
-The naming convention for the agent log files is AGENTLOG*yyyymmdd-nnnn*.log. The placeholders represent the following information:
+The naming convention for the agent log files is AGENTLOG_yyyymmdd-nnnn_.log. The placeholders represent the following information:
 
-- The placeholder *yyyymmdd* is the Coordinated Universal Time (UTC) date that the log file was created. The placeholder *yyyy* = year, *mm* = month, and *dd* = day.
+- The placeholder _yyyymmdd_ is the Coordinated Universal Time (UTC) date that the log file was created. The placeholder _yyyy_ = year, _mm_ = month, and _dd_ = day.
 
-- The placeholder *nnnn* is an instance number that starts at the value of 1 for each day.
+- The placeholder _nnnn_ is an instance number that starts at the value of 1 for each day.
 
 Information is written to the log file until the file size reaches its maximum specified value, and a new log file that has an incremented instance number is opened. This process is repeated throughout the day. Circular logging deletes the oldest log files when the agent log directory reaches its maximum specified size, or when a log file reaches its maximum specified age.
 
@@ -124,7 +93,7 @@ The agent log files are text files that contain data in the comma-separated valu
 
 - **\#Log-Type**: Log type value, which is Agent Log.
 
-- **\#Date**: UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where *yyyy* = year, *mm* = month, *dd* = day, T indicates the beginning of the time component, *hh* = hour, *mm* = minute, *ss* = second, *fff* = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.
+- **\#Date**: UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T_hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.
 
 - **\#Fields**: Comma delimited field names used in the agent log files.
 
@@ -134,110 +103,24 @@ The agent log stores each agent transaction on a single line in the log. The inf
 
 ### Fields used to classify each agent transaction
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Timestamp</strong></p></td>
-<td><p>UTC date-time of the agent event. The UTC date-time is represented in the ISO 8601 date-time format: <em>yyyy-mm-dd</em>T<em>hh:mm:ss.fff</em>Z, where <em>yyyy</em> = year, <em>mm</em> = month, <em>dd</em> = day, T indicates the beginning of the time component, <em>hh</em> = hour, <em>mm</em> = minute, <em>ss</em> = second, <em>fff</em> = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>SessionId</strong></p></td>
-<td><p>Unique SMTP session identifier. This identifier is represented as a 16-digit hexadecimal number.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>LocalEndpoint</strong></p></td>
-<td><p>Local IP address and port number that accepted the message. SMTP sessions typically use port 25.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>RemoteEndpoint</strong></p></td>
-<td><p>IP address and port number of the previous SMTP server that connected to this server to deliver the message. When Internet mail flows through an Edge Transport server in the perimeter network, the value of <strong>RemoteEndpoint</strong> in the agent log on the Mailbox server will be the IP address of the Edge Transport server. Even though the message is transmitted by SMTP, the port number used by the sending server will be a random number larger than 1,024.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>EnteredOrgFromIP</strong></p></td>
-<td><p>IP address of the remote SMTP server that first connected to the Exchange organization to deliver the message. On an Edge Transport server, the value of <strong>RemoteEndpoint</strong> and <strong>EnteredOrgFromIP</strong> are the same. Anti-spam agents use the IP address in <strong>EnteredOrgFromIP</strong> to examine a message.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>MessageId</strong></p></td>
-<td><p>Value of the <code>MessageID</code> header field. If this value is blank, the Exchange transport server assigns an arbitrary value, but only if the message is accepted. After a value is assigned, the value of <code>MessageID</code> is constant for the lifetime of the message.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>P1FromAddress</strong></p></td>
-<td><p>Sender email address specified in <code>MAIL FROM</code> in the message envelope. This value is used to transport the message between SMTP messaging servers. This value serves as a comparison to the value of <strong>P2FromAddresses</strong> to determine whether the sender address in the message header is forged.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>P2FromAddresses</strong></p></td>
-<td><p>Sender email address specified in the <code>From</code> header field or in the <code>Sender</code> header field in the message header.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Recipient</strong></p></td>
-<td><p>Email address of the recipients. Although the original message may contain multiple recipients, only one recipient is displayed per line in the agent log.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>NumRecipients</strong></p></td>
-<td><p>Total number of recipients in the original message.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Agent</strong></p></td>
-<td><p>Name of the agent that took the action. The possible values are as follows:</p>
-<ul>
-<li><p>Content Filter agent</p></li>
-<li><p>Recipient Filter agent</p></li>
-<li><p>Sender Filter agent</p></li>
-<li><p>Sender ID agent</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p><strong>Event</strong></p></td>
-<td><p>SMTP event where the action was taken by the agent. The value of <strong>Event</strong> depends on the agent. The SMTP events available to each agent are described in the first table earlier in this topic. The possible values for <strong>Event</strong> are as follows:</p>
-<ul>
-<li><p>OnConnect</p></li>
-<li><p>OnEndOfHeaders</p></li>
-<li><p>OnEndOfData</p></li>
-<li><p>OnMailCommand</p></li>
-<li><p>OnRcptCommand</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Action</strong></p></td>
-<td><p>Action performed on the message by the agent. The possible values for <strong>Action</strong> are as follows:</p>
-<ul>
-<li><p>AcceptMessage</p></li>
-<li><p>DeleteMessage</p></li>
-<li><p>DeleteRecipients</p></li>
-<li><p>Disconnect</p></li>
-<li><p>QuarantineMessage</p></li>
-<li><p>QuarantineRecipients</p></li>
-<li><p>RejectAuthentication</p></li>
-<li><p>RejectCommand</p></li>
-<li><p>RejectConnection</p></li>
-<li><p>RejectMessage</p></li>
-<li><p>RejectRecipients</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p><strong>SmtpResponse</strong></p></td>
-<td><p>Enhanced SMTP response as defined in RFC 2034.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Reason</strong></p></td>
-<td><p>Reason for the action supplied by the agent.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>ReasonData</strong></p></td>
-<td><p>Descriptive details for the action supplied by the agent.</p></td>
-</tr>
-</tbody>
-</table>
+|Field name|Description|
+|---|---|
+|**Timestamp**|UTC date-time of the agent event. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T_hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.|
+|**SessionId**|Unique SMTP session identifier. This identifier is represented as a 16-digit hexadecimal number.|
+|**LocalEndpoint**|Local IP address and port number that accepted the message. SMTP sessions typically use port 25.|
+|**RemoteEndpoint**|IP address and port number of the previous SMTP server that connected to this server to deliver the message. When Internet mail flows through an Edge Transport server in the perimeter network, the value of **RemoteEndpoint** in the agent log on the Mailbox server will be the IP address of the Edge Transport server. Even though the message is transmitted by SMTP, the port number used by the sending server will be a random number larger than 1,024.|
+|**EnteredOrgFromIP**|IP address of the remote SMTP server that first connected to the Exchange organization to deliver the message. On an Edge Transport server, the value of **RemoteEndpoint** and **EnteredOrgFromIP** are the same. Anti-spam agents use the IP address in **EnteredOrgFromIP** to examine a message.|
+|**MessageId**|Value of the `MessageID` header field. If this value is blank, the Exchange transport server assigns an arbitrary value, but only if the message is accepted. After a value is assigned, the value of `MessageID` is constant for the lifetime of the message.|
+|**P1FromAddress**|Sender email address specified in `MAIL FROM` in the message envelope. This value is used to transport the message between SMTP messaging servers. This value serves as a comparison to the value of **P2FromAddresses** to determine whether the sender address in the message header is forged.|
+|**P2FromAddresses**|Sender email address specified in the `From` header field or in the `Sender` header field in the message header.|
+|**Recipient**|Email address of the recipients. Although the original message may contain multiple recipients, only one recipient is displayed per line in the agent log.|
+|**NumRecipients**|Total number of recipients in the original message.|
+|**Agent**|Name of the agent that took the action. The possible values are as follows: <ul><li>Content Filter agent</li><li>Recipient Filter agent</li><li>Sender Filter agent</li><li>Sender ID agent</li></ul>|
+|**Event**|SMTP event where the action was taken by the agent. The value of **Event** depends on the agent. The SMTP events available to each agent are described in the first table earlier in this topic. The possible values for **Event** are as follows: <ul><li>OnConnect</li><li>OnEndOfHeaders</li><li>OnEndOfData</li><li>OnMailCommand</li><li>OnRcptCommand</li></ul>|
+|**Action**|Action performed on the message by the agent. The possible values for **Action** are as follows: <ul><li>AcceptMessage</li><li>DeleteMessage</li><li>DeleteRecipients</li><li>Disconnect</li><li>QuarantineMessage</li><li>QuarantineRecipients</li><li>RejectAuthentication</li><li>RejectCommand</li><li>RejectConnection</li><li>RejectMessage</li><li>RejectRecipients</li></ul>|
+|**SmtpResponse**|Enhanced SMTP response as defined in RFC 2034.|
+|**Reason**|Reason for the action supplied by the agent.|
+|**ReasonData**|Descriptive details for the action supplied by the agent.|
 
 ## Search the agent logs
 

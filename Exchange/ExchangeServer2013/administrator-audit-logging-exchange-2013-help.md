@@ -30,30 +30,36 @@ Cmdlets that are run directly in the Exchange Management Shell are audited. In a
 Cmdlets, regardless of where they're run, are audited if a cmdlet is on the cmdlet auditing list and one or more parameters on that cmdlet are on the parameter auditing list. Audit logging is intended to show what actions have been taken to modify objects in an Exchange organization rather than what objects have been viewed.
 
 > [!IMPORTANT]
-> A cmdlet might not be logged if an error occurs before the cmdlet calls the Admin Audit Log cmdlet extension agent. If an error occurs after the Admin Audit Log agent is called, the cmdlet is logged along with the associated error. For more information, see the Admin Audit Log Agent section later in this topic.<BR>Changes made using Microsoft Exchange Server 2010 management tools are logged; however, changes using Microsoft Exchange Server 2007 management tools aren't logged.<BR>Changes to the audit log configuration are refreshed every 60 minutes on computers that have the Shell open at the time a configuration change is made. If you want to apply the changes immediately, close and then open the Shell again on each computer.<BR>A command may take up to 15 minutes after it's run to appear in audit log search results. This is because audit log entries must be indexed before they can be searched. If a command doesn't appear in the administrator audit log, wait a few minutes and run the search again.
+> A cmdlet might not be logged if an error occurs before the cmdlet calls the Admin Audit Log cmdlet extension agent. If an error occurs after the Admin Audit Log agent is called, the cmdlet is logged along with the associated error. For more information, see the Admin Audit Log Agent section later in this topic.
+>
+> Changes made using Microsoft Exchange Server 2010 management tools are logged; however, changes using Microsoft Exchange Server 2007 management tools aren't logged.
+>
+> Changes to the audit log configuration are refreshed every 60 minutes on computers that have the Shell open at the time a configuration change is made. If you want to apply the changes immediately, close and then open the Shell again on each computer.
+>
+> A command may take up to 15 minutes after it's run to appear in audit log search results. This is because audit log entries must be indexed before they can be searched. If a command doesn't appear in the administrator audit log, wait a few minutes and run the search again.
 
 ## Audit logging configuration
 
 By default, if audit logging is enabled, a log entry is created every time any cmdlet is run. If you don't want to audit every cmdlet that's run, you can configure audit logging to audit only the cmdlets and parameters you're interested in. You configure audit logging with the **Set-AdminAuditLogConfig** cmdlet. The parameters referenced in the following sections are used with this cmdlet.
 
 > [!IMPORTANT]
-> Changes to the administrator audit log configuration are always logged, regardless of whether the <STRONG>Set-AdministratorAuditLog</STRONG> cmdlet is included in the list of cmdlets being audited and whether audit logging is enabled or disabled.
+> Changes to the administrator audit log configuration are always logged, regardless of whether the **Set-AdministratorAuditLog** cmdlet is included in the list of cmdlets being audited and whether audit logging is enabled or disabled.
 
-When a command is run, Exchange inspects the cmdlet that was used. If the cmdlet that was run matches any of the cmdlets provided with the *AdminAuditLogConfigCmdlets* parameter, Exchange then checks the parameters specified in the *AdminAuditLogConfigParameters* parameter. If at least one or more parameters from the parameters list are matched, Exchange logs the cmdlet that was run in the mailbox specified using the *AdminAuditLogMailbox* parameter. The following sections contain more information about each aspect of the audit logging configuration.
+When a command is run, Exchange inspects the cmdlet that was used. If the cmdlet that was run matches any of the cmdlets provided with the _AdminAuditLogConfigCmdlets_ parameter, Exchange then checks the parameters specified in the _AdminAuditLogConfigParameters_ parameter. If at least one or more parameters from the parameters list are matched, Exchange logs the cmdlet that was run in the mailbox specified using the _AdminAuditLogMailbox_ parameter. The following sections contain more information about each aspect of the audit logging configuration.
 
 For more information about managing audit logging configuration, see [Manage administrator audit logging](manage-administrator-audit-logging-exchange-2013-help.md).
 
 ## Cmdlets
 
-You can control which cmdlets are audited by providing a list of cmdlets, and their parameters, that you want to log. When you configure audit logging, you can specify to audit every cmdlet, or you can specify the cmdlets you want to audit by using the *AdminAuditLogConfigCmdlets* parameter. You can specify full cmdlet names, such as **New-Mailbox**, or you can specify partial cmdlet names and enclose those names in wildcard characters, such as an asterisk (`*`). For example, if you want to log when any cmdlet that contains the string `Transport` runs, you can specify a value of `*Transport*`. You can use a mix of full cmdlet names and partial cmdlet names at the same time to tailor the audit logging configuration to your needs.
+You can control which cmdlets are audited by providing a list of cmdlets, and their parameters, that you want to log. When you configure audit logging, you can specify to audit every cmdlet, or you can specify the cmdlets you want to audit by using the _AdminAuditLogConfigCmdlets_ parameter. You can specify full cmdlet names, such as **New-Mailbox**, or you can specify partial cmdlet names and enclose those names in wildcard characters, such as an asterisk (`*`). For example, if you want to log when any cmdlet that contains the string `Transport` runs, you can specify a value of `*Transport*`. You can use a mix of full cmdlet names and partial cmdlet names at the same time to tailor the audit logging configuration to your needs.
 
 ## Parameters
 
-In addition to specifying which cmdlets you want to log, you can also indicate that cmdlets should only be logged if certain parameters on those cmdlets are used. Use the *AdminAuditLogConfigParameters* parameter to specify which parameters should be logged. As with cmdlets, you can specify full parameter names, such as `Database`, or partial parameter names enclosed in wildcard characters (`*`), such as `*Address*`, or a combination of both.
+In addition to specifying which cmdlets you want to log, you can also indicate that cmdlets should only be logged if certain parameters on those cmdlets are used. Use the _AdminAuditLogConfigParameters_ parameter to specify which parameters should be logged. As with cmdlets, you can specify full parameter names, such as `Database`, or partial parameter names enclosed in wildcard characters (`*`), such as `*Address*`, or a combination of both.
 
 ## Audit log age limit
 
-By default, audit logging is configured to store audit log entries for 90 days. After 90 days, the audit log entry is deleted. You can change the audit log age limit using the *AdminAuditLogAgeLimit* parameter. You can specify the number of days, hours, minutes, and seconds that audit log entries should be kept. To specify a value, use the format `dd.hh:mm:ss` where the following applies:
+By default, audit logging is configured to store audit log entries for 90 days. After 90 days, the audit log entry is deleted. You can change the audit log age limit using the _AdminAuditLogAgeLimit_ parameter. You can specify the number of days, hours, minutes, and seconds that audit log entries should be kept. To specify a value, use the format `dd.hh:mm:ss` where the following applies:
 
 - **dd**: The number of days to keep the audit log entry.
 
@@ -66,15 +72,19 @@ By default, audit logging is configured to store audit log entries for 90 days. 
 You must specify multiple years using the `dd` field. For example, 365 days equals one year; 730 days equals two years; 913 days equals two years and six months. For example, to set the audit log age limit to two years and six months, use the syntax `913.00:00:00`.
 
 > [!WARNING]
-> You can set the audit log age limit to a value that's less than the current age limit. If you do this, any audit log entry whose age exceeds the new age limit is deleted.<BR>If you set the age limit to 0, Exchange deletes all the entries in the audit log.<BR>We recommend that you grant permissions to configure the audit log age limit only to highly trusted users.
+> You can set the audit log age limit to a value that's less than the current age limit. If you do this, any audit log entry whose age exceeds the new age limit is deleted.
+>
+> If you set the age limit to 0, Exchange deletes all the entries in the audit log.
+>
+> We recommend that you grant permissions to configure the audit log age limit only to highly trusted users.
 
 ## Verbose logging
 
-By default, the administrator audit log records only the cmdlet name, cmdlet parameters (and values specified), the object that was modified, who ran the cmdlet, when the cmdlet was run, and on what server the cmdlet was run. The administrator audit log doesn't log what properties were modified on the object. If you want the audit log to also include the properties of the object that were modified, you can enable verbose logging by setting the *LogLevel* parameter to `Verbose`. When you enable verbose logging, in addition to the information logged by default, the properties modified on an object, including their old and new values, are included in the audit log.
+By default, the administrator audit log records only the cmdlet name, cmdlet parameters (and values specified), the object that was modified, who ran the cmdlet, when the cmdlet was run, and on what server the cmdlet was run. The administrator audit log doesn't log what properties were modified on the object. If you want the audit log to also include the properties of the object that were modified, you can enable verbose logging by setting the _LogLevel_ parameter to `Verbose`. When you enable verbose logging, in addition to the information logged by default, the properties modified on an object, including their old and new values, are included in the audit log.
 
 ## Test cmdlets
 
-Cmdlets that begin with the verb **Test** aren't logged by default. You can indicate that **Test** cmdlets should be logged by setting the *TestCmdletLoggingEnabled* parameter to `$true`. Although you can enable logging of test cmdlets, we recommend that you do this only for short periods of time because test cmdlets can produce a large amount of information.
+Cmdlets that begin with the verb **Test** aren't logged by default. You can indicate that **Test** cmdlets should be logged by setting the _TestCmdletLoggingEnabled_ parameter to `$true`. Although you can enable logging of test cmdlets, we recommend that you do this only for short periods of time because test cmdlets can produce a large amount of information.
 
 ## Audit logs
 
@@ -92,77 +102,21 @@ Each audit log entry contains the information described in the following table. 
 
 ### Audit log entry fields
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><code>RunspaceId</code></p></td>
-<td><p>This field is used internally by Exchange.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>ObjectModified</code></p></td>
-<td><p>This field contains the object that was modified by the cmdlet specified in the <code>CmdletName</code> field.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>CmdletName</code></p></td>
-<td><p>This field contains the name of the cmdlet that was run by the user in the <code>Caller</code> field.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>CmdletParameters</code></p></td>
-<td><p>This field contains the parameters that were specified when the cmdlet in the <code>CmdletName</code> field was run. Also stored in this field, but not visible in the default output, is the value specified with the parameter, if any. For more information about how to access the additional information in this field, see <a href="/exchange/security-and-compliance/exchange-auditing-reports/search-role-group-changes">Search the role group changes or administrator audit logs</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>ModifiedProperties</code></p></td>
-<td><p>This field contains the properties that were modified on the object in the <code>ObjectModified</code> field. Also stored in this field, but not visible in the default output, are the old value of the property and the new value that was stored. For more information about how to access the additional information in this field, see <a href="/exchange/security-and-compliance/exchange-auditing-reports/search-role-group-changes">Search the role group changes or administrator audit logs</a>.</p>
-
-> [!IMPORTANT]
-> This field is only populated if the <EM>LogLevel</EM> parameter on the <STRONG>Set-AdminAuditLogConfig</STRONG> cmdlet is set to <CODE>Verbose</CODE>.
-
-</td>
-</tr>
-<tr class="even">
-<td><p><code>Caller</code></p></td>
-<td><p>This field contains the user account of the user who ran the cmdlet in the <code>CmdletName</code> field.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>Succeeded</code></p></td>
-<td><p>This field specifies whether the cmdlet in the <code>CmdletName</code> field ran successfully. The value is either <code>True</code> or <code>False</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>Error</code></p></td>
-<td><p>This field contains the error message generated if the cmdlet in the <code>CmdletName</code> field failed to complete successfully.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>RunDate</code></p></td>
-<td><p>This field contains the date and time when the cmdlet in the <code>CmdletName</code> field was run. The date and time are stored in Coordinated Universal Time (UTC) format.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>OriginatingServer</code></p></td>
-<td><p>This field indicates the server on which the cmdlet specified in the <code>CmdletName</code> field was run.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>Identity</code></p></td>
-<td><p>This field is used internally by Exchange.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>IsValid</code></p></td>
-<td><p>This field is used internally by Exchange.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>ObjectState</code></p></td>
-<td><p>This field is used internally by Exchange.</p></td>
-</tr>
-</tbody>
-</table>
+|Field|Description|
+|---|---|
+|`RunspaceId`|This field is used internally by Exchange.|
+|`ObjectModified`|This field contains the object that was modified by the cmdlet specified in the `CmdletName` field.|
+|`CmdletName`|This field contains the name of the cmdlet that was run by the user in the `Caller` field.|
+|`CmdletParameters`|This field contains the parameters that were specified when the cmdlet in the `CmdletName` field was run. Also stored in this field, but not visible in the default output, is the value specified with the parameter, if any. For more information about how to access the additional information in this field, see [Search the role group changes or administrator audit logs](../ExchangeOnline/security-and-compliance/exchange-auditing-reports/search-role-group-changes.md).|
+|`ModifiedProperties`|This field contains the properties that were modified on the object in the `ObjectModified` field. Also stored in this field, but not visible in the default output, are the old value of the property and the new value that was stored. For more information about how to access the additional information in this field, see [Search the role group changes or administrator audit logs](../ExchangeOnline/security-and-compliance/exchange-auditing-reports/search-role-group-changes.md). <br/><br/>  **Important**: This field is only populated if the _LogLevel_ parameter on the **Set-AdminAuditLogConfig** cmdlet is set to `Verbose`.|
+|`Caller`|This field contains the user account of the user who ran the cmdlet in the `CmdletName` field.|
+|`Succeeded`|This field specifies whether the cmdlet in the `CmdletName` field ran successfully. The value is either `True` or `False`.|
+|`Error`|This field contains the error message generated if the cmdlet in the `CmdletName` field failed to complete successfully.|
+|`RunDate`|This field contains the date and time when the cmdlet in the `CmdletName` field was run. The date and time are stored in Coordinated Universal Time (UTC) format.|
+|`OriginatingServer`|This field indicates the server on which the cmdlet specified in the `CmdletName` field was run.|
+|`Identity`|This field is used internally by Exchange.|
+|`IsValid`|This field is used internally by Exchange.|
+|`ObjectState`|This field is used internally by Exchange.|
 
 ## EAC auditing reports
 
@@ -221,11 +175,11 @@ In addition to logging Exchange cmdlets when they're run, Exchange 2013 enables 
 
 - Maintenance start and end times
 
-With the **Write-AdminAuditLog** cmdlet, you specify a string of text to include in the audit log using the *Comment* parameter. The *Comment* parameter accepts an alphanumeric string up to 500 characters. Included in the manual audit log entry along with the comment string is all of the same information captured when an Exchange cmdlet is logged. For a description of each field included in the audit log, see the table in Audit Log Contents.
+With the **Write-AdminAuditLog** cmdlet, you specify a string of text to include in the audit log using the _Comment_ parameter. The _Comment_ parameter accepts an alphanumeric string up to 500 characters. Included in the manual audit log entry along with the comment string is all of the same information captured when an Exchange cmdlet is logged. For a description of each field included in the audit log, see the table in Audit Log Contents.
 
 You can retrieve manual audit log entries the same way as any other log entry, using the EAC **auditing** page or using the **Search-AdminAuditLog** or **New-AdminAuditLogSearch** cmdlets.
 
-To view the contents of the *Comment* parameter on the **Write-AdminAuditLog** cmdlet in a manual audit log entry, see [Search the role group changes or administrator audit logs](../ExchangeOnline/security-and-compliance/exchange-auditing-reports/search-role-group-changes.md).
+To view the contents of the _Comment_ parameter on the **Write-AdminAuditLog** cmdlet in a manual audit log entry, see [Search the role group changes or administrator audit logs](../ExchangeOnline/security-and-compliance/exchange-auditing-reports/search-role-group-changes.md).
 
 ## Active Directory replication
 

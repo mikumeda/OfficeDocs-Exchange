@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the Access control list (ACL) inheritance is blocked\_InhBlockPublicFolderTree error.
 ---
 
 # Access control list (ACL) inheritance is blocked\_InhBlockPublicFolderTree
@@ -42,63 +43,13 @@ Failure to enable inheritance for permissions on these objects may result in mai
 
 To resolve this issue, make sure that the "Allow permissions to propagate to this object and child objects" setting is enabled for the object, and then rerun Exchange Server 2007 or Exchange 2010 setup.
 
-<table>
-<colgroup>
-<col  />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>To re-enable permissions inheritance for an Exchange configuration object using Exchange Server 2003 Exchange System Manager</p></td>
-</tr>
-<tr class="even">
-<td><ol>
-<li><p>Enable the <strong>Security</strong> tab for the object properties box of Exchange System Manager by setting a registry parameter.</p>
-<ol>
-<li><p>Start Registry Editor (Regedt32.exe).</p></li>
-<li><p>Locate the following key in the registry:</p>
-<p><strong>HKEY_CURRENT_USER\Software\Microsoft\Exchange\EXAdmin</strong></p></li>
-<li><p>On the <strong>Edit</strong> menu, click <strong>New</strong>, and then add the following registry value:</p>
-<p><strong>Value Name</strong>: ShowSecurityPage</p>
-<p><strong>Data Type</strong>: REG_DWORD</p>
-<p><strong>Radix</strong>: Binary</p>
-<p><strong>Value</strong>: 1</p></li>
-<li><p>Quit Registry Editor.</p></li>
-</ol>
-
-> [!NOTE]
-> By default, the <STRONG>Security</STRONG> tab is not enabled in the configuration object properties box.
-
-</li>
-<li><p>Open Exchange System Manager, find the object in question, right-click the object and select <strong>Properties</strong>.</p></li>
-<li><p>Select the <strong>Security</strong> tab and then click <strong>Advanced</strong>.</p></li>
-<li><p>Select <strong>Allow inheritable permissions from the parent to propagate to this object and all child objects</strong> to re-enable permissions inheritance.</p></li>
-<li><p>Restart Exchange Server.</p></li>
-</ol></td>
-</tr>
-</tbody>
-</table>
+|To re-enable permissions inheritance for an Exchange configuration object using Exchange Server 2003 Exchange System Manager|
+|---|
+|<ol><li>Enable the **Security** tab for the object properties box of Exchange System Manager by setting a registry parameter. <ol><li>Start Registry Editor (Regedt32.exe).</li><li>Locate the following key in the registry: <br/> **HKEY_CURRENT_USER\Software\Microsoft\Exchange\EXAdmin**</li><li>On the **Edit** menu, click **New**, and then add the following registry value: <br/> **Value Name**: ShowSecurityPage <br/> **Data Type**: REG_DWORD <br/> **Radix**: Binary <br/> **Value**: 1</li><li>Quit Registry Editor.</li></ol> <p> **Note**: By default, the **Security** tab is not enabled in the configuration object properties box.</li><li>Open Exchange System Manager, find the object in question, right-click the object and select **Properties**.</li><li>Select the **Security** tab and then click **Advanced**.</li><li>Select **Allow inheritable permissions from the parent to propagate to this object and all child objects** to re-enable permissions inheritance.</li><li>Restart Exchange Server.</li></ol>|
 
 > [!WARNING]
-> If you incorrectly modify the attributes of Active Directory objects when you use ADSI Edit, the LDP tool, or another LDAP version&nbsp;3 client, you may cause serious problems. These problems may require that you reinstall Microsoft Windows&nbsp;Server™&nbsp;2003, Exchange&nbsp;Server, or both. Modify Active Directory object attributes at your own risk.
+> If you incorrectly modify the attributes of Active Directory objects when you use ADSI Edit, the LDP tool, or another LDAP version 3 client, you may cause serious problems. These problems may require that you reinstall Microsoft Windows Server™ 2003, Exchange Server, or both. Modify Active Directory object attributes at your own risk.
 
-<table>
-<colgroup>
-<col  />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>To re-enable permissions inheritance for an Exchange configuration object using ADSIEdit from Exchange Server 2007 or Exchange Server 2010</p></td>
-</tr>
-<tr class="even">
-<td><ol>
-<li><p>Install ADSI Edit.</p></li>
-<li><p>Launch ADSI Edit. Click <strong>Start</strong>, click <strong>Run</strong>, type <strong>adsiedit.msc</strong> in the text box, and then click OK.</p></li>
-<li><p>Navigate to the object in question, right-click the object and select <strong>Properties</strong>.</p></li>
-<li><p>Select the <strong>Security</strong> tab and then click <strong>Advanced</strong>.</p></li>
-<li><p>Select <strong>Allow inheritable permissions from the parent to propagate to this object and all child objects</strong> to re-enable permissions inheritance.</p></li>
-<li><p>Select <strong>Ok</strong> twice to apply the change.</p></li>
-<li><p>Wait for Active Directory replication to propagate the changes or force Active Directory replication.</p></li>
-</ol></td>
-</tr>
-</tbody>
-</table>
+|To re-enable permissions inheritance for an Exchange configuration object using ADSIEdit from Exchange Server 2007 or Exchange Server 2010|
+|---|
+|<ol><li>Install ADSI Edit.</li><li>Launch ADSI Edit. Click **Start**, click **Run**, type **adsiedit.msc** in the text box, and then click OK.</li><li>Navigate to the object in question, right-click the object and select **Properties**.</li><li>Select the **Security** tab and then click **Advanced**.</li><li>Select **Allow inheritable permissions from the parent to propagate to this object and all child objects** to re-enable permissions inheritance.</li><li>Select **Ok** twice to apply the change.</li><li>Wait for Active Directory replication to propagate the changes or force Active Directory replication.</li></ol>|

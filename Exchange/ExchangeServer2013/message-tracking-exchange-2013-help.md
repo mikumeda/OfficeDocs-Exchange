@@ -141,9 +141,9 @@ Various event types in the **event-id** field are used to classify the message e
 |**HARECEIVE**|A shadow message was received by the server in the local database availability group (DAG) or Active Directory site.|
 |**HAREDIRECT**|A shadow message was created.|
 |**HAREDIRECTFAIL**|A shadow message failed to be created. The details are stored in the **source-context** field.|
-|**INITMESSAGECREATED**|A message was sent to a moderated recipient, so the message was sent to the arbitration mailbox for approval. For more information, see [Manage message approval](/exchange/security-and-compliance/mail-flow-rules/manage-message-approval).|
+|**INITMESSAGECREATED**|A message was sent to a moderated recipient, so the message was sent to the arbitration mailbox for approval. For more information, see [Manage message approval](manage-message-approval-exchange-2013-help.md).|
 |**LOAD**|A message was successfully loaded at boot.|
-|**MODERATIONEXPIRE**|A moderator for a moderated recipient never approved or rejected the message, so the message expired. For more information about moderated recipients, see [Manage message approval](/exchange/security-and-compliance/mail-flow-rules/manage-message-approval).|
+|**MODERATIONEXPIRE**|A moderator for a moderated recipient never approved or rejected the message, so the message expired. For more information about moderated recipients, see [Manage message approval](manage-message-approval-exchange-2013-help.md).|
 |**MODERATORAPPROVE**|A moderator for a moderated recipient approved the message, so the message was delivered to the moderated recipient.|
 |**MODERATORREJECT**|A moderator for a moderated recipient rejected the message, so the message wasn't delivered to the moderated recipient.|
 |**MODERATORSALLNDR**|All approval requests sent to all moderators of a moderated recipient were undeliverable, and resulted in non-delivery reports (NDRs).|
@@ -174,7 +174,7 @@ The values in the **source** field in the message tracking log indicate the tran
 |---|---|
 |**ADMIN**|The event source was human intervention. For example, an administrator used Queue Viewer to delete a message, or submitted message files using the Replay directory.|
 |**AGENT**|The event source was a transport agent.|
-|**APPROVAL**|The event source was the approval framework that's used with moderated recipients. For more information, see [Manage message approval](/exchange/security-and-compliance/mail-flow-rules/manage-message-approval).|
+|**APPROVAL**|The event source was the approval framework that's used with moderated recipients. For more information, see [Manage message approval](manage-message-approval-exchange-2013-help.md).|
 |**BOOTLOADER**|The event source was unprocessed messages that exist on the server at boot time. This is related to the **LOAD** event type.|
 |**DNS**|The event source was DNS.|
 |**DSN**|The event source was a delivery status notification (DSN). For example, a non-delivery report (NDR).|
