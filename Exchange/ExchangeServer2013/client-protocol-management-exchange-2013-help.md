@@ -35,9 +35,9 @@ For more information about the architecture changes in Exchange 2013, see [What'
 
 There are two types of settings that can be applied to the Exchange ActiveSync virtual directory:
 
-  - Settings applicable to the mailbox session
+- Settings applicable to the mailbox session
 
-  - Settings applicable to the server and the virtual directory
+- Settings applicable to the server and the virtual directory
 
 The settings that are applicable to the mailbox session are user session settings. When a user connects to a Client Access server, the connection is proxied to the Mailbox server that contains the user's mailbox. A unique identifier of the virtual directory is included with the proxied request. The Mailbox server then retrieves the virtual directory settings from Active Directory and applies them to the session. The virtual directory settings are cached on the Mailbox server to improve performance.
 
@@ -45,135 +45,39 @@ If the connection is proxied to a different Active Directory site, the virtual d
 
 The following tables indicate which virtual directory settings can be managed on which servers. If you try to manage a particular setting on a server for which it isn't applicable, you will receive an error message indicating that the property you are trying to set is read-only for the server that you are operating on.
 
-**Exchange ActiveSync virtual directory settings on Client Access servers**
+**Exchange ActiveSync virtual directory settings on Client Access servers**:
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Server</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>BadItemReportingEnabled</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>BasicAuthEnabled</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>ClientCertAuth</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>CompressionEnabled</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>ExternalAuthenticationMethods</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>ExternalURL</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>InternalAuthenticationMethods</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>InternalURL</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>MobileClientCertificateAuthorityURL</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>MobileClientCertificateProvisioningEnabled</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>MobileClientCertTemplateName</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>RemoteDocumentsActionForUnknownServers</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>RemoteDocumentsAllowedServers</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>RemoteDocumentsBlockedServers</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>RemoteDocumentsInternalDomainSuffixList</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>SendWatsonReport</p></td>
-<td><p>Client Access</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|Server|
+|---|---|
+|BadItemReportingEnabled|Client Access|
+|BasicAuthEnabled|Client Access|
+|ClientCertAuth|Client Access|
+|CompressionEnabled|Client Access|
+|ExternalAuthenticationMethods|Client Access|
+|ExternalURL|Client Access|
+|InternalAuthenticationMethods|Client Access|
+|InternalURL|Client Access|
+|MobileClientCertificateAuthorityURL|Client Access|
+|MobileClientCertificateProvisioningEnabled|Client Access|
+|MobileClientCertTemplateName|Client Access|
+|RemoteDocumentsActionForUnknownServers|Client Access|
+|RemoteDocumentsAllowedServers|Client Access|
+|RemoteDocumentsBlockedServers|Client Access|
+|RemoteDocumentsInternalDomainSuffixList|Client Access|
+|SendWatsonReport|Client Access|
 
-**Exchange ActiveSync virtual directory settings on Client Access and Mailbox servers**
+**Exchange ActiveSync virtual directory settings on Client Access and Mailbox servers**:
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Server</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ApplicationRoot</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>AppPoolID</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>MetabasePath</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>Name</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>Path</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>ProxySubVdir</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>VirtualDirectoryName</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>WebsiteName</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|Server|
+|---|---|
+|ApplicationRoot|Client Access and Mailbox|
+|AppPoolID|Client Access and Mailbox|
+|MetabasePath|Client Access and Mailbox|
+|Name|Client Access and Mailbox|
+|Path|Client Access and Mailbox|
+|ProxySubVdir|Client Access and Mailbox|
+|VirtualDirectoryName|Client Access and Mailbox|
+|WebsiteName|Client Access and Mailbox|
 
 ## Managing POP3 and IMAP4 settings
 
@@ -181,163 +85,49 @@ In Exchange 2013, the implementation of the POP3 and IMAP4 protocols has also be
 
 Consider the following as you manage POP3 and IMAP4 connectivity in your organization:
 
-  - If you are running the Client Access server role and the Mailbox server role on the same computer, any changes you make to POP3 or IMAP4 settings are automatically applied to the correct POP3 and IMAP4 services.
+- If you are running the Client Access server role and the Mailbox server role on the same computer, any changes you make to POP3 or IMAP4 settings are automatically applied to the correct POP3 and IMAP4 services.
 
-  - If you are running the Client Access server role and the Mailbox server role on separate computers, you need to manage the settings on the computer that manages the setting you want to change.
+- If you are running the Client Access server role and the Mailbox server role on separate computers, you need to manage the settings on the computer that manages the setting you want to change.
 
 Use the following tables indicate which POP/IMAP settings are each server role.
 
-**POP3 and IMAP4 settings on Client Access server**
+**POP3 and IMAP4 settings on Client Access server**:
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Server</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>AuthenticatedConnectionTimeout</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>Banner</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>ExternalConnectionSettings</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>InternalConnectionSettings</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>MaxCommandSize</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>MaxConnectionFromSingleIP</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>MaxConnections</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>MaxConnectionsPerUser</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="odd">
-<td><p>PreAuthenticatedConnectionTimeout</p></td>
-<td><p>Client Access</p></td>
-</tr>
-<tr class="even">
-<td><p>UnencryptedOrTLSBindings</p></td>
-<td><p>Client Access</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|Server|
+|---|---|
+|AuthenticatedConnectionTimeout|Client Access|
+|Banner|Client Access|
+|ExternalConnectionSettings|Client Access|
+|InternalConnectionSettings|Client Access|
+|MaxCommandSize|Client Access|
+|MaxConnectionFromSingleIP|Client Access|
+|MaxConnections|Client Access|
+|MaxConnectionsPerUser|Client Access|
+|PreAuthenticatedConnectionTimeout|Client Access|
+|UnencryptedOrTLSBindings|Client Access|
 
-**POP3 and IMAP4 settings on Mailbox server**
+**POP3 and IMAP4 settings on Mailbox server**:
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Server</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>CalendarItemRetrivalOption</p></td>
-<td><p>Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>EnableExactRFC822Size</p></td>
-<td><p>Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>MessageRetrievalSortOrder</p></td>
-<td><p>Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>OWAServerURL</p></td>
-<td><p>Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>ProxyTargetPort</p></td>
-<td><p>Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>ShowHiddenFoldersEnabled</p></td>
-<td><p>Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>SuppressReadReceipt</p></td>
-<td><p>Mailbox</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|Server|
+|---|---|
+|CalendarItemRetrivalOption|Mailbox|
+|EnableExactRFC822Size|Mailbox|
+|MessageRetrievalSortOrder|Mailbox|
+|OWAServerURL|Mailbox|
+|ProxyTargetPort|Mailbox|
+|ShowHiddenFoldersEnabled|Mailbox|
+|SuppressReadReceipt|Mailbox|
 
-**POP3 and IMAP4 settings on Client Access and Mailbox servers**
+**POP3 and IMAP4 settings on Client Access and Mailbox servers**:
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Server</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>X509CertificateName</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>EnforceCertificateErrors</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>LogFileLocation</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>LogFileRolloverSettings</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>LoginType</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>LogPerFileSizeQuota</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>ProotocolLogEnabled</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>Server</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-<tr class="odd">
-<td><p>X509CertificateName</p></td>
-<td><p>Client Access and Mailbox</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|Server|
+|---|---|
+|X509CertificateName|Client Access and Mailbox|
+|EnforceCertificateErrors|Client Access and Mailbox|
+|LogFileLocation|Client Access and Mailbox|
+|LogFileRolloverSettings|Client Access and Mailbox|
+|LoginType|Client Access and Mailbox|
+|LogPerFileSizeQuota|Client Access and Mailbox|
+|ProotocolLogEnabled|Client Access and Mailbox|
+|Server|Client Access and Mailbox|
+|X509CertificateName|Client Access and Mailbox|

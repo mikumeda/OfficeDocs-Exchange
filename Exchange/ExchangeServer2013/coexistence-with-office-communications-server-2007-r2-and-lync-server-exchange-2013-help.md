@@ -29,23 +29,8 @@ When you're integrating Exchange UM with Office Communications Server 2007 R2 or
 
 The following table shows the fixes that are required for each version of the products for integration with UM.
 
-<table>
-<colgroup>
-<col>
-<col>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Office Communications Server 2007 R2</p></td>
-<td><p>Office Communications Server 2007 R2 cumulative update 10 or later.</p></td>
-</tr>
-<tr class="even">
-<td><p>Lync Server 2010</p></td>
-<td><p>Lync Server 2010 cumulative update 3 or later.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Lync Server 2013</p></td>
-<td><p>No updates are required.</p></td>
-</tr>
-</tbody>
-</table>
+|Product|Required updates|
+|---|---|
+|Office Communications Server 2007 R2|Office Communications Server 2007 R2 cumulative update 10 or later.|
+|Lync Server 2010|Lync Server 2010 cumulative update 3 or later.|
+|Lync Server 2013|No updates are required.|

@@ -21,144 +21,34 @@ _**Applies to:** Exchange Server 2013_
 
 Use this checklist to upgrade from Microsoft Exchange 2010 to Exchange 2013. Before you start working with this checklist, make sure you're familiar with the concepts discussed in:
 
-  - [Planning and deployment](planning-and-deployment-for-exchange-2013-installation-instructions.md)
+- [Planning and deployment](planning-and-deployment-for-exchange-2013-installation-instructions.md)
 
-  - [What's new in Exchange 2013](what-s-new-in-exchange-2013-exchange-2013-help.md)
+- [What's new in Exchange 2013](what-s-new-in-exchange-2013-exchange-2013-help.md)
 
 This checklist is generic in that it provides guidance for a typical upgrade scenario.
 
 > [!NOTE]
-> The Exchange Server Deployment Assistant provides you with customized step-by-step guidance about how to deploy Exchange Server. The Deployment Assistant can help you deploy a new installation of Exchange Server 2013, upgrade a previous version to Exchange 2013, or configure a hybrid deployment of Exchange 2013 and Exchange Online. To learn more, see <A href="exchange-server-deployment-assistant-exchange-2013-help.md">Exchange Server Deployment Assistant</A>.
+> The Exchange Server Deployment Assistant provides you with customized step-by-step guidance about how to deploy Exchange Server. The Deployment Assistant can help you deploy a new installation of Exchange Server 2013, upgrade a previous version to Exchange 2013, or configure a hybrid deployment of Exchange 2013 and Exchange Online. To learn more, see [Exchange Server Deployment Assistant](exchange-server-deployment-assistant-exchange-2013-help.md).
 
 ## Checklist for upgrading from Exchange 2010 to Exchange 2013
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Done?</p></td>
-<td><p>Task</p></td>
-<td><p>Topic(s)</p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>1. Read the release notes.</p></td>
-<td><p><a href="release-notes-for-exchange-2013-exchange-2013-help.md">Release notes for Exchange 2013</a></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>2. Verify system requirements</p></td>
-<td><p><a href="exchange-2013-system-requirements-exchange-2013-help.md">Exchange 2013 system requirements</a></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>3. Confirm prerequisite steps are done</p></td>
-<td><p><a href="exchange-2013-prerequisites-exchange-2013-help.md">Exchange 2013 prerequisites</a></p>
-<p><a href="deployment-security-checklist-exchange-2013-help.md">Deployment security checklist</a></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>4. Configure disjoint namespace</p>
-
-> [!NOTE]
-> This step is optional. It's only necessary if your organization is running a disjoint namespace.
-
-</td>
-<td><p><a href="configure-the-dns-suffix-search-list-for-a-disjoint-namespace-exchange-2013-help.md">Configure the DNS suffix search list for a disjoint namespace</a></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>5. Select an offline address book for all Exchange 2010 mailbox databases</p></td>
-<td><p><a href="manage-mailbox-databases-in-exchange-2013-exchange-2013-help.md">Set mailbox database properties</a> in <a href="manage-mailbox-databases-in-exchange-2013-exchange-2013-help.md">Manage mailbox databases in Exchange 2013</a></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>6. Install Exchange 2013</p></td>
-<td><p><a href="install-exchange-2013-using-the-setup-wizard-exchange-2013-help.md">Install Exchange 2013 using the Setup wizard</a></p>
-<p><a href="install-the-exchange-2013-edge-transport-role-using-the-setup-wizard-exchange-2013-help.md">Install the Exchange 2013 Edge Transport role using the Setup wizard</a></p>
-<p><a href="verify-an-exchange-2013-installation-exchange-2013-help.md">Verify an Exchange 2013 installation</a></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>7. Create an Exchange 2013 mailbox</p></td>
-<td><p><a href="create-user-mailboxes-exchange-2013-help.md">Create user mailboxes</a></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>8. Configure Exchange-related virtual directories</p>
-
-> [!NOTE]
-> This step is necessary if you want to use Exchange Web Services, Outlook Anywhere, or the offline address book. It also may be required if you need to change any of the default settings for Exchange Control Panel, Microsoft Office&nbsp;Outlook Web App, or Exchange ActiveSync.<BR>
-
-</td>
-<td><p><a href="exchange-2013-client-access-server-configuration-exchange-2013-help.md">Exchange 2013 Client Access server configuration</a></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>9. Add digital certificates on the Client Access server</p></td>
-<td><p><a href="digital-certificates-and-ssl-exchange-2013-help.md">Digital certificates and SSL</a> </p>
-<p></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>10. Move arbitration mailbox</p></td>
-<td><p><a href="move-the-exchange-2010-system-mailbox-to-exchange-2013-exchange-2013-help.md">Move the Exchange 2010 system mailbox to Exchange 2013</a></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>11. Configure Unified Messaging</p>
-
-> [!NOTE]
-> This step is optional. It's only necessary if you want to use Unified Messaging in your organization.
-
-</td>
-<td><p><a href="upgrade-exchange-2010-um-to-exchange-2013-um-exchange-2013-help.md">Upgrade Exchange 2010 UM to Exchange 2013 UM</a></p>
-<p></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>12. Configure Edge Transport server</p>
-
-> [!NOTE]
-> This step is optional. It's only necessary if your organization is uses an Edge Transport server.
-
-</td>
-<td><p><a href="configure-internet-mail-flow-through-a-subscribed-edge-transport-server-exchange-2013-help.md">Configure Internet mail flow through a subscribed Edge Transport server</a></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>13. Enable and configure Outlook Anywhere</p></td>
-<td><p><a href="outlook-anywhere-exchange-2013-help.md">Outlook Anywhere</a></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>14. Configure service connection point</p></td>
-<td><p><a href="exchange-2013-client-access-server-configuration-exchange-2013-help.md">Exchange 2013 Client Access server configuration</a></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>15. Configure DNS records</p></td>
-<td><p><a href="/previous-versions/exchange-server/exchange-150/dn307232(v=exchg.150)">Configure DNS records for Exchange 2010 multiple-server install</a></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>16. Move mailboxes from Exchange 2010 to Exchange 2013</p></td>
-<td><p><a href="mailbox-moves-in-exchange-2013-exchange-2013-help.md">Mailbox moves in Exchange 2013</a></p></td>
-</tr>
-<tr class="even">
-<td><p> </p></td>
-<td><p>17. Move public folder data from Exchange 2013 to Exchange 2013</p></td>
-<td><p><a href="public-folders-exchange-2013-help.md">Public folders</a></p>
-<p><a href="/previous-versions/exchange-server/exchange-150/jj150486(v=exchg.150)">Use serial migration to migrate public folders to Exchange 2013 from previous versions</a></p></td>
-</tr>
-<tr class="odd">
-<td><p> </p></td>
-<td><p>18. Post-installation tasks</p></td>
-<td><p><a href="exchange-2013-post-installation-tasks-exchange-2013-help.md">Exchange 2013 post-Installation tasks</a></p></td>
-</tr>
-</tbody>
-</table>
+|Done?|Task|Topic(s)|
+|:---:|---|---|
+|☐|1. Read the release notes.|[Release notes for Exchange 2013](release-notes-for-exchange-2013-exchange-2013-help.md)|
+|☐|2. Verify system requirements|[Exchange 2013 system requirements](exchange-2013-system-requirements-exchange-2013-help.md)|
+|☐|3. Confirm prerequisite steps are done|[Exchange 2013 prerequisites](exchange-2013-prerequisites-exchange-2013-help.md) <br/><br/> [Deployment security checklist](deployment-security-checklist-exchange-2013-help.md)|
+|☐|4. Configure disjoint namespace <br/><br/> **Note**: This step is optional. It's only necessary if your organization is running a disjoint namespace.|[Configure the DNS suffix search list for a disjoint namespace](configure-the-dns-suffix-search-list-for-a-disjoint-namespace-exchange-2013-help.md)|
+|☐|5. Select an offline address book for all Exchange 2010 mailbox databases|[Set mailbox database properties](<manage-mailbox-databases-in-exchange-2013-exchange-2013-help.md) in [Manage mailbox databases in Exchange 2013](manage-mailbox-databases-in-exchange-2013-exchange-2013-help.md)|
+|☐|6. Install Exchange 2013|[Install Exchange 2013 using the Setup wizard](install-exchange-2013-using-the-setup-wizard-exchange-2013-help.md) <br/><br/> [Install the Exchange 2013 Edge Transport role using the Setup wizard](install-the-exchange-2013-edge-transport-role-using-the-setup-wizard-exchange-2013-help.md) <br/><br/> [Verify an Exchange 2013 installation](verify-an-exchange-2013-installation-exchange-2013-help.md)|
+|☐|7. Create an Exchange 2013 mailbox|[Create user mailboxes](create-user-mailboxes-exchange-2013-help.md)|
+|☐|8. Configure Exchange-related virtual directories <br/><br/> **Note**: This step is necessary if you want to use Exchange Web Services, Outlook Anywhere, or the offline address book. It also may be required if you need to change any of the default settings for Exchange Control Panel, Microsoft Office Outlook Web App, or Exchange ActiveSync.|[Exchange 2013 Client Access server configuration](exchange-2013-client-access-server-configuration-exchange-2013-help.md)|
+|☐|9. Add digital certificates on the Client Access server|[Digital certificates and SSL](digital-certificates-and-ssl-exchange-2013-help.md) |
+|☐|10. Move arbitration mailbox|[Move the Exchange 2010 system mailbox to Exchange 2013](move-the-exchange-2010-system-mailbox-to-exchange-2013-exchange-2013-help.md)|
+|☐|11. Configure Unified Messaging <br/><br/> **Note**: This step is optional. It's only necessary if you want to use Unified Messaging in your organization.|[Upgrade Exchange 2010 UM to Exchange 2013 UM](upgrade-exchange-2010-um-to-exchange-2013-um-exchange-2013-help.md)|
+|☐|12. Configure Edge Transport server <br/><br/> **Note**: This step is optional. It's only necessary if your organization is uses an Edge Transport server.|[Configure Internet mail flow through a subscribed Edge Transport server](configure-internet-mail-flow-through-a-subscribed-edge-transport-server-exchange-2013-help.md)|
+|☐|13. Enable and configure Outlook Anywhere|[Outlook Anywhere](outlook-anywhere-exchange-2013-help.md)|
+|☐|14. Configure service connection point|[Exchange 2013 Client Access server configuration](exchange-2013-client-access-server-configuration-exchange-2013-help.md)|
+|☐|15. Configure DNS records|[Configure DNS records for Exchange 2010 multiple-server install](/previous-versions/exchange-server/exchange-150/dn307232(v=exchg.150))|
+|☐|16. Move mailboxes from Exchange 2010 to Exchange 2013|[Mailbox moves in Exchange 2013](mailbox-moves-in-exchange-2013-exchange-2013-help.md)|
+|☐|17. Move public folder data from Exchange 2013 to Exchange 2013|[Public folders](public-folders-exchange-2013-help.md) <br/><br/> [Use serial migration to migrate public folders to Exchange 2013 from previous versions](/previous-versions/exchange-server/exchange-150/jj150486(v=exchg.150))|
+|☐|18. Post-installation tasks|[Exchange 2013 post-Installation tasks](exchange-2013-post-installation-tasks-exchange-2013-help.md)|
