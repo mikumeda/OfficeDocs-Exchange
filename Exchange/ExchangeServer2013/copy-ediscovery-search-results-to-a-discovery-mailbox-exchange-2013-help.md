@@ -27,7 +27,7 @@ After you create an In-Place eDiscovery search, you can use the EAC to copy the 
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
-- An eDiscovery search has to be created, by using the EAC or the Shell, before you can copy the search results. For details, see [Create an In-Place eDiscovery search](create-in-place-ediscovery-search.md).
+- An eDiscovery search has to be created, by using the EAC or the Shell, before you can copy the search results. For details, see [Create an In-Place eDiscovery search in Exchange 2013](create-in-place-ediscovery-search-exchange-2013-help.md).
 
 - Exchange 2013 Setup creates a discovery mailbox called **Discovery Search Mailbox** to copy search results. You can create additional discovery mailboxes. For details, see [Create a discovery mailbox](/Office365/SecurityCompliance/eop/exchange-online-protection-overview).
 
