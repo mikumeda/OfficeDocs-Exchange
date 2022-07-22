@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-Microsoft Exchange Server 2013 uses the concept known as *incremental deployment* for both high availability and site resilience. You simply install two or more Exchange 2013 Mailbox servers as stand-alone servers, and then incrementally configure them and mailbox databases for high availability and site resilience, as needed.
+Microsoft Exchange Server 2013 uses the concept known as _incremental deployment_ for both high availability and site resilience. You simply install two or more Exchange 2013 Mailbox servers as stand-alone servers, and then incrementally configure them and mailbox databases for high availability and site resilience, as needed.
 
 ## Overview of the deployment process
 
@@ -48,91 +48,30 @@ This example details how an organization, Contoso, Ltd., is configuring and depl
 Each location contains the infrastructure elements that are necessary to operate a messaging infrastructure based on Exchange 2013, namely:
 
 - Directory services (either Active Directory or Active Directory Domain Services (AD DS))
-
 - Domain Name System (DNS) name resolution
-
 - Multiple Exchange 2013 Client Access servers
-
 - Multiple Exchange 2013 Mailbox servers
 
 The following figure illustrates the Contoso configuration.
-
-**Database availability group extended across two sites**
 
 ![Database availability group extended to two sites.](images/Dd638129.1c326fd4-3c7b-4416-a63d-fbfdd0cc6b18(EXCHG.150).gif "Database availability group extended to two sites")
 
 ## Network configuration
 
-As illustrated in the previous figure, the solution involves the use of multiple subnets and multiple networks. Each Mailbox server in the DAG has two network adapters on separate subnets. In each Mailbox server, one network adapter will be used for the MAPI network (192.168.*x*.*x*) and one network adapter will be used for the Replication network (10.0.*x*.*x*). Only the MAPI network provides connectivity to Active Directory, DNS services, other Exchange servers and clients. The adapter used for the Replication network in each member provides connectivity only to the Replication network adapters in the other members of the DAG.
+As illustrated in the previous figure, the solution involves the use of multiple subnets and multiple networks. Each Mailbox server in the DAG has two network adapters on separate subnets. In each Mailbox server, one network adapter will be used for the MAPI network (192.168.*x_.*x*) and one network adapter will be used for the Replication network (10.0.*x_.*x*). Only the MAPI network provides connectivity to Active Directory, DNS services, other Exchange servers and clients. The adapter used for the Replication network in each member provides connectivity only to the Replication network adapters in the other members of the DAG.
 
 The settings for each network adapter in each node are detailed in the following table.
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>IPv4 address</th>
-<th>Subnet mask</th>
-<th>Default gateway</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>MBX1 (MAPI)</p></td>
-<td><p>192.168.1.4</p></td>
-<td><p>255.255.255.0</p></td>
-<td><p>192.168.1.1</p></td>
-</tr>
-<tr class="even">
-<td><p>MBX2 (MAPI)</p></td>
-<td><p>192.168.1.5</p></td>
-<td><p>255.255.255.0</p></td>
-<td><p>192.168.1.1</p></td>
-</tr>
-<tr class="odd">
-<td><p>MBX3 (MAPI)</p></td>
-<td><p>192.168.2.4</p></td>
-<td><p>255.255.255.0</p></td>
-<td><p>192.168.2.1</p></td>
-</tr>
-<tr class="even">
-<td><p>MBX4 (MAPI)</p></td>
-<td><p>192.168.2.5</p></td>
-<td><p>255.255.255.0</p></td>
-<td><p>192.168.2.1</p></td>
-</tr>
-<tr class="odd">
-<td><p>MBX1 (Replication)</p></td>
-<td><p>10.0.1.4</p></td>
-<td><p>255.255.0.0</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>MBX2 (Replication)</p></td>
-<td><p>10.0.1.5</p></td>
-<td><p>255.255.0.0</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>MBX3 (Replication)</p></td>
-<td><p>10.0.2.4</p></td>
-<td><p>255.255.0.0</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>MBX4 (Replication)</p></td>
-<td><p>10.0.2.5</p></td>
-<td><p>255.255.0.0</p></td>
-<td><p>None</p></td>
-</tr>
-</tbody>
-</table>
+|Name|IPv4 address|Subnet mask|Default gateway|
+|---|---|---|---|
+|MBX1 (MAPI)|192.168.1.4|255.255.255.0|192.168.1.1|
+|MBX2 (MAPI)|192.168.1.5|255.255.255.0|192.168.1.1|
+|MBX3 (MAPI)|192.168.2.4|255.255.255.0|192.168.2.1|
+|MBX4 (MAPI)|192.168.2.5|255.255.255.0|192.168.2.1|
+|MBX1 (Replication)|10.0.1.4|255.255.0.0|None|
+|MBX2 (Replication)|10.0.1.5|255.255.0.0|None|
+|MBX3 (Replication)|10.0.2.4|255.255.0.0|None|
+|MBX4 (Replication)|10.0.2.5|255.255.0.0|None|
 
 As shown in the preceding table, adapters used for Replication networks don't use default gateways. To provide network connectivity between each of the Replication network adapters, Contoso uses persistent static routes, which they configure by using the Netsh.exe tool.
 
@@ -171,6 +110,7 @@ The administrator has decided to create a Windows PowerShell command-line interf
 - It uses the [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/Set-DatabaseAvailabilityGroup) cmdlet to configure the DAG for DAC mode. For more information about DAC mode, see [Datacenter Activation Coordination mode](datacenter-activation-coordination-mode-exchange-2013-help.md).
 
 The following are the commands used in the script:
+
 ```powershell
 New-DatabaseAvailabilityGroup -Name DAG1 -WitnessServer CAS1 -WitnessDirectory C:\DAGWitness\DAG1.contoso.com -DatabaseAvailabilityGroupIPAddresses 192.168.1.8,192.168.2.8
 ```
@@ -208,8 +148,6 @@ After creating the DAG and adding the Mailbox servers to the DAG, Contoso prepar
 This configuration provides a total of four copies for each database (one active, two non-lagged passives, and a lagged passive). Contoso plans on having four active databases per server. With four active databases per server, and three passive copies of each database, the Contoso solution contains 16 total database copies.
 
 As shown in the following figure, Contoso is taking a balanced approach to their database layout.
-
-**Database copy layout for Contoso, Ltd**
 
 ![Database Copy Layout for Contoso, Ltd.](images/Dd638129.41d0c78e-ccaf-4b67-8bab-6fb344668ead(EXCHG.150).gif "Database Copy Layout for Contoso, Ltd")
 
@@ -261,14 +199,14 @@ Update-MailboxDatabaseCopy -Identity DB4\MBX2 -SourceServer MBX1
 Suspend-MailboxDatabaseCopy -Identity DB4\MBX2 -ActivationOnly
 ```
 
-In the preceding examples for the **Add-MailboxDatabaseCopy** cmdlet, the *ActivationPreference* parameter wasn't specified. The task automatically increments the activation preference number with each copy that's added. The original database always has a preference number of 1. The first copy added with the **Add-MailboxDatabaseCopy** cmdlet is automatically assigned a preference number of 2. Assuming no copies are removed, the next copy added is automatically assigned a preference number of 3, and so forth. Thus, in the preceding examples, the passive copy in the same datacenter as the active copy has an activation preference number of 2; the non-lagged passive copy in the remote datacenter has an activation preference number of 3, and the lagged passive copy in the remote datacenter has an activation preference number of 4.
+In the preceding examples for the **Add-MailboxDatabaseCopy** cmdlet, the _ActivationPreference_ parameter wasn't specified. The task automatically increments the activation preference number with each copy that's added. The original database always has a preference number of 1. The first copy added with the **Add-MailboxDatabaseCopy** cmdlet is automatically assigned a preference number of 2. Assuming no copies are removed, the next copy added is automatically assigned a preference number of 3, and so forth. Thus, in the preceding examples, the passive copy in the same datacenter as the active copy has an activation preference number of 2; the non-lagged passive copy in the remote datacenter has an activation preference number of 3, and the lagged passive copy in the remote datacenter has an activation preference number of 4.
 
-Although there are two copies of each active database across the WAN in the other location, seeding over the WAN was only performed once. This is because Contoso is leveraging the Exchange 2013 ability to use a passive copy of a database as the source for seeding. Using the [Add-MailboxDatabaseCopy](/powershell/module/exchange/Add-MailboxDatabaseCopy) cmdlet with the *SeedingPostponed* parameter prevents the task from automatically seeding the new database copy being created. Then, the administrator can suspend the un-seeded copy, and by using the [Update-MailboxDatabaseCopy](/powershell/module/exchange/Update-MailboxDatabaseCopy) cmdlet with the *SourceServer* parameter, the administrator can specify the local copy of the database as the source of the seeding operation. As a result, seeding of the second database copy added to each location happens locally and not over the WAN.
+Although there are two copies of each active database across the WAN in the other location, seeding over the WAN was only performed once. This is because Contoso is leveraging the Exchange 2013 ability to use a passive copy of a database as the source for seeding. Using the [Add-MailboxDatabaseCopy](/powershell/module/exchange/Add-MailboxDatabaseCopy) cmdlet with the _SeedingPostponed_ parameter prevents the task from automatically seeding the new database copy being created. Then, the administrator can suspend the un-seeded copy, and by using the [Update-MailboxDatabaseCopy](/powershell/module/exchange/Update-MailboxDatabaseCopy) cmdlet with the _SourceServer_ parameter, the administrator can specify the local copy of the database as the source of the seeding operation. As a result, seeding of the second database copy added to each location happens locally and not over the WAN.
 
 > [!NOTE]
 > In the preceding example, the non-lagged database copy is seeded over the WAN, and that copy is then used to seed the lagged copy of the database that's in the same datacenter as the non-lagged copy.
 
-Contoso has configured one of the passive copies of each mailbox database as a lagged database copy to provide protection against the extremely rare but catastrophic case of database logical corruption. As a result, the administrator is configuring the lagged copies as blocked for activation by using the [Suspend-MailboxDatabaseCopy](/powershell/module/exchange/Suspend-MailboxDatabaseCopy) cmdlet with the *ActivationOnly* parameter. This ensures that the lagged database copies won't be activated if a database or server failover occurs.
+Contoso has configured one of the passive copies of each mailbox database as a lagged database copy to provide protection against the extremely rare but catastrophic case of database logical corruption. As a result, the administrator is configuring the lagged copies as blocked for activation by using the [Suspend-MailboxDatabaseCopy](/powershell/module/exchange/Suspend-MailboxDatabaseCopy) cmdlet with the _ActivationOnly_ parameter. This ensures that the lagged database copies won't be activated if a database or server failover occurs.
 
 ## Validating the solution
 
@@ -297,7 +235,6 @@ In addition, an administrator may decide to disconnect the network connection be
 After the solution has been deployed, it can be extended further using incremental deployment. At this point, management of the solution would also transition to operation processes, in which the following tasks would be performed:
 
 - Monitor the health and status of DAGs and mailbox database copies. For more information, see [Monitoring database availability groups](monitoring-database-availability-groups-exchange-2013-help.md).
-
 - Perform database switchovers as needed. For detailed steps about how to perform a database switchover, see [Activate a mailbox database copy](activate-a-mailbox-database-copy-exchange-2013-help.md).
 
 For more information about managing the solution, see [Managing high availability and site resilience](managing-high-availability-and-site-resilience-exchange-2013-help.md).

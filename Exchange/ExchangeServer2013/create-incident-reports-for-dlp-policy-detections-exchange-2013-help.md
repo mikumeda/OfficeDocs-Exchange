@@ -27,113 +27,20 @@ The **Generate Incident Report** action enables users to send incident reports t
 
 The following is a complete list of the line names in the incident report template. The format column describes how to recognize each field in the report. The optional field column specifies what fields might not be in the Report for each rule match. The DLP specific column shows what fields exist as a result of the DLP feature.
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>Line</strong> <strong>name</strong></p></td>
-<td><p><strong>Description</strong></p></td>
-<td><p><strong>Format</strong></p></td>
-<td><p><strong>Optional field</strong></p></td>
-<td><p><strong>DLP specific</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Message-Id</p></td>
-<td><p>ID of the original sent message</p></td>
-<td><p>Message-Id: ID of message</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Sender</p></td>
-<td><p>True sender of the original message</p></td>
-<td><p>Sender: Email address of sender</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Subject</p></td>
-<td><p>Subject of the original message</p></td>
-<td><p>Subject: end-user input subject string</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>To</p></td>
-<td><p>Recipient or recipients of the original message</p>
-<p>Each To line will only contain a single recipient, and there can be up to 10 recipients displayed in the Incident Report. If there are additional recipients, the next To line will display the remaining number of recipients.</p></td>
-<td><p>To: Email address of recipient</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>CC</p></td>
-<td><p>CC email address of the original message; the line is optional</p>
-<p>Each CC line will only contain a single CC email address, and there can only be up to 10 CC email addresses that are displayed in the Incident Report. If there are additional CC addresses, the next CC line will display the remaining number of CC email addresses.</p></td>
-<td><p>CC: Email address of CC recipient</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>BCC</p></td>
-<td><p>BCC email address of the original message; the line is optional</p>
-<p>Each BCC line will only contain a single BCC email address, and there can only be up to 10 BCC addresses that are displayed in the Incident Report. If there are additional BCC email addresses, the following BCC line will display the remaining number of BCC email addresses.</p></td>
-<td><p>BCC: Email address of BCC recipient</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Severity</p></td>
-<td><p>Audit severity of the rule hit; displays the highest severity if multiple rules were hit.</p></td>
-<td><p>Severity: Low, Medium, or High</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Override</p></td>
-<td><p>Displays if an override was reported for the message, and the justification of the override if provided.</p></td>
-<td><p>Override: Yes, Justification: IW input justification string</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>False Positive</p></td>
-<td><p>Displays if a false positive was reported for the message.</p></td>
-<td><p>False Positive: Yes</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Data Classification</p></td>
-<td><p>Detected data classifications found in the original message; the line is optional.</p>
-<p>Each data classification line will only contain a single detected classification along with its count, confidence, and recommended minimum confidence level. Up to 5 detected classifications will be displayed in the Incident Report. If the detected classification was an affinity, the count value does not apply and will not be shown.</p></td>
-<td><p>Data Classification: sensitive information type, Count: instances of the sensitive information found in the message, Confidence: percent value, Recommended Minimum Confidence: percent value</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Rule Hit</p></td>
-<td><p>Displays all the rules that hit the original message.</p>
-<p>Includes the name of the rule that was hit, the DLP Policy (optional) that the rule resides in, action(s) that were taken on the message because of the rule, data classification(s) in the rule that caused the rule to hit, and the definition of the rule.</p></td>
-<td><p>Rule Hit: rule name, DLP Policy: DLP Policy name if applicable, Action: single action, Data Classification: sensitive information type, Definition: rule definition if applicable</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>ID Match</p></td>
-<td><p>Displays the matched data classification, the exact matched content from the message, and the primary evidence of the data classification match; the line is optional.</p></td>
-<td><p>ID Match: sensitive information type, Value: actual value of the sensitive data, Context: text around the sensitive data in the message</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-</tbody>
-</table>
+|Line name|Description|Format|Optional field|DLP specific|
+|---|---|---|---|---|
+|Message-Id|ID of the original sent message|Message-Id: ID of message|Mandatory|No|
+|Sender|True sender of the original message|Sender: Email address of sender|Mandatory|No|
+|Subject|Subject of the original message|Subject: end-user input subject string|Mandatory|No|
+|To|Recipient or recipients of the original message <br/><br/> Each To line will only contain a single recipient, and there can be up to 10 recipients displayed in the Incident Report. If there are additional recipients, the next To line will display the remaining number of recipients.|To: Email address of recipient|Mandatory|No|
+|CC|CC email address of the original message; the line is optional <br/><br/> Each CC line will only contain a single CC email address, and there can only be up to 10 CC email addresses that are displayed in the Incident Report. If there are additional CC addresses, the next CC line will display the remaining number of CC email addresses.|CC: Email address of CC recipient|Optional|No|
+|BCC|BCC email address of the original message; the line is optional <br/><br/> Each BCC line will only contain a single BCC email address, and there can only be up to 10 BCC addresses that are displayed in the Incident Report. If there are additional BCC email addresses, the following BCC line will display the remaining number of BCC email addresses.|BCC: Email address of BCC recipient|Optional|No|
+|Severity|Audit severity of the rule hit; displays the highest severity if multiple rules were hit.|Severity: Low, Medium, or High|Optional|No|
+|Override|Displays if an override was reported for the message, and the justification of the override if provided.|Override: Yes, Justification: IW input justification string|Optional|Yes|
+|False Positive|Displays if a false positive was reported for the message.|False Positive: Yes|Optional|Yes|
+|Data Classification|Detected data classifications found in the original message; the line is optional. <br/><br/> Each data classification line will only contain a single detected classification along with its count, confidence, and recommended minimum confidence level. Up to 5 detected classifications will be displayed in the Incident Report. If the detected classification was an affinity, the count value does not apply and will not be shown.|Data Classification: sensitive information type, Count: instances of the sensitive information found in the message, Confidence: percent value, Recommended Minimum Confidence: percent value|Optional|Yes|
+|Rule Hit|Displays all the rules that hit the original message. <br/><br/> Includes the name of the rule that was hit, the DLP Policy (optional) that the rule resides in, action(s) that were taken on the message because of the rule, data classification(s) in the rule that caused the rule to hit, and the definition of the rule.|Rule Hit: rule name, DLP Policy: DLP Policy name if applicable, Action: single action, Data Classification: sensitive information type, Definition: rule definition if applicable|Mandatory|No|
+|ID Match|Displays the matched data classification, the exact matched content from the message, and the primary evidence of the data classification match; the line is optional.|ID Match: sensitive information type, Value: actual value of the sensitive data, Context: text around the sensitive data in the message|Optional|Yes|
 
 ## For more information
 

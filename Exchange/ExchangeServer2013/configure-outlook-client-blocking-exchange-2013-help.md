@@ -31,105 +31,36 @@ The following table lists the MRM features available in various client applicati
 
 ### MRM features
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Client application</th>
-<th>Available MRM client features</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Outlook 2013 and Outlook 2010</p></td>
-<td><p>All</p></td>
-</tr>
-<tr class="even">
-<td><p>Outlook 2007</p></td>
-<td><p>Managed folders</p></td>
-</tr>
-<tr class="odd">
-<td><p>Outlook 2003 and older</p></td>
-<td><p>Not supported</p></td>
-</tr>
-<tr class="even">
-<td><p>Other e-mail client software</p></td>
-<td><p>None</p></td>
-</tr>
-</tbody>
-</table>
+|Client application|Available MRM client features|
+|---|---|
+|Outlook 2013 and Outlook 2010|All|
+|Outlook 2007|Managed folders|
+|Outlook 2003 and older|Not supported|
+|Other e-mail client software|None|
 
 The following table shows version numbers for Outlook.
 
 ### Outlook versions
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Outlook version</th>
-<th>Version number</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Outlook 2013</p></td>
-<td><p>15</p></td>
-</tr>
-<tr class="even">
-<td><p>Outlook 2010</p></td>
-<td><p>14</p></td>
-</tr>
-<tr class="odd">
-<td><p>Outlook 2007</p></td>
-<td><p>12</p></td>
-</tr>
-<tr class="even">
-<td><p>Outlook 2003</p></td>
-<td><p>11</p></td>
-</tr>
-<tr class="odd">
-<td><p>Outlook 2002</p></td>
-<td><p>10</p></td>
-</tr>
-<tr class="even">
-<td><p>Outlook 2000</p></td>
-<td><p>9</p></td>
-</tr>
-<tr class="odd">
-<td><p>Outlook 98</p></td>
-<td><p>8.5</p></td>
-</tr>
-<tr class="even">
-<td><p>Outlook 97</p></td>
-<td><p>8</p></td>
-</tr>
-</tbody>
-</table>
+|Outlook version|Version number|
+|---|---|
+|Outlook 2013|15|
+|Outlook 2010|14|
+|Outlook 2007|12|
+|Outlook 2003|11|
+|Outlook 2002|10|
+|Outlook 2000|9|
+|Outlook 98|8.5|
+|Outlook 97|8|
 
 > [!NOTE]
-> Before making any changes, note that hotfixes and service pack releases may affect the client version string. Be careful when you restrict client access because server-side Exchange components must also use MAPI to log on. Some components report their client version as the component name (such as SMTP or OLE&nbsp;DB), while others report the Exchange build number (such as 6.0.4712.0). For this reason, avoid restricting clients that have version numbers that start with 6.&lt;<EM>x</EM>.<EM>x</EM>.&gt;. For example, to prevent MAPI access completely, instead of specifying <STRONG>0.0.0-6.5535.65535.65535</STRONG>, specify the two ranges so that the server components can log on. For example, specify the following: <STRONG>0.0.0-5.9.9; 7.0.0-</STRONG>.
+> Before making any changes, note that hotfixes and service pack releases may affect the client version string. Be careful when you restrict client access because server-side Exchange components must also use MAPI to log on. Some components report their client version as the component name (such as SMTP or OLE DB), while others report the Exchange build number (such as 6.0.4712.0). For this reason, avoid restricting clients that have version numbers that start with 6.&lt;_x_._x_.&gt;. For example, to prevent MAPI access completely, instead of specifying **0.0.0-6.5535.65535.65535**, specify the two ranges so that the server components can log on. For example, specify the following: **0.0.0-5.9.9; 7.0.0-**.
 
 After you perform these procedures, be aware that when users are blocked from accessing their mailboxes, they will receive the following warning message.
 
-<table>
-<colgroup>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Your Exchange Server administrator has blocked the version of Outlook that you are using. Contact your administrator for assistance.</p></td>
-</tr>
-</tbody>
-</table>
+|Your Exchange Server administrator has blocked the version of Outlook that you are using. Contact your administrator for assistance.|
 
-To bypass the warning that MRM features aren't supported for e-mail clients running versions of Outlook earlier than Outlook 2010, you can use the *ManagedFolderMailboxPolicyAllowed* parameter of the **New-Mailbox**, **Enable-Mailbox**, and **Set-Mailbox** cmdlets in the Shell. When a managed folder mailbox policy is assigned to a mailbox by using the *ManagedFolderMailboxPolicy* parameter, the warning appears by default unless you use the *ManagedFolderMailboxPolicyAllowed* parameter.
+To bypass the warning that MRM features aren't supported for e-mail clients running versions of Outlook earlier than Outlook 2010, you can use the _ManagedFolderMailboxPolicyAllowed_ parameter of the **New-Mailbox**, **Enable-Mailbox**, and **Set-Mailbox** cmdlets in the Shell. When a managed folder mailbox policy is assigned to a mailbox by using the _ManagedFolderMailboxPolicy_ parameter, the warning appears by default unless you use the _ManagedFolderMailboxPolicyAllowed_ parameter.
 
 ## What do you need to know before you begin?
 
@@ -168,7 +99,7 @@ You need to be assigned permissions before you can perform this procedure or pro
 This example blocks Outlook clients prior to version 12.0.0 from accessing the mailbox on an Exchange 2010 or later Client Access server.
 
 > [!IMPORTANT]
-> The values used with the <EM>BlockedClientVersions</EM> parameter are examples. You can determine the correct client software versions by parsing the RPC Client Access log files located at <CODE>%ExchangeInstallPath%Logging\RPC Client Access</CODE>.
+> The values used with the _BlockedClientVersions_ parameter are examples. You can determine the correct client software versions by parsing the RPC Client Access log files located at `%ExchangeInstallPath%Logging\RPC Client Access`.
 
 ```powershell
 Set-RpcClientAccess -Server CAS01 -BlockedClientVersions "0.0.0-5.65535.65535;7.0.0;8.02.4-11.65535.65535"

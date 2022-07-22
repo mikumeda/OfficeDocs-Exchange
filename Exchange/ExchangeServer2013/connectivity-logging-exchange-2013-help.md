@@ -55,11 +55,11 @@ By default, the connectivity log files exist in the following locations:
 
 - **Mailbox Transport service**: %ExchangeInstallPath%TransportRoles\\Logs\\Mailbox\\Connectivity
 
-The naming convention for the connectivity log files is CONNECTLOG*yyymmdd-nnnn*.log. The placeholders represent the following information:
+The naming convention for the connectivity log files is CONNECTLOG*yyymmdd-nnnn_.log. The placeholders represent the following information:
 
-- The placeholder *yyyymmdd* is the Coordinated Universal Time (UTC) date that the log file was created. The placeholder *yyyy* = year, *mm* = month, and *dd* = day.
+- The placeholder _yyyymmdd_ is the Coordinated Universal Time (UTC) date that the log file was created. The placeholder _yyyy_ = year, _mm_ = month, and _dd_ = day.
 
-- The placeholder *nnnn* is an instance number that starts at the value of 1 for each day.
+- The placeholder _nnnn_ is an instance number that starts at the value of 1 for each day.
 
 Information is written to the log file until the file size reaches its maximum specified value, and a new log file that has an incremented instance number is opened. This process is repeated throughout the day. Circular logging deletes the oldest log files when the connectivity log directory reaches its maximum specified size, or when a log file reaches its maximum specified age.
 
@@ -71,7 +71,7 @@ The connectivity log files are text files that contain data in the comma-separat
 
 - **\#Log-Type**: Log type value, which is Transport Connectivity Log.
 
-- **\#Date**: UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: *yyyy-mm-dd*T*hh:mm:ss.fff*Z, where *yyyy* = year, *mm* = month, *dd* = day, T indicates the beginning of the time component, *hh* = hour, *mm* = minute, *ss* = second, *fff* = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.
+- **\#Date**: UTC date-time when the log file was created. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T_hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.
 
 - **\#Fields**: Comma delimited field names used in the connectivity log files.
 
@@ -79,57 +79,13 @@ The connectivity log files are text files that contain data in the comma-separat
 
 The connectivity log stores each outbound transport service connection event on a single line in the connectivity log. The information stored on each line is organized by fields. These fields are separated by commas. The following table describes the fields used to classify each outgoing connection event.
 
-### Fields used to classify each connection event
-
-<table>
-<colgroup>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>date-time</strong></p></td>
-<td><p>UTC date-time of the connection event. The UTC date-time is represented in the ISO 8601 date-time format: <em>yyyy-mm-dd</em>T<em>hh:mm:ss.fff</em>Z, where <em>yyyy</em> = year, <em>mm</em> = month, <em>dd</em> = day, T indicates the beginning of the time component, <em>hh</em> = hour, <em>mm</em> = minute, <em>ss</em> = second, <em>fff</em> = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>session</strong></p></td>
-<td><p>GUID that's unique for each SMTP session but is the same for each event associated with that SMTP session. For MAPI sessions in the Mailbox Transport service, the session field is blank.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>source</strong></p></td>
-<td><p><strong>SMTP</strong> for SMTP connections, <strong>MAPI</strong> for Mailbox Transport service connections to the local mailbox database.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>destination</strong></p></td>
-<td><p>Name of the destination.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>direction</strong></p></td>
-<td><p>Single character that represents the start, middle, or end of the connection. The possible values for the direction field are as follows:</p>
-<ul>
-<li><p><strong>+</strong>   Connect</p></li>
-<li><p><strong>-</strong>   Disconnect</p></li>
-<li><p><strong>&gt;</strong>   Send</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p><strong>description</strong></p></td>
-<td><p>Text information associated with the connection event. The following values are examples of values for the description field:</p>
-<ul>
-<li><p>Number and size of messages that were transmitted</p></li>
-<li><p>DNS MX resource record resolution information for destination domains</p></li>
-<li><p>DNS resolution information for destination Mailbox servers</p></li>
-<li><p>Connection establishment messages</p></li>
-<li><p>Connection failure messages</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+|Field name|Description|
+|---|---|
+|**date-time**|UTC date-time of the connection event. The UTC date-time is represented in the ISO 8601 date-time format: _yyyy-mm-dd_T_hh:mm:ss.fff_Z, where _yyyy_ = year, _mm_ = month, _dd_ = day, T indicates the beginning of the time component, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and Z signifies Zulu, which is another way to denote UTC.|
+|**session**|GUID that's unique for each SMTP session but is the same for each event associated with that SMTP session. For MAPI sessions in the Mailbox Transport service, the session field is blank.|
+|**source**|**SMTP** for SMTP connections, **MAPI** for Mailbox Transport service connections to the local mailbox database.|
+|**destination**|Name of the destination.|
+|**direction**|Single character that represents the start, middle, or end of the connection. The possible values for the direction field are as follows: <ul><li>**+**: Connect</li><li>**-**: Disconnect</li><li>**>**: Send</li></ul>|
+|**description**|Text information associated with the connection event. The following values are examples of values for the description field: <ul><li>Number and size of messages that were transmitted</li><li>DNS MX resource record resolution information for destination domains</li><li>DNS resolution information for destination Mailbox servers</li><li>Connection establishment messages</li><li>Connection failure messages</li></ul>|
 
 When transport service establishes a connection to a destination, the transport service may be prepared to send one message or several messages. The connection and message transmission processes generate multiple events written on multiple lines in the connectivity log. Simultaneous connections to different destinations create connectivity log entries related to different destinations that are interlaced. However, you can use the date-time, session, source, and direction fields to arrange the connectivity log entries for each separate connection from start to finish.

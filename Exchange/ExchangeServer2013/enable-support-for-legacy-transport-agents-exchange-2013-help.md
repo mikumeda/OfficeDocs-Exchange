@@ -21,68 +21,17 @@ _**Applies to:** Exchange Server 2013_
 
 In Microsoft Exchange Server 2013, transport agents that were created using the Microsoft .NET Framework version 4.0 are supported by default. Exchange 2013 supports transport agents that were created using previous versions of the .NET Framework, but support for these legacy transport agents isn't enabled by default. To enable support for legacy transport agents, you need to modify the appropriate XML application configuration file. The files you need to modify depend on where the transport agent is installed:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Server</th>
-<th>Application configuration files</th>
-<th>Microsoft Windows service</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Client Access server</p></td>
-<td><p>%ExchangeInstallPath%Bin\MSExchangeFrontendTransport.exe.config</p></td>
-<td><p>Microsoft Exchange Front End Transport (MSExchangeFrontendTransport)</p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox server</p></td>
-<td><ul>
-<li><p>%ExchangeInstallPath%Bin\EdgeTransport.exe.config</p></li>
-<li><p>%ExchangeInstallPath%Bin\MSExchangeTransport.exe.config</p></li>
-</ul></td>
-<td><p>Microsoft Exchange Transport (MSExchangeTransport)</p></td>
-</tr>
-</tbody>
-</table>
+|Server|Application configuration files|Microsoft Windows service|
+|---|---|---|
+|Client Access server|%ExchangeInstallPath%Bin\MSExchangeFrontendTransport.exe.config|Microsoft Exchange Front End Transport (MSExchangeFrontendTransport)|
+|Mailbox server|<ul><li>%ExchangeInstallPath%Bin\EdgeTransport.exe.config</li><li>%ExchangeInstallPath%Bin\MSExchangeTransport.exe.config</li></ul>|Microsoft Exchange Transport (MSExchangeTransport)|
 
 Support for legacy transport agents is controlled by keys in the application configuration files. By default, none of the required keys are present in the application configuration files. You must add the keys manually. The following table explains each key in more detail.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>useLegacyV2RuntimeActivationPolicy</em></p></td>
-<td><p>This key enables or disables support for legacy transport agents. Valid values for this key are <code>true</code> or <code>false</code>. If this key isn't specified, the default value is <code>false</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>supportedRuntime version</em></p></td>
-<td><p>This key specifies the version of the Microsoft .NET Framework that's required by the agent. Valid values for this key are:</p>
-<ul>
-<li><p><code>v4.0</code> or <code>v4.0.30319</code></p></li>
-<li><p><code>v3.5</code> or <code>v3.5.21022</code></p></li>
-<li><p><code>v3.0</code> or <code>v3.0.4506</code></p></li>
-<li><p><code>v2.0</code> or <code>v2.0.50727</code></p></li>
-</ul>
-<p>You specify multiple values using multiple separate instances of the <em>supportedRuntime version</em> key.</p>
-<p>When you enable legacy transport agent support using the <em>useLegacyV2RuntimeActivationPolicy</em> key, you should always specify the value <code>v4.0</code> in addition to the values required by the legacy transport agent.</p></td>
-</tr>
-</tbody>
-</table>
+|Key|Description|
+|---|---|
+|_useLegacyV2RuntimeActivationPolicy_|This key enables or disables support for legacy transport agents. Valid values for this key are `true` or `false`. If this key isn't specified, the default value is `false`.|
+|_supportedRuntime version_|This key specifies the version of the Microsoft .NET Framework that's required by the agent. Valid values for this key are: <ul><li>`v4.0` or `v4.0.30319`</li><li>`v3.5` or `v3.5.21022`</li><li>`v3.0` or `v3.0.4506`</li><li>`v2.0` or `v2.0.50727`</li></ul><p>You specify multiple values using multiple separate instances of the _supportedRuntime version_ key. <br/><br/> When you enable legacy transport agent support using the _useLegacyV2RuntimeActivationPolicy_ key, you should always specify the value `v4.0` in addition to the values required by the legacy transport agent.|
 
 ## What do you need to know before you begin?
 
@@ -117,7 +66,7 @@ Use the following procedure to enable support for legacy transport agents:
     Notepad %ExchangeInstallPath%Bin\EdgeTransport.exe.config
     ```
 
-2. Locate the *\</configuration\>* key at the end of the file, and paste the following keys before the *\</configuration\>* key:
+2. Locate the _\</configuration\>_ key at the end of the file, and paste the following keys before the _\</configuration\>_ key:
 
     ```powershell
     <startup useLegacyV2RuntimeActivationPolicy="true">
