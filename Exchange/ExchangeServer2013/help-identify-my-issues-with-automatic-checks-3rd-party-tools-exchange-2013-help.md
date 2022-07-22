@@ -31,4 +31,5 @@ We'll check to see if you have the necessary pre-requisites on your Windows 7 x6
 ## Third-party tools check
 
 |Application|Symptom|Check|
+|---|---|---|
 |Third-party Tools|Im not sure what third-party integrations/applications I have installed in my messaging environment|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|

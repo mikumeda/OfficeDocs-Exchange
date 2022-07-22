@@ -49,30 +49,31 @@ When creating an email address policy, you can use the following email address t
 
 - **Custom SMTP email address**. If you don't want to use one of the precanned SMTP email addresses, you can specify a custom SMTP email address.
 
-    When creating a custom SMTP email address, you can use the variables in the following table to specify alternate values for the local part of the email address.
+  When creating a custom SMTP email address, you can use the variables in the following table to specify alternate values for the local part of the email address.
 
-    |Variable|Value|
-    |`%g`|Given name (first name)|
-    |`%i`|Middle initial|
-    |`%s`|Surname (last name)|
-    |`%d`|Display name|
-    |`%m`|Exchange alias|
-    |`%<x>s`|Uses the first `<x>` letters of the surname. For example, if `<x>` = 2, the first two letters of the surname are used.|
-    |`%<x>g`|Uses the first `<x>` letters of the given name. For example, if `<x>` = 2, the first two letters of the given name are used.|
+  |Variable|Value|
+  |---|---|
+  |`%g`|Given name (first name)|
+  |`%i`|Middle initial|
+  |`%s`|Surname (last name)|
+  |`%d`|Display name|
+  |`%m`|Exchange alias|
+  |`%<x>s`|Uses the first `<x>` letters of the surname. For example, if `<x>` = 2, the first two letters of the surname are used.|
+  |`%<x>g`|Uses the first `<x>` letters of the given name. For example, if `<x>` = 2, the first two letters of the given name are used.|
 
 - **Non-SMTP email address**. The following types of non-SMTP email addresses are supported:
 
-      - EX (Legacy DN Proxy Address Prefix DisplayName)
-      - X.500
-      - X.400
-      - MSMail
-      - CcMail
-      - Lotus Notes
-      - Novell GroupWise
-      - Exchange Unified Messaging proxy address (EUM proxy address)
+  - EX (Legacy DN Proxy Address Prefix DisplayName)
+  - X.500
+  - X.400
+  - MSMail
+  - CcMail
+  - Lotus Notes
+  - Novell GroupWise
+  - Exchange Unified Messaging proxy address (EUM proxy address)
 
-    > [!IMPORTANT]
-    > In Exchange, all non-SMTP email addresses are considered custom addresses. Exchange doesn't provide unique dialog boxes or property pages for X.400, GroupWise, or Lotus Notes email address types. If you add a non-SMTP custom email address, you must have the appropriate dynamic-link library (DLL) files. If you don't provide the appropriate DLL files, you won't be able to create a customized email address policy. The following error will be logged in Event Viewer: "The email address description object in the Microsoft Exchange directory for the 'SADF' address type on 'i386' machines are missing."
+  > [!IMPORTANT]
+  > In Exchange, all non-SMTP email addresses are considered custom addresses. Exchange doesn't provide unique dialog boxes or property pages for X.400, GroupWise, or Lotus Notes email address types. If you add a non-SMTP custom email address, you must have the appropriate dynamic-link library (DLL) files. If you don't provide the appropriate DLL files, you won't be able to create a customized email address policy. The following error will be logged in Event Viewer: "The email address description object in the Microsoft Exchange directory for the 'SADF' address type on 'i386' machines are missing."
 
 For detailed instructions about how to create an email address policy, see the following topics:
 
