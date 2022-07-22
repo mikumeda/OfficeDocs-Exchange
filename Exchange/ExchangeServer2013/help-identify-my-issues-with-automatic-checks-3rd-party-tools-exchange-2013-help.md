@@ -1,5 +1,5 @@
 ---
-title: 'Help identify issues with automatic checks - 3rd Party Tools'
+title: 'Help identify issues with automatic checks - Third-party Tools'
 TOCTitle: Help Identify My Issues with Automatic Checks - 3rd Party Tools
 ms:assetid: 83b71e35-892e-44e3-9fce-c608b49bbc61
 ms:mtpsurl: https://technet.microsoft.com/library/Dn793974(v=EXCHG.150)
@@ -20,9 +20,9 @@ ms.custom: SaRA-Download_ExRCA
 
 _**Applies to:** Exchange Server 2013_
 
-The check(s) on this page will help identify some of the most common configuration challenges. You can use the automatic check(s) below to validate your configuration and help you update your environment.
+The check on this page will help identify some of the most common configuration challenges. You can use the automatic check below to validate your configuration and help you update your environment.
 
-You'll be asked to sign-in on a new page.  If you already have an user account select **sign-in**.  You won't need an Azure ID account. You might be asked for a user account again when the checks run. Use your _user name*\@*yourFQDN_ and your password.
+You'll be asked to sign-in on a new page. If you already have a user account select **sign-in**.  You won't need an Azure ID account. You might be asked for a user account again when the checks run. Use your _user name_@_yourFQDN_ and your password.
 
 ## Prerequisites
 
@@ -32,4 +32,4 @@ We'll check to see if you have the necessary pre-requisites on your Windows 7 x6
 
 |Application|Symptom|Check|
 |---|---|---|
-|Third-party Tools|Im not sure what third-party integrations/applications I have installed in my messaging environment|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|
+|Third-party Tools|I'm not sure what third-party integrations/applications are installed in my messaging environment|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|
