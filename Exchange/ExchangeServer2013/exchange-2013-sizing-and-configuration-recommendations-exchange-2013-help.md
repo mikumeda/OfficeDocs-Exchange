@@ -51,42 +51,11 @@ In Exchange Server 2013 Service Pack 1 or later, you can enable SSL offloading t
 
 ## .NET Framework
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Exchange version</th>
-<th>.NET Framework 4.6.2</th>
-<th>.NET Framework 4.6.1</th>
-<th>.NET Framework 4.5.2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange 2013 CU16</p></td>
-<td><p> X</p></td>
-<td><p> </p></td>
-<td><p> </p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange 2013 CU15</p></td>
-<td><p> X</p></td>
-<td><p>X1,2 </p></td>
-<td><p>X </p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange 2013 CU13 and CU14</p></td>
-<td></td>
-<td><p>X1,2 </p></td>
-<td><p>X</p></td>
-</tr>
-</tbody>
-</table>
+|Exchange version|.NET Framework 4.6.2|.NET Framework 4.6.1|.NET Framework 4.5.2|
+|---|---|---|---|
+|Exchange 2013 CU16| X| | |
+|Exchange 2013 CU15| X|X1,2 |X |
+|Exchange 2013 CU13 and CU14||X1,2 |X|
 
 1 .NET Framework 4.6.1 requires post-release fixes if you want to install it on a server running Exchange 2013 CU13. For more information. See [Exchange 2013 prerequisites](exchange-2013-prerequisites-exchange-2013-help.md).
 
@@ -99,27 +68,16 @@ If you are unable to install .NET 4.5.2, refer to Microsoft Knowledge Base artic
 The Exchange performance team recommends installing all of the following performance-related hot fixes.
 
 - [Update that improves cluster resiliency in Windows Server 2012 is available](https://support.microsoft.com/help/2838669)
-
 - [Recommended hotfixes and updates for Windows Server 2012-based failover clusters](https://support.microsoft.com/help/2784261)
-
 - [Recommended hotfixes and updates for Windows Server 2012 R2-based failover clusters](https://support.microsoft.com/help/2920151)
-
 - [Incorrect RSS processor assignment on a Windows 8 or Windows Server 2012-based computer that has multi-core processors](https://support.microsoft.com/help/2846837)
-
 - [Performance issues or delays when you connect to Exchange Server 2013 that is running in Windows Server](https://support.microsoft.com/help/2995145)
-
 - [Outlook connectivity issue if SSLOffloading is "True" in Exchange 2013](https://support.microsoft.com/help/2925281)
-
 - [Long server connection for Outlook after a database failover in Exchange Server 2013](https://support.microsoft.com/help/2928803)
-
 - [Slow performance in Outlook Web App when Lync is integrated with Exchange Server 2013](https://support.microsoft.com/help/2962434)
-
 - [EMS takes a long time to execute the first command in an Exchange Server 2013 Cumulative Update 5 environment](https://support.microsoft.com/help/2986779)
-
 - [Message routing latency if IPv6 is enabled in Exchange Server 2013](https://support.microsoft.com/help/2963590)
-
 - [High CPU usage by an application that depends on a Microsoft LDAP client in Windows Server 2008 R2 SP1](https://support.microsoft.com/help/3004383)
-
 - [CPU usage is high when you use RPC over HTTP protocol in Windows 8.1 or Windows Server 2012 R2](https://support.microsoft.com/help/3041832)
 
 ## Networking
@@ -211,11 +169,7 @@ Check monthly for Outlook clients updates that are supported in your environment
 As a best practice, uninstall or disable third-party software while troubleshooting Exchange performance. The following list contains the types of third-party software that Microsoft support has most often seen affecting Exchange 2013 performance.
 
 - Anti-virus solutions
-
 - Intrusion prevention software
-
 - Backup software
-
 - Auditing software, for both files and users
-
 - Archiving solutions

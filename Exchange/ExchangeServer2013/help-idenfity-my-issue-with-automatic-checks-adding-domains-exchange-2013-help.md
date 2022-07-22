@@ -22,37 +22,12 @@ _**Applies to:** Exchange Server 2013_
 
 The check(s) on this page will help identify some of the most common configuration challenges. You can use the automatic check(s) below to validate your configuration and help you update your environment.
 
-If you already have an user account, select **Sign In**. You don't need an Azure ID account. You might be asked for a user account again when the checks run. If so, your user account is in the format of *username*\@*yourFQDN* and your password.
+If you already have an user account, select **Sign In**. You don't need an Azure ID account. You might be asked for a user account again when the checks run. If so, your user account is in the format of _username_@_yourFQDN_ and your password.
 
 ## Adding Domains Checks
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Application</p></td>
-<td><p>Symptom</p></td>
-<td><p>Check</p></td>
-</tr>
-<tr class="even">
-<td><p>Domains</p></td>
-<td><p>I'd like to determine what domains I have on-premises/I am not sure what domains I own.</p></td>
-<td><p><a href="https://aka.ms/SaRA-Download_ExRCA">Microsoft Support and Recovery Assistant for Office 365</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Domains</p></td>
-<td><p>I'm not sure if I added and verified the right domains for my tenant.</p></td>
-<td><p><a href="https://aka.ms/SaRA-Download_ExRCA">Microsoft Support and Recovery Assistant for Office 365</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Domains</p></td>
-<td><p>I need help making sure all of my DNS records are correct for Office 365.</p></td>
-<td><p><a href="https://aka.ms/SaRA-Download_ExRCA">Microsoft Support and Recovery Assistant for Office 365</a></p></li>
-</ol></td>
-</tr>
-</tbody>
-</table>
+|Application|Symptom|Check|
+|---|---|---|
+|Domains|I'd like to determine what domains I have on-premises/I am not sure what domains I own.|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|
+|Domains|I'm not sure if I added and verified the right domains for my tenant.|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|
+|Domains|I need help making sure all of my DNS records are correct.|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|
