@@ -24,73 +24,30 @@ The Edge Transport server role has been re-introduced in Exchange Service Pack 1
 You can add an Edge Transport server to an existing Exchange 2013 organization. You don't have to perform any additional Active Directory preparation steps when you install the Edge Transport server.
 
 > [!NOTE]
-> If you are adding Edge Transport to an existing Exchange 2010 or Exchange 2007 organization, you will need to install specific rollup updates on your legacy servers before installing Exchange 2013 Edge Transport. For details, see <A href="exchange-2013-system-requirements-exchange-2013-help.md">Exchange 2013 system requirements</A>.
+> If you are adding Edge Transport to an existing Exchange 2010 or Exchange 2007 organization, you will need to install specific rollup updates on your legacy servers before installing Exchange 2013 Edge Transport. For details, see [Exchange 2013 system requirements](exchange-2013-system-requirements-exchange-2013-help.md).
 
 When you're planning to deploy Edge Transport servers, you should consider the following issues:
 
-  - **Server Capacity**: Planning for server capacity includes planning to conduct performance monitoring of the Edge Transport server. Performance monitoring will help you understand how hard the server is working. This information will determine the capacity of your current hardware configuration.
+- **Server Capacity**: Planning for server capacity includes planning to conduct performance monitoring of the Edge Transport server. Performance monitoring will help you understand how hard the server is working. This information will determine the capacity of your current hardware configuration.
 
-  - **Transport Features**: The Edge Transport server can provide anti-spam protection at the edge of the network. As part of your planning process, you should determine the anti-spam features that you will enable at the Edge Transport server and how they will be configured.
+- **Transport Features**: The Edge Transport server can provide anti-spam protection at the edge of the network. As part of your planning process, you should determine the anti-spam features that you will enable at the Edge Transport server and how they will be configured.
 
-  - **Security**: The Edge Transport server role is designed to have a minimal attack surface. Therefore, it's important to correctly secure and manage both the physical access and network access to the server. Planning for security will help you make sure that IP connections are only enabled from authorized servers and from authorized users. For more information, see the [Deployment security checklist](deployment-security-checklist-exchange-2013-help.md).
+- **Security**: The Edge Transport server role is designed to have a minimal attack surface. Therefore, it's important to correctly secure and manage both the physical access and network access to the server. Planning for security will help you make sure that IP connections are only enabled from authorized servers and from authorized users. For more information, see the [Deployment security checklist](deployment-security-checklist-exchange-2013-help.md).
 
     The recommended practice is to put the Edge Transport server within a perimeter network. To make sure that the server can send and receive e-mail and receive recipient and configuration data updates from the Microsoft Exchange EdgeSync service, you must allow communication through the ports that are listed in the following table.
 
-    ### Communication port settings for Edge Transport servers
-
-    <table>
-    <colgroup>
-    <col />
-    <col />
-    <col />
-    <col />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th>Network interface</th>
-    <th>Open port</th>
-    <th>Protocol</th>
-    <th>Note</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td><p>Inbound from and outbound to the Internet</p></td>
-    <td><p>25/TCP</p></td>
-    <td><p>SMTP</p></td>
-    <td><p>This port is required for mail flow to and from the Internet.</p></td>
-    </tr>
-    <tr class="even">
-    <td><p>Inbound from and outbound to the internal network</p></td>
-    <td><p>25/TCP</p></td>
-    <td><p>SMTP</p></td>
-    <td><p>This port is required for mail flow to and from the Exchange organization.</p></td>
-    </tr>
-    <tr class="odd">
-    <td><p>Local only</p></td>
-    <td><p>50389/TCP</p></td>
-    <td><p>LDAP</p></td>
-    <td><p>This port is used to make a local connection to AD LDS.</p></td>
-    </tr>
-    <tr class="even">
-    <td><p>Inbound from the internal network</p></td>
-    <td><p>50636/TCP</p></td>
-    <td><p>Secure LDAP</p></td>
-    <td><p>This port is required for EdgeSync synchronization.</p></td>
-    </tr>
-    <tr class="odd">
-    <td><p>Inbound from the internal network</p></td>
-    <td><p>3389/TCP</p></td>
-    <td><p>RDP</p></td>
-    <td><p>Opening this port is optional. It provides more flexibility in managing the Edge Transport servers from inside the internal network by letting you use a remote desktop connection to manage the Edge Transport server.</p></td>
-    </tr>
-    </tbody>
-    </table>
+    |Network interface|Open port|Protocol|Note|
+    |---|---|---|---|
+    |Inbound from and outbound to the Internet|25/TCP|SMTP|This port is required for mail flow to and from the Internet.|
+    |Inbound from and outbound to the internal network|25/TCP|SMTP|This port is required for mail flow to and from the Exchange organization.|
+    |Local only|50389/TCP|LDAP|This port is used to make a local connection to AD LDS.|
+    |Inbound from the internal network|50636/TCP|Secure LDAP|This port is required for EdgeSync synchronization.|
+    |Inbound from the internal network|3389/TCP|RDP|Opening this port is optional. It provides more flexibility in managing the Edge Transport servers from inside the internal network by letting you use a remote desktop connection to manage the Edge Transport server.|
 
     > [!NOTE]
     > The Edge Transport server role uses non-standard LDAP ports. The ports specified in this topic are the LDAP communication ports configured when the Edge Transport server role is installed.
 
-  - **EdgeSync**: The recommended deployment process is to create an Edge Subscription to subscribe the Edge Transport server to the Exchange organization. When you create an Edge Subscription, recipient and configuration data is replicated from Active Directory to AD LDS. You subscribe an Edge Transport server to an Active Directory site. Then the Microsoft Exchange EdgeSync service that is running on the Mailbox servers in that site periodically updates AD LDS by synchronizing data from Active Directory. The Edge Subscription process automatically provisions the Send connectors that are required to enable mail flow from the Exchange organization to the Internet through an Edge Transport server. If you're using the recipient lookup or safelist aggregation features on the Edge Transport server, you must subscribe the Edge Transport server to the organization.
+- **EdgeSync**: The recommended deployment process is to create an Edge Subscription to subscribe the Edge Transport server to the Exchange organization. When you create an Edge Subscription, recipient and configuration data is replicated from Active Directory to AD LDS. You subscribe an Edge Transport server to an Active Directory site. Then the Microsoft Exchange EdgeSync service that is running on the Mailbox servers in that site periodically updates AD LDS by synchronizing data from Active Directory. The Edge Subscription process automatically provisions the Send connectors that are required to enable mail flow from the Exchange organization to the Internet through an Edge Transport server. If you're using the recipient lookup or safelist aggregation features on the Edge Transport server, you must subscribe the Edge Transport server to the organization.
 
 ## Configure DNS settings for the Edge Transport server role
 
@@ -102,15 +59,14 @@ The network interface that is connected to the internal, or private, network seg
 
 To enable name resolution of Mailbox servers by Edge Transport servers, use one of the following methods:
 
-  - Manually create resource records for Mailbox servers in a forward lookup zone on the DNS server that's configured on the internal network adapter of the Edge Transport server.
+- Manually create resource records for Mailbox servers in a forward lookup zone on the DNS server that's configured on the internal network adapter of the Edge Transport server.
 
-  - Edit the Hosts file on the Edge Transport server to include the Host records for the Mailbox servers. The Hosts file is a local text file in the same format as the 4.3 Berkeley Software Distribution (BSD) UNIX /etc/hosts file. This file maps host names to IP addresses, and the file is stored in the \\%Systemroot%\\System32\\Drivers\\Etc folder.
+- Edit the Hosts file on the Edge Transport server to include the Host records for the Mailbox servers. The Hosts file is a local text file in the same format as the 4.3 Berkeley Software Distribution (BSD) UNIX /etc/hosts file. This file maps host names to IP addresses, and the file is stored in the \\%Systemroot%\\System32\\Drivers\\Etc folder.
 
 To enable name resolution of Edge Transport servers by Mailbox servers, use one of the following methods:
 
-  - Manually create resource records for Edge Transport servers in a forward lookup zone on the DNS server that's configured on the Mailbox server.
-
-  - To include the Host records for the Edge Transport servers, edit the Hosts file on the Mailbox servers that are located in the subscribed Active Directory site.
+- Manually create resource records for Edge Transport servers in a forward lookup zone on the DNS server that's configured on the Mailbox server.
+- To include the Host records for the Edge Transport servers, edit the Hosts file on the Mailbox servers that are located in the subscribed Active Directory site.
 
 Follow these steps to configure DNS settings for the Edge Transport server:
 

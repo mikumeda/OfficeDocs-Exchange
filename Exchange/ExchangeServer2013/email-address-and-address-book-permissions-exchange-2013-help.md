@@ -30,53 +30,18 @@ To find out what permissions you need to perform the procedure or run the cmdlet
 3. Now, run the **Get-ManagementRoleAssignment** cmdlet to look at the role groups or management roles assigned to you to see if you have the permissions that are necessary to manage the feature.
 
     > [!NOTE]
-    > You must be assigned the Role Management management role to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet. If you don't have permissions to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
+    > You must be assigned the Role Management management role to run the **Get-ManagementRoleAssignment** cmdlet. If you don't have permissions to run the **Get-ManagementRoleAssignment** cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
 
 If you want to delegate the ability to manage a feature to another user, see [Delegate role assignments](delegate-role-assignments-exchange-2013-help.md).
 
-## Email address and address book permissions
-
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Address book policies</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Address lists</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Email address policies</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Details templates</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Global address lists</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Offline address books</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Offline address book connectivity</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Address book policies|[Organization Management](organization-management-exchange-2013-help.md)|
+|Address lists|[Organization Management](organization-management-exchange-2013-help.md)|
+|Email address policies|[Organization Management](organization-management-exchange-2013-help.md)|
+|Details templates|[Organization Management](organization-management-exchange-2013-help.md)|
+|Global address lists|[Organization Management](organization-management-exchange-2013-help.md)|
+|Offline address books|[Organization Management](organization-management-exchange-2013-help.md)|
+|Offline address book connectivity|[Organization Management](organization-management-exchange-2013-help.md)|

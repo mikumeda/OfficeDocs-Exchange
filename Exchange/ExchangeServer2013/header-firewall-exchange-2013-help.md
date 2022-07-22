@@ -27,9 +27,9 @@ ms.custom:
 
 _**Applies to:** Exchange Server 2013_
 
-In Microsoft Exchange Server 2013, *header firewall* is a mechanism that removes specific header fields from inbound and outbound messages. There are two different types of header fields that are affected by header firewall:
+In Microsoft Exchange Server 2013, _header firewall_ is a mechanism that removes specific header fields from inbound and outbound messages. There are two different types of header fields that are affected by header firewall:
 
-- **X-headers**: An *X-header* is a user-defined, unofficial header field. X-headers aren't specifically mentioned in RFC 2822, but the use of an undefined header field starting with **X-** has become an accepted way to add unofficial header fields to a message. Messaging applications, such as anti-spam, antivirus, and messaging servers may add their own X-headers to a message. In Exchange, the X-header fields contain details about the actions that are performed on the message by the Transport service, such as the spam confidence level (SCL), content filtering results, and rules processing status. Revealing this information to unauthorized sources could pose a potential security risk.
+- **X-headers**: An _X-header_ is a user-defined, unofficial header field. X-headers aren't specifically mentioned in RFC 2822, but the use of an undefined header field starting with **X-** has become an accepted way to add unofficial header fields to a message. Messaging applications, such as anti-spam, antivirus, and messaging servers may add their own X-headers to a message. In Exchange, the X-header fields contain details about the actions that are performed on the message by the Transport service, such as the spam confidence level (SCL), content filtering results, and rules processing status. Revealing this information to unauthorized sources could pose a potential security risk.
 
 - **Routing headers**: Routing headers are standard SMTP header fields that are defined in RFC 2821 and RFC 2822. Routing headers stamp a message by using information about the different messaging servers that were used to deliver the message to the recipient. Routing headers that are inserted into messages by malicious users can misrepresent the routing path that a message traveled to reach a recipient.
 
@@ -65,124 +65,26 @@ If the permission isn't assigned to the Receive connector or Send connector, hea
 
 The following table describes the permissions on Send connectors and Receive connectors that are used to apply header firewall, and the affected header fields.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Connector type</th>
-<th>Permission</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Receive connector</p></td>
-<td><p><strong>Ms-Exch-Accept-Headers-Organization</strong></p></td>
-<td><p>This permission affects organization X-header fields that start with <strong>X-MS-Exchange-Organization-</strong> in inbound messages.</p></td>
-</tr>
-<tr class="even">
-<td><p>Receive connector</p></td>
-<td><p><strong>Ms-Exch-Accept-Headers-Forest</strong></p></td>
-<td><p>This permission affects forest X-header fields that start with <strong>X-MS-Exchange-Forest-</strong> in inbound messages.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Receive connector</p></td>
-<td><p><strong>Ms-Exch-Accept-Headers-Routing</strong></p></td>
-<td><p>This permission affects <strong>Received:</strong> and <strong>Resent-*:</strong> routing header fields in inbound messages.</p></td>
-</tr>
-<tr class="even">
-<td><p>Send connector</p></td>
-<td><p><strong>Ms-Exch-Send-Headers-Organization</strong></p></td>
-<td><p>This permission affects organization X-header fields that start with <strong>X-MS-Exchange-Organization-</strong> in outbound messages.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Send connector</p></td>
-<td><p><strong>Ms-Exch-Send-Headers-Forest</strong></p></td>
-<td><p>This permission affects forest X-header fields that start with <strong>X-MS-Exchange-Forest-</strong> in outbound messages.</p></td>
-</tr>
-<tr class="even">
-<td><p>Send connector</p></td>
-<td><p><strong>Ms-Exch-Send-Headers-Routing</strong></p></td>
-<td><p>This permission affects <strong>Received:</strong> and <strong>Resent-*:</strong> routing header fields in outbound messages.</p></td>
-</tr>
-</tbody>
-</table>
+|Connector type|Permission|Description|
+|---|---|---|
+|Receive connector|**Ms-Exch-Accept-Headers-Organization**|This permission affects organization X-header fields that start with **X-MS-Exchange-Organization-** in inbound messages.|
+|Receive connector|**Ms-Exch-Accept-Headers-Forest**|This permission affects forest X-header fields that start with **X-MS-Exchange-Forest-** in inbound messages.|
+|Receive connector|**Ms-Exch-Accept-Headers-Routing**|This permission affects **Received:** and **Resent-*:** routing header fields in inbound messages.|
+|Send connector|**Ms-Exch-Send-Headers-Organization**|This permission affects organization X-header fields that start with **X-MS-Exchange-Organization-** in outbound messages.|
+|Send connector|**Ms-Exch-Send-Headers-Forest**|This permission affects forest X-header fields that start with **X-MS-Exchange-Forest-** in outbound messages.|
+|Send connector|**Ms-Exch-Send-Headers-Routing**|This permission affects **Received:** and **Resent-*:** routing header fields in outbound messages.|
 
 ## Header firewall for inbound messages on Receive connectors
 
 The following table describes the default application of the header firewall permissions on Receive connectors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Permission</th>
-<th>Default Exchange security principals that have the permission assigned</th>
-<th>Permission group that has the security principals as members</th>
-<th>Default usage type that assigns the permission groups to the Receive connector</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Ms-Exch-Accept-Headers-Organization</strong> and <strong>Ms-Exch-Accept-Headers-Forest</strong></p></td>
-<td><ul>
-<li><p>Hub Transport servers</p></li>
-<li><p>Edge Transport servers</p></li>
-<li><p>Exchange Servers</p>
-
-> [!NOTE]
-> On Hub Transport servers only
-
-</li>
-</ul></td>
-<td><p><strong>ExchangeServers</strong></p></td>
-<td><p><code>Internal</code></p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Ms-Exch-Accept-Headers-Routing</strong></p></td>
-<td><p>Anonymous user account</p></td>
-<td><p><strong>Anonymous</strong></p></td>
-<td><p><code>Internet</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Ms-Exch-Accept-Headers-Routing</strong></p></td>
-<td><p>Authenticated user accounts</p></td>
-<td><p><strong>ExchangeUsers</strong></p></td>
-<td><p><code>Client</code> (unavailable on Edge Transport servers)</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Ms-Exch-Accept-Headers-Routing</strong></p></td>
-<td><ul>
-<li><p>Hub Transport servers</p></li>
-<li><p>Edge Transport servers</p></li>
-<li><p>Exchange Servers</p>
-
-> [!NOTE]
-> Hub Transport servers only
-
-</li>
-<li><p>Externally Secured servers</p></li>
-</ul></td>
-<td><p><strong>ExchangeServers</strong></p></td>
-<td><p><code>Internal</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Ms-Exch-Accept-Headers-Routing</strong></p></td>
-<td><p>Partner Server account</p></td>
-<td><p><strong>Partner</strong></p></td>
-<td><p><code>Internet</code> and <code>Partner</code></p></td>
-</tr>
-</tbody>
-</table>
+|Permission|Default Exchange security principals that have the permission assigned|Permission group that has the security principals as members|Default usage type that assigns the permission groups to the Receive connector|
+|---|---|---|---|
+|**Ms-Exch-Accept-Headers-Organization** and **Ms-Exch-Accept-Headers-Forest**|<ul><li>Hub Transport servers</li><li>Edge Transport servers</li><li>Exchange Servers <br/><br/> **Note**: On Hub Transport servers only</li></ul>|**ExchangeServers**|`Internal`|
+|**Ms-Exch-Accept-Headers-Routing**|Anonymous user account|**Anonymous**|`Internet`|
+|**Ms-Exch-Accept-Headers-Routing**|Authenticated user accounts|**ExchangeUsers**|`Client` (unavailable on Edge Transport servers)|
+|**Ms-Exch-Accept-Headers-Routing**|<ul><li>Hub Transport servers</li><li>Edge Transport servers</li><li>Exchange Servers <br/><br/> **Note**: Hub Transport servers only</li><li>Externally Secured servers</li></ul>|**ExchangeServers**|`Internal`|
+|**Ms-Exch-Accept-Headers-Routing**|Partner Server account|**Partner**|`Internet` and `Partner`|
 
 ## Header firewall on custom Receive connectors
 
@@ -196,7 +98,7 @@ If you want to apply header firewall to messages in a custom Receive connector s
 
     - Create a Receive connector and select the usage type `Custom`. Don't assign any permission groups to the Receive connector.
 
-    - Modify an existing Receive connector, and set the *PermissionGroups* parameter to the value `None`.
+    - Modify an existing Receive connector, and set the _PermissionGroups_ parameter to the value `None`.
 
       Note that if you have a Receive connector that has no permission groups assigned to it, you need to add security principals to the Receive connector as described in the last step.
 
@@ -207,73 +109,19 @@ If you want to apply header firewall to messages in a custom Receive connector s
 For more information, see the following topics:
 
 - [Receive connectors](receive-connectors-exchange-2013-help.md)
-
 - [Add-ADPermission](/powershell/module/exchange/Add-ADPermission)
-
 - [Remove-ADPermission](/powershell/module/exchange/Remove-ADPermission)
 
 ## Header firewall for outbound messages on Send connectors
 
 The following table describes the default application of the header firewall permissions on Send connectors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Permission</th>
-<th>Default Exchange security principals that have the permission assigned</th>
-<th>Default usage type that assigns the security principals to the Send connector</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Ms-Exch-Send-Headers-Organization</strong> and <strong>Ms-Exch-Send-Headers-Forest</strong></p></td>
-<td><ul>
-<li><p>Hub Transport servers</p></li>
-<li><p>Edge Transport servers</p></li>
-<li><p>Exchange Servers</p>
-
-> [!NOTE]
-> On Hub Transport servers only
-
-</li>
-<li><p>Externally Secured servers</p></li>
-<li><p><strong>ExchangeLegacyInterop</strong> universal security group</p></li>
-</ul></td>
-<td><p><code>Internal</code></p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Ms-Exch-Send-Headers-Routing</strong></p></td>
-<td><ul>
-<li><p>Hub Transport servers</p></li>
-<li><p>Edge Transport servers</p></li>
-<li><p>Exchange Servers</p>
-
-> [!NOTE]
-> On Hub Transport servers only
-
-</li>
-<li><p>Externally Secured servers</p></li>
-<li><p><strong>ExchangeLegacyInterop</strong> universal security group</p></li>
-</ul></td>
-<td><p><code>Internal</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Ms-Exch-Send-Headers-Routing</strong></p></td>
-<td><p>Anonymous User Account</p></td>
-<td><p><code>Internet</code></p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Ms-Exch-Send-Headers-Routing</strong></p></td>
-<td><p>Partner Servers</p></td>
-<td><p><code>Partner</code></p></td>
-</tr>
-</tbody>
-</table>
+|Permission|Default Exchange security principals that have the permission assigned|Default usage type that assigns the security principals to the Send connector|
+|---|---|---|
+|**Ms-Exch-Send-Headers-Organization** and **Ms-Exch-Send-Headers-Forest**|<ul><li>Hub Transport servers</li><li>Edge Transport servers</li><li>Exchange Servers  **Note**: On Hub Transport servers only</li><li>Externally Secured servers</li><li>**ExchangeLegacyInterop** universal security group</li></ul>|`Internal`|
+|**Ms-Exch-Send-Headers-Routing**|<ul><li>Hub Transport servers</li><li>Edge Transport servers</li><li>Exchange Servers <br/><br/> **Note**: On Hub Transport servers only</li><li>Externally Secured servers</li><li>**ExchangeLegacyInterop** universal security group</li></ul>|`Internal`|
+|**Ms-Exch-Send-Headers-Routing**|Anonymous User Account|`Internet`|
+|**Ms-Exch-Send-Headers-Routing**|Partner Servers|`Partner`|
 
 ## Header firewall on custom Send connectors
 
@@ -294,9 +142,7 @@ If you want to apply header firewall to messages in a custom Send connector scen
 For more information, see the following topics:
 
 - [Send connectors](send-connectors-exchange-2013-help.md)
-
 - [Add-ADPermission](/powershell/module/exchange/Add-ADPermission)
-
 - [Remove-ADPermission](/powershell/module/exchange/Remove-ADPermission)
 
 ## Header firewall for other message sources
@@ -312,9 +158,7 @@ Messages can enter the transport pipeline on a Mailbox server or an Edge Transpo
   Whether or not organization X-headers and forest X-headers are preserved or removed from messages in the Replay directory is controlled by the **X-CreatedBy:** header field in the message file:
 
   - If the value of **X-CreatedBy:** is `MSExchange15`, organization X-headers and forest X-headers are preserved in messages.
-
   - If the value of **X-CreatedBy:** isn't `MSExchange15`, organization X-headers and forest X-headers are removed from messages.
-
   - If the **X-CreatedBy:** header field doesn't exist in the message file, organization X-headers and forest X-headers are removed from messages.
 
 - **Drop directory**: The Drop directory is used by Foreign connectors on Mailbox servers to send messages to messaging servers that don't use SMTP to transfer messages. For more information about Foreign connectors, see [Foreign connectors](foreign-connectors-exchange-2013-help.md).
@@ -330,17 +174,11 @@ Messages can enter the transport pipeline on a Mailbox server or an Edge Transpo
   Routing headers are preserved for inbound messages to mailbox recipients by the Mailbox Transport Delivery service. The following organization X-headers are preserved for inbound messages to mailbox recipients by the Mailbox Transport Delivery service:
 
   - **X-MS-Exchange-Organization-SCL**
-
   - **X-MS-Exchange-Organization-AuthDomain**
-
   - **X-MS-Exchange-Organization-AuthMechanism**
-
   - **X-MS-Exchange-Organization-AuthSource**
-
   - **X-MS-Exchange-Organization-AuthAs**
-
   - **X-MS-Exchange-Organization-OriginalArrivalTime**
-
   - **X-MS-Exchange-Organization-OriginalSize**
 
 - **DSN messages**: Organization X-headers, forest X-headers, and routing headers are removed from the original message or the original message header that's attached to the DSN message. For more information about DSN messages, see [DSNs and NDRs in Exchange 2013](dsns-and-ndrs-in-exchange-2013-exchange-2013-help.md).
@@ -353,77 +191,20 @@ The Transport service on Mailbox servers or Edge Transport servers insert custom
 
 Organization X-headers start with **X-MS-Exchange-Organization-**. Forest X-headers start with **X-MS-Exchange-Forest-**. The following table describes some of the organization X-headers and forest X-headers that are used in messages in an Exchange organization.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>X-header</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>X-MS-Exchange-Forest-RulesExecuted</strong></p></td>
-<td><p>Transport rules that acted on the message.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>X-MS-Exchange-Organization-Antispam-Report</strong></p></td>
-<td><p>A summary of the anti-spam filter results that have been applied to the message by the Content Filter agent.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>X-MS-Exchange-Organization-AuthAs</strong></p></td>
-<td><p>Specifies the authentication source. This X-header is always present when the security of a message has been evaluated. The possible values are <code>Anonymous</code>, <code>Internal</code>, <code>External</code>, or <code>Partner</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>X-MS-Exchange-Organization-AuthDomain</strong></p></td>
-<td><p>Populated during Domain Secure authentication. The value is the FQDN of the remote authenticated domain.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>X-MS-Exchange-Organization-AuthMechanism</strong></p></td>
-<td><p>Specifies the authentication mechanism for the submission of the message. The value is a 2-digit hexadecimal number.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>X-MS-Exchange-Organization-AuthSource</strong></p></td>
-<td><p>Specifies the FQDN of the server computer that evaluated the authentication of the message on behalf of the organization.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>X-MS-Exchange-Organization-Journal-Report</strong></p></td>
-<td><p>Identifies journal reports in transport. As soon as the message leaves the transport service, the header becomes <strong>X-MS-Journal-Report</strong>.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>X-MS-Exchange-Organization-OriginalArrivalTime</strong></p></td>
-<td><p>Identifies the time when the message first entered the Exchange organization.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>X-MS-Exchange-Organization-Original-Sender</strong></p></td>
-<td><p>Identifies the original sender of a quarantined message when it first entered the Exchange organization.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>X-MS-Exchange-Organization-OriginalSize</strong></p></td>
-<td><p>Identifies the original size of a quarantined message when it first entered the Exchange organization.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>X-MS-Exchange-Organization-Original-Scl</strong></p></td>
-<td><p>Identifies the original SCL of a quarantined message when it first entered the Exchange organization.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>X-MS-Exchange-Organization-PCL</strong></p></td>
-<td><p>Identifies the phishing confidence level. The possible phishing confidence level values are from 1 through 8. A larger value indicates a suspicious message. For more information, see <a href="anti-spam-stamps-exchange-2013-help.md">Anti-spam stamps</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>X-MS-Exchange-Organization-Quarantine</strong></p></td>
-<td><p>Indicates the message has been quarantined in the spam quarantine mailbox and a delivery status notification (DSN) has been sent. Alternatively, it indicates that the message was quarantined and released by the administrator. This X-header field prevents the released message from being submitted to the spam quarantine mailbox again. For more information, see <a href="release-quarantined-messages-from-the-spam-quarantine-mailbox-exchange-2013-help.md">Release quarantined messages from the spam quarantine mailbox</a>.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>X-MS-Exchange-Organization-SCL</strong></p></td>
-<td><p>Identifies the SCL of the message. The possible SCL values are from 0 through 9. A larger value indicates a suspicious message. The special value -1 exempts the message from processing by the Content Filter agent. For more information, see <a href="content-filtering-exchange-2013-help.md">Content filtering</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>X-MS-Exchange-Organization-SenderIdResult</strong></p></td>
-<td><p>Contains the results of the Sender ID agent. The Sender ID agent uses the sender policy framework (SPF) to compare the message's source IP address to the domain that's used in the sender's email address. The Sender ID results are used to calculate the SCL of a message. For more information, see <a href="sender-id-exchange-2013-help.md">Sender ID</a>.</p></td>
-</tr>
-</tbody>
-</table>
+|X-header|Description|
+|---|---|
+|**X-MS-Exchange-Forest-RulesExecuted**|Transport rules that acted on the message.|
+|**X-MS-Exchange-Organization-Antispam-Report**|A summary of the anti-spam filter results that have been applied to the message by the Content Filter agent.|
+|**X-MS-Exchange-Organization-AuthAs**|Specifies the authentication source. This X-header is always present when the security of a message has been evaluated. The possible values are `Anonymous`, `Internal`, `External`, or `Partner`.|
+|**X-MS-Exchange-Organization-AuthDomain**|Populated during Domain Secure authentication. The value is the FQDN of the remote authenticated domain.|
+|**X-MS-Exchange-Organization-AuthMechanism**|Specifies the authentication mechanism for the submission of the message. The value is a 2-digit hexadecimal number.|
+|**X-MS-Exchange-Organization-AuthSource**|Specifies the FQDN of the server computer that evaluated the authentication of the message on behalf of the organization.|
+|**X-MS-Exchange-Organization-Journal-Report**|Identifies journal reports in transport. As soon as the message leaves the transport service, the header becomes **X-MS-Journal-Report**.|
+|**X-MS-Exchange-Organization-OriginalArrivalTime**|Identifies the time when the message first entered the Exchange organization.|
+|**X-MS-Exchange-Organization-Original-Sender**|Identifies the original sender of a quarantined message when it first entered the Exchange organization.|
+|**X-MS-Exchange-Organization-OriginalSize**|Identifies the original size of a quarantined message when it first entered the Exchange organization.|
+|**X-MS-Exchange-Organization-Original-Scl**|Identifies the original SCL of a quarantined message when it first entered the Exchange organization.|
+|**X-MS-Exchange-Organization-PCL**|Identifies the phishing confidence level. The possible phishing confidence level values are from 1 through 8. A larger value indicates a suspicious message. For more information, see [Anti-spam stamps](anti-spam-stamps-exchange-2013-help.md).|
+|**X-MS-Exchange-Organization-Quarantine**|Indicates the message has been quarantined in the spam quarantine mailbox and a delivery status notification (DSN) has been sent. Alternatively, it indicates that the message was quarantined and released by the administrator. This X-header field prevents the released message from being submitted to the spam quarantine mailbox again. For more information, see [Release quarantined messages from the spam quarantine mailbox](release-quarantined-messages-from-the-spam-quarantine-mailbox-exchange-2013-help.md.|
+|**X-MS-Exchange-Organization-SCL**|Identifies the SCL of the message. The possible SCL values are from 0 through 9. A larger value indicates a suspicious message. The special value -1 exempts the message from processing by the Content Filter agent. For more information, see [Content filtering](content-filtering-exchange-2013-help.md).|
+|**X-MS-Exchange-Organization-SenderIdResult**|Contains the results of the Sender ID agent. The Sender ID agent uses the sender policy framework (SPF) to compare the message's source IP address to the domain that's used in the sender's email address. The Sender ID results are used to calculate the SCL of a message. For more information, see [Sender ID](sender-id-exchange-2013-help.md).|

@@ -32,9 +32,9 @@ The following table lists the scenarios in which coexistence between Exchange 20
 |Exchange version|Exchange organization coexistence|
 |---|---|
 |Exchange Server 2003 and earlier versions|Not supported|
-|Exchange 2007|Supported with the following minimum versions of Exchange: <ul><li><p>Update Rollup 10 for Exchange 2007 Service Pack 3 (SP3) on all Exchange 2007 servers in the organization, including Edge Transport servers.<sup>1</sup></li><li>Exchange 2013 Cumulative Update 2 (CU2) or later on all Exchange 2013 servers in the organization.</li></ul>|
-|Exchange 2010|Supported with the following minimum versions of Exchange: <ul><li><p>Exchange 2010 SP3 on all Exchange 2010 servers in the organization, including Edge Transport servers).<sup>2</sup></li><li>Exchange 2013 CU2 or later on all Exchange 2013 servers in the organization.</li></ul>|
-|Mixed Exchange 2010 and Exchange 2007 organization|Supported with the following minimum versions of Exchange: <ul><li><p>Update Rollup 10 for Exchange 2007 SP3 on all Exchange 2007 servers in the organization, including Edge Transport servers.<sup>1</sup></li><li>Exchange 2010 SP3 on all Exchange 2010 servers in the organization, including Edge Transport servers.<sup>2</sup></li><li>Exchange 2013 CU2 or later on all Exchange 2013 servers in the organization.</li></ul>|
+|Exchange 2007|Supported with the following minimum versions of Exchange: <ul><li>Update Rollup 10 for Exchange 2007 Service Pack 3 (SP3) on all Exchange 2007 servers in the organization, including Edge Transport servers.<sup>1</sup></li><li>Exchange 2013 Cumulative Update 2 (CU2) or later on all Exchange 2013 servers in the organization.</li></ul>|
+|Exchange 2010|Supported with the following minimum versions of Exchange: <ul><li>Exchange 2010 SP3 on all Exchange 2010 servers in the organization, including Edge Transport servers).<sup>2</sup></li><li>Exchange 2013 CU2 or later on all Exchange 2013 servers in the organization.</li></ul>|
+|Mixed Exchange 2010 and Exchange 2007 organization|Supported with the following minimum versions of Exchange: <ul><li>Update Rollup 10 for Exchange 2007 SP3 on all Exchange 2007 servers in the organization, including Edge Transport servers.<sup>1</sup></li><li>Exchange 2010 SP3 on all Exchange 2010 servers in the organization, including Edge Transport servers.<sup>2</sup></li><li>Exchange 2013 CU2 or later on all Exchange 2013 servers in the organization.</li></ul>|
 
 <sup>1</sup> If you want to create an EdgeSync Subscription between an Exchange 2007 Hub Transport server and an Exchange 2013 SP1 Edge Transport server, you need to install Exchange 2007 SP3 Update Rollup 13 or later on the Exchange 2007 Hub Transport server.
 
@@ -66,7 +66,7 @@ The following table lists the requirements for the network and the directory ser
 The use of 64-bit Active Directory domain controllers increases directory service performance for Exchange 2013.
 
 > [!NOTE]
-> In multi-domain environments, on Windows Server 2008 domain controllers that have the Active Directory language locale set to Japanese, your servers might not receive some attributes that are stored on an object during inbound replication. For more information, see Microsoft Knowledge Base article 949189, <A href="https://www.microsoft.com/download/details.aspx?id=1050">A Windows Server 2008 domain controller that is configured with the Japanese language locale may not apply updates to attributes on an object during inbound replication</A>.
+> In multi-domain environments, on Windows Server 2008 domain controllers that have the Active Directory language locale set to Japanese, your servers might not receive some attributes that are stored on an object during inbound replication. For more information, see Microsoft Knowledge Base article 949189, [A Windows Server 2008 domain controller that is configured with the Japanese language locale may not apply updates to attributes on an object during inbound replication](https://www.microsoft.com/download/details.aspx?id=1050").
 
 ## Installing Exchange 2013 on directory servers
 
@@ -125,10 +125,6 @@ Exchange 2013 only supports the version of Windows Management Framework that's b
 
 We strongly recommend that you use the latest version of .NET Framework that's supported by the release of Exchange you're installing.
 
-<br>
-
-***
-
 |Exchange 2013 version|.NET Framework 4.8|.NET Framework 4.7.2|.NET Framework 4.7.1|.NET Framework 4.6.2|
 |---|:---:|:---:|:---:|:---:|
 |CU23|X|X|||
@@ -137,7 +133,8 @@ We strongly recommend that you use the latest version of .NET Framework that's s
 |CU16, CU17, CU18||||X|
 |CU15||||X|
 
-**Note**: For older versions of the .NET Framework, see the [Exchange Server supportability matrix](../ExchangeServer/plan-and-deploy/supportability-matrix.md#exchange-2013)
+> [!NOTE]
+> For older versions of the .NET Framework, see the [Exchange Server supportability matrix](../ExchangeServer/plan-and-deploy/supportability-matrix.md#exchange-2013)
 
 ## Supported clients
 
