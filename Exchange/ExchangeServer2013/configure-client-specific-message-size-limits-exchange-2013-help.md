@@ -23,65 +23,23 @@ In Microsoft Exchange Server 2013, there are several different message size limi
 
 However, there are client-specific message size limits you can configure for Outlook Web App and email clients that use ActiveSync or Exchange Web Services (EWS). If you change the Exchange organization-wide message size limits, you need to verify that the message size limits for Outlook Web App, ActiveSync, and Exchange Web Services are set accordingly. You configure these values in web.config files on Client Access servers and Mailbox servers. These limits are described in the following tables.
 
-### ActiveSync
+**Exchange ActiveSync**:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Server role</th>
-<th>Configuration file</th>
-<th>Keys and default values</th>
-<th>Size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Client Access</p></td>
-<td><p><code>%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config</code></p></td>
-<td><p><code>maxAllowedContentLength=&quot;30000000 bytes&quot;</code>   Not present by default (see comments).</p></td>
-<td><p>bytes</p></td>
-</tr>
-<tr class="even">
-<td><p>Client Access</p></td>
-<td><p><code>%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config</code></p></td>
-<td><p><code>maxRequestLength=&quot;10240&quot;</code></p></td>
-<td><p>kilobytes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\Sync\web.config</code></p></td>
-<td><p><code>maxAllowedContentLength=&quot;30000000 bytes&quot;</code>   Not present by default (see comments).</p></td>
-<td><p>bytes</p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\Sync\web.config</code></p></td>
-<td><p><code>maxRequestLength=&quot;10240&quot;</code></p></td>
-<td><p>kilobytes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\Sync\web.config</code></p></td>
-<td><p><code>&lt;add key=&quot;MaxDocumentDataSize&quot; value=&quot;10240000&quot;&gt;</code></p></td>
-<td><p>bytes</p></td>
-</tr>
-</tbody>
-</table>
+|Server role|Configuration file|Keys and default values|Size|
+|---|---|---|---|
+|Client Access|`%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config`|`maxAllowedContentLength="30000000 bytes"` <br/><br/> Not present by default (see comments).|bytes|
+|Client Access|`%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config`|`maxRequestLength="10240"`|kilobytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\Sync\web.config`|`maxAllowedContentLength="30000000 bytes"` <br/><br/> Not present by default (see comments).|bytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\Sync\web.config`|`maxRequestLength="10240"`|kilobytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\Sync\web.config`|`<add key="MaxDocumentDataSize" value="10240000">`|bytes|
 
-#### Comments on ActiveSync limits
+**Comments on ActiveSync limits**:
 
-By default, there is no *maxAllowedContentLength* key in the `web.config` files for ActiveSync. However, the maximum message size for ActiveSync is affected by the **maxAllowedContentLength** value that is applied to all web sites on the server. The default value is 30000000 bytes (30 MB). To see these values for ActiveSync on Client Access Servers and Mailbox servers in IIS Manager, perform the following steps:
+By default, there is no _maxAllowedContentLength_ key in the `web.config` files for ActiveSync. However, the maximum message size for ActiveSync is affected by the **maxAllowedContentLength** value that is applied to all web sites on the server. The default value is 30000000 bytes (30 MB). To see these values for ActiveSync on Client Access Servers and Mailbox servers in IIS Manager, perform the following steps:
 
 1. Do one of the following steps:
 
    - On Client Access servers, open **IIS Manager**, navigate to **Sites** \> **Default Web Site** and select **Microsoft-Server-ActiveSync**.
-
    - On Mailbox servers, open **IIS Manager**, navigate to **Sites** \> **Exchange Back End** and select **Microsoft-Server-ActiveSync**.
 
 2. Verify **Features View** is selected, and double-click **Configuration Editor** in the **Management** section.
@@ -90,121 +48,44 @@ By default, there is no *maxAllowedContentLength* key in the `web.config` files 
 
 4. In the results, expand **requestLimits**, and you'll see **maxAllowedContentLength** and the default value 30000000 (bytes).
 
-To change the **maxAllowedContentLength** value, enter a new value in bytes, and click **Apply**. You need to change the value on Client Access servers and on Mailbox servers. After you change the value in IIS Manager, a new *maxAllowedContentLength* key is written to the corresponding `web.config` file (`%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config` on Client Access servers, and `%ExchangeInstallPath%ClientAccess\Sync\web.config` on Mailbox servers).
+To change the **maxAllowedContentLength** value, enter a new value in bytes, and click **Apply**. You need to change the value on Client Access servers and on Mailbox servers. After you change the value in IIS Manager, a new _maxAllowedContentLength_ key is written to the corresponding `web.config` file (`%ExchangeInstallPath%FrontEnd\HttpProxy\Sync\web.config` on Client Access servers, and `%ExchangeInstallPath%ClientAccess\Sync\web.config` on Mailbox servers).
 
-To change the maximum message size for ActiveSync clients, you need to change the value of *maxRequestLength* in the `web.config` file on Client Access servers and Mailbox servers, *MaxDocumentDataSize* in the `web.config` file on Mailbox servers, and *maxAllowedContentLength* in IIS Manager on Client Access servers and Mailbox servers.
+To change the maximum message size for ActiveSync clients, you need to change the value of _maxRequestLength_ in the `web.config` file on Client Access servers and Mailbox servers, _MaxDocumentDataSize_ in the `web.config` file on Mailbox servers, and _maxAllowedContentLength_ in IIS Manager on Client Access servers and Mailbox servers.
 
-### Exchange Web Services
+**Exchange Web Services**:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Serve role</th>
-<th>Configuration file</th>
-<th>Keys and default values</th>
-<th>Size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Client Access</p></td>
-<td><p><code>%ExchangeInstallPath%FrontEnd\HttpProxy\ews\web.config</code></p></td>
-<td><p><code>maxAllowedContentLength=&quot;67108864&quot;</code></p></td>
-<td><p>bytes</p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config</code></p></td>
-<td><p><code>maxAllowedContentLength=&quot;67108864&quot;</code></p></td>
-<td><p>bytes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config</code></p></td>
-<td><p>14 instances of <code>maxReceivedMessageSize=&quot;67108864&quot;</code></p></td>
-<td><p>bytes</p></td>
-</tr>
-</tbody>
-</table>
+|Serve role|Configuration file|Keys and default values|Size|
+|---|---|---|---|
+|Client Access|`%ExchangeInstallPath%FrontEnd\HttpProxy\ews\web.config`|`maxAllowedContentLength="67108864"`|bytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config`|`maxAllowedContentLength="67108864"`|bytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\exchweb\ews\web.config`|14 instances of `maxReceivedMessageSize="67108864"`|bytes|
 
-#### Comments on Exchange Web Services limits
+**Comments on Exchange Web Services limits**:
 
 - There are 14 separate instances of the value `maxReceivedMessageSize="67108864"` that correspond to different combinations of bindings (http and https) and authentication methods.
 
-- To change the maximum message size for Exchange Web Services clients, you need to change the value of *maxAllowedContentLength* in both `web.config` files, and all 14 instances of `maxReceivedMessageSize="67108864"` in the `web.config` file on Mailbox servers.
+- To change the maximum message size for Exchange Web Services clients, you need to change the value of _maxAllowedContentLength_ in both `web.config` files, and all 14 instances of `maxReceivedMessageSize="67108864"` in the `web.config` file on Mailbox servers.
 
 - In the `web.config` file on Mailbox servers, there are also two instances of the value `maxReceivedMessageSize="1048576"` for **UMLegacyMessageEncoderSoap11Element** bindings that you don't need to modify.
 
-- *maxRequestLength* is an ASP.NET setting that's present in both web.config files, but is not used by Exchange Web Services, so you don't need to modify it.
+- _maxRequestLength_ is an ASP.NET setting that's present in both web.config files, but is not used by Exchange Web Services, so you don't need to modify it.
 
-### Outlook Web App
+**Outlook Web App**:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Server role</th>
-<th>Configuration file</th>
-<th>Keys and default values</th>
-<th>Size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Client Access</p></td>
-<td><p><code>%ExchangeInstallPath%FrontEnd\HttpProxy\owa\web.config</code></p></td>
-<td><p><code>maxAllowedContentLength=&quot;35000000&quot;</code></p></td>
-<td><p>bytes</p></td>
-</tr>
-<tr class="even">
-<td><p>Client Access</p></td>
-<td><p><code>%ExchangeInstallPath%FrontEnd\HttpProxy\owa\web.config</code></p></td>
-<td><p><code>maxRequestLength=&quot;35000&quot;</code></p></td>
-<td><p>kilobytes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\Owa\web.config</code></p></td>
-<td><p><code>maxAllowedContentLength=&quot;35000000&quot;</code></p></td>
-<td><p>bytes</p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\Owa\web.config</code></p></td>
-<td><p><code>maxRequestLength=&quot;35000&quot;</code></p></td>
-<td><p>kilobytes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\Owa\web.config</code></p></td>
-<td><p>2 instances of <code>maxReceivedMessageSize=&quot;35000000&quot;</code></p></td>
-<td><p>bytes</p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox</p></td>
-<td><p><code>%ExchangeInstallPath%ClientAccess\Owa\web.config</code></p></td>
-<td><p>2 instances of <code>maxStringContentLength=&quot;35000000&quot;</code></p></td>
-<td><p>bytes</p></td>
-</tr>
-</tbody>
-</table>
+|Server role|Configuration file|Keys and default values|Size|
+|---|---|---|---|
+|Client Access|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\web.config`|`maxAllowedContentLength="35000000"`|bytes|
+|Client Access|`%ExchangeInstallPath%FrontEnd\HttpProxy\owa\web.config`|`maxRequestLength="35000"`|kilobytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\Owa\web.config`|`maxAllowedContentLength="35000000"`|bytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\Owa\web.config`|`maxRequestLength="35000"`|kilobytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\Owa\web.config`|2 instances of `maxReceivedMessageSize="35000000"`|bytes|
+|Mailbox|`%ExchangeInstallPath%ClientAccess\Owa\web.config`|2 instances of `maxStringContentLength="35000000"`|bytes|
 
-#### Comments on Outlook Web App limits
+**Comments on Outlook Web App limits**:
 
 - In the `web.config` file on Mailbox servers, there are two separate instances of the values `maxReceivedMessageSize="35000000"` and `maxStringContentLength="35000000"` that correspond to http and https bindings.
 
-- To change the maximum message size for Outlook Web App clients, you need to change all of these values in both files, including both instances of *maxReceivedMessageSize* and *maxStringContentLength* in the `web.config` file on Mailbox servers.
+- To change the maximum message size for Outlook Web App clients, you need to change all of these values in both files, including both instances of _maxReceivedMessageSize_ and _maxStringContentLength_ in the `web.config` file on Mailbox servers.
 
 - In the `web.config` file on Mailbox servers, there is also an instance of the value `maxStringContentLength="102400"` for the **MsOnlineShellService** binding that you don't need to modify.
 
@@ -236,7 +117,7 @@ For all message size limits, you need to set values that are larger than the act
    Notepad %ExchangeInstallPath%FrontEnd\HttpProxy\ews\web.config
    ```
 
-2. Find the relevant keys in the appropriate web.config files as described in the tables earlier in the topic. For example, for Exchange Web Services clients, find the *maxAllowedContentLength* key in both files and all 14 instances of the value `maxReceivedMessageSize="67108864"` in the `web.config` file on Mailbox servers.
+2. Find the relevant keys in the appropriate web.config files as described in the tables earlier in the topic. For example, for Exchange Web Services clients, find the _maxAllowedContentLength_ key in both files and all 14 instances of the value `maxReceivedMessageSize="67108864"` in the `web.config` file on Mailbox servers.
 
    ```powershell
    <requestLimits maxAllowedContentLength="67108864" />
@@ -268,7 +149,7 @@ Instead of using Notepad, you can also configure the client-specific message siz
 
 - Pay attention to whether the value is in bytes or kilobytes.
 
-### ActiveSync
+### Configure ActiveSync message size limits
 
 ```powershell
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/Microsoft-Server-ActiveSync/" -section:system.webServer/security/requestFiltering /requestLimits.maxAllowedContentLength:30000000
@@ -278,7 +159,7 @@ Instead of using Notepad, you can also configure the client-specific message siz
 %windir%\system32\inetsrv\appcmd.exe set config "Exchange Back End/Microsoft-Server-ActiveSync/" -section:appSettings "/[key='MaxDocumentDataSize'].value:10240000"
 ```
 
-### Exchange Web Services
+### Configure Exchange Web Services message size limits
 
 ```powershell
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/ews/" -section:system.webServer/security/requestFiltering /requestLimits.maxAllowedContentLength:67108864
@@ -299,7 +180,7 @@ Instead of using Notepad, you can also configure the client-specific message siz
 %windir%\system32\inetsrv\appcmd.exe set config "Exchange Back End/ews/" -section:system.serviceModel/bindings "/webHttpBinding.[name='EWSStreamingNegotiateHttpBinding'].maxReceivedMessageSize:67108864"
 ```
 
-### Outlook Web App
+### Configure Outlook Web App message size limits
 
 ```powershell
 %windir%\system32\inetsrv\appcmd.exe set config "Default Web Site/owa/" -section:system.webServer/security/requestFiltering /requestLimits.maxAllowedContentLength:35000000

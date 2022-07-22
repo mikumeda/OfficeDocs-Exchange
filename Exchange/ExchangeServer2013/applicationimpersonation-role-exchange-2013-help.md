@@ -27,12 +27,12 @@ For example, you might see these roles in the Exchange admin center:
 - RIM-MailboxAdmins\<xxxxxxxxxx\>
 
 > [!IMPORTANT]
-> A process or application that's a member of the <CODE>ApplicationImpersonation</CODE> role can access the contents of a user's mailbox and act on behalf of that user, even if the user's account is disabled. This might let users access their mailboxes if you have applications, like Blackberry Enterprise Server, that use the <CODE>ApplicationImpersonation</CODE> role. Third-party products that don't use the <CODE>ApplicationImpersonation</CODE> role and instead use Exchange ActiveSync can't access a mailbox after its user account has been disabled.<BR>To prevent an application that uses the <CODE>ApplicationImpersonation</CODE> role from accessing a mailbox or performing tasks on its behalf after its user account has been disabled, do one or more of the following:
-> <UL>
-> <LI>
-> <P>Disable or remove the user in the third-party application.</P>
-> <LI>
-> <P>Delete the mailbox.</P></LI></UL>
+> A process or application that's a member of the **ApplicationImpersonation** role can access the contents of a user's mailbox and act on behalf of that user, even if the user's account is disabled. This might let users access their mailboxes if you have applications, like Blackberry Enterprise Server, that use the **ApplicationImpersonation** role. Third-party products that don't use the **ApplicationImpersonation** role and instead use Exchange ActiveSync can't access a mailbox after its user account has been disabled.
+>
+> To prevent an application that uses the **ApplicationImpersonation** role from accessing a mailbox or performing tasks on its behalf after its user account has been disabled, do one or more of the following:
+>
+> - Disable or remove the user in the third-party application.</P>
+> - Delete the mailbox.
 
 ## Default management role assignments
 

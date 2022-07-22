@@ -25,71 +25,31 @@ For a recipient to receive or send email messages, the recipient must have an em
 
 When creating an email address policy, you can use the following email address types:
 
-- **Precanned SMTP email address**. *Precanned* SMTP email addresses are commonly used email address types that are provided for you.
+- **Precanned SMTP email address**. _Precanned_ SMTP email addresses are commonly used email address types that are provided for you.
 
 - **Custom SMTP email address**. If you don't want to use one of the precanned SMTP email addresses, you can specify a custom SMTP email address.
 
     When creating a custom SMTP email address, you can use the variables in the following table to specify alternate values for the local part of the email address.
 
-    <table>
-    <colgroup>
-    <col>
-    <col>
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th>Variable</th>
-    <th>Value</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td><p>%g</p></td>
-    <td><p>Given name (first name)</p></td>
-    </tr>
-    <tr class="even">
-    <td><p>%i</p></td>
-    <td><p>Middle initial</p></td>
-    </tr>
-    <tr class="odd">
-    <td><p>%s</p></td>
-    <td><p>Surname (last name)</p></td>
-    </tr>
-    <tr class="even">
-    <td><p>%d</p></td>
-    <td><p>Display name</p></td>
-    </tr>
-    <tr class="odd">
-    <td><p>%m</p></td>
-    <td><p>Exchange alias</p></td>
-    </tr>
-    <tr class="even">
-    <td><p>%<em>x</em>s</p></td>
-    <td><p>Uses the first <em>x</em> letters of the surname. For example, if <em>x</em> = 2, the first two letters of the surname are used.</p></td>
-    </tr>
-    <tr class="odd">
-    <td><p>%<em>x</em>g</p></td>
-    <td><p>Uses the first <em>x</em> letters of the given name. For example, if <em>x</em> = 2, the first two letters of the given name are used.</p></td>
-    </tr>
-    </tbody>
-    </table>
+    |Variable|Value|
+    |---|---|
+    |`%g`|Given name (first name)|
+    |`%i`|Middle initial|
+    |`%s`|Surname (last name)|
+    |`%d`|Display name|
+    |`%m`|Exchange alias|
+    |`%<x>s`|Uses the first `<x>` letters of the surname. For example, if `<x>` = 2, the first two letters of the surname are used.|
+    |`%<x>g`|Uses the first `<x>` letters of the given name. For example, if `<x>` = 2, the first two letters of the given name are used.|
 
 - **Non-SMTP email address**. The following types of non-SMTP email addresses are supported:
 
   - EX (Legacy DN Proxy Address Prefix DisplayName)
-
   - X.500
-
   - X.400
-
   - MSMail
-
   - CcMail
-
   - Lotus Notes
-
   - Novell GroupWise
-
   - Exchange Unified Messaging proxy address (EUM proxy address)
 
     > [!IMPORTANT]
@@ -121,9 +81,7 @@ For detailed instructions about how to create an email address policy, see the f
 2. In **Email Address Policy**, complete the following fields:
 
    - **Policy name**
-
    - **Email address format**
-
    - **Specify the types of recipients this email address will apply to**
 
 3. Click **Add a rule** to further restrict the recipients that this policy will apply to. This creates a Boolean **And** statement.
