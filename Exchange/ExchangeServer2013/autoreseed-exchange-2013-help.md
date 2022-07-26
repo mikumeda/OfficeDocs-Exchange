@@ -41,11 +41,9 @@ Once all retries are exhausted, the workflow stops. If after three days the data
 
 At this point, if the failure was a disk failure, it would require manual intervention by an operator or administrator to remove and replace the failed disk and reconfigure the replacement disk as a spare.
 
-AutoReseed is configured using three properties of the DAG. Two of the properties refer to the two mount points that are in use. Exchange 2013 uses the fact that Windows Server allows multiple mount points per volume. The *AutoDagVolumesRootFolderPath* property refers to the mount point that contains all of the available volumes, incluing volumes that host databases and spare volumes. The *AutoDagDatabasesRootFolderPath* property refers to the mount point that contains the databases. A third DAG property, *AutoDagDatabaseCopiesPerVolume*, is used to configure the number of database copies per volume.
+AutoReseed is configured using three properties of the DAG. Two of the properties refer to the two mount points that are in use. Exchange 2013 uses the fact that Windows Server allows multiple mount points per volume. The _AutoDagVolumesRootFolderPath_ property refers to the mount point that contains all of the available volumes, incluing volumes that host databases and spare volumes. The _AutoDagDatabasesRootFolderPath_ property refers to the mount point that contains the databases. A third DAG property, _AutoDagDatabaseCopiesPerVolume_, is used to configure the number of database copies per volume.
 
 An example AutoReseed configuration is illustrated below.
-
-**Example AutoReseed configuration**
 
 ![Example Automatic Reseed Configuration.](images/Dn789209.e3af7306-f5b4-4ec4-9ccf-222ec452699b(EXCHG.150).gif "Example Automatic Reseed Configuration")
 
@@ -63,45 +61,21 @@ In this configuration, if MDB1 or MDB2 were to experience a failure, a copy of t
 
 ## Disk Reclaimer
 
-The AutoReseed component that allocates and formats spare disks is called the *Disk Reclaimer*. The Disk Reclaimer component automatically formats spare disks in preparation for automatic reseeding at different intervals, depending on the state of the disk. In order for the Disk Reclaimer to format a disk, certain conditions must be met:
+The AutoReseed component that allocates and formats spare disks is called the _Disk Reclaimer_. The Disk Reclaimer component automatically formats spare disks in preparation for automatic reseeding at different intervals, depending on the state of the disk. In order for the Disk Reclaimer to format a disk, certain conditions must be met:
 
-  - The Disk Reclaimer must be enabled. Its enabled by default, but it can be disabled using [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/Set-DatabaseAvailabilityGroup).
+- The Disk Reclaimer must be enabled. Its enabled by default, but it can be disabled using [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/Set-DatabaseAvailabilityGroup).
 
-  - The volume must have a mount point in the root volumes path (by default, C:\\ExchangeVolumes).
+- The volume must have a mount point in the root volumes path (by default, C:\\ExchangeVolumes).
 
-  - The volume must not have any mount points in the database volumes path (by default, C:\\ExchangeDatabases).
+- The volume must not have any mount points in the database volumes path (by default, C:\\ExchangeDatabases).
 
-  - If the volume contains any files, none of the files must have been touched for 24 hours.
+- If the volume contains any files, none of the files must have been touched for 24 hours.
 
 In addition to the above conditions, the Disk Reclaimer will only attempt to format a given volume once a day. The following table describes the formatting behavior of the Disk Reclaimer.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>State of Disk and Database Copies</th>
-<th>Formatting Interval</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Disk is unformatted, or formatted and empty, or formatted but contains files that haven't been touched for 24 hours, and there are healthy active database copies in the local Active Directory site that can be used as a seeding source.</p></td>
-<td><p>1 day</p></td>
-</tr>
-<tr class="even">
-<td><p>Disk is unformatted, or formatted and empty, or formatted but contains files that haven't been touched for 24 hours, but there are no healthy active database copies in the local Active Directory site that can be used as a seeding source.</p></td>
-<td><p>2 days</p></td>
-</tr>
-<tr class="odd">
-<td><p>Disk is unformatted, or formatted and empty, or formatted but contains files that havn't been touched for 24 hours, and there are healthy active database copies in the local Active Directory site that can be used as a seeding source, but there are unknown files outside of the database file (EDB file) and log files.</p></td>
-<td><p>2 weeks</p></td>
-</tr>
-<tr class="even">
-<td><p>Disk is unformatted, or formatted but empty, or formatted but contains files that haven't been touched for 24 hours, and there are healthy active database copies in the local Active Directory site that can be used as a seeding source, but there are one or more database files (EDB files) for databases that are not present in Active Directory.</p></td>
-<td><p>2 weeks</p></td>
-</tr>
-</tbody>
-</table>
+|State of Disk and Database Copies|Formatting Interval|
+|---|---|
+|Disk is unformatted, or formatted and empty, or formatted but contains files that haven't been touched for 24 hours, and there are healthy active database copies in the local Active Directory site that can be used as a seeding source.|1 day|
+|Disk is unformatted, or formatted and empty, or formatted but contains files that haven't been touched for 24 hours, but there are no healthy active database copies in the local Active Directory site that can be used as a seeding source.|2 days|
+|Disk is unformatted, or formatted and empty, or formatted but contains files that haven't been touched for 24 hours, and there are healthy active database copies in the local Active Directory site that can be used as a seeding source, but there are unknown files outside of the database file (EDB file) and log files.|2 weeks|
+|Disk is unformatted, or formatted but empty, or formatted but contains files that haven't been touched for 24 hours, and there are healthy active database copies in the local Active Directory site that can be used as a seeding source, but there are one or more database files (EDB files) for databases that are not present in Active Directory.|2 weeks|

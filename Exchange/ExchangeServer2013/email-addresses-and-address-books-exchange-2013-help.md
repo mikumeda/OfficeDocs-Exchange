@@ -41,7 +41,7 @@ The following terms define the core components associated with email addresses a
 
   The hierarchical address book (HAB) enables end users to look for recipients in their address book using an organizational hierarchy, such as seniority or management structure. Normally, users are limited to the default GAL and its associated recipient properties and the structure of the GAL often doesn't accurately reflect the management or seniority relationships for recipients in your organization. Being able to customize an HAB that maps to your organization's unique business structure provides your users with an efficient method for locating internal recipients.
 
-  - **offline address books**
+- **offline address books**
 
     An offline address book (OAB) is a copy of a collection of address lists that has been downloaded so that a Microsoft Outlook user can access the information it contains while disconnected from the server.
 
@@ -49,41 +49,11 @@ The following terms define the core components associated with email addresses a
 
 The following table contains links to topics that will help you learn about and manage email addresses and address books in Exchange 2013.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Topic</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="/exchange/address-books/address-lists/address-lists">Address lists</a></p></td>
-<td><p>Learn more about address lists and GALs as methods for organizing your recipients for easy end user access.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="/exchange/address-books/address-book-policies/address-book-policies">Address book policies</a></p></td>
-<td><p>Learn more about how to separate your address lists and GALs into separate virtual organizations.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="details-templates-exchange-2013-help.md">Details templates</a></p></td>
-<td><p>Learn more about customizing the address cards in Outlook.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="email-address-policies-exchange-2013-help.md">Email address policies</a></p></td>
-<td><p>Learn more about proxy email addresses to make recipients more discoverable.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/exchange/address-books/hierarchical-address-books/hierarchical-address-books">Hierarchical address books</a></p></td>
-<td><p>Learn more about how to customize the GAL and address lists to meet your organization's unique business structure.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="offline-address-books-exchange-2013-help.md">Offline address books</a></p></td>
-<td><p>Learn more about providing users with offline access to your organization's address lists.</p></td>
-</tr>
-</tbody>
-</table>
+|Topic|Description|
+|---|---|
+|[Address lists](address-lists-exchange-2013-help.md)|Learn more about address lists and GALs as methods for organizing your recipients for easy end user access.|
+|[Address book policies](address-book-policies-exchange-2013-help.md)|Learn more about how to separate your address lists and GALs into separate virtual organizations.|
+|[Details templates](details-templates-exchange-2013-help.md)|Learn more about customizing the address cards in Outlook.|
+|[Email address policies](email-address-policies-exchange-2013-help.md)|Learn more about proxy email addresses to make recipients more discoverable.|
+|[Hierarchical address books](hierarchical-address-books-exchange-2013.md)|Learn more about how to customize the GAL and address lists to meet your organization's unique business structure.|
+|[Offline address books](offline-address-books-exchange-2013-help.md)|Learn more about providing users with offline access to your organization's address lists.|

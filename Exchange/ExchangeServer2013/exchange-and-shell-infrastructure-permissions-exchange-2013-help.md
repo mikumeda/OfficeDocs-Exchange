@@ -30,7 +30,7 @@ To find out what permissions you need to perform the procedure or run the cmdlet
 3. Now, run the **Get-ManagementRoleAssignment** cmdlet to look at the role groups or management roles assigned to you to see if you have the permissions that are necessary to manage the feature.
 
     > [!NOTE]
-    > You must be assigned the Role Management management role to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet. If you don't have permissions to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
+    > You must be assigned the Role Management management role to run the **Get-ManagementRoleAssignment** cmdlet. If you don't have permissions to run the **Get-ManagementRoleAssignment** cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
 
 If you want to delegate the ability to manage a feature to another user, see [Delegate role assignments](delegate-role-assignments-exchange-2013-help.md).
 
@@ -43,73 +43,18 @@ The following table lists the permissions required to perform tasks that configu
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Administrator audit logging</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange admin center configuration settings</p></td>
-<td><p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange admin center connectivity</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange server configuration settings</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Help settings</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Message categories</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="hygiene-management-exchange-2013-help.md">Hygiene Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Product key</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Test system health</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>View-only administrator audit logging</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p>
-
-> [!NOTE]
-> You can also manually assign the View-Only Audit Logs management role to a management role group. For more information, see <A href="view-only-audit-logs-role-exchange-2013-help.md">View-Only Audit Logs role</A>.
-
-</td>
-</tr>
-<tr class="even">
-<td><p>Write to audit log</p></td>
-<td><p>Users that are members of any role group or assigned any management role can write to the administrator audit log.</p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Administrator audit logging|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md)|
+|Exchange admin center configuration settings|[View-only Organization Management](view-only-organization-management-exchange-2013-help.md)|
+|Exchange admin center connectivity|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Exchange server configuration settings|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Exchange Help settings|[Organization Management](organization-management-exchange-2013-help.md)|
+|Message categories|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Hygiene Management](hygiene-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Product key|[Organization Management](organization-management-exchange-2013-help.md)|
+|Test system health|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|View-only administrator audit logging|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md) <br/><br/> **Note**: You can also manually assign the View-Only Audit Logs management role to a management role group. For more information, see [View-Only Audit Logs role](view-only-audit-logs-role-exchange-2013-help.md).|
+|Write to audit log|Users that are members of any role group or assigned any management role can write to the administrator audit log.|
 
 ## Shell infrastructure permissions
 
@@ -117,44 +62,13 @@ The following table lists the permissions required to perform tasks that configu
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Active Directory Domain Services server settings</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Cmdlet extension agents</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>PowerShell virtual directories</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>PowerShell and WinRM installation</p></td>
-<td><p>Local Server Administrator</p></td>
-</tr>
-<tr class="odd">
-<td><p>Remote Shell</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Active Directory Domain Services server settings|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|Cmdlet extension agents|[Organization Management](organization-management-exchange-2013-help.md)|
+|PowerShell virtual directories|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|PowerShell and WinRM installation|Local Server Administrator|
+|Remote Shell|[Organization Management](organization-management-exchange-2013-help.md)|
 
 ## Federation and certificates permissions
 
@@ -162,42 +76,10 @@ The following table lists permissions required for performing tasks related to f
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Certificate management</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Federation trusts, OAuth</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Test federation trusts, OAuth</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Hybrid deployment configuration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Intra-Organization connectors</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Certificate management|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Federation trusts, OAuth|[Organization Management](organization-management-exchange-2013-help.md)|
+|Test federation trusts, OAuth|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Hybrid deployment configuration|[Organization Management](organization-management-exchange-2013-help.md)|
+|Intra-Organization connectors|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md)|

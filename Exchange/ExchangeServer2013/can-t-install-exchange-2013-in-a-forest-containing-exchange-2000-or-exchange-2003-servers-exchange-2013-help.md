@@ -12,9 +12,10 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the 'Can't install Exchange 2013 in a forest containing Exchange 2000 or Exchange 2003 servers' error.
 ---
 
-# Can't install Exchange 2013 in a forest containing Exchange 2000 or Exchange 2003 servers.
+# Can't install Exchange 2013 in a forest containing Exchange 2000 or Exchange 2003 servers
 
 _**Applies to:** Exchange Server 2013_
 
@@ -22,48 +23,10 @@ Microsoft Exchange Server 2013 can't continue because one or more computers runn
 
 The path you need to follow to install Exchange 2013 in your organization depends on the version of Exchange you currently have installed in your forest. See the following table for more information.
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>If you have the following installed in your organization</th>
-<th>You must take this path to upgrade to Exchange 2013</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange 2000</p></td>
-<td><ol>
-<li><p>Install Exchange 2007 into your Exchange 2000 organization.</p></li>
-<li><p>Configure Exchange 2007 and Exchange 2000 coexistence.</p></li>
-<li><p>Migrate Exchange 2000 mailboxes, public folders, and other components to Exchange 2007.</p></li>
-<li><p>Decommission and remove all Exchange 2000 servers.</p></li>
-<li><p>Install Exchange 2013 into your Exchange 2007 organization.</p></li>
-<li><p>Configure Exchange 2013 and Exchange 2007 coexistence.</p></li>
-<li><p>Migrate Exchange 2007 mailboxes, public folders, and other components to Exchange 2013.</p></li>
-<li><p>Decommission and remove all Exchange 2007 servers.</p></li>
-</ol>
-<p>For more information, see <a href="/previous-versions/office/exchange-server-2007/bb124008(v=exchg.80)">Upgrading to Exchange 2007</a> and <a href="upgrade-from-exchange-2007-to-exchange-2013-exchange-2013-help.md">Upgrade from Exchange 2007 to Exchange 2013</a>.</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange 2003</p></td>
-<td><ol>
-<li><p>Install Exchange 2010 into your Exchange 2003 organization.</p></li>
-<li><p>Configure Exchange 2010 and Exchange 2003 coexistence.</p></li>
-<li><p>Migrate Exchange 2003 mailboxes, public folders, and other components to Exchange 2010.</p></li>
-<li><p>Decommission and remove all Exchange 2003 servers.</p></li>
-<li><p>Install Exchange 2013 into your Exchange 2010 organization.</p></li>
-<li><p>Configure Exchange 2013 and Exchange 2010 coexistence.</p></li>
-<li><p>Migrate Exchange 2010 mailboxes, public folders, and other components to Exchange 2013.</p></li>
-<li><p>Decommission and remove all Exchange 2010 servers.</p></li>
-</ol>
-<p>For more information, see <a href="/previous-versions/office/exchange-server-2010/aa998186(v=exchg.141)">Exchange 2003 - Planning Roadmap for Upgrade and Coexistence</a> and <a href="upgrade-from-exchange-2010-to-exchange-2013-exchange-2013-help.md">Upgrade from Exchange 2010 to Exchange 2013</a>.</p></td>
-</tr>
-</tbody>
-</table>
+|If you have the following installed in your organization|You must take this path to upgrade to Exchange 2013|
+|---|---|
+|Exchange 2000|<ol><li>Install Exchange 2007 into your Exchange 2000 organization.</li><li>Configure Exchange 2007 and Exchange 2000 coexistence.</li><li>Migrate Exchange 2000 mailboxes, public folders, and other components to Exchange 2007.</li><li>Decommission and remove all Exchange 2000 servers.</li><li>Install Exchange 2013 into your Exchange 2007 organization.</li><li>Configure Exchange 2013 and Exchange 2007 coexistence.</li><li>Migrate Exchange 2007 mailboxes, public folders, and other components to Exchange 2013.</li><li>Decommission and remove all Exchange 2007 servers.</li></ol> <p> For more information, see [Upgrading to Exchange 2007](/previous-versions/office/exchange-server-2007/bb124008(v=exchg.80)) and [Upgrade from Exchange 2007 to Exchange 2013](upgrade-from-exchange-2007-to-exchange-2013-exchange-2013-help.md).|
+|Exchange 2003|<ol><li>Install Exchange 2010 into your Exchange 2003 organization.</li><li>Configure Exchange 2010 and Exchange 2003 coexistence.</li><li>Migrate Exchange 2003 mailboxes, public folders, and other components to Exchange 2010.</li><li>Decommission and remove all Exchange 2003 servers.</li><li>Install Exchange 2013 into your Exchange 2010 organization.</li><li>Configure Exchange 2013 and Exchange 2010 coexistence.</li><li>Migrate Exchange 2010 mailboxes, public folders, and other components to Exchange 2013.</li><li>Decommission and remove all Exchange 2010 servers.</li></ol> <p> For more information, see [Exchange 2003 - Planning Roadmap for Upgrade and Coexistence](/previous-versions/office/exchange-server-2010/aa998186(v=exchg.141)) and [Upgrade from Exchange 2010 to Exchange 2013](upgrade-from-exchange-2010-to-exchange-2013-exchange-2013-help.md).|
 
 When upgrading to Exchange 2013 or later, you can use the Exchange Deployment Assistant to help complete your deployment. For more information, see [Exchange Deployment Assistant](https://assistants.microsoft.com/).
 

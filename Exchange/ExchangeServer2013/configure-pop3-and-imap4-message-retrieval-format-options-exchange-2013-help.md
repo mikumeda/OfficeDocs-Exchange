@@ -72,54 +72,23 @@ This example sets the message retrieval format option to text only for all POP3 
 Set-PopSettings -Server CAS01 -MessageRetrievalMimeFormat TextOnly
 ```
 
-You can choose from the following settings. You can specify the value for the *MessageRetrievalMimeFormat* parameter by using a numerical value or a text string.
+You can choose from the following settings. You can specify the value for the _MessageRetrievalMimeFormat_ parameter by using a numerical value or a text string.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>Message format</strong></p></td>
-<td><p><strong>Value</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Text</p></td>
-<td><p><code>0</code> or <code>TextOnly</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>HTML</p></td>
-<td><p><code>1</code> or <code>HtmlOnly</code></p></td>
-</tr>
-<tr class="even">
-<td><p>HTML and alternative text</p></td>
-<td><p><code>2</code> or <code>HtmlAndTextAlternative</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Enriched text</p></td>
-<td><p><code>3</code> or <code>TextEnriched</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Enriched text and alternative text</p></td>
-<td><p><code>4</code> or <code>TextEnrichedAndTextAlternative</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Best body format</p></td>
-<td><p><code>5</code> or <code>BestBodyFormat</code></p></td>
-</tr>
-<tr class="even">
-<td><p>TNEF</p></td>
-<td><p><code>6</code> or <code>Tnef</code></p></td>
-</tr>
-</tbody>
-</table>
+|Message format|Value|
+|---|---|
+|Text|`0` or `TextOnly`|
+|HTML|`1` or `HtmlOnly`|
+|HTML and alternative text|`2` or `HtmlAndTextAlternative`|
+|Enriched text|`3` or `TextEnriched`|
+|Enriched text and alternative text|`4` or `TextEnrichedAndTextAlternative`|
+|Best body format|`5` or `BestBodyFormat`|
+|TNEF|`6` or `Tnef`|
 
 After you've set the message retrieval format settings for POP3, you must restart the POP3 services for the settings to take effect. For more information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
 
 For more information about syntax and parameters, see [Set-PopSettings](/powershell/module/exchange/Set-PopSettings).
 
-### How do you know this worked?
+### How do you know you've successfully set POP3 message retrieval settings on a server?
 
 To verify that you've successfully set POP3 message retrieval settings on a server:
 
@@ -129,7 +98,7 @@ To verify that you've successfully set POP3 message retrieval settings on a serv
     Get-PopSettings | format-list
     ```
 
-2. Verify the *MessageRetrievalMimeFormat* setting is correct.
+2. Verify the _MessageRetrievalMimeFormat_ setting is correct.
 
 ## Set the IMAP4 message retrieval format at the server level
 
@@ -169,54 +138,23 @@ This example sets the message retrieval format option to text only for all IMAP4
 Set-ImapSettings -Server CAS01 -MessageRetrievalMimeFormat TextOnly
 ```
 
-You can choose from the following settings. You can specify the value for the *MessageRetrievalMimeFormat* parameter by using a numerical value or a text string.
+You can choose from the following settings. You can specify the value for the _MessageRetrievalMimeFormat_ parameter by using a numerical value or a text string.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>Message format</strong></p></td>
-<td><p><strong>Value</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Text</p></td>
-<td><p><code>0</code> or <code>TextOnly</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>HTML</p></td>
-<td><p><code>1</code> or <code>HtmlOnly</code></p></td>
-</tr>
-<tr class="even">
-<td><p>HTML and alternative text</p></td>
-<td><p><code>2</code> or <code>HtmlAndTextAlternative</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Enriched text</p></td>
-<td><p><code>3</code> or <code>TextEnriched</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Enriched text and alternative text</p></td>
-<td><p><code>4</code> or <code>TextEnrichedAndTextAlternative</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Best body format</p></td>
-<td><p><code>5</code> or <code>BestBodyFormat</code></p></td>
-</tr>
-<tr class="even">
-<td><p>TNEF</p></td>
-<td><p><code>6</code> or <code>Tnef</code></p></td>
-</tr>
-</tbody>
-</table>
+|Message format|Value|
+|---|---|
+|Text|`0` or `TextOnly`|
+|HTML|`1` or `HtmlOnly`|
+|HTML and alternative text|`2` or `HtmlAndTextAlternative`|
+|Enriched text|`3` or `TextEnriched`|
+|Enriched text and alternative text|`4` or `TextEnrichedAndTextAlternative`|
+|Best body format|`5` or `BestBodyFormat`|
+|TNEF|`6` or `Tnef`|
 
 After you've set the message retrieval format settings for IMAP4, you must restart the IMAP4 services for the settings to take effect. For more information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
 
 For more information about syntax and parameters, see [Set-ImapSettings](/powershell/module/exchange/Set-ImapSettings).
 
-### How do you know this worked?
+### How do you know you've successfully set IMAP4 message retrieval settings on a server?
 
 To verify that you've successfully set IMAP4 message retrieval settings on a server:
 
@@ -226,7 +164,7 @@ To verify that you've successfully set IMAP4 message retrieval settings on a ser
     Get-ImapSettings | format-list
     ```
 
-2. Verify the *MessageRetrievalMimeFormat* setting is correct.
+2. Verify the _MessageRetrievalMimeFormat_ setting is correct.
 
 ## Set the POP3 message retrieval format for a user
 
@@ -238,54 +176,23 @@ This example sets the message retrieval format to text only for POP3 access for 
 Set-CASMailbox -Identity USER01 -PopMessagesRetrievalMimeFormat TextOnly
 ```
 
-You can choose from the following settings. You can specify the value for the *PopMessagesRetrievalMimeFormat* parameter by using a numerical value or a text string.
+You can choose from the following settings. You can specify the value for the _PopMessagesRetrievalMimeFormat_ parameter by using a numerical value or a text string.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>Message format</strong></p></td>
-<td><p><strong>Value</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Text</p></td>
-<td><p><code>0</code> or <code>TextOnly</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>HTML</p></td>
-<td><p><code>1</code> or <code>HtmlOnly</code></p></td>
-</tr>
-<tr class="even">
-<td><p>HTML and alternative text</p></td>
-<td><p><code>2</code> or <code>HtmlAndTextAlternative</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Enriched text</p></td>
-<td><p><code>3</code> or <code>TextEnriched</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Enriched text and alternative text</p></td>
-<td><p><code>4</code> or <code>TextEnrichedAndTextAlternative</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Best body format</p></td>
-<td><p><code>5</code> or <code>BestBodyFormat</code></p></td>
-</tr>
-<tr class="even">
-<td><p>TNEF</p></td>
-<td><p><code>6</code> or <code>Tnef</code></p></td>
-</tr>
-</tbody>
-</table>
+|Message format|Value|
+|---|---|
+|Text|`0` or `TextOnly`|
+|HTML|`1` or `HtmlOnly`|
+|HTML and alternative text|`2` or `HtmlAndTextAlternative`|
+|Enriched text|`3` or `TextEnriched`|
+|Enriched text and alternative text|`4` or `TextEnrichedAndTextAlternative`|
+|Best body format|`5` or `BestBodyFormat`|
+|TNEF|`6` or `Tnef`|
 
 After you've set the message retrieval format settings for POP3, you must restart the POP3 services for the settings to take effect. For more information about how to restart the POP3 services, see [Start and stop the POP3 services](start-and-stop-the-pop3-services-exchange-2013-help.md).
 
 For more information about syntax and parameters, see [Set-CASMailbox](/powershell/module/exchange/Set-CASMailbox).
 
-### How do you know this worked?
+### How do you know you've successfully set POP3 message retrieval format options for a user?
 
 To verify that you've successfully set POP3 message retrieval format options for a user:
 
@@ -295,7 +202,7 @@ To verify that you've successfully set POP3 message retrieval format options for
     Get-CASMailbox <identity> | format-list
     ```
 
-2. Verify the value for *PopMessagesRetrievalMimeFormat* is correct.
+2. Verify the value for _PopMessagesRetrievalMimeFormat_ is correct.
 
 ## Set the IMAP4 message retrieval format for a user
 
@@ -307,54 +214,23 @@ This example sets the message retrieval format to text only for IMAP4 access for
 Set-CASMailbox -Identity USER01 -ImapMessagesRetrievalMimeFormat TextOnly
 ```
 
-You can specify the value for the *ImapMessagesRetrievalMimeFormat* parameter by using a numerical value or a text string.
+You can specify the value for the _ImapMessagesRetrievalMimeFormat_ parameter by using a numerical value or a text string.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>Message format</strong></p></td>
-<td><p><strong>Value</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Text</p></td>
-<td><p><code>0</code> or <code>TextOnly</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>HTML</p></td>
-<td><p><code>1</code> or <code>HtmlOnly</code></p></td>
-</tr>
-<tr class="even">
-<td><p>HTML and alternative text</p></td>
-<td><p><code>2</code> or <code>HtmlAndTextAlternative</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Enriched text</p></td>
-<td><p><code>3</code> or <code>TextEnriched</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Enriched text and alternative text</p></td>
-<td><p><code>4</code> or <code>TextEnrichedAndTextAlternative</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Best body format</p></td>
-<td><p><code>5</code> or <code>BestBodyFormat</code></p></td>
-</tr>
-<tr class="even">
-<td><p>TNEF</p></td>
-<td><p><code>6</code> or <code>Tnef</code></p></td>
-</tr>
-</tbody>
-</table>
+|Message format|Value|
+|---|---|
+|Text|`0` or `TextOnly`|
+|HTML|`1` or `HtmlOnly`|
+|HTML and alternative text|`2` or `HtmlAndTextAlternative`|
+|Enriched text|`3` or `TextEnriched`|
+|Enriched text and alternative text|`4` or `TextEnrichedAndTextAlternative`|
+|Best body format|`5` or `BestBodyFormat`|
+|TNEF|`6` or `Tnef`|
 
 After you've set the message retrieval format settings for IMAP4, you must restart the IMAP4 services for the settings to take effect. For more information about how to restart the IMAP4 services, see [Start and stop the IMAP4 services](start-and-stop-the-imap4-services-exchange-2013-help.md).
 
 For more information about syntax and parameters, see [Set-CASMailbox](/powershell/module/exchange/Set-CASMailbox).
 
-### How do you know this worked?
+### How do you know you've successfully set IMAP4 message retrieval format options for a user?
 
 To verify that you've successfully set IMAP4 message retrieval format options for a user:
 
@@ -364,7 +240,7 @@ To verify that you've successfully set IMAP4 message retrieval format options fo
     Get-CASMailbox <identity> | format-list
     ```
 
-2. Verify the value for *ImapMessagesRetrievalMimeFormat* is correct.
+2. Verify the value for _ImapMessagesRetrievalMimeFormat_ is correct.
 
 ## For more information
 

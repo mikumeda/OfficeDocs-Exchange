@@ -33,11 +33,11 @@ We created a single interface that provides a superset of scenario coverage over
 
 Additionally, we listened to customers of all sizes and their primary concerns were the following:
 
-  - Maintaining and downloading patches in order to operate an administrative tool is an operational overhead for customers which, in turn, increases operational costs.
+- Maintaining and downloading patches in order to operate an administrative tool is an operational overhead for customers which, in turn, increases operational costs.
 
-  - As the IT workforce becomes increasingly mobile, customers wanted to be able to manage their environments from anywhere, not only from the desktops and servers where their administrative tools are installed.
+- As the IT workforce becomes increasingly mobile, customers wanted to be able to manage their environments from anywhere, not only from the desktops and servers where their administrative tools are installed.
 
-  - Using multiple tools for different deployment options becomes confusing and increases training and operational costs
+- Using multiple tools for different deployment options becomes confusing and increases training and operational costs
 
 ## Is PowerShell logging and cmdlet exposure coming back to EAC?
 
@@ -52,9 +52,7 @@ No. We fully support the EAC experience.
 No. You can't use the Exchange 2010 EMC to manage Exchange 2013 objects and servers. While customers upgrade to Exchange 2013, we encourage them to use the EAC to:
 
 1. Manage Exchange 2013 mailboxes, servers, and corresponding services.
-
 2. View and update Exchange 2010 mailboxes and properties.
-
 3. View and update Exchange 2007 mailboxes and properties.
 
 We encourage customers to use Exchange 2010 EMC to create and manage Exchange 2010 mailboxes.
@@ -85,45 +83,12 @@ In Exchange 2007 and Exchange 2010, the EMC contained the Toolbox, which provide
 
 The following table lists the changes to the Exchange 2013 Toolbox:
 
-<table>
-<colgroup>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tool</th>
-<th>Where is it now?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange Best Practices Analyzer (ExBPA)</p></td>
-<td><p>The ExBPA has been retired. Readiness checks have replaced the ExBPA to make sure that your Active Directory forest and Exchange servers are ready for Exchange 2013. Each readiness check topic describes the actions that you can take to resolve issues that are found when the readiness checks are run. You should only perform the steps outlined in a readiness check topic if that readiness check was displayed during setup.</p></td>
-</tr>
-<tr class="even">
-<td><p>Mail Flow Troubleshooter</p></td>
-<td><p>The Mail Flow Troubleshooter has been retired. You can now use the messaging tracking feature in the EAC. Go to <strong>Mail flow</strong> &gt; <strong>Delivery reports</strong>.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Performance Monitor</p></td>
-<td><p>The Performance Monitor has been retired from the Toolbox. You can still find the Performance Monitor under <strong>Administrative Tools</strong> in Windows Server 2008 and Windows Server 2012.</p></td>
-</tr>
-<tr class="even">
-<td><p>Performance Troubleshooter</p></td>
-<td><p>The Performance Troubleshooter has been retired from the Toolbox.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Routing Log Viewer</p></td>
-<td><p>The Routing Log Viewer has been retired.</p></td>
-</tr>
-<tr class="even">
-<td><p>Public Folder Management Console</p></td>
-<td><p>Public folders are now managed from within the EAC. In the EAC, go to <strong>Public Folders</strong>.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Role Based Access Control (RBAC) User Editor</p></td>
-<td><p>RBAC is now managed from within the EAC. In the EAC, go to <strong>Permissions</strong>.</p></td>
-</tr>
-</tbody>
-</table>
+|Tool|Where is it now?|
+|---|---|
+|Exchange Best Practices Analyzer (ExBPA)|The ExBPA has been retired. Readiness checks have replaced the ExBPA to make sure that your Active Directory forest and Exchange servers are ready for Exchange 2013. Each readiness check topic describes the actions that you can take to resolve issues that are found when the readiness checks are run. You should only perform the steps outlined in a readiness check topic if that readiness check was displayed during setup.|
+|Mail Flow Troubleshooter|The Mail Flow Troubleshooter has been retired. You can now use the messaging tracking feature in the EAC. Go to **Mail flow** \> **Delivery reports**.|
+|Performance Monitor|The Performance Monitor has been retired from the Toolbox. You can still find the Performance Monitor under **Administrative Tools** in Windows Server 2008 and Windows Server 2012.|
+|Performance Troubleshooter|The Performance Troubleshooter has been retired from the Toolbox.|
+|Routing Log Viewer|The Routing Log Viewer has been retired.|
+|Public Folder Management Console|Public folders are now managed from within the EAC. In the EAC, go to **Public Folders**.|
+|Role Based Access Control (RBAC) User Editor|RBAC is now managed from within the EAC. In the EAC, go to **Permissions**.|

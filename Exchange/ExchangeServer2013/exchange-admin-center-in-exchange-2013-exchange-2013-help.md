@@ -83,67 +83,17 @@ The tabs are your second level of navigation. Each of the feature areas contains
 
 When you click most tabs, you'll see a toolbar. The toolbar has icons that perform a specific action. The following table describes the most common icons and their actions. To display the action associated with an icon, simply hover over the icon.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Icon</th>
-<th>Name</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><img src="images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif" title="Add Icon" alt="Add Icon" /></p></td>
-<td><p>Add, New</p></td>
-<td><p>Use this icon to create a new object. Some of these icons have an associated down arrow you can click to show additional objects you can create. For example, in <strong>Recipients</strong> &gt; <strong>Mailboxes</strong>, clicking the down arrow displays <strong>User mailbox</strong> and <strong>Linked mailbox</strong> as additional options.</p></td>
-</tr>
-<tr class="even">
-<td><p><img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" /></p></td>
-<td><p>Edit</p></td>
-<td><p>Use this icon to edit an object.</p></td>
-</tr>
-<tr class="odd">
-<td><p><img src="images/Dd298078.14f639f6-61e8-4418-bbfb-0db14de9d2f5(EXCHG.150).gif" title="Delete icon" alt="Delete icon" /></p></td>
-<td><p>Delete</p></td>
-<td><p>Use this icon to delete an object. Some delete icons have a down arrow you can click to show additional options.</p></td>
-</tr>
-<tr class="even">
-<td><p><img src="images/Dn624163.773574d0-9b92-4cab-9f6b-81532c7418b9(EXCHG.150).gif" title="Search icon" alt="Search icon" /></p></td>
-<td><p>Search</p></td>
-<td><p>Use this icon to open a search box in which you can type the search phrase for an object you want to find.</p></td>
-</tr>
-<tr class="odd">
-<td><p><img src="images/Dn624163.85f271ca-32a4-426c-842a-d2172567099d(EXCHG.150).gif" title="Refresh Icon" alt="Refresh Icon" /></p></td>
-<td><p>Refresh</p></td>
-<td><p>Use this icon to refresh the list view.</p></td>
-</tr>
-<tr class="even">
-<td><p><img src="images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif" title="More Options Icon" alt="More Options Icon" /></p></td>
-<td><p>More options</p></td>
-<td><p>Use this icon to view more actions you can perform for that tab's objects. For example, in <strong>Recipients</strong> &gt; <strong>Mailboxes</strong> clicking this icon shows the following options: <strong>Disable</strong>, <strong>Add/Remove columns</strong>, <strong>Export data to a CSV file</strong>, <strong>Connect a mailbox</strong>, and <strong>Advanced search</strong>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><img src="images/JJ150576.1732c727-328b-4a1a-b84d-6d7252c7dcab(EXCHG.150).gif" title="Up Arrow Icon" alt="Up Arrow Icon" />   <img src="images/JJ150576.ef5ca57d-a033-457b-bd92-6361877c33d0(EXCHG.150).gif" title="Down Arrow Icon" alt="Down Arrow Icon" /></p></td>
-<td><p>Up arrow and down arrow</p></td>
-<td><p>Use these icons to move an object's priority up or down. For example, in <strong>Mail flow</strong> &gt; <strong>Email address policies</strong> click the up arrow to raise the priority of an email address policy. You can also use these arrows to navigate the public folder hierarchy and to move rules up or down in the list view.</p></td>
-</tr>
-<tr class="even">
-<td><p><img src="images/JJ657480.ed7f7abf-39d8-4f43-a918-ccb3bff87ef5(EXCHG.150).gif" title="Copy Icon" alt="Copy Icon" /></p></td>
-<td><p>Copy</p></td>
-<td><p>Use this icon to copy an object so you can make changes to it without changing the original object. For example, in <strong>Permissions</strong> &gt; <strong>Admin roles</strong>, select a role from the list view, and then click this icon to create a new role group based on an existing one.</p></td>
-</tr>
-<tr class="odd">
-<td><p><img src="images/Dd362328.479b6ced-8d64-4277-a725-f17fea202b28(EXCHG.150).gif" title="Remove icon" alt="Remove icon" /></p></td>
-<td><p>Remove</p></td>
-<td><p>Use this icon to remove an item from a list. For example, in the <strong>Public Folder Permissions</strong> dialog box, you can remove users from the list of users allowed to access the public folder by selecting the user and clicking this icon.</p></td>
-</tr>
-</tbody>
-</table>
+|Icon|Name|Action|
+|---|---|
+|![Add icon.](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif)|Add, New|Use this icon to create a new object. Some of these icons have an associated down arrow you can click to show additional objects you can create. For example, in **Recipients** \> **Mailboxes**, clicking the down arrow displays **User mailbox** and **Linked mailbox** as additional options.|
+|![Edit icon.](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif)|Edit|Use this icon to edit an object.|
+|![Delete icon.](images/Dd298078.14f639f6-61e8-4418-bbfb-0db14de9d2f5(EXCHG.150).gif)|Delete|Use this icon to delete an object. Some delete icons have a down arrow you can click to show additional options.|
+|![Search icon.](images/Dn624163.773574d0-9b92-4cab-9f6b-81532c7418b9(EXCHG.150).gif)|Search|Use this icon to open a search box in which you can type the search phrase for an object you want to find.|
+|![Refresh icon.](images/Dn624163.85f271ca-32a4-426c-842a-d2172567099d(EXCHG.150).gif)|Refresh|Use this icon to refresh the list view.|
+|![More Options Icon(images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif)]|More options|Use this icon to view more actions you can perform for that tab's objects. For example, in **Recipients** \> **Mailboxes** clicking this icon shows the following options: **Disable**, **Add/Remove columns**, **Export data to a CSV file**, **Connect a mailbox**, and **Advanced search**.|
+|![Up Arrow icon.](images/JJ150576.1732c727-328b-4a1a-b84d-6d7252c7dcab(EXCHG.150).gif)|Up arrow and down arrow|Use these icons to move an object's priority up or down. For example, in **Mail flow** \> **Email address policies** click the up arrow to raise the priority of an email address policy. You can also use these arrows to navigate the public folder hierarchy and to move rules up or down in the list view.|
+|![Copy icon.](images/JJ657480.ed7f7abf-39d8-4f43-a918-ccb3bff87ef5(EXCHG.150).gif)|Copy|Use this icon to copy an object so you can make changes to it without changing the original object. For example, in **Permissions** \> **Admin roles**, select a role from the list view, and then click this icon to create a new role group based on an existing one.|
+|![Remove icon.](images/Dd362328.479b6ced-8d64-4277-a725-f17fea202b28(EXCHG.150).gif)|Remove|Use this icon to remove an item from a list. For example, in the **Public Folder Permissions** dialog box, you can remove users from the list of users allowed to access the public folder by selecting the user and clicking this icon.|
 
 ## List view
 
@@ -159,12 +109,10 @@ The EAC includes a notification viewer that displays the status of long-running 
 
 ## Me tile and Help
 
-The *Me tile* allows you to sign out of the EAC and sign in as a different user. From the Help ![Help Icon.](images/JJ150562.a32eac4e-345d-4236-a284-204390aff4ee(EXCHG.150).gif "Help Icon") drop-down menu, you can perform the following actions:
+The _Me tile_ allows you to sign out of the EAC and sign in as a different user. From the Help ![Help Icon.](images/JJ150562.a32eac4e-345d-4236-a284-204390aff4ee(EXCHG.150).gif "Help Icon") drop-down menu, you can perform the following actions:
 
 - **Help**: Click ![Help Icon.](images/JJ150562.a32eac4e-345d-4236-a284-204390aff4ee(EXCHG.150).gif "Help Icon") to view the online help content.
-
 - **Disable Help bubble**: The Help bubble displays contextual help for fields when you create or edit and object. You can turn off the Help bubble help or turn it on if it has been disabled.
-
 - **Copyright and Privacy**: Click the privacy or copyright link to read the copyright and privacy information for Exchange 2013.
 
 ## Supported browsers
@@ -175,84 +123,14 @@ For the best experience with the EAC, use one of the operating system and browse
 > Other operating system and browser combinations not listed in the table are unsupported, including touch.
 
 - **Premium:**: All functional features are supported and fully tested.
-
 - **Supported:**: Has same functional feature support as premium. However, supported browsers will be missing features that the browser and operating system combination doesn't support.
-
 - **Unsupported:**: The browser and operating system isn't supported or tested.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Web Browser</p></td>
-<td><p>Windows XP and Windows Server 2003</p></td>
-<td><p>Windows Vista</p></td>
-<td><p>Windows 7 and Windows Server 2008</p></td>
-<td><p>Windows 8 and Windows Server 2012</p></td>
-<td><p>Mac OSX</p></td>
-<td><p>Linux</p></td>
-</tr>
-<tr class="even">
-<td><p>Internet Explorer 8</p></td>
-<td><p>Supported</p></td>
-<td><p>Supported</p></td>
-<td><p>Premium</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Unsupported</p></td>
-</tr>
-<tr class="odd">
-<td><p>Internet Explorer 9</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Supported</p></td>
-<td><p>Premium</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Unsupported</p></td>
-</tr>
-<tr class="even">
-<td><p>Internet Explorer 10 or later</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Supported</p></td>
-<td><p>Premium</p></td>
-<td><p>Premium</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Unsupported</p></td>
-</tr>
-<tr class="odd">
-<td><p>Firefox 11 or later</p></td>
-<td><p>Supported</p></td>
-<td><p>Supported</p></td>
-<td><p>Premium</p></td>
-<td><p>Premium</p></td>
-<td><p>Premium</p></td>
-<td><p>Supported</p></td>
-</tr>
-<tr class="even">
-<td><p>Safari 5.1 or later</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Unsupported</p></td>
-<td><p>Premium</p></td>
-<td><p>Unsupported</p></td>
-</tr>
-<tr class="odd">
-<td><p>Chrome 18 or later</p></td>
-<td><p>Supported</p></td>
-<td><p>Supported</p></td>
-<td><p>Premium</p></td>
-<td><p>Premium</p></td>
-<td><p>Premium</p></td>
-<td><p>Unsupported</p></td>
-</tr>
-</tbody>
-</table>
+|Web Browser|Windows XP and<br>Windows Server 2003|Windows Vista|Windows 7 and<br>Windows Server 2008|Windows 8 and<br> Windows Server 2012|Mac OSX|Linux|
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+|Internet Explorer 8|Supported|Supported|Premium|Unsupported|Unsupported|Unsupported|
+|Internet Explorer 9|Unsupported|Supported|Premium|Unsupported|Unsupported|Unsupported|
+|Internet Explorer 10 or later|Unsupported|Supported|Premium|Premium|Unsupported|Unsupported|
+|Firefox 11 or later|Supported|Supported|Premium|Premium|Premium|Supported|
+|Safari 5.1 or later|Unsupported|Unsupported|Unsupported|Unsupported|Premium|Unsupported|
+|Chrome 18 or later|Supported|Supported|Premium|Premium|Premium|Unsupported|

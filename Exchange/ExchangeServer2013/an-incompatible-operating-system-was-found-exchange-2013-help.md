@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the 'An incompatible operating system was found' error in Exchange 2013.
 ---
 
 # An incompatible operating system was found
@@ -23,51 +24,14 @@ Microsoft Exchange Server 2013 Setup can't continue because it detected an incom
 > [!IMPORTANT]
 > Exchange 2013 doesn't support the Server Core installation option of Windows Server 2008 R2, Windows Server 2012, or Windows Server 2012 R2.
 
-**Supported operating systems for Exchange 2013**
+|Component|Requirement|
+|---|---|
+|Mailbox, Client Access, and Edge Transport server roles|One of the following: <ul><li>Windows Server 2012 R2 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 Standard or Datacenter</li><li>Windows Server 2008 R2 Standard with Service Pack 1 (SP1)</li><li>Windows Server 2008 R2 Enterprise with Service Pack 1 (SP1)</li><li>Windows Server 2008 R2 Datacenter RTM or later</li></ul>|
+|Management tools|One of the following: <ul><li>Windows Server 2012 R2 Standard or Datacenter<sup>1</sup></li><li>Windows Server 2012 Standard or Datacenter</li><li>Windows Server 2008 R2 Standard with SP1</li><li>Windows Server 2008 R2 Enterprise with SP1</li><li>Windows Server 2008 R2 Datacenter RTM or later</li><li>64-bit edition of Windows 8.1<sup>2</sup></li><li>64-bit edition of Windows 8</li><li>64-bit edition of Windows 7 with Service Pack 1</li></ul>|
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Component</th>
-<th>Requirement</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Mailbox, Client Access, and Edge Transport server roles</p></td>
-<td><p>One of the following:</p>
-<ul>
-<li><p>Windows Server 2012 R2 Standard or Datacenter1</p></li>
-<li><p>Windows Server 2012 Standard or Datacenter</p></li>
-<li><p>Windows Server 2008 R2 Standard with Service Pack 1 (SP1)</p></li>
-<li><p>Windows Server 2008 R2 Enterprise with Service Pack 1 (SP1)</p></li>
-<li><p>Windows Server 2008 R2 Datacenter RTM or later</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Management tools</p></td>
-<td><p>One of the following:</p>
-<ul>
-<li><p>Windows Server 2012 R2 Standard or Datacenter1</p></li>
-<li><p>Windows Server 2012 Standard or Datacenter</p></li>
-<li><p>Windows Server 2008 R2 Standard with SP1</p></li>
-<li><p>Windows Server 2008 R2 Enterprise with SP1</p></li>
-<li><p>Windows Server 2008 R2 Datacenter RTM or later</p></li>
-<li><p>64-bit edition of Windows 8.12</p></li>
-<li><p>64-bit edition of Windows 8</p></li>
-<li><p>64-bit edition of Windows 7 with Service Pack 1</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+<sup>1</sup> Windows Server 2012 R2 is supported only with Exchange 2013 SP1 or later.
 
-1   Windows Server 2012 R2 is supported only with Exchange 2013 SP1 or later.
-
-2   Windows 8.1 is supported only with Exchange 2013 SP1 or later.
+<sup>2 </sup>Windows 8.1 is supported only with Exchange 2013 SP1 or later.
 
 For more information, see [Exchange 2013 system requirements](exchange-2013-system-requirements-exchange-2013-help.md).
 
