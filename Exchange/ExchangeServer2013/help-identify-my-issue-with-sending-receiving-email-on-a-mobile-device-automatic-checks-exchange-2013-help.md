@@ -30,22 +30,6 @@ We'll check to see if you have Microsoft .NET Framework 4.5 installed. To obtain
 
 ## Mobile Email Check
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Application</p></td>
-<td><p>Symptom</p></td>
-<td><p>Check</p></td>
-</tr>
-<tr class="even">
-<td><p>Mobile Email</p></td>
-<td><p>Cannot send or receive email on my mobile device</p></td>
-<td><p><a href="https://aka.ms/SaRA-Download_ExRCA">Microsoft Support and Recovery Assistant</a></p></td>
-</tr>
-</tbody>
-</table>
+|Application|Symptom|Check|
+|---|---|---|
+|Mobile Email|Cannot send or receive email on my mobile device|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|

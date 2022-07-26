@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about the structure of the administrator audit log in Exchange 2013.
 ---
 
 # Administrator audit log structure
@@ -24,131 +25,27 @@ The audit logs are XML files and can contain multiple audit log entries. The fol
 
 Looking for management tasks related to Administrator audit logs? See [Manage administrator audit logging](manage-administrator-audit-logging-exchange-2013-help.md).
 
-### Audit log XML tags and attributes
-
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Element</th>
-<th>Attribute</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</code></p>
-<p></p></td>
-<td><p><code>N/A</code></p></td>
-<td><p>This is the XML document declaration tag. It's included in every audit log XML file and contains the XML version number and the character encoding value.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>SearchResults</code></p></td>
-<td><p><code>N/A</code></p></td>
-<td><p>This tag contains all the audit log entries in the XML file. The <code>Event</code> tag is a child of this tag.</p>
-<p>There is only one <code>SearchResults</code> tag per XML file.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>Event</code></p></td>
-<td><p></p></td>
-<td><p>This tag contains the audit log entry for an individual cmdlet. This tag contains the <code>Caller</code>, <code>Cmdlet</code>, <code>ObjectModified</code>, <code>RunDate</code>, <code>Succeeded</code>, <code>Error</code>, and <code>OriginatingServer</code> attributes. The <code>CmdletParameters</code> and <code>ModifiedProperties</code> tags are children of this tag.</p>
-<p>There is one <code>Event</code> tag per audit log entry.</p></td>
-</tr>
-<tr class="even">
-<td><p></p></td>
-<td><p><code>Caller</code></p></td>
-<td><p>This attribute contains the user account of the user who ran the cmdlet in the <code>Cmdlet</code> attribute.</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p><code>Cmdlet</code></p></td>
-<td><p>This attribute contains the name of the cmdlet that was run by the user in the <code>Caller</code> attribute.</p></td>
-</tr>
-<tr class="even">
-<td><p></p></td>
-<td><p><code>ObjectModified</code></p></td>
-<td><p>This attribute contains the object that was modified by the cmdlet specified in the <code>Cmdlet</code> attribute. The <code>ModifiedProperties</code> tag shows which properties were modified on this object.</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p><code>RunDate</code></p></td>
-<td><p>This attribute contains the date and time when the cmdlet in the <code>Cmdlet</code> attribute was run.</p></td>
-</tr>
-<tr class="even">
-<td><p></p></td>
-<td><p><code>Succeeded</code></p></td>
-<td><p>This attribute specifies whether the cmdlet in the <code>Cmdlet</code> attribute ran successfully. The value is either <code>True</code> or <code>False</code>.</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p><code>Error</code></p></td>
-<td><p>This attribute contains the error message generated if the cmdlet in the <code>Cmdlet</code> attribute failed to complete successfully. If no error was encountered, the value is set to <code>None</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p></p></td>
-<td><p><code>OriginatingServer</code></p></td>
-<td><p>This attribute contains the server on which the cmdlet specified in the <code>Cmdlet</code> attribute was run.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>CmdletParameters</code></p></td>
-<td><p><code>N/A</code></p></td>
-<td><p>This tag contains all of the parameters specified when the cmdlet was run. The <code>Parameter</code> tag is a child of this tag.</p>
-<p>There is one <code>CmdletParameters</code> tag per <code>Event</code> tag.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>Parameter</code></p></td>
-<td><p></p></td>
-<td><p>This tag contains an individual parameter that was specified when the cmdlet was run. This tag contains the <code>Name</code> and <code>Value</code> attributes.</p>
-<p>There can be multiple <code>Parameter</code> tags per <code>CmdletParameters</code> tag.</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p><code>Name</code></p></td>
-<td><p>This attribute contains the name of the parameter that was specified on the cmdlet that was run.</p></td>
-</tr>
-<tr class="even">
-<td><p></p></td>
-<td><p><code>Value</code></p></td>
-<td><p>This attribute contains the value that was provided on the parameter specified in the <code>Name</code> attribute.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>ModifiedProperties</code></p></td>
-<td><p><code>N/A</code></p></td>
-<td><p>This tag contains all of the properties that were modified by the cmdlet that was run. The <code>Property</code> tag is a child of this tag.</p>
-<p>There is one <code>ModifiedProperties</code> tag per <code>Event</code> tag.</p>
-
-> [!IMPORTANT]
-> This tag is only populated if the <EM>LogLevel</EM> parameter on the <STRONG>Set-AdminAuditLogConfig</STRONG> cmdlet is set to <CODE>Verbose</CODE>.
-
-</td>
-</tr>
-<tr class="even">
-<td><p><code>Property</code></p></td>
-<td><p></p></td>
-<td><p>This tag contains an individual property that was specified when the cmdlet was run. This tag contains the <code>Name</code>, <code>OldValue</code>, and <code>NewValue</code> attributes.</p>
-<p>There can be multiple <code>Property</code> tags per <code>ModifiedProperties</code> tag.</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p><code>Name</code></p></td>
-<td><p>This attribute contains the name of the property that was modified when the cmdlet was run.</p></td>
-</tr>
-<tr class="even">
-<td><p></p></td>
-<td><p><code>OldValue</code></p></td>
-<td><p>This attribute contains the value that was contained in the property specified in the <code>Name</code> attribute before it was changed.</p></td>
-</tr>
-<tr class="odd">
-<td><p></p></td>
-<td><p><code>NewValue</code></p></td>
-<td><p>This attribute contains the value that the property in the <code>Name</code> attribute was changed to.</p></td>
-</tr>
-</tbody>
-</table>
+|Element|Attribute|Description|
+|---|---|---|
+|`<?xml version="1.0" encoding="utf-8"?>`|`N/A`|This is the XML document declaration tag. It's included in every audit log XML file and contains the XML version number and the character encoding value.|
+|`SearchResults`|`N/A`|This tag contains all the audit log entries in the XML file. The `Event` tag is a child of this tag. <br/><br/> There is only one `SearchResults` tag per XML file.|
+|`Event`||This tag contains the audit log entry for an individual cmdlet. This tag contains the `Caller`, `Cmdlet`, `ObjectModified`, `RunDate`, `Succeeded`, `Error`, and `OriginatingServer` attributes. The `CmdletParameters` and `ModifiedProperties` tags are children of this tag. <br/><br/> There is one `Event` tag per audit log entry.|
+||`Caller`|This attribute contains the user account of the user who ran the cmdlet in the `Cmdlet` attribute.|
+||`Cmdlet`|This attribute contains the name of the cmdlet that was run by the user in the `Caller` attribute.|
+||`ObjectModified`|This attribute contains the object that was modified by the cmdlet specified in the `Cmdlet` attribute. The `ModifiedProperties` tag shows which properties were modified on this object.|
+||`RunDate`|This attribute contains the date and time when the cmdlet in the `Cmdlet` attribute was run.|
+||`Succeeded`|This attribute specifies whether the cmdlet in the `Cmdlet` attribute ran successfully. The value is either `True` or `False`.|
+||`Error`|This attribute contains the error message generated if the cmdlet in the `Cmdlet` attribute failed to complete successfully. If no error was encountered, the value is set to `None`.|
+||`OriginatingServer`|This attribute contains the server on which the cmdlet specified in the `Cmdlet` attribute was run.|
+|`CmdletParameters`|`N/A`|This tag contains all of the parameters specified when the cmdlet was run. The `Parameter` tag is a child of this tag. <br/><br/> There is one `CmdletParameters` tag per `Event` tag.|
+|`Parameter`||This tag contains an individual parameter that was specified when the cmdlet was run. This tag contains the `Name` and `Value` attributes. <br/><br/> There can be multiple `Parameter` tags per `CmdletParameters` tag.|
+||`Name`|This attribute contains the name of the parameter that was specified on the cmdlet that was run.|
+||`Value`|This attribute contains the value that was provided on the parameter specified in the `Name` attribute.|
+|`ModifiedProperties`|`N/A`|This tag contains all of the properties that were modified by the cmdlet that was run. The `Property` tag is a child of this tag. <br/><br/> There is one `ModifiedProperties` tag per `Event` tag. <br/><br/> **Important**: This tag is only populated if the _LogLevel_ parameter on the **Set-AdminAuditLogConfig** cmdlet is set to `Verbose`.|
+|`Property`||This tag contains an individual property that was specified when the cmdlet was run. This tag contains the `Name`, `OldValue`, and `NewValue` attributes. <br/><br/> There can be multiple `Property` tags per `ModifiedProperties` tag.|
+||`Name`|This attribute contains the name of the property that was modified when the cmdlet was run.|
+||`OldValue`|This attribute contains the value that was contained in the property specified in the `Name` attribute before it was changed.|
+||`NewValue`|This attribute contains the value that the property in the `Name` attribute was changed to.|
 
 ## Example audit log entry
 
@@ -158,16 +55,16 @@ The following is an example of a typical audit log entry. Based on the informati
 
 - The two following parameters were provided when the **Set-Mailbox** cmdlet was run:
 
-  - *Identity* with a value of `david`
+  - _Identity_ with a value of `david`
 
-  - *ProhibitSendReceiveQuota* with a value of `10GB`
+  - _ProhibitSendReceiveQuota_ with a value of `10GB`
 
 - The two following properties on the object `david` were modified:
 
   > [!NOTE]
-  > The modified properties are saved to the audit log because the <EM>LogLevel</EM> parameter on the <CODE>Set-AdminAuditLogConfig</CODE> cmdlet was set to <CODE>Verbose</CODE> in this example.
+  > The modified properties are saved to the audit log because the _LogLevel_ parameter on the `Set-AdminAuditLogConfig` cmdlet was set to `Verbose` in this example.
 
-  - *ProhibitSendReceiveQuota* with a new value of `10GB`, which replaced the old value of `35GB`
+  - _ProhibitSendReceiveQuota_ with a new value of `10GB`, which replaced the old value of `35GB`
 
 - The operation completed successfully without any errors.
 

@@ -27,45 +27,12 @@ Looking for a list of all clients and mobile topics? See Clients and mobile docu
 
 The following table contains links to topics that will help you learn about and manage some of the clients and client access methods that can be used to access an Exchange 2013 mailbox.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Topic</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="outlook-anywhere-exchange-2013-help.md">Outlook Anywhere</a></p></td>
-<td><p>Learn about Outlook Anywhere, the client access method that provides connectivity to Microsoft Outlook 2007, Outlook 2010, and Outlook 2013. (This feature was formerly known as RPC/HTTP.)</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="exchange-activesync-exchange-2013-help.md">Exchange ActiveSync</a></p></td>
-<td><p>Learn about Exchange ActiveSync, the protocol that provides connectivity to a wide variety of mobile phones and tablets. Using Exchange ActiveSync, users can access email, calendar, contact, and task information.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md">POP3 and IMAP4 in Exchange Server 2013</a></p></td>
-<td><p>Learn about how users can access their Exchange 2013 email by using email programs that use POP3 or IMAP4.</p></td>
-</tr>
-<tr class="even">
-<td><p>Office Web Apps Server integration</p></td>
-<td><p>Learn about how the integration of Microsoft Office Web Apps Server helps provide rich attachment preview functionality in Outlook Web App.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="client-protocol-management-exchange-2013-help.md">Client protocol management</a></p></td>
-<td><p>Learn about management of the client protocols of Exchange ActiveSync, Outlook Web App, POP3, IMAP4, the Autodiscover service, Exchange Web Services, and the Availability service.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="outlook-web-app-exchange-2013-help.md">Outlook Web App</a></p></td>
-<td><p>Learn about Outlook Web App, which provides users access to their Exchange 2013 mailbox through a web browser.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/exchange/clients-and-mobile-in-exchange-online/mailtips/mailtips">MailTips</a></p></td>
-<td><p>Learn about MailTips, the informative messages displayed to users while they're composing a message.</p></td>
-</tr>
-</tbody>
-</table>
+|Topic|Description|
+|---|---|
+|[Outlook Anywhere](outlook-anywhere-exchange-2013-help.md)|Learn about Outlook Anywhere, the client access method that provides connectivity to Microsoft Outlook 2007, Outlook 2010, and Outlook 2013. (This feature was formerly known as RPC/HTTP.)|
+|[Exchange ActiveSync](exchange-activesync-exchange-2013-help.md)|Learn about Exchange ActiveSync, the protocol that provides connectivity to a wide variety of mobile phones and tablets. Using Exchange ActiveSync, users can access email, calendar, contact, and task information.|
+|[>POP3 and IMAP4 in Exchange Server 2013](pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md)|Learn about how users can access their Exchange 2013 email by using email programs that use POP3 or IMAP4.|
+|Office Web Apps Server integration|Learn about how the integration of Microsoft Office Web Apps Server helps provide rich attachment preview functionality in Outlook Web App.|
+|[Client protocol management](client-protocol-management-exchange-2013-help.md)|Learn about management of the client protocols of Exchange ActiveSync, Outlook Web App, POP3, IMAP4, the Autodiscover service, Exchange Web Services, and the Availability service.|
+|[Outlook Web App](outlook-web-app-exchange-2013-help.md)|Learn about Outlook Web App, which provides users access to their Exchange 2013 mailbox through a web browser.|
+|[MailTips](mailtips-exchange-2013-help.md)|Learn about MailTips, the informative messages displayed to users while they're composing a message.|

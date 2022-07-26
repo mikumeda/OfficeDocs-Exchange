@@ -25,146 +25,19 @@ Exchange Server 2013 automatically configures multiple Internet Information Serv
 
 The following table lists the default settings on a stand-alone Exchange 2013 Client Access server.
 
-### Default Client Access server IIS authentication and SSL settings
-
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Virtual directory</th>
-<th>Authentication method</th>
-<th>SSL settings</th>
-<th>Management method</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Default website</p></td>
-<td><ul>
-<li><p>Anonymous</p></li>
-</ul></td>
-<td><ul>
-<li><p>Required</p></li>
-</ul></td>
-<td><p>IIS management console</p></td>
-</tr>
-<tr class="even">
-<td><p>aspnet_client</p></td>
-<td><ul>
-<li><p>Anonymous authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>SSL required</p></li>
-<li><p>Requires 128-bit encryption</p></li>
-</ul></td>
-<td><p>IIS management console</p></td>
-</tr>
-<tr class="odd">
-<td><p>Autodiscover</p></td>
-<td><ul>
-<li><p>Anonymous authentication</p></li>
-<li><p>Basic authentication</p></li>
-<li><p>Windows authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>SSL required</p></li>
-<li><p>Requires 128-bit encryption</p></li>
-</ul></td>
-<td><p>Exchange Management Shell (Shell)</p></td>
-</tr>
-<tr class="even">
-<td><p>ecp</p></td>
-<td><ul>
-<li><p>Anonymous authentication</p></li>
-<li><p>Basic authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>SSL required</p></li>
-<li><p>Requires 128-bit encryption</p></li>
-</ul></td>
-<td><p>Exchange admin center (EAC) or Shell</p></td>
-</tr>
-<tr class="odd">
-<td><p>EWS</p></td>
-<td><ul>
-<li><p>Anonymous authentication</p></li>
-<li><p>Windows authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>SSL required</p></li>
-<li><p>Requires 128-bit encryption</p></li>
-</ul></td>
-<td><p>Shell</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft-Server-ActiveSync</p></td>
-<td><ul>
-<li><p>Basic authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>SSL required</p></li>
-<li><p>Requires 128-bit encryption</p></li>
-</ul></td>
-<td><p>EAC or Shell</p></td>
-</tr>
-<tr class="odd">
-<td><p>OAB</p></td>
-<td><ul>
-<li><p>Windows authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>Not required</p></li>
-</ul></td>
-<td><p>EAC or Shell</p></td>
-</tr>
-<tr class="even">
-<td><p>owa</p></td>
-<td><ul>
-<li><p>Basic authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>SSL required</p></li>
-<li><p>Requires 128-bit encryption</p></li>
-</ul></td>
-<td><p>EAC or Shell</p></td>
-</tr>
-<tr class="odd">
-<td><p>PowerShell</p></td>
-<td><ul>
-<li><p>Anonymous authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>Not required</p></li>
-</ul></td>
-<td><p>Shell</p></td>
-</tr>
-<tr class="even">
-<td><p>Rpc</p></td>
-<td><ul>
-<li><p>Basic authentication</p></li>
-<li><p>Windows authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>SSL required</p></li>
-<li><p>Requires 128-bit encryption</p></li>
-</ul></td>
-<td><p>Shell</p></td>
-</tr>
-<tr class="odd">
-<td><p>RpcWithCert</p></td>
-<td><p>By default, all authentication methods are disabled.</p></td>
-<td><ul>
-<li><p>Required</p></li>
-</ul></td>
-<td><p> </p></td>
-</tr>
-</tbody>
-</table>
+|Virtual directory|Authentication method|SSL settings|Management method|
+|---|---|---|---|
+|Default website|<ul><li>Anonymous</li></ul>|<ul><li>Required</li></ul>|IIS management console|
+|aspnet_client|<ul><li>Anonymous authentication</li></ul>|<ul><li>SSL required</li><li>Requires 128-bit encryption</li></ul>|IIS management console|
+|Autodiscover|<ul><li>Anonymous authentication</li><li>Basic authentication</li><li>Windows authentication</li></ul>|<ul><li>SSL required</li><li>Requires 128-bit encryption</li></ul>|Exchange Management Shell (Shell)|
+|ecp|<ul><li>Anonymous authentication</li><li>Basic authentication</li></ul>|<ul><li>SSL required</li><li>Requires 128-bit encryption</li></ul>|Exchange admin center (EAC) or Shell|
+|EWS|<ul><li>Anonymous authentication</li><li>Windows authentication</li></ul>|<ul><li>SSL required</li><li>Requires 128-bit encryption</li></ul>|Shell|
+|Microsoft-Server-ActiveSync|<ul><li>Basic authentication</li></ul>|<ul><li>SSL required</li><li>Requires 128-bit encryption</li></ul>|EAC or Shell|
+|OAB|<ul><li>Windows authentication</li></ul>|<ul><li>Not required</li></ul>|EAC or Shell|
+|owa|<ul><li>Basic authentication</li></ul>|<ul><li>SSL required</li><li>Requires 128-bit encryption</li></ul>|EAC or Shell|
+|PowerShell|<ul><li>Anonymous authentication</li></ul>|<ul><li>Not required</li></ul>|Shell|
+|Rpc|<ul><li>Basic authentication</li><li>Windows authentication</li></ul>|<ul><li>SSL required</li><li>Requires 128-bit encryption</li></ul>|Shell|
+|RpcWithCert|By default, all authentication methods are disabled.|<ul><li>Required</li></ul>||
 
 ## Mailbox server
 
@@ -172,42 +45,7 @@ The following table lists the default settings on a stand-alone Exchange 2013 Ma
 
 ### Default Mailbox server IIS authentication and SSL settings
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Virtual directory</th>
-<th>Authentication method</th>
-<th>SSL settings</th>
-<th>Management method</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Default website</p></td>
-<td><ul>
-<li><p>Anonymous authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>SSL required</p></li>
-<li><p>Requires 128-bit encryption</p></li>
-</ul></td>
-<td><p>This virtual directory can't be configured by the user.</p></td>
-</tr>
-<tr class="even">
-<td><p>PowerShell</p></td>
-<td><ul>
-<li><p>Anonymous authentication</p></li>
-</ul></td>
-<td><ul>
-<li><p>Not required</p></li>
-</ul></td>
-<td><p>Shell</p></td>
-</tr>
-</tbody>
-</table>
+|Virtual directory|Authentication method|SSL settings|Management method|
+|---|---|---|---|
+|Default website|<ul><li>Anonymous authentication</li></ul>|<ul><li>SSL required</li><li>Requires 128-bit encryption</li></ul>|This virtual directory can't be configured by the user.|
+|PowerShell|<ul><li>Anonymous authentication</li></ul>|<ul><li>Not required</li></ul>|Shell|

@@ -25,486 +25,78 @@ Exchange Search indexes many item properties, including sender, recipients, mess
 
 The following table includes a list of all item properties indexed by Exchange Search.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Property</th>
-<th>Type</th>
-<th>Queryable</th>
-<th>Searchable</th>
-<th>Retrievable</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Account</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Assistantname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Attachment</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Attachmentfilenames</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Attachmentmetaproperties</p></td>
-<td><p>String</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Attachmentcount</p></td>
-<td><p>Integer</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Bcc</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Body</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Businessaddress</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Businessmainphone</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Businessphonenumber</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Carphonenumber</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Category</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Cc</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Companyname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Compositeitemid</p></td>
-<td><p>String</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Conversationid</p></td>
-<td><p>Integer</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Conversationtopic</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Departmentname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Displayname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Displaynameprefix</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Documentid</p></td>
-<td><p>Integer</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Emailaddress</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Emaildisplayname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Emailoriginaldisplayname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Errorcode</p></td>
-<td><p>Integer</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Fileas</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Firstname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Folderid</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>From</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Homeaddress</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Homephone</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Importance</p></td>
-<td><p>Integer</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Ispartiallyprocessed</p></td>
-<td><p>Boolean</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Ispermanentfailure</p></td>
-<td><p>Boolean</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Itemclass</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Kind</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Lastattempttime</p></td>
-<td><p>DateTime</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Lastname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Mailboxguid</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Manager</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Meetinglocation</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Middlename</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Mobilephonenumber</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Nickname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Officelocation</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Otheraddress</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Participants</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Primarytelephonenumber</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Received</p></td>
-<td><p>DateTime</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Receivedby</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Receivedrepresenting</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Recipients</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Sent</p></td>
-<td><p>DateTime</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Sharinginfo</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Size</p></td>
-<td><p>Integer</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Subject</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Tasktitle</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Title</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>To</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Umaudionotes</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Watermark</p></td>
-<td><p>Integer</p></td>
-<td><p>No</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Yomicompanyname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Yomifirstname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Yomilastname</p></td>
-<td><p>String</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-</tbody>
-</table>
+|Property|Type|Queryable|Searchable|Retrievable|
+|---|---|:---:|:---:|:---:|
+|Account|String|Yes|Yes|No|
+|Assistantname|String|Yes|Yes|No|
+|Attachment|String|Yes|Yes|No|
+|Attachmentfilenames|String|Yes|Yes|No|
+|Attachmentmetaproperties|String|No|Yes|No|
+|Attachmentcount|Integer|No|No|Yes|
+|Bcc|String|Yes|Yes|No|
+|Body|String|Yes|Yes|No|
+|Businessaddress|String|Yes|Yes|No|
+|Businessmainphone|String|Yes|Yes|No|
+|Businessphonenumber|String|Yes|Yes|No|
+|Carphonenumber|String|Yes|Yes|No|
+|Category|String|Yes|Yes|No|
+|Cc|String|Yes|Yes|No|
+|Companyname|String|Yes|Yes|No|
+|Compositeitemid|String|No|No|Yes|
+|Conversationid|Integer|No|No|Yes|
+|Conversationtopic|String|Yes|Yes|No|
+|Departmentname|String|Yes|Yes|No|
+|Displayname|String|Yes|Yes|No|
+|Displaynameprefix|String|Yes|Yes|No|
+|Documentid|Integer|Yes|No|Yes|
+|Emailaddress|String|Yes|Yes|No|
+|Emaildisplayname|String|Yes|Yes|No|
+|Emailoriginaldisplayname|String|Yes|Yes|No|
+|Errorcode|Integer|Yes|No|Yes|
+|Fileas|String|Yes|Yes|No|
+|Firstname|String|Yes|Yes|No|
+|Folderid|String|Yes|No|No|
+|From|String|Yes|Yes|No|
+|Homeaddress|String|Yes|Yes|No|
+|Homephone|String|Yes|Yes|No|
+|Importance|Integer|Yes|No|No|
+|Ispartiallyprocessed|Boolean|Yes|No|Yes|
+|Ispermanentfailure|Boolean|Yes|No|Yes|
+|Itemclass|String|Yes|No|No|
+|Kind|String|Yes|Yes|No|
+|Lastattempttime|DateTime|Yes|No|Yes|
+|Lastname|String|Yes|Yes|No|
+|Mailboxguid|String|Yes|No|Yes|
+|Manager|String|Yes|Yes|No|
+|Meetinglocation|String|Yes|Yes|No|
+|Middlename|String|Yes|Yes|No|
+|Mobilephonenumber|String|Yes|Yes|No|
+|Nickname|String|Yes|Yes|No|
+|Officelocation|String|Yes|Yes|No|
+|Otheraddress|String|Yes|Yes|No|
+|Participants|String|Yes|Yes|No|
+|Primarytelephonenumber|String|Yes|Yes|No|
+|Received|DateTime|Yes|No|No|
+|Receivedby|String|Yes|Yes|No|
+|Receivedrepresenting|String|Yes|Yes|No|
+|Recipients|String|Yes|Yes|No|
+|Sent|DateTime|Yes|No|No|
+|Sharinginfo|String|Yes|No|No|
+|Size|Integer|Yes|No|No|
+|Subject|String|Yes|Yes|No|
+|Tasktitle|String|Yes|Yes|No|
+|Title|String|Yes|Yes|No|
+|To|String|Yes|Yes|No|
+|Umaudionotes|String|Yes|Yes|No|
+|Watermark|Integer|No|No|Yes|
+|Yomicompanyname|String|Yes|No|Yes|
+|Yomifirstname|String|Yes|Yes|No|
+|Yomilastname|String|Yes|Yes|No|
 
 **Notes about indexed properties**:
 
-  - **Queryable properties** can be used in AQS queries by search clients such as Outlook Web App in `property:value` pairs, for example, `from:bsuneja@cotoso.com`. A subset of the queryable properties listed in the previous table can also be used in search queries for In-Place eDiscovery. For a list of these properties, see [In-Place eDiscovery in Exchange 2013](in-place-ediscovery-exchange-2013-help.md).
+- **Queryable properties** can be used in AQS queries by search clients such as Outlook Web App in `property:value` pairs, for example, `from:bsuneja@cotoso.com`. A subset of the queryable properties listed in the previous table can also be used in search queries for In-Place eDiscovery. For a list of these properties, see [In-Place eDiscovery in Exchange 2013](in-place-ediscovery-exchange-2013-help.md).
 
-  - **Searchable properties** are properties that can't be specified in `property:value` pairs, but a keyword search returns the value if found in any searchable property. For example, you can't use `body:Contoso` to search for the string `contoso` in the message body only. However, a search for that string will return all items where the property is found in any searchable property.
+- **Searchable properties** are properties that can't be specified in `property:value` pairs, but a keyword search returns the value if found in any searchable property. For example, you can't use `body:Contoso` to search for the string `contoso` in the message body only. However, a search for that string will return all items where the property is found in any searchable property.
 
-  - **Retrievable properties** such as `documenteid` and `ispartiallyprocessed` are returned with every search.
+- **Retrievable properties** such as `documenteid` and `ispartiallyprocessed` are returned with every search.
