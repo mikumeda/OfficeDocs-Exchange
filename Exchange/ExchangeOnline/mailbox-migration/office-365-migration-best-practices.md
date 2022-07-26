@@ -276,7 +276,7 @@ There are two types of move requests in Microsoft 365 and Office 365:
 
 Often, the time that mailbox requests wait in the queue before being processed isn't considered during migration planning. This results in customers not being allocated enough time to complete all planned migrations.
 
-- **In-progress move requests**: This status specifies that the move is still in progress. If this is an online mailbox move, the user will still be able to access the mailbox. For offline mailbox moves, the user's mailbox will be unavailable.
+- **In-progress move requests**: This status specifies that the move is still in progress. If this is an online mailbox move, the user will still be able to access the mailbox. 
 
 After the mailbox move request has a status of "In Progress," the priority no longer matters and a new move request won't be processed until an existing "In Progress" move request is completed, even if the new move request has a higher priority.
 
