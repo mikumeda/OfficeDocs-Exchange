@@ -26,94 +26,19 @@ In Exchange Server 2013, we moved public folders from a traditional database arc
 The following table lists the limits for public folders in on-premises Exchange Server 2013. Unless the limits are specifically stated as recommended, the values listed in this table are the supported limits for public folders.
 
 > [!IMPORTANT]
-> Looking for Exchange Online limits for Microsoft 365 or Office 365? See <A href="/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits">Exchange Online Limits</A>.
+> Looking for Exchange Online limits for Microsoft 365 or Office 365? See [Exchange Online Limits](/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Limits</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Total number of public folder mailboxes</p></td>
-<td><p>100</p></td>
-<td><p>Although you can create more than 100 public folder mailboxes, it isn't supported. <a href="/exchange/collaboration-exo/public-folders/create-public-folder-mailbox">Create a public folder mailbox</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Total public folders in hierarchy</p></td>
-<td><p>1,000,000</p></td>
-<td><p>Although you can create more than 1,000,000 public folders, it isn't supported. For any deployment of 100,000 or more public folders, we recommend reading <a href="considerations-when-deploying-public-folders-exchange-2013-help.md">Considerations when deploying public folders</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Sub-folders under the parent folder</p></td>
-<td><p>10,000</p></td>
-<td><p>While you can create more than 1,000 sub-folders under a parent folder, we don't recommend that you do so.</p>
-<p><em>FolderHierarchyChildrenCountReceiveQuota</em> parameter on the <a href="/powershell/module/exchange/Set-Mailbox">Set-Mailbox</a> cmdlet.</p></td>
-</tr>
-<tr class="even">
-<td><p>Folder depth</p></td>
-<td><p>300</p></td>
-<td><p>The folder depth is the number levels of nested folders that can exist in one branch of a public folder tree. <em>FolderHierarchyDepthRecieveQuota</em> parameter on the <a href="/powershell/module/exchange/Set-Mailbox">Set-Mailbox</a> cmdlet.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Maximum messages per public folder</p></td>
-<td><p>1 million</p></td>
-<td><p><em>MailboxMessagesPerFolderCountRecieveQuota</em> parameter on the <a href="/powershell/module/exchange/Set-Mailbox)">Set-Mailbox</a> cmdlet.</p></td>
-</tr>
-<tr class="even">
-<td><p>Maximum individual public folder size</p></td>
-<td><p>10 GB</p></td>
-<td><p>This limit doesn't include subfolders beneath a single folder.</p>
-<p><a href="configure-storage-quotas-for-a-mailbox-exchange-2013-help.md">Configure storage quotas for a mailbox</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Public folder mailbox size</p></td>
-<td><p>100 GB</p></td>
-<td><p><a href="configure-storage-quotas-for-a-mailbox-exchange-2013-help.md">Configure storage quotas for a mailbox</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Number of user logons per public folder mailbox</p></td>
-<td><p>2,000 concurrent user logons</p></td>
-<td><p>We recommend that you configure your hierarchy so that you have no more than 2,000 users per public folder mailbox. For example, if you have 20,000 users, you should have 10 public folder mailboxes.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Moved item retention</p></td>
-<td><p>14 days recommended</p></td>
-<td><p>Use the <em>DefaultPublicFolderMovedItemRetention</em> parameter on the <strong>Set-OrganizationConfig</strong> cmdlet.</p></td>
-</tr>
-<tr class="even">
-<td><p>Age limit</p></td>
-<td><p>We recommend that you set this as the same default that you use for regular mailboxes.</p></td>
-<td><p>These settings can be set at the following levels:</p>
-<ul>
-<li><p><strong>Organizational level:</strong> <em>DefaultPublicFolderAgeLimit</em> parameter on the <strong>Set-OrganizationConfig</strong> cmdlet.</p></li>
-<li><p><strong>Mailbox level:</strong> <em>AgeLimit</em> parameter on the <strong>Set-Mailbox</strong> cmdlet.</p></li>
-<li><p><strong>Folder level:</strong> <em>AgeLimit</em> parameter on the <strong>Set-PublicFolder</strong> cmdlet.</p></li>
-</ul>
-<p></p></td>
-</tr>
-<tr class="odd">
-<td><p>Deleted item retention</p></td>
-<td><p>We recommend that you set this as the same default that you use for regular mailboxes.</p></td>
-<td><p>These settings can be set at the following levels:</p>
-<ul>
-<li><p><strong>Organizational level:</strong> <em>DefaultPublicFolderMovedItemRetention</em> parameter on the <strong>Set-OrganizationConfig</strong> cmdlet.</p></li>
-<li><p><strong>Mailbox level:</strong> <em>RetainDeletedItemsFor</em> on the <strong>Set-Mailbox</strong> cmdlet.</p></li>
-<li><p><strong>Folder level:</strong> <em>RetainDeleteItemsFor</em> parameter on the <strong>Set-PublicFolder</strong> cmdlet.</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Maximum number of public folders that can be migrated to Exchange 2013</p></td>
-<td><p>500,000</p></td>
-<td><p>This is the maximum number of public folders you can move to Exchange 2013 from a legacy version of Exchange in a single migration. For details on migrating public folders, see <a href="use-batch-migration-to-migrate-public-folders-to-exchange-2013-from-previous-versions-exchange-2013-help.md">Use batch migration to migrate public folders to Exchange 2013 from previous versions</a></p></td>
-</tr>
-</tbody>
-</table>
+|Item|Limits|Notes|
+|---|---|---|
+|Total number of public folder mailboxes|100|Although you can create more than 100 public folder mailboxes, it isn't supported. [Create a public folder mailbox](create-public-folder-mailbox-exchange-2013-help.md)|
+|Total public folders in hierarchy|1,000,000|Although you can create more than 1,000,000 public folders, it isn't supported. For any deployment of 100,000 or more public folders, we recommend reading [Considerations when deploying public folders](considerations-when-deploying-public-folders-exchange-2013-help.md).|
+|Sub-folders under the parent folder|10,000|While you can create more than 1,000 sub-folders under a parent folder, we don't recommend that you do so. <br/><br/> _FolderHierarchyChildrenCountReceiveQuota_ parameter on the [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) cmdlet.|
+|Folder depth|300|The folder depth is the number levels of nested folders that can exist in one branch of a public folder tree. _FolderHierarchyDepthRecieveQuota_ parameter on the [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) cmdlet.|
+|Maximum messages per public folder|1 million|_MailboxMessagesPerFolderCountReceiveQuota_ parameter on the [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) cmdlet.|
+|Maximum individual public folder size|10 GB|This limit doesn't include subfolders beneath a single folder. <br/><br/> [Configure storage quotas for a mailbox](configure-storage-quotas-for-a-mailbox-exchange-2013-help.md)|
+|Public folder mailbox size|100 GB|[Configure storage quotas for a mailbox](configure-storage-quotas-for-a-mailbox-exchange-2013-help.md)|
+|Number of user logons per public folder mailbox|2,000 concurrent user logons|We recommend that you configure your hierarchy so that you have no more than 2,000 users per public folder mailbox. For example, if you have 20,000 users, you should have 10 public folder mailboxes.|
+|Moved item retention|14 days recommended|Use the _DefaultPublicFolderMovedItemRetention_ parameter on the **Set-OrganizationConfig** cmdlet.|
+|Age limit|We recommend that you set this as the same default that you use for regular mailboxes.|These settings can be set at the following levels: <ul><li>**Organizational level**: _DefaultPublicFolderAgeLimit_ parameter on the **Set-OrganizationConfig** cmdlet.</li><li>**Mailbox level**: _AgeLimit_ parameter on the **Set-Mailbox** cmdlet.</li><li>**Folder level**: _AgeLimit_ parameter on the **Set-PublicFolder** cmdlet.</li></ul>|
+|Deleted item retention|We recommend that you set this as the same default that you use for regular mailboxes.|These settings can be set at the following levels: <ul><li>**Organizational level**: _DefaultPublicFolderMovedItemRetention_ parameter on the **Set-OrganizationConfig** cmdlet.</li><li>**Mailbox level**: _RetainDeletedItemsFor_ on the **Set-Mailbox** cmdlet.</li><li>**Folder level**: _RetainDeleteItemsFor_ parameter on the **Set-PublicFolder** cmdlet.</li></ul>|
+|Maximum number of public folders that can be migrated to Exchange 2013|500,000|This is the maximum number of public folders you can move to Exchange 2013 from a legacy version of Exchange in a single migration. For details on migrating public folders, see [Use batch migration to migrate public folders to Exchange 2013 from previous versions](use-batch-migration-to-migrate-public-folders-to-exchange-2013-from-previous-versions-exchange-2013-help.md)|
