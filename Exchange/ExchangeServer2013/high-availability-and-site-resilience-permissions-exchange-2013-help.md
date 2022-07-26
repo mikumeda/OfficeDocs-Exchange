@@ -52,6 +52,7 @@ Users who are assigned the View-Only Management role group can view the configur
 You can use the features in the following table to add, remove, update, and activate mailbox database copies.
 
 |Feature|Permissions required|
+|---|---|
 |Database switchover|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Databases role](databases-role-exchange-2013-help.md)|
 |Mailbox database copies|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Database Copies role](database-copies-role-exchange-2013-help.md)|
 |Server switchover|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Databases role](databases-role-exchange-2013-help.md)|
