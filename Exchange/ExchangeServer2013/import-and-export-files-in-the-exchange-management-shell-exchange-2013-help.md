@@ -44,7 +44,7 @@ Importing and exporting files requires a specific syntax because Mailbox and Cli
 
 ## Importing files in remote Shell
 
-The syntax to import files in Exchange 2013 is used any time you want to send a file to a cmdlet running on an Exchange 2013 server from your local computer or server. Cmdlets that accept data from a file on your local computer will have a parameter called *FileData* (or something similar). To determine the correct parameter to use, see the Help information for the cmdlet you're using.
+The syntax to import files in Exchange 2013 is used any time you want to send a file to a cmdlet running on an Exchange 2013 server from your local computer or server. Cmdlets that accept data from a file on your local computer will have a parameter called _FileData_ (or something similar). To determine the correct parameter to use, see the Help information for the cmdlet you're using.
 
 The Shell must know what file you want to send to the Exchange 2013 cmdlet, and what parameter will accept the data. To do so, use the following syntax.
 
@@ -52,7 +52,7 @@ The Shell must know what file you want to send to the Exchange 2013 cmdlet, and 
 <Cmdlet> -FileData ([System.IO.File]::ReadAllBytes('<local path to file>'))
 ```
 
-For example, the following command imports the file C:\\MyData.dat into the *FileData* parameter on the **Import-SomeData** fictional cmdlet.
+For example, the following command imports the file C:\\MyData.dat into the _FileData_ parameter on the **Import-SomeData** fictional cmdlet.
 
 ```powershell
 Import-SomeData -FileData ([System.IO.File]::ReadAllBytes('C:\MyData.dat'))
@@ -62,7 +62,7 @@ The following actions occur when the command is run:
 
 1. The command is accepted by remote Shell.
 
-2. Remote Shell evaluates the command and determines that there's an embedded command in the value being provided to the *FileData* parameter.
+2. Remote Shell evaluates the command and determines that there's an embedded command in the value being provided to the _FileData_ parameter.
 
 3. Remote Shell stops evaluating the **Import-SomeData** command and runs the **\[System.IO.File\]::ReadAllBytes** command. The command reads the data from the MyData.dat file.
 
@@ -70,7 +70,7 @@ The following actions occur when the command is run:
 
 5. Execution of the **Import-SomeData** command resumes. Remote Shell sends the request to run the **Import-SomeData** cmdlet to the remote Exchange 2013 server, along with the object created by the **\[System.IO.File\]::ReadAllBytes** command.
 
-6. On the remote Exchange 2013 server, the **Import-SomeData** cmdlet is run, and the data stored in the temporary object created by the **\[System.IO.File\]::ReadAllBytes** command is passed to the *FileData* parameter. The **Import-SomeData** cmdlet processes the input and performs whatever actions are required.
+6. On the remote Exchange 2013 server, the **Import-SomeData** cmdlet is run, and the data stored in the temporary object created by the **\[System.IO.File\]::ReadAllBytes** command is passed to the _FileData_ parameter. The **Import-SomeData** cmdlet processes the input and performs whatever actions are required.
 
 Or, use the following alternate syntax that accomplishes the same thing as the preceding syntax.
 
@@ -99,42 +99,11 @@ If you exceed either of the limits, the execution of the cmdlet and its associat
 
 ### Import data limit examples
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Number of objects</th>
-<th>Object size (MB)</th>
-<th>Total size (MB)</th>
-<th>Result of operation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>10</p></td>
-<td><p>40</p></td>
-<td><p>400</p></td>
-<td><p>The operation is successful because neither the size of the individual objects exceeds 75 MB nor the total amount of data passed to the cmdlet exceeds 500 MB.</p></td>
-</tr>
-<tr class="even">
-<td><p>5</p></td>
-<td><p>80</p></td>
-<td><p>400</p></td>
-<td><p>The operation fails because, although the total amount of data passed to the cmdlet is only 400 MB, the size of each individual object exceeds the 75 MB limit.</p></td>
-</tr>
-<tr class="odd">
-<td><p>120</p></td>
-<td><p>5</p></td>
-<td><p>600</p></td>
-<td><p>The operation fails because, although each individual object is only 5 MB, the total amount of data passed to the cmdlet exceeds the 500 MB limit.</p></td>
-</tr>
-</tbody>
-</table>
+|Number of objects|Object size (MB)|Total size (MB)|Result of operation|
+|---|---|---|
+|10|40|400|The operation is successful because neither the size of the individual objects exceeds 75 MB nor the total amount of data passed to the cmdlet exceeds 500 MB.|
+|5|80|400|The operation fails because, although the total amount of data passed to the cmdlet is only 400 MB, the size of each individual object exceeds the 75 MB limit.|
+|120|5|600|The operation fails because, although each individual object is only 5 MB, the total amount of data passed to the cmdlet exceeds the 500 MB limit.|
 
 Due to the size limits that have been placed on the amount of data that can be transferred between a remote Exchange 2013 server and a local computer, not all cmdlets that once supported importing support this method of data transfer. To determine whether a specific cmdlet supports this method, see the Help information for the specific cmdlet.
 

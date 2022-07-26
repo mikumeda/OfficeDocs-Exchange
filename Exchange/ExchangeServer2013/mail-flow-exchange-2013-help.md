@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-In Microsoft Exchange Server 2013, mail flow occurs through the transport pipeline. The *transport pipeline* is a collection of services, connections, components, and queues that work together to route all messages to the categorizer in the Transport service on a Mailbox server inside the organization.
+In Microsoft Exchange Server 2013, mail flow occurs through the transport pipeline. The _transport pipeline_ is a collection of services, connections, components, and queues that work together to route all messages to the categorizer in the Transport service on a Mailbox server inside the organization.
 
 Looking for a list of all mail flow topics? See Mail flow documentation.
 
@@ -54,18 +54,15 @@ If you have an Exchange 2013 Edge Transport server installed in the perimeter ne
 - **Mailbox server and Client Access server installed on different computers**: In this configuration, the Client Access server is bypassed for inbound mail flow. Mail flows from the Transport service on the Edge Transport server to the Transport service on the Mailbox server.
 
 > [!NOTE]
-> If you have an Exchange 2010 or Exchange 2007 Edge Transport server installed in your perimeter network, mail flow always occurs directly between the Edge Transport server and the Transport service on the Mailbox server. For more information, see <A href="use-an-exchange-2010-or-2007-edge-transport-server-in-exchange-2013-exchange-2013-help.md">Use an Exchange 2010 or 2007 Edge Transport server in Exchange 2013</A>.
+> If you have an Exchange 2010 or Exchange 2007 Edge Transport server installed in your perimeter network, mail flow always occurs directly between the Edge Transport server and the Transport service on the Mailbox server. For more information, see (use-an-exchange-2010-or-2007-edge-transport-server-in-exchange-2013-exchange-2013-help.md)[Use an Exchange 2010 or 2007 Edge Transport server in Exchange 2013].
 
 ## Messages from internal senders
 
 SMTP messages from inside the organization enter the transport pipeline through the Transport service on a Mailbox server in one of the following ways:
 
 - Through a Receive connector.
-
 - From the Pickup directory or the Replay directory.
-
 - From the Mailbox Transport service.
-
 - Through agent submission.
 
 The message is routed based on the routing destination or delivery group. For more information, see [Mail routing](mail-routing-exchange-2013-help.md).
@@ -85,17 +82,13 @@ The Transport service on a Mailbox server consists of the following components a
 - **Submission**: Submission is the process of putting messages into the Submission queue. The categorizer picks up one message at a time for categorization. Submission happens in three ways:
 
   - From SMTP Receive through a Receive connector.
-
   - Through the Pickup directory or the Replay directory. These directories exist on Mailbox servers and Edge Transport servers. Correctly formatted message files that are copied into the Pickup directory or the Replay directory are put directly into the Submission queue.
-
   - Through a transport agent.
 
 - **Categorizer**: The categorizer picks up one message at a time from the Submission queue. The categorizer completes the following steps:
 
   - Recipient resolution, which includes top-level addressing, expansion, and bifurcation.
-
   - Routing resolution.
-
   - Content conversion.
 
     Additionally, transport rules that are defined by the organization are applied. After messages have been categorized, they're put into a delivery queue that's based on the destination of the message. Messages are queued by the destination mailbox database, DAG, Active Directory site, Active Directory forest or external domain.
@@ -103,11 +96,8 @@ The Transport service on a Mailbox server consists of the following components a
 - **SMTP Send**: How messages are routed from the Transport service depends on the location of the message recipients relative to the Mailbox server where categorization occurred. The message could be routed to one of the following locations:
 
   - To the Mailbox Transport service on the same Mailbox server.
-
   - To the Mailbox Transport service on a different Mailbox server that's part of the same DAG.
-
   - To the Transport service on a Mailbox server in a different DAG, Active Directory site, or Active Directory forest.
-
   - For delivery to the Internet through a Send connector on the same Mailbox server, through the Transport service on a different Mailbox server, through the Front End Transport service on a Client Access server, or through the Transport service on an Edge Transport server in the perimeter network.
 
 ## Transport service on Edge Transport servers
@@ -126,73 +116,19 @@ The components of the Transport service on Edge Transport servers are identical 
 
 The following table contains links to topics that will help you learn about and manage mail flow in Exchange 2013.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Topic</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="mail-routing-exchange-2013-help.md">Mail routing</a></p></td>
-<td><p>Mail routing describes how messages are transmitted between messaging servers.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="connectors-exchange-2013-help.md">Connectors</a></p></td>
-<td><p>Connectors define where and how messages are transmitted to and from Exchange servers.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="domains-exchange-2013-help.md">Domains</a></p></td>
-<td><p>Accepted domains define the SMTP address spaces that are used in the Exchange organization. Remote domains configure message formatting and encoding settings for messages sent to external domains.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="transport-agents-exchange-2013-help.md">Transport agents</a></p></td>
-<td><p>Transport agents act on messages as they travel through the Exchange transport pipeline.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="transport-high-availability-exchange-2013-help.md">Transport high availability</a></p></td>
-<td><p>Transport high availability describes how Exchange 2013 keeps redundant copies of messages during transit and after delivery.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="transport-logs-exchange-2013-help.md">Transport logs</a></p></td>
-<td><p>Transport logs record what happens to messages as they flow through the transport pipeline.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/exchange/security-and-compliance/mail-flow-rules/manage-message-approval">Manage message approval</a></p></td>
-<td><p>Moderated transport requires approval for messages sent to specific recipients.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="content-conversion-exchange-2013-help.md">Content conversion</a></p></td>
-<td><p>Content conversion controls the Transport Neutral encoding format (TNEF) message conversion options for external recipients, and the MAPI conversion options for internal recipients.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="dsns-and-ndrs-in-exchange-2013-exchange-2013-help.md">DSNs and NDRs in Exchange 2013</a></p></td>
-<td><p>Delivery status notifications (DSNs) are the system messages that are sent to message senders, for example, non-delivery reports (NDRs).</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="track-messages-with-delivery-reports-exchange-2013-help.md">Track messages with delivery reports</a></p></td>
-<td><p>Delivery Reports is a message tracking tool that you can use to search for delivery status on email messages sent to or from users in your organization's address book, with a certain subject. You can track delivery information about messages sent by or received from any specific mailbox in your organization.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="message-size-limits-exchange-2013-help.md">Message size limits</a></p></td>
-<td><p>This topic describes the size and individual component limits that are imposed on messages.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="queue-viewer-exchange-2013-help.md">Queue Viewer</a></p></td>
-<td><p>You use the Queue Viewer in the Exchange Toolbox to view and act upon queues and message in queues.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="pickup-directory-and-replay-directory-exchange-2013-help.md">Pickup directory and Replay directory</a></p></td>
-<td><p>The pickup and replay directories are used to insert message files into the transport pipeline.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="use-an-exchange-2010-or-2007-edge-transport-server-in-exchange-2013-exchange-2013-help.md">Use an Exchange 2010 or 2007 Edge Transport server in Exchange 2013</a></p></td>
-<td><p>This topic describes the considerations for using an Edge Transport server from previous versions of Exchange in Exchange 2013.</p></td>
-</tr>
-</tbody>
-</table>
+|Topic|Description|
+|---|---|
+|[Mail routing](mail-routing-exchange-2013-help.md)|Mail routing describes how messages are transmitted between messaging servers.|
+|[Connectors](connectors-exchange-2013-help.md)|Connectors define where and how messages are transmitted to and from Exchange servers.|
+|[Domains](domains-exchange-2013-help.md)|Accepted domains define the SMTP address spaces that are used in the Exchange organization. Remote domains configure message formatting and encoding settings for messages sent to external domains.|
+|[Transport agents](transport-agents-exchange-2013-help.md)|Transport agents act on messages as they travel through the Exchange transport pipeline.|
+|[Transport high availability](transport-high-availability-exchange-2013-help.md)|Transport high availability describes how Exchange 2013 keeps redundant copies of messages during transit and after delivery.|
+|[Transport logs](transport-logs-exchange-2013-help.md)|Transport logs record what happens to messages as they flow through the transport pipeline.|
+|[Manage message approval](/exchange/security-and-compliance/mail-flow-rules/manage-message-approval)|Moderated transport requires approval for messages sent to specific recipients.|
+|[Content conversion](content-conversion-exchange-2013-help.md)|Content conversion controls the Transport Neutral encoding format (TNEF) message conversion options for external recipients, and the MAPI conversion options for internal recipients.|
+|[DSNs and NDRs in Exchange 2013](dsns-and-ndrs-in-exchange-2013-exchange-2013-help.md)|Delivery status notifications (DSNs) are the system messages that are sent to message senders, for example, non-delivery reports (NDRs).|
+|[Track messages with delivery reports](track-messages-with-delivery-reports-exchange-2013-help.md)|Delivery Reports is a message tracking tool that you can use to search for delivery status on email messages sent to or from users in your organization's address book, with a certain subject. You can track delivery information about messages sent by or received from any specific mailbox in your organization.|
+|[Message size limits](message-size-limits-exchange-2013-help.md)|This topic describes the size and individual component limits that are imposed on messages.|
+|[Queue Viewer](queue-viewer-exchange-2013-help.md)|You use the Queue Viewer in the Exchange Toolbox to view and act upon queues and message in queues.|
+|[Pickup directory and Replay directory](pickup-directory-and-replay-directory-exchange-2013-help.md)|The pickup and replay directories are used to insert message files into the transport pipeline.|
+|[Use an Exchange 2010 or 2007 Edge Transport server in Exchange 2013](use-an-exchange-2010-or-2007-edge-transport-server-in-exchange-2013-exchange-2013-help.md)|This topic describes the considerations for using an Edge Transport server from previous versions of Exchange in Exchange 2013.|
