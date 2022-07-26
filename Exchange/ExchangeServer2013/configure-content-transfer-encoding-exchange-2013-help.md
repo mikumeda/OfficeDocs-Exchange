@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-*Content transfer encoding* defines encoding methods for transforming binary email message data into the US-ASCII plain text format. This transformation allows the message to travel through older SMTP messaging servers that only support messages in US-ASCII text. Content transfer encoding is defined in RFC 2045. The transfer encoding method is stored in the **Content-Transfer-Encoding** header field in the message. In Microsoft Exchange Server 2013, the following content transfer encoding methods are available:
+*Content transfer encoding_ defines encoding methods for transforming binary email message data into the US-ASCII plain text format. This transformation allows the message to travel through older SMTP messaging servers that only support messages in US-ASCII text. Content transfer encoding is defined in RFC 2045. The transfer encoding method is stored in the **Content-Transfer-Encoding** header field in the message. In Microsoft Exchange Server 2013, the following content transfer encoding methods are available:
 
 - **7-bit**: This value indicates that the message body data is already in the US ASCII plain text format, and no message encoding has been done to the message.
 
@@ -27,61 +27,19 @@ _**Applies to:** Exchange Server 2013_
 
 - **Base64**: This encoding method is based primarily on the privacy-enhanced mail (PEM) standard defined in RFC 1421. Base64 encoding uses the 64-character alphabet encoding method and output padding characters defined by PEM to encode the message body data. Base64 encoding creates a predictable increase in message size and is optimal for binary data and non-US-ASCII text.
 
-You configure the transfer encoding method using the *ByteEncoderTypeFor7BitCharsets* parameter on the **Set-OrganizationConfig** and **Set-RemoteDomain** cmdlets. The content transfer encoding settings you configure with **Set-OrganizationConfig** apply to all messages in the Exchange organization. The content transfer encoding settings you configure with **Set-RemoteDomain** apply only to message sent to external recipients in the remote domain.
+You configure the transfer encoding method using the _ByteEncoderTypeFor7BitCharsets_ parameter on the **Set-OrganizationConfig** and **Set-RemoteDomain** cmdlets. The content transfer encoding settings you configure with **Set-OrganizationConfig** apply to all messages in the Exchange organization. The content transfer encoding settings you configure with **Set-RemoteDomain** apply only to message sent to external recipients in the remote domain.
 
 The following table lists the values that you can use to set the transfer encoding method.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter in <strong>Set-OrganizationConfig</strong></th>
-<th>Parameter in <strong>Set-RemoteDomain</strong></th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>0</p></td>
-<td><p><code>Use7Bit</code></p></td>
-<td><p>Always use 7-bit encoding for HTML and for plain text. This is the default value.</p></td>
-</tr>
-<tr class="even">
-<td><p>1</p></td>
-<td><p><code>UseQP</code></p></td>
-<td><p>Always use QP encoding for HTML and for plain text.</p></td>
-</tr>
-<tr class="odd">
-<td><p>2</p></td>
-<td><p><code>UseBase64</code></p></td>
-<td><p>Always use Base64 encoding for HTML and for plain text.</p></td>
-</tr>
-<tr class="even">
-<td><p>5</p></td>
-<td><p><code>UseQPHtmlDetectTextPlain</code></p></td>
-<td><p>Use QP encoding for HTML and for plain text unless line wrapping is enabled in plain text. If line wrapping is enabled, use 7-bit encoding for plain text.</p></td>
-</tr>
-<tr class="odd">
-<td><p>6</p></td>
-<td><p><code>UseBase64HtmlDetectTextPlain</code></p></td>
-<td><p>Use Base64 encoding for HTML and for plain text, unless line wrapping is enabled in plain text. If line wrapping is enabled in plain text, use Base64 encoding for HTML, and use 7-bit encoding for plain text.</p></td>
-</tr>
-<tr class="even">
-<td><p>13</p></td>
-<td><p><code>UseQPHtml7BitTextPlain</code></p></td>
-<td><p>Always use QP encoding for HTML. Always use 7-bit encoding for plain text.</p></td>
-</tr>
-<tr class="odd">
-<td><p>14</p></td>
-<td><p><code>UseBase64Html7BitTextPlain</code></p></td>
-<td><p>Always use Base64 encoding for HTML. Always use 7-bit encoding for plain text.</p></td>
-</tr>
-</tbody>
-</table>
+|Parameter in **Set-OrganizationConfig**|Parameter in **Set-RemoteDomain**|Description|
+|---|---|---|
+|0|`Use7Bit`|Always use 7-bit encoding for HTML and for plain text. This is the default value.|
+|1|`UseQP`|Always use QP encoding for HTML and for plain text.|
+|2|`UseBase64`|Always use Base64 encoding for HTML and for plain text.|
+|5|`UseQPHtmlDetectTextPlain`|Use QP encoding for HTML and for plain text unless line wrapping is enabled in plain text. If line wrapping is enabled, use 7-bit encoding for plain text.|
+|6|`UseBase64HtmlDetectTextPlain`|Use Base64 encoding for HTML and for plain text, unless line wrapping is enabled in plain text. If line wrapping is enabled in plain text, use Base64 encoding for HTML, and use 7-bit encoding for plain text.|
+|13|`UseQPHtml7BitTextPlain`|Always use QP encoding for HTML. Always use 7-bit encoding for plain text.|
+|14|`UseBase64Html7BitTextPlain`|Always use Base64 encoding for HTML. Always use 7-bit encoding for plain text.|
 
 For more details about **Content-Transfer-Encoding** header field, see the "Understanding the structure of email messages" section in [Content conversion](content-conversion-exchange-2013-help.md).
 

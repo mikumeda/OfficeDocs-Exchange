@@ -19,60 +19,26 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013 SP1_
 
-You can use the EAC or the Shell to disable or delete a mailbox in Exchange 2013. When a mailbox is disabled or deleted, Exchange retains the mailbox in the mailbox database and switches the mailbox to a disabled state. Disabled and deleted mailboxes are retained in the mailbox database until the deleted mailbox retention period expires, which is 30 days by default. After the retention period expires, the mailbox is permanently deleted or *purged*.
+You can use the EAC or the Shell to disable or delete a mailbox in Exchange 2013. When a mailbox is disabled or deleted, Exchange retains the mailbox in the mailbox database and switches the mailbox to a disabled state. Disabled and deleted mailboxes are retained in the mailbox database until the deleted mailbox retention period expires, which is 30 days by default. After the retention period expires, the mailbox is permanently deleted or _purged_.
 
 If you need to delete a mailbox in Exchange Online, see [Delete or restore user mailboxes in Exchange Online](../ExchangeOnline/recipients-in-exchange-online/delete-or-restore-mailboxes.md).
 
 > [!NOTE]
-> Disabled or deleted mailboxes are referred to as <EM>disconnected mailboxes</EM>.
+> Disabled or deleted mailboxes are referred to as _disconnected mailboxes_.
 
 The primary difference between deleting and disabling a mailbox is that when you disable a mailbox, the Exchange attributes are removed from the corresponding Active Directory user account, but the user account is retained. When you delete a mailbox, both the Exchange attributes and the Active Directory user account are deleted. This difference also determines your options to reconnect or restore disabled and deleted mailboxes.
 
 The following table shows which types of Exchange mailboxes you can disable and delete.
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Mailbox type</th>
-<th>Disable?</th>
-<th>Delete?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Archive mailbox</p></td>
-<td><p>Yes</p></td>
-<td><p>No *</p></td>
-</tr>
-<tr class="even">
-<td><p>Linked mailbox</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Resource mailbox (Room or Equipment)</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Shared mailbox</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>User mailbox</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-</tr>
-</tbody>
-</table>
+|Mailbox type|Disable?|Delete?|
+|---|---|---|
+|Archive mailbox|Yes|No<sup>\*</sup>|
+|Linked mailbox|Yes|Yes|
+|Resource mailbox (Room or Equipment)|No|Yes|
+|Shared mailbox|Yes|Yes|
+|User mailbox|Yes|Yes|
 
-\* If an archive mailbox is enabled, it will be deleted when the primary mailbox is deleted. For information about disabling archive mailboxes, see [Manage In-Place Archives in Exchange 2013](manage-in-place-archives-in-exchange-2013-exchange-2013-help.md).
+<sup>\*</sup> If an archive mailbox is enabled, it will be deleted when the primary mailbox is deleted. For information about disabling archive mailboxes, see [Manage In-Place Archives in Exchange 2013](manage-in-place-archives-in-exchange-2013-exchange-2013-help.md).
 
 If an administrator deletes a user account that has a mailbox, the Exchange Information store will eventually detect that the mailbox is no longer connected to a user account and mark that mailbox for deletion, even if the mailbox is on hold. If you want to retain the mailbox you must do the following:
 
@@ -85,11 +51,8 @@ If an administrator deletes a user account that has a mailbox, the Exchange Info
 For additional management tasks related to disconnected mailboxes, see the following topics:
 
 - [Disconnected mailboxes](disconnected-mailboxes-exchange-2013-help.md)
-
 - [Connect a disabled mailbox](connect-a-disabled-mailbox-exchange-2013-help.md)
-
 - [Connect or restore a deleted mailbox](connect-or-restore-a-deleted-mailbox-exchange-2013-help.md)
-
 - [Permanently delete a mailbox](permanently-delete-a-mailbox-exchange-2013-help.md)
 
 ## What do you need to know before you begin?
@@ -145,7 +108,7 @@ Disable-Mailbox "Conf Room 31/1234 (12)"
 Disable-Mailbox sharedmbx@contoso.com
 ```
 
-### How do you know this worked?
+### How do you know you've successfully disabled a mailbox?
 
 To verify that you've successfully disabled a mailbox, do one of the following:
 
@@ -160,10 +123,10 @@ To verify that you've successfully disabled a mailbox, do one of the following:
   $dbs | foreach {Get-MailboxStatistics -Database $_.DistinguishedName} | where {$_.DisplayName -eq "<DisplayName>"} | Format-List DisconnectReason,DisconnectDate
   ```
 
-  The `Disabled` value in the *DisconnectReason* property indicates that the mailbox is disabled.
+  The `Disabled` value in the _DisconnectReason_ property indicates that the mailbox is disabled.
 
   > [!NOTE]
-  > When you delete a mailbox, the value in the <EM>DisconnectReason</EM> property is also <CODE>Disabled</CODE>. However, the corresponding Active Directory user account is deleted.
+  > When you delete a mailbox, the value in the _DisconnectReason_ property is also `Disabled`. However, the corresponding Active Directory user account is deleted.
 
 - In the Shell, run the following command.
 
@@ -171,7 +134,7 @@ To verify that you've successfully disabled a mailbox, do one of the following:
   Get-User <identity>
   ```
 
-    Note that the value for the *RecipientType* property is `User`, instead of `UserMailbox`, which is the value for users with enabled mailboxes. This also verifies that the mailbox is disabled, but the user account is retained.
+    Note that the value for the _RecipientType_ property is `User`, instead of `UserMailbox`, which is the value for users with enabled mailboxes. This also verifies that the mailbox is disabled, but the user account is retained.
 
 ## Delete a mailbox
 
@@ -213,7 +176,7 @@ Remove-Mailbox "Fleet Van (16)"
 Remove-Mailbox corpprint
 ```
 
-### How do you know this worked?
+### How do you know you've successfully deleted a mailbox?
 
 To verify that you've successfully deleted a mailbox, do one of the following sets of verification procedures.
 
@@ -230,10 +193,10 @@ Or
    $dbs | foreach {Get-MailboxStatistics -Database $_.DistinguishedName} | where {$_.DisplayName -eq "<DisplayName>"} | Format-List DisconnectReason,DisconnectDate
    ```
 
-   The `Disabled` value in the *DisconnectReason* property indicates that the mailbox has been deleted.
+   The `Disabled` value in the _DisconnectReason_ property indicates that the mailbox has been deleted.
 
    > [!NOTE]
-   > When you disable a mailbox, the value in the <EM>DisconnectReason</EM> property is also <CODE>Disabled</CODE>. However, the corresponding Active Directory user account is retained.
+   > When you disable a mailbox, the value in the _DisconnectReason_ property is also `Disabled`. However, the corresponding Active Directory user account is retained.
 
 2. Run the following command to verify that Active Directory user account has been deleted.
 

@@ -77,36 +77,12 @@ You must have a certificate that's trusted by both the computers running Exchang
 
 The following table shows the certificate requirements for installing and configuring certificates for Exchange UM.
 
-<table>
-<colgroup>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Topology</th>
-<th>Certificate configuration</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Client Access and Mailbox on the same server (without Lync 2010 or 2013; non-SIP dial plans)</p></td>
-<td><p>A certificate is required between Client Access and Mailbox servers. This is the same certificate that's used between the Client Access and Mailbox servers and the VoIP gateway, IP PBX, or SBC.</p></td>
-</tr>
-<tr class="even">
-<td><p>Client Access and Mailbox on different servers (without Lync 2010 or 2013; non-SIP dial plans)</p></td>
-<td><p>A certificate is required. The certificate must match on the Client Access and Mailbox servers. A certificate is also required between Client Access and Mailbox servers and the VoIP gateway, IP PBX, or SBC. This can be the same or a different certificate than the certificate that is used between the Client Access and Mailbox servers.For Client Access and Mailbox servers, you can run the <strong>Create-ExchangeCertificate</strong> cmdlet from either server.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Client Access and Mailbox on the same server (with Lync 2010 or 2013 and SIP dial plans)</p></td>
-<td><p>A certificate is required. The Client Access and Mailbox servers must have the same root certificate as the Lync 2010 or 2013 servers.</p></td>
-</tr>
-<tr class="even">
-<td><p>Client Access and Mailbox on different servers (with Lync 2010 or 2013 and SIP dial plans)</p></td>
-<td><p>A certificate is required. The Client Access and Mailbox servers must have the same root certificate as the Lync 2010 or 2013 servers.</p></td>
-</tr>
-</tbody>
-</table>
+|Topology|Certificate configuration|
+|---|---|
+|Client Access and Mailbox on the same server (without Lync 2010 or 2013; non-SIP dial plans)|A certificate is required between Client Access and Mailbox servers. This is the same certificate that's used between the Client Access and Mailbox servers and the VoIP gateway, IP PBX, or SBC.|
+|Client Access and Mailbox on different servers (without Lync 2010 or 2013; non-SIP dial plans)|A certificate is required. The certificate must match on the Client Access and Mailbox servers. A certificate is also required between Client Access and Mailbox servers and the VoIP gateway, IP PBX, or SBC. This can be the same or a different certificate than the certificate that is used between the Client Access and Mailbox servers.For Client Access and Mailbox servers, you can run the **Create-ExchangeCertificate** cmdlet from either server.|
+|Client Access and Mailbox on the same server (with Lync 2010 or 2013 and SIP dial plans)|A certificate is required. The Client Access and Mailbox servers must have the same root certificate as the Lync 2010 or 2013 servers.|
+|Client Access and Mailbox on different servers (with Lync 2010 or 2013 and SIP dial plans)|A certificate is required. The Client Access and Mailbox servers must have the same root certificate as the Lync 2010 or 2013 servers.|
 
 ## Deployment steps
 
@@ -130,34 +106,11 @@ You must complete the following steps to configure Unified Messaging to work wit
 
    Although a UM dial plan can be configured as SIP secured or Secured, we recommend that you configure the dial plan as Secured to enable Lync Phone Edition devices to work correctly. This is recommended because of the default encryption level settings configured in Lync Server. A Lync Phone Edition device will work only if the encryption settings are configured as shown in the following table. This table shows the relationship between the encryption settings for Lync Server and UM dial plans.
 
-   **Encryption settings for Lync Phone Edition**
-
-    <table>
-    <colgroup>
-    <col>
-    <col>
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th>Lync Server</th>
-    <th>UM dial plan</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td><p>Encryption required (default)</p></td>
-    <td><p>Secured</p></td>
-    </tr>
-    <tr class="even">
-    <td><p>Encryption optional</p></td>
-    <td><p>SIP secured/Secured</p></td>
-    </tr>
-    <tr class="odd">
-    <td><p>No encryption</p></td>
-    <td><p>SIP secured</p></td>
-    </tr>
-    </tbody>
-    </table>
+    |Lync Server|UM dial plan|
+    |---|---|
+    |Encryption required (default)|Secured|
+    |Encryption optional|SIP secured/Secured|
+    |No encryption|SIP secured|
 
 4. Add all Client Access and Mailbox servers to the SIP dial plan. To enable the server to answer incoming calls, you must add all Exchange servers to a dial plan if you want them to answer calls from Lync Server.
 
@@ -195,7 +148,7 @@ You must also complete the following tasks to configure Lync Server to work with
 - Run **ocsumutil.exe**, which creates the contact objects for Outlook Voice Access and for the auto attendants.
 
   > [!NOTE]
-  > When you install Lync Server, the <STRONG>msRTC-SIPLine</STRONG> attribute is added to Active Directory. If you haven't installed Lync Server in your environment, this attribute isn't added to Active Directory, and caller ID name resolution across dial plans in a single forest and in cross-forest scenarios won't work correctly unless you configure Unified Messaging proxy addresses for users who aren't UM-enabled.
+  > When you install Lync Server, the **msRTC-SIPLine** attribute is added to Active Directory. If you haven't installed Lync Server in your environment, this attribute isn't added to Active Directory, and caller ID name resolution across dial plans in a single forest and in cross-forest scenarios won't work correctly unless you configure Unified Messaging proxy addresses for users who aren't UM-enabled.
 
 After you configure the Lync Server and the Unified Messaging servers, you must enable the user to use Lync Server and install Lync on the user's client computer.
 

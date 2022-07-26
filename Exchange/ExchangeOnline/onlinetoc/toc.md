@@ -69,7 +69,6 @@
 #### [Manage policy tips](../security-and-compliance/data-loss-prevention/manage-policy-tips.md)
 ### [Auditing reports](../security-and-compliance/exchange-auditing-reports/exchange-auditing-reports.md)
 #### [Export mailbox audit logs](../security-and-compliance/exchange-auditing-reports/export-mailbox-audit-logs.md)
-#### [Non-owner mailbox access report](../security-and-compliance/exchange-auditing-reports/non-owner-mailbox-access-report.md)
 #### [Per-mailbox litigation hold report](../security-and-compliance/exchange-auditing-reports/per-mailbox-litigation-hold-report.md)
 #### [Search role group changes](../security-and-compliance/exchange-auditing-reports/search-role-group-changes.md)
 #### [View administrator audit log](../security-and-compliance/exchange-auditing-reports/view-administrator-audit-log.md)

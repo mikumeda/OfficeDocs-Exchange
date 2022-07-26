@@ -31,31 +31,31 @@ For more information about conditions and exceptions in transport rules in Excha
 
 The tables in the following sections describe the conditions and exceptions that are available in transport rules on Mailbox servers. The properties types are described in the Property types section.
 
-Senders
+[Senders](#senders)
 
-Recipients
+[Recipients](#recipients)
 
-Message subject or body
+[Message subject or body](#message-subject-or-body)
 
-Attachments
+[Attachments](#attachments)
 
-Any recipients
+[Any recipients](#any-recipients)
 
-Message sensitive information types, To and Cc values, size, and character sets
+[Message sensitive information types, To and Cc values, size, and character sets](#message-sensitive-information-types-to-and-cc-values-size-and-character-sets)
 
-Sender and recipient
+[Sender and recipient](#sender-and-recipient)
 
-Message properties
+[Message properties](#message-properties)
 
-Message headers
+[Message headers](#message-headers)
 
 **Notes**:
 
-  - After you select a condition or exception in the Exchange admin center (EAC), the value that's ultimately shown in the **Apply this rule if** or **Except if** field is often different (shorter) than the click path value you selected. Also, when you create new rules based on a template (a filtered list of scenarios), you can often select a short condition name instead of following the complete click path. The short names and full click path values are shown in the EAC column in the tables.
+- After you select a condition or exception in the Exchange admin center (EAC), the value that's ultimately shown in the **Apply this rule if** or **Except if** field is often different (shorter) than the click path value you selected. Also, when you create new rules based on a template (a filtered list of scenarios), you can often select a short condition name instead of following the complete click path. The short names and full click path values are shown in the EAC column in the tables.
 
-  - If you select **\[Apply to all messages\]** in the EAC, you can't specify any other conditions. The equivalent in the Exchange Management Shell is to create a rule without specifying any condition parameters.
+- If you select **\[Apply to all messages\]** in the EAC, you can't specify any other conditions. The equivalent in the Exchange Management Shell is to create a rule without specifying any condition parameters.
 
-  - The settings and properties are the same in conditions and exceptions, so the output of the **Get-TransportRulePredicate** cmdlet doesn't list exceptions separately. Also, the names of some of the predicates that are returned by this cmdlet are different than the corresponding parameter names, and a predicate might require multiple parameters.
+- The settings and properties are the same in conditions and exceptions, so the output of the **Get-TransportRulePredicate** cmdlet doesn't list exceptions separately. Also, the names of some of the predicates that are returned by this cmdlet are different than the corresponding parameter names, and a predicate might require multiple parameters.
 
 ## Senders
 
@@ -63,877 +63,156 @@ For conditions and exceptions that examine the sender's address, you can specify
 
 In the EAC, in the **Properties of this rule** section, click **Match sender address in message**. Note that you might need to click **More options** to see this setting. In the Exchange Management Shell, the parameter is *SenderAddressLocation*. The available values are:
 
-  - **Header**: Only examine senders in the message headers (for example, the **From**, **Sender**, or **Reply-To** fields). This is the default value, and is the way transport rules worked before Exchange 2013 Cumulative Update 1 (CU1).
+- **Header**: Only examine senders in the message headers (for example, the **From**, **Sender**, or **Reply-To** fields). This is the default value, and is the way transport rules worked before Exchange 2013 Cumulative Update 1 (CU1).
 
-  - **Envelope**: Only examine senders from the message envelope (the **MAIL FROM** value that was used in the SMTP transmission, which is typically stored in the **Return-Path** field). Note that message envelope searching is only available for the following conditions (and the corresponding exceptions):
+- **Envelope**: Only examine senders from the message envelope (the **MAIL FROM** value that was used in the SMTP transmission, which is typically stored in the **Return-Path** field). Note that message envelope searching is only available for the following conditions (and the corresponding exceptions):
 
-      - **The sender is** (*From*)
+- **The sender is** (_From_)
+  - **The sender is a member of** (_FromMemberOf_)
+  - **The sender address includes** (_FromAddressContainsWords_)
+  - **The sender address matches** (_FromAddressMatchesPatterns_)
+  - **The sender's domain is** (_SenderDomainIs_)
 
-      - **The sender is a member of** (*FromMemberOf*)
+- **Header or envelope** (`HeaderOrEnvelope`) Examine senders in the message header and the message envelope.
 
-      - **The sender address includes** (*FromAddressContainsWords*)
-
-      - **The sender address matches** (*FromAddressMatchesPatterns*)
-
-      - **The sender's domain is** (*SenderDomainIs*)
-
-  - **Header or envelope** (`HeaderOrEnvelope`)   Examine senders in the message header and the message envelope.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>The sender is</strong></p>
-<p><strong>The sender</strong> &gt; <strong>is this person</strong></p></td>
-<td><p><em>From</em></p>
-<p><em>ExceptIfFrom</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages that are sent by the specified mailboxes, mail users, or mail contacts in the Exchange organization.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The sender is located</strong></p>
-<p><strong>The sender</strong> &gt; <strong>is external/internal</strong></p></td>
-<td><p><em>FromScope</em></p>
-<p><em>ExceptIfFromScope</em></p></td>
-<td><p><code>UserScopeFrom</code></p></td>
-<td><p>Messages that are sent by either internal senders or external senders.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The sender is a member of</strong></p>
-<p><strong>The sender</strong> &gt; <strong>is a member of this group</strong></p></td>
-<td><p><em>FromMemberOf</em></p>
-<p><em>ExceptIfFromMemberOf</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages that are sent by a member of the specified group.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The sender address includes</strong></p>
-<p><strong>The sender</strong> &gt; <strong>address includes any of these words</strong></p></td>
-<td><p><em>FromAddressContainsWords</em></p>
-<p><em>ExceptIfFromAddressContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that contain the specified words in the sender's email address.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The sender address matches</strong></p>
-<p><strong>The sender</strong> &gt; <strong>address matches any of these text patterns</strong></p></td>
-<td><p><em>FromAddressMatchesPatterns</em></p>
-<p><em>ExceptIfFromAddressMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where the sender's email address contains text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The sender's specified properties include any of these words</strong></p>
-<p><strong>The sender</strong> &gt; <strong>has specific properties including any of these words</strong></p></td>
-<td><p><em>SenderADAttributeContainsWords</em></p>
-<p><em>ExceptIfSenderADAttributeContainsWords</em></p></td>
-<td><p>First property: <code>ADAttribute</code></p>
-<p>Second property: <code>Words</code></p></td>
-<td><p>Messages where the specified Active Directory attribute of the sender contains any of the specified words.</p>
-<p>Note that the <strong>Country</strong> attribute requires the two-letter country code value (for example, DE for Germany).</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The sender's specified properties match these text patterns</strong></p>
-<p><strong>The sender</strong> &gt; <strong>has specific properties matching these text patterns</strong></p></td>
-<td><p><em>SenderADAttributeMatchesPatterns</em></p>
-<p><em>ExceptIfSenderADAttributeMatchesPatterns</em></p></td>
-<td><p>First property: <code>ADAttribute</code></p>
-<p>Second property: <code>Patterns</code></p></td>
-<td><p>Messages where the specified Active Directory attribute of the sender contains text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The sender has overridden the Policy Tip</strong></p>
-<p><strong>The sender</strong> &gt; <strong>has overridden the Policy Tip</strong></p></td>
-<td><p><em>HasSenderOverride</em></p>
-<p><em>ExceptIfHasSenderOverride</em></p></td>
-<td><p>n/a</p></td>
-<td><p>Messages where the sender has chosen to override a data loss prevention (DLP) policy. For more information about DLP policies, see <a href="/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention">Data loss prevention</a>.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Sender's IP address is in the range</strong></p>
-<p><strong>The sender</strong> &gt; <strong>IP address is in any of these ranges or exactly matches</strong></p></td>
-<td><p><em>SenderIPRanges</em></p>
-<p><em>ExceptIfSenderIPRanges</em></p></td>
-<td><p><code>IPAddressRanges</code></p></td>
-<td><p>Messages where the sender's IP address matches the specified IP address, or falls within the specified IP address range.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The sender's domain is</strong></p>
-<p><strong>The sender</strong> &gt; <strong>domain is</strong></p></td>
-<td><p><em>SenderDomainIs</em></p>
-<p><em>ExceptIfSenderDomainIs</em></p></td>
-<td><p><code>DomainName</code></p></td>
-<td><p>Messages where the domain of the sender's email address matches the specified value.</p>
-<p>If you need to find sender domains that <em>contain</em> the specified domain (for example, any subdomain of a domain), use <strong>The sender address matches</strong> (<em>FromAddressMatchesPatterns</em>) condition and specify the domain by using the syntax: <code>'\.domain\.com$'</code>.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**The sender is** <br/><br/> **The sender** \> **is this person**|_From_ <br/><br/> _ExceptIfFrom_|`Addresses`|Messages that are sent by the specified mailboxes, mail users, or mail contacts in the Exchange organization.|Exchange 2007 or later|
+|**The sender is located** <br/><br/> **The sender** \> **is external/internal**|_FromScope_ <br/><br/> _ExceptIfFromScope_|`UserScopeFrom`|Messages that are sent by either internal senders or external senders.|Exchange 2007 or later|
+|**The sender is a member of** <br/><br/> **The sender** \> **is a member of this group**|_FromMemberOf_ <br/><br/> _ExceptIfFromMemberOf_|`Addresses`|Messages that are sent by a member of the specified group.|Exchange 2007 or later|
+|**The sender address includes** <br/><br/> **The sender** \> **address includes any of these words**|_FromAddressContainsWords_ <br/><br/> _ExceptIfFromAddressContainsWords_|`Words`|Messages that contain the specified words in the sender's email address.|Exchange 2007 or later|
+|**The sender address matches** <br/><br/> **The sender** \> **address matches any of these text patterns**|_FromAddressMatchesPatterns_ <br/><br/> _ExceptIfFromAddressMatchesPatterns_|`Patterns`|Messages where the sender's email address contains text patterns that match the specified regular expressions.|Exchange 2007 or later|
+|**The sender's specified properties include any of these words** <br/><br/> **The sender** \> **has specific properties including any of these words**|_SenderADAttributeContainsWords_ <br/><br/> _ExceptIfSenderADAttributeContainsWords_|First property: `ADAttribute` <br/><br/> Second property: `Words`|Messages where the specified Active Directory attribute of the sender contains any of the specified words. <br/><br/> Note that the **Country** attribute requires the two-letter country code value (for example, DE for Germany).|Exchange 2010 or later|
+|**The sender's specified properties match these text patterns** <br/><br/> **The sender** \> **has specific properties matching these text patterns**|_SenderADAttributeMatchesPatterns_ <br/><br/> _ExceptIfSenderADAttributeMatchesPatterns_|First property: `ADAttribute` <br/><br/> Second property: `Patterns`|Messages where the specified Active Directory attribute of the sender contains text patterns that match the specified regular expressions.|Exchange 2010 or later|
+|**The sender has overridden the Policy Tip** <br/><br/> **The sender** \> **has overridden the Policy Tip**|_HasSenderOverride_ <br/><br/> _ExceptIfHasSenderOverride_|n/a|Messages where the sender has chosen to override a data loss prevention (DLP) policy. For more information about DLP policies, see [Data loss prevention](data-loss-prevention-exchange-2013-help.md).|Exchange 2013 or later|
+|**Sender's IP address is in the range** <br/><br/> **The sender** \> **IP address is in any of these ranges or exactly matches**|_SenderIPRanges_ <br/><br/> _ExceptIfSenderIPRanges_|`IPAddressRanges`|Messages where the sender's IP address matches the specified IP address, or falls within the specified IP address range.|Exchange 2013 or later|
+|**The sender's domain is** <br/><br/> **The sender** \> **domain is**|_SenderDomainIs_ <br/><br/> _ExceptIfSenderDomainIs_|`DomainName`|Messages where the domain of the sender's email address matches the specified value. <br/><br/> If you need to find sender domains that _contain_ the specified domain (for example, any subdomain of a domain), use **The sender address matches** (_FromAddressMatchesPatterns_) condition and specify the domain by using the syntax: `'\.domain\.com$'`.|Exchange 2013 or later|
 
 ## Recipients
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>The recipient is</strong></p>
-<p><strong>The recipient</strong> &gt; <strong>is this person</strong></p></td>
-<td><p><em>SentTo</em></p>
-<p><em>ExceptIfSentTo</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages where one of the recipients is the specified mailbox, mail user, or mail contact in the Exchange organization. The recipients can be in the <strong>To</strong>, <strong>Cc</strong>, or <strong>Bcc</strong> fields of the message.</p>
-<p><strong>Note:</strong> You can't specify distribution groups or mail-enabled security groups. If you need to take action on messages that are sent to a group, use the <strong>To box contains</strong> (<em>AnyOfToHeader</em>) condition instead.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The recipient is located</strong></p>
-<p><strong>The recipient</strong> &gt; <strong>is external/external</strong></p></td>
-<td><p><em>SentToScope</em></p>
-<p><em>ExceptIfSentToScope</em></p></td>
-<td><p><code>UserScopeTo</code></p></td>
-<td><p>Messages that are sent to internal recipients, external recipients, external recipients in partner organizations, or external recipients in non-partner organizations.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The recipient is a member of</strong></p>
-<p><strong>The recipient</strong> &gt; <strong>is a member of this group</strong></p></td>
-<td><p><em>SentToMemberOf</em></p>
-<p><em>ExceptIfSentToMemberOf</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages that contain recipients who are members of the specified group. The group can be in the <strong>To</strong>, <strong>Cc</strong>, or <strong>Bcc</strong> fields of the message.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The recipient address includes</strong></p>
-<p><strong>The recipient</strong> &gt; <strong>address includes any of these words</strong></p></td>
-<td><p><em>RecipientAddressContainsWords</em></p>
-<p><em>ExceptIfRecipientAddressContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that contain the specified words in the recipient's email address.</p>
-<p><strong>Note:</strong> This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The recipient address matches</strong></p>
-<p><strong>The recipient</strong> &gt; <strong>address matches any of these text patterns</strong></p></td>
-<td><p><em>RecipientAddressMatchesPatterns</em></p>
-<p><em>ExceptIfRecipientAddressMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where a recipient's email address contains text patterns that match the specified regular expressions.</p>
-<p><strong>Note:</strong> This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The recipient's specified properties include any of these words</strong></p>
-<p><strong>The recipient</strong> &gt; <strong>has specific properties including any of these words</strong></p></td>
-<td><p><em>RecipientADAttributeContainsWords</em></p>
-<p><em>ExceptIfRecipientADAttributeContainsWords</em></p></td>
-<td><p>First property: <code>ADAttribute</code></p>
-<p>Second property: <code>Words</code></p></td>
-<td><p>Messages where the specified Active Directory attribute of a recipient contains any of the specified words.</p>
-<p>Note that the <strong>Country</strong> attribute requires the two-letter country code value (for example, DE for Germany).</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The recipient's specified properties match these text patterns</strong></p>
-<p><strong>The recipient</strong> &gt; <strong>has specific properties matching these text patterns</strong></p></td>
-<td><p><em>RecipientADAttributeMatchesPatterns</em></p>
-<p><em>ExceptIfRecipientADAttributeMatchesPatterns</em></p></td>
-<td><p>First property: <code>ADAttribute</code></p>
-<p>Second property: <code>Patterns</code></p></td>
-<td><p>Messages where the specified Active Directory attribute of a recipient contains text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>A recipient's domain is</strong></p>
-<p><strong>The recipient</strong> &gt; <strong>domain is</strong></p></td>
-<td><p><em>RecipientDomainIs</em></p>
-<p><em>ExceptIfRecipientDomainIs</em></p></td>
-<td><p><code>DomainName</code></p></td>
-<td><p>Messages where the domain of a recipient's email address matches the specified value.</p>
-<p>If you need to find recipient domains that <em>contain</em> the specified domain (for example, any subdomain of a domain), use <strong>The recipient address matches</strong> (<em>RecipientAddressMatchesPatterns</em>) condition, and specify the domain by using the syntax <code>'\.domain\.com$'</code>.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**The recipient is** <br/><br/> **The recipient** \> **is this person**|_SentTo_ <br/><br/> _ExceptIfSentTo_|`Addresses`|Messages where one of the recipients is the specified mailbox, mail user, or mail contact in the Exchange organization. The recipients can be in the **To**, **Cc**, or **Bcc** fields of the message. <p> **Note:** You can't specify distribution groups or mail-enabled security groups. If you need to take action on messages that are sent to a group, use the **To box contains** (_AnyOfToHeader_) condition instead.|Exchange 2007 or later|
+|**The recipient is located** <br/><br/> **The recipient** \> **is external/external**|_SentToScope_ <br/><br/> _ExceptIfSentToScope_|`UserScopeTo`|Messages that are sent to internal recipients, external recipients, external recipients in partner organizations, or external recipients in non-partner organizations.|Exchange 2007 or later|
+|**The recipient is a member of** <br/><br/> **The recipient** \> **is a member of this group**|_SentToMemberOf_ <br/><br/> _ExceptIfSentToMemberOf_|`Addresses`|Messages that contain recipients who are members of the specified group. The group can be in the **To**, **Cc**, or **Bcc** fields of the message.|Exchange 2007 or later|
+|**The recipient address includes** <br/><br/> **The recipient** \> **address includes any of these words**|_RecipientAddressContainsWords_ <br/><br/> _ExceptIfRecipientAddressContainsWords_|`Words`|Messages that contain the specified words in the recipient's email address. <p> **Note:** This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.|Exchange 2010 or later|
+|**The recipient address matches** <br/><br/> **The recipient** \> **address matches any of these text patterns**|_RecipientAddressMatchesPatterns_ <br/><br/> _ExceptIfRecipientAddressMatchesPatterns_|`Patterns`|Messages where a recipient's email address contains text patterns that match the specified regular expressions. <p> **Note:** This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.|Exchange 2010 or later|
+|**The recipient's specified properties include any of these words** <br/><br/> **The recipient** \> **has specific properties including any of these words**|_RecipientADAttributeContainsWords_ <br/><br/> _ExceptIfRecipientADAttributeContainsWords_|First property: `ADAttribute` <br/><br/> Second property: `Words`|Messages where the specified Active Directory attribute of a recipient contains any of the specified words. <br/><br/> Note that the **Country** attribute requires the two-letter country code value (for example, DE for Germany).|Exchange 2010 or later|
+|**The recipient's specified properties match these text patterns** <br/><br/> **The recipient** \> **has specific properties matching these text patterns**|_RecipientADAttributeMatchesPatterns_ <br/><br/> _ExceptIfRecipientADAttributeMatchesPatterns_|First property: `ADAttribute` <br/><br/> Second property: `Patterns`|Messages where the specified Active Directory attribute of a recipient contains text patterns that match the specified regular expressions.|Exchange 2010 or later|
+|**A recipient's domain is** <br/><br/> **The recipient** \> **domain is**|_RecipientDomainIs_ <br/><br/> _ExceptIfRecipientDomainIs_|`DomainName`|Messages where the domain of a recipient's email address matches the specified value. <br/><br/> If you need to find recipient domains that _contain_ the specified domain (for example, any subdomain of a domain), use **The recipient address matches** (_RecipientAddressMatchesPatterns_) condition, and specify the domain by using the syntax `'\.domain\.com$'`.|Exchange 2013 or later|
 
 ## Message subject or body
 
 > [!NOTE]
-> The search for words or text patterns in the subject or other header fields in the message occurs <EM>after</EM> the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages.
+> The search for words or text patterns in the subject or other header fields in the message occurs _after_ the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>The subject or body includes</strong></p>
-<p><strong>The subject or body</strong> &gt; <strong>subject or body includes any of these words</strong></p></td>
-<td><p><em>SubjectOrBodyContainsWords</em></p>
-<p><em>ExceptIfSubjectOrBodyContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that have the specified words in the <strong>Subject</strong> field or message body.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The subject or body matches</strong></p>
-<p><strong>The subject or body</strong> &gt; <strong>subject or body matches these text patterns</strong></p></td>
-<td><p><em>SubjectOrBodyMatchesPatterns</em></p>
-<p><em>ExceptIfSubjectOrBodyMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where the <strong>Subject</strong> field or message body contain text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The subject includes</strong></p>
-<p><strong>The subject or body</strong> &gt; <strong>subject includes any of these words</strong></p></td>
-<td><p><em>SubjectContainsWords</em></p>
-<p><em>ExceptIfSubjectContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that have the specified words in the <strong>Subject</strong> field.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The subject matches</strong></p>
-<p><strong>The subject or body</strong> &gt; <strong>subject matches these text patterns</strong></p></td>
-<td><p><em>SubjectMatchesPatterns</em></p>
-<p><em>ExceptIfSubjectMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where the <strong>Subject</strong> field contains text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**The subject or body includes** <br/><br/> **The subject or body** \> **subject or body includes any of these words**|_SubjectOrBodyContainsWords_ <br/><br/> _ExceptIfSubjectOrBodyContainsWords_|`Words`|Messages that have the specified words in the **Subject** field or message body.|Exchange 2007 or later|
+|**The subject or body matches** <br/><br/> **The subject or body** \> **subject or body matches these text patterns**|_SubjectOrBodyMatchesPatterns_ <br/><br/> _ExceptIfSubjectOrBodyMatchesPatterns_|`Patterns`|Messages where the **Subject** field or message body contain text patterns that match the specified regular expressions.|Exchange 2007 or later|
+|**The subject includes** <br/><br/> **The subject or body** \> **subject includes any of these words**|_SubjectContainsWords_ <br/><br/> _ExceptIfSubjectContainsWords_|`Words`|Messages that have the specified words in the **Subject** field.|Exchange 2007 or later|
+|**The subject matches** <br/><br/> **The subject or body** \> **subject matches these text patterns**|_SubjectMatchesPatterns_ <br/><br/> _ExceptIfSubjectMatchesPatterns_|`Patterns`|Messages where the **Subject** field contains text patterns that match the specified regular expressions.|Exchange 2007 or later|
 
 ## Attachments
 
 For more information about how transport rules inspect message attachments, see [Use transport rules to inspect message attachments in Exchange 2013](use-transport-rules-to-inspect-message-attachments-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Any attachment's content includes</strong></p>
-<p><strong>Any attachment</strong> &gt; <strong>content includes any of these words</strong></p></td>
-<td><p><em>AttachmentContainsWords</em></p>
-<p><em>ExceptIfAttachmentContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages where an attachment contains the specified words.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any attachments content matches</strong></p>
-<p><strong>Any attachment</strong> &gt; <strong>content matches these text patterns</strong></p></td>
-<td><p><em>AttachmentMatchesPatterns</em></p>
-<p><em>ExceptIfAttachmentMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where an attachment contains text patterns that match the specified regular expressions.</p>
-<p><strong>Note:</strong> Only the first 150 kilobytes (KB) of the attachments are scanned.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Any attachment's content can't be inspected</strong></p>
-<p><strong>Any attachment</strong> &gt; <strong>content can't be inspected</strong></p></td>
-<td><p><em>AttachmentIsUnsupported</em></p>
-<p><em>ExceptIfAttachmentIsUnsupported</em></p></td>
-<td><p>n/a</p></td>
-<td><p>Messages where an attachment isn't natively recognized by Exchange, and the required IFilter isn't installed on the Mailbox server. For more information, see <a href="register-filter-pack-ifilters-with-exchange-2013-exchange-2013-help.md">Register Filter Pack IFilters with Exchange 2013</a>.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any attachment's file name matches</strong></p>
-<p><strong>Any attachment</strong> &gt; <strong>file name matches these text patterns</strong></p></td>
-<td><p><em>AttachmentNameMatchesPatterns</em></p>
-<p><em>ExceptIfAttachmentNameMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where an attachment's file name contains text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Any attachment's file extension matches</strong></p>
-<p><strong>Any attachment</strong> &gt; <strong>file extension includes these words</strong></p></td>
-<td><p><em>AttachmentExtensionMatchesWords</em></p>
-<p><em>ExceptIfAttachmentExtensionMatchesWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages where an attachment's file extension matches any of the specified words.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any attachment is greater than or equal to</strong></p>
-<p><strong>Any attachment &gt; size is greater than or equal to</strong></p></td>
-<td><p><em>AttachmentSizeOver</em></p>
-<p><em>ExceptIfAttachmentSizeOver</em></p></td>
-<td><p><code>Size</code></p></td>
-<td><p>Messages where any attachment is greater than or equal to the specified value.</p>
-<p>In the EAC, you can only specify the size in kilobytes (KB).</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The message didn't complete scanning</strong></p>
-<p><strong>Any attachment</strong> &gt; <strong>didn't complete scanning</strong></p></td>
-<td><p><em>AttachmentProcessingLimitExceeded</em></p>
-<p><em>ExceptIfAttachmentProcessingLimitExceeded</em></p></td>
-<td><p>n/a</p></td>
-<td><p>Messages where the rules engine couldn't complete the scanning of the attachments. You can use this condition to create rules that work together to identify and process messages where the content couldn't be fully scanned.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any attachment has executable content</strong></p>
-<p><strong>Any attachment</strong> &gt; <strong>has executable content</strong></p></td>
-<td><p><em>AttachmentHasExecutableContent</em></p>
-<p><em>ExceptIfAttachmentHasExecutableContent</em></p></td>
-<td><p>n/a</p></td>
-<td><p>Messages where an attachment is an executable file. The system inspects the file's properties rather than relying on the file's extension.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Any attachment is password protected</strong></p>
-<p><strong>Any attachment</strong> &gt; <strong>is password protected</strong></p></td>
-<td><p><em>AttachmentIsPasswordProtected</em></p>
-<p><em>ExceptIfAttachmentIsPasswordProtected</em></p></td>
-<td><p>n/a</p></td>
-<td><p>Messages where an attachment is password protected (and therefore can't be scanned). Password detection only works for Office documents, .zip files, and .7z files.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**Any attachment's content includes** <br/><br/> **Any attachment** \> **content includes any of these words**|_AttachmentContainsWords_ <br/><br/> _ExceptIfAttachmentContainsWords_|`Words`|Messages where an attachment contains the specified words.|Exchange 2010 or later|
+|**Any attachments content matches** <br/><br/> **Any attachment** \> **content matches these text patterns**|_AttachmentMatchesPatterns_ <br/><br/> _ExceptIfAttachmentMatchesPatterns_|`Patterns`|Messages where an attachment contains text patterns that match the specified regular expressions. <p> **Note:** Only the first 150 kilobytes (KB) of the attachments are scanned.|Exchange 2010 or later|
+|**Any attachment's content can't be inspected** <br/><br/> **Any attachment** \> **content can't be inspected**|_AttachmentIsUnsupported_ <br/><br/> _ExceptIfAttachmentIsUnsupported_|n/a|Messages where an attachment isn't natively recognized by Exchange, and the required IFilter isn't installed on the Mailbox server. For more information, see [Register Filter Pack IFilters with Exchange 2013](register-filter-pack-ifilters-with-exchange-2013-exchange-2013-help.md).|Exchange 2010 or later|
+|**Any attachment's file name matches** <br/><br/> **Any attachment** \> **file name matches these text patterns**|_AttachmentNameMatchesPatterns_ <br/><br/> _ExceptIfAttachmentNameMatchesPatterns_|`Patterns`|Messages where an attachment's file name contains text patterns that match the specified regular expressions.|Exchange 2010 or later|
+|**Any attachment's file extension matches** <br/><br/> **Any attachment** \> **file extension includes these words**|_AttachmentExtensionMatchesWords_ <br/><br/> _ExceptIfAttachmentExtensionMatchesWords_|`Words`|Messages where an attachment's file extension matches any of the specified words.|Exchange 2013 or later|
+|**Any attachment is greater than or equal to** <br/><br/> **Any attachment \> size is greater than or equal to**|_AttachmentSizeOver_ <br/><br/> _ExceptIfAttachmentSizeOver_|`Size`|Messages where any attachment is greater than or equal to the specified value. <br/><br/> In the EAC, you can only specify the size in kilobytes (KB).|Exchange 2007 or later|
+|**The message didn't complete scanning** <br/><br/> **Any attachment** \> **didn't complete scanning**|_AttachmentProcessingLimitExceeded_ <br/><br/> _ExceptIfAttachmentProcessingLimitExceeded_|n/a|Messages where the rules engine couldn't complete the scanning of the attachments. You can use this condition to create rules that work together to identify and process messages where the content couldn't be fully scanned.|Exchange 2013 or later|
+|**Any attachment has executable content** <br/><br/> **Any attachment** \> **has executable content**|_AttachmentHasExecutableContent_ <br/><br/> _ExceptIfAttachmentHasExecutableContent_|n/a|Messages where an attachment is an executable file. The system inspects the file's properties rather than relying on the file's extension.|Exchange 2013 or later|
+|**Any attachment is password protected** <br/><br/> **Any attachment** \> **is password protected**|_AttachmentIsPasswordProtected_ <br/><br/> _ExceptIfAttachmentIsPasswordProtected_|n/a|Messages where an attachment is password protected (and therefore can't be scanned). Password detection only works for Office documents, .zip files, and .7z files.|Exchange 2013 or later|
 
 ## Any recipients
 
-The conditions and exceptions in this section provide a unique capability that affects *all* recipients when the message contains at least one of the specified recipients. For example, let's say you have a rule that rejects messages. If you use a recipient condition from the Recipients section, the message is only rejected for those specified recipients. For example, if the rule finds the specified recipient in a message, but the message contains five other recipients. The message is rejected for that one recipient, and is delivered to the five other recipients.
+The conditions and exceptions in this section provide a unique capability that affects _all_ recipients when the message contains at least one of the specified recipients. For example, let's say you have a rule that rejects messages. If you use a recipient condition from the Recipients section, the message is only rejected for those specified recipients. For example, if the rule finds the specified recipient in a message, but the message contains five other recipients. The message is rejected for that one recipient, and is delivered to the five other recipients.
 
 If you add a recipient condition from this section, that same message is rejected for the detected recipient and the five other recipients.
 
-Conversely, a recipient exception from this section *prevents* the rule action from being applied to *all* recipients of the message, not just for the detected recipients.
+Conversely, a recipient exception from this section _prevents_ the rule action from being applied to _all_ recipients of the message, not just for the detected recipients.
 
-**Note**: This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.
+> [!NOTE]
+> This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Any recipient address includes</strong></p>
-<p><strong>Any recipient</strong> &gt; <strong>address includes any of these words</strong></p></td>
-<td><p><em>AnyOfRecipientAddressContainsWords</em></p>
-<p><em>ExceptIfAnyOfRecipientAddressContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that contain the specified words in the <strong>To</strong>, <strong>Cc</strong>, or <strong>Bcc</strong> fields of the message.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any recipient address matches</strong></p>
-<p><strong>Any recipient</strong> &gt; <strong>address matches any of these text patterns</strong></p></td>
-<td><p><em>AnyOfRecipientAddressMatchesPatterns</em></p>
-<p><em>ExceptIfAnyOfRecipientAddressMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where the <strong>To</strong>, <strong>Cc</strong>, or <strong>Bcc</strong> fields contain text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**Any recipient address includes** <br/><br/> **Any recipient** \> **address includes any of these words**|_AnyOfRecipientAddressContainsWords_ <br/><br/> _ExceptIfAnyOfRecipientAddressContainsWords_|`Words`|Messages that contain the specified words in the **To**, **Cc**, or **Bcc** fields of the message.|Exchange 2013 or later|
+|**Any recipient address matches** <br/><br/> **Any recipient** \> **address matches any of these text patterns**|_AnyOfRecipientAddressMatchesPatterns_ <br/><br/> _ExceptIfAnyOfRecipientAddressMatchesPatterns_|`Patterns`|Messages where the **To**, **Cc**, or **Bcc** fields contain text patterns that match the specified regular expressions.|Exchange 2013 or later|
 
 ## Message sensitive information types, To and Cc values, size, and character sets
 
-The conditions in this section that look for values in the **To** and **Cc** fields behave like the conditions in the Any recipients section (*all* recipients of the message are affected by the rule, not just the detected recipients).
+The conditions in this section that look for values in the **To** and **Cc** fields behave like the conditions in the Any recipients section (_all_ recipients of the message are affected by the rule, not just the detected recipients).
 
-**Note**: This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.
+> [!NOTE]
+> This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>The message contains sensitive information</strong></p>
-<p><strong>The message</strong> &gt; <strong>contains any of these types of sensitive information</strong></p></td>
-<td><p><em>MessageContainsDataClassifications</em></p>
-<p><em>ExceptIfMessageContainsDataClassifications</em></p></td>
-<td><p><code>SensitiveInformationTypes</code></p></td>
-<td><p>Messages that contain sensitive information as defined by data loss prevention (DLP) policies.</p>
-<p>This condition is required for rules that use the <strong>Notify the sender with a Policy Tip</strong> (<em>NotifySender</em>) action.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The To box contains</strong></p>
-<p><strong>The message</strong> &gt; <strong>To box contains this person</strong></p></td>
-<td><p><em>AnyOfToHeader</em></p>
-<p><em>ExceptIfAnyOfToHeader</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages where the <strong>To</strong> field includes any of the specified recipients.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The To box contains a member of</strong></p>
-<p><strong>The message</strong> &gt; <strong>To box contains a member of this group</strong></p></td>
-<td><p><em>AnyOfToHeaderMemberOf</em></p>
-<p><em>ExceptIfAnyOfToHeaderMemberOf</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages where the <strong>To</strong> field contains a recipient who is a member of the specified group.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The Cc box contains</strong></p>
-<p><strong>The message</strong> &gt; <strong>Cc box contains this person</strong></p></td>
-<td><p><em>AnyOfCcHeader</em></p>
-<p><em>ExceptIfAnyOfCcHeader</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages where the <strong>Cc</strong> field includes any of the specified recipients.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The Cc box contains a member of</strong></p>
-<p><strong>The message</strong> &gt; <strong>contains a member of this group</strong></p></td>
-<td><p><em>AnyOfCcHeaderMemberOf</em></p>
-<p><em>ExceptIfAnyOfCcHeaderMemberOf</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages where the <strong>Cc</strong> field contains a recipient who is a member of the specified group.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The To or Cc box contains</strong></p>
-<p><strong>The message</strong> &gt; <strong>To or Cc box contains this person</strong></p></td>
-<td><p><em>AnyOfToCcHeader</em></p>
-<p><em>ExceptIfAnyOfToCcHeader</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages where the <strong>To</strong> or <strong>Cc</strong> fields contain any of the specified recipients.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The To or Cc box contains a member of</strong></p>
-<p><strong>The message</strong> &gt; <strong>To or Cc box contains a member of this group</strong></p></td>
-<td><p><em>AnyOfToCcHeaderMemberOf</em></p>
-<p><em>ExceptIfAnyOfToCcHeaderMemberOf</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages where the <strong>To</strong> or <strong>Cc</strong> fields contain a recipient who is a member of the specified group.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The message size is greater than or equal to</strong></p>
-<p><strong>The message</strong> &gt; <strong>size is greater than or equal to</strong></p></td>
-<td><p><em>MessageSizeOver</em></p>
-<p><em>ExceptIfMessageSizeOver</em></p></td>
-<td><p><code>Size</code></p></td>
-<td><p>Messages where the total size (message plus attachments) is greater than or equal to the specified value.</p>
-<p>In the EAC, you can only specify the size in kilobytes (KB).</p>
-<p><strong>Note:</strong> Message size limits on mailboxes are evaluated before transport rules. A message that's too large for a mailbox will be rejected before a rule with this condition is able to act on the message.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The message character set name includes any of these words</strong></p>
-<p><strong>The message</strong> &gt; <strong>character set name includes any of these words</strong></p></td>
-<td><p><em>ContentCharacterSetContainsWords</em></p>
-<p><em>ExceptIfContentCharacterSetContainsWords</em></p></td>
-<td><p><code>CharacterSets</code></p></td>
-<td><p>Messages that have any of the specified character set names.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**The message contains sensitive information** <br/><br/> **The message** \> **contains any of these types of sensitive information**|_MessageContainsDataClassifications_ <br/><br/> _ExceptIfMessageContainsDataClassifications_|`SensitiveInformationTypes`|Messages that contain sensitive information as defined by data loss prevention (DLP) policies. <br/><br/> This condition is required for rules that use the **Notify the sender with a Policy Tip** (_NotifySender_) action.|Exchange 2013 or later|
+|**The To box contains** <br/><br/> **The message** \> **To box contains this person**|_AnyOfToHeader_ <br/><br/> _ExceptIfAnyOfToHeader_|`Addresses`|Messages where the **To** field includes any of the specified recipients.|Exchange 2007 or later|
+|**The To box contains a member of** <br/><br/> **The message** \> **To box contains a member of this group**|_AnyOfToHeaderMemberOf_ <br/><br/> _ExceptIfAnyOfToHeaderMemberOf_|`Addresses`|Messages where the **To** field contains a recipient who is a member of the specified group.|Exchange 2007 or later|
+|**The Cc box contains** <br/><br/> **The message** \> **Cc box contains this person**|_AnyOfCcHeader_ <br/><br/> _ExceptIfAnyOfCcHeader_|`Addresses`|Messages where the **Cc** field includes any of the specified recipients.|Exchange 2007 or later|
+|**The Cc box contains a member of** <br/><br/> **The message** \> **contains a member of this group**|_AnyOfCcHeaderMemberOf_ <br/><br/> _ExceptIfAnyOfCcHeaderMemberOf_|`Addresses`|Messages where the **Cc** field contains a recipient who is a member of the specified group.|Exchange 2007 or later|
+|**The To or Cc box contains** <br/><br/> **The message** \> **To or Cc box contains this person**|_AnyOfToCcHeader_ <br/><br/> _ExceptIfAnyOfToCcHeader_|`Addresses`|Messages where the **To** or **Cc** fields contain any of the specified recipients.|Exchange 2007 or later|
+|**The To or Cc box contains a member of** <br/><br/> **The message** \> **To or Cc box contains a member of this group**|_AnyOfToCcHeaderMemberOf_ <br/><br/> _ExceptIfAnyOfToCcHeaderMemberOf_|`Addresses`|Messages where the **To** or **Cc** fields contain a recipient who is a member of the specified group.|Exchange 2007 or later|
+|**The message size is greater than or equal to** <br/><br/> **The message** \> **size is greater than or equal to**|_MessageSizeOver_ <br/><br/> _ExceptIfMessageSizeOver_|`Size`|Messages where the total size (message plus attachments) is greater than or equal to the specified value. <br/><br/> In the EAC, you can only specify the size in kilobytes (KB). <p> **Note:** Message size limits on mailboxes are evaluated before transport rules. A message that's too large for a mailbox will be rejected before a rule with this condition is able to act on the message.|Exchange 2013 or later|
+|**The message character set name includes any of these words** <br/><br/> **The message** \> **character set name includes any of these words**|_ContentCharacterSetContainsWords_ <br/><br/> _ExceptIfContentCharacterSetContainsWords_|`CharacterSets`|Messages that have any of the specified character set names.|Exchange 2013 or later|
 
 ## Sender and recipient
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>The sender is one of the recipient's</strong></p>
-<p><strong>The sender and the recipient</strong> &gt; <strong>the sender's relationship to a recipient is</strong></p></td>
-<td><p><em>SenderManagementRelationship</em></p>
-<p><em>ExceptIfSenderManagementRelationship</em></p></td>
-<td><p><code>ManagementRelationship</code></p></td>
-<td><p>Messages where the either sender is the manager of a recipient, or the sender is managed by a recipient.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The message is between members of these groups</strong></p>
-<p><strong>The sender and the recipient</strong> &gt; <strong>the message is between members of these groups</strong></p></td>
-<td><p><em>BetweenMemberOf1</em> and <em>BetweenMemberOf2</em></p>
-<p><em>ExceptIfBetweenMemberOf1</em> and <em>ExceptIfBetweenMemberOf2</em></p></td>
-<td><p><code>Addresses</code></p></td>
-<td><p>Messages that are sent between members of the specified groups.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The manager of the sender or recipient is</strong></p>
-<p><strong>The sender and the recipient</strong> &gt; <strong>the manager of the sender or recipient is this person</strong></p></td>
-<td><p><em>ManagerForEvaluatedUser</em> and <em>ManagerAddress</em></p>
-<p><em>ExceptIfManagerForEvaluatedUser</em> and <em>ExceptIfManagerAddress</em></p></td>
-<td><p>First property: <code>EvaluatedUser</code></p>
-<p>Second property: <code>Addresses</code></p></td>
-<td><p>Messages where either a specified user is the manager of the sender, or a specified user is the manager of a recipient.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The sender's and any recipient's property compares as</strong></p>
-<p><strong>The sender and the recipient</strong> &gt; <strong>the sender and recipient property compares as</strong></p></td>
-<td><p><em>ADAttributeComparisonAttribute</em> and <em>ADComparisonOperator</em></p>
-<p><em>ExceptIfADAttributeComparisonAttribute</em> and <em>ExceptIfADComparisonOperator</em></p></td>
-<td><p>First property: <code>ADAttribute</code></p>
-<p>Second property: <code>Evaluation</code></p></td>
-<td><p>Messages where the specified Active Directory attribute for the sender and recipient either match or don't match.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**The sender is one of the recipient's** <br/><br/> **The sender and the recipient** \> **the sender's relationship to a recipient is**|_SenderManagementRelationship_ <br/><br/> _ExceptIfSenderManagementRelationship_|`ManagementRelationship`|Messages where the either sender is the manager of a recipient, or the sender is managed by a recipient.|Exchange 2010 or later|
+|**The message is between members of these groups** <br/><br/> **The sender and the recipient** \> **the message is between members of these groups**|_BetweenMemberOf1_ and _BetweenMemberOf2_ <br/><br/> _ExceptIfBetweenMemberOf1_ and _ExceptIfBetweenMemberOf2_|`Addresses`|Messages that are sent between members of the specified groups.|Exchange 2007 or later|
+|**The manager of the sender or recipient is** <br/><br/> **The sender and the recipient** \> **the manager of the sender or recipient is this person**|_ManagerForEvaluatedUser_ and _ManagerAddress_ <br/><br/> _ExceptIfManagerForEvaluatedUser_ and _ExceptIfManagerAddress_|First property: `EvaluatedUser` <br/><br/> Second property: `Addresses`|Messages where either a specified user is the manager of the sender, or a specified user is the manager of a recipient.|Exchange 2010 or later|
+|**The sender's and any recipient's property compares as** <br/><br/> **The sender and the recipient** \> **the sender and recipient property compares as**|_ADAttributeComparisonAttribute_ and _ADComparisonOperator_ <br/><br/> _ExceptIfADAttributeComparisonAttribute_ and _ExceptIfADComparisonOperator_|First property: `ADAttribute` <br/><br/> Second property: `Evaluation`|Messages where the specified Active Directory attribute for the sender and recipient either match or don't match.|Exchange 2010 or later|
 
 ## Message properties
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>The message type is</strong></p>
-<p><strong>The message properties</strong> &gt; <strong>include the message type</strong></p></td>
-<td><p><em>MessageTypeMatches</em></p>
-<p><em>ExceptIfMessageTypeMatches</em></p></td>
-<td><p><code>MessageType</code></p></td>
-<td><p>Messages of the specified type.</p>
-
-> [!NOTE]
-> When Outlook or Outlook Web App is configured to forward a message, the <STRONG>ForwardingSmtpAddress</STRONG> property is added to the message. The message type isn't changed to <CODE>AutoForward</CODE>.
-
-</td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The message is classified as</strong></p>
-<p><strong>The message properties</strong> &gt; <strong>include this classification</strong></p></td>
-<td><p><em>HasClassification</em></p>
-<p><em>ExceptIfHasClassification</em></p></td>
-<td><p><code>MessageClassification</code></p></td>
-<td><p>Messages that have the specified message classification. This is a custom message classification that you can create in your organization by using the <strong>New-MessageClassification</strong> cmdlet.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The message isn't marked with any classifications</strong></p>
-<p><strong>The message properties</strong> &gt; <strong>don't include any classification</strong></p></td>
-<td><p><em>HasNoClassification</em></p>
-<p><em>ExceptIfHasNoClassification</em></p></td>
-<td><p>n/a</p></td>
-<td><p>Messages that don't have a message classification.</p></td>
-<td><p>Exchange 2010 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>The message has an SCL greater than or equal to</strong></p>
-<p><strong>The message properties</strong> &gt; <strong>include an SCL greater than or equal to</strong></p></td>
-<td><p><em>SCLOver</em></p>
-<p><em>ExceptIfSCLOver</em></p></td>
-<td><p><code>SCLValue</code></p></td>
-<td><p>Messages that are assigned a spam confidence level (SCL) that's greater than or equal to the specified value.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>The message importance is set to</strong></p>
-<p><strong>The message properties</strong> &gt; <strong>include the importance level</strong></p></td>
-<td><p><em>WithImportance</em></p>
-<p><em>ExceptIfWithImportance</em></p></td>
-<td><p><code>Importance</code></p></td>
-<td><p>Messages that are marked with the specified Importance level.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**The message type is** <br/><br/> **The message properties** \> **include the message type**|_MessageTypeMatches_ <br/><br/> _ExceptIfMessageTypeMatches_|`MessageType`|Messages of the specified type. <p> **Note**: When Outlook or Outlook Web App is configured to forward a message, the **ForwardingSmtpAddress** property is added to the message. The message type isn't changed to `AutoForward`.|Exchange 2010 or later|
+|**The message is classified as** <br/><br/> **The message properties** \> **include this classification**|_HasClassification_ <br/><br/> _ExceptIfHasClassification_|`MessageClassification`|Messages that have the specified message classification. This is a custom message classification that you can create in your organization by using the **New-MessageClassification** cmdlet.|Exchange 2007 or later|
+|**The message isn't marked with any classifications** <br/><br/> **The message properties** \> **don't include any classification**|_HasNoClassification_ <br/><br/> _ExceptIfHasNoClassification_|n/a|Messages that don't have a message classification.|Exchange 2010 or later|
+|**The message has an SCL greater than or equal to** <br/><br/> **The message properties** \> **include an SCL greater than or equal to**|_SCLOver_ <br/><br/> _ExceptIfSCLOver_|`SCLValue`|Messages that are assigned a spam confidence level (SCL) that's greater than or equal to the specified value.|Exchange 2007 or later|
+|**The message importance is set to** <br/><br/> **The message properties** \> **include the importance level**|_WithImportance_ <br/><br/> _ExceptIfWithImportance_|`Importance`|Messages that are marked with the specified Importance level.|Exchange 2007 or later|
 
 ## Message headers
 
 > [!NOTE]
-> The search for words or text patterns in the subject or other header fields in the message occurs <EM>after</EM> the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages.
+> The search for words or text patterns in the subject or other header fields in the message occurs _after_ the message has been decoded from the MIME content transfer encoding method that was used to transmit the binary message between SMTP servers in ASCII text. You can't use conditions or exceptions to search for the raw (typically, Base64) encoded values of the subject or other header fields in messages.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition or exception in the EAC</th>
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>A message header includes</strong></p>
-<p><strong>A message header</strong> &gt; <strong>includes any of these words</strong></p></td>
-<td><p><em>HeaderContainsMessageHeader</em> and <em>HeaderContainsWords</em></p>
-<p><em>ExceptIfHeaderContainsMessageHeader</em> and <em>ExceptIfHeaderContainsWords</em></p></td>
-<td><p>First property: <code>MessageHeaderField</code></p>
-<p>Second property: <code>Words</code></p></td>
-<td><p>Messages that contain the specified header field, and the value of that header field contains the specified words.</p>
-<p>The name of the header field and the value of the header field are always used together.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>A message header matches</strong></p>
-<p><strong>A message header</strong> &gt; <strong>matches these text patterns</strong></p></td>
-<td><p><em>HeaderMatchesMessageHeader</em> and <em>HeaderMatchesPatterns</em></p>
-<p><em>ExceptIfHeaderMatchesMessageHeader</em> and <em>ExceptIfHeaderMatchesPatterns</em></p></td>
-<td><p>First property: <code>MessageHeaderField</code></p>
-<p>Second property: <code>Patterns</code></p></td>
-<td><p>Messages that contain the specified header field, and the value of that header field contains the specified regular expressions.</p>
-<p>The name of the header field and the value of the header field are always used together.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition or exception in the EAC|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|**A message header includes** <br/><br/> **A message header** \> **includes any of these words**|_HeaderContainsMessageHeader_ and _HeaderContainsWords_ <br/><br/> _ExceptIfHeaderContainsMessageHeader_ and _ExceptIfHeaderContainsWords_|First property: `MessageHeaderField` <br/><br/> Second property: `Words`|Messages that contain the specified header field, and the value of that header field contains the specified words. <br/><br/> The name of the header field and the value of the header field are always used together.|Exchange 2007 or later|
+|**A message header matches** <br/><br/> **A message header** \> **matches these text patterns**|_HeaderMatchesMessageHeader_ and _HeaderMatchesPatterns_ <br/><br/> _ExceptIfHeaderMatchesMessageHeader_ and _ExceptIfHeaderMatchesPatterns_|First property: `MessageHeaderField` <br/><br/> Second property: `Patterns`|Messages that contain the specified header field, and the value of that header field contains the specified regular expressions. <br/><br/> The name of the header field and the value of the header field are always used together.|Exchange 2007 or later|
 
 ## Conditions and exceptions for transport rules on Edge Transport servers
 
 The conditions and exceptions that are available in transport rules on Edge Transport servers are a small subset of what's available on Mailbox servers. There's no EAC on Edge Transport servers, so you can only manage transport rules in the Exchange Management Shell on the local Edge Transport server. The conditions and exceptions are described in the following table. The properties types are described in the Property types section.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition and exception parameters in the Exchange Management Shell</th>
-<th>Property type</th>
-<th>Description</th>
-<th>Available in</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>AnyOfRecipientAddressContainsWords</em></p>
-<p><em>ExceptIfAnyOfRecipientAddressContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that contain the specified words in the <strong>To</strong>, <strong>Cc</strong>, or <strong>Bcc</strong> fields.</p>
-<p>When a message contains the specified recipient, the rule action is applied (or not applied) to <em>all</em> recipients of the message. For example, the message is rejected for all recipients of the message, not just for the specified recipient.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><em>AnyOfRecipientAddressMatchesPatterns</em></p>
-<p><em>ExceptIfAnyOfRecipientAddressMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where the <strong>To</strong>, <strong>Cc</strong>, or <strong>Bcc</strong> fields contain text patterns that match the specified regular expressions.</p>
-<p>When a message contains the specified recipient, the rule action is applied (or not applied) to <em>all</em> recipients of the message. For example, the message is rejected for all recipients of the message, not just for the specified recipient.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>AttachmentSizeOver</em></p>
-<p><em>ExceptIfAttachmentSizeOver</em></p></td>
-<td><p><code>Size</code></p></td>
-<td><p>Messages with attachments where any attachment is greater than or equal to the specified value.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><em>FromAddressContainsWords</em></p>
-<p><em>ExceptIfFromAddressContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that contain the specified words in the sender's email address.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>FromAddressMatchesPatterns</em></p>
-<p><em>ExceptIfFromAddressMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where the sender's email address contains text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><em>FromScope</em></p>
-<p><em>ExceptIfFromScope</em></p></td>
-<td><p><code>UserScopeFrom</code></p></td>
-<td><p>Messages that are sent by either internal senders or external senders.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>HeaderContainsMessageHeader</em> and <em>HeaderContainsWords</em></p>
-<p><em>ExceptIfHeaderContainsMessageHeader</em> and <em>ExceptIfHeaderContainsWords</em></p></td>
-<td><p>First property: <code>MessageHeaderField</code></p>
-<p>Second property: <code>Words</code></p></td>
-<td><p>Messages that contain the specified header field, and the value of that header field contains the specified words.</p>
-<p>The name of the header field and the value of the header field are always used together.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><em>HeaderMatchesMessageHeader</em> and <em>HeaderMatchesPatterns</em></p>
-<p><em>ExceptIfHeaderMatchesMessageHeader</em> and <em>ExceptIfHeaderMatchesPatterns</em></p></td>
-<td><p>First property: <code>MessageHeaderField</code></p>
-<p>Second property: <code>Patterns</code></p></td>
-<td><p>Messages that contain the specified header field, and the value of that header field contains the specified regular expressions.</p>
-<p>The name of the header field and the value of the header field are always used together.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>MessageSizeOver</em></p>
-<p><em>ExceptIfMessageSizeOver</em></p></td>
-<td><p><code>Size</code></p></td>
-<td><p>Messages where the total size (message plus attachments) is greater than or equal to the specified value.</p></td>
-<td><p>Exchange 2013 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><em>SCLOver</em></p>
-<p><em>ExceptIfSCLOver</em></p></td>
-<td><p><code>SCLValue</code></p></td>
-<td><p>Messages that are assigned an SCL that's greater than or equal to the specified value.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>SubjectContainsWords</em></p>
-<p><em>ExceptIfSubjectContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that contain the specified words in the <strong>Subject</strong> field.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><em>SubjectMatchesPatterns</em></p>
-<p><em>ExceptIfSubjectMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where the <strong>Subject</strong> field contains text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>SubjectOrBodyContainsWords</em></p>
-<p><em>ExceptIfSubjectOrBodyContainsWords</em></p></td>
-<td><p><code>Words</code></p></td>
-<td><p>Messages that contain the specified words in the <strong>Subject</strong> field or message body.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-<tr class="even">
-<td><p><em>SubjectOrBodyMatchesPatterns</em></p>
-<p><em>ExceptIfSubjectOrBodyMatchesPatterns</em></p></td>
-<td><p><code>Patterns</code></p></td>
-<td><p>Messages where the <strong>Subject</strong> field or message body contain text patterns that match the specified regular expressions.</p></td>
-<td><p>Exchange 2007 or later</p></td>
-</tr>
-</tbody>
-</table>
+|Condition and exception parameters in the Exchange Management Shell|Property type|Description|Available in|
+|---|---|---|---|---|
+|_AnyOfRecipientAddressContainsWords_ <br/><br/> _ExceptIfAnyOfRecipientAddressContainsWords_|`Words`|Messages that contain the specified words in the **To**, **Cc**, or **Bcc** fields. <br/><br/> When a message contains the specified recipient, the rule action is applied (or not applied) to _all_ recipients of the message. For example, the message is rejected for all recipients of the message, not just for the specified recipient.|Exchange 2013 or later|
+|_AnyOfRecipientAddressMatchesPatterns_ <br/><br/> _ExceptIfAnyOfRecipientAddressMatchesPatterns_|`Patterns`|Messages where the **To**, **Cc**, or **Bcc** fields contain text patterns that match the specified regular expressions. <br/><br/> When a message contains the specified recipient, the rule action is applied (or not applied) to _all_ recipients of the message. For example, the message is rejected for all recipients of the message, not just for the specified recipient.|Exchange 2013 or later|
+|_AttachmentSizeOver_ <br/><br/> _ExceptIfAttachmentSizeOver_|`Size`|Messages with attachments where any attachment is greater than or equal to the specified value.|Exchange 2007 or later|
+|_FromAddressContainsWords_ <br/><br/> _ExceptIfFromAddressContainsWords_|`Words`|Messages that contain the specified words in the sender's email address.|Exchange 2007 or later|
+|_FromAddressMatchesPatterns_ <br/><br/> _ExceptIfFromAddressMatchesPatterns_|`Patterns`|Messages where the sender's email address contains text patterns that match the specified regular expressions.|Exchange 2007 or later|
+|_FromScope_ <br/><br/> _ExceptIfFromScope_|`UserScopeFrom`|Messages that are sent by either internal senders or external senders.|Exchange 2007 or later|
+|_HeaderContainsMessageHeader_ and _HeaderContainsWords_ <br/><br/> _ExceptIfHeaderContainsMessageHeader_ and _ExceptIfHeaderContainsWords_|First property: `MessageHeaderField` <br/><br/> Second property: `Words`|Messages that contain the specified header field, and the value of that header field contains the specified words. <br/><br/> The name of the header field and the value of the header field are always used together.|Exchange 2007 or later|
+|_HeaderMatchesMessageHeader_ and _HeaderMatchesPatterns_ <br/><br/> _ExceptIfHeaderMatchesMessageHeader_ and _ExceptIfHeaderMatchesPatterns_|First property: `MessageHeaderField` <br/><br/> Second property: `Patterns`|Messages that contain the specified header field, and the value of that header field contains the specified regular expressions. <br/><br/> The name of the header field and the value of the header field are always used together.|Exchange 2007 or later|
+|_MessageSizeOver_ <br/><br/> _ExceptIfMessageSizeOver_|`Size`|Messages where the total size (message plus attachments) is greater than or equal to the specified value.|Exchange 2013 or later|
+|_SCLOver_ <br/><br/> _ExceptIfSCLOver_|`SCLValue`|Messages that are assigned an SCL that's greater than or equal to the specified value.|Exchange 2007 or later|
+|_SubjectContainsWords_ <br/><br/> _ExceptIfSubjectContainsWords_|`Words`|Messages that contain the specified words in the **Subject** field.|Exchange 2007 or later|
+|_SubjectMatchesPatterns_ <br/><br/> _ExceptIfSubjectMatchesPatterns_|`Patterns`|Messages where the **Subject** field contains text patterns that match the specified regular expressions.|Exchange 2007 or later|
+|_SubjectOrBodyContainsWords_ <br/><br/> _ExceptIfSubjectOrBodyContainsWords_|`Words`|Messages that contain the specified words in the **Subject** field or message body.|Exchange 2007 or later|
+|_SubjectOrBodyMatchesPatterns_ <br/><br/> _ExceptIfSubjectOrBodyMatchesPatterns_|`Patterns`|Messages where the **Subject** field or message body contain text patterns that match the specified regular expressions.|Exchange 2007 or later|
 
 ## Property types
 
@@ -942,226 +221,27 @@ The property types that are used in conditions and exceptions are described in t
 > [!NOTE]
 > If the property is a string, trailing spaces are not allowed.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Property type</th>
-<th>Valid values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><code>ADAttribute</code></p></td>
-<td><p>Select from a predefined list of Active Directory attributes</p></td>
-<td><p>UNRESOLVED_TOKENBLOCK_VAL(PD_Transport_Rules_ADAttributes_Snippet)</p>
-<p>In the EAC, to specify multiple words or text patterns for the same attribute, separate the values with commas. For example, the value <strong>San Francisco,Palo Alto</strong> for the <strong>City</strong> attribute looks for &quot;City equals San Francisco&quot; or City equals Palo Alto&quot;.</p>
-<p>In the Exchange Management Shell, use the syntax <code>&quot;AttributeName1:Value1,Value 2 with spaces,Value3...&quot;,&quot;AttributeName2:Word4,Value 5 with spaces,Value6...&quot;</code>, where <code>Value</code> is the word or text pattern that you want to match.</p>
-<p>For example, <code>&quot;City:San Francisco,Palo Alto&quot;</code> or <code>&quot;City:San Francisco,Palo Alto&quot;</code>,<code>&quot;Department:Sales,Finance&quot;</code>.</p>
-<p>When you specify multiple attributes, or multiple values for the same attribute, the <strong>or</strong> operator is used. Don't use values with leading or trailing spaces.</p>
-<p>Note that the <strong>Country</strong> attribute requires the ISO 3166-1 two-letter country code value (for example, DE for Germany). For more information, see <a href="https://www.iso.org/iso-3166-country-codes.html">Country Codes - ISO 316</a>.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>Addresses</code></p></td>
-<td><p>Exchange recipients</p></td>
-<td><p>Depending on the nature of the condition or exception, you might be able to specify any mail-enabled object in the organization (for example, recipient-related conditions), or you might be limited to a specific object type (for example, groups for group membership conditions). And, the condition or exception might require one value, or allow multiple values.</p>
-<p>In the Exchange Management Shell, separate multiple values by commas.</p>
-<p><strong>Note:</strong> This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>CharacterSets</code></p></td>
-<td><p>Array of character set names</p></td>
-<td><p>One or more content character sets that exist in a message. For example:</p>
-<ul>
-<li><p><code>Arabic/iso-8859-6</code></p></li>
-<li><p><code>Chinese/big5</code></p></li>
-<li><p><code>Chinese/euc-cn</code></p></li>
-<li><p><code>Chinese/euc-tw</code></p></li>
-<li><p><code>Chinese/gb2312</code></p></li>
-<li><p><code>Chinese/iso-2022-cn</code></p></li>
-<li><p><code>Cyrillic/iso-8859-5</code></p></li>
-<li><p><code>Cyrillic/koi8-r</code></p></li>
-<li><p><code>Cyrillic/windows-1251</code></p></li>
-<li><p><code>Greek/iso-8859-7</code></p></li>
-<li><p><code>Hebrew/iso-8859-8</code></p></li>
-<li><p><code>Japanese/euc-jp</code></p></li>
-<li><p><code>Japanese/iso-022-jp</code></p></li>
-<li><p><code>Japanese/shift-jis</code></p></li>
-<li><p><code>Korean/euc-kr</code></p></li>
-<li><p><code>Korean/johab</code></p></li>
-<li><p><code>Korean/ks_c_5601-1987</code></p></li>
-<li><p><code>Turkish/windows-1254</code></p></li>
-<li><p><code>Turkish/iso-8859-9</code></p></li>
-<li><p><code>Vietnamese/tcvn</code></p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p><code>DomainName</code></p></td>
-<td><p>Array of SMTP domains</p></td>
-<td><p>For example, <code>contoso.com</code> or <code>eu.contoso.com</code>.</p>
-<p>In the Exchange Management Shell, you can specify multiple domains separated by commas.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>EvaluatedUser</code></p></td>
-<td><p>Single value of <strong>Sender</strong> or <strong>Recipient</strong></p></td>
-<td><p>Specifies whether the rule is looking for the manager of the sender or the manager of the recipient.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>Evaluation</code></p></td>
-<td><p>Single value of <strong>Equal</strong> or <strong>Not equal</strong> (<code>NotEqual</code>)</p></td>
-<td><p>When comparing the Active Directory attribute of the sender and recipients, this specifies whether the values should match, or not match.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>Importance</code></p></td>
-<td><p>Single value of <strong>Low</strong>, <strong>Normal</strong>, or <strong>High</strong></p></td>
-<td><p>The Importance level that was assigned to the message by the sender in Outlook or Outlook Web App.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>IPAddressRanges</code></p></td>
-<td><p>Array of IP addresses or address ranges</p></td>
-<td><p>You enter the IPv4 addresses using the following syntax:</p>
-<ul>
-<li><p><strong>Single IP address</strong>   For example, <code>192.168.1.1</code>.</p></li>
-<li><p><strong>IP address range</strong>   For example, <code>192.168.0.1-192.168.0.254</code>.</p></li>
-<li><p><strong>Classless InterDomain Routing (CIDR) IP address range</strong>   For example, <code>192.168.0.1/25</code>.</p></li>
-</ul>
-<p>In the Exchange Management Shell, you can specify multiple IP addresses or ranges separated by commas.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>ManagementRelationship</code></p></td>
-<td><p>Single value of <strong>Manager</strong> or <strong>Direct report</strong>(<code>DirectReport</code>)</p></td>
-<td><p>Specifies the relationship between the sender and any of the recipients. The rule checks the <strong>Manager</strong> attribute in Active Directory to see if the sender is the manager of a recipient, or if the sender is managed by a recipient.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>MessageClassification</code></p></td>
-<td><p>Single message classification</p></td>
-<td><p>In the EAC, you select from the list of message classifications that you've created.</p>
-<p>In the Exchange Management Shell, you use the <strong>Get-MessageClassification</strong> cmdlet to identify the message classification. For example, use the following command to search for messages with the <code>Company Internal</code> classification and prepend the message subject with the value <code>CompanyInternal</code>.</p>
-<p><code>New-TransportRule &quot;Rule Name&quot; -HasClassification @(Get-MessageClassification &quot;Company Internal&quot;).Identity -PrependSubject &quot;CompanyInternal&quot;</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><code>MessageHeaderField</code></p></td>
-<td><p>Single string</p></td>
-<td><p>Specifies the name of the header field. The name of the header field is always paired with the value in the header field (word or text pattern match).</p>
-<p>The <em>message header</em> is a collection of required and optional header fields in the message. Examples of header fields are <strong>To</strong>, <strong>From</strong>, <strong>Received</strong>, and <strong>Content-Type</strong>. Official header fields are defined in RFC 5322. Unofficial header fields start with <strong>X-</strong> and are known as <em>X-headers</em>.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>MessageType</code></p></td>
-<td><p>Single message type value</p></td>
-<td><p>Specifies one of the following message types:</p>
-<ul>
-<li><p><strong>Automatic reply</strong> (<code>OOF</code>)</p></li>
-<li><p><strong>Auto-forward</strong> (<code>AutoForward</code>)</p></li>
-<li><p><strong>Encrypted</strong></p></li>
-<li><p><strong>Calendaring</strong></p></li>
-<li><p><strong>Permission controlled</strong> (<code>PermissionControlled</code>)</p></li>
-<li><p><strong>Voicemail</strong></p></li>
-<li><p><strong>Signed</strong></p></li>
-<li><p><strong>Approval request</strong> (<code>ApprovalRequest</code>)</p></li>
-<li><p><strong>Read receipt</strong> (<code>ReadReceipt</code>)</p></li>
-</ul>
-
-> [!NOTE]
-> When Outlook or Outlook Web App is configured to forward a message, the <STRONG>ForwardingSmtpAddress</STRONG> property is added to the message. The message type isn't changed to <CODE>AutoForward</CODE>.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p><code>Patterns</code></p></td>
-<td><p>Array of regular expressions</p></td>
-<td><p>Specifies one or more regular expressions that are used to identify text patterns in values. For more information, see <a href="/visualstudio/ide/using-regular-expressions-in-visual-studio">Regular Expression Syntax</a>.</p>
-<p>In the Exchange Management Shell, you specify multiple regular expressions separated by commas, and you enclose each regular expression in quotation marks (&quot;).</p></td>
-</tr>
-<tr class="even">
-<td><p><code>SCLValue</code></p></td>
-<td><p>One of the following values:</p>
-<ul>
-<li><p><strong>Bypass spam filtering</strong> (<code>-1</code>)</p></li>
-<li><p>Integers 0 through 9</p></li>
-</ul></td>
-<td><p>Specifies the spam confidence level (SCL) that's assigned to a message. A higher SCL value indicates that a message is more likely to be spam.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>SensitiveInformationTypes</code></p></td>
-<td><p>Array of sensitive information types</p></td>
-<td><p>Specifies one or more sensitive information types that are defined in your organization. For a list of built-in sensitive information types, see <a href="what-the-sensitive-information-types-in-exchange-look-for-exchange-2013-help.md">What the sensitive information types in Exchange 2013 look for</a>.</p>
-<p>In the Exchange Management Shell, use the syntax <code>@{&lt;SensitiveInformationType1&gt;},@{&lt;SensitiveInformationType2&gt;},...</code>. For example, to look for content that contains at least two credit card numbers, and at least one ABA routing number, use the value <code>@{Name=&quot;Credit Card Number&quot;; minCount=&quot;2&quot;},@{Name=&quot;ABA Routing Number&quot;; minCount=&quot;1&quot;}</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p><code>Size</code></p></td>
-<td><p>Single size value</p></td>
-<td><p>Specifies the size of an attachment or the whole message.</p>
-<p>In the EAC, you can only specify the size in kilobytes (KB).</p>
-<p>In the Exchange Management Shell, when you enter a value, qualify the value with one of the following units:</p>
-<ul>
-<li><p><code>B</code> (bytes)</p></li>
-<li><p><code>KB</code> (kilobytes)</p></li>
-<li><p><code>MB</code> (megabytes)</p></li>
-<li><p><code>GB</code> (gigabytes)</p></li>
-</ul>
-<p>For example, <code>20MB</code></p>
-<p>Unqualified values are typically treated as bytes, but small values may be rounded up to the nearest kilobyte.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>UserScopeFrom</code></p></td>
-<td><p>Single value of <strong>Inside the organization</strong> (<code>InOrganization</code>) or <strong>Outside the organization</strong> (<code>NotInOrganization</code>)</p></td>
-<td><p>A sender is considered to be inside the organization if either of the following conditions is true:</p>
-<ul>
-<li><p>The sender is a mailbox, mail user, group, or mail-enabled public folder that exists in the organization's Active Directory.</p></li>
-<li><p>The sender's email address is in an accepted domain that's configured as an authoritative domain or an internal relay domain, <strong>and</strong> the message was sent or received over an authenticated connection. For more information about accepted domains, see <a href="accepted-domains-exchange-2013-help.md">Accepted domains</a>.</p></li>
-</ul>
-<p>A sender is considered to be outside the organization if either of the following conditions is true:</p>
-<ul>
-<li><p>The sender's email address isn't in an accepted domain.</p></li>
-<li><p>The sender's email address is in an accepted domain that's configured as an external relay domain.</p></li>
-</ul>
-
-> [!NOTE]
-> To determine whether mail contacts are considered to be inside or outside the organization, the sender's address is compared with the organization's accepted domains.
-
-</td>
-</tr>
-<tr class="even">
-<td><p><code>UserScopeTo</code></p></td>
-<td><p>One of the following values:</p>
-<ul>
-<li><p><strong>Inside the organization</strong> (<code>InOrganization</code>)</p></li>
-<li><p><strong>Outside the organization</strong> (<code>NotInOrganization</code>)</p></li>
-<li><p><strong>In an external partner organization</strong> (<code>ExternalPartner</code>)</p></li>
-<li><p><strong>In an external non-partner organization</strong> (<code>ExternalNonPartner</code>)</p></li>
-</ul></td>
-<td><p>A recipient is considered to be inside the organization if either of the following conditions is true:</p>
-<ul>
-<li><p>The recipient is a mailbox, mail user, group, or mail-enabled public folder that exists in the organization's Active Directory.</p></li>
-<li><p>The recipient's email address is in an accepted domain that's configured as an authoritative domain or an internal relay domain, <strong>and</strong> the message was sent or received over an authenticated connection.</p></li>
-</ul>
-<p>A recipient is considered to be outside the organization if either of the following conditions is true:</p>
-<ul>
-<li><p>The recipient's email address isn't in an accepted domain.</p></li>
-<li><p>The recipient's email address is in an accepted domain that's configured as an external relay domain.</p></li>
-</ul>
-<p>External partner organizations are external domains where you've configured Domain Security (mutual TLS authentication) to send mail.</p>
-<p>External non-partner organizations are all other external domains that aren't considered partner domains.</p></td>
-</tr>
-<tr class="odd">
-<td><p><code>Words</code></p></td>
-<td><p>Array of strings</p></td>
-<td><p>Specifies one or more words to look for. The words aren't case-sensitive, and can be surrounded by spaces and punctuation marks. Wildcards and partial matches aren't supported.</p>
-<p>For example, &quot;contoso&quot; matches &quot; Contoso.&quot;. However, if the text is surrounded by other characters, it isn't considered a match. For example, &quot;contoso&quot; doesn't match the following values:</p>
-<ul>
-<li><p>Acontoso</p></li>
-<li><p>Contosoa</p></li>
-<li><p>Acontosob</p></li>
-</ul>
-<p>The asterisk (*) is treated as a literal character, and isn't used as a wildcard character.</p></td>
-</tr>
-</tbody>
-</table>
+|Property type|Valid values|Description|
+|---|---|---|---|---|
+|`ADAttribute`|Select from a predefined list of Active Directory attributes|You can check against any of the following Active Directory attributes: <ul><li>**City**</li><li>**Company**</li><li>**Country**</li><li>**CustomAttribute1 - CustomAttribute15**</li><li>**Department**</li><li>**DisplayName**</li><li>**Email**</li><li>**FaxNumber**</li><li>**FirstName**</li><li>**HomePhoneNumber**</li><li>**Initials**</li><li>**LastName**</li><li>**Manager**</li><li>**MobileNumber**</li><li>**Notes**</li><li>**Office**</li><li>**OtherFaxNumber**</li><li>**OtherHomePhoneNumber**</li><li>**OtherPhoneNumber**</li><li>**PagerNumber**</li><li>**PhoneNumber**</li><li>**POBox**</li><li>**State**</li><li>**Street**</li><li>**Title**</li><li>**UserLogonName**</li><li>**ZipCode**</li></ul> <p> In the EAC, to specify multiple words or text patterns for the same attribute, separate the values with commas. For example, the value **San Francisco,Palo Alto** for the **City** attribute looks for "City equals San Francisco" or City equals Palo Alto". <br/><br/> In the Exchange Management Shell, use the syntax `"AttributeName1:Value1,Value 2 with spaces,Value3...","AttributeName2:Word4,Value 5 with spaces,Value6..."`, where `Value` is the word or text pattern that you want to match. <br/><br/> For example, `"City:San Francisco,Palo Alto"` or `"City:San Francisco,Palo Alto"`,`"Department:Sales,Finance"`. <br/><br/> When you specify multiple attributes, or multiple values for the same attribute, the **or** operator is used. Don't use values with leading or trailing spaces. <br/><br/> Note that the **Country** attribute requires the ISO 3166-1 two-letter country code value (for example, DE for Germany). For more information, see [Country Codes - ISO 316](https://www.iso.org/iso-3166-country-codes.html).|
+|`Addresses`|Exchange recipients|Depending on the nature of the condition or exception, you might be able to specify any mail-enabled object in the organization (for example, recipient-related conditions), or you might be limited to a specific object type (for example, groups for group membership conditions). And, the condition or exception might require one value, or allow multiple values. <br/><br/> In the Exchange Management Shell, separate multiple values by commas. <br/><br/> **Note:** This condition doesn't consider messages that are sent to recipient proxy addresses. It only matches messages that are sent to the recipient's primary email address.|
+|`CharacterSets`|Array of character set names|One or more content character sets that exist in a message. For example: <ul><li>`Arabic/iso-8859-6`</li><li>`Chinese/big5`</li><li>`Chinese/euc-cn`</li><li>`Chinese/euc-tw`</li><li>`Chinese/gb2312`</li><li>`Chinese/iso-2022-cn`</li><li>`Cyrillic/iso-8859-5`</li><li>`Cyrillic/koi8-r`</li><li>`Cyrillic/windows-1251`</li><li>`Greek/iso-8859-7`</li><li>`Hebrew/iso-8859-8`</li><li>`Japanese/euc-jp`</li><li>`Japanese/iso-022-jp`</li><li>`Japanese/shift-jis`</li><li>`Korean/euc-kr`</li><li>`Korean/johab`</li><li>`Korean/ks_c_5601-1987`</li><li>`Turkish/windows-1254`</li><li>`Turkish/iso-8859-9`</li><li>`Vietnamese/tcvn`</li></ul>|
+|`DomainName`|Array of SMTP domains|For example, `contoso.com` or `eu.contoso.com`. <br/><br/> In the Exchange Management Shell, you can specify multiple domains separated by commas.|
+|`EvaluatedUser`|Single value of **Sender** or **Recipient**|Specifies whether the rule is looking for the manager of the sender or the manager of the recipient.|
+|`Evaluation`|Single value of **Equal** or **Not equal** (`NotEqual`)|When comparing the Active Directory attribute of the sender and recipients, this specifies whether the values should match, or not match.|
+|`Importance`|Single value of **Low**, **Normal**, or **High**|The Importance level that was assigned to the message by the sender in Outlook or Outlook Web App.|
+|`IPAddressRanges`|Array of IP addresses or address ranges|You enter the IPv4 addresses using the following syntax: <ul><li>**Single IP address**: For example, `192.168.1.1`.</li><li>**IP address range**: For example, `192.168.0.1-192.168.0.254`.</li><li>**Classless InterDomain Routing (CIDR) IP address range**: For example, `192.168.0.1/25`.</li></ul> <br/><br/>In the Exchange Management Shell, you can specify multiple IP addresses or ranges separated by commas.|
+|`ManagementRelationship`|Single value of **Manager** or **Direct report**(`DirectReport`)|Specifies the relationship between the sender and any of the recipients. The rule checks the **Manager** attribute in Active Directory to see if the sender is the manager of a recipient, or if the sender is managed by a recipient.|
+|`MessageClassification`|Single message classification|In the EAC, you select from the list of message classifications that you've created. <br/><br/> In the Exchange Management Shell, you use the **Get-MessageClassification** cmdlet to identify the message classification. For example, use the following command to search for messages with the `Company Internal` classification and prepend the message subject with the value `CompanyInternal`. <br/><br/> `New-TransportRule "Rule Name" -HasClassification @(Get-MessageClassification "Company Internal").Identity -PrependSubject "CompanyInternal"`|
+|`MessageHeaderField`|Single string|Specifies the name of the header field. The name of the header field is always paired with the value in the header field (word or text pattern match). <br/><br/> The _message header_ is a collection of required and optional header fields in the message. Examples of header fields are **To**, **From**, **Received**, and **Content-Type**. Official header fields are defined in RFC 5322. Unofficial header fields start with **X-** and are known as _X-headers_.|
+|`MessageType`|Single message type value|Specifies one of the following message types: <ul><li>**Automatic reply** (`OOF`)</li><li>**Auto-forward** (`AutoForward`)</li><li>**Encrypted**</li><li>**Calendaring**</li><li>**Permission controlled** (`PermissionControlled`)</li><li>**Voicemail**</li><li>**Signed**</li><li>**Approval request** (`ApprovalRequest`)</li><li>**Read receipt** (`ReadReceipt`)</li></ul> <p> **Note**: When Outlook or Outlook Web App is configured to forward a message, the **ForwardingSmtpAddress** property is added to the message. The message type isn't changed to `AutoForward`.|
+|`Patterns`|Array of regular expressions|Specifies one or more regular expressions that are used to identify text patterns in values. For more information, see [Regular Expression Syntax](/visualstudio/ide/using-regular-expressions-in-visual-studio). <br/><br/> In the Exchange Management Shell, you specify multiple regular expressions separated by commas, and you enclose each regular expression in quotation marks (").|
+|`SCLValue`|One of the following values: <ul><li>**Bypass spam filtering** (`-1`)</li><li>Integers 0 through 9</li></ul>|Specifies the spam confidence level (SCL) that's assigned to a message. A higher SCL value indicates that a message is more likely to be spam.|
+|`SensitiveInformationTypes`|Array of sensitive information types|Specifies one or more sensitive information types that are defined in your organization. For a list of built-in sensitive information types, see [What the sensitive information types in Exchange 2013 look for](what-the-sensitive-information-types-in-exchange-look-for-exchange-2013-help.md). <br/><br/> In the Exchange Management Shell, use the syntax `@{<SensitiveInformationType1>},@{<SensitiveInformationType2\>},...`. For example, to look for content that contains at least two credit card numbers, and at least one ABA routing number, use the value `@{Name="Credit Card Number"; minCount="2"},@{Name="ABA Routing Number"; minCount="1"}`.|
+|`Size`|Single size value|Specifies the size of an attachment or the whole message. <br/><br/> In the EAC, you can only specify the size in kilobytes (KB). <br/><br/> In the Exchange Management Shell, when you enter a value, qualify the value with one of the following units: <ul><li>`B` (bytes)</li><li>`KB` (kilobytes)</li><li>`MB` (megabytes)</li><li>`GB` (gigabytes)</li></ul> <br/><br/> For example, `20MB` <br/><br/> Unqualified values are typically treated as bytes, but small values may be rounded up to the nearest kilobyte.|
+|`UserScopeFrom`|Single value of **Inside the organization** (`InOrganization`) or **Outside the organization** (`NotInOrganization`)|A sender is considered to be inside the organization if either of the following conditions is true: <ul><li>The sender is a mailbox, mail user, group, or mail-enabled public folder that exists in the organization's Active Directory.</li><li>The sender's email address is in an accepted domain that's configured as an authoritative domain or an internal relay domain, **and** the message was sent or received over an authenticated connection. For more information about accepted domains, see [Accepted domains](accepted-domains-exchange-2013-help.md).</li></ul> <br/><br/> A sender is considered to be outside the organization if either of the following conditions is true: <ul><li>The sender's email address isn't in an accepted domain.</li><li>The sender's email address is in an accepted domain that's configured as an external relay domain.</li></ul> <p> **Note**: To determine whether mail contacts are considered to be inside or outside the organization, the sender's address is compared with the organization's accepted domains.|
+|`UserScopeTo`|One of the following values: <ul><li>**Inside the organization** (`InOrganization`)</li><li>**Outside the organization** (`NotInOrganization`)</li><li>**In an external partner organization** (`ExternalPartner`)</li><li>**In an external non-partner organization** (`ExternalNonPartner`)</li></ul>|A recipient is considered to be inside the organization if either of the following conditions is true: <ul><li>The recipient is a mailbox, mail user, group, or mail-enabled public folder that exists in the organization's Active Directory.</li><li>The recipient's email address is in an accepted domain that's configured as an authoritative domain or an internal relay domain, **and** the message was sent or received over an authenticated connection.</li></ul> <br/><br/> A recipient is considered to be outside the organization if either of the following conditions is true: <ul><li>The recipient's email address isn't in an accepted domain.</li><li>The recipient's email address is in an accepted domain that's configured as an external relay domain.</li></ul> <br/><br/> External partner organizations are external domains where you've configured Domain Security (mutual TLS authentication) to send mail. <br/><br/> External non-partner organizations are all other external domains that aren't considered partner domains.|
+|`Words`|Array of strings|Specifies one or more words to look for. The words aren't case-sensitive, and can be surrounded by spaces and punctuation marks. Wildcards and partial matches aren't supported. <br/><br/> For example, "contoso" matches " Contoso.". However, if the text is surrounded by other characters, it isn't considered a match. For example, "contoso" doesn't match the following values: <ul><li>Acontoso</li><li>Contosoa</li><li>Acontosob</li></ul> <br/><br/> The asterisk (\*) is treated as a literal character, and isn't used as a wildcard character.|
 
 ## For more information
 

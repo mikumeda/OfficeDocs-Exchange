@@ -30,7 +30,7 @@ To find out what permissions you need to perform the procedure or run the cmdlet
 3. Now, run the **Get-ManagementRoleAssignment** cmdlet to look at the role groups or management roles assigned to you to see if you have the permissions that are necessary to manage the feature.
 
     > [!NOTE]
-    > You must be assigned the Role Management management role to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet. If you don't have permissions to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
+    > You must be assigned the Role Management management role to run the **Get-ManagementRoleAssignment** cmdlet. If you don't have permissions to run the **Get-ManagementRoleAssignment** cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
 
 If you want to delegate the ability to manage a feature to another user, see [Delegate role assignments](delegate-role-assignments-exchange-2013-help.md).
 
@@ -38,223 +38,56 @@ If you want to delegate the ability to manage a feature to another user, see [De
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Calendar repair, server configuration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Delegating Mailbox servers</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Email address policies</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange Search</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Search - diagnostics</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p>
-<p>Support Diagnostics role</p>
-
-> [!NOTE]
-> The Support Diagnostics role isn't assigned to a role group. For more information, see <A href="add-a-role-to-a-user-or-usg-exchange-2013-help.md">Add a role to a user or USG</A>.
-
-</td>
-</tr>
-<tr class="even">
-<td><p>Group metrics</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Import Export</p></td>
-<td><p>Mailbox Import Export role</p>
-
-> [!NOTE]
-> The Mailbox Import Export role isn't assigned to a role group. For more information, see <A href="mailbox-import-export-role-exchange-2013-help.md">Mailbox Import Export role</A>.
-
-</td>
-</tr>
-<tr class="even">
-<td><p>Mailbox Assistants</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox moves</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox recovery</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox repair request</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox restore request</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox server configuration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Manage Exchange Search Indexer service on a Mailbox server</p></td>
-<td><p>Local Administrator on the Mailbox server</p></td>
-</tr>
-<tr class="odd">
-<td><p>MAPI connectivity</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>OAB virtual directories</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Remove store mailbox</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Calendar repair, server configuration|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Delegating Mailbox servers|[Organization Management](organization-management-exchange-2013-help.md)|
+|Email address policies|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Exchange Search|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Exchange Search - diagnostics|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md) <br/><br/> Support Diagnostics role <br/><br/> **Note**: The Support Diagnostics role isn't assigned to a role group. For more information, see [Add a role to a user or USG](add-a-role-to-a-user-or-usg-exchange-2013-help.md).|
+|Group metrics|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Import Export|Mailbox Import Export role <br/><br/> **Note**: The Mailbox Import Export role isn't assigned to a role group. For more information, see [Mailbox Import Export role](mailbox-import-export-role-exchange-2013-help.md).|
+|Mailbox Assistants|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Mailbox moves|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Mailbox recovery|[Organization Management](organization-management-exchange-2013-help.md)|
+|Mailbox repair request|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Mailbox restore request|[Organization Management](organization-management-exchange-2013-help.md)|
+|Mailbox server configuration|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Manage Exchange Search Indexer service on a Mailbox server|Local Administrator on the Mailbox server|
+|MAPI connectivity|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|OAB virtual directories|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Remove store mailbox|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
 
 ## Calendar and sharing permissions
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Calendar configuration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Calendar diagnostics</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p>
-<p><a href="hygiene-management-exchange-2013-help.md">Hygiene Management</a></p>
-<p><a href="compliance-management-exchange-2013-help.md">Compliance Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Calendar processing</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Notifications</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization relationships</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Sharing policies</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Calendar configuration|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Calendar diagnostics|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md) <br/><br/> [Hygiene Management](hygiene-management-exchange-2013-help.md) <br/><br/> [Compliance Management](compliance-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Calendar processing|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Notifications|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Organization relationships|[Organization Management](organization-management-exchange-2013-help.md)|
+|Sharing policies|[Organization Management](organization-management-exchange-2013-help.md)|
 
 ## Resource mailbox configuration permissions
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Booking policies</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Delegation</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Resource mailbox schema configuration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Booking policies|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Delegation|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Resource mailbox schema configuration|[Organization Management](organization-management-exchange-2013-help.md)|
 
 ## Mailbox database permissions
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Mailbox databases</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Mailbox databases|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
 
 ## Recipient provisioning permissions
 
@@ -262,235 +95,50 @@ This table contains the various permissions that are required to manage recipien
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Address list, GAL</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Anti-spam</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Apps for Outlook</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Applying sharing policies</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Arbitration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Archive connectivity</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Assigning offline address books</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Automatic replies</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Calendar configuration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Calendar repair</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Contact aggregation settings</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Disconnected mailboxes</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Distribution groups</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Dynamic distribution groups</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Email addresses</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Inbox rules</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Mail contacts</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Mail tips</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Mail user</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox folder permissions</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox folders</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>MAPI connectivity</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p></p></td>
-</tr>
-<tr class="odd">
-<td><p>Message configuration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Message quotas</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Moderation</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Permissions and delegation</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Archive mailboxes</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Recipient data properties</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Remote mailboxes</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Retention and legal holds</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Send As</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Spelling configuration</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Unified Messaging</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>User mailboxes</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>User photos</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="help-desk-exchange-2013-help.md">Help Desk</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Address list, GAL|[Organization Management](organization-management-exchange-2013-help.md)|
+|Anti-spam|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Apps for Outlook|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Applying sharing policies|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Arbitration|[Organization Management](organization-management-exchange-2013-help.md)|
+|Archive connectivity|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Assigning offline address books|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Automatic replies|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Calendar configuration|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Calendar repair|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Contact aggregation settings|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md)|
+|Disconnected mailboxes|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Distribution groups|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Dynamic distribution groups|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Email addresses|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|Inbox rules|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Mail contacts|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Mail tips|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Mail user|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Mailbox folder permissions|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Mailbox folders|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|MAPI connectivity|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> |
+|Message configuration|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Message quotas|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Moderation|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Permissions and delegation|[Organization Management](organization-management-exchange-2013-help.md)|
+|Archive mailboxes|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Recipient data properties|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Remote mailboxes|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Retention and legal holds|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md)|
+|Send As|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Spelling configuration|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
+|Unified Messaging|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|User mailboxes|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|User photos|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Help Desk](help-desk-exchange-2013-help.md)|
 
 ## Mailbox move and migration permissions
 
 The table contains the permissions that are required to move on-premises mailboxes to different domains or forests and to migrate on-premises mailboxes to and from your cloud-based organization.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Mailbox moves (local or cross-forest)</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Mailbox moves (hybrid deployment)</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Migration (on-boarding and off-boarding from the cloud)</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Mailbox moves (local or cross-forest)|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Mailbox moves (hybrid deployment)|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Migration (on-boarding and off-boarding from the cloud)|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|

@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Learn about address rewriting on Edge Transport servers in Exchange 2013.
 ---
 
 # Address rewriting on Edge Transport servers
@@ -20,7 +21,7 @@ _**Applies to:** Exchange Server 2013_
 
 Address rewriting modifies email addresses of senders and recipients in messages that enter or leave your organization through an Edge Transport server. Two transport agents on the Edge Transport server provide the rewriting functionality: the Address Rewriting Inbound Agent and the Address Rewriting Outbound Agent. The primary reason for address rewriting on outbound messages is to present a single, consistent email domain to external recipients. The primary reason for address rewriting on inbound messages is to deliver messages to the correct recipient.
 
-The *address rewrite entry*, which you create, specifies the internal addresses (the email addresses you want to change) and the external addresses (the final email addresses you want). You can specify whether email addresses are rewritten in inbound and outbound messages, or in outbound messages only. You can create address writing entries for a single user (chris@contoso.com to support@contoso.com), all users in a single domain (contoso.com to fabrikam.com), or for users in multiple subdomains with exceptions (\*.fabrikam.com to contoso.com, except legal.fabrikam.com).
+The _address rewrite entry*, which you create, specifies the internal addresses (the email addresses you want to change) and the external addresses (the final email addresses you want). You can specify whether email addresses are rewritten in inbound and outbound messages, or in outbound messages only. You can create address writing entries for a single user (chris@contoso.com to support@contoso.com), all users in a single domain (contoso.com to fabrikam.com), or for users in multiple subdomains with exceptions (\*.fabrikam.com to contoso.com, except legal.fabrikam.com).
 
 > [!IMPORTANT]
 > Regardless of how you plan to use address rewriting, you need to verify that the resulting email addresses are unique in your organization so you don't end up with duplicates. This is because address rewriting doesn't verify the uniqueness of a rewritten email address.
@@ -41,9 +42,9 @@ The following scenarios are examples of how you can use address rewriting:
 
     The following example shows how Contoso, Ltd. can hide the email domain of the newly acquired company, Fourth Coffee:
 
-  - Contoso, Ltd. wants all outbound messages from Fourth Coffee's Exchange organization to appear as if they originate from contoso.com. All messages from both organizations are sent through the Edge Transport servers at Contoso, Ltd., where email messages are rewritten from *user*@fourthcoffee.com to *user*@contoso.com.
+  - Contoso, Ltd. wants all outbound messages from Fourth Coffee's Exchange organization to appear as if they originate from contoso.com. All messages from both organizations are sent through the Edge Transport servers at Contoso, Ltd., where email messages are rewritten from _user_@fourthcoffee.com to _user_@contoso.com.
 
-  - Inbound messages to *user*@contoso.com are rewritten and routed to *user*@fourthcoffee.com mailboxes. Inbound messages that are sent to *user*@fourthcoffee.com are routed directly to Fourth Coffee's email servers.
+  - Inbound messages to _user_@contoso.com are rewritten and routed to _user_@fourthcoffee.com mailboxes. Inbound messages that are sent to _user_@fourthcoffee.com are routed directly to Fourth Coffee's email servers.
 
 - **Partners**: Many organizations use external partners to provide services for their customers, other organizations, or their own organization. To avoid confusion, the organization might replace the email domain of the partner organization with its own email domain.
 
@@ -55,7 +56,7 @@ The following scenarios are examples of how you can use address rewriting:
 
 ## Message properties modified by address rewriting
 
-A standard SMTP email message consists of a *message envelope* and message content. The message envelope contains information required for transmitting and delivering the message between SMTP mail servers. The message content contains message header fields (collectively called the *message header*) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822.
+A standard SMTP email message consists of a _message envelope_ and message content. The message envelope contains information required for transmitting and delivering the message between SMTP mail servers. The message content contains message header fields (collectively called the _message header*) and the message body. The message envelope is described in RFC 2821, and the message header is described in RFC 2822.
 
 When a sender composes an email message and submits it for delivery, the message contains the basic information required to comply with SMTP standards, such as a sender, a recipient, the date and time that the message was composed, an optional subject line, and an optional message body. This information is contained in the message itself and, by definition, in the message header.
 
@@ -65,90 +66,19 @@ Address rewriting changes an email address by rewriting specific fields in the m
 
 ### Message fields rewritten on outbound and inbound messages
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field name</th>
-<th>Location</th>
-<th>Outbound messages</th>
-<th>Inbound messages</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>MAIL FROM</strong></p></td>
-<td><p>Message envelope</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>RCPT TO</strong></p></td>
-<td><p>Message envelope</p></td>
-<td><p>Not rewritten</p></td>
-<td><p>Rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>To</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Cc</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>From</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Sender</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Reply-To</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Return-Receipt-To</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Disposition-Notification-To</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Resent-From</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Resent-Sender</strong></p></td>
-<td><p>Message header</p></td>
-<td><p>Rewritten</p></td>
-<td><p>Not rewritten</p></td>
-</tr>
-</tbody>
-</table>
+|Field name|Location|Outbound messages|Inbound messages|
+|---|---|---|---|
+|**MAIL FROM**|Message envelope|Rewritten|Not rewritten|
+|**RCPT TO**|Message envelope|Not rewritten|Rewritten|
+|**To**|Message header|Rewritten|Not rewritten|
+|**Cc**|Message header|Rewritten|Not rewritten|
+|**From**|Message header|Rewritten|Not rewritten|
+|**Sender**|Message header|Rewritten|Not rewritten|
+|**Reply-To**|Message header|Rewritten|Not rewritten|
+|**Return-Receipt-To**|Message header|Rewritten|Not rewritten|
+|**Disposition-Notification-To**|Message header|Rewritten|Not rewritten|
+|**Resent-From**|Message header|Rewritten|Not rewritten|
+|**Resent-Sender**|Message header|Rewritten|Not rewritten|
 
 ## What address rewriting doesn't change
 
@@ -178,7 +108,7 @@ The rewritten email address must be configured as a proxy address on the affecte
 
 ## Considerations for inbound and outbound address rewriting
 
-Inbound and outbound, or *bidirectional* address rewriting on an Edge Transport server modifies the sender's email address in messages that leave the Exchange organization, and it modifies the recipient's email address in messages that enter the Exchange organization.
+Inbound and outbound, or _bidirectional_ address rewriting on an Edge Transport server modifies the sender's email address in messages that leave the Exchange organization, and it modifies the recipient's email address in messages that enter the Exchange organization.
 
 You can configure outbound-only address rewriting for a single user (chris@contoso.com to support@contoso.com) and all users in a single domain (contoso.com to fabrikam.com). You can't configure bidirectional address rewriting for users in multiple subdomains (\*.fabrikam.com to contoso.com).
 

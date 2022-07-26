@@ -30,27 +30,7 @@ We'll check to see if you have Microsoft .NET Framework 4.5 installed. To obtain
 
 ## Outlook Check
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Application</p></td>
-<td><p>Symptom</p></td>
-<td><p>Check</p></td>
-</tr>
-<tr class="even">
-<td><p>Outlook</p></td>
-<td><p>Cannot send or receive email in Outlook</p></td>
-<td><p><a href="https://aka.ms/SaRA-Download_ExRCA">Microsoft Support and Recovery Assistant</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Outlook</p></td>
-<td><p>I think my PC might not be configured correctly for Outlook</p></td>
-<td><p><a href="https://aka.ms/SaRA-Download_ExRCA">Microsoft Support and Recovery Assistant</a></p></td>
-</tr>
-</tbody>
-</table>
+|Application|Symptom|Check|
+|---|---|---|
+|Outlook|Cannot send or receive email in Outlook|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|
+|Outlook|I think my PC might not be configured correctly for Outlook|[Microsoft Support and Recovery Assistant](https://aka.ms/SaRA-Download_ExRCA)|

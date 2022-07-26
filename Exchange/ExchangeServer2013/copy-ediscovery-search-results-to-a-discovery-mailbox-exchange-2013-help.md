@@ -27,7 +27,7 @@ After you create an In-Place eDiscovery search, you can use the EAC to copy the 
 
 - You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "In-Place eDiscovery" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
-- An eDiscovery search has to be created, by using the EAC or the Shell, before you can copy the search results. For details, see [Create an In-Place eDiscovery search](/exchange/security-and-compliance/in-place-ediscovery/create-in-place-ediscovery-search).
+- An eDiscovery search has to be created, by using the EAC or the Shell, before you can copy the search results. For details, see [Create an In-Place eDiscovery search in Exchange 2013](create-in-place-ediscovery-search-exchange-2013-help.md).
 
 - Exchange 2013 Setup creates a discovery mailbox called **Discovery Search Mailbox** to copy search results. You can create additional discovery mailboxes. For details, see [Create a discovery mailbox](/Office365/SecurityCompliance/eop/exchange-online-protection-overview).
 
@@ -68,11 +68,11 @@ After you create an In-Place eDiscovery search, you can use the EAC to copy the 
 
 After using the **New-MailboxSearch** cmdlet to create an In-Place eDiscovery search, you must start the search to copy messages to the discovery mailbox you specified in the *TargetMailbox* parameter. For information about creating eDiscovery searches using the Shell, see:
 
-- [Use the Shell to create an In-Place eDiscovery search](/exchange/security-and-compliance/in-place-ediscovery/create-in-place-ediscovery-search)
+- [Use the Shell to create an In-Place eDiscovery search](create-in-place-ediscovery-search-exchange-2013-help.md)
 
 - [New-MailboxSearch](/powershell/module/exchange/New-MailboxSearch)
 
-For example, you would run the following command to start an eDiscovery search named *Fabrikam Investigation* to copy the search results to the specified discovery mailbox.
+For example, you would run the following command to start an eDiscovery search named _Fabrikam Investigation_ to copy the search results to the specified discovery mailbox.
 
 ```powershell
 Start-MailboxSearch "Fabrikam Investigation"
@@ -108,4 +108,4 @@ Start-MailboxSearch "FY13 Q2 Financial Results"
 
   - **Preview search results**: This option lets you preview the search results returned by the search instead of having to copy them to a discovery mailbox to view. This lets you quickly determine whether the search results are relevant. After you preview the results, you can revise your search query to narrow the search results and rerun the search. Items in the preview page are read-only versions of the actual search results, so you can't move, edit, delete or forward on the preview page.
 
-    For more information, see [Estimate or preview search results](/exchange/security-and-compliance/in-place-ediscovery/create-in-place-ediscovery-search).
+    For more information, see [Estimate or preview search results](create-in-place-ediscovery-search-exchange-2013-help.md).

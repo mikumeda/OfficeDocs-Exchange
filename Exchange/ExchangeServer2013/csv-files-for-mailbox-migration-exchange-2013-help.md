@@ -29,9 +29,9 @@ You can use a CSV file to bulk migrate a large number of user mailboxes. You can
 
   - **Onboarding and offboarding in Exchange Online**
 
-  - **Onboarding remote move migration:** In an Exchange hybrid deployment, you can move mailboxes from an on-premises Exchange organization to Exchange Online. This is also known as an *onboarding* remote move migration because you onboard mailboxes to Exchange Online.
+  - **Onboarding remote move migration:** In an Exchange hybrid deployment, you can move mailboxes from an on-premises Exchange organization to Exchange Online. This is also known as an _onboarding_ remote move migration because you onboard mailboxes to Exchange Online.
 
-  - **Offboarding remote move migration:** You can also perform an *offboarding* remote move migration, where you migrate Exchange Online mailboxes to your on-premises Exchange organization.
+  - **Offboarding remote move migration:** You can also perform an _offboarding_ remote move migration, where you migrate Exchange Online mailboxes to your on-premises Exchange organization.
 
   > [!NOTE]
   > Both onboarding and offboarding remote move migrations are initiated from your Exchange Online organization.
@@ -55,78 +55,21 @@ Attribute values in the CSV file override the value of the corresponding paramet
 The following sections describe the supported attributes for the header row of a CSV file for each migration type. Each section includes a table that lists each supported attribute, whether it's required, an example of a value to use for the attribute, and a description.
 
 > [!NOTE]
-> 
+>
 > - In the following sections, _source environment_ denotes the current location of a user mailbox or a database. _Target environment_ denotes the location that the mailbox will be migrated to or the database that the mailbox will be moved to.
-> 
 > - All mailboxes that are specified in the CSV file will be migrated, even if they are outside of the RBAC scope (for example, an OU) that gives the admin permissions to migrate mailboxes.
 
 ## Local moves
 
 The following table describes the supported attributes for a CSV file for local moves. For more information, see [Manage on-premises moves](manage-on-premises-moves-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Required or optional</th>
-<th>Accepted values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EmailAddress</p></td>
-<td><p>Required</p></td>
-<td><p>SMTP address for the user</p></td>
-<td><p>Specifies the user that will be moved.</p></td>
-</tr>
-<tr class="even">
-<td><p>TargetDatabase</p></td>
-<td><p>Optional</p></td>
-<td><p>Database name</p></td>
-<td><p>Specifies the mailbox database that the user's primary mailbox will be moved to. You can specify a different database in the different rows of the CSV file, which lets you move mailboxes in the same migration batch to different databases.</p></td>
-</tr>
-<tr class="odd">
-<td><p>TargetArchiveDatabase</p></td>
-<td><p>Optional</p></td>
-<td><p>Database name</p></td>
-<td><p>Specifies the mailbox database that the user's archive mailbox will be moved to. You can specify a different database in the different rows of the CSV file, which lets you move archive mailboxes in the same migration batch to different databases.</p>
-
-> [!NOTE]
-> If you specify a specific archive database, the archive mailbox (if it exists) will be moved to the same database as the primary mailbox.
-
-</td>
-</tr>
-<tr class="even">
-<td><p>BadItemLimit</p></td>
-<td><p>Optional</p></td>
-<td><p><code>Unlimited</code> or a non-negative integer from <code>0</code> (the default) to a maximum value of <code>2147483647</code></p></td>
-<td><p>Specifies the number of bad items to skip if the migration service encounters a corrupted item in the mailbox. If you include this attribute in the CSV file, it will override the default value or a value you specify if you include the <em>BadItemLimit</em> parameter when creating the migration batch using the EAC or the Exchange Management Shell.</p>
-
-> [!TIP]
-> We recommend that you use the default value of 0 and only increase the bad item limit for a particular user if the move or migration for that user fails.
-
-<p></p></td>
-</tr>
-<tr class="odd">
-<td><p>MailboxType</p></td>
-<td><p>Optional</p></td>
-<td><p>Use one of the following values:</p>
-<ul>
-<li><p><code>PrimaryOnly</code></p></li>
-<li><p><code>ArchiveOnly</code></p></li>
-<li><p><code>PrimaryAndArchive</code> (the default value)</p></li>
-</ul></td>
-<td><p>Specifies whether to move the user's primary mailbox, archive mailbox, or both.</p></td>
-</tr>
-</tbody>
-</table>
+|Attribute|Required or optional|Accepted values|Description|
+|---|---|---|---|
+|EmailAddress|Required|SMTP address for the user|Specifies the user that will be moved.|
+|TargetDatabase|Optional|Database name|Specifies the mailbox database that the user's primary mailbox will be moved to. You can specify a different database in the different rows of the CSV file, which lets you move mailboxes in the same migration batch to different databases.|
+|TargetArchiveDatabase|Optional|Database name|Specifies the mailbox database that the user's archive mailbox will be moved to. You can specify a different database in the different rows of the CSV file, which lets you move archive mailboxes in the same migration batch to different databases. <br/><br/> **Note**: If you specify a specific archive database, the archive mailbox (if it exists) will be moved to the same database as the primary mailbox.|
+|BadItemLimit|Optional|`Unlimited` or a non-negative integer from `0` (the default) to a maximum value of `2147483647`|Specifies the number of bad items to skip if the migration service encounters a corrupted item in the mailbox. If you include this attribute in the CSV file, it will override the default value or a value you specify if you include the _BadItemLimit_ parameter when creating the migration batch using the EAC or the Exchange Management Shell. <br/><br/> **Tip**: We recommend that you use the default value of 0 and only increase the bad item limit for a particular user if the move or migration for that user fails.|
+|MailboxType|Optional|Use one of the following values: <ul><li>`PrimaryOnly`</li><li>`ArchiveOnly`</li><li>`PrimaryAndArchive` (the default value)</li></ul>|Specifies whether to move the user's primary mailbox, archive mailbox, or both.|
 
 ## Onboarding remote move migrations in a hybrid deployment
 
@@ -134,139 +77,30 @@ In a hybrid deployment, you can move mailboxes from an on-premises Exchange orga
 
 The following table describes the supported attributes for a CSV file for onboarding remote move migrations.
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Required or optional</th>
-<th>Accepted values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EmailAddress</p></td>
-<td><p>Required</p></td>
-<td><p>SMTP address for the user</p></td>
-<td><p>Specifies the email address for the mail-enabled user in the Exchange Online organization that corresponds to the on-premises user mailbox that will be migrated.</p></td>
-</tr>
-<tr class="even">
-<td><p>BadItemLimit</p></td>
-<td><p>Optional</p></td>
-<td><p><code>Unlimited</code> or a non-negative integer from <code>0</code> (the default) to a maximum value of <code>2147483647</code></p></td>
-<td><p>Specifies the number of bad items to skip if the migration service encounters a corrupted item in the mailbox. If you include this attribute in the CSV file, it will override the default value or the value you specify if you include the <em>BadItemLimit</em> parameter when creating the migration batch using the EAC or the Exchange Management Shell.</p>
-
-> [!TIP]
-> We recommend that you use the default value of 0 and only increase the bad item limit for a particular user if the move or migration for that user fails.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p>LargeItemLimit</p></td>
-<td><p>Optional</p></td>
-<td><p><code>Unlimited</code> or a non-negative integer from <code>0</code> (the default) to a maximum value.</p></td>
-<td><p>Specifies the number of large items in the user's mailbox that will be skipped. When the number of large items exceeds this value, the migration for the mailbox fails.</p>
-<p>The default value is 0, which means that the migration fails if the mailbox contains any large items.</p>
-<p>When onboarding mailboxes to Exchange Online, items up to 35 MB are migrated.</p></td>
-</tr>
-<tr class="even">
-<td><p>MailboxType</p></td>
-<td><p>Optional</p></td>
-<td><p>Use one of the following values:</p>
-<ul>
-<li><p><code>PrimaryOnly</code></p></li>
-<li><p><code>ArchiveOnly</code></p></li>
-<li><p><code>PrimaryAndArchive</code> (the default value)</p></li>
-</ul></td>
-<td><p>Specifies whether to move the user's primary mailbox, archive mailbox, or both.</p></td>
-</tr>
-</tbody>
-</table>
+|Attribute|Required or optional|Accepted values|Description|
+|---|---|---|---|
+|EmailAddress|Required|SMTP address for the user|Specifies the email address for the mail-enabled user in the Exchange Online organization that corresponds to the on-premises user mailbox that will be migrated.|
+|BadItemLimit|Optional|`Unlimited` or a non-negative integer from `0` (the default) to a maximum value of `2147483647`|Specifies the number of bad items to skip if the migration service encounters a corrupted item in the mailbox. If you include this attribute in the CSV file, it will override the default value or the value you specify if you include the _BadItemLimit_ parameter when creating the migration batch using the EAC or the Exchange Management Shell. <br/><br/> **Tip**: We recommend that you use the default value of 0 and only increase the bad item limit for a particular user if the move or migration for that user fails.|
+|LargeItemLimit|Optional|`Unlimited` or a non-negative integer from `0` (the default) to a maximum value.|Specifies the number of large items in the user's mailbox that will be skipped. When the number of large items exceeds this value, the migration for the mailbox fails. <br/><br/> The default value is 0, which means that the migration fails if the mailbox contains any large items. <br/><br/> When onboarding mailboxes to Exchange Online, items up to 35 MB are migrated.|
+|MailboxType|Optional|Use one of the following values: <ul><li>`PrimaryOnly`</li><li>`ArchiveOnly`</li><li>`PrimaryAndArchive` (the default value)</li></ul>|Specifies whether to move the user's primary mailbox, archive mailbox, or both.|
 
 ## Cross-forest enterprise moves and offboarding remote move migrations in a hybrid deployment
 
 As previously stated, cross-forest moves are initiated either from the target forest or from the source forest. Offboarding remote move migrations are initiated from your Exchange Online organization. For more information, see:
 
 - [Prepare mailboxes for cross-forest move requests](prepare-mailboxes-for-cross-forest-move-requests-exchange-2013-help.md)
-
 - [Move mailboxes between on-premises and Exchange Online organizations in hybrid deployments](../ExchangeHybrid/hybrid-deployment/move-mailboxes.md)
 
 The following table describes the supported attributes for a CSV file for cross-forest enterprise moves and for offboarding remote move migrations in an Exchange hybrid deployment.
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Required or optional</th>
-<th>Accepted values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EmailAddress</p></td>
-<td><p>Required</p></td>
-<td><p>SMTP address for the user</p></td>
-<td><p>For cross-forest enterprise moves, this specifies the mailbox or mail-enabled user in the source forest.</p>
-<p>For offboarding remote move migrations, it specifies the Exchange Online mailbox.</p></td>
-</tr>
-<tr class="even">
-<td><p>TargetDatabase</p></td>
-<td><p>Required for offboarding remote move migrations and for cross-forest enterprise moves that are initiated from the source forest. Alternatively, this attribute can be specified when creating the migration batch in the EAC or using the Exchange Management Shell.</p>
-<p>This attribute is optional for cross-forest enterprise moves that are initiated from the target forest.</p></td>
-<td><p>Database name</p></td>
-<td><p>Specifies the mailbox database in the target forest that the user's primary mailbox will be moved to. You can specify a different database in the different rows of the CSV file, which lets you move mailboxes in the same migration batch to different databases.</p></td>
-</tr>
-<tr class="odd">
-<td><p>TargetArchiveDatabase</p></td>
-<td><p>Optional</p></td>
-<td><p>Database name</p></td>
-<td><p>Specifies the mailbox database in the target forest that the user's archive mailbox will be moved to. You can specify a different database in the different rows of the CSV file, which lets you move archive mailboxes in the same migration batch to different databases.</p></td>
-</tr>
-<tr class="even">
-<td><p>BadItemLimit</p></td>
-<td><p>Optional</p></td>
-<td><p><code>Unlimited</code> or a non-negative integer from <code>0</code> (the default) to a maximum value of <code>2147483647</code></p></td>
-<td><p>Specifies the number of bad items to skip if the migration service encounters a corrupted item in the mailbox. If you include this attribute in the CSV file, it will override the default value or the value you specify if you include the <em>BadItemLimit</em> parameter when creating the migration batch using the EAC or the Exchange Management Shell.</p>
-
-> [!TIP]
-> We recommend that you use the default value of 0 and only increase the bad item limit for a particular user if the move or migration for that user fails.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p>LargeItemLimit</p></td>
-<td><p>Optional</p></td>
-<td><p><code>Unlimited</code> or a non-negative integer from <code>0</code> (the default) to a maximum value.</p></td>
-<td><p>Specifies the number of large items in the user's mailbox that will be skipped. When the number of large items exceeds this value, the migration for the mailbox fails.</p>
-<p>The default value is 0, which means that the migration fails if the mailbox contains any large items.</p>
-<p>When onboarding mailboxes to Exchange Online, items up to 35 MB are migrated.</p></td>
-</tr>
-<tr class="even">
-<td><p>MailboxType</p></td>
-<td><p>Optional</p></td>
-<td><p>Use one of the following values:</p>
-<ul>
-<li><p><code>PrimaryOnly</code></p></li>
-<li><p><code>ArchiveOnly</code></p></li>
-<li><p><code>PrimaryAndArchive</code> (the default value)</p></li>
-</ul></td>
-<td><p>Specifies whether to move the user's primary mailbox, archive mailbox, or both.</p></td>
-</tr>
-</tbody>
-</table>
+|Attribute|Required or optional|Accepted values|Description|
+|---|---|---|---|
+|EmailAddress|Required|SMTP address for the user|For cross-forest enterprise moves, this specifies the mailbox or mail-enabled user in the source forest. <br/><br/> For offboarding remote move migrations, it specifies the Exchange Online mailbox.|
+|TargetDatabase|Required for offboarding remote move migrations and for cross-forest enterprise moves that are initiated from the source forest. Alternatively, this attribute can be specified when creating the migration batch in the EAC or using the Exchange Management Shell. <br/><br/> This attribute is optional for cross-forest enterprise moves that are initiated from the target forest.|Database name|Specifies the mailbox database in the target forest that the user's primary mailbox will be moved to. You can specify a different database in the different rows of the CSV file, which lets you move mailboxes in the same migration batch to different databases.|
+|TargetArchiveDatabase|Optional|Database name|Specifies the mailbox database in the target forest that the user's archive mailbox will be moved to. You can specify a different database in the different rows of the CSV file, which lets you move archive mailboxes in the same migration batch to different databases.|
+|BadItemLimit|Optional|`Unlimited` or a non-negative integer from `0` (the default) to a maximum value of `2147483647`|Specifies the number of bad items to skip if the migration service encounters a corrupted item in the mailbox. If you include this attribute in the CSV file, it will override the default value or the value you specify if you include the _BadItemLimit_ parameter when creating the migration batch using the EAC or the Exchange Management Shell. <br/><br/> **Tip**: We recommend that you use the default value of 0 and only increase the bad item limit for a particular user if the move or migration for that user fails.|
+|LargeItemLimit|Optional|`Unlimited` or a non-negative integer from `0` (the default) to a maximum value.|Specifies the number of large items in the user's mailbox that will be skipped. When the number of large items exceeds this value, the migration for the mailbox fails. <br/><br/> The default value is 0, which means that the migration fails if the mailbox contains any large items. <br/><br/> When onboarding mailboxes to Exchange Online, items up to 35 MB are migrated.|
+|MailboxType|Optional|Use one of the following values: <ul><li>`PrimaryOnly`</li><li>`ArchiveOnly`</li><li>`PrimaryAndArchive` (the default value)</li></ul>|Specifies whether to move the user's primary mailbox, archive mailbox, or both.|
 
 ## Staged Exchange migrations
 
@@ -274,94 +108,26 @@ You have to use a CSV file to identify the group of users for a migration batch 
 
 The following table describes the supported attributes for a CSV file for a staged Exchange migration.
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Required or optional</th>
-<th>Accepted values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EmailAddress</p></td>
-<td><p>Required</p></td>
-<td><p>SMTP address for the user</p></td>
-<td><p>Specifies the email address for the mail-enabled user (or a mailbox if you're retrying the migration) in Exchange Online that corresponds to the on-premises user mailbox that will be migrated. Mail-enabled users are created in Exchange Online as a result of directory synchronization or another provisioning process. The email address of the mail-enabled user must match the <em>WindowsEmailAddress</em> property for the corresponding on-premises mailbox.</p></td>
-</tr>
-<tr class="even">
-<td><p>Password</p></td>
-<td><p>Optional</p></td>
-<td><p>A password has to have a minimum length of eight characters, and satisfy any password restrictions that are applied to your Microsoft 365 or Office 365 organization.</p></td>
-<td><p>This password is set on the user account when the corresponding mail-enabled user in Exchange Online is converted to a mailbox during the migration.</p></td>
-</tr>
-<tr class="odd">
-<td>[CSV files for mailbox migration](/exchange/csv-files-for-mailbox-migration-exchange-2013-help)<p>ForceChangePassword</p></td>
-<td><p>Optional</p></td>
-<td><p><code>True</code> or <code>False</code></p></td>
-<td><p>Specifies whether a user must change the password the first time they sign in to their Exchange Online mailbox.</p>
-
-> [!NOTE]
-> If you've implemented a single sign-on solution by deploying Active Directory Federation Services 2.0 (AD FS 2.0) in your on-premises organization, you must use <CODE>False</CODE> for the value of this attribute.
-
-</td>
-</tr>
-</tbody>
-</table>
+|Attribute|Required or optional|Accepted values|Description|
+|---|---|---|---|
+|EmailAddress|Required|SMTP address for the user|Specifies the email address for the mail-enabled user (or a mailbox if you're retrying the migration) in Exchange Online that corresponds to the on-premises user mailbox that will be migrated. Mail-enabled users are created in Exchange Online as a result of directory synchronization or another provisioning process. The email address of the mail-enabled user must match the _WindowsEmailAddress_ property for the corresponding on-premises mailbox.|
+|Password|Optional|A password has to have a minimum length of eight characters, and satisfy any password restrictions that are applied to your Microsoft 365 or Office 365 organization.|This password is set on the user account when the corresponding mail-enabled user in Exchange Online is converted to a mailbox during the migration.|
+|ForceChangePassword|Optional|`True` or `False`|Specifies whether a user must change the password the first time they sign in to their Exchange Online mailbox. <p> **Note**: If you've implemented a single sign-on solution by deploying Active Directory Federation Services 2.0 (AD FS 2.0) in your on-premises organization, you must use `False` for the value of this attribute.|
 
 ## IMAP migrations
 
 A CSV file for an IMAP migration batch can have maximum of 50,000 rows. But it's a good idea to migrate users in several smaller batches. For more information about IMAP migrations, see the following topics:
 
 - [Migrate Email from an IMAP Server to Exchange Online Mailboxes](../ExchangeOnline/mailbox-migration/migrating-imap-mailboxes/migrating-imap-mailboxes.md)
-
 - [CSV files for mailbox migration](csv-files-for-mailbox-migration-exchange-2013-help.md)
 
 The following table describes the supported attributes for a CSV file for an IMAP migration.
 
-<table>
-<colgroup>
-<col>
-<col>
-<col>
-<col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Attribute</th>
-<th>Required or optional</th>
-<th>Accepted values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EmailAddress</p></td>
-<td><p>Required</p></td>
-<td><p>SMTP address for the user.</p></td>
-<td><p>Specifies the user ID for the user's Exchange Online mailbox</p></td>
-</tr>
-<tr class="even">
-<td><p>UserName</p></td>
-<td><p>Required</p></td>
-<td><p>String that identifies the user on the IMAP messaging system, in a format supported by the IMAP server.</p></td>
-<td><p>Specifies the logon name for the user's account in the IMAP messaging system (the source environment). In addition to the user name, you can use the credentials of an account that has been assigned the necessary permissions to access mailboxes on the IMAP server. For more information, see <a href="/Exchange/csv-files-for-mailbox-migration-exchange-2013-help">CSV files for IMAP migration batches</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Password</p></td>
-<td><p>Required</p></td>
-<td><p>Password string.</p></td>
-<td><p>Specifies the password for the user account specified by the UserName attribute.</p></td>
-</tr>
-</tbody>
-</table>
+|Attribute|Required or optional|Accepted values|Description|
+|---|---|---|---|
+|EmailAddress|Required|SMTP address for the user.|Specifies the user ID for the user's Exchange Online mailbox|
+|UserName|Required|String that identifies the user on the IMAP messaging system, in a format supported by the IMAP server.|Specifies the logon name for the user's account in the IMAP messaging system (the source environment). In addition to the user name, you can use the credentials of an account that has been assigned the necessary permissions to access mailboxes on the IMAP server. For more information, see [CSV files for IMAP migration batches](csv-files-for-mailbox-migration-exchange-2013-help.md).|
+|Password|Required|Password string.|Specifies the password for the user account specified by the UserName attribute.|
 
 ## Attribute values in the CSV file override the values for the migration batch
 
@@ -405,4 +171,4 @@ user4@cloud.contoso.com,PrimaryAndArchive
 ...
 ```
 
-Because the value for mailbox type in the CSV file overrides the values for the *MailboxType* parameter in the command to create the batch, only the archive mailbox for user1 and user2 is migrated to Exchange Online. But the primary and archive mailboxes for user3 and user4 are moved to Exchange Online.
+Because the value for mailbox type in the CSV file overrides the values for the _MailboxType_ parameter in the command to create the batch, only the archive mailbox for user1 and user2 is migrated to Exchange Online. But the primary and archive mailboxes for user3 and user4 are moved to Exchange Online.

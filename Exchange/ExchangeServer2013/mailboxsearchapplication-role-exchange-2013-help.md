@@ -31,9 +31,8 @@ For this role to grant permissions, it must be assigned to a role assignee, whic
 
 In addition to linking role assignees to roles, role assignments can also apply custom or built-in management scopes. Management scopes control which recipient, server and database objects can be modified by role assignees. If this role is assigned to a role assignee, but a management scope allows the role assignee only to manage certain objects based on a defined scope, the role assignee can only use the permissions granted by this role on those specific objects. The permissions provided by this role can't be applied to objects outside the scope defined on the role assignment. For more information about role assignments and scopes, see the following topics:
 
-  - [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
-
-  - [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
+- [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
+- [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
 
 This role is assigned to one or more role groups by default. For more information, see the "Default Management Role Assignments" section later in this topic.
 
@@ -60,27 +59,23 @@ You can also remove this role from built-in role groups, role groups you create,
 
 For more information about how to add or remove assignments between this role and role groups, users, and USGs, see the following topics:
 
-  - [Manage role groups](manage-role-groups-exchange-2013-help.md)
-
-  - [Add a role to a user or USG](add-a-role-to-a-user-or-usg-exchange-2013-help.md)
-
-  - [Remove a role from a user or USG](remove-a-role-from-a-user-or-usg-exchange-2013-help.md)
+- [Manage role groups](manage-role-groups-exchange-2013-help.md)
+- [Add a role to a user or USG](add-a-role-to-a-user-or-usg-exchange-2013-help.md)
+- [Remove a role from a user or USG](remove-a-role-from-a-user-or-usg-exchange-2013-help.md)
 
 ## Changing the management scopes on role assignments
 
 You can also change the management scopes on existing role assignments between this role and role assignees. By changing the scopes on role assignments, you control what objects can be managed using the permissions provided by this role. You have several choices when changing the scope on a role assignment. You can do one of the following:
 
-  - Add a new custom scope using the **Set-ManagementRoleAssignment** cmdlet. For more information, see the following topics:
+- Add a new custom scope using the **Set-ManagementRoleAssignment** cmdlet. For more information, see the following topics:
+  - [Create a regular or exclusive scope](create-a-regular-or-exclusive-scope-exchange-2013-help.md)
+  - [Change a role assignment](change-a-role-assignment-exchange-2013-help.md)
 
-      - [Create a regular or exclusive scope](create-a-regular-or-exclusive-scope-exchange-2013-help.md)
+- Add or change an organizational unit scope using the **Set-ManagementRoleAssignment** cmdlet. For more information, see [Change a role assignment](change-a-role-assignment-exchange-2013-help.md).
 
-      - [Change a role assignment](change-a-role-assignment-exchange-2013-help.md)
+- Add or change a predefined scope using the **Set-ManagementRoleAssignment** cmdlet. For more information, see [Change a role assignment](change-a-role-assignment-exchange-2013-help.md).
 
-  - Add or change an organizational unit scope using the **Set-ManagementRoleAssignment** cmdlet. For more information, see [Change a role assignment](change-a-role-assignment-exchange-2013-help.md).
-
-  - Add or change a predefined scope using the **Set-ManagementRoleAssignment** cmdlet. For more information, see [Change a role assignment](change-a-role-assignment-exchange-2013-help.md).
-
-  - Change the recipient, server, or database scope on a custom scope associated with a role assignment using the **Set-ManagementScope** cmdlet. For more information, see [Change a role scope](change-a-role-scope-exchange-2013-help.md).
+- Change the recipient, server, or database scope on a custom scope associated with a role assignment using the **Set-ManagementScope** cmdlet. For more information, see [Change a role scope](change-a-role-scope-exchange-2013-help.md).
 
 ## Enabling or disabling role assignments
 
