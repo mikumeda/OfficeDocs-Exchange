@@ -59,9 +59,9 @@ The following key terms are important to understand high availability or site re
 
 - **Managed availability**: A set of internal processes made up of probes, monitors, and responders that incorporate monitoring and high availability across all server roles and all protocols.
 
-- **\*over** (pronounced "star over"): Short for *switchovers* and *failovers*. A switchover is a manual activation of one or more database copies. A failover is an automatic activation of one or more database copies after a failure.
+- **\*over** (pronounced "star over"): Short for _switchovers_ and _failovers_. A switchover is a manual activation of one or more database copies. A failover is an automatic activation of one or more database copies after a failure.
 
-- **Safety Net**: Formerly known as transport dumpster, this is a feature of the transport service that stores a copy of all messages for *X* days. The default setting is 2 days.
+- **Safety Net**: Formerly known as transport dumpster, this is a feature of the transport service that stores a copy of all messages for _X_ days. The default setting is 2 days.
 
 - **Shadow redundancy**: A transport server feature that provides redundancy for messages for the entire time they're in transit.
 
@@ -77,7 +77,7 @@ The high availability and site resilience features used first introduced in Exch
 
 Database mobility disconnects databases from servers and adds support for up to 16 copies of a single database. It also provides a native experience for creating copies of a database.
 
-Setting a database copy as the active mailbox database is known as a *switchover*. When a failure affecting a database or access to a database occurs and a new database becomes the active copy, this process is known as a *failover*. This process also refers to a server failure in which one or more servers bring online the databases previously online on the failed server. When either a switchover or failover occurs, other Exchange 2013 servers become aware of the switchover almost immediately and redirect client and messaging traffic to the new active database.
+Setting a database copy as the active mailbox database is known as a _switchover_. When a failure affecting a database or access to a database occurs and a new database becomes the active copy, this process is known as a _failover_. This process also refers to a server failure in which one or more servers bring online the databases previously online on the failed server. When either a switchover or failover occurs, other Exchange 2013 servers become aware of the switchover almost immediately and redirect client and messaging traffic to the new active database.
 
 For example, if an active database in a DAG fails because of an underlying storage failure, Active Manager will automatically recover by failing over to a database copy on another Mailbox server in the DAG. In Exchange 2013, managed availability adds new behaviors to recover from loss of protocol access to a database, including recycling application worker pools, restarting services and servers, and initiating database failovers.
 
@@ -133,41 +133,11 @@ If you're a partner seeking information about the third-party API, contact your 
 
 The following table contains links to topics that will help you learn about and manage DAGs, mailbox database copies, and backup and restore for Exchange 2013.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Topic</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="database-availability-groups-dags-exchange-2013-help.md">Database availability groups (DAGs)</a></p></td>
-<td><p>Learn about DAGs, Active Manager, Datacenter Activation Coordination (DAC) mode, and mailbox database copies.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="planning-for-high-availability-and-site-resilience-exchange-2013-help.md">Planning for high availability and site resilience</a></p></td>
-<td><p>Learn about the general, hardware, network, software, witness server, and other requirements and best practices for DAGs.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="deploying-high-availability-and-site-resilience-exchange-2013-help.md">Deploying high availability and site resilience</a></p></td>
-<td><p>Explore an example deployment scenario for deploying and configuring DAGs.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="managing-high-availability-and-site-resilience-exchange-2013-help.md">Managing high availability and site resilience</a></p></td>
-<td><p>Learn about DAG management tasks, switchovers and failovers, and maintenance mode.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="monitoring-database-availability-groups-exchange-2013-help.md">Monitoring database availability groups</a></p></td>
-<td><p>Learn about the built-in cmdlets and scripts for monitoring DAGs and database copies.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="backup-restore-and-disaster-recovery-exchange-2013-help.md">Backup, restore, and disaster recovery</a></p></td>
-<td><p>Learn about backing up and restoring Exchange databases, recovery databases, and server recovery.</p></td>
-</tr>
-</tbody>
-</table>
+|Topic|Description|
+|---|---|
+|[Database availability groups (DAGs)](database-availability-groups-dags-exchange-2013-help.md)|Learn about DAGs, Active Manager, Datacenter Activation Coordination (DAC) mode, and mailbox database copies.|
+|[Planning for high availability and site resilience](planning-for-high-availability-and-site-resilience-exchange-2013-help.md)|Learn about the general, hardware, network, software, witness server, and other requirements and best practices for DAGs.|
+|[Deploying high availability and site resilience](deploying-high-availability-and-site-resilience-exchange-2013-help.md)|Explore an example deployment scenario for deploying and configuring DAGs.|
+|[Managing high availability and site resilience](managing-high-availability-and-site-resilience-exchange-2013-help.md)|Learn about DAG management tasks, switchovers and failovers, and maintenance mode.|
+|[Monitoring database availability groups](monitoring-database-availability-groups-exchange-2013-help.md)|Learn about the built-in cmdlets and scripts for monitoring DAGs and database copies.|
+|[Backup, restore, and disaster recovery](backup-restore-and-disaster-recovery-exchange-2013-help.md)|Learn about backing up and restoring Exchange databases, recovery databases, and server recovery.|

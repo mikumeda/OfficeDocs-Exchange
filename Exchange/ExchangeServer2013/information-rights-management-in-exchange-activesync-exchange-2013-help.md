@@ -28,9 +28,7 @@ In Exchange 2013, IRM in Microsoft Exchange ActiveSync allows your users to acce
 Using IRM in Exchange ActiveSync, mobile device users can:
 
 - Create IRM-protected messages.
-
 - Read IRM-protected messages.
-
 - Reply to and forward IRM-protected messages.
 
 ## Requirements
@@ -57,42 +55,11 @@ When enabling IRM in Exchange ActiveSync, we recommend using the Exchange Active
 
 ### Exchange ActiveSync policy settings
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Configure using the New Exchange ActiveSync Mailbox Policy wizard</th>
-<th>Configure using the New-ActiveSyncMailboxPolicy cmdlet</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Require that the user enter a password to access information on their mobile device.</p></td>
-<td><p>Select the <strong>Require password</strong> check box.</p></td>
-<td><p>Set the <em>DevicePasswordEnabled</em> parameter to <code>$true</code>.</p></td>
-</tr>
-<tr class="even">
-<td><p>Enable encryption for the mobile device.</p></td>
-<td><p>Select the <strong>Require password</strong> check box, and then select the <strong>Require encryption on device</strong> check box.</p></td>
-<td><p>Set the <em>RequireDeviceEncryption</em> parameter to <code>$true</code>.</p>
-
-> [!IMPORTANT]
-> When you set the <EM>RequireDeviceEncryption</EM> parameter to <CODE>$true</CODE>, mobile devices that don't support device encryption will be unable to connect.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p>Don't allow non-provisionable mobile devices to synchronize with the Exchange server.</p></td>
-<td><p>Clear the <strong>Allow non-provisionable devices</strong> check box.</p></td>
-<td><p>Set the <em>AllowNonProvisionableDevices</em> parameter to <code>$false</code>.</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|Configure using the New Exchange ActiveSync Mailbox Policy wizard|Configure using the New-ActiveSyncMailboxPolicy cmdlet|
+|---|---|---|
+|Require that the user enter a password to access information on their mobile device.|Select the **Require password** check box.|Set the _DevicePasswordEnabled_ parameter to `$true`.|
+|Enable encryption for the mobile device.|Select the **Require password** check box, and then select the **Require encryption on device** check box.|Set the _RequireDeviceEncryption_ parameter to `$true`. <br/><br/> **Important**: When you set the _RequireDeviceEncryption_ parameter to `$true`, mobile devices that don't support device encryption will be unable to connect.|
+|Don't allow non-provisionable mobile devices to synchronize with the Exchange server.|Clear the **Allow non-provisionable devices** check box.|Set the _AllowNonProvisionableDevices_ parameter to `$false`.|
 
 To learn more, see [Mobile device mailbox policies](mobile-device-mailbox-policies-exchange-2013-help.md).
 

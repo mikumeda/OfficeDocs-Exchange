@@ -161,6 +161,9 @@ We recommend adding an SPF record to avoid having messages flagged as spam. If y
 
    where 10.5.3.2 is your public IP address.
 
+   > [!CAUTION]
+   > This IP address will be authorized to send on your domain's behalf. Anyone with access to it could send email to any external recipient and it would pass SPF checking. You should consider carefully who has access to use this IP address.
+
    > [!NOTE]
    > Skipping this step might cause email to be sent to recipient Junk Email folders.
 
