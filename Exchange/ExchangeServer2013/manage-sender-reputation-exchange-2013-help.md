@@ -52,9 +52,9 @@ This example enables sender reputation.
 Set-SenderReputationConfig -Enabled $true
 ```
 
-### How do you know this worked?
+### How do you you've successfully enabled or disabled sender reputation?
 
-To verify that you have successfully enabled or disabled sender reputation, do the following:
+To verify that you've successfully enabled or disabled sender reputation, do the following:
 
 1. Verify the Protocol Analysis agent is installed and enabled by running the following command:
 
@@ -96,9 +96,9 @@ To enable sender reputation for internal messages, run the following command:
 Set-SenderReputationConfig -InternalMailEnabled $true
 ```
 
-### How do you know this worked?
+### How do you know you've successfully enabled or disabled sender reputation for internal and external messages?
 
-To verify that you have successfully enabled or disabled sender reputation for internal and external messages, do the following:
+To verify that you've successfully enabled or disabled sender reputation for internal and external messages, do the following:
 
 1. Run the following command:
 
@@ -122,9 +122,9 @@ This example sets the sender reputation level (SRL) block threshold to 6 and con
 Set-SenderReputationConfig -SrlBlockThreshold 6 -SenderBlockingPeriod 36
 ```
 
-### How do you know this worked?
+### How do you know you've successfully configured the sender reputation properties?
 
-To verify that you have successfully configured the sender reputation properties, do the following:
+To verify that you've successfully configured the sender reputation properties, do the following:
 
 1. Run the following command:
 
@@ -138,32 +138,11 @@ To verify that you have successfully configured the sender reputation properties
 
 You may need to perform additional steps to allow sender reputation to traverse any firewalls that are between the Internet and the Exchange server that's running the Protocol Analysis agent. The following table lists the outbound ports that are required for sender reputation.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Protocols</th>
-<th>Ports</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>SOCKS4, SOCKS5</p></td>
-<td><p>1081, 1080</p></td>
-</tr>
-<tr class="even">
-<td><p>Wingate, Telnet, Cisco</p></td>
-<td><p>23</p></td>
-</tr>
-<tr class="odd">
-<td><p>HTTP CONNECT, HTTP POST</p></td>
-<td><p>6588, 3128, 80</p></td>
-</tr>
-</tbody>
-</table>
+|Protocols|Ports|
+|---|---|
+|SOCKS4, SOCKS5|1081, 1080|
+|Wingate, Telnet, Cisco|23|
+|HTTP CONNECT, HTTP POST|6588, 3128, 80|
 
 To configure outbound access for the detection of open proxy servers, run the following command:
 
@@ -177,9 +156,9 @@ This example configures sender reputation to use the open proxy server named SER
 Set-SenderReputationConfig - ProxyServerName SERVER01 -ProxyServerPort 80 -ProxyServerType HttpConnect
 ```
 
-### How do you know this worked?
+### How do you know you've successfully configured outbound access for detection of open proxy servers?
 
-To verify that you have successfully configured outbound access for detection of open proxy servers, do the following:
+To verify that you've successfully configured outbound access for detection of open proxy servers, do the following:
 
 1. Run the following command:
 

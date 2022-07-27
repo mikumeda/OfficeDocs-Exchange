@@ -33,23 +33,18 @@ You may want to import or export mailbox data for the following reasons:
 
 ## Advantages to using import and export requests
 
-Advantages to using import and export requests in Exchange 2013 include the following:
+Advantages to using import and export requests in Exchange 2013 include the following reasons:
 
 - A .pst provider is included in Exchange 2013 that can read and write .pst files.
-
 - Import and export requests are asynchronous. The process is performed by MRS, which takes advantage of the queuing and throttling frameworks.
-
 - The .pst files can be imported directly to a user's personal archive.
-
 - Multiple .pst files can be imported or exported at the same time.
-
 - The .pst files can reside on any shared network drive accessible by your Exchange servers.
-
 - Exchange 2013 supports these .pst files: Unicode files created by Office Outlook 2007 and Outlook 2010
 
 ## Considerations
 
-Before you import or export mailbox data, consider the following:
+Before you import or export mailbox data, consider the following items:
 
 - To import or export mailbox data, a network shared folder accessible by your Exchange servers must be set up. You must also grant read/write permissions to the Exchange Trusted Subsystem group so that the group can access the network share where you import and export mailbox data. If you don't grant this permission, you will receive an error message stating that Exchange is unable to establish a connection to the target mailbox.
 
@@ -70,116 +65,50 @@ Use the **MailboxImportRequest** cmdlet set to import data from a .pst file to a
 
 - You can import data to a different user account than the one from which it was exported. For example, you can export data from john@contoso.com and import it to legaldiscovery@contoso.com.
 
-- You can import items to only the user's personal archive by specifying the *IsArchive* parameter.
+- You can import items to only the user's personal archive by specifying the _IsArchive_ parameter.
 
-- If associated folder messages exist in the .pst file, you can import them using the *AssociatedMessagesCopyOption* parameter. Associated messages contain hidden data with information about rules, views, and forms. If they exist in the .pst file, all messages from the safety net are imported.
+- If associated folder messages exist in the .pst file, you can import them using the _AssociatedMessagesCopyOption_ parameter. Associated messages contain hidden data with information about rules, views, and forms. If they exist in the .pst file, all messages from the safety net are imported.
 
-- You can include or exclude specific folders using the *IncludeFolders* or *ExcludeFolders* parameter.
+- You can include or exclude specific folders using the _IncludeFolders_ or _ExcludeFolders_ parameter.
 
-- You can exclude the Recoverable Items folder using the *ExcludeDumpster* parameter. By default, an import request includes the user's Recoverable Items folder if it's present in the .pst file.
+- You can exclude the Recoverable Items folder using the _ExcludeDumpster_ parameter. By default, an import request includes the user's Recoverable Items folder if it's present in the .pst file.
 
 ## Mailbox import request cmdlets
 
 Use the following cmdlets for mailbox import requests.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Cmdlet</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="/powershell/module/exchange/New-MailboxImportRequest">New-MailboxImportRequest</a></p></td>
-<td><p>Starts the process of importing a .pst file to a mailbox or personal archive. You can create more than one import request per mailbox. Each request must have a unique name.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="/powershell/module/exchange/Set-MailboxImportRequest">Set-MailboxImportRequest</a></p></td>
-<td><p>Changes import request options after the request is created or recover from a failed request.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/powershell/module/exchange/Suspend-MailboxImportRequest">Suspend-MailboxImportRequest</a></p></td>
-<td><p>Suspends an import request any time after the request is created but before the request reaches the status of Completed.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="/powershell/module/exchange/Resume-MailboxImportRequest">Resume-MailboxImportRequest</a></p></td>
-<td><p>Resumes an import request that's suspended or failed.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/powershell/module/exchange/Remove-MailboxImportRequest)">Remove-MailboxImportRequest</a></p></td>
-<td><p>Removes fully or partially completed import requests. Completed import requests aren't automatically cleared. You must use this cmdlet to remove them.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="/powershell/module/exchange/Get-MailboxImportRequest">Get-MailboxImportRequest</a></p></td>
-<td><p>View general information about an import request.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/powershell/module/exchange/Get-MailboxImportRequestStatistics">Get-MailboxImportRequestStatistics</a></p></td>
-<td><p>View detailed information about an import request.</p></td>
-</tr>
-</tbody>
-</table>
+|Cmdlet|Description|
+|---|---|
+|[New-MailboxImportRequest](/powershell/module/exchange/New-MailboxImportRequest)|Starts the process of importing a .pst file to a mailbox or personal archive. You can create more than one import request per mailbox. Each request must have a unique name.|
+|[Set-MailboxImportRequest](/powershell/module/exchange/Set-MailboxImportRequest)|Changes import request options after the request is created or recover from a failed request.|
+|[Suspend-MailboxImportRequest](/powershell/module/exchange/Suspend-MailboxImportRequest)|Suspends an import request any time after the request is created but before the request reaches the status of Completed.|
+|[Resume-MailboxImportRequest](/powershell/module/exchange/Resume-MailboxImportRequest)|Resumes an import request that's suspended or failed.|
+|[Remove-MailboxImportRequest](/powershell/module/exchange/Remove-MailboxImportRequest)|Removes fully or partially completed import requests. Completed import requests aren't automatically cleared. You must use this cmdlet to remove them.|
+|[Get-MailboxImportRequest](/powershell/module/exchange/Get-MailboxImportRequest)|View general information about an import request.|
+|[Get-MailboxImportRequestStatistics](/powershell/module/exchange/Get-MailboxImportRequestStatistics)|View detailed information about an import request.|
 
 ## Exporting mailbox data
 
 Use the **MailboxExportRequest** cmdlet set to export mailbox data to a .pst file. You can export one mailbox or several mailboxes, but only one request is written to each .pst file at a time. The following is a list of options you can specify when exporting mailbox data to a .pst file:
 
-- You can export personal archive data using the *IsArchive* parameter.
+- You can export personal archive data using the _IsArchive_ parameter.
 
-- You can filter the messages that are exported using the *ContentFilter* parameter. You can filter by message content, attachment, senders, recipients, Inbox category, importance, message type, message size, and when the message was sent, received, or expired.
+- You can filter the messages that are exported using the _ContentFilter_ parameter. You can filter by message content, attachment, senders, recipients, Inbox category, importance, message type, message size, and when the message was sent, received, or expired.
 
-- You can specify folders to include or exclude using the *IncludeFolders* or *ExcludeFolders* parameter. If exporting data from an Exchange 2013 mailbox, you can also exclude the Recoverable Items folder using the *ExcludeDumpster* parameter.
+- You can specify folders to include or exclude using the _IncludeFolders_ or _ExcludeFolders_ parameter. If exporting data from an Exchange 2013 mailbox, you can also exclude the Recoverable Items folder using the _ExcludeDumpster_ parameter.
 
-- You can export associated messages using the *AssociatedMessagesCopyOption* parameter. Associated messages contain hidden data with information about rules, views, and forms. By default, associated items aren't copied to the .pst file.
+- You can export associated messages using the _AssociatedMessagesCopyOption_ parameter. Associated messages contain hidden data with information about rules, views, and forms. By default, associated items aren't copied to the .pst file.
 
 ## Mailbox export request cmdlets
 
 Use the following cmdlets for mailbox export requests.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Cmdlet</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="/powershell/module/exchange/New-MailboxExportRequest">New-MailboxExportRequest</a></p></td>
-<td><p>Starts the process of exporting data from a primary mailbox or personal archive to a .pst file. You can create more than one export request per mailbox. Each request must have a unique name.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="/powershell/module/exchange/Set-MailboxExportRequest">Set-MailboxExportRequest</a></p></td>
-<td><p>Changes export request options after the request is created or recover from a failed request.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/powershell/module/exchange/Suspend-MailboxExportRequest">Suspend-MailboxExportRequest</a></p></td>
-<td><p>Suspends an export request any time after the request is created but before the request reaches the status of Completed.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="/powershell/module/exchange/Resume-MailboxExportRequest">Resume-MailboxExportRequest</a></p></td>
-<td><p>Resumes an export request that's suspended or failed.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/powershell/module/exchange/Remove-MailboxExportRequest">Remove-MailboxExportRequest</a></p></td>
-<td><p>Removes fully or partially completed export requests. Completed export requests aren't automatically cleared. You must use this cmdlet to remove them.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="/powershell/module/exchange/Get-MailboxExportRequest">Get-MailboxExportRequest</a></p></td>
-<td><p>View general information about an export request.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="/powershell/module/exchange/Get-MailboxExportRequestStatistics">Get-MailboxExportRequestStatistics</a></p></td>
-<td><p>View detailed information about an export request.</p></td>
-</tr>
-</tbody>
-</table>
+|Cmdlet|Description|
+|---|---|
+|[New-MailboxExportRequest](/powershell/module/exchange/New-MailboxExportRequest)|Starts the process of exporting data from a primary mailbox or personal archive to a .pst file. You can create more than one export request per mailbox. Each request must have a unique name.|
+|[Set-MailboxExportRequest](/powershell/module/exchange/Set-MailboxExportRequest)|Changes export request options after the request is created or recover from a failed request.|
+|boxExportRequest](/powershell/module/exchange/Suspend-MailboxExportRequest)[Suspend-Mail|Suspends an export request any time after the request is created but before the request reaches the status of Completed.|
+|[Resume-MailboxExportRequest](/powershell/module/exchange/Resume-MailboxExportRequest)|Resumes an export request that's suspended or failed.|
+|[Remove-MailboxExportRequest](/powershell/module/exchange/Remove-MailboxExportRequest)|Removes fully or partially completed export requests. Completed export requests aren't automatically cleared. You must use this cmdlet to remove them.|
+|[Get-MailboxExportRequest](/powershell/module/exchange/Get-MailboxExportRequest)|View general information about an export request.|
+|[Get-MailboxExportRequestStatistics](/powershell/module/exchange/Get-MailboxExportRequestStatistics)|View detailed information about an export request.|

@@ -31,58 +31,12 @@ If you receive an alert that indicates that the ActiveSync health set is unhealt
 
 The ActiveSync service is monitored using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ActiveSyncCTPProbe</p></td>
-<td><p>ActiveSync</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p>
-<p>Mailbox Server Authentication</p>
-<p>Information Store</p>
-<p>High Availability</p>
-<p>Network</p></td>
-<td><p>ActiveSyncCTPMonitor (ActiveSync health set)</p></td>
-</tr>
-<tr class="even">
-<td><p>ActiveSyncProxyTestProbe</p></td>
-<td><p>ActiveSync.Proxy</p></td>
-<td><p>-</p></td>
-<td><p>ActiveSyncProxyTestMonitor (ActiveSync.Proxy health set)</p></td>
-</tr>
-<tr class="odd">
-<td><p>ActiveSyncDeepTestProbe</p></td>
-<td><p>ActiveSync.Protocol</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p>
-<p>Information Store</p>
-<p>High Availability</p></td>
-<td><p>ActiveSyncDeepTestMonitor (ActiveSync health set)</p></td>
-</tr>
-<tr class="even">
-<td><p>ActiveSyncSelfTestProbe</p></td>
-<td><p>ActiveSync.Protocol</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p></td>
-<td><p>ActiveSyncSelfTestMonitor (ActiveSync.Protocol health set)</p>
-<p>RequestsQueuedGt500Monitor (ActiveSync health set)</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|ActiveSyncCTPProbe|ActiveSync|Active Directory <br/><br/> Authentication <br/><br/> Mailbox Server Authentication <br/><br/> Information Store <br/><br/> High Availability <br/><br/> Network|ActiveSyncCTPMonitor (ActiveSync health set)|
+|ActiveSyncProxyTestProbe|ActiveSync.Proxy|-|ActiveSyncProxyTestMonitor (ActiveSync.Proxy health set)|
+|ActiveSyncDeepTestProbe|ActiveSync.Protocol|Active Directory <br/><br/> Authentication <br/><br/> Information Store <br/><br/> High Availability|ActiveSyncDeepTestMonitor (ActiveSync health set)|
+|ActiveSyncSelfTestProbe|ActiveSync.Protocol|Active Directory <br/><br/> Authentication|ActiveSyncSelfTestMonitor (ActiveSync.Protocol health set) <br/><br/> RequestsQueuedGt500Monitor (ActiveSync health set)|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -142,7 +96,7 @@ This monitor alert is typically issued on Mailbox servers. To perform recovery a
    Set-MailboxServer server1.contoso.com -DatabaseCopyActivationDisabledAndMoveNow $true
    ```
 
-   In this and all subsequent code examples, replace *server1.contoso.com* with the actual server name.
+   In this and all subsequent code examples, replace _server1.contoso.com_ with the actual server name.
 
 6. Next, verify that all databases have been moved off the server that is reporting the issue. To do this, run the following command:
 
@@ -214,7 +168,7 @@ This monitor alert is typically issued on CA servers.
       Set-MailboxServer server1.contoso.com -DatabaseCopyActivationDisabledAndMoveNow $true
       ```
 
-      **Note**: In this and all subsequent code examples, replace *server1.contoso.com* with the actual server name.
+      **Note**: In this and all subsequent code examples, replace _server1.contoso.com_ with the actual server name.
 
    2. Verify that all the databases have been moved off the server that is reporting the issue. To do this, run the following command:
 
