@@ -30,7 +30,7 @@ Knowledge of the following terms will help you understand the types of connectio
 
 - **Sessions**
 
-  Sessions represent the connections used by services and client applications, such as Microsoft Outlook, to connect to the Managed Store. Services and clients can have multiple sessions at a particular time. The terms *connections* and *sessions* can be used interchangeably.
+  Sessions represent the connections used by services and client applications, such as Microsoft Outlook, to connect to the Managed Store. Services and clients can have multiple sessions at a particular time. The terms _connections_ and _sessions_ can be used interchangeably.
 
 - **Threads**
 
@@ -47,126 +47,34 @@ Previous versions of Exchange set limits on the number of connections to the Man
 The types of connection limits in Exchange 2013 are as follows:
 
 - **Max sessions per process**: Specifies the maximum number of sessions that an Exchange service can have open at one time on a mailbox database.
-
 - **Max user sessions per process**: Specifies the maximum number of sessions for a particular protocol for a single user.
 
 The following section, "Configure Session Limits," describes how to modify these limits.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Client type</th>
-<th></th>
-<th>Max sessions per mailbox database</th>
-<th>Default number of user sessions per mailbox database</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Admin</p></td>
-<td></td>
-<td><p>10,000</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="even">
-<td><p>Availability service</p></td>
-<td></td>
-<td><p>10,000</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="odd">
-<td><p>Content indexing</p></td>
-<td></td>
-<td><p>10,000</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange ActiveSync</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="odd">
-<td><p>Exchange Web Services</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="even">
-<td><p>Management</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="odd">
-<td><p>MAPI on the Middle Tier (MoMT)</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>32</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeMailboxAssistants: Events</p></td>
-<td></td>
-<td><p>10,000</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeMailboxAssistants: Timed</p></td>
-<td></td>
-<td><p>10,000</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchange Remote Procedure Call</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft Office Outlook Web App</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="even">
-<td><p>POP3 and IMAP4</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="odd">
-<td><p>Transport</p></td>
-<td></td>
-<td><p>10,000</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="even">
-<td><p>Unified Messaging</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>16</p></td>
-</tr>
-<tr class="odd">
-<td><p>Others</p></td>
-<td></td>
-<td><p>Not applicable</p></td>
-<td><p>16</p></td>
-</tr>
-</tbody>
-</table>
+|Client type|Max sessions per mailbox database|Default number of user sessions per mailbox database|
+|---|---|---|
+|Admin|10,000|Not applicable|
+|Availability service|10,000|16|
+|Content indexing|10,000|Not applicable|
+|Exchange ActiveSync|Not applicable|16|
+|Exchange Web Services|Not applicable|16|
+|Management|Not applicable|16|
+|MAPI on the Middle Tier (MoMT)|Not applicable|32|
+|MSExchangeMailboxAssistants: Events|10,000|Not applicable|
+|MSExchangeMailboxAssistants: Timed|10,000|Not applicable|
+|MSExchange Remote Procedure Call|Not applicable|16|
+|Microsoft Office Outlook Web App|Not applicable|16|
+|POP3 and IMAP4|Not applicable|16|
+|Transport|10,000|Not applicable|
+|Unified Messaging|Not applicable|16|
+|Others|Not applicable|16|
 
 ## Configure Session Limits
 
 You can modify the default session limits.
 
 > [!NOTE]
-> If you want to modify the session limits, you need to modify them on all Mailbox servers within any database availability groups (DAGs). If you don't make the same changes on all servers, the results will be inconsistent. To increase the session limit on Client Access server, the <CODE>RCAMaxConcurrency</CODE> value must be increased on the throttling policy. For more information, see <A href="/powershell/module/exchange/Set-ThrottlingPolicy">Set-ThrottlingPolicy</A>.
+> If you want to modify the session limits, you need to modify them on all Mailbox servers within any database availability groups (DAGs). If you don't make the same changes on all servers, the results will be inconsistent. To increase the session limit on Client Access server, the `RCAMaxConcurrency` value must be increased on the throttling policy. For more information, see [Set-ThrottlingPolicy](/powershell/module/exchange/Set-ThrottlingPolicy).
 
 > [!WARNING]
 > Incorrectly editing the registry can cause serious problems that may require you to reinstall your operating system. Problems resulting from editing the registry incorrectly may not be able to be resolved. Before editing the registry, back up any valuable data.
@@ -184,9 +92,7 @@ You can modify the default session limits.
 4. Rename the key to one of the following values, and then press Enter:
 
       - **Maximum Allowed Sessions Per User**: This limit specifies the maximum allowable sessions per user.
-
       - **Maximum Allowed Service Sessions Per User**: This limit specifies the maximum allowed service sessions per user.
-
       - **Maximum Allowed Exchange Sessions Per Service**: This limit specifies the maximum allowed Exchange sessions per service. The default value is 10,000.
 
 5. Right-click the newly created key, and then click **Modify**.
@@ -199,87 +105,21 @@ Open item limits are limits placed on the number of items that can be opened by 
 
 If you want to modify these limits, see "Configure Open Item Limits" immediately following the table.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Item type</th>
-<th>Registry object type</th>
-<th>Max opened per session</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ACL View</p></td>
-<td><p>objtACLView</p></td>
-<td><p>500</p></td>
-</tr>
-<tr class="even">
-<td><p>Attachment</p></td>
-<td><p>objtAttachment</p></td>
-<td><p>500</p></td>
-</tr>
-<tr class="odd">
-<td><p>Attachment View</p></td>
-<td><p>objtAttachmentView</p></td>
-<td><p>500</p></td>
-</tr>
-<tr class="even">
-<td><p>CStream</p></td>
-<td><p>objtCStream</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="odd">
-<td><p>Folder</p></td>
-<td><p>objtFolder</p></td>
-<td><p>500</p></td>
-</tr>
-<tr class="even">
-<td><p>Folder View</p></td>
-<td><p>objtFolderView</p></td>
-<td><p>500</p></td>
-</tr>
-<tr class="odd">
-<td><p>FX Destination Stream</p></td>
-<td><p>objtFXDstStrm</p></td>
-<td><p>500</p></td>
-</tr>
-<tr class="even">
-<td><p>FX Source Stream</p></td>
-<td><p>objtFXSrcStrm</p></td>
-<td><p>500</p></td>
-</tr>
-<tr class="odd">
-<td><p>Message</p></td>
-<td><p>objtMessage</p></td>
-<td><p>250</p></td>
-</tr>
-<tr class="even">
-<td><p>Message View</p></td>
-<td><p>objtMessageView</p></td>
-<td><p>500</p></td>
-</tr>
-<tr class="odd">
-<td><p>Notification</p></td>
-<td><p>objtNotify</p></td>
-<td><p>500,000</p></td>
-</tr>
-<tr class="even">
-<td><p>Rule View</p></td>
-<td><p>objtRulesView</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="odd">
-<td><p>Stream</p></td>
-<td><p>objtStream</p></td>
-<td><p>250</p></td>
-</tr>
-</tbody>
-</table>
+|Item type|Registry object type|Max opened per session|
+|---|---|---|
+|ACL View|objtACLView|500|
+|Attachment|objtAttachment|500|
+|Attachment View|objtAttachmentView|500|
+|CStream|objtCStream|Not applicable|
+|Folder|objtFolder|500|
+|Folder View|objtFolderView|500|
+|FX Destination Stream|objtFXDstStrm|500|
+|FX Source Stream|objtFXSrcStrm|500|
+|Message|objtMessage|250|
+|Message View|objtMessageView|500|
+|Notification|objtNotify|500,000|
+|Rule View|objtRulesView|Not applicable|
+|Stream|objtStream|250|
 
 ## Configure Open Item Limits
 
@@ -307,7 +147,7 @@ You can limit the maximum number of resources that a MAPI client can use simulta
 
     The new value is created in the result pane.
 
-6. Rename the key to *\<Object\_type\>*, where *\<Object\_type\>* is the name of the registry object type that you're modifying. For example, to modify the number of messages that can be opened, use *objtMessage*. Press Enter.
+6. Rename the key to _\<Object\_type\>_, where _\<Object\_type\>_ is the name of the registry object type that you're modifying. For example, to modify the number of messages that can be opened, use _objtMessage_. Press Enter.
 
 7. Right-click the newly created key, and then click **Modify**.
 
@@ -317,31 +157,9 @@ You can limit the maximum number of resources that a MAPI client can use simulta
 
 ## Item Size Limits
 
-Item size limits are the limits placed on items within a user's mailbox. They are configurable by using the *MaxSendSize* and *MaxReceiveSize* parameters on the [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) cmdlet.
+Item size limits are the limits placed on items within a user's mailbox. They are configurable by using the _MaxSendSize_ and _MaxReceiveSize_ parameters on the [Set-Mailbox](/powershell/module/exchange/Set-Mailbox) cmdlet.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Item type</th>
-<th>Limit</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Message (saved)</p></td>
-<td><p>Maximum size of the SendLimit, ReceiveLimit</p></td>
-</tr>
-<tr class="even">
-<td><p>Message (sent)</p></td>
-<td><p>Maximum size of the SendLimit</p></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+|Item type|Limit|
+|---|---|---|
+|Message (saved)|Maximum size of the SendLimit, ReceiveLimit|
+|Message (sent)|Maximum size of the SendLimit|
