@@ -36,7 +36,7 @@ In-Place Archiving helps you regain control of your organization's messaging dat
 
 ## Create a mailbox and enable an on-premises archive
 
-### Use the EAC
+### Use the EAC to create a mailbox and enable an on-premises archive
 
 1. Navigate to **Recipients** \> **Mailboxes**.
 
@@ -45,7 +45,7 @@ In-Place Archiving helps you regain control of your organization's messaging dat
 3. On the **New user mailbox** page, in the **Alias** box, type an alias for the user.
 
     > [!NOTE]
-    > If you leave this box blank, the value you type in the <STRONG>User logon name</STRONG> box is used for the alias.
+    > If you leave this box blank, the value you type in the **User logon name** box is used for the alias.
 
 4. Select one of the following options:
 
@@ -70,7 +70,7 @@ In-Place Archiving helps you regain control of your organization's messaging dat
 
 6. When you're finished, click **Save** to create the mailbox.
 
-### Use the shell
+### Use the Shell to create a mailbox and enable an on-premises archive
 
 This example creates the user Chris Ashton in Active Directory, creates the mailbox on mailbox database DB01, and enables an archive. The password must be reset at the next logon. To set the initial value of the password, this example creates a variable ($password), prompts you to enter a password, and assigns that password to the variable as a SecureString object.
 
@@ -81,7 +81,7 @@ New-Mailbox -UserPrincipalName chris@contoso.com -Alias chris -Archive -Database
 
 For detailed syntax and parameter information, see [New-Mailbox](/powershell/module/exchange/New-Mailbox).
 
-### How do you know this worked?
+### How do you know you've successfully created a user mailbox with an on-premises archive?
 
 To verify that you've successfully created a user mailbox with an on-premises archive, do one of the following:
 
@@ -97,9 +97,9 @@ To verify that you've successfully created a user mailbox with an on-premises ar
 
 ## Enable an on-premises archive for existing mailbox
 
-You can also create archives for existing users that have a mailbox but aren't archive-enabled. This is known as *enabling an archive* for an existing mailbox.
+You can also create archives for existing users that have a mailbox but aren't archive-enabled. This is known as _enabling an archive_ for an existing mailbox.
 
-### Use the EAC
+### Use the EAC to enable an on-premises archive for existing mailbox
 
 1. Navigate to **Recipients**  \> **Mailboxes**.
 
@@ -108,11 +108,11 @@ You can also create archives for existing users that have a mailbox but aren't a
 3. In the details pane, under **In-Place Archive**, click **Enable**
 
     > [!TIP]
-    > You can also bulk-enable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click <STRONG>More options</STRONG>. Then, under <STRONG>Archive</STRONG> click <STRONG>Enable</STRONG>.
+    > You can also bulk-enable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click **More options**. Then, under **Archive** click **Enable**.
 
 4. On the **Create in-place archive** page, click **OK** to have Exchange automatically select a mailbox database for the archive or click **Browse** to specify one.
 
-### Use the shell
+### Use the Shell to enable an on-premises archive for existing mailbox
 
 This example enables the archive for Tony Smith's mailbox.
 
@@ -128,7 +128,7 @@ Get-Mailbox -Database DB01 -Filter "ArchiveGuid -Eq `$null -AND ArchiveDomain -e
 
 For detailed syntax and parameter information, see [Enable-Mailbox](/powershell/module/exchange/Enable-Mailbox) and [Get-Mailbox](/powershell/module/exchange/Get-Mailbox).
 
-### How do you know this worked?
+### How do you know you've successfully enabled an on-premises archive for an existing mailbox?
 
 To verify that you've successfully enabled an on-premises archive for an existing mailbox, do one of the following:
 
@@ -149,9 +149,9 @@ You may want to disable a user's archive for troubleshooting purposes or if you'
 > [!IMPORTANT]
 > Disabling the archive will remove the archive from the mailbox and mark it in the mailbox database for deletion.
 
-If you want to reconnect the on-premises archive to that mailbox, you can use the [Connect-Mailbox](/powershell/module/exchange/Connect-Mailbox) cmdlet with the *Archive* parameter.
+If you want to reconnect the on-premises archive to that mailbox, you can use the [Connect-Mailbox](/powershell/module/exchange/Connect-Mailbox) cmdlet with the _Archive_ parameter.
 
-### Use the EAC
+### Use the EAC to disable an on-premises archive
 
 1. Navigate to **Recipients**  \> **Mailboxes**.
 
@@ -160,9 +160,9 @@ If you want to reconnect the on-premises archive to that mailbox, you can use th
 3. In the details pane, under **In-Place Archive**, click **Disable**.
 
     > [!TIP]
-    > You can also bulk-disable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click <STRONG>More options</STRONG>. Then, under <STRONG>Archive</STRONG> click <STRONG>Disable</STRONG>.
+    > You can also bulk-disable archives by selecting multiple mailboxes (use the Shift or Ctrl keys). After selecting multiple mailboxes, in the details pane, click **More options**. Then, under **Archive** click **Disable**.
 
-### Use the shell
+### Use the Shell to disable an on-premises archive
 
 This example disables the archive for Chris Ashton's mailbox. It doesn't disable the mailbox.
 
@@ -172,52 +172,28 @@ Disable-Mailbox -Identity "Chris Ashton" -Archive
 
 For detailed syntax and parameter information, see [Disable-Mailbox](/powershell/module/exchange/Disable-Mailbox).
 
-### How do you know this worked?
+### How do you know you've successfully disabled an archive?
 
-To verify that you have successfully disabled an archive, do the following:
+To verify that you've successfully disabled an archive, do the following:
 
 - In the EAC, select the mailbox. Then, in the details pane check its archive status under **In-Place Archive**.
 
 - In the Shell, run the following command to check the archive properties for the mailbox user.
 
-    ```powershell
-    Get-Mailbox -Identity "Chris Ashton" | Format-List *Archive*
-    ```
+  ```powershell
+  Get-Mailbox -Identity "Chris Ashton" | Format-List _Archive*
+  ```
 
-    If the archive is disabled, the following values are returned for archive-related properties.
+  If the archive is disabled, the following values are returned for archive-related properties.
 
-    <table>
-    <colgroup>
-    <col/>
-    <col/>
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th>Property</th>
-    <th>Value</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td><p>ArchiveDatabase (for on-premises archives)</p></td>
-    <td><p>&lt;blank&gt;</p></td>
-    </tr>
-    <tr class="even">
-    <td><p>ArchiveState</p></td>
-    <td><p><code>None</code></p></td>
-    </tr>
-    <tr class="odd">
-    <td><p>DisabledArchiveDatabase (for on-premises archives)</p></td>
-    <td><p>&lt;name of mailbox database&gt;</p></td>
-    </tr>
-    <tr class="even">
-    <td><p>DisabledArchiveGuid</p></td>
-    <td><p>&lt;guid of disabled archive&gt;</p></td>
-    </tr>
-    </tbody>
-    </table>
+  |Property|Value|
+  |---|---|
+  |ArchiveDatabase (for on-premises archives)|\<blank\>|
+  |ArchiveState|`None`|
+  |DisabledArchiveDatabase (for on-premises archives)|\<name of mailbox database\>|
+  |DisabledArchiveGuid|\<guid of disabled archive\>|
 
-## Connect an on-premises archive
+## Use the Shell to connect an on-premises archive
 
 When you disable an archive mailbox, it becomes disconnected. A disconnected archive mailbox is retained in the mailbox database for a specified amount of time. By default, Exchange retains disconnected archives for 30 days. During this time, you can recover the archive by associating it with an existing mailbox. You can modify the deleted mailbox retention period to retain a deleted mailbox or archive for a longer or shorter period.
 
@@ -226,8 +202,6 @@ When you disable an archive mailbox, it becomes disconnected. A disconnected arc
 
 > [!NOTE]
 > You can't use the EAC to connect a disconnected archive to a mailbox user.
-
-### Use the shell
 
 1. If you don't know the name of the archive, you can view it in the Shell by running the following command. This example retrieves the mailbox database DB01, pipes it to the **Get-MailboxStatistics** cmdlet to retrieve mailbox statistics for all mailboxes on the database, and then uses the **Where-Object** cmdlet to filter the results and retrieve a list of disconnected archives. The command displays additional information about each archive such as the GUID and item count.
 
@@ -244,15 +218,13 @@ When you disable an archive mailbox, it becomes disconnected. A disconnected arc
 For detailed syntax and parameter information, see the following topics:
 
 - [Get-MailboxDatabase](/powershell/module/exchange/Get-MailboxDatabase)
-
 - [Get-MailboxStatistics](/powershell/module/exchange/Get-MailboxStatistics)
-
 - [Enable-Mailbox](/powershell/module/exchange/Enable-Mailbox)
 
-### How do you know this worked?
+### How do you know you've successfully connected a disconnected archive?
 
-To verify that you have successfully connected a disconnected archive to a mailbox user, run the following Shell command to retrieve the mailbox user's archive properties and verify the values returned for the *ArchiveGuid* and *ArchiveDatabase* properties.:
+To verify that you've successfully connected a disconnected archive to a mailbox user, run the following Shell command to retrieve the mailbox user's archive properties and verify the values returned for the _ArchiveGuid_ and _ArchiveDatabase_ properties.:
 
 ```powershell
-Get-Mailbox -Identity "Chris Ashton" | Format-List *Archive*
+Get-Mailbox -Identity "Chris Ashton" | Format-List _Archive*
 ```
