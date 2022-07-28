@@ -33,6 +33,9 @@ Exchange creates the retention policy Default MRM Policy in your Exchange Online
 
 You can modify tags included in the Default MRM Policy, for example by changing the retention age or retention actions, disable a tag, or modify the policy by adding or removing tags from it. The updated policy is applied to mailboxes the next time they're processed by the Managed Folder Assistant
 
+> [NOTE]
+> The Default MRM Policy doesn't include a default tag to automatically delete content from the Deleted items folder as per [Extended email retention for deleted items in Office 365](https://www.microsoft.com/en-us/microsoft-365/blog/2015/02/20/extended-email-retention-deleted-items-office-365/). If you want to apply the 30-day retention or set a custom retention period, that can be done by adding an appropriate retention tag for deleted items folder to the Default MRM Policy.
+
 ## Retention tags linked to the Default MRM Policy
 
 The following table lists the default retention tags linked to the Default MRM Policy.
