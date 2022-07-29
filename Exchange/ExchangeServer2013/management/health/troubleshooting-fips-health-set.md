@@ -27,6 +27,7 @@ If you receive an alert that indicates that the **FIPS** health set is unhealthy
 The **FIPS** service is monitored using the following probes and monitors.
 
 |Probe|Health Set|Associated Monitors|
+|---|---|---|
 |none (notification or check)|FIPS|CrashEvent.scanningprocess|
 |none (notification or check)|FIPS|MaintenanceFailureMonitor.FIPS|
 |none (notification or check)|FIPS|MaintenanceTimeoutMonitor.FIPS|
