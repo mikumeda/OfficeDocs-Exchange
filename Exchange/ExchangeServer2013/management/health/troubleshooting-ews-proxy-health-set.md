@@ -29,30 +29,9 @@ If you receive an alert that specifies that the EWS.Proxy is unhealthy, this ind
 
 The EWS service is monitored by using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EWSProxyTestProbe</p></td>
-<td><p>EWS.Proxy</p></td>
-<td><p>Active Directory</p></td>
-<td><p>EWSProxyTestMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|EWSProxyTestProbe|EWS.Proxy|Active Directory|EWSProxyTestMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -61,9 +40,7 @@ For more information about probes and monitors, see [Server health and performan
 This probe can fail for any of the following common reasons:
 
 - The application pool that's hosted on the monitored CAS is not working correctly.
-
 - The monitoring account credentials are incorrect.
-
 - The Domain Controllers are not responding.
 
 ## User Action
@@ -109,24 +86,21 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 When you receive an alert from a health set, the email message will contain the following information:
 
 - Name of the CAS that sent the alert
-
 - Full exception trace of the last error, including diagnostic data and specific HTTP header information
-
   You can use the information in the full exception trace to help troubleshoot the issue.
-
 - Time and date when the issue occurred
 
 To troubleshoot this issue, follow these steps:
 
-1. Review the protocol logs on CA servers. Protocol logs are located in the *\<exchange server installation directory\>*\\Logging\\HttpProxy*\\\<protocol\>* folder on the CAS.
+1. Review the protocol logs on CA servers. Protocol logs are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\_\<protocol\>_** folder on the CAS.
 
-2. Create a test user account, and then log on to the CAS by using the test user account. For example, use the following logon address: https:// *\<servername\>*/owa
+2. Create a test user account, and then log on to the CAS by using the test user account. For example, use the following logon address: https://_\<servername\>_/owa
 
 3. Start IIS Manager, and then connect to the server that's reporting the issue to determine whether the **MSExchangeServicesAppPool** application pool is running on the CAS.
 
-4. Click **Application Pools**, and then recycle the **MSExchangeServicesAppPool** application pool by running the following command from the Shell:
+4. Click **Application Pools**, and then recycle the **MSExchangeServicesAppPool** application pool by running the following command:
 
-   ```powershell
+   ```DOS
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangeServicesAppPool
    ```
 

@@ -27,32 +27,10 @@ If you receive an alert that indicates that the **OWA.Protocol.DEP** health set 
 
 The **OWA.Protocol.DEP** service is monitored using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>OWA.Protocol.DEP</p></td>
-<td><p>OwaIMInitializationFailedMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>OWA.Protocol.DEP</p></td>
-<td><p>WacDiscoveryFailureEventMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Associated Monitors|
+|---|---|---|
+|none (notification or check)|OWA.Protocol.DEP|OwaIMInitializationFailedMonitor|
+|none (notification or check)|OWA.Protocol.DEP|WacDiscoveryFailureEventMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -64,7 +42,7 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 
 This error indicates a required registry key is missing on the Mailbox server. This registry key should have been configured when the Microsoft Unified Communications Managed API (UCMA) 4.0 was installed on the server. The missing registry key is:
 
-```console
+```text
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\MSExchange OWA\InstantMessaging
 ```
 
@@ -84,29 +62,29 @@ This error indicates the Lync 2013 server isn't defined in the Outlook Web App a
 
 1. In a Command prompt window, open the Outlook Web App web.config file in Notepad by running the following command:
 
-   ```powershell
+   ```DOS
    Notepad %ExchangeInstallPath%ClientAccess\Owa\web.config
    ```
 
 2. Search for a key named **IMServerName**. If it's found, verify the FQDN of the Lync 2013 server. If the key is not found, add it by performing the following steps.
 
-   1. Find the tag named **\<appSection\>**.
+   1. Find the tag named _\<appSection\>_.
 
-   2. In the **\<appSection\>** node, add the following line:
+   2. In the _\<appSection\>_ node, add the following line:
 
-      ```powershell
+      ```text
       <add key="IMServerName" value="Lync Server FQDN" />
       ```
 
       For example:
 
-      ```powershell
+      ```text
       <add key="IMServerName" value="lync01.contoso.com" />
       ```
 
    3. To apply the changes in Outlook Web App, run the following command:
 
-      ```powershell
+      ```DOS
       %windir%\system32\inetsrv\appcmd.exe recycle apppool /apppool.name:"MSExchangeOWAAppPool"
       ```
 
@@ -120,29 +98,29 @@ To fix this issue, follow these steps:
 
 1. In a Command prompt window, open the Outlook Web App web.config file in Notepad by running the following command:
 
-   ```powershell
+   ```DOS
    Notepad %ExchangeInstallPath%ClientAccess\Owa\web.config
    ```
 
 2. Search for a key named **IMCertificateThumbprint**. If it's found, verify the thumbprint value is correct. If the key is not found, add it by performing the following steps:
 
-   1. Find the tag named **\<appSection\>**.
+   1. Find the tag named _\<appSection\>_.
 
-   2. In the **\<appSection\>** node, add the following line:
+   2. In the _\<appSection\>_ node, add the following line:
 
-      ```powershell
+      ```text
       <add key="IMCertificateThumbprint" value="thumbprint"/>
       ```
 
       For example:
 
-      ```powershell
+      ```text
       <add key="IMCertificateThumbprint" value="35CB4C441D55506C88E59B7946B567A4F45B3B5C" />
       ```
 
    3. To apply the changes in Outlook Web App, run the following command:
 
-      ```powershell
+      ```DOS
       %windir%\system32\inetsrv\appcmd.exe recycle apppool /apppool.name:"MSExchangeOWAAppPool"
       ```
 

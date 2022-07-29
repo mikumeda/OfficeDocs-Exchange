@@ -27,147 +27,33 @@ If you receive an alert that indicates that the **MailboxTransport** health set 
 
 The **MailboxTransport** service is monitored using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>MailboxDeliveryAvailability</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MailboxDeliveryAvailabilityMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>MailboxDeliveryAvailabilityAggregationProbe</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MailboxDeliveryAvailabilityAggregationMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>MailboxDeliveryInstanceAvailabilityProbe</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MailboxDeliveryInstanceAvailabilityMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>MailboxTransportDeliveryServiceRunning</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MailboxTransportDeliveryServiceRunningMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>MailboxTransportSubmissionServiceRunning</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MailboxTransportSubmissionServiceRunningMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>Mapi.Submit.Probe</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>Mapi.Submit.Monitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>CrashEvent.msexchangedelivery</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>CrashEvent.msexchangesubmission</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>DeliveryBackpressureSustainedTimeMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>DeliveryInterceptorStoreDriverAgentPctPermFailedMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MailboxTransportUserQuarantineMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MBTSubmissionInterceptorSubmissionAgentMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MSExchangeAsstAvgEventProcessingTimeSubmissionMonitor50</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>MSExchangeAsstAvgEventProcessingTimeSubmissionMonitor70</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>PrivateWorkingSetError.msexchangedelivery</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>PrivateWorkingSetError.msexchangesubmission</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>PrivateWorkingSetWarning.msexchangedelivery</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>PrivateWorkingSetWarning.msexchangesubmission</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>ProcessProcessorTimeError.msexchangedelivery</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>ProcessProcessorTimeError.msexchangesubmission</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>ProcessProcessorTimeWarning.msexchangedelivery</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>ProcessProcessorTimeWarning.msexchangesubmission</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>SubmissionBackpressureSustainedTimeMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>SubmissionInterceptorSubmissionAgentPctPermFailedMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>MailboxTransport</p></td>
-<td><p>TransportDeliveryFailuresDeliveryStoreDriver560Monitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Associated Monitors|
+|---|---|---|
+|MailboxDeliveryAvailability|MailboxTransport|MailboxDeliveryAvailabilityMonitor|
+|MailboxDeliveryAvailabilityAggregationProbe|MailboxTransport|MailboxDeliveryAvailabilityAggregationMonitor|
+|MailboxDeliveryInstanceAvailabilityProbe|MailboxTransport|MailboxDeliveryInstanceAvailabilityMonitor|
+|MailboxTransportDeliveryServiceRunning|MailboxTransport|MailboxTransportDeliveryServiceRunningMonitor|
+|MailboxTransportSubmissionServiceRunning|MailboxTransport|MailboxTransportSubmissionServiceRunningMonitor|
+|Mapi.Submit.Probe|MailboxTransport|Mapi.Submit.Monitor|
+|none (notification or check)|MailboxTransport|CrashEvent.msexchangedelivery|
+|none (notification or check)|MailboxTransport|CrashEvent.msexchangesubmission|
+|none (notification or check)|MailboxTransport|DeliveryBackpressureSustainedTimeMonitor|
+|none (notification or check)|MailboxTransport|DeliveryInterceptorStoreDriverAgentPctPermFailedMonitor|
+|none (notification or check)|MailboxTransport|MailboxTransportUserQuarantineMonitor|
+|none (notification or check)|MailboxTransport|MBTSubmissionInterceptorSubmissionAgentMonitor|
+|none (notification or check)|MailboxTransport|MSExchangeAsstAvgEventProcessingTimeSubmissionMonitor50|
+|none (notification or check)|MailboxTransport|MSExchangeAsstAvgEventProcessingTimeSubmissionMonitor70|
+|none (notification or check)|MailboxTransport|PrivateWorkingSetError.msexchangedelivery|
+|none (notification or check)|MailboxTransport|PrivateWorkingSetError.msexchangesubmission|
+|none (notification or check)|MailboxTransport|PrivateWorkingSetWarning.msexchangedelivery|
+|none (notification or check)|MailboxTransport|PrivateWorkingSetWarning.msexchangesubmission|
+|none (notification or check)|MailboxTransport|ProcessProcessorTimeError.msexchangedelivery|
+|none (notification or check)|MailboxTransport|ProcessProcessorTimeError.msexchangesubmission|
+|none (notification or check)|MailboxTransport|ProcessProcessorTimeWarning.msexchangedelivery|
+|none (notification or check)|MailboxTransport|ProcessProcessorTimeWarning.msexchangesubmission|
+|none (notification or check)|MailboxTransport|SubmissionBackpressureSustainedTimeMonitor|
+|none (notification or check)|MailboxTransport|SubmissionInterceptorSubmissionAgentPctPermFailedMonitor|
+|none (notification or check)|MailboxTransport|TransportDeliveryFailuresDeliveryStoreDriver560Monitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 

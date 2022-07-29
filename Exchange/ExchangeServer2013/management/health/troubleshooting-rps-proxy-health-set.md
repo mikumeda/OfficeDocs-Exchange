@@ -27,30 +27,9 @@ If you receive an alert specifying that the RPS.Proxy is unhealthy, this indicat
 
 The RPS service is monitored using the following probes and monitors:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>RPSProxyTestProbe</p></td>
-<td><p>RPS.Proxy</p></td>
-<td><p>Active Directory</p></td>
-<td><p>RPSProxyTestMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|RPSProxyTestProbe|RPS.Proxy|Active Directory|RPSProxyTestMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -59,9 +38,7 @@ For more information about probes and monitors, see [Server health and performan
 When this probe fails there can be multiple reasons for the problem. Some of the more common issues include the following:
 
 - The application pool that is hosted on the monitored CAS server is not working properly.
-
 - The monitoring account credentials are incorrect.
-
 - The Domain Controllers are not responding.
 
 ## User Action
@@ -107,20 +84,18 @@ It is possible that the service was able to recover after issuing the alert. The
 When receiving an alert from a health set, the email will contain the following information:
 
 - The name of the CAS server that sent the alert.
-
 - Full exception trace including eroor messages, diagnostic data and specific HTTP header information. The information in the full exception trace can be used to help troubleshoot the issue.
-
 - The time and date when the issue occurred.
 
 To help troubleshoot this issue, perform the following:
 
-1. Review the protocol logs on CAS servers. Protocol logs are located in the *\<exchange server installation directory\>*\\Logging\\HttpProxy*\\\<protocol\>* folder on the CAS server.
+1. Review the protocol logs on CAS servers. Protocol logs are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\_\<protocol\>_** folder on the CAS server.
 
-2. Create a test user account, and then logon to the CAS server by using the test user account, for example https:// *\<servername\>*/owa
+2. Create a test user account, and then logon to the CAS server by using the test user account, for example https://_\<servername\>_/owa
 
 3. Start IIS Manager and connect to the server that is reporting the issue and verify that the MSExchangePowerShellFrontEndAppPool is running on CAS server.
 
-4. Click on **Application Pools**, and then recycle the **MSExchangePowerShellFrontEndAppPool** application pool by running the following command from the Exchange Management Shell:
+4. Click on **Application Pools**, and then recycle the **MSExchangePowerShellFrontEndAppPool** application pool by running the following command:
 
    ```powershell
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangePowerShellFrontEndAppPool

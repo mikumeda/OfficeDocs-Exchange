@@ -22,7 +22,6 @@ _**Applies to:** Exchange Server 2013_
 The POP health set monitors the overall health and availability of the Microsoft Exchange POP3 service and POP3 client connectivity. The POP health set is closely related to the following health sets:
 
 - [Troubleshooting POP.Protocol Health Set](troubleshooting-pop-protocol-health-set.md)
-
 - [Troubleshooting POP.Proxy Health Set](troubleshooting-pop-proxy-health-set.md)
 
 If you receive an alert that specifies that the POP service is unhealthy, this indicates an issue that may prevent users from accessing their mailboxes by using POP3 in the Exchange environment.
@@ -31,57 +30,12 @@ If you receive an alert that specifies that the POP service is unhealthy, this i
 
 The POP service is monitored by using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>PopCTPProbe</p></td>
-<td><p>POP</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p>
-<p>Mailbox Server Authentication</p>
-<p>Information Store</p>
-<p>High Availability</p>
-<p>Network</p></td>
-<td><p>PopCTPMonitor (POP health set)</p></td>
-</tr>
-<tr class="even">
-<td><p>PopProxyTestProbe</p></td>
-<td><p>POP.Proxy</p></td>
-<td><p>None</p></td>
-<td><p>PopProxyTestMonitor (POP.Proxy health set)</p></td>
-</tr>
-<tr class="odd">
-<td><p>PopDeepTestProbe</p></td>
-<td><p>POP.Protocol</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p>
-<p>Information Store</p>
-<p>High Availability</p></td>
-<td><p>PopDeepTestMonitor (POP.Protocol health set)</p></td>
-</tr>
-<tr class="even">
-<td><p>PopSelfTestProbe</p></td>
-<td><p>POP.Protocol</p></td>
-<td><p>None</p></td>
-<td><p>PopSelfTestMonitor (POP.Protocol health set)</p>
-<p>AverageCommandProcessingTimeGt60sMonitor (POP health set)</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|PopCTPProbe|POP|Active Directory <br/><br/> Authentication <br/><br/> Mailbox Server Authentication <br/><br/> Information Store <br/><br/> High Availability <br/><br/> Network|PopCTPMonitor (POP health set)|
+|PopProxyTestProbe|POP.Proxy|None|PopProxyTestMonitor (POP.Proxy health set)|
+|PopDeepTestProbe|POP.Protocol|Active Directory <br/><br/> Authentication <br/><br/> Information Store <br/><br/> High Availability|PopDeepTestMonitor (POP.Protocol health set)|
+|PopSelfTestProbe|POP.Protocol|None|PopSelfTestMonitor (POP.Protocol health set) <br/><br/> AverageCommandProcessingTimeGt60sMonitor (POP health set)|
 
 ## User Action
 
@@ -95,21 +49,29 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 
    1. Open the Exchange Management Shell, and then run the following command to retrieve the details of the health set that issued the alert:
 
+      ```powershell
       Get-ServerHealth \<server name> | ?{$_.HealthSetName -eq "\<health set name>"}
+      ```
 
       For example, to retrieve the POP health set details about server1.contoso.com, run the following command:
 
+      ```powershell
       Get-ServerHealth server1.contoso.com | ?{$_.HealthSetName -eq "POP"}
+      ```
 
    2. Review the command output to determine which monitor reported the error. The **AlertValue** value for the monitor that issued the alert will be `Unhealthy`.
 
    3. Rerun the associated probe for the monitor that's in an unhealthy state. Refer to the table in the Explanation section to find the associated probe. To do this, run the following command:
 
+      ```powershell
       Invoke-MonitoringProbe \<health set name>\<probe name> -Server \<server name> | Format-List
+      ```
 
       For example, assume that the failing monitor is **PopCTPMonitor**. The probe associated with that monitor is **PopCTPProbe**. To run that probe on server1.contoso.com, run the following command:
 
+      ```powershell
       Invoke-MonitoringProbe POP\PopCTPProbe -Server server1.contoso.com | Format-List
+      ```
 
    4. In the command output, review the **Result** value of the probe. If the value is **Succeeded**, the issue was a transient error, and it no longer exists. Otherwise, refer to the recovery steps outlined in the following sections.
 
@@ -123,11 +85,15 @@ This monitor alert is typically issued on Mailbox servers.
 
 3. If the probe still fails, failover the databases that are hosted on the Mailbox server by using the following command:
 
+   ```powershell
    Set-MailboxServer -Identity \<ServerName\> -DatabaseCopyActivationDisabledAndMoveNow $true
+   ```
 
 4. After all the databases are removed from the Mailbox server, you must verify that the databases have been moved successfully. To do this, run the following command:
 
+   ```powershell
    Get-MailboxDatabaseCopyStatus -Server \<ServerName\> | group status
+   ```
 
 5. Make sure that the server does not host any active copies of the database. Then, restart the server.
 
@@ -135,7 +101,9 @@ This monitor alert is typically issued on Mailbox servers.
 
 7. If the probe succeeds, failover the databases by running the following command:
 
+   ```powershell
    Set-MailboxServer -Identity \<ServerName\> -DatabaseCopyActivationDisabledAndMoveNow $false
+   ```
 
 8. If the probe continues to fail, you may need assistance to resolve this issue. Contact a Microsoft Support professional to resolve this issue. To contact a Microsoft Support professional, visit [Support for business](https://support.microsoft.com/supportforbusiness/productselection) and then select **Servers** \> **Exchange Server**. Because your organization may have a specific procedure for directly contacting Microsoft Product Support Services, be sure to review your organization's guidelines first.
 
@@ -219,7 +187,7 @@ This monitor alert is typically issued on CA or Mailbox servers.
       Set-MailboxServer -Identity <ServerName> -DatabaseCopyActivationDisabledAndMoveNow $true
       ```
 
-      **Note**: In this and all subsequent code examples, replace *server1.contoso.com* with the actual server name.
+      **Note**: In this and all subsequent code examples, replace _server1.contoso.com_ with the actual server name.
 
    2. Verify that all databases have been moved off the server that's reporting the issue. To do this, run the following command:
 

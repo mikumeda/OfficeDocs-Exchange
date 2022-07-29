@@ -29,36 +29,10 @@ If you receive an alert that specifies that the ECP health set is unhealthy, thi
 
 The EAC service is monitored by using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EacSelfTestProbe</p></td>
-<td><p>ECP</p></td>
-<td><p>Active Directory</p></td>
-<td><p>EacSelfTestMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>EacDeepTestProbe</p></td>
-<td><p>ECP</p></td>
-<td><p>Active Directory</p></td>
-<td><p>EacDeepTestMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|EacSelfTestProbe|ECP|Active Directory|EacSelfTestMonitor|
+|EacDeepTestProbe|ECP|Active Directory|EacDeepTestMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
