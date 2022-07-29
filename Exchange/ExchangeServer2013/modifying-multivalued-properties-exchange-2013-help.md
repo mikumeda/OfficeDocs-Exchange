@@ -22,9 +22,7 @@ _**Applies to:** Exchange Server 2013_
 A multivalued property is a property that can contain more than one value. For example, the **BlockedRecipients** property on the **RecipientFilterConfig** object can accept multiple recipient addresses as in the following examples:
 
 - john@contoso.com
-
 - kim@northwindtraders.com
-
 - david@adatum.com
 
 Because the **BlockedRecipients** property can accept more than one value, it's called a multivalued property. This topic explains how to use the Exchange Management Shell to add values to and remove values from a multivalued property on an object.
@@ -59,48 +57,18 @@ BlockedRecipients : {chris@contoso.com}
 
 This isn't what you expected. You wanted to add the new SMTP address to the existing list of blocked recipients, but instead the existing list of blocked recipients was overwritten by the new SMTP address. This unintended result exemplifies how modifying a multivalued property differs from modifying a property that accepts only a single value. When you modify a multivalued property, you must make sure that you append or remove values instead of overwriting the whole list of values. The following sections show you how to do exactly that.
 
-## Modifying multivalued properties
+## How to modify multivalued properties
 
 Modifying multivalued properties is similar to modifying single-valued properties. You just need to add some additional syntax to tell the Shell that you want to add or remove values to or from the multivalued property rather than replace everything that's stored in the property. The syntax is included, along with the value or values to add or remove to or from the property, as a value on a parameter when you run a cmdlet. The following table shows the syntax that you need to add to a parameter on a cmdlet to modify multivalued properties.
 
-### Multivalue property syntax
+### Multivalued property syntax
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Action</th>
-<th>Syntax</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Add one or more values to a multivalued property</p></td>
-<td>
+|Action|Syntax|
+|---|---|
+|Add one or more values to a multivalued property|`@{Add="<value1>", "<value2>", "<value3>"}`|
+|Remove one or more values from a multivalued property|`@{Remove="<value1>", "<value2>", "<value3>"}`|
 
-```powershell
-@{Add="<value1>", "<value2>", "<value3>"}
-```
-
-</td>
-</tr>
-<tr class="even">
-<td><p>Remove one or more values from a multivalued property</p></td>
-<td>
-
-```powershell
-@{Remove="<value1>", "<value2>", "<value3>"}
-```
-
-</td>
-</tr>
-</tbody>
-</table>
-
-The syntax that you choose from the Multivalue property syntax table is specified as a parameter value on a cmdlet. For example, the following command adds multiple values to a multivalued property:
+The syntax that you choose from the Multivalued property syntax table is specified as a parameter value on a cmdlet. For example, the following command adds multiple values to a multivalued property:
 
 ```powershell
 Set-ExampleCmdlet -Parameter @{Add="Red", "Blue", "Green"}
