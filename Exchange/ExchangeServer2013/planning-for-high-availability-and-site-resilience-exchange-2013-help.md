@@ -28,11 +28,8 @@ There are general requirements that must be met for deploying these features, an
 Before deploying a database availability group (DAG) and creating mailbox database copies, make sure that the following system-wide recommendations are met:
 
 - Domain Name System (DNS) must be running. Ideally, the DNS server should accept dynamic updates. If the DNS server doesn't accept dynamic updates, you must create a DNS host (A) record for each Exchange server. Otherwise, Exchange won't function properly.
-
 - Each Mailbox server in a DAG must be a member server in the same domain.
-
 - Adding an Exchange 2013 Mailbox server that's also a directory server to a DAG isn't supported.
-
 - The name you assign to the DAG must be a valid, available, and unique computer name of 15 characters or less.
 
 ## Hardware requirements
@@ -53,7 +50,7 @@ In addition to meeting the prerequisites for installing Exchange 2013, there are
 
 ## Network requirements
 
-There are specific networking requirements that must be met for each DAG and for each DAG member. Each DAG must have a single *MAPI network*, which is used by a DAG member to communicate with other servers (for example, other Exchange 2013 servers or directory servers), and zero or more *Replication networks*, which are networks dedicated to log shipping and seeding.
+There are specific networking requirements that must be met for each DAG and for each DAG member. Each DAG must have a single _MAPI network_, which is used by a DAG member to communicate with other servers (for example, other Exchange 2013 servers or directory servers), and zero or more _Replication networks*, which are networks dedicated to log shipping and seeding.
 
 In previous versions of Exchange, we recommended at least two networks (one MAPI network and one Replication network) for DAGs. In Exchange 2013, multiple networks are supported, but our recommendation depends on your physical network topology. If you have multiple physical networks between DAG members that are physically separate from one another, then using a separate MAPI and Replication network provides more redundancy. If you have multiple networks that are partially physically separate but converge into a single physical network (for example, a single WAN link), then using a single network (preferably 10 gigabit Ethernet) for both MAPI and Replication traffic is recommended. This approach provides simplicity for the network and the network path.
 
@@ -65,7 +62,7 @@ Consider the following factors when designing the network infrastructure for you
 
   - If a failure affects the MAPI network, a server failover will occur (assuming there are healthy mailbox database copies that can be activated).
 
-  - If a failure affects the Replication network, if the MAPI network is unaffected by the failure, log shipping and seeding operations will revert to use the MAPI network, even if the MAPI network has its *ReplicationEnabled* property set to False. When the failed Replication network is restored to health and ready to resume log shipping and seeding operations, you must manually switch over to the Replication network. To change replication from the MAPI network to a restored Replication network, you can either suspend and resume continuous replication by using the **Suspend-MailboxDatabaseCopy** and **Resume-MailboxDatabaseCopy** cmdlets, or restart the Microsoft Exchange Replication service. We recommend using suspend and resume operations to avoid the brief outage caused by restarting the Microsoft Exchange Replication service.
+  - If a failure affects the Replication network, if the MAPI network is unaffected by the failure, log shipping and seeding operations will revert to use the MAPI network, even if the MAPI network has its _ReplicationEnabled_ property set to False. When the failed Replication network is restored to health and ready to resume log shipping and seeding operations, you must manually switch over to the Replication network. To change replication from the MAPI network to a restored Replication network, you can either suspend and resume continuous replication by using the **Suspend-MailboxDatabaseCopy** and **Resume-MailboxDatabaseCopy** cmdlets, or restart the Microsoft Exchange Replication service. We recommend using suspend and resume operations to avoid the brief outage caused by restarting the Microsoft Exchange Replication service.
 
 - Each DAG member must have the same number of networks. For example, if you plan on using a single network adapter in one DAG member, all members of the DAG must also use a single network adapter.
 
@@ -76,11 +73,8 @@ Consider the following factors when designing the network infrastructure for you
 - Each network in each DAG member server must be on its own network subnet. Each server in the DAG can be on a different subnet, but the MAPI and Replication networks must be routable and provide connectivity, such that:
 
   - Each network in each DAG member server is on its own network subnet that's separate from the subnet used by each other network in the server.
-
   - Each DAG member server's MAPI network can communicate with each other DAG member's MAPI network.
-
   - Each DAG member server's Replication network can communicate with each other DAG member's Replication network.
-
   - There is no direct routing that allows heartbeat traffic from the Replication network on one DAG member server to the MAPI network on another DAG member server, or vice versa, or between multiple Replication networks in the DAG.
 
 - Regardless of their geographic location relative to other DAG members, each member of the DAG must have round-trip network latency no greater than 500 milliseconds between each other member. As the round-trip latency between two Mailbox servers hosting copies of a database increases, the potential for replication not being up to date also increases. Regardless of the latency of the solution, customers should validate that the networks between all DAG members are capable of satisfying the data protection and availability goals of the deployment. Configurations with higher latency values may require special tuning of DAG, replication, and network parameters, such as increasing the number of databases or decreasing the number of mailboxes per database, to achieve the desired goals.
@@ -99,15 +93,11 @@ Each DAG running on Windows Server 2008 R2 or Windows Server 2012 requires a min
 
 The following figure illustrates a DAG where all nodes in the DAG have the MAPI network on the same subnet.
 
-**DAG with MAPI network on same subnet**
-
 ![DAG on single subnet.](images/Dd638104.bcb7ef68-6d18-4516-a736-b936991c82cb(EXCHG.150).gif "DAG on single subnet")
 
-In this example, the MAPI network in each DAG member is on the 172.19.18.*x* subnet. As a result, the DAG requires a single IP address on that subnet.
+In this example, the MAPI network in each DAG member is on the 172.19.18.*x_ subnet. As a result, the DAG requires a single IP address on that subnet.
 
-The next figure illustrates a DAG that has a MAPI network that extends across two subnets: 172.19.18.*x* and 172.19.19.*x*.
-
-**DAG with MAPI network on multiple subnets**
+The next figure illustrates a DAG that has a MAPI network that extends across two subnets: 172.19.18.*x_ and 172.19.19.*x_.
 
 ![DAG extended across multiple subnets.](images/Dd638104.ffb57c64-3cb1-435c-8148-1b7154d1575c(EXCHG.150).gif "DAG extended across multiple subnets")
 
@@ -128,123 +118,51 @@ Each network adapter must be configured properly based on its intended use. A ne
 
 A network adapter intended for use by a MAPI network should be configured as described in the following table.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Networking features</th>
-<th>Settings</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Client for Microsoft Networks</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="even">
-<td><p>QoS Packet Scheduler</p></td>
-<td><p>Optionally enabled</p></td>
-</tr>
-<tr class="odd">
-<td><p>File and Printer Sharing for Microsoft Networks</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="even">
-<td><p>Internet Protocol version 6 (TCP/IP v6)</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="odd">
-<td><p>Internet Protocol version 4 (TCP/IP v4)</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="even">
-<td><p>Link-Layer Topology Discovery Mapper I/O Driver</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="odd">
-<td><p>Link-Layer Topology Discovery Responder</p></td>
-<td><p>Enabled</p></td>
-</tr>
-</tbody>
-</table>
+|Networking features|Settings|
+|---|---|
+|Client for Microsoft Networks|Enabled|
+|QoS Packet Scheduler|Optionally enabled|
+|File and Printer Sharing for Microsoft Networks|Enabled|
+|Internet Protocol version 6 (TCP/IP v6)|Enabled|
+|Internet Protocol version 4 (TCP/IP v4)|Enabled|
+|Link-Layer Topology Discovery Mapper I/O Driver|Enabled|
+|Link-Layer Topology Discovery Responder|Enabled|
 
 The TCP/IP v4 properties for a MAPI network adapter are configured as follows:
 
 - The IP address for a DAG member's MAPI network can be manually assigned or configured to use DHCP. If DHCP is used, we recommend using persistent reservations for the server's IP address.
-
 - The MAPI network typically uses a default gateway, although one isn't required.
-
 - At least one DNS server address must be configured. Using multiple DNS servers is recommended for redundancy.
-
 - The **Register this connection's addresses in DNS** check box should be selected.
 
 ## Replication network adapter configuration
 
 A network adapter intended for use by a Replication network should be configured as described in the following table.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Networking features</th>
-<th>Settings</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Client for Microsoft Networks</p></td>
-<td><p>Disabled</p></td>
-</tr>
-<tr class="even">
-<td><p>QoS Packet Scheduler</p></td>
-<td><p>Optionally enabled</p></td>
-</tr>
-<tr class="odd">
-<td><p>File and Printer Sharing for Microsoft Networks</p></td>
-<td><p>Disabled</p></td>
-</tr>
-<tr class="even">
-<td><p>Internet Protocol version 6 (TCP/IP v6)</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="odd">
-<td><p>Internet Protocol version 4 (TCP/IP v4)</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="even">
-<td><p>Link-Layer Topology Discovery Mapper I/O Driver</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="odd">
-<td><p>Link-Layer Topology Discovery Responder</p></td>
-<td><p>Enabled</p></td>
-</tr>
-</tbody>
-</table>
+|Networking features|Settings|
+|---|---|
+|Client for Microsoft Networks|Disabled|
+|QoS Packet Scheduler|Optionally enabled|
+|File and Printer Sharing for Microsoft Networks|Disabled|
+|Internet Protocol version 6 (TCP/IP v6)|Enabled|
+|Internet Protocol version 4 (TCP/IP v4)|Enabled|
+|Link-Layer Topology Discovery Mapper I/O Driver|Enabled|
+|Link-Layer Topology Discovery Responder|Enabled|
 
 The TCP/IP v4 properties for a Replication network adapter are configured as follows:
 
 - The IP address for a DAG member's Replication network can be manually assigned or configured to use DHCP. If DHCP is used, we recommend using persistent reservations for the server's IP address.
-
 - Replication networks typically don't have default gateways, and if the MAPI network has a default gateway, no other networks should have default gateways. Routing of network traffic on a Replication network can be configured by using persistent, static routes to the corresponding network on other DAG members using gateway addresses that have the ability to route between the Replication networks. All other traffic not matching this route will be handled by the default gateway that's configured on the adapter for the MAPI network.
-
 - DNS server addresses shouldn't be configured.
-
 - The **Register this connection's addresses in DNS** check box shouldn't be selected.
 
 ## Witness server requirements
 
-A *witness server* is a server outside a DAG that's used to achieve and maintain quorum when the DAG has an even number of members. DAGs with an odd number of members don't use a witness server. All DAGs with an even number of members must use a witness server. The witness server can be any computer running Windows Server. There is no requirement that the version of the Windows Server operating system of the witness server matches the operating system used by the DAG members.
+A _witness server_ is a server outside a DAG that's used to achieve and maintain quorum when the DAG has an even number of members. DAGs with an odd number of members don't use a witness server. All DAGs with an even number of members must use a witness server. The witness server can be any computer running Windows Server. There is no requirement that the version of the Windows Server operating system of the witness server matches the operating system used by the DAG members.
 
-Quorum is maintained at the cluster level, underneath the DAG. A DAG has quorum when most of its members are online and can communicate with the other online members of the DAG. This notion of quorum is one aspect of the concept of quorum in Windows failover clustering. A related and necessary aspect to quorum in failover clusters is the *quorum resource*. The quorum resource is a resource inside a failover cluster that provides a means for arbitration leading to cluster state and membership decisions. The quorum resource also provides persistent storage for storing configuration information. A companion to the quorum resource is the *quorum log*, which is a configuration database for the cluster. The quorum log contains information such as which servers are members of the cluster, what resources are installed in the cluster, and the state of those resources (for example, online or offline).
+Quorum is maintained at the cluster level, underneath the DAG. A DAG has quorum when most of its members are online and can communicate with the other online members of the DAG. This notion of quorum is one aspect of the concept of quorum in Windows failover clustering. A related and necessary aspect to quorum in failover clusters is the _quorum resource_. The quorum resource is a resource inside a failover cluster that provides a means for arbitration leading to cluster state and membership decisions. The quorum resource also provides persistent storage for storing configuration information. A companion to the quorum resource is the _quorum log*, which is a configuration database for the cluster. The quorum log contains information such as which servers are members of the cluster, what resources are installed in the cluster, and the state of those resources (for example, online or offline).
 
-It's critical that each DAG member has a consistent view of how the DAG's underlying cluster is configured. The quorum acts as the definitive repository for all configuration information relating to the cluster. The quorum is also used as a tie-breaker to avoid *split-brain* syndrome. Split brain syndrome is a condition that occurs when DAG members can't communicate with each other but are running. Split brain syndrome is prevented by always requiring most of the DAG members (and if the DAGs have an even number of members, the DAG witness server) to be available and interacting for the DAG to be operational.
+It's critical that each DAG member has a consistent view of how the DAG's underlying cluster is configured. The quorum acts as the definitive repository for all configuration information relating to the cluster. The quorum is also used as a tie-breaker to avoid _split-brain_ syndrome. Split brain syndrome is a condition that occurs when DAG members can't communicate with each other but are running. Split brain syndrome is prevented by always requiring most of the DAG members (and if the DAGs have an even number of members, the DAG witness server) to be available and interacting for the DAG to be operational.
 
 ## Planning for site resilience
 
@@ -257,19 +175,12 @@ The solution's architects and administrators will also identify which set of use
 Constructing the appropriate SLAs often requires answering the following basic questions:
 
 - What level of service is required after the primary datacenter fails?
-
 - Do users need their data or just messaging services?
-
 - How rapidly is data required?
-
 - How many users must be supported?
-
 - How will users access their data?
-
 - What is the standby datacenter activation SLA?
-
 - How is service moved back to the primary datacenter?
-
 - Are the resources dedicated to the site resilience solution?
 
 By answering these questions, you begin to shape a site resilient design for your messaging solution. A core requirement of recovery from site failure is to create a solution that gets the necessary data to the backup datacenter that hosts the backup messaging service.
