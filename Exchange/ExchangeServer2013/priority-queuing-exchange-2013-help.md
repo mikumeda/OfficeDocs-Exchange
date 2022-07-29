@@ -19,15 +19,13 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-*Priority queuing* is a feature of Microsoft Exchange Server 2013 that enables the sender-defined priority of a message to influence the processing of the message by the Transport service on the Mailbox server.
+*Priority queuing_ is a feature of Microsoft Exchange Server 2013 that enables the sender-defined priority of a message to influence the processing of the message by the Transport service on the Mailbox server.
 
 The message priority is assigned by the sender in Microsoft Outlook when the sender creates and sends the message. The sender can set any of the following message priority values in Outlook:
 
-  - Low importance
-
-  - Normal importance
-
-  - High importance
+- Low importance
+- Normal importance
+- High importance
 
 The default priority for a message created in Outlook or Outlook Web App is Normal priority. The message priority is stored in the `X-Priority` header field in the message header.
 
@@ -45,70 +43,13 @@ The following table explains each key in more detail.
 
 ### Priority queuing keys in the EdgeTransport.exe.config file
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Key</th>
-<th>Default value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>PriorityQueuingEnabled</em></p></td>
-<td><p><code>false</code></p></td>
-<td><p>This key enables or disables priority queuing in the Transport service on the Mailbox server. Valid input for this key is <code>true</code> or <code>false</code>.</p>
-<p>When this key is <code>false</code>, priority queuing is disabled, and all the priority queuing message limits that exist in the EdgeTransport.exe.config file are ignored.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>MaxHighPriorityMessageSize</em></p></td>
-<td><p><code>250KB</code></p></td>
-<td><p>This key specifies the maximum allowed size of a High priority message. If a High priority message is larger than the value specified by this key, the message is automatically downgraded from High priority to Normal priority.</p>
-<p>The value of this key should be significantly less than the value of the <em>MaxSendMessageSize</em> parameter on the <strong>Set-TransportConfig</strong> cmdlet. The default value of this parameter is <code>10 MB</code>. The difference in these two values helps ensure consistent and predictable delivery times for High priority messages.</p>
-<p>When you enter a value, qualify the value with one of the following units:</p>
-<ul>
-<li><p>KB (kilobytes)</p></li>
-<li><p>MB (megabytes)</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p><em>LowPriorityDelayNotificationTimeout</em></p>
-<p><em>NormalPriorityDelayNotificationTimeout</em></p>
-<p><em>HighPriorityDelayNotificationTimeout</em></p></td>
-<td><p><strong>Low</strong>   <code>8:00:00</code> (8 hours)</p>
-<p><strong>Normal</strong>   <code>4:00:00</code> (4 hours)</p>
-<p><strong>High</strong>   <code>00:30:00</code> (30 minutes)</p></td>
-<td><p>These keys specify the timeout interval for delay delivery status notification (DSN) messages based on the message priority.</p>
-<p>After each message delivery failure, the Transport service generates a delay DSN message and queues it for delivery to the sender of the undeliverable message. This delay DSN message is sent only after a specified delay notification time-out interval, and only if the failed message wasn't successfully delivered during that time. This delay prevents the sending of unnecessary delay DSN messages that may be caused by temporary message transmission failures.</p>
-<p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>LowPriorityMessageExpirationTimeout</em></p>
-<p><em>NormalPriorityMessageExpirationTimeout</em></p>
-<p><em>HighPriorityMessageExpirationTimeout</em></p></td>
-<td><p><strong>Low</strong>   <code>2.00:00:00</code> (2 days)</p>
-<p><strong>Normal</strong>   <code>2.00:00:00</code> (2 days)</p>
-<p><strong>High</strong>   <code>8:00:00</code> (8 hours)</p></td>
-<td><p>These keys specify the maximum length of time that the Transport service tries to deliver a failed message. If the message can't be successfully delivered before the expiration time-out interval has passed, a non-delivery report (NDR) that contains the original message or the message headers is delivered to the sender.</p>
-<p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>MaxPerDomainLowPriorityConnections</em></p>
-<p><em>MaxPerDomainNormalPriorityConnections</em></p>
-<p><em>MaxPerDomainHighPriorityConnections</em></p></td>
-<td><p><strong>Low</strong>   2</p>
-<p><strong>Normal</strong>   15</p>
-<p><strong>High</strong>   3</p></td>
-<td><p>These keys specify the maximum number of connections that the Transport service can have open to any single remote domain. The outgoing connections to remote domains occur by using the delivery queues and Send connectors that exist on the Mailbox server.</p>
-<p>The sum these three keys should be less than or equal to the value of the <em>MaxPerDomainOutboundConnections</em> parameter on the <strong>Set-TransportService</strong> cmdlet. The default value of this parameter is <code>20</code>.</p></td>
-</tr>
-</tbody>
-</table>
+|Key|Default value|Description|
+|---|---|---|
+|_PriorityQueuingEnabled_|`false`|This key enables or disables priority queuing in the Transport service on the Mailbox server. Valid input for this key is `true` or `false`. <br/><br/> When this key is `false`, priority queuing is disabled, and all the priority queuing message limits that exist in the EdgeTransport.exe.config file are ignored.|
+|_MaxHighPriorityMessageSize_|`250KB`|This key specifies the maximum allowed size of a High priority message. If a High priority message is larger than the value specified by this key, the message is automatically downgraded from High priority to Normal priority. <br/><br/> The value of this key should be significantly less than the value of the _MaxSendMessageSize_ parameter on the **Set-TransportConfig** cmdlet. The default value of this parameter is `10 MB`. The difference in these two values helps ensure consistent and predictable delivery times for High priority messages. <br/><br/> When you enter a value, qualify the value with one of the following units: <ul><li>KB (kilobytes)</li><li>MB (megabytes)</li></ul>|
+|_LowPriorityDelayNotificationTimeout_ <br/><br/> _NormalPriorityDelayNotificationTimeout_ <br/><br/> _HighPriorityDelayNotificationTimeout_|**Low**: `8:00:00` (8 hours) <br/><br/> **Normal**: `4:00:00` (4 hours) <br/><br/> **High**: `00:30:00` (30 minutes)|These keys specify the timeout interval for delay delivery status notification (DSN) messages based on the message priority. <br/><br/> After each message delivery failure, the Transport service generates a delay DSN message and queues it for delivery to the sender of the undeliverable message. This delay DSN message is sent only after a specified delay notification time-out interval, and only if the failed message wasn't successfully delivered during that time. This delay prevents the sending of unnecessary delay DSN messages that may be caused by temporary message transmission failures. <br/><br/> To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.|
+|_LowPriorityMessageExpirationTimeout_ <br/><br/> _NormalPriorityMessageExpirationTimeout_ <br/><br/> _HighPriorityMessageExpirationTimeout_|**Low**: `2.00:00:00` (2 days) <br/><br/> **Normal**: `2.00:00:00` (2 days) <br/><br/> **High**: `8:00:00` (8 hours)|These keys specify the maximum length of time that the Transport service tries to deliver a failed message. If the message can't be successfully delivered before the expiration time-out interval has passed, a non-delivery report (NDR) that contains the original message or the message headers is delivered to the sender. <br/><br/> To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.|
+|_MaxPerDomainLowPriorityConnections_ <br/><br/> _MaxPerDomainNormalPriorityConnections_ <br/><br/> _MaxPerDomainHighPriorityConnections_|**Low**: 2 <br/><br/> **Normal**: 15 <br/><br/> **High**: 3|These keys specify the maximum number of connections that the Transport service can have open to any single remote domain. The outgoing connections to remote domains occur by using the delivery queues and Send connectors that exist on the Mailbox server. <br/><br/> The sum these three keys should be less than or equal to the value of the _MaxPerDomainOutboundConnections_ parameter on the **Set-TransportService** cmdlet. The default value of this parameter is `20`.|
 
 ## How priority queuing affects other message limits on Mailbox servers
 
@@ -118,42 +59,12 @@ Some message limits available in the **Set-TransportService** cmdlet have corres
 
 ### Message limits in the Set-TransportService cmdlet that correspond to priority queuing message limits in the EdgeTransport.exe.config file
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Source</th>
-<th>Parameter or key</th>
-<th>Default value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Set-TransportService</strong></p></td>
-<td><p><em>DelayNotificationTimeOut</em></p></td>
-<td><p><code>4:00:00</code> (4 hours)</p></td>
-</tr>
-<tr class="even">
-<td><p>EdgeTransport.exe.config</p></td>
-<td><p><em>NormalPriorityDelayNotificationTimeout</em></p></td>
-<td><p><code>4:00:00</code> (4 hours)</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Set-TransportService</strong></p></td>
-<td><p><em>MessageExpirationTimeOut</em></p></td>
-<td><p><code>2.00:00:00</code> (2 days)</p></td>
-</tr>
-<tr class="even">
-<td><p>EdgeTransport.exe.config</p></td>
-<td><p><em>NormalPriorityMessageExpirationTimeout</em></p></td>
-<td><p><code>2.00:00:00</code> (2 days)</p></td>
-</tr>
-</tbody>
-</table>
+|Source|Parameter or key|Default value|
+|---|---|---|
+|**Set-TransportService**|_DelayNotificationTimeOut_|`4:00:00` (4 hours)|
+|EdgeTransport.exe.config|_NormalPriorityDelayNotificationTimeout_|`4:00:00` (4 hours)|
+|**Set-TransportService**|_MessageExpirationTimeOut_|`2.00:00:00` (2 days)|
+|EdgeTransport.exe.config|_NormalPriorityMessageExpirationTimeout_|`2.00:00:00` (2 days)|
 
 When priority queuing is disabled, all the priority queuing message limits that exist in the EdgeTransport.exe.config configuration file are ignored. All the message limits on the **Set-TransportService** cmdlet apply to all messages that travel through the Transport service on the Mailbox server.
 
@@ -161,4 +72,4 @@ When priority queuing is enabled, the priority queuing message limits in the Edg
 
 ## User Settings for Priority Queuing
 
-The **Set-Mailbox** cmdlet has the *DowngradeHighPriorityMessagesEnabled* parameter. The default value is `$false`. When this parameter is set to `$true`, any High priority messages sent from the mailbox are automatically downgraded to Normal priority.
+The **Set-Mailbox** cmdlet has the _DowngradeHighPriorityMessagesEnabled_ parameter. The default value is `$false`. When this parameter is set to `$true`, any High priority messages sent from the mailbox are automatically downgraded to Normal priority.
