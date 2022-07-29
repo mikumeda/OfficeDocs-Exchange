@@ -27,90 +27,19 @@ If you receive an alert that specifies that DataProtection is unhealthy, this in
 
 The DataProtection Health service is monitored by using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ClusterEndpointProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ClusterEndpointMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>ClusterGroupProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ClusterGroupMonitor        </p></td>
-</tr>
-<tr class="odd">
-<td><p>ClusterNetworkProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ClusterNetworkMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>ClusterServiceCrashProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ClusterServiceCrashMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>ServerOneCopyProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Director</p></td>
-<td><p>ServerOneCopyMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>ServerOneCopyInternalMonitorProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ServerOneCopyInternalMonitorMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>ServiceHealthMSExchangeReplEndpointProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ServiceHealthMSExchangeReplEndpointMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>ServiceHealthMSExchangeReplCrashProbe </p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ServiceHealthMSExchangeReplCrashMonitor </p></td>
-</tr>
-<tr class="odd">
-<td><p>ServerSiteFailureProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ServerSiteFailureMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>StorageApparentControllerIssuesProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>StorageApparentControllerIssuesMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>DatabaseHealthTooManyMountedDatabaseProbe</p></td>
-<td><p>DataProtection</p></td>
-<td><p>Active Directory</p></td>
-<td><p>DatabaseHealthTooManyMountedDatabaseMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|ClusterEndpointProbe|DataProtection|Active Directory|ClusterEndpointMonitor|
+|ClusterGroupProbe|DataProtection|Active Directory|ClusterGroupMonitor|
+|ClusterNetworkProbe|DataProtection|Active Directory|ClusterNetworkMonitor|
+|ClusterServiceCrashProbe|DataProtection|Active Directory|ClusterServiceCrashMonitor|
+|ServerOneCopyProbe|DataProtection|Active Director|ServerOneCopyMonitor|
+|ServerOneCopyInternalMonitorProbe|DataProtection|Active Directory|ServerOneCopyInternalMonitorMonitor|
+|ServiceHealthMSExchangeReplEndpointProbe|DataProtection|Active Directory|ServiceHealthMSExchangeReplEndpointMonitor|
+|ServiceHealthMSExchangeReplCrashProbe |DataProtection|Active Directory|ServiceHealthMSExchangeReplCrashMonitor|
+|ServerSiteFailureProbe|DataProtection|Active Directory|ServerSiteFailureMonitor|
+|StorageApparentControllerIssuesProbe|DataProtection|Active Directory|StorageApparentControllerIssuesMonitor|
+|DatabaseHealthTooManyMountedDatabaseProbe|DataProtection|Active Directory|DatabaseHealthTooManyMountedDatabaseMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -146,28 +75,9 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 
       The returned results should resemble the following.
 
-      <table>
-      <colgroup>
-      <col/>
-      <col/>
-      <col/>
-      <col/>
-      </colgroup>
-      <tbody>
-      <tr class="odd">
-      <td><p><code>ItemType</code></p></td>
-      <td><p><code>HealthSetName</code></p></td>
-      <td><p><code>Name</code></p></td>
-      <td><p><code>TargetResource</code></p></td>
-      </tr>
-      <tr class="even">
-      <td><p><code>Probe</code></p></td>
-      <td><p><code>DataProtection</code></p></td>
-      <td><p><code>ClusterNetworkProbe</code></p></td>
-      <td><p><code>MSExchangeRepl</code></p></td>
-      </tr>
-      </tbody>
-      </table>
+      |ItemType|HealthSetName|Name|TargetResource|
+      |---|---|---|---|
+      |`Probe`|`DataProtection`|`ClusterNetworkProbe`|`MSExchangeRepl`|
 
    3. Rerun the associated probe for the monitor that's in an unhealthy state. Refer to the table in the Explanation section to find the associated probe. To do this, run the following command:
 
@@ -188,11 +98,8 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 When you receive an alert from a health set, the email message contains the following information:
 
 - Name of the server that sent the alert
-
 - Time and date when the alert occurred
-
 - Authentication mechanism that was used, and credential information
-
 - Full exception trace of the last error, including diagnostic data and specific HTTP header information
 
   You can use the information in the full exception trace to help troubleshoot the issue. The exception generated by the probe contains a failure Reason that describes why the probe failed.
@@ -205,112 +112,28 @@ For example:
 Test-ReplicationHealth <ServerName>
 ```
 
-The returned results will resemble the following:
+The returned results will resemble the following table:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><code>Server</code></p></td>
-<td><p><code>Check</code></p></td>
-<td><p><code>Result</code></p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>ClusterService</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>ReplayService</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>ActiveManager</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>TasksRpcListener</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>TcpListener</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>ServerLocatorService</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DagMembersUp</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>ClusterNetwork</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>QuorumGroup</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>FileShareQuorum</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DatabaseRedundancyCheck</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DatabaseAvailabilityCheck</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DBCopySuspended</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DBCopyFailed</code></p></td>
-<td><p>Passed</p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DBInitializing</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DBDisconnected</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="even">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DBLogCopyKeepingUp</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-<tr class="odd">
-<td><p><em>&lt;ServerName&gt;</em></p></td>
-<td><p><code>DBLogReplayKeepingUp</code></p></td>
-<td><p><code>Passed</code></p></td>
-</tr>
-</tbody>
-</table>
+|Server|Check|Result|
+|---|---|---|
+|_\<ServerName\>_|`ClusterService`|`Passed`|
+|_\<ServerName\>_|`ReplayService`|`Passed`|
+|_\<ServerName\>_|`ActiveManager`|`Passed`|
+|_\<ServerName\>_|`TasksRpcListener`|`Passed`|
+|_\<ServerName\>_|`TcpListener`|`Passed`|
+|_\<ServerName\>_|`ServerLocatorService`|`Passed`|
+|_\<ServerName\>_|`DagMembersUp`|`Passed`|
+|_\<ServerName\>_|`ClusterNetwork`|`Passed`|
+|_\<ServerName\>_|`QuorumGroup`|`Passed`|
+|_\<ServerName\>_|`FileShareQuorum`|`Passed`|
+|_\<ServerName\>_|`DatabaseRedundancyCheck`|`Passed`|
+|_\<ServerName\>_|`DatabaseAvailabilityCheck`|`Passed`|
+|_\<ServerName\>_|`DBCopySuspended`|`Passed`|
+|_\<ServerName\>_|`DBCopyFailed`|Passed|
+|_\<ServerName\>_|`DBInitializing`|`Passed`|
+|_\<ServerName\>_|`DBDisconnected`|`Passed`|
+|_\<ServerName\>_|`DBLogCopyKeepingUp`|`Passed`|
+|_\<ServerName\>_|`DBLogReplayKeepingUp`|`Passed`|
 
 If all components display **Passed** in the **Result** column, try to rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 

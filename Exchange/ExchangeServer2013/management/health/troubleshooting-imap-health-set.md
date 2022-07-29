@@ -31,58 +31,12 @@ If you receive an alert that specifies that IMAP is unhealthy, this alert indica
 
 The IMAP4 service is monitored by using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ImapCTPProbe</p></td>
-<td><p>IMAP</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p>
-<p>Mailbox Server Authentication</p>
-<p>High Availability</p>
-<p>Networking</p></td>
-<td><p>ImapCTPMonitor (IMAP health set)</p></td>
-</tr>
-<tr class="even">
-<td><p>ImapProxyTestProbe</p></td>
-<td><p>IMAP.Proxy</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p></td>
-<td><p>ImapProxyTestMonitor(IMAP.Proxy health set)</p></td>
-</tr>
-<tr class="odd">
-<td><p>ImapDeepTestProbe</p></td>
-<td><p>IMAP.Protocol</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p>
-<p>Information Store</p>
-<p>High Availability</p></td>
-<td><p>IMAP.Protocol (IMAP.Protocol health set)</p></td>
-</tr>
-<tr class="even">
-<td><p>ImapSelfTestProbe</p></td>
-<td><p>IMAP.Protocol</p></td>
-<td><p>Active Directory</p>
-<p>Authentication</p></td>
-<td><p>IMAP.Protocol (IMAP.Protocol health set)</p>
-<p>AverageCommandProcessingTimeGt60sMonitor (IMAP health set)</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|ImapCTPProbe|IMAP|Active Directory <br/><br/> Authentication <br/><br/> Mailbox Server Authentication <br/><br/> High Availability <br/><br/> Networking|ImapCTPMonitor (IMAP health set)|
+|ImapProxyTestProbe|IMAP.Proxy|Active Directory <br/><br/> Authentication|ImapProxyTestMonitor(IMAP.Proxy health set)|
+|ImapDeepTestProbe|IMAP.Protocol|Active Directory <br/><br/> Authentication <br/><br/> Information Store <br/><br/> High Availability|IMAP.Protocol (IMAP.Protocol health set)|
+|ImapSelfTestProbe|IMAP.Protocol|Active Directory <br/><br/> Authentication|IMAP.Protocol (IMAP.Protocol health set) <br/><br/> AverageCommandProcessingTimeGt60sMonitor (IMAP health set)|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -186,7 +140,7 @@ This monitor alert is typically issued on CAS servers.
       Get-ServerHealth mailbox1.contoso.com | ?{$_.HealtSetName -like "IMAP*"}
       ```
 
-      **Note**: In this command, replace *mailbox1.contoso.com* with the actual Mailbox server name.
+      **Note**: In this command, replace _mailbox1.contoso.com_ with the actual Mailbox server name.
 
    7. If any of the monitors that are listed in the command output are reported as unhealthy, you must address those monitors first. Follow the troubleshooting steps outlined in the ImapTestDeepMonitor and ImapSelfTestMonitor Recovery Actions section.
 
@@ -228,7 +182,7 @@ This monitor alert is typically issued on CA and Mailbox servers.
    Get-ServerHealth server1.contoso.com | ?{$_.HealthSetName -like "IMAP*"}
    ```
 
-   **Note**: In this command, replace *server1.contoso.com* with the actual server name.
+   **Note**: In this command, replace _server1.contoso.com_ with the actual server name.
 
 3. Wait 10 minutes, and then run the command shown in step 2 again to see whether the monitor stays healthy.
 
@@ -240,7 +194,7 @@ This monitor alert is typically issued on CA and Mailbox servers.
       Set-MailboxServer server1.contoso.com -DatabaseCopyActivationDisabledAndMoveNow $true
       ```
 
-      **Note**: In this and all subsequent code examples, replace *server1.contoso.com* with the actual server name.
+      **Note**: In this and all subsequent code examples, replace _server1.contoso.com_ with the actual server name.
 
    2. Verify that all databases have been moved off the server that is reporting the issue. To do this, run the following command:
 

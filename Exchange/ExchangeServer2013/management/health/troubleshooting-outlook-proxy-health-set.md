@@ -27,30 +27,9 @@ If you receive an alert that specifies that the Outlook.Proxy service is unhealt
 
 The Outlook.Proxy service is monitored by using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>OutlookProxyTestProbe</p></td>
-<td><p>Outlook.Proxy</p></td>
-<td><p>Active Directory</p></td>
-<td><p>OutlookProxyTestMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|OutlookProxyTestProbe|Outlook.Proxy|Active Directory|OutlookProxyTestMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -59,9 +38,7 @@ For more information about probes and monitors, see [Server health and performan
 This probe may fail for any of the following common reasons:
 
 - The application pool that is hosted on the monitored CAS is not working correctly.
-
 - The monitoring account credentials are incorrect.
-
 - The Domain Controllers are not responding.
 
 ## User Action
@@ -116,15 +93,15 @@ When you receive an alert from a health set, the email message contains the foll
 
 To troubleshoot this issue, follow these steps:
 
-1. Review the protocol logs on the CA servers. Protocol logs are located in the *\<exchange server installation directory\>*\\Logging\\HttpProxy*\\\<protocol\>* folder on the CAS.
+1. Review the protocol logs on the CA servers. Protocol logs are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\_\<protocol\>_** folder on the CAS.
 
-2. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using: https:// *\<servername\>*/owa.
+2. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using: https://_\<servername\>_/owa.
 
 3. Start IIS Manager, and then connect to the server that's reporting the issue to determine the **MSExchangeOABAppPool** application pool is running on CAS server.
 
-4. Click **Application Pools**, and then recycle the **MSExchangeRpcProxyAppPool** application pool by running the following command from the Shell:
+4. Click **Application Pools**, and then recycle the **MSExchangeRpcProxyAppPool** application pool by running the following command:
 
-   ```powershell
+   ```DOS
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangeRpcProxyAppPool
    ```
 

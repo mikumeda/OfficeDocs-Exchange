@@ -97,13 +97,13 @@ To troubleshoot this issue, follow these steps:
 
 1. Review the protocol logs on the CAS. Protocol logs are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\\_<protocol\>_** folder on the CAS.
 
-2. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using: https:// _\<servername\>_/owa.
+2. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using: https://_\<servername\>_/owa.
 
 3. Start IIS Manager, and then connect to the server that's reporting the issue. Verify that the MSExchangeAutodiscoverAppPool is running on CAS.
 
-4. Click **Application Pools**, and then recycle the **MSExchangeAutoDiscoverAppPool** application pool by running the following command from the Shell:
+4. Click **Application Pools**, and then recycle the **MSExchangeAutoDiscoverAppPool** application pool by running the following command:
 
-   ```powershell
+   ```DOS
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangeAutoDiscoverAppPool
    ```
 

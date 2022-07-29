@@ -19,60 +19,37 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-The RPS.Proxy health set monitors the overall health of the Remote PowerShell service.
+The `RPS.Proxy` health set monitors the overall health of the Remote PowerShell service.
 
-If you receive an alert specifying that the RPS.Proxy is unhealthy, this indicates an issue that might prevent you from using Remote PowerShell to access Exchange.
+If you receive an alert specifying that the `RPS.Proxy` is unhealthy, this alert indicates an issue that might prevent you from using Remote PowerShell to access Exchange.
 
 ## Explanation
 
 The RPS service is monitored using the following probes and monitors:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>RPSProxyTestProbe</p></td>
-<td><p>RPS.Proxy</p></td>
-<td><p>Active Directory</p></td>
-<td><p>RPSProxyTestMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|`RPSProxyTestProbe`|`RPS.Proxy`|Active Directory|RPSProxyTestMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 ## Common issues
 
-When this probe fails there can be multiple reasons for the problem. Some of the more common issues include the following:
+When this probe fails, there can be multiple reasons for the problem. Some of the more common issues include:
 
-- The application pool that is hosted on the monitored CAS server is not working properly.
-
+- The application pool that's hosted on the monitored CAS server isn't working properly.
 - The monitoring account credentials are incorrect.
-
 - The Domain Controllers are not responding.
 
 ## User Action
 
-It is possible that the service was able to recover after issuing the alert. Therefore, when you receive an alert that specifies that the health set is unhealthy, the first thing you should do is to verify that the issue still exists. If it does, then perform the appropriate recovery actions outlined in the following sections.
+It's possible that the service was able to recover after issuing the alert. When an alert specifies that the health set is unhealthy, the first thing you should do is to verify that the issue still exists. If it does, perform the appropriate recovery actions outlined in the following sections.
 
 ## Verifying the issue still exists
 
 1. Identify the health set name and the server name in the alert.
 
-2. The message details provide information about what exactly caused the alert to be raised. In most cases, the message details would provide sufficient troubleshooting information to identify the root cause. If the message details are not clear, do the following:
+2. The message details provide information about what exactly caused the alert to be raised. In most cases, the message details would provide sufficient troubleshooting information to identify the root cause. If the message details are not clear, do the following steps:
 
    1. Open Exchange Management Shell and run the following command to retrieve the details of the health set that issued the alert:
 
@@ -80,7 +57,7 @@ It is possible that the service was able to recover after issuing the alert. The
       Get-ServerHealth <server name> | ?{$_.HealthSetName -eq "<health set name>"}
       ```
 
-      For example, to retrieve the RPS.Proxy health set details on server1.contoso.com run the following command:
+      For example, to retrieve the `RPS.Proxy` health set details on server1.contoso.com run the following command:
 
       ```powershell
       Get-ServerHealth server1.contoso.com | ?{$_.HealthSetName -eq "RPS.Proxy"}
@@ -88,7 +65,7 @@ It is possible that the service was able to recover after issuing the alert. The
 
    2. Review the command output and determine the monitor that reported the error. The **AlertValue** for the monitor that issued the alert will read `Unhealthy`.
 
-   3. Rerun the associated probe for the monitor that is in unhealthy state. Refer to the table in the Explanation section to find the associated probe. To do so, run the following command:
+   3. Rerun the associated probe for the monitor that's in unhealthy state. Refer to the table in the Explanation section to find the associated probe. To do so, run the following command:
 
       ```powershell
       Invoke-MonitoringProbe <health set name>\<probe name> -Server <server name> | Format-List
@@ -107,22 +84,20 @@ It is possible that the service was able to recover after issuing the alert. The
 When receiving an alert from a health set, the email will contain the following information:
 
 - The name of the CAS server that sent the alert.
-
-- Full exception trace including eroor messages, diagnostic data and specific HTTP header information. The information in the full exception trace can be used to help troubleshoot the issue.
-
+- Full exception trace including error messages, diagnostic data and specific HTTP header information. The information in the full exception trace can be used to help troubleshoot the issue.
 - The time and date when the issue occurred.
 
-To help troubleshoot this issue, perform the following:
+To help troubleshoot this issue, perform the following steps:
 
-1. Review the protocol logs on CAS servers. Protocol logs are located in the *\<exchange server installation directory\>*\\Logging\\HttpProxy*\\\<protocol\>* folder on the CAS server.
+1. Review the protocol logs on CAS servers. Protocol logs are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\_\<protocol\>_** folder on the CAS server.
 
-2. Create a test user account, and then logon to the CAS server by using the test user account, for example https:// *\<servername\>*/owa
+2. Create a test user account, and then logon to the CAS server by using the test user account. For example https://_\<servername\>_/owa
 
-3. Start IIS Manager and connect to the server that is reporting the issue and verify that the MSExchangePowerShellFrontEndAppPool is running on CAS server.
+3. Start IIS Manager and connect to the server that's reporting the issue and verify that the `MSExchangePowerShellFrontEndAppPool` is running on CAS server.
 
-4. Click on **Application Pools**, and then recycle the **MSExchangePowerShellFrontEndAppPool** application pool by running the following command from the Exchange Management Shell:
+4. Click on **Application Pools**, and then recycle the **MSExchangePowerShellFrontEndAppPool** application pool by running the following command:
 
-   ```powershell
+   ```DOS
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangePowerShellFrontEndAppPool
    ```
 

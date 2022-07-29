@@ -31,43 +31,11 @@ If you receive an alert that specifies that EWS is unhealthy, this indicates an 
 
 EWS is monitored by using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EwsCtpProbe</p></td>
-<td><p>EWS</p></td>
-<td><p>Information Store</p>
-<p>Active Directory Domain Services (AD DS)</p></td>
-<td><p>EwsCtpMonitor (EWS health set)</p></td>
-</tr>
-<tr class="even">
-<td><p>EwsSelfTestProbe</p></td>
-<td><p>EWS.Protocol</p></td>
-<td><p>Active Directory Domain Services (AD DS)</p></td>
-<td><p>EWSSelfTestMonitor</p></td>
-</tr>
-<tr class="odd">
-<td><p>EwsDeepTestProbe</p></td>
-<td><p>EWS.Protocol</p></td>
-<td><p>Information Store</p></td>
-<td><p>EWSDeepTestMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|EwsCtpProbe|EWS|Information Store <br/><br/> Active Directory Domain Services (AD DS)|EwsCtpMonitor (EWS health set)|
+|EwsSelfTestProbe|EWS.Protocol|Active Directory Domain Services (AD DS)|EWSSelfTestMonitor|
+|EwsDeepTestProbe|EWS.Protocol|Information Store|EWSDeepTestMonitor|
 
 This probe performs a full EWS logon from the Client Access server (CAS) to a Mailbox server by using a monitoring account. This probe calls the **GetFolder** method on EWS. For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -76,19 +44,12 @@ This probe performs a full EWS logon from the Client Access server (CAS) to a Ma
 This probe can fail for any of the following common reasons:
 
 - A mismatch exists between the authentication mechanism that is used by the probe and the authentication mechanism that is used on the CAS virtual directory.
-
 - The EWS Application pool in the CAS that's being monitored is not responding.
-
 - The CAS is experiencing networking issues when it connects to the Mailbox server.
-
 - The CAS is experiencing communication issues when it connects to Domain Controllers.
-
 - The Domain Controllers are not responding.
-
 - The EWS Application pool that resides on one or more Mailbox servers is not responding.
-
 - The user's database is not mounted, or the Information Store is unavailable for a specific mailbox.
-
 - The Information Store service on one or more Mailbox servers is experiencing issues.
 
 ## User Action
@@ -155,9 +116,9 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 
 2. Locate the MailboxDatabase for the failed probes. The, verify that the Mailbox database is active for the Mailbox server, and that the Information Store is healthy.
 
-3. Click **Application Pools**, and then recycle the **MSExchangeServicesAppPool** application pool by running the following command from the Shell:
+3. Click **Application Pools**, and then recycle the **MSExchangeServicesAppPool** application pool by running the following command:
 
-   ```powershell
+   ```DOS
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangeServicesAppPool
    ```
 
@@ -167,9 +128,9 @@ It's possible that the service recovered after it issued the alert. Therefore, w
 
 6. Rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 
-7. If the issue still exits, review the protocol log files on the CA and Mailbox servers. The protocol logs for the CAS reside in the *\<exchange server installation directory\>\\Logging\\HttpProxy\\Ews* folder. On the Mailbox server, the logs reside in the *\<exchange server installation directory\>\\Logging\\Ews* folder.
+7. If the issue still exits, review the protocol log files on the CA and Mailbox servers. The protocol logs for the CAS reside in the **%ExchangeInstallPath%Logging\\HttpProxy\\Ews** folder. On the Mailbox server, the logs reside in the **%ExchangeInstallPath%Logging\\Ews** folder.
 
-8. Create a test user account, and then log on by running the test user account against the given CAS. For example, log on by using: https:// \<servername\>/ews/exchange.asmx. If the issue still exists, try a different CAS to determine whether the problem is scoped to that CAS and not to the Mailbox server. If the test username passes, an issue may affect the specific Mailbox database or Mailbox server on which the monitoring mailbox is located. Try to repeat this step by using a test account that exists in the Mailbox database.
+8. Create a test user account, and then log on by running the test user account against the given CAS. For example, log on by using: `https://<servername>/ews/exchange.asmx`. If the issue still exists, try a different CAS to determine whether the problem is scoped to that CAS and not to the Mailbox server. If the test username passes, an issue may affect the specific Mailbox database or Mailbox server on which the monitoring mailbox is located. Try to repeat this step by using a test account that exists in the Mailbox database.
 
 9. Check network connectivity between the CA and Mailbox server.
 
@@ -183,7 +144,7 @@ It's possible that the service recovered after it issued the alert. Therefore, w
     Set-MailboxServer server1.contoso.com -DatabaseCopyActivationDisabledAndMoveNow $true
     ```
 
-    **Note**: In this and all subsequent code examples, replace *server1.contoso.com* with the actual server name.
+    **Note**: In this and all subsequent code examples, replace _server1.contoso.com_ with the actual server name.
 
 13. Verify that all the databases have been moved off the server that is reporting the issue. To do this, run the following command:
 
