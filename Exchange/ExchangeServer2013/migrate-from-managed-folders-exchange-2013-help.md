@@ -38,7 +38,7 @@ Unlike managed folders, which require users to move items to a managed folder ba
 Managed folders support different managed content settings for a folder, each with a different message class (such as email items or calendar items). Retention tags don't require a separate managed content settings object because the retention settings are specified in the tag's properties. It isn't supported to create retention tags for particular message classes, with the exception of a default policy tag (DPT) for voicemail messages. Retention tags also don't allow you to use journaling performed by the Managed Folder Assistant.
 
 > [!NOTE]
-> Journal rules, which are used to send copies of messages with a journal report to a journaling mailbox, are enforced in the transport pipeline by the Journaling agent and are independent of MRM. For more details, see [Journaling](journaling-exchange-2013-help).
+> Journal rules, which are used to send copies of messages with a journal report to a journaling mailbox, are enforced in the transport pipeline by the Journaling agent and are independent of MRM. For more details, see [Journaling](journaling-exchange-2013-help.md).
 
 The following table compares the MRM functionality available when using retention tags or managed folders.
 

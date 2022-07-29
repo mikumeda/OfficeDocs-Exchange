@@ -47,6 +47,7 @@ As you work on your disclaimers, consider which messages they should apply to. F
 Here are some examples of the conditions and exceptions you can use.
 
 |Description|Conditions and exceptions in EAC|Conditions and exceptions in the Shell|
+|---|---|---|
 |Outside your organization, if the original message doesn't include text from your disclaimer, such as "CONTOSO LEGAL NOTICE"|Condition: **The recipient is located** \> **Outside the organization** <br/><br/> Exception: **The subject or body** \> **Subject or body matches these text patterns** \> **CONTOSO LEGAL NOTICE**|`-FromScope NotInOrganization -ExceptIf -SubjectOrBodyMatches "CONTOSO LEGAL NOTICE"`|
 |Incoming messages with executable attachments|Condition 1: **The sender is located** \> **Outside the organization** <br/><br/> Condition 2: **Any attachment** \> **has executable content**|`-FromScope NotInOrganization -AttachmentHasExecutableContent`|
 |Sender is in the marketing department|Condition: **The sender** \> **is a member of this group** \> **group name**|`-FromMemberOf "Marketing Team"`|
