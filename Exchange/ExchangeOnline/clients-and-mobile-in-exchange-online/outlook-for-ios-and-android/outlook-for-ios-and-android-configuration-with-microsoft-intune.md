@@ -362,7 +362,7 @@ The newly created configuration policy is displayed on the **App configuration**
 The following sections outline the app configuration keys and their supported values. Configuration keys identified with the **Managed apps** device enrollment type are delivered through the App Protection Policy channel. Configuration keys identified with the **Managed devices** device enrollment type are delivered through the mobile device management OS channel. If a configuration key is listed with both device enrollment types, the key can be delivered through either channel; for more information, see [General app configuration scenarios](#general-app-configuration-scenarios).
 
 > [!IMPORTANT]
-> App configuration keys are case sensitive. Use the proper casing to ensure the configuration takes affect.
+> App configuration keys are case sensitive. Use the proper casing to ensure the configuration takes effect.
 
 ### iOS devices and third-party unified endpoint management solutions
 
