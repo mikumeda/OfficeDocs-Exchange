@@ -33,60 +33,14 @@ The protocol log files are text files that contain data in the comma-separated v
 
 ### Fields used to classify each protocol event
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>date-time</p></td>
-<td><p>The date and time of the protocol event. The value is formatted as <em>yyyy-mm-ddhh:mm:ss.fffZ</em>, where <em>yyyy</em> = year, <em>mm</em> = month, <em>dd</em> = day, <em>hh</em> = hour, <em>mm</em> = minute, <em>ss</em> = second, <em>fff</em> = fractions of a second, and <em>Z</em> signifies Zulu. Zulu is another way to indicate Coordinated Universal Time (UTC).</p></td>
-</tr>
-<tr class="even">
-<td><p>connector-id</p></td>
-<td><p>This field isn't used for POP3 and IMAP4 protocol logging.</p></td>
-</tr>
-<tr class="odd">
-<td><p>session-id</p></td>
-<td><p>A GUID that uniquely identifies the SMTP session that is associated with a protocol event.</p></td>
-</tr>
-<tr class="even">
-<td><p>sequence-number</p></td>
-<td><p>A counter that starts at 0 and is incremented for each event in the same session.</p></td>
-</tr>
-<tr class="odd">
-<td><p>local-endpoint</p></td>
-<td><p>The local endpoint of a POP3 or IMAP4 session. This consists of an IP address and TCP port number, formatted as follows: <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
-</tr>
-<tr class="even">
-<td><p>remote-endpoint</p></td>
-<td><p>The remote endpoint of a POP3 or IMAP4 session. This consists of an IP address and TCP port number, formatted as follows: <em>&lt;IP address&gt;</em>:<em>&lt;port&gt;</em>.</p></td>
-</tr>
-<tr class="odd">
-<td><p>event</p></td>
-<td><p>A single character that represents the protocol event. The possible values for the event are as follows:</p>
-<ul>
-<li><p>+   Connect</p></li>
-<li><p>-   Disconnect</p></li>
-<li><p>&gt;   Send</p></li>
-<li><p>&lt;   Receive</p></li>
-<li><p>*   Information</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>data</p></td>
-<td><p>Text information that's associated with the POP3 or IMAP4 event.</p></td>
-</tr>
-<tr class="odd">
-<td><p>context</p></td>
-<td><p>This field isn't used for POP3 and IMAP4 protocol logging.</p></td>
-</tr>
-</tbody>
-</table>
+|Field name|Description|
+|---|---|
+|date-time|The date and time of the protocol event. The value is formatted as _yyyy-mm-ddhh:mm:ss.fffZ_, where _yyyy_ = year, _mm_ = month, _dd_ = day, _hh_ = hour, _mm_ = minute, _ss_ = second, _fff_ = fractions of a second, and _Z_ signifies Zulu. Zulu is another way to indicate Coordinated Universal Time (UTC).|
+|connector-id|This field isn't used for POP3 and IMAP4 protocol logging.|
+|session-id|A GUID that uniquely identifies the SMTP session that is associated with a protocol event.|
+|sequence-number|A counter that starts at 0 and is incremented for each event in the same session.|
+|local-endpoint|The local endpoint of a POP3 or IMAP4 session. This consists of an IP address and TCP port number, formatted as follows: _\<IP address\>_:_\<port\>_.|
+|remote-endpoint|The remote endpoint of a POP3 or IMAP4 session. This consists of an IP address and TCP port number, formatted as follows: _\<IP address\>_:_\<port\>_.|
+|event|A single character that represents the protocol event. The possible values for the event are as follows: <ul><li>`+`: Connect</li><li>-: Disconnect</li><li>`>`: Send</li><li>`<`: Receive</li><li>`*`: Information</li></ul>|
+|data|Text information that's associated with the POP3 or IMAP4 event.|
+|context|This field isn't used for POP3 and IMAP4 protocol logging.|

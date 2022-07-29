@@ -31,61 +31,30 @@ If you receive an alert that specifies that the EWS.Protocol is unhealthy, this 
 
 The EWS.Protocol health set is composed of the following probes:
 
-1. EwsSelfTestProbe
+- EwsSelfTestProbe
+- EwsDeepTestProbe
 
-2. EwsDeepTestProbe
+The EwsSelfTestProbe does not depend on the Information Store. However, the EwsDeepTestProbe probe depends on the Information Store. Both of these probes perform EWS operations on the Mailbox server, and they use the same authentication method as a Client Access server (CAS). EwsSelfTestProbe calls the **ConvertId** method, and EwsDeepTestProbe calls the **GetFolder** method.
 
-The EwsSelfTestProbe does not depend on the Information Store. However, the EwsDeepTestProbe probe depends on the Information Store. Both of these probes perform EWS operations on the Mailbox server, and they use the same authentication method as a Client Access server (CAS). EwsSeftTestProbe calls the **ConvertId** method, and EwsDeepTestProbe calls the **GetFolder** method.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EwsSelfTestProbe</p></td>
-<td><p>EWS.Protocol</p></td>
-<td><p>Active Directory</p></td>
-<td><p>EWSSelfTestMonitor</p></td>
-</tr>
-<tr class="even">
-<td><p>EwsDeepTestProbe</p></td>
-<td><p>EWS.Protocol</p></td>
-<td><p>Information Store</p></td>
-<td><p>EWSDeepTestMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|EwsSelfTestProbe|EWS.Protocol|Active Directory|EWSSelfTestMonitor|
+|EwsDeepTestProbe|EWS.Protocol|Information Store|EWSDeepTestMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
 When you receive an alert from this HealthSet, the email message contains the following information:
 
-1. Name of the Mailbox server on which the alert originated
-
-2. Full exception trace of the last error, including diagnostic data and specific HTTP headers information
-
-3. Time when the incident occurred
+- Name of the Mailbox server on which the alert originated
+- Full exception trace of the last error, including diagnostic data and specific HTTP headers information
+- Time when the incident occurred
 
 ## Common issues
 
 This probe can fail for any of the following common reasons:
 
 - The EWS Application pool on the monitored Mailbox server is not functioning correctly.
-
 - The Domain Controllers are not responding, or they cannot communicate with the Mailbox server.
-
 - The user's database is not mounted, or the Information Store is unavailable for a specific mailbox.
 
 ## User Action
@@ -134,7 +103,7 @@ This monitor alert is typically issued for Mailbox servers.
 
 2. Locate the MailboxDatabase for the failed probes, and then verify that the MailboxDatabase is active for the MailboxServer, and that the Information Store is healthy.
 
-3. Click **Application Pools**, and then recycle the **MSExchangeServicesAppPool** application pool by running the following command from the Shell:
+3. Click **Application Pools**, and then recycle the **MSExchangeServicesAppPool** application pool by running the following command:
 
    ```powershell
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangeServicesAppPool
@@ -146,9 +115,9 @@ This monitor alert is typically issued for Mailbox servers.
 
 6. Rerun the associated probe as shown in step 2c in the Verifying the issue still exists section.
 
-7. If the issue still exits, review the protocol log files on the Mailbox server. On the Mailbox server, the logs reside in the *\<exchange server installation directory\>*\\Logging\\Ews folder.
+7. If the issue still exits, review the protocol log files on the Mailbox server. On the Mailbox server, the logs reside in the **%ExchangeInstallPath%Logging\\Ews** folder.
 
-8. Create a test user account, and then log on by using the test user account against the given Mailbox server on port 444 https://*\<servername\>*:444/ews/exchange.asmx. If the test is successful, an issue may affect the specific mailbox database or Mailbox server on which the monitoring mailbox is located. Try to repeat this step by using a test account on that database.
+8. Create a test user account, and then log on by using the test user account against the given Mailbox server on port 444 https://_\<servername\>_:444/ews/exchange.asmx. If the test is successful, an issue may affect the specific mailbox database or Mailbox server on which the monitoring mailbox is located. Try to repeat this step by using a test account on that database.
 
 9. Check for any alerts on the EWS.Protocol Health Set that might indicate a problem that affects the specific Mailbox server.
 
@@ -158,7 +127,7 @@ This monitor alert is typically issued for Mailbox servers.
     Set-MailboxServer server1.contoso.com -DatabaseCopyActivationDisabledAndMoveNow $true
     ```
 
-    In this and all subsequent code examples, replace *server1.contoso.com* with the actual server name.
+    In this and all subsequent code examples, replace _server1.contoso.com_ with the actual server name.
 
 11. Verify that all the databases have been moved off the server that is reporting the issue. To do this, run the following command:
 

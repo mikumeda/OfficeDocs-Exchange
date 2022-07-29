@@ -98,7 +98,7 @@ You can use the information in the full exception trace to help troubleshoot the
 
 To troubleshoot this issue, follow these steps:
 
-1. Review the protocol logs on the CA and Mailbox servers. By default, Protocol logs on the CAS are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\Autodiscover** folder. By default, Protocol log files on the Mailbox server are located in the **%ExchangeInstallPath%\\Logging\\Autodiscover** folder.
+1. Review the protocol logs on the CA and Mailbox servers. By default, Protocol logs on the CAS are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\Autodiscover** folder. By default, Protocol log files on the Mailbox server are located in the **%ExchangeInstallPath%Logging\\Autodiscover** folder.
 
 2. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using: https://_\<servername\>_/autodiscover/autodiscover.xml.
 
@@ -114,9 +114,9 @@ To troubleshoot this issue, follow these steps:
 
 6. Start IIS Manager, and then connect to the server that is reporting the issue. Verify that the **MSExchangeAutodiscoverAppPool** application pool is running on the CA and Mailbox servers.
 
-7. In IIS Manager, click **Application Pools**, and then recycle the **MSExchangeAutodiscoverAppPool** application pool by running the following command from the Shell:
+7. In IIS Manager, click **Application Pools**, and then recycle the **MSExchangeAutodiscoverAppPool** application pool by running the following command:
 
-   ```powershell
+   ```DOS
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangeAutodiscoverAppPool
    ```
 
@@ -124,7 +124,7 @@ To troubleshoot this issue, follow these steps:
 
 9. If the issue still exists, recycle the IIS service by using the IISReset utility or by running the following command:
 
-   ```powershell
+   ```DOS
    Iisreset /noforce
    ```
 

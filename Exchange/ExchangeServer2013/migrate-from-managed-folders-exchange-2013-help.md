@@ -27,7 +27,7 @@ A mailbox that has a managed folder mailbox policy applied can be migrated to us
 > Before you migrate from managed folders to retention policies in your production environment, we recommend that you test the process in a test environment.
 
 > [!TIP]
-> You can place mailboxes on retention hold to halt processing of retention policies or managed folder mailbox policies. Placing mailboxes on retention hold can be helpful in migration scenarios to avoid deleting messages or moving them to archive until new policy settings have been tested on test mailboxes or a small number of production mailboxes. For details, see <A href="/exchange/security-and-compliance/messaging-records-management/mailbox-retention-hold">Place a mailbox on retention hold</A>.
+> You can place mailboxes on retention hold to halt processing of retention policies or managed folder mailbox policies. Placing mailboxes on retention hold can be helpful in migration scenarios to avoid deleting messages or moving them to archive until new policy settings have been tested on test mailboxes or a small number of production mailboxes. For details, see [Place a mailbox on retention hold](mailbox-retention-hold-exchange-2013-help.md).
 
 For other management tasks related to MRM, see [Messaging Records Management Procedures](/office365/securitycompliance/inactive-mailboxes-in-office-365).
 
@@ -38,88 +38,26 @@ Unlike managed folders, which require users to move items to a managed folder ba
 Managed folders support different managed content settings for a folder, each with a different message class (such as email items or calendar items). Retention tags don't require a separate managed content settings object because the retention settings are specified in the tag's properties. It isn't supported to create retention tags for particular message classes, with the exception of a default policy tag (DPT) for voicemail messages. Retention tags also don't allow you to use journaling performed by the Managed Folder Assistant.
 
 > [!NOTE]
-> Journal rules, which are used to send copies of messages with a journal report to a journaling mailbox, are enforced in the transport pipeline by the Journaling agent and are independent of MRM. For more details, see <A href="journaling-exchange-2013-help.md">Journaling</A>.
+> Journal rules, which are used to send copies of messages with a journal report to a journaling mailbox, are enforced in the transport pipeline by the Journaling agent and are independent of MRM. For more details, see [Journaling](journaling-exchange-2013-help.md).
 
 The following table compares the MRM functionality available when using retention tags or managed folders.
 
 ### Retention tags vs. managed folders
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Functionality</th>
-<th>Retention tags</th>
-<th>Managed folders</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Specify retention settings for default folders (such as Inbox)</p></td>
-<td><p>Use retention policy tags (RPTs)</p></td>
-<td><p>Use managed default folders</p></td>
-</tr>
-<tr class="even">
-<td><p>Specify retention settings for entire mailbox</p></td>
-<td><p>Use a default policy tag (DPT)</p></td>
-<td><p>Use managed default folders</p></td>
-</tr>
-<tr class="odd">
-<td><p>Use retention settings for custom folders</p></td>
-<td><p>Use personal tags</p></td>
-<td><p>Using managed custom folders</p></td>
-</tr>
-<tr class="even">
-<td><p>Require managed content settings</p></td>
-<td><p>No (retention settings included in a retention tag)</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Use retention settings for different message classes (such as e-mail messages, voice mail, or calendar items)</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Support the Move To Archive action, which moves items to the user's archive mailbox</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>Support the Move To Managed Folder action</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Allow journaling using the Managed Folder Assistant</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Policy applied to user</p></td>
-<td><p>Retention policy</p></td>
-<td><p>Managed folder mailbox policy</p></td>
-</tr>
-<tr class="even">
-<td><p>Maximum number of policies that can be applied to a mailbox user</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
-</tr>
-<tr class="odd">
-<td><p>Processed by the Managed Folder Assistant</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Client support</p></td>
-<td><p>Microsoft Outlook 2010 and Office Outlook Web App</p></td>
-<td><p>Outlook 2010, Office Outlook 2007, and Outlook Web App</p></td>
-</tr>
-</tbody>
-</table>
+|Functionality|Retention tags|Managed folders|
+|---|---|---|
+|Specify retention settings for default folders (such as Inbox)|Use retention policy tags (RPTs)|Use managed default folders|
+|Specify retention settings for entire mailbox|Use a default policy tag (DPT)|Use managed default folders|
+|Use retention settings for custom folders|Use personal tags|Using managed custom folders|
+|Require managed content settings|No (retention settings included in a retention tag)|Yes|
+|Use retention settings for different message classes (such as e-mail messages, voice mail, or calendar items)|No|Yes|
+|Support the Move To Archive action, which moves items to the user's archive mailbox|Yes|No|
+|Support the Move To Managed Folder action|No|Yes|
+|Allow journaling using the Managed Folder Assistant|No|Yes|
+|Policy applied to user|Retention policy|Managed folder mailbox policy|
+|Maximum number of policies that can be applied to a mailbox user|1|1|
+|Processed by the Managed Folder Assistant|Yes|Yes|
+|Client support|Microsoft Outlook 2010 and Office Outlook Web App|Outlook 2010, Office Outlook 2007, and Outlook Web App|
 
 ## What do you need to know before you begin?
 
@@ -152,75 +90,15 @@ For the following procedures, Contoso mailboxes have a managed folder mailbox po
 
 ### Managed folders for Contoso
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Managed folder</th>
-<th>Managed content settings</th>
-<th>Retention enabled</th>
-<th>Retention age</th>
-<th>Retention action</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Corp-DeletedItems</p></td>
-<td><p>CS-Corp-DeletedItems</p></td>
-<td><p>Yes</p></td>
-<td><p>30 days</p></td>
-<td><p>Delete and Allow Recovery</p></td>
-</tr>
-<tr class="even">
-<td><p>Corp-SentItems</p></td>
-<td><p>CS-Corp-SentItems</p></td>
-<td><p>Yes</p></td>
-<td><p>1,825 days</p></td>
-<td><p>Move to Deleted Items</p></td>
-</tr>
-<tr class="odd">
-<td><p>Corp-JunkMail</p></td>
-<td><p>CS-Corp-JunkMail</p></td>
-<td><p>Yes</p></td>
-<td><p>30 days</p></td>
-<td><p>Permanently Delete</p></td>
-</tr>
-<tr class="even">
-<td><p>Corp-EntireMailbox</p></td>
-<td><p>CS-Corp-EntireMailbox</p></td>
-<td><p>Yes</p></td>
-<td><p>365 days</p></td>
-<td><p>Move to Deleted Items</p></td>
-</tr>
-<tr class="odd">
-<td><p>30 Days</p></td>
-<td><p>CS-30Days</p></td>
-<td><p>Yes</p></td>
-<td><p>30 days</p></td>
-<td><p>Move to Deleted Items</p></td>
-</tr>
-<tr class="even">
-<td><p>5 Years</p></td>
-<td><p>CS-5Years</p></td>
-<td><p>Yes</p></td>
-<td><p>1,825 days</p></td>
-<td><p>Move to Deleted Items</p></td>
-</tr>
-<tr class="odd">
-<td><p>Never Expire</p></td>
-<td><p>CS-NeverExpire</p></td>
-<td><p>No</p></td>
-<td><p>365 days</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-</tbody>
-</table>
+|Managed folder|Managed content settings|Retention enabled|Retention age|Retention action|
+|---|---|---|---|---|
+|Corp-DeletedItems|CS-Corp-DeletedItems|Yes|30 days|Delete and Allow Recovery|
+|Corp-SentItems|CS-Corp-SentItems|Yes|1,825 days|Move to Deleted Items|
+|Corp-JunkMail|CS-Corp-JunkMail|Yes|30 days|Permanently Delete|
+|Corp-EntireMailbox|CS-Corp-EntireMailbox|Yes|365 days|Move to Deleted Items|
+|30 Days|CS-30Days|Yes|30 days|Move to Deleted Items|
+|5 Years|CS-5Years|Yes|1,825 days|Move to Deleted Items|
+|Never Expire|CS-NeverExpire|No|365 days|Not applicable|
 
 ## Step 1: Create retention tags for the migration
 
@@ -228,15 +106,15 @@ You need to be assigned permissions before you can perform this procedure or pro
 
 There are two methods you can use for this step:
 
-- **Create retention tags based on the managed folders and their corresponding managed content settings**: With this method, you use the **New-RetentionPolicyTag** cmdlet with the *ManagedFolderToUpgrade* parameter. When you specify this parameter, the corresponding retention tag is automatically applied to the managed folder.
+- **Create retention tags based on the managed folders and their corresponding managed content settings**: With this method, you use the **New-RetentionPolicyTag** cmdlet with the _ManagedFolderToUpgrade_ parameter. When you specify this parameter, the corresponding retention tag is automatically applied to the managed folder.
 
     > [!IMPORTANT]
     > If the managed folder you want to port has multiple managed content settings for different message classes, only one retention tag is created, and the highest retention age of all the managed content settings is used as the retention age for the ported tag, irrespective of the message class of the managed content settings.<BR>For example, review the following managed content settings for the managed folder Corp-DeletedItems.
 
-- **Create retention tags by manually specifying the retention settings**: With this method, you use the **New-RetentionPolicyTag** cmdlet without the *ManagedFolderToUpgrade* parameter. When you don't specify this parameter, any retention policy tags you add to the policy are applied to the default folders, and the default policy tag is applied to the entire mailbox. However, any personal tags you add to the policy aren't automatically applied to the managed folders.
+- **Create retention tags by manually specifying the retention settings**: With this method, you use the **New-RetentionPolicyTag** cmdlet without the _ManagedFolderToUpgrade_ parameter. When you don't specify this parameter, any retention policy tags you add to the policy are applied to the default folders, and the default policy tag is applied to the entire mailbox. However, any personal tags you add to the policy aren't automatically applied to the managed folders.
 
 > [!NOTE]
-> If you are in a mixed environment with Exchange 2013 and Exchange 2010 servers, you can use the <STRONG>Port Managed Folder</STRONG> wizard in the Exchange Management Console (EMC) on an Exchange 2010 server to easily port managed folder and corresponding managed content setting to retention tags.
+> If you are in a mixed environment with Exchange 2013 and Exchange 2010 servers, you can use the **Port Managed Folder** wizard in the Exchange Management Console (EMC) on an Exchange 2010 server to easily port managed folder and corresponding managed content setting to retention tags.
 
 ### Create retention tags based on managed folders
 
@@ -257,9 +135,9 @@ For detailed syntax and parameter information, see [New-RetentionPolicyTag](/pow
 ### Create retention tags manually
 
 > [!NOTE]
-> You can also use the EAC to create retention tags manually (not based on settings in managed folders). For details, see <A href="/exchange/security-and-compliance/messaging-records-management/create-a-retention-policy">Create a Retention Policy</A>.
+> You can also use the EAC to create retention tags manually (not based on settings in managed folders). For details, see [Create a Retention Policy](create-a-retention-policy-exchange-2013-help.md).
 
-This example creates retention tags based on the managed folders and corresponding managed content settings shown in the Contoso managed folder mailbox policy. The retention settings are specified manually without using the *ManagedFolderToUpgrade* parameter.
+This example creates retention tags based on the managed folders and corresponding managed content settings shown in the Contoso managed folder mailbox policy. The retention settings are specified manually without using the _ManagedFolderToUpgrade_ parameter.
 
 ```powershell
 New-RetentionPolicyTag Corp-DeletedItems -Type DeletedItems -RetentionEnabled $true -AgeLimitForRetention 30 -RetentionAction DeleteAndAllowRecovery
@@ -278,7 +156,7 @@ For detailed syntax and parameter information, see [New-RetentionPolicyTag](/pow
 You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Messaging records management" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
 > [!NOTE]
-> You can also use the EAC to create a retention policy and add retention tags to the policy. For details, see <A href="/exchange/security-and-compliance/messaging-records-management/create-a-retention-policy">Create a Retention Policy</A>.
+> You can also use the EAC to create a retention policy and add retention tags to the policy. For details, see [Create a Retention Policy](create-a-retention-policy-exchange-2013-help.md).
 
 This example creates the retention policy RP-Corp and links the newly created retention tags to the policy.
 
@@ -303,7 +181,7 @@ Set-Mailbox -Identity Kwok -RemoveManagedFolderAndPolicy RP-Corp
 You need to be assigned permissions before you can perform this procedure or procedures. To see what permissions you need, see the "Applying retention policies" entry in the [Messaging policy and compliance permissions](messaging-policy-and-compliance-permissions-exchange-2013-help.md) topic.
 
 > [!NOTE]
-> You can also use the EAC to apply a retention policy to users. For details, see <A href="/exchange/security-and-compliance/messaging-records-management/apply-retention-policy">Apply a retention policy to mailboxes</A>.
+> You can also use the EAC to apply a retention policy to users. For details, see [Apply a retention policy to mailboxes](apply-retention-policy-exchange-2013-help.md).
 
 This example applies the newly created retention policy RP-Corp to the mailbox user Ken Kwok.
 

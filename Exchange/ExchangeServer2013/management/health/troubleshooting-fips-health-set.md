@@ -26,57 +26,15 @@ If you receive an alert that indicates that the **FIPS** health set is unhealthy
 
 The **FIPS** service is monitored using the following probes and monitors.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>FIPS</p></td>
-<td><p>CrashEvent.scanningprocess</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>FIPS</p></td>
-<td><p>MaintenanceFailureMonitor.FIPS</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>FIPS</p></td>
-<td><p>MaintenanceTimeoutMonitor.FIPS</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>FIPS</p></td>
-<td><p>PrivateWorkingSetWarning.scanningprocess</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>FIPS</p></td>
-<td><p>PrivateWorkingSetError.scanningprocess</p></td>
-</tr>
-<tr class="even">
-<td><p>none (notification or check)</p></td>
-<td><p>FIPS</p></td>
-<td><p>ProcessProcessorTimeWarning.scanningprocess</p></td>
-</tr>
-<tr class="odd">
-<td><p>none (notification or check)</p></td>
-<td><p>FIPS</p></td>
-<td><p>ProcessProcessorTimeError.scanningprocess</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Associated Monitors|
+|---|---|---|
+|none (notification or check)|FIPS|CrashEvent.scanningprocess|
+|none (notification or check)|FIPS|MaintenanceFailureMonitor.FIPS|
+|none (notification or check)|FIPS|MaintenanceTimeoutMonitor.FIPS|
+|none (notification or check)|FIPS|PrivateWorkingSetWarning.scanningprocess|
+|none (notification or check)|FIPS|PrivateWorkingSetError.scanningprocess|
+|none (notification or check)|FIPS|ProcessProcessorTimeWarning.scanningprocess|
+|none (notification or check)|FIPS|ProcessProcessorTimeError.scanningprocess|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 

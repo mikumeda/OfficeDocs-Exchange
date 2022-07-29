@@ -29,30 +29,9 @@ If you receive an alert that specifies that the ECP.Proxy is unhealthy, this ind
 
 The EAC service is monitored by using the following probes and monitors:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Probe</th>
-<th>Health Set</th>
-<th>Dependencies</th>
-<th>Associated Monitors</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ECPProxyTestProbe</p></td>
-<td><p>ECP.Proxy</p></td>
-<td><p>Active Directory</p></td>
-<td><p>ECPProxyTestMonitor</p></td>
-</tr>
-</tbody>
-</table>
+|Probe|Health Set|Dependencies|Associated Monitors|
+|---|---|---|---|
+|ECPProxyTestProbe|ECP.Proxy|Active Directory|ECPProxyTestMonitor|
 
 For more information about probes and monitors, see [Server health and performance](../../server-health-and-performance-exchange-2013-help.md).
 
@@ -118,15 +97,15 @@ When you receive an alert from a health set, the email message contains the foll
 
 To troubleshoot this issue, follow these steps:
 
-1. Review the protocol logs on CA servers. Protocol logs are located in the *\<exchange server installation directory\>*\\Logging\\HttpProxy*\\\<protocol\>* folder on the CAS.
+1. Review the protocol logs on CA servers. Protocol logs are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\_\<protocol\>_** folder on the CAS.
 
-2. Create a test user account, and then log on to the CAS by using the test user account name. For example, log on by using: https:// *\<servername\>*/owa.
+2. Create a test user account, and then log on to the CAS by using the test user account name. For example, log on by using: https://_\<servername\>_/owa.
 
 3. Start IIS Manager, and then connect to the server that is reporting the issue. Verify that the MSExchangeServicesAppPool is running on the CAS.
 
-4. Click **Application Pools**, and then recycle the **MSExchangeECPAppPool** application pool by running the following command from the Exchange Management Shell:
+4. Click **Application Pools**, and then recycle the **MSExchangeECPAppPool** application pool by running the following command:
 
-   ```powershell
+   ```DOS
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangeECPAppPool
    ```
 

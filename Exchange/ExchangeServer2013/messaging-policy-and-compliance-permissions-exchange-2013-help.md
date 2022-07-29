@@ -30,118 +30,31 @@ To find out what permissions you need to perform the procedure or run the cmdlet
 3. Now, run the **Get-ManagementRoleAssignment** cmdlet to look at the role groups or management roles assigned to you to see if you have the permissions that are necessary to manage the feature.
 
     > [!NOTE]
-    > You must be assigned the Role Management management role to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet. If you don't have permissions to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
+    > You must be assigned the Role Management management role to run the **Get-ManagementRoleAssignment** cmdlet. If you don't have permissions to run the **Get-ManagementRoleAssignment** cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
 
 If you want to delegate the ability to manage a feature to another user, see [Delegate role assignments](delegate-role-assignments-exchange-2013-help.md).
 
 > [!NOTE]
 > Some features that you want to manage might exist on Edge Transport servers. To manage features on Edge Transport servers, you need to become a member of the Local Administrators group on the Edge Transport server you want to manage. Edge Transport servers don't use Role Based Access Control (RBAC). Features that can be managed on Edge Transport servers have Edge Transport Local Administrator in the "Permissions required" column in the table below.
 
-## Messaging policy and compliance permissions
-
 You can use the features in the following table to configure messaging policy and compliance features. The role groups that are required to configure each feature are listed.
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Data loss prevention (DLP)</p></td>
-<td><p><a href="compliance-management-exchange-2013-help.md">Compliance Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Delete mailbox content (using the <a href="/powershell/module/exchange/Search-Mailbox">Search-Mailbox</a> cmdlet with the <em>DeleteContent</em> switch)</p></td>
-<td><p><a href="discovery-management-exchange-2013-help.md">Discovery Management</a> <strong>and</strong></p>
-<p><a href="mailbox-import-export-role-exchange-2013-help.md">Mailbox Import Export role</a></p>
-
-> [!NOTE]
-> By default, the Mailbox Import Export role isn't assigned to any role group. You can assign a management role to a built-in or custom role group, a user or a universal security group. Assigning a role to a role group is recommended. For more information, see <A href="add-a-role-to-a-user-or-usg-exchange-2013-help.md">Add a role to a user or USG</A>.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p>Discovery mailboxes - Create</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Journaling</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox audit logging</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Message classifications</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Messaging records management</p></td>
-<td><p><a href="compliance-management-exchange-2013-help.md">Compliance Management</a></p>
-<p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>In-Place eDiscovery</p></td>
-<td><p><a href="discovery-management-exchange-2013-help.md">Discovery Management</a></p>
-
-> [!NOTE]
-> By default, the Discovery Management role group doesn't have any members. No users, including administrators, have the required permissions to search mailboxes. For more information, see <A href="/exchange/security-and-compliance/in-place-ediscovery/assign-ediscovery-permissions">Assign eDiscovery permissions in Exchange</A>.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p>In-Place Hold</p></td>
-<td><p><a href="discovery-management-exchange-2013-help.md">Discovery Management</a></p>
-<p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-
-> [!IMPORTANT]
-> To create a query-based In-Place Hold, a user requires the Mailbox Search and Litigation Hold roles to be assigned directly or via membership in a role group that has both roles assigned. To create an In-Place Hold without using a query, which places all mailbox items on hold, you must have the Litigation Hold role assigned. The Discovery Management role group is assigned both roles.<BR>The Organization Management role group is assigned the Litigation Hold role. Members of the Organization Management role group can place an In-Place Hold on all items in a mailbox, but can't create a query-based In-Place Hold.
-
-</td>
-</tr>
-<tr class="even">
-<td><p>In-Place Archive</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>In-Place Archive - Test connectivity</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Information Rights Management (IRM) configuration</p></td>
-<td><p><a href="compliance-management-exchange-2013-help.md">Compliance Management</a></p>
-<p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Retention policies - Apply</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Retention policies - Create</p></td>
-<td><p>See the entry for Messaging Records Management</p></td>
-</tr>
-<tr class="odd">
-<td><p>Transport rules</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="records-management-exchange-2013-help.md">Records Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Data loss prevention (DLP)|[Compliance Management](compliance-management-exchange-2013-help.md)|
+|Delete mailbox content (using the [Search-Mailbox](/powershell/module/exchange/Search-Mailbox) cmdlet with the _DeleteContent_ switch)|[Discovery Management](discovery-management-exchange-2013-help.md) **and** <br/><br/> [Mailbox Import Export role](mailbox-import-export-role-exchange-2013-help.md) <br/><br/> **Note**: By default, the Mailbox Import Export role isn't assigned to any role group. You can assign a management role to a built-in or custom role group, a user or a universal security group. Assigning a role to a role group is recommended. For more information, see [Add a role to a user or USG](add-a-role-to-a-user-or-usg-exchange-2013-help.md).|
+|Discovery mailboxes - Create|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|Journaling|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md)|
+|Mailbox audit logging|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md)|
+|Message classifications|[Organization Management](organization-management-exchange-2013-help.md)|
+|Messaging records management|[Compliance Management](compliance-management-exchange-2013-help.md) <br/><br/> [Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md)|
+|In-Place eDiscovery|[Discovery Management](discovery-management-exchange-2013-help.md) <br/><br/> **Note**: By default, the Discovery Management role group doesn't have any members. No users, including administrators, have the required permissions to search mailboxes. For more information, see [Assign eDiscovery permissions in Exchange](/exchange/security-and-compliance/in-place-ediscovery/assign-ediscovery-permissions).|
+|In-Place Hold|[Discovery Management](discovery-management-exchange-2013-help.md) <br/><br/> [Organization Management](organization-management-exchange-2013-help.md) <br/><br/> **Important**: To create a query-based In-Place Hold, a user requires the Mailbox Search and Litigation Hold roles to be assigned directly or via membership in a role group that has both roles assigned. To create an In-Place Hold without using a query, which places all mailbox items on hold, you must have the Litigation Hold role assigned. The Discovery Management role group is assigned both roles.<BR>The Organization Management role group is assigned the Litigation Hold role. Members of the Organization Management role group can place an In-Place Hold on all items in a mailbox, but can't create a query-based In-Place Hold.|
+|In-Place Archive|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md)|
+|In-Place Archive - Test connectivity|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|
+|Information Rights Management (IRM) configuration|[Compliance Management](compliance-management-exchange-2013-help.md) <br/><br/> [Organization Management](organization-management-exchange-2013-help.md)|
+|Retention policies - Apply|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md)|
+|Retention policies - Create|See the entry for Messaging Records Management|
+|Transport rules|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Records Management](records-management-exchange-2013-help.md)|

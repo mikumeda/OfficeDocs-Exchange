@@ -28,13 +28,9 @@ Implementing MAPI over HTTP does not mean that it is the only protocol that can 
 MAPI over HTTP offers the following benefits to clients that support it:
 
 - Enables future innovation in authentication by using an HTTP based protocol.
-
 - Provides faster reconnection times after a communications break because only TCP connections (not RPC connections) need to be rebuilt. Examples of a communication break include:
-
   - Device hibernation
-
   - Changing from a wired network to a wireless or cellular network
-
 - Offers a session context that is not dependent on the connection. The server maintains the session context for a configurable period of time, even if the user changes networks.
 
 ## Deploy MAPI over HTTP
@@ -42,106 +38,20 @@ MAPI over HTTP offers the following benefits to clients that support it:
 Consider the following requirements to enable MAPI over HTTP.
 
 - **Supportability**: Verify that your intended configuration versions are supported.
-
 - **Prerequisites**: Verify that your environment has been upgraded and prepared for MAPI over HTTP.
-
 - **Configuration**: Configure the virtual directories, and enable MAPI for your organization.
 
 ## Supportability
 
 Use the following matrix to verify that your clients and servers support MAPI over HTTP.
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Product</th>
-<th>Exchange 2013 SP1</th>
-<th>Exchange 2013 RTM</th>
-<th>Exchange 2010 SP3</th>
-<th>Exchange 2007 SP3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Outlook 2013 SP1</p></td>
-<td><ul>
-<li><p>MAPI over HTTP</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-<td><p>Outlook Anywhere</p></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Outlook 2013 RTM</p></td>
-<td><p>Outlook Anywhere</p></td>
-<td><p>Outlook Anywhere</p></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Outlook 2010 SP2 and updates KB2956191 and KB2965295 (April 14, 2015)</p></td>
-<td><ul>
-<li><p>MAPI over HTTP<span></span></p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-<td><p>Outlook Anywhere</p></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Outlook 2010 SP2 and earlier</p></td>
-<td><p>Outlook Anywhere</p></td>
-<td><p>Outlook Anywhere</p></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Outlook 2007</p></td>
-<td><p>Outlook Anywhere</p></td>
-<td><p>Outlook Anywhere</p></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-<td><ul>
-<li><p>RPC</p></li>
-<li><p>Outlook Anywhere</p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+|Product|Exchange 2013 SP1|Exchange 2013 RTM|Exchange 2010 SP3|Exchange 2007 SP3|
+|---|---|---|---|---|
+|Outlook 2013 SP1|<ul><li>MAPI over HTTP</li><li>Outlook Anywhere</li></ul>|Outlook Anywhere|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|
+|Outlook 2013 RTM|Outlook Anywhere|Outlook Anywhere|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|
+|Outlook 2010 SP2 and updates KB2956191 and KB2965295 (April 14, 2015)|<ul><li>MAPI over HTTP<span></span></li><li>Outlook Anywhere</li></ul>|Outlook Anywhere|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|
+|Outlook 2010 SP2 and earlier|Outlook Anywhere|Outlook Anywhere|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|
+|Outlook 2007|Outlook Anywhere|Outlook Anywhere|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|<ul><li>RPC</li><li>Outlook Anywhere</li></ul>|
 
 ## Prerequisites
 
@@ -152,7 +62,9 @@ Complete the following steps to prepare the clients and servers to support MAPI 
 2. Upgrade Client Access and Mailbox servers to the latest Exchange 2013 cumulative update (CU). For information about how to upgrade, see [Upgrade Exchange 2013 to the latest cumulative update or service pack](upgrade-exchange-2013-to-the-latest-cumulative-update-or-service-pack-exchange-2013-help.md).
 
    > [!NOTE]
-   > All Client Access servers must be upgraded to the latest Exchange 2013 CU, or the immediately previous CU. Otherwise, Outlook can fail to connect to mailboxes.<BR>Failure to upgrade the all the Mailbox servers in a Database Availability Group (DAG) can result in email delays and a client requirement to restart Outlook in case of a database failover.
+   > All Client Access servers must be upgraded to the latest Exchange 2013 CU, or the immediately previous CU. Otherwise, Outlook can fail to connect to mailboxes.
+   >
+   > Failure to upgrade the all the Mailbox servers in a Database Availability Group (DAG) can result in email delays and a client requirement to restart Outlook in case of a database failover.
 
 3. On all Exchange 2013 servers, install the Microsoft .NET Framework version supported by the CU running on your Exchange server. For more information see [Exchange Server Supportability Matrix](../ExchangeServer/plan-and-deploy/supportability-matrix.md) and [Installing the .NET Framework](https://www.microsoft.com/download/details.aspx?id=42642).
 
@@ -168,7 +80,7 @@ Complete the following steps to configure MAPI over HTTP for your organization.
    Set-MapiVirtualDirectory -Identity "Contoso\mapi (Default Web Site)" -InternalUrl https://Contoso.com/mapi -IISAuthenticationMethods Negotiate
    ```
 
-2. **Certificate configuration**: The digital certificate used by your Exchange environment must include the same *InternalURL* and *ExternalURL* values that are defined on the MAPI virtual directory. For more information on Exchange 2013 certificate management, see [Digital certificates and SSL](digital-certificates-and-ssl-exchange-2013-help.md). Make sure the Exchange certificate is trusted on the Outlook client workstation and that there are no certificate errors, especially when you access the URLs configured on the MAPI virtual directory.
+2. **Certificate configuration**: The digital certificate used by your Exchange environment must include the same _InternalURL_ and _ExternalURL_ values that are defined on the MAPI virtual directory. For more information on Exchange 2013 certificate management, see [Digital certificates and SSL](digital-certificates-and-ssl-exchange-2013-help.md). Make sure the Exchange certificate is trusted on the Outlook client workstation and that there are no certificate errors, especially when you access the URLs configured on the MAPI virtual directory.
 
 3. **Update server rules**: Verify that your load balancers, reverse proxies, and firewalls are configured to allow access to the MAPI over HTTP virtual directory.
 
@@ -203,9 +115,7 @@ For more information, see [Test-OutlookConnectivity](/powershell/module/exchange
 Logs for MAPI over HTTP activity are at the following locations:
 
 - %ExchangeInstallPath%Logging\\MAPI Address Book Service\\
-
 - %ExchangeInstallPath%Logging\\MAPI Client Access\\
-
 - %ExchangeInstallPath%Logging\\HttpProxy\\Mapi\\
 
 ## Manage MAPI over HTTP
@@ -213,9 +123,6 @@ Logs for MAPI over HTTP activity are at the following locations:
 You can manage the configuration of MAPI over HTTP by using the following cmdlets:
 
 - [Set-MapiVirtualDirectory](/powershell/module/exchange/Set-MapiVirtualDirectory)
-
 - [Get-MapiVirtualDirectory](/powershell/module/exchange/Get-MapiVirtualDirectory)
-
 - [New-MapiVirtualDirectory](/powershell/module/exchange/New-MapiVirtualDirectory)
-
 - [Remove-MapiVirtualDirectory](/powershell/module/exchange/Remove-MapiVirtualDirectory)

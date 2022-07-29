@@ -106,9 +106,9 @@ To troubleshoot this issue, follow these steps:
 
 6. Start IIS Manager, and then connect to the Mailbox server that is reporting the issue. Verify that the **MSExchangeAutodiscoverAppPool** application pool is running on the Mailbox server.
 
-7. In IIS Manager, click **Application Pools**, and then recycle the **MSExchangeAutodiscoverAppPool** application pool by running the following command from the Shell:
+7. In IIS Manager, click **Application Pools**, and then recycle the **MSExchangeAutodiscoverAppPool** application pool by running the following command:
 
-   ```powershell
+   ```DOS
    %SystemRoot%\System32\inetsrv\Appcmd recycle MSExchangeAutodiscoverAppPool
    ```
 
@@ -116,7 +116,7 @@ To troubleshoot this issue, follow these steps:
 
 9. If the issue still exists, recycle the IIS service using the IISReset utility or by running the following command:
 
-   ```powershell
+   ```DOS
    Iisreset /noforce
    ```
 

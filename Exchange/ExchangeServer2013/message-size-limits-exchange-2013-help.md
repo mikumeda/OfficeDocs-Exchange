@@ -24,15 +24,10 @@ You can apply limits to messages that move through the Microsoft Exchange Server
 As you plan the message size limits for your Exchange organization, consider the following questions:
 
 - What size limits should I impose on all incoming messages?
-
 - What size limits should I impose on all outgoing messages?
-
 - What is the mailbox quota for my Exchange organization?
-
 - How do the message size limits that I have chosen relate to the mailbox quota size?
-
 - Are there users in my Exchange organization who must send or receive messages that are larger than the specified allowed size?
-
 - Does my Exchange network topology include other messaging systems or distinctly separate business units that have different message size limits?
 
 This topic provides guidance to help you answer these questions.
@@ -44,7 +39,7 @@ Following are the basic categories of the size limits available for individual m
 - **Message header size limits**: These limits apply to the total size of all message header fields that are present in a message. The size of the message body or attachments isn't considered. Because the header fields are plain text, the size of the header is determined by the number of characters in each header field and by the total number of header fields. Each character of text consumes 1 byte.
 
     > [!NOTE]
-    > Some third-party firewalls or proxy servers apply their own message header size limits. These third-party firewalls or proxy servers may have difficulty processing messages that contain attachment file names that are greater than 50&nbsp;characters or attachment file names that contain non-US-ASCII characters.
+    > Some third-party firewalls or proxy servers apply their own message header size limits. These third-party firewalls or proxy servers may have difficulty processing messages that contain attachment file names that are greater than 50 characters or attachment file names that contain non-US-ASCII characters.
 
 - **Message size limits**: These limits apply to the total size of a message, which includes the message header, the message body, and any attachments. Message size limits may be imposed on incoming messages or outgoing messages. For internal message flow, Exchange uses the custom `X-MS-Exchange-Organization-OriginalSize:` message header to record the original message size of the message as it enters the Exchange organization. Whenever the message is checked against the specified message size limits, the lower value of the current message size or the original message size header is used. The size of the message can change because of content conversion, encoding, and agent processing.
 
@@ -72,272 +67,41 @@ The following tables show the message limits, including information about how to
 
 ### Organizational limits
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Size limit</th>
-<th>Default value</th>
-<th>Shell configuration</th>
-<th>EAC configuration</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Maximum size for messages received</p></td>
-<td><p>10 MB</p></td>
-<td><p>Cmdlet: <strong>Set-TransportConfig</strong></p>
-<p>Parameter: <em>MaxReceiveSize</em></p></td>
-<td><p><strong>Mail flow</strong> &gt; <strong>Receive connectors</strong> &gt; <strong>More options</strong> <img src="images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif" title="More Options Icon" alt="More Options Icon" /> &gt; <strong>Organization transport settings</strong> &gt; <strong>Limits</strong> tab &gt; <strong>Maximum receive message size</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Maximum size for messages sent</p></td>
-<td><p>10 MB</p></td>
-<td><p>Cmdlet: <strong>Set-TransportConfig</strong></p>
-<p>Parameter: <em>MaxSendSize</em></p></td>
-<td><p><strong>Mail flow</strong> &gt; <strong>Receive connectors</strong> &gt; <strong>More options</strong> <img src="images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif" title="More Options Icon" alt="More Options Icon" /> &gt; <strong>Organization transport settings</strong> &gt; <strong>Limits</strong> tab &gt; <strong>Maximum send message size</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>Maximum number of recipients per message</p>
-</td>
-<td><p>5000</p></td>
-<td><p>Cmdlet: <strong>Set-TransportConfig</strong></p>
-<p>Parameter: <em>MaxRecipientEnvelopeLimit</em></p></td>
-<td><p><strong>Mail flow</strong> &gt; <strong>Receive connectors</strong> &gt; <strong>More options</strong> <img src="images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif" title="More Options Icon" alt="More Options Icon" /> &gt; <strong>Organization transport settings</strong> &gt; <strong>Limits</strong> tab &gt; <strong>Maximum number of recipients</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>Maximum attachment size in Transport rules that apply to all Mailbox servers in the organization</p></td>
-<td><p>Not configured</p></td>
-<td><p>Cmdlets: <strong>New-TransportRule</strong>, <strong>Set-TransportRule</strong></p>
-<p>Parameter: <em>AttachmentSizeOver</em></p></td>
-<td><p><strong>Mail flow</strong> &gt; <strong>Rules</strong> &gt; <strong>Add</strong> <img src="images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif" title="Add Icon" alt="Add Icon" /> or <strong>Edit</strong> <img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" />.</p>
-<p>Use the predicate <strong>Apply this rule if</strong> &gt; <strong>Any attachment</strong> &gt; <strong>is greater than or equal to</strong></p>
-<p>Use the predicate <strong>Apply this rule if</strong> &gt; <strong>The message</strong> &gt; <strong>size is greater than or equal to</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>Maximum message size in Transport rules that apply to all Mailbox servers in the organization</p></td>
-<td><p></p></td>
-<td><p>Cmdlets: <strong>New-TransportRule</strong>, <strong>Set-TransportRule</strong></p>
-<p>Parameter: <em>MessageSizeOver</em></p></td>
-<td><p><strong>Mail flow</strong> &gt; <strong>Rules</strong> &gt; <strong>Add</strong> <img src="images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif" title="Add Icon" alt="Add Icon" /> or <strong>Edit</strong> <img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" />.</p>
-<p>Use the predicate <strong>Apply this rule if</strong> &gt; <strong>The message</strong> &gt; <strong>size is greater than or equal to</strong></p></td>
-</tr>
-</tbody>
-</table>
+|Size limit|Default value|Shell configuration|EAC configuration|
+|---|---|---|---|
+|Maximum size for messages received|10 MB|Cmdlet: **Set-TransportConfig** <br/><br/> Parameter: _MaxReceiveSize_|**Mail flow** \> **Receive connectors** \> **More options** ![More Options Icon](images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif) \> **Organization transport settings** \> **Limits** tab \> **Maximum receive message size**|
+|Maximum size for messages sent|10 MB|Cmdlet: **Set-TransportConfig** <br/><br/> Parameter: _MaxSendSize_|**Mail flow** \> **Receive connectors** \> **More options** ![More Options Icon](images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif) \> **Organization transport settings** \> **Limits** tab \> **Maximum send message size**|
+|Maximum number of recipients per message|5000|Cmdlet: **Set-TransportConfig** <br/><br/> Parameter: _MaxRecipientEnvelopeLimit_|**Mail flow** \> **Receive connectors** \> **More options** ![More Options Icon](images/JJ150550.5381819e-3b21-4873-8714-e9b956290b28(EXCHG.150).gif) \> **Organization transport settings** \> **Limits** tab \> **Maximum number of recipients**|
+|Maximum attachment size in Transport rules that apply to all Mailbox servers in the organization|Not configured|Cmdlets: **New-TransportRule**, **Set-TransportRule** <br/><br/> Parameter: _AttachmentSizeOver_|**Mail flow** \> **Rules** \> **Add** ![Add Icon](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif) or **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif). <br/><br/> Use the predicate **Apply this rule if** \> **Any attachment** \> **is greater than or equal to** <br/><br/> Use the predicate **Apply this rule if** \> **The message** \> **size is greater than or equal to**|
+|Maximum message size in Transport rules that apply to all Mailbox servers in the organization||Cmdlets: **New-TransportRule**, **Set-TransportRule** <br/><br/> Parameter: _MessageSizeOver_|**Mail flow** \> **Rules** \> **Add** ![Add Icon](images/JJ218640.c1e75329-d6d7-4073-a27d-498590bbb558(EXCHG.150).gif) or **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif). <br/><br/> Use the predicate **Apply this rule if** \> **The message** \> **size is greater than or equal to**|
 
 ### Connector limits
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Size limit</th>
-<th>Default value</th>
-<th>Shell configuration</th>
-<th>EAC configuration</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Maximum header size through a Receive connector</p></td>
-<td><p>128 KB</p></td>
-<td><p>Cmdlets: <strong>New-ReceiveConnector</strong>, <strong>Set-ReceiveConnector</strong></p>
-<p>Parameter: <em>MaxHeaderSize</em></p></td>
-<td><p>N/A</p>
-<p></p></td>
-</tr>
-<tr class="even">
-<td><p>Maximum message size through a Receive connector</p>
-
-> [!NOTE]
-> The actual message size may be smaller due to message encoding and content conversion.
-
-</td>
-<td><p><strong>Transport service on Mailbox servers</strong></p>
-<p>35 MB for the Default and Client Proxy Receive connectors</p>
-<p><strong>Front End Transport service on Client Access servers</strong></p>
-<p>36 MB for the Default Frontend and Outbound Proxy Frontend Receive connectors.</p>
-<p>35 MB for the Client Frontend Receive connector.</p></td>
-<td><p>Cmdlets: <strong>New-ReceiveConnector</strong>, <strong>Set-ReceiveConnector</strong></p>
-<p>Parameter: <em>MaxMessageSize</em></p></td>
-<td><p><strong>Mail flow</strong> &gt; <strong>Receive connectors</strong> &gt; <strong>Edit</strong><img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" /> &gt; <strong>General</strong> tab &gt; <strong>Maximum receive message size</strong></p></td>
-</tr>
-<tr class="odd">
-<td><p>Maximum number of recipients per message through a Receive connector</p></td>
-<td><p><strong>Transport service on Mailbox servers</strong></p>
-<p>5,000 for the Default Receive connector</p>
-<p>200 for the Client Proxy Receive connector</p>
-<p><strong>Front End Transport service on Client Access servers</strong></p>
-<p>200 for the Default Frontend, Client Frontend, and Client Proxy Frontend Receive connectors.</p>
-
-> [!NOTE]
-> If the number of recipients is exceeded for an anonymous sender, the message is accepted for the first 200&nbsp;recipients. Most SMTP messaging servers detect that a recipient limit is in effect. The SMTP messaging server continues to resend the message in groups of 200&nbsp;recipients until the message is delivered to all recipients.
-
-</td>
-<td><p>Cmdlets: <strong>New-ReceiveConnector</strong>, <strong>Set-ReceiveConnector</strong></p>
-<p>Parameter: <em>MaxRecipientsPerMessage</em></p></td>
-<td><p>N/A</p></td>
-</tr>
-<tr class="even">
-<td><p>Maximum message size through a Send connector</p></td>
-<td><p>10 MB</p></td>
-<td><p>Cmdlets: <strong>New-SendConnector</strong>, <strong>Set-SendConnector</strong></p>
-<p>Parameter: <em>MaxMessageSize</em></p></td>
-<td><p><strong>Mail flow</strong> &gt; <strong>Send connectors</strong> &gt; <strong>Edit</strong><img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" /> &gt; <strong>General</strong> tab &gt; <strong>Maximum send message size</strong></p>
-<p></p></td>
-</tr>
-<tr class="odd">
-<td><p>Maximum message size through an Active Directory site link</p></td>
-<td><p>Unlimited</p></td>
-<td><p>Cmdlet: <strong>Set-AdSiteLink</strong></p>
-<p>Parameter: <em>MaxMessageSize</em></p></td>
-<td><p>N/A</p></td>
-</tr>
-<tr class="even">
-<td><p>Maximum message size through a delivery agent connector</p></td>
-<td><p>Unlimited</p></td>
-<td><p>Cmdlets: <strong>New-DeliveryAgentConnector</strong>, <strong>Set-DeliveryAgentConnector</strong></p>
-<p>Parameter: <em>MaxMessageSize</em></p></td>
-<td><p>N/A</p></td>
-</tr>
-<tr class="odd">
-<td><p>Maximum message size through a foreign connector</p></td>
-<td><p>Unlimited</p></td>
-<td><p><strong>Cmdlet: Set-ForeignConnector</strong> Parameter: <em>MaxMessageSize</em></p></td>
-<td><p>N/A</p></td>
-</tr>
-</tbody>
-</table>
+|Size limit|Default value|Shell configuration|EAC configuration|
+|---|---|---|---|
+|Maximum header size through a Receive connector|128 KB|Cmdlets: **New-ReceiveConnector**, **Set-ReceiveConnector** <br/><br/> Parameter: _MaxHeaderSize_|N/A|
+|Maximum message size through a Receive connector <br/><br/> **Note**: The actual message size may be smaller due to message encoding and content conversion.|**Transport service on Mailbox servers** <br/><br/> 35 MB for the Default and Client Proxy Receive connectors <br/><br/> **Front End Transport service on Client Access servers** <br/><br/> 36 MB for the Default Frontend and Outbound Proxy Frontend Receive connectors. <br/><br/> 35 MB for the Client Frontend Receive connector.|Cmdlets: **New-ReceiveConnector**, **Set-ReceiveConnector** <br/><br/> Parameter: _MaxMessageSize_|**Mail flow** \> **Receive connectors** \> **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif) \> **General** tab \> **Maximum receive message size**|
+|Maximum number of recipients per message through a Receive connector|**Transport service on Mailbox servers** <br/><br/> 5,000 for the Default Receive connector <br/><br/> 200 for the Client Proxy Receive connector <br/><br/> **Front End Transport service on Client Access servers** <br/><br/> 200 for the Default Frontend, Client Frontend, and Client Proxy Frontend Receive connectors. <br/><br/> **Note**: If the number of recipients is exceeded for an anonymous sender, the message is accepted for the first 200 recipients. Most SMTP messaging servers detect that a recipient limit is in effect. The SMTP messaging server continues to resend the message in groups of 200 recipients until the message is delivered to all recipients.|Cmdlets: **New-ReceiveConnector**, **Set-ReceiveConnector** <br/><br/> Parameter: _MaxRecipientsPerMessage_|N/A|
+|Maximum message size through a Send connector|10 MB|Cmdlets: **New-SendConnector**, **Set-SendConnector** <br/><br/> Parameter: _MaxMessageSize_|**Mail flow** \> **Send connectors** \> **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif) \> **General** tab \> **Maximum send message size**|
+|Maximum message size through an Active Directory site link|Unlimited|Cmdlet: **Set-AdSiteLink** <br/><br/> Parameter: _MaxMessageSize_|N/A|
+|Maximum message size through a delivery agent connector|Unlimited|Cmdlets: **New-DeliveryAgentConnector**, **Set-DeliveryAgentConnector** <br/><br/> Parameter: _MaxMessageSize_|N/A|
+|Maximum message size through a foreign connector|Unlimited|**Cmdlet: Set-ForeignConnector** Parameter: _MaxMessageSize_|N/A|
 
 ### Server limits
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Size limit</th>
-<th>Default value</th>
-<th>Shell configuration</th>
-<th>EAC configuration</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Maximum header size for messages in the pickup directory</p></td>
-<td><p>64 KB</p></td>
-<td><p>Cmdlet: <strong>Set-TransportService</strong></p>
-<p>Parameter: <em>PickupDirectoryMaxHeaderSize</em></p></td>
-<td><p>N/A</p></td>
-</tr>
-<tr class="even">
-<td><p>Maximum number of recipients per message for messages in the pickup directory</p></td>
-<td><p>100</p></td>
-<td><p>Cmdlet: <strong>Set-TransportService</strong></p>
-<p>Parameter: <em>PickupDirectoryMaxRecipientsPerMessage</em></p></td>
-<td><p>N/A</p></td>
-</tr>
-<tr class="odd">
-<td><p>Client-specific maximum messages size limits for Outlook Web App, Exchange ActiveSync, and Exchange Web Services clients</p></td>
-<td><p>Outlook Web App   35 MB</p>
-<p>Exchange ActiveSync   10 MB</p>
-<p>Exchange Web Services   64 MB</p>
-
-> [!NOTE]
-> These values are approximately 33% larger than the actual usable maximum message size because of the overhead that's associated with Base64 encoding.
-
-</td>
-<td><p>You configure these values in the appropriate web.config XML application configuration file on Client Access servers. For more information, see <a href="configure-client-specific-message-size-limits-exchange-2013-help.md">Configure client-specific message size limits</a>.</p></td>
-<td><p>N/A</p></td>
-</tr>
-</tbody>
-</table>
+|Size limit|Default value|Shell configuration|EAC configuration|
+|---|---|---|---|
+|Maximum header size for messages in the pickup directory|64 KB|Cmdlet: **Set-TransportService** <br/><br/> Parameter: _PickupDirectoryMaxHeaderSize_|N/A|
+|Maximum number of recipients per message for messages in the pickup directory|100|Cmdlet: **Set-TransportService** <br/><br/> Parameter: _PickupDirectoryMaxRecipientsPerMessage_|N/A|
+|Client-specific maximum messages size limits for Outlook Web App, Exchange ActiveSync, and Exchange Web Services clients|Outlook Web App: 35 MB <br/><br/> Exchange ActiveSync: 10 MB <br/><br/> Exchange Web Services: 64 MB  <br/><br/> **Note**: These values are approximately 33% larger than the actual usable maximum message size because of the overhead that's associated with Base64 encoding.|You configure these values in the appropriate web.config XML application configuration file on Client Access servers. For more information, see [Configure client-specific message size limits](configure-client-specific-message-size-limits-exchange-2013-help.md).|N/A|
 
 ### User limits
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Size Limit</th>
-<th>Default value</th>
-<th>Shell configuration</th>
-<th>EAC configuration</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Maximum message size that can be sent by this recipient</p></td>
-<td><p>Unlimited</p></td>
-<td><p>Cmdlets:</p>
-<p><strong>Set-DistributionGroup</strong></p>
-<p><strong>Set-DynamicDistributionGroup</strong></p>
-<p><strong>Set-Mailbox</strong></p>
-<p><strong>Set-MailContact</strong></p>
-<p><strong>Set-MailUser</strong></p>
-<p><strong>Set-MailPublicFolder</strong></p>
-<p><strong>Set-RemoteMailbox</strong></p>
-<p>Parameter: <em>MaxSendSize</em></p></td>
-<td><p>For mailboxes:</p>
-<p><strong>Recipients</strong> &gt; <strong>Mailboxes</strong> &gt; <strong>Edit</strong><img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" /> &gt; <strong>Mailbox features</strong> &gt; <strong>Mail flow</strong> &gt; <strong>Message size restrictions</strong> &gt; <strong>View details</strong> &gt; <strong>Sent messages</strong></p>
-
-> [!NOTE]
-> This setting isn't configurable using the EAC for other recipient types.
-
-</td>
-</tr>
-<tr class="even">
-<td><p>Maximum message size that can be sent to this recipient</p></td>
-<td><p>Unlimited</p>
-<p>For site mailbox provisioning policies: 36 MB</p></td>
-<td><p>Cmdlets:</p>
-<p><strong>Set-DistributionGroup</strong></p>
-<p><strong>Set-DynamicDistributionGroup</strong></p>
-<p><strong>Set-Mailbox</strong></p>
-<p><strong>Set-MailContact</strong></p>
-<p><strong>Set-MailUser</strong></p>
-<p><strong>Set-MailPublicFolder</strong></p>
-<p><strong>New-SiteMailboxProvisioningPolicy</strong></p>
-<p><strong>Set-SiteMailboxProvisioningPolicy</strong></p>
-<p>Parameter: <em>MaxReceiveSize</em></p></td>
-<td><p>For mailboxes:</p>
-<p><strong>Recipients</strong> &gt; <strong>Mailboxes</strong> &gt; <strong>Edit</strong><img src="images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif" title="Edit icon" alt="Edit icon" /> &gt; <strong>Mailbox features</strong> &gt; <strong>Mail flow</strong> &gt; <strong>Message size restrictions</strong> &gt; <strong>View details</strong> &gt; <strong>Received messages</strong></p>
-
-> [!NOTE]
-> This setting isn't configurable using the EAC for other recipient types.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p>Maximum number of recipients per message sent by this recipient</p></td>
-<td><p>Unlimited</p></td>
-<td><p>Cmdlets:</p>
-<p><strong>Set-Mailbox</strong>, <strong>Set-MailUser</strong></p>
-<p>Parameter: <em>RecipientLimits</em></p>
-<p></p></td>
-<td><p>N/A</p></td>
-</tr>
-</tbody>
-</table>
+|Size Limit|Default value|Shell configuration|EAC configuration|
+|---|---|---|---|
+|Maximum message size that can be sent by this recipient|Unlimited|Cmdlets: <br/><br/> **Set-DistributionGroup** <br/><br/> **Set-DynamicDistributionGroup** <br/><br/> **Set-Mailbox** <br/><br/> **Set-MailContact** <br/><br/> **Set-MailUser** <br/><br/> **Set-MailPublicFolder** <br/><br/> **Set-RemoteMailbox** <br/><br/> Parameter: _MaxSendSize_|For mailboxes: <br/><br/> **Recipients** \> **Mailboxes** \> **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif) \> **Mailbox features** \> **Mail flow** \> **Message size restrictions** \> **View details** \> **Sent messages** <br/><br/> **Note**: This setting isn't configurable using the EAC for other recipient types.|
+|Maximum message size that can be sent to this recipient|Unlimited <br/><br/> For site mailbox provisioning policies: 36 MB|Cmdlets: <br/><br/> **Set-DistributionGroup** <br/><br/> **Set-DynamicDistributionGroup** <br/><br/> **Set-Mailbox** <br/><br/> **Set-MailContact** <br/><br/> **Set-MailUser** <br/><br/> **Set-MailPublicFolder** <br/><br/> **New-SiteMailboxProvisioningPolicy** <br/><br/> **Set-SiteMailboxProvisioningPolicy** <br/><br/> Parameter: _MaxReceiveSize_|For mailboxes: <br/><br/> **Recipients** \> **Mailboxes** \> **Edit** ![Edit icon](images/JJ218640.6f53ccb2-1f13-4c02-bea0-30690e6ea71d(EXCHG.150).gif) \> **Mailbox features** \> **Mail flow** \> **Message size restrictions** \> **View details** \> **Received messages** <br/><br/> **Note**: This setting isn't configurable using the EAC for other recipient types.|
+|Maximum number of recipients per message sent by this recipient|Unlimited|Cmdlets: <br/><br/> **Set-Mailbox**, **Set-MailUser** <br/><br/> Parameter: _RecipientLimits_|N/A|
 
 ## Order of precedence for message size limits
 
@@ -352,13 +116,9 @@ The exceptions for the user limits only apply to message exchanges between authe
 The following list shows the types of messages generated by a Mailbox server or an Edge Transport server and exempted from all message size limits:
 
 - System messages
-
 - Agent-generated message
-
 - Delivery status notification (DSN) messages
-
 - Journal report messages
-
 - Quarantined messages
 
 However, these messages are still subject to the organizational value for maximum number of recipients in a message.
