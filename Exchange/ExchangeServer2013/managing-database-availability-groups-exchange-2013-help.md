@@ -25,7 +25,7 @@ When you create a DAG, it's initially empty. When you add the first server to a 
 
 ## Creating DAGs
 
-A DAG can be created using the New Database Availability Group wizard in the Exchange admin center (EAC), or by running the **New-DatabaseAvailabilityGroup** cmdlet in the Exchange Management Shell. When creating a DAG, you provide a name for the DAG, and optional witness server and witness directory settings. In addition, you can assign one or more IP addresses to the DAG, either by using static IP addresses or by allowing the DAG to be automatically assigned the necessary IP addresses using Dynamic Host Configuration Protocol (DHCP). You can manually assign IP addresses to the DAG by using the *DatabaseAvailabilityGroupIpAddresses* parameter. If you omit this parameter, the DAG attempts to obtain an IP address by using a DHCP server on your network.
+A DAG can be created using the New Database Availability Group wizard in the Exchange admin center (EAC), or by running the **New-DatabaseAvailabilityGroup** cmdlet in the Exchange Management Shell. When creating a DAG, you provide a name for the DAG, and optional witness server and witness directory settings. In addition, you can assign one or more IP addresses to the DAG, either by using static IP addresses or by allowing the DAG to be automatically assigned the necessary IP addresses using Dynamic Host Configuration Protocol (DHCP). You can manually assign IP addresses to the DAG by using the _DatabaseAvailabilityGroupIpAddresses_ parameter. If you omit this parameter, the DAG attempts to obtain an IP address by using a DHCP server on your network.
 
 If you are creating a DAG that will contain Mailbox servers that are running Windows Server 2012 R2, you also have the option of creating a DAG without a cluster administrative access point. In that case, the cluster will not have a cluster name object (CNO) in Active Directory, and the cluster core resource group will not contain a network name resource or an IP address resource.
 
@@ -45,22 +45,21 @@ When creating a DAG, you need to specify a name for the DAG no longer than 15 ch
 The requirements for the witness server are as follows:
 
 - The witness server can't be a member of the DAG.
-
 - The witness server must be in the same Active Directory forest as the DAG.
-
 - The witness server must be running a supported version of Windows Server. For more information, see [Exchange 2013 system requirements](exchange-2013-system-requirements-exchange-2013-help.md).
-
 - A single server can serve as a witness for multiple DAGs. However, each DAG requires its own witness directory.
 
 Regardless of what server is used as the witness server, if the Windows Firewall is enabled on the intended witness server, you must enable the Windows Firewall exception for File and Printer Sharing.
 
 > [!IMPORTANT]
-> If the witness server you specify isn't an Exchange 2013 or Exchange 2010 server, you must add the Exchange Trusted Subsystem universal security group (USG) to the local Administrators group on the witness server prior to creating the DAG. These security permissions are necessary to ensure that Exchange can create a directory and share on the witness server as needed.<BR>The witness server uses SMB port 445.
+> If the witness server you specify isn't an Exchange 2013 or Exchange 2010 server, you must add the Exchange Trusted Subsystem universal security group (USG) to the local Administrators group on the witness server prior to creating the DAG. These security permissions are necessary to ensure that Exchange can create a directory and share on the witness server as needed.
+>
+> The witness server uses SMB port 445.
 
 Neither the witness server nor the witness directory needs to be fault tolerant or use any form of redundancy or high availability. There's no need to use a clustered file server for the witness server or employ any other form of resiliency for the witness server. There are several reasons for this. With larger DAGs (for example, six members or more), several failures are required before the witness server is needed. Because a six-member DAG can tolerate as many as two voter failures without losing quorum, it would take as many as three voters failing before the witness server would be needed to maintain a quorum. Also, if there's a failure that affects your current witness server (for example, you lose the witness server because of a hardware failure), you can use the [Set-DatabaseAvailabilityGroup](/powershell/module/exchange/Set-DatabaseAvailabilityGroup) cmdlet to configure a new witness server and witness directory (provided you have a quorum).
 
 > [!NOTE]
-> You can also use the <STRONG>Set-DatabaseAvailabilityGroup</STRONG> cmdlet to configure the witness server and witness directory in the original location if the witness server lost its storage or if someone changed the witness directory or share permissions.
+> You can also use the **Set-DatabaseAvailabilityGroup** cmdlet to configure the witness server and witness directory in the original location if the witness server lost its storage or if someone changed the witness directory or share permissions.
 
 ## Witness server placement considerations
 
@@ -68,52 +67,13 @@ The placement of a DAG's witness server will depend on your business requirement
 
 The following table lists general witness server placement recommendations for different deployment scenarios.
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Deployment Scenario</th>
-<th>Recommendations</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Single DAG deployed in a single datacenter</p></td>
-<td><p>Locate witness server in the same datacenter as DAG members</p></td>
-</tr>
-<tr class="even">
-<td><p>Single DAG deployed across two datacenters; no additional locations available</p></td>
-<td><p>Locate witness server on a Microsoft Azure virtual network to enable automatic datacenter failover, or</p>
-<p>Locate witness server in primary datacenter</p></td>
-</tr>
-<tr class="odd">
-<td><p>Multiple DAGs deployed in a single datacenter</p></td>
-<td><p>Locate witness server in the same datacenter as DAG members. Additional options include:</p>
-<ul>
-<li><p>Using the same witness server for multiple DAGs</p></li>
-<li><p>Using a DAG member to act as a witness server for a different DAG</p></li>
-</ul>
-<p></p></td>
-</tr>
-<tr class="even">
-<td><p>Multiple DAGs deployed across two datacenters</p></td>
-<td><p>Locate witness server on a Microsoft Azure virtual network to enable automatic datacenter failover, or</p>
-<p>Locate witness server in the datacenter that is considered primary for each DAG. Additional options include:</p>
-<ul>
-<li><p>Using the same witness server for multiple DAGs</p></li>
-<li><p>Using a DAG member to act as a witness server for a different DAG</p>
-<p></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Single or Multiple DAGs deployed across more than two datacenters</p></td>
-<td><p>In this configuration, the witness server should be located in the datacenter where you want the majority of quorum votes to exist.</p></td>
-</tr>
-</tbody>
-</table>
+|Deployment Scenario|Recommendations|
+|---|---|
+|Single DAG deployed in a single datacenter|Locate witness server in the same datacenter as DAG members|
+|Single DAG deployed across two datacenters; no additional locations available|Locate witness server on a Microsoft Azure virtual network to enable automatic datacenter failover, or <br/><br/> Locate witness server in primary datacenter|
+|Multiple DAGs deployed in a single datacenter|Locate witness server in the same datacenter as DAG members. Additional options include: <ul><li>Using the same witness server for multiple DAGs</li><li>Using a DAG member to act as a witness server for a different DAG</li></ul>|
+|Multiple DAGs deployed across two datacenters|Locate witness server on a Microsoft Azure virtual network to enable automatic datacenter failover, or <br/><br/> Locate witness server in the datacenter that is considered primary for each DAG. Additional options include: <ul><li>Using the same witness server for multiple DAGs</li><li>Using a DAG member to act as a witness server for a different DAG</li></ul>|
+|Single or Multiple DAGs deployed across more than two datacenters|In this configuration, the witness server should be located in the datacenter where you want the majority of quorum votes to exist.|
 
 When a DAG has been deployed across two datacenters, a new configuration option in Exchange 2013 is to use a third location for hosting the witness server. If your organization has a third location with a network infrastructure that is isolated from network failures that affect the two datacenters in which your DAG is deployed, then you can deploy the DAG's witness server in that third location, thereby configuring your DAG with the ability automatically failover databases to the other datacenter in response to a datacenter-level failure event. If your organization only has two physical locations, you can use a Microsoft Azure virtual network as a third location to place your witness server.
 
@@ -123,7 +83,7 @@ When creating a DAG, you must provide a name for the DAG. You can optionally als
 
 When creating a DAG, the following combinations of options and behaviors are available:
 
-- You can specify only a name for the DAG, and leave the **Witness server** and **Witness directory** fields blank. In this scenario, the wizard searches the local Active Directory site for a Client Access server that doesn't have the Mailbox server installed, and it automatically creates the default directory (%SystemDrive%:\\DAGFileShareWitnesses\\\<*DAGFQDN*\>) and default share (\<*DAGFQDN*\>) on that server and uses that Client Access server as the witness server. For example, consider the witness server CAS3 on which the operating system has been installed onto drive C. A DAG named DAG1 in the contoso.com domain would use a default witness directory of C:\\DAGFileShareWitnesses\\DAG1.contoso.com, which would be shared as \\\\CAS3\\DAG1.contoso.com.
+- You can specify only a name for the DAG, and leave the **Witness server** and **Witness directory** fields blank. In this scenario, the wizard searches the local Active Directory site for a Client Access server that doesn't have the Mailbox server installed, and it automatically creates the default directory (%SystemDrive%:\\DAGFileShareWitnesses\\\<_DAGFQDN_\>) and default share (\<_DAGFQDN_\>) on that server and uses that Client Access server as the witness server. For example, consider the witness server CAS3 on which the operating system has been installed onto drive C. A DAG named DAG1 in the contoso.com domain would use a default witness directory of C:\\DAGFileShareWitnesses\\DAG1.contoso.com, which would be shared as \\\\CAS3\\DAG1.contoso.com.
 
 - You can specify a name for the DAG, the witness server that you want to use, and the directory you want created and shared on the witness server.
 
@@ -138,49 +98,20 @@ When a DAG is formed, it initially uses the Node Majority quorum model. When the
 
 If Windows Firewall is enabled on the witness server before the DAG is created, it may block the creation of the DAG. Exchange uses Windows Management Instrumentation (WMI) to create the directory and file share on the witness server. If Windows Firewall is enabled on the witness server and there are no firewall exceptions configured for WMI, the **New-DatabaseAvailabilityGroup** cmdlet fails with an error. If you specify a witness server, but not a witness directory, you receive the following error message.
 
-<table>
-<colgroup>
-<col  />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>The task was unable to create the default witness directory on server &lt;<em>Server Name</em>&gt;. Please manually specify a witness directory.</p></td>
-</tr>
-</tbody>
-</table>
+|The task was unable to create the default witness directory on server \<_Server Name_\>. Please manually specify a witness directory.|
 
 If you specify a witness server and witness directory, you receive the following warning message.
 
-<table>
-<colgroup>
-<col  />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Unable to access file shares on witness server '<em>ServerName</em>'. Until this problem is corrected, the database availability group may be more vulnerable to failures. You can use the Set-DatabaseAvailabilityGroup cmdlet to try the operation again. Error: The network path was not found.</p></td>
-</tr>
-</tbody>
-</table>
+|Unable to access file shares on witness server '_ServerName_'. Until this problem is corrected, the database availability group may be more vulnerable to failures. You can use the Set-DatabaseAvailabilityGroup cmdlet to try the operation again. Error: The network path was not found.|
 
 If Windows Firewall is enabled on the witness server after the DAG is created but before servers are added, it may block the addition or removal of DAG members. If Windows Firewall is enabled on the witness server and there are no firewall exceptions configured for WMI, the **Add-DatabaseAvailabilityGroupServer** cmdlet displays the following warning message.
 
-<table>
-<colgroup>
-<col  />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Failed to create file share witness directory 'C:\DAGFileShareWitnesses\DAG_FQDN' on witness server <em>'ServerName'</em>. Until this problem is corrected, the database availability group may be more vulnerable to failures. You can use the Set-DatabaseAvailabilityGroup cmdlet to try the operation again. Error: WMI exception occurred on server <em>'ServerName'</em>: The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)</p></td>
-</tr>
-</tbody>
-</table>
+|Failed to create file share witness directory 'C:\DAGFileShareWitnesses\DAG_FQDN' on witness server _'ServerName'_. Until this problem is corrected, the database availability group may be more vulnerable to failures. You can use the Set-DatabaseAvailabilityGroup cmdlet to try the operation again. Error: WMI exception occurred on server _'ServerName'_: The RPC server is unavailable. (Exception from HRESULT: 0x800706BA)|
 
 To resolve the preceding error and warnings, do one of the following:
 
 - Manually create the witness directory and share on the witness server, and assign the CNO for the DAG full control for the directory and share.
-
 - Enable the WMI exception in Windows Firewall.
-
 - Disable Windows Firewall.
 
 ## DAG membership
@@ -192,40 +123,29 @@ After a DAG has been created, you can add servers to or remove servers from the 
 
 If the Mailbox server being added to a DAG doesn't have the failover clustering component installed, the method used to add the server (for example, the **Add-DatabaseAvailabilityGroupServer** cmdlet or the Manage Database Availability Group wizard) installs the failover clustering feature.
 
-When the first Mailbox server is added to a DAG, the following occurs:
+When the first Mailbox server is added to a DAG, the following actions occur:
 
 - The Windows failover clustering component is installed, if it isn't already installed.
-
 - A failover cluster is created using the name of the DAG. This failover cluster is used exclusively by the DAG, and the cluster must be dedicated to the DAG. Use of the cluster for any other purpose isn't supported.
-
 - A CNO is created in the default computers container.
-
 - The name and IP address of the DAG is registered as a Host (A) record in Domain Name System (DNS).
-
 - The server is added to the DAG object in Active Directory.
-
 - The cluster database is updated with information on the databases mounted on the added server.
 
 In a large or multiple site environment, especially those in which the DAG is extended to multiple Active Directory sites, you must wait for Active Directory replication of the DAG object containing the first DAG member to complete. If this Active Directory object isn't replicated throughout your environment, adding the second server may cause a new cluster (and new CNO) to be created for the DAG. This is because the DAG object appears empty from the perspective of the second member being added, thereby causing the **Add-DatabaseAvailabilityGroupServer** cmdlet to create a cluster and CNO for the DAG, even though these objects already exist. To verify that the DAG object containing the first DAG server has been replicated, use the **Get-DatabaseAvailabilityGroup** cmdlet on the second server being added to verify that the first server you added is listed as a member of the DAG.
 
-When the second and subsequent servers are added to the DAG, the following occurs:
+When the second and subsequent servers are added to the DAG, the following actions occur:
 
 - The server is joined to the Windows failover cluster for the DAG.
-
 - The quorum model is automatically adjusted:
-
   - A Node Majority quorum model is used for DAGs with an odd number of members.
-
   - A Node and File Share Majority quorum model is used for DAGs with an even number of members.
-
 - The witness directory and share are automatically created by Exchange when needed.
-
 - The server is added to the DAG object in Active Directory.
-
 - The cluster database is updated with information about mounted databases.
 
 > [!NOTE]
-> The quorum model change should happen automatically. However, if the quorum model doesn't automatically change to the proper model, you can run the <STRONG>Set-DatabaseAvailabilityGroup</STRONG> cmdlet with only the <EM>Identity</EM> parameter to correct the quorum settings for the DAG.
+> The quorum model change should happen automatically. However, if the quorum model doesn't automatically change to the proper model, you can run the **Set-DatabaseAvailabilityGroup** cmdlet with only the _Identity_ parameter to correct the quorum settings for the DAG.
 
 ## Pre-staging the cluster name object for a DAG
 
@@ -237,7 +157,6 @@ The CNO is a computer account created in Active Directory and associated with th
 In environments where computer account creation is restricted, or where computer accounts are created in a container other than the default computers container, you can pre-stage and provision the CNO. You create and disable a computer account for the CNO, and then either:
 
 - Assign full control of the computer account to the computer account of the first Mailbox server you're adding to the DAG.
-
 - Assign full control of the computer account to the Exchange Trusted Subsystem USG.
 
 Assigning full control of the computer account to the computer account of the first Mailbox server you're adding to the DAG ensures that the LOCAL SYSTEM security context will be able to manage the pre-staged computer account. Assigning full control of the computer account to the Exchange Trusted Subsystem USG can be used instead because the Exchange Trusted Subsystem USG contains the machine accounts of all Exchange servers in the domain.
@@ -250,7 +169,7 @@ Mailbox servers can be removed from a DAG by using the Manage Database Availabil
 
 There are scenarios in which you must remove a Mailbox server from a DAG before performing certain operations. These scenarios include:
 
-- **Performing a server recovery operation**: If a Mailbox server that's a member of a DAG is lost, or otherwise fails and is unrecoverable and needs replacement, you can perform a server recovery operation using the **Setup /m:RecoverServer** switch. However, before you can perform the recovery operation, you must first remove the server from the DAG using the [Remove-DatabaseAvailabilityGroupServer](/powershell/module/exchange/Remove-DatabaseAvailabilityGroupServer) cmdlet with the *ConfigurationOnly* parameter.
+- **Performing a server recovery operation**: If a Mailbox server that's a member of a DAG is lost, or otherwise fails and is unrecoverable and needs replacement, you can perform a server recovery operation using the **Setup /m:RecoverServer** switch. However, before you can perform the recovery operation, you must first remove the server from the DAG using the [Remove-DatabaseAvailabilityGroupServer](/powershell/module/exchange/Remove-DatabaseAvailabilityGroupServer) cmdlet with the _ConfigurationOnly_ parameter.
 
 - **Removing the database availability group**: There may be situations in which you need to remove a DAG (for example, when disabling third-party replication mode). If you need to remove a DAG, you must first remove all servers from the DAG. If you attempt to remove a DAG that contains any members, the task fails.
 
@@ -278,36 +197,12 @@ Network encryption is a property of the DAG and not a DAG network. You can confi
 
 ### DAG network communication encryption settings
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Disabled</p></td>
-<td><p>Network encryption isn't used.</p></td>
-</tr>
-<tr class="even">
-<td><p>Enabled</p></td>
-<td><p>Network encryption is used on all DAG networks for replication and seeding.</p></td>
-</tr>
-<tr class="odd">
-<td><p>InterSubnetOnly</p></td>
-<td><p>Network encryption is used on DAG networks when replicating across different subnets. This is the default setting.</p></td>
-</tr>
-<tr class="even">
-<td><p>SeedOnly</p></td>
-<td><p>Network encryption is used on all DAG networks for seeding only.</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|Description|
+|---|---|
+|Disabled|Network encryption isn't used.|
+|Enabled|Network encryption is used on all DAG networks for replication and seeding.|
+|InterSubnetOnly|Network encryption is used on DAG networks when replicating across different subnets. This is the default setting.|
+|SeedOnly|Network encryption is used on all DAG networks for seeding only.|
 
 ## DAG network compression
 
@@ -317,36 +212,12 @@ As with network encryption, network compression is also a property of the DAG an
 
 ### DAG network communication compression settings
 
-<table>
-<colgroup>
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Setting</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Disabled</p></td>
-<td><p>Network compression isn't used.</p></td>
-</tr>
-<tr class="even">
-<td><p>Enabled</p></td>
-<td><p>Network compression is used on all DAG networks for replication and seeding.</p></td>
-</tr>
-<tr class="odd">
-<td><p>InterSubnetOnly</p></td>
-<td><p>Network compression is used on DAG networks when replicating across different subnets. This is the default setting.</p></td>
-</tr>
-<tr class="even">
-<td><p>SeedOnly</p></td>
-<td><p>Network compression is used on all DAG networks for seeding only.</p></td>
-</tr>
-</tbody>
-</table>
+|Setting|Description|
+|---|---|
+|Disabled|Network compression isn't used.|
+|Enabled|Network compression is used on all DAG networks for replication and seeding.|
+|InterSubnetOnly|Network compression is used on DAG networks when replicating across different subnets. This is the default setting.|
+|SeedOnly|Network compression is used on all DAG networks for seeding only.|
 
 ## DAG networks
 
@@ -379,9 +250,9 @@ You can use the **Set-DatabaseAvailabilityGroupNetwork** cmdlet in the Shell to 
 
 - **Network description**: An optional description for the DAG network of up to 256 characters.
 
-- **Network subnets**: One or more subnets entered using a format of *IPAddress/Bitmask* (for example, 192.168.1.0/24 for Internet Protocol version 4 (IPv4) subnets; 2001:DB8:0:C000::/64 for Internet Protocol version 6 (IPv6) subnets).
+- **Network subnets**: One or more subnets entered using a format of _IPAddress/Bitmask_ (for example, 192.168.1.0/24 for Internet Protocol version 4 (IPv4) subnets; 2001:DB8:0:C000::/64 for Internet Protocol version 6 (IPv6) subnets).
 
-- **Enable replication**: In the EAC, select the check box to dedicate the DAG network to replication traffic and block MAPI traffic. Clear the check box to prevent replication from using the DAG network and to enable MAPI traffic. In the Shell, use the *ReplicationEnabled* parameter in the [Set-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/Set-DatabaseAvailabilityGroupNetwork) cmdlet to enable and disable replication.
+- **Enable replication**: In the EAC, select the check box to dedicate the DAG network to replication traffic and block MAPI traffic. Clear the check box to prevent replication from using the DAG network and to enable MAPI traffic. In the Shell, use the _ReplicationEnabled_ parameter in the [Set-DatabaseAvailabilityGroupNetwork](/powershell/module/exchange/Set-DatabaseAvailabilityGroupNetwork) cmdlet to enable and disable replication.
 
 > [!NOTE]
 > Disabling replication for the MAPI network doesn't guarantee that the system won't use the MAPI network for replication. When all configured replication networks are offline, failed, or otherwise unavailable, and only the MAPI network remains (which is configured as disabled for replication), the system uses the MAPI network for replication.
@@ -392,83 +263,21 @@ For example, consider DAG1, a two-member DAG where each member has two network a
 
 ### Example network adapter settings
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Server-network adapter</th>
-<th>IP address/subnet mask</th>
-<th>Default gateway</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EX1-MAPI</p></td>
-<td><p>192.168.1.15/24</p></td>
-<td><p>192.168.1.1</p></td>
-</tr>
-<tr class="even">
-<td><p>EX1-Replication</p></td>
-<td><p>10.0.0.15/24</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="odd">
-<td><p>EX2-MAPI</p></td>
-<td><p>192.168.1.16</p></td>
-<td><p>192.168.1.1</p></td>
-</tr>
-<tr class="even">
-<td><p>EX2-Replication</p></td>
-<td><p>10.0.0.16</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-</tbody>
-</table>
+|Server-network adapter|IP address/subnet mask|Default gateway|
+|---|---|---|
+|EX1-MAPI|192.168.1.15/24|192.168.1.1|
+|EX1-Replication|10.0.0.15/24|Not applicable|
+|EX2-MAPI|192.168.1.16|192.168.1.1|
+|EX2-Replication|10.0.0.16|Not applicable|
 
 In the following configuration, there are two subnets configured in the DAG: 192.168.1.0 and 10.0.0.0. When EX1 and EX2 are added to the DAG, two subnets will be enumerated and two DAG networks will be created: MapiDagNetwork (192.168.1.0) and ReplicationDagNetwork01 (10.0.0.0). These networks will be configured as shown in the following table.
 
 ### Enumerated DAG network settings for a single-subnet DAG
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Subnets</th>
-<th>Interfaces</th>
-<th>MAPI access enabled</th>
-<th>Replication enabled</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>MapiDagNetwork</p></td>
-<td><p>192.168.1.0/24</p></td>
-<td><p>EX1 (192.168.1.15)</p>
-<p>EX2 (192.168.1.16)</p></td>
-<td><p>True</p></td>
-<td><p>True</p></td>
-</tr>
-<tr class="even">
-<td><p>ReplicationDagNetwork01</p></td>
-<td><p>10.0.0.0/24</p></td>
-<td><p>EX1 (10.0.0.15)</p>
-<p>EX2 (10.0.0.16)</p></td>
-<td><p>False</p></td>
-<td><p>True</p></td>
-</tr>
-</tbody>
-</table>
+|Name|Subnets|Interfaces|MAPI access enabled|Replication enabled|
+|---|---|---|---|---|
+|MapiDagNetwork|192.168.1.0/24|EX1 (192.168.1.15) <br/><br/> EX2 (192.168.1.16)|True|True|
+|ReplicationDagNetwork01|10.0.0.0/24|EX1 (10.0.0.15) <br/><br/> EX2 (10.0.0.16)|False|True|
 
 To complete the configuration of ReplicationDagNetwork01 as the dedicated replication network, disable replication for MapiDagNetwork by running the following command.
 
@@ -480,91 +289,27 @@ After replication is disabled for MapiDagNetwork, the Microsoft Exchange Replica
 
 ## DAG networks and multiple subnet deployments
 
-In the preceding example, even though there are two different subnets in use by the DAG (192.168.1.0 and 10.0.0.0), the DAG is considered a single-subnet DAG because each member uses the same subnet to form the MAPI network. When DAG members use different subnets for the MAPI network, the DAG is referred to as a *multi-subnet DAG*. In a multi-subnet DAG, the proper subnets are automatically associated with each DAG network.
+In the preceding example, even though there are two different subnets in use by the DAG (192.168.1.0 and 10.0.0.0), the DAG is considered a single-subnet DAG because each member uses the same subnet to form the MAPI network. When DAG members use different subnets for the MAPI network, the DAG is referred to as a _multi-subnet DAG_. In a multi-subnet DAG, the proper subnets are automatically associated with each DAG network.
 
 For example, consider DAG2, a two-member DAG where each member has two network adapters (one dedicated for the MAPI network and the other for a replication network), and each DAG member is located in a separate Active Directory site, with its MAPI network on a different subnet. Example IP address configuration settings are shown in the following table.
 
 ### Example network adapter settings for a multi-subnet DAG
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Server-network adapter</th>
-<th>IP address/subnet mask</th>
-<th>Default gateway</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>EX1-MAPI</p></td>
-<td><p>192.168.0.15/24</p></td>
-<td><p>192.168.0.1</p></td>
-</tr>
-<tr class="even">
-<td><p>EX1-Replication</p></td>
-<td><p>10.0.0.15/24</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-<tr class="odd">
-<td><p>EX2-MAPI</p></td>
-<td><p>192.168.1.15</p></td>
-<td><p>192.168.1.1</p></td>
-</tr>
-<tr class="even">
-<td><p>EX2-Replication</p></td>
-<td><p>10.0.1.15</p></td>
-<td><p>Not applicable</p></td>
-</tr>
-</tbody>
-</table>
+|Server-network adapter|IP address/subnet mask|Default gateway|
+|---|---|---|
+|EX1-MAPI|192.168.0.15/24|192.168.0.1|
+|EX1-Replication|10.0.0.15/24|Not applicable|
+|EX2-MAPI|192.168.1.15|192.168.1.1|
+|EX2-Replication|10.0.1.15|Not applicable|
 
 In the following configuration, there are four subnets configured in the DAG: 192.168.0.0, 192.168.1.0, 10.0.0.0, and 10.0.1.0. When EX1 and EX2 are added to the DAG, four subnets will be enumerated, but only two DAG networks will be created: MapiDagNetwork (192.168.0.0, 192.168.1.0) and ReplicationDagNetwork01 (10.0.0.0, 10.0.1.0). These networks will be configured as shown in the following table.
 
 ### Enumerated DAG network settings for a multi-subnet DAG
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Subnets</th>
-<th>Interfaces</th>
-<th>MAPI access enabled</th>
-<th>Replication enabled</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>MapiDagNetwork</p></td>
-<td><p>192.168.0.0/24</p>
-<p>192.168.1.0/24</p></td>
-<td><p>EX1 (192.168.0.15)</p>
-<p>EX2 (192.168.1.15)</p></td>
-<td><p>True</p></td>
-<td><p>True</p></td>
-</tr>
-<tr class="even">
-<td><p>ReplicationDagNetwork01</p></td>
-<td><p>10.0.0.0/24</p>
-<p>10.0.1.0/24</p></td>
-<td><p>EX1 (10.0.0.15)</p>
-<p>EX2 (10.0.1.15)</p></td>
-<td><p>False</p></td>
-<td><p>True</p></td>
-</tr>
-</tbody>
-</table>
+|Name|Subnets|Interfaces|MAPI access enabled|Replication enabled|
+|---|---|---|---|---|
+|MapiDagNetwork|192.168.0.0/24 <br/><br/> 192.168.1.0/24|EX1 (192.168.0.15) <br/><br/> EX2 (192.168.1.15)|True|True|
+|ReplicationDagNetwork01|10.0.0.0/24 <br/><br/> 10.0.1.0/24|EX1 (10.0.0.15) <br/><br/> EX2 (10.0.1.15)|False|True|
 
 ## DAG networks and iSCSI networks
 
@@ -581,14 +326,12 @@ This command will also disable the network for use by the cluster. Although the 
 Mailbox servers that are members of a DAG have some properties specific to high availability that should be configured as described in the following sections:
 
 - Automatic database mount dial
-
 - Database copy automatic activation policy
-
 - Maximum active databases
 
 ## Automatic database mount dial
 
-The *AutoDatabaseMountDial* parameter specifies the automatic database mount behavior after a database failover. You can use the [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer) cmdlet to configure the *AutoDatabaseMountDial* parameter with any of the following values:
+The _AutoDatabaseMountDial_ parameter specifies the automatic database mount behavior after a database failover. You can use the [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer) cmdlet to configure the _AutoDatabaseMountDial_ parameter with any of the following values:
 
 - `BestAvailability`: If you specify this value, the database automatically mounts immediately after a failover if the copy queue length is less than or equal to 12. The copy queue length is the number of logs recognized by the passive copy that needs to be replicated. If the copy queue length is more than 12, the database doesn't automatically mount. When the copy queue length is less than or equal to 12, Exchange attempts to replicate the remaining logs to the passive copy and mounts the database.
 
@@ -600,7 +343,7 @@ The default value is `GoodAvailability`. If you specify either `BestAvailability
 
 ## Example: configuring automatic database mount dial
 
-The following example configures a Mailbox server with an *AutoDatabaseMountDial* setting of `GoodAvailability`.
+The following example configures a Mailbox server with an _AutoDatabaseMountDial_ setting of `GoodAvailability`.
 
 ```powershell
 Set-MailboxServer -Identity EX1 -AutoDatabaseMountDial GoodAvailability
@@ -608,7 +351,7 @@ Set-MailboxServer -Identity EX1 -AutoDatabaseMountDial GoodAvailability
 
 ## Database copy automatic activation policy
 
-The *DatabaseCopyAutoActivationPolicy* parameter specifies the type of automatic activation available for mailbox database copies on the selected Mailbox servers. You can use the [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer) cmdlet to configure the *DatabaseCopyAutoActivationPolicy* parameter with any of the following values:
+The _DatabaseCopyAutoActivationPolicy_ parameter specifies the type of automatic activation available for mailbox database copies on the selected Mailbox servers. You can use the [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer) cmdlet to configure the _DatabaseCopyAutoActivationPolicy_ parameter with any of the following values:
 
 - `Blocked`: If you specify this value, databases can't be automatically activated on the selected Mailbox servers.
 
@@ -618,7 +361,7 @@ The *DatabaseCopyAutoActivationPolicy* parameter specifies the type of automatic
 
 ## Example: configuring database copy automatic activation policy
 
-The following example configures a Mailbox server with a *DatabaseCopyAutoActivationPolicy* setting of `Blocked`.
+The following example configures a Mailbox server with a _DatabaseCopyAutoActivationPolicy_ setting of `Blocked`.
 
 ```powershell
 Set-MailboxServer -Identity EX1 -DatabaseCopyAutoActivationPolicy Blocked
@@ -626,9 +369,9 @@ Set-MailboxServer -Identity EX1 -DatabaseCopyAutoActivationPolicy Blocked
 
 ## Maximum active databases
 
-The *MaximumActiveDatabases* parameter (also used with the [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer) cmdlet) specifies the number of databases that can be mounted on a Mailbox server. You can configure Mailbox servers to meet your deployment requirements by ensuring that an individual Mailbox server doesn't become overloaded.
+The _MaximumActiveDatabases_ parameter (also used with the [Set-MailboxServer](/powershell/module/exchange/Set-MailboxServer) cmdlet) specifies the number of databases that can be mounted on a Mailbox server. You can configure Mailbox servers to meet your deployment requirements by ensuring that an individual Mailbox server doesn't become overloaded.
 
-The *MaximumActiveDatabases* parameter is configured with a whole number numeric value. When the maximum number is reached, the database copies on the server won't be activated if a failover or switchover occurs. If the copies are already active on a server, the server won't allow databases to be mounted.
+The _MaximumActiveDatabases_ parameter is configured with a whole number numeric value. When the maximum number is reached, the database copies on the server won't be activated if a failover or switchover occurs. If the copies are already active on a server, the server won't allow databases to be mounted.
 
 ## Example: configuring maximum active databases
 
@@ -662,7 +405,7 @@ To verify that a server is ready for maintenance, perform the following tasks:
 
 1. To verify the server has been placed into maintenance mode, run `Get-ServerComponentState <ServerName> | ft Component,State -Autosize`
 
-2. To verify the server is not hosting any active database copies, run `Get-MailboxServer <ServerName> | ft DatabaseCopy* -Autosize`
+2. To verify the server is not hosting any active database copies, run `Get-MailboxServer <ServerName> | ft DatabaseCopy_ -Autosize`
 
 3. To verify that the node is paused, run `Get-ClusterNode <ServerName> | fl`
 
@@ -690,11 +433,9 @@ To verify that a server is ready for production use, perform the following tasks
 
 - If you are installing an Exchange update, and the update process fails, it can leave some server components in an inactive state, which will be displayed in the output of the above Get-ServerComponentState cmdlet. To resolve this, run the following commands:
 
-- `Set-ServerComponentState <ServerName> -Component ServerWideOffline -State Active -Requester Functional`
-
-- `Set-ServerComponentState <ServerName> -Component Monitoring -State Active -Requester Functional`
-
-- `Set-ServerComponentState <ServerName> -Component RecoveryActionsEnabled -State Active -Requester Functional`
+  - `Set-ServerComponentState <ServerName> -Component ServerWideOffline -State Active -Requester Functional`
+  - `Set-ServerComponentState <ServerName> -Component Monitoring -State Active -Requester Functional`
+  - `Set-ServerComponentState <ServerName> -Component RecoveryActionsEnabled -State Active -Requester Functional`
 
 ## Shutting down DAG members
 

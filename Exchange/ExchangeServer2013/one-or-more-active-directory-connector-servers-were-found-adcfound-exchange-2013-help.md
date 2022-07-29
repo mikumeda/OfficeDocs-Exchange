@@ -31,28 +31,6 @@ Exchange 2007 or Exchange 2010 setup requires that all ADC components be removed
 
 To resolve this issue, remove all ADC components, and rerun Exchange 2007 or Exchange 2010 setup.
 
-<table>
-<colgroup>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>To remove Active Directory Connector components</p></td>
-</tr>
-<tr class="even">
-<td><ol>
-<li><p>To disable the ADC service on the server that is running the ADC service, right-click <strong>My Computer</strong> on the desktop, and then click <strong>Manage</strong>.</p></li>
-<li><p>Expand the <strong>Services and Applications</strong> node, and then click the <strong>Services</strong> node.</p></li>
-<li><p>In the right pane, right-click <strong>Microsoft Active Directory Connector</strong> and then click <strong>Properties</strong>.</p></li>
-<li><p>Change the <strong>Startup Type</strong> to <strong>Disabled</strong>. The next time that the computer starts, the ADC service will not start.</p></li>
-<li><p>Click <strong>Apply</strong>, and then click <strong>OK</strong>.</p></li>
-<li><p>To uninstall the ADC service, use the Active Directory Installation Wizard on the Microsoft Exchange 2000 Server or Microsoft Exchange Server 2003 CD. Open the \ADC\I386 folder and double-click the Setup.exe program. Follow the prompts to <strong>Remove All</strong> ADC service components.</p>
-
-> [!IMPORTANT]
-> You must complete step 6 and <STRONG>Remove All</STRONG> ADC components to resolve this issue. It is insufficient to disable the ADC service.
-
-</li>
-</ol></td>
-</tr>
-</tbody>
-</table>
+|To remove Active Directory Connector components|
+|---|
+|<ol><li>To disable the ADC service on the server that is running the ADC service, right-click **My Computer** on the desktop, and then click **Manage**.</li><li>Expand the **Services and Applications** node, and then click the **Services** node.</li><li>In the right pane, right-click **Microsoft Active Directory Connector** and then click **Properties**.</li><li>Change the **Startup Type** to **Disabled**. The next time that the computer starts, the ADC service will not start.</li><li>Click **Apply**, and then click **OK**.</li><li>To uninstall the ADC service, use the Active Directory Installation Wizard on the Microsoft Exchange 2000 Server or Microsoft Exchange Server 2003 CD. Open the \ADC\I386 folder and double-click the Setup.exe program. Follow the prompts to **Remove All** ADC service components. <br/><br/> **Important**: You must complete step 6 and **Remove All** ADC components to resolve this issue. It is insufficient to disable the ADC service.</li></ol>|

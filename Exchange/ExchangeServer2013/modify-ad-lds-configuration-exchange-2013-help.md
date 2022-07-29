@@ -22,42 +22,18 @@ _**Applies to:** Exchange Server 2013_
 You can use the **ConfigureAdam.ps1** script (located in $env:ExchangeInstallPath\\Scripts) to modify the default Active Directory Lightweight Directory Services (AD LDS) configuration on Edge Transport servers before you subscribe the Edge Transport server to your Exchange organization.
 
 > [!IMPORTANT]
-> The <STRONG>ConfigureAdam.ps1</STRONG> script invokes the <STRONG>dsdbutil</STRONG> command to change the registry settings for AD&nbsp;LDS. The <STRONG>dsdbutil</STRONG> command is an AD&nbsp;LDS management tool intended for use only by experienced administrators; using <STRONG>ConfigureAdam.ps1</STRONG> is the recommended way of changing the AD&nbsp;LDS configuration.
+> The **ConfigureAdam.ps1** script invokes the **dsdbutil** command to change the registry settings for AD LDS. The **dsdbutil** command is an AD LDS management tool intended for use only by experienced administrators; using **ConfigureAdam.ps1** is the recommended way of changing the AD LDS configuration.
 
 The parameters in the following table are available for the **ConfigureAdam.ps1** script. You can use one, all, or any combination of these parameters to modify AD LDS.
 
 ### Parameters available for the ConfigureAdam.ps1 script
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>Ldapport</em></p></td>
-<td><p>Modifies the port used for LDAP communication. By default, the Edge Transport server uses the nonstandard port 50389.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>Sslport</em></p></td>
-<td><p>Modifies the port used for secure LDAP communication. By default, the Edge Transport server uses the nonstandard port 50636.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>LogPath</em></p></td>
-<td><p>Modifies the log file location. By default, the Edge Transport server creates log files in the path %ExchangeInstallPath%Transport Roles\Data\adam</p></td>
-</tr>
-<tr class="even">
-<td><p><em>DataPath</em></p></td>
-<td><p>Modifies the location of the directory database file. By default, the Edge Transport server stores the directory database in the path %ExchangeInstallPath%Transport Roles\Data\adam</p></td>
-</tr>
-</tbody>
-</table>
+|Parameter|Description|
+|---|---|
+|_Ldapport_|Modifies the port used for LDAP communication. By default, the Edge Transport server uses the nonstandard port 50389.|
+|_Sslport_|Modifies the port used for secure LDAP communication. By default, the Edge Transport server uses the nonstandard port 50636.|
+|_LogPath_|Modifies the log file location. By default, the Edge Transport server creates log files in the path %ExchangeInstallPath%Transport Roles\Data\adam|
+|_DataPath_|Modifies the location of the directory database file. By default, the Edge Transport server stores the directory database in the path %ExchangeInstallPath%Transport Roles\Data\adam|
 
 ## What do you need to know before you begin?
 
@@ -87,11 +63,8 @@ This example changes the LDAP port used by AD LDS to 5000. The ampersand (&) is 
 This example makes the following changes to the AD LDS configuration. The ampersand (&) is part of the command syntax. Note the colon (:) used between each parameter and its value:
 
 - Changes the LDAP port to 5000
-
 - Changes the SSL port to 500
-
 - Changes the log path to D:\\Exchange Server\\Data\\ADLDS
-
 - Changes the data path to D:\\Exchange Server\\Data\\ADLDS
 
 ```powershell

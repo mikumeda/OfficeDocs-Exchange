@@ -41,80 +41,13 @@ The network ports that are required for email clients to access mailboxes and ot
 
 ![Network ports required for clients and services.](images/Bb331973.f5ba3439-f001-43c8-848e-0e3fd0fce931(EXCHG.150).png)
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Purpose</th>
-<th>Ports</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Encrypted web connections are used by the following clients and services:</p>
-<ul>
-<li><p>Autodiscover service</p></li>
-<li><p>Exchange ActiveSync</p></li>
-<li><p>Exchange Web Services (EWS)</p></li>
-<li><p>Offline address book distribution</p></li>
-<li><p>Outlook Anywhere (RPC over HTTP)</p></li>
-<li><p>Outlook MAPI over HTTP</p></li>
-<li><p>Outlook Web App</p></li>
-</ul></td>
-<td><p>443/TCP (HTTPS)</p></td>
-<td><p>For more information about these clients and services, see the following topics:</p>
-<ul>
-<li><p><a href="autodiscover-service-for-exchange-2013.md">Autodiscover service</a></p></li>
-<li><p><a href="exchange-activesync-exchange-2013-help.md">Exchange ActiveSync</a></p></li>
-<li><p><a href="/exchange/client-developer/web-service-reference/ews-reference-for-exchange">EWS reference for Exchange</a></p></li>
-<li><p><a href="offline-address-books-exchange-2013-help.md">Offline address books</a></p></li>
-<li><p><a href="outlook-anywhere-exchange-2013-help.md">Outlook Anywhere</a></p></li>
-<li><p><a href="mapi-over-http-exchange-2013-help.md">MAPI over HTTP</a></p></li>
-<li><p><a href="what-s-new-for-outlook-web-app-in-exchange-2013-exchange-2013-help.md">What's new for Outlook Web App in Exchange 2013</a></p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>Unencrypted web connections are used by the following clients and services:</p>
-<ul>
-<li><p>Internet calendar publishing</p></li>
-<li><p>Outlook Web App (redirect to 443/TCP)</p></li>
-<li><p>Autodiscover (fallback when 443/TCP isn't available)</p></li>
-</ul></td>
-<td><p>80/TCP (HTTP)</p></td>
-<td><p>Whenever possible, we recommend using encrypted web connections on 443/TCP to help protect data and credentials. However, you may find that some services must be configured to use unencrypted web connections on 80/TCP to the Client Access server.</p>
-<p>For more information about these clients and services, see the following topics:</p>
-<ul>
-<li><p><a href="enable-internet-calendar-publishing-exchange-2013-help.md">Enable Internet calendar publishing</a></p></li>
-<li><p><a href="what-s-new-for-outlook-web-app-in-exchange-2013-exchange-2013-help.md">What's new for Outlook Web App in Exchange 2013</a></p></li>
-<li><p><a href="autodiscover-service-for-exchange-2013.md">Autodiscover service</a></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>IMAP4 clients</p></td>
-<td><p>143/TCP (IMAP), 993/TCP (secure IMAP)</p></td>
-<td><p>IMAP4 is disabled by default. For more information, see <a href="pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md">POP3 and IMAP4 in Exchange Server 2013</a>.</p>
-<p>The IMAP4 service on the Client Access server proxies connections to the IMAP4 Backend service on a Mailbox server.</p></td>
-</tr>
-<tr class="even">
-<td><p>POP3 clients</p></td>
-<td><p>110/TCP (POP3), 995/TCP (secure POP3)</p></td>
-<td><p>POP3 is disabled by default. For more information, see <a href="pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md">POP3 and IMAP4 in Exchange Server 2013</a>.</p>
-<p>The POP3 service on the Client Access server proxies connections to the POP3 Backend service on a Mailbox server.</p></td>
-</tr>
-<tr class="odd">
-<td><p>SMTP clients (authenticated)</p></td>
-<td><p>587/TCP (authenticated SMTP)</p></td>
-<td><p>The default Received connector named &quot;Client Frontend <em>&lt;Server name&gt;</em>&quot; listens for authenticated SMTP client submissions on port 587 on the Client Access server.</p>
-<p><strong>Note:</strong></p>
-<p>If you have mail clients that can submit authenticated SMTP mail only on port 25, you can modify the network adapter bindings value of this Receive connector to also listen for authenticated SMTP mail submissions on port 25.</p></td>
-</tr>
-</tbody>
-</table>
+|Purpose|Ports|Comments|
+|---|---|---|
+|Encrypted web connections are used by the following clients and services: <ul><li>Autodiscover service</li><li>Exchange ActiveSync</li><li>Exchange Web Services (EWS)</li><li>Offline address book distribution</li><li>Outlook Anywhere (RPC over HTTP)</li><li>Outlook MAPI over HTTP</li><li>Outlook Web App</li></ul>|443/TCP (HTTPS)|For more information about these clients and services, see the following topics: <ul><li>[Autodiscover service](autodiscover-service-for-exchange-2013.md)</li><li>[Exchange ActiveSync](exchange-activesync-exchange-2013-help.md)</li><li>[EWS reference for Exchange](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)</li><li>[Offline address books](offline-address-books-exchange-2013-help.md)</li><li>[Outlook Anywhere](outlook-anywhere-exchange-2013-help.md)</li><li>[MAPI over HTTP](mapi-over-http-exchange-2013-help.md)</li><li>[What's new for Outlook Web App in Exchange 2013](what-s-new-for-outlook-web-app-in-exchange-2013-exchange-2013-help.md)</li></ul>|
+|Unencrypted web connections are used by the following clients and services: <ul><li>Internet calendar publishing</li><li>Outlook Web App (redirect to 443/TCP)</li><li>Autodiscover (fallback when 443/TCP isn't available)</li></ul>|80/TCP (HTTP)|Whenever possible, we recommend using encrypted web connections on 443/TCP to help protect data and credentials. However, you may find that some services must be configured to use unencrypted web connections on 80/TCP to the Client Access server. <br/><br/> For more information about these clients and services, see the following topics: <ul><li>[Enable Internet calendar publishing](enable-internet-calendar-publishing-exchange-2013-help.md)</li><li>[What's new for Outlook Web App in Exchange 2013](what-s-new-for-outlook-web-app-in-exchange-2013-exchange-2013-help.md)</li><li>[Autodiscover service](autodiscover-service-for-exchange-2013.md)</li></ul>|
+|IMAP4 clients|143/TCP (IMAP), 993/TCP (secure IMAP)|IMAP4 is disabled by default. For more information, see [>POP3 and IMAP4 in Exchange Server 2013](pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md). <br/><br/> The IMAP4 service on the Client Access server proxies connections to the IMAP4 Backend service on a Mailbox server.|
+|POP3 clients|110/TCP (POP3), 995/TCP (secure POP3)|POP3 is disabled by default. For more information, see [>POP3 and IMAP4 in Exchange Server 2013](pop3-and-imap4-in-exchange-server-2013-exchange-2013-help.md). <br/><br/> The POP3 service on the Client Access server proxies connections to the POP3 Backend service on a Mailbox server.|
+|SMTP clients (authenticated)|587/TCP (authenticated SMTP)|The default Received connector named "Client Frontend _\<Server name\>_" listens for authenticated SMTP client submissions on port 587 on the Client Access server. <br/><br/> **Note**: If you have mail clients that can submit authenticated SMTP mail only on port 25, you can modify the network adapter bindings value of this Receive connector to also listen for authenticated SMTP mail submissions on port 25.|
 
 ## Network ports required for mail flow
 
@@ -126,56 +59,12 @@ The network ports that are required for mail flow in an Exchange organization th
 
 ![Network ports required for mail flow (no Edge Transport servers).](images/Bb331973.af54dfd3-fe6b-4b6e-bb8e-b00df94a0be0(EXCHG.150).png "Network ports required for mail flow (no Edge Transport servers)")
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Purpose</th>
-<th>Ports</th>
-<th>Source</th>
-<th>Destination</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Inbound mail</p></td>
-<td><p>25/TCP (SMTP)</p></td>
-<td><p>Internet (any)</p></td>
-<td><p>Client Access server</p></td>
-<td><p>The default Receive connector named &quot;Default Frontend <em>&lt;Client Access server name&gt;</em>&quot; on the Client Access server listens for anonymous inbound SMTP mail on port 25.</p>
-<p>Mail is relayed from the Client Access server to a Mailbox server using the implicit and invisible intra-organization Send connector that automatically routes mail between Exchange servers in the same organization.</p></td>
-</tr>
-<tr class="even">
-<td><p>Outbound mail</p></td>
-<td><p>25/TCP (SMTP)</p></td>
-<td><p>Mailbox server</p></td>
-<td><p>Internet (any)</p></td>
-<td><p>By default, Exchange doesn't create any Send connectors that allow you to send mail to the Internet. You have to create Send connectors manually. For more information, see <a href="send-connectors-exchange-2013-help.md">Send connectors</a>.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Outbound mail (if routed through the Client Access server)</p></td>
-<td><p>25/TCP (SMTP)</p></td>
-<td><p>Client Access server</p></td>
-<td><p>Internet (any)</p></td>
-<td><p>Outbound mail is routed through a Client Access server only when a Send connector is configured with <strong>Proxy through Client Access server</strong> in the Exchange admin center or <code>-FrontEndProxyEnabled $true</code> in the Exchange Management Shell.</p>
-<p>In this case, the default Receive connector named &quot;Outbound Proxy Frontend <em>&lt;Client Access server name&gt;</em>&quot; on the Client Access server listens for outbound mail from the Mailbox server. For more information, see <a href="create-a-send-connector-for-email-sent-to-the-internet-exchange-2013-help.md">Create a Send connector for email sent to the Internet</a>.</p></td>
-</tr>
-<tr class="even">
-<td><p>DNS for name resolution of the next mail hop (not pictured)</p></td>
-<td><p>53/UDP,53/TCP (DNS)</p></td>
-<td><p>Internet-facing Exchange server (Client Access server or Mailbox server)</p></td>
-<td><p>DNS server</p></td>
-<td><p>See the Name resolution section.</p></td>
-</tr>
-</tbody>
-</table>
+|Purpose|Ports|Source|Destination|Comments|
+|---|---|---|---|---|
+|Inbound mail|25/TCP (SMTP)|Internet (any)|Client Access server|The default Receive connector named "Default Frontend _\<Client Access server name\>_" on the Client Access server listens for anonymous inbound SMTP mail on port 25. <br/><br/> Mail is relayed from the Client Access server to a Mailbox server using the implicit and invisible intra-organization Send connector that automatically routes mail between Exchange servers in the same organization.|
+|Outbound mail|25/TCP (SMTP)|Mailbox server|Internet (any)|By default, Exchange doesn't create any Send connectors that allow you to send mail to the Internet. You have to create Send connectors manually. For more information, see [Send connectors](send-connectors-exchange-2013-help.md).|
+|Outbound mail (if routed through the Client Access server)|25/TCP (SMTP)|Client Access server|Internet (any)|Outbound mail is routed through a Client Access server only when a Send connector is configured with **Proxy through Client Access server** in the Exchange admin center or `-FrontEndProxyEnabled $true` in the Exchange Management Shell. <br/><br/> In this case, the default Receive connector named "Outbound Proxy Frontend _\<Client Access server name\>_" on the Client Access server listens for outbound mail from the Mailbox server. For more information, see [Create a Send connector for email sent to the Internet](create-a-send-connector-for-email-sent-to-the-internet-exchange-2013-help.md).|
+|DNS for name resolution of the next mail hop (not pictured)|53/UDP,53/TCP (DNS)|Internet-facing Exchange server (Client Access server or Mailbox server)|DNS server|See the Name resolution section.|
 
 ## Network ports required for mail flow with Edge Transport servers
 
@@ -191,82 +80,15 @@ The network ports that are required for mail flow in Exchange organizations that
 
 ![Network ports required for mail flow with Edge Transport servers.](images/Bb331973.110c79b3-dbd9-4cb5-bba1-02048363ee1c(EXCHG.150).png "Network ports required for mail flow with Edge Transport servers")
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Purpose</th>
-<th>Ports</th>
-<th>Source</th>
-<th>Destination</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Inbound mail - Internet to Edge Transport server</p></td>
-<td><p>25/TCP (SMTP)</p></td>
-<td><p>Internet (any)</p></td>
-<td><p>Edge Transport server</p></td>
-<td><p>The default Receive connector named &quot;Default internal Receive connector <em>&lt;Edge Transport server name&gt;</em>&quot; on the Edge Transport server listens for anonymous SMTP mail on port 25.</p></td>
-</tr>
-<tr class="even">
-<td><p>Inbound mail - Edge Transport server to internal Exchange organization</p></td>
-<td><p>25/TCP (SMTP)</p></td>
-<td><p>Edge Transport server</p></td>
-<td><p>Mailbox servers in the subscribed Active Directory site</p></td>
-<td><p>The default Send connector named &quot;EdgeSync - Inbound to <em>&lt;Active Directory site name&gt;</em>&quot; relays inbound mail on port 25 to any Mailbox server in the subscribed Active Directory site. For more information, see the &quot;Send connectors created during the Edge Subscription process&quot; section in the topic, <a href="edge-subscriptions-exchange-2013-help.md">Edge Subscriptions</a>.</p>
-<p>The service that actually receives mail depends on whether the Mailbox server and Client Access server are installed on the same computer or on separate computers.</p>
-<ul>
-<li><p><strong>Standalone Mailbox server</strong>   The default Receive connector named &quot;Default <em>&lt;Mailbox server name&gt;</em>&quot; listens for inbound mail (including mail from Edge Transport servers) on port 25.</p></li>
-<li><p><strong>Mailbox server and Client Access server installed on the same computer</strong>   The default Receive connector named &quot;Default Frontend <em>&lt;Server name&gt;</em>&quot; in the Front End Transport service (the Client Access server role) listens for inbound mail (including mail from Exchange 2013 Edge Transport servers) on port 25.</p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>Outbound mail - Internal Exchange organization to Edge Transport server</p></td>
-<td><p>25/TCP (SMTP)</p></td>
-<td><p>Mailbox servers in the subscribed Active Directory site</p></td>
-<td><p>Edge Transport servers</p></td>
-<td><p>Outbound mail always bypasses the Client Access server.</p>
-<p>Mail is relayed from any Mailbox server in the subscribed Active Directory site to an Edge Transport server using the implicit and invisible intra-organization Send connector that automatically routes mail between Exchange servers in the same organization.</p>
-<p>The default Receive connector named &quot;Default internal Receive connector <em>&lt;Edge Transport server name&gt;</em>&quot; on the Edge Transport server listens for SMTP mail on port 25 from any Mailbox server in the subscribed Active Directory site.</p></td>
-</tr>
-<tr class="even">
-<td><p>Outbound mail - Edge Transport server to Internet</p></td>
-<td><p>25/TCP (SMTP)</p></td>
-<td><p>Edge Transport server</p></td>
-<td><p>Internet (any)</p></td>
-<td><p>The default Send connector named &quot;EdgeSync - <em>&lt;Active Directory site name&gt;</em> to Internet&quot; relays outbound mail on port 25 from the Edge Transport server to the Internet.</p></td>
-</tr>
-<tr class="odd">
-<td><p>EdgeSync synchronization</p></td>
-<td><p>50636/TCP (secure LDAP)</p></td>
-<td><p>Mailbox servers in the subscribed Active Directory site that participate in EdgeSync synchronization</p></td>
-<td><p>Edge Transport servers</p></td>
-<td><p>When the Edge Transport server is subscribed to the Active Directory site, all Mailbox servers that exist in the site at the time participate in EdgeSync synchronization. However, any Mailbox servers that you add later don't automatically participate in EdgeSync synchronization.</p></td>
-</tr>
-<tr class="even">
-<td><p>DNS for name resolution of the next mail hop (not pictured)</p></td>
-<td><p>53/UDP,53/TCP (DNS)</p></td>
-<td><p>Edge Transport server</p></td>
-<td><p>DNS server</p></td>
-<td><p>See the Name resolution section.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Proxy server definition for sender reputation (not pictured)</p></td>
-<td><p>user defined</p></td>
-<td><p>Edge Transport servers</p></td>
-<td><p>Internet</p></td>
-<td><p>Sender reputation (the Protocol Analysis agent) analyzes inbound message paths in an effort to reduce spam. If your organization uses a proxy server to control access to the Internet, you need to define details about the proxy server so that sender reputation can work properly (in particular, open proxy detection and sender blocking). You use the <em>ProxyServerName</em>, <em>ProxyServerPort</em> and <em>ProxyServerType</em> parameters on the <strong>Set-SenderReputationConfig</strong> cmdlet to define your organization's proxy server so sender reputation can successfully connect to the Internet. For more information, see <a href="manage-sender-reputation-exchange-2013-help.md">Manage sender reputation</a>.</p></td>
-</tr>
-</tbody>
-</table>
+|Purpose|Ports|Source|Destination|Comments|
+|---|---|---|---|---|
+|Inbound mail - Internet to Edge Transport server|25/TCP (SMTP)|Internet (any)|Edge Transport server|The default Receive connector named "Default internal Receive connector _\<Edge Transport server name\>_" on the Edge Transport server listens for anonymous SMTP mail on port 25.|
+|Inbound mail - Edge Transport server to internal Exchange organization|25/TCP (SMTP)|Edge Transport server|Mailbox servers in the subscribed Active Directory site|The default Send connector named "EdgeSync - Inbound to _\<Active Directory site name\>_" relays inbound mail on port 25 to any Mailbox server in the subscribed Active Directory site. For more information, see the "Send connectors created during the Edge Subscription process" section in the topic, [Edge Subscriptions](edge-subscriptions-exchange-2013-help.md). <br/><br/> The service that actually receives mail depends on whether the Mailbox server and Client Access server are installed on the same computer or on separate computers. <ul><li>**Standalone Mailbox server**   The default Receive connector named "Default _\<Mailbox server name\>_" listens for inbound mail (including mail from Edge Transport servers) on port 25.</li><li>**Mailbox server and Client Access server installed on the same computer**   The default Receive connector named "Default Frontend _\<Server name\>_" in the Front End Transport service (the Client Access server role) listens for inbound mail (including mail from Exchange 2013 Edge Transport servers) on port 25.</li></ul>|
+|Outbound mail - Internal Exchange organization to Edge Transport server|25/TCP (SMTP)|Mailbox servers in the subscribed Active Directory site|Edge Transport servers|Outbound mail always bypasses the Client Access server. <br/><br/> Mail is relayed from any Mailbox server in the subscribed Active Directory site to an Edge Transport server using the implicit and invisible intra-organization Send connector that automatically routes mail between Exchange servers in the same organization. <br/><br/> The default Receive connector named "Default internal Receive connector _\<Edge Transport server name\>_" on the Edge Transport server listens for SMTP mail on port 25 from any Mailbox server in the subscribed Active Directory site.|
+|Outbound mail - Edge Transport server to Internet|25/TCP (SMTP)|Edge Transport server|Internet (any)|The default Send connector named "EdgeSync - _\<Active Directory site name\>_ to Internet" relays outbound mail on port 25 from the Edge Transport server to the Internet.|
+|EdgeSync synchronization|50636/TCP (secure LDAP)|Mailbox servers in the subscribed Active Directory site that participate in EdgeSync synchronization|Edge Transport servers|When the Edge Transport server is subscribed to the Active Directory site, all Mailbox servers that exist in the site at the time participate in EdgeSync synchronization. However, any Mailbox servers that you add later don't automatically participate in EdgeSync synchronization.|
+|DNS for name resolution of the next mail hop (not pictured)|53/UDP,53/TCP (DNS)|Edge Transport server|DNS server|See the Name resolution section.|
+|Proxy server definition for sender reputation (not pictured)|user defined|Edge Transport servers|Internet|Sender reputation (the Protocol Analysis agent) analyzes inbound message paths in an effort to reduce spam. If your organization uses a proxy server to control access to the Internet, you need to define details about the proxy server so that sender reputation can work properly (in particular, open proxy detection and sender blocking). You use the _ProxyServerName_, _ProxyServerPort_ and _ProxyServerType_ parameters on the **Set-SenderReputationConfig** cmdlet to define your organization's proxy server so sender reputation can successfully connect to the Internet. For more information, see [Manage sender reputation](manage-sender-reputation-exchange-2013-help.md).|
 
 ## Name resolution
 
@@ -281,5 +103,4 @@ The network ports that are required for an organization that uses both Exchange 
 The network ports that are required for Unified Messaging are covered in the following topics:
 
 - [UM protocols, ports, and services](um-protocols-ports-and-services-exchange-2013-help.md)
-
 - [Exchange Server 2013 SP1 Architecture Poster](https://www.microsoft.com/download/details.aspx?id=42542)

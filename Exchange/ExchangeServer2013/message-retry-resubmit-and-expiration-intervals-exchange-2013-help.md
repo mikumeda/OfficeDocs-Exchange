@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-In Microsoft Exchange Server 2013, messages that can't be successfully delivered are subject to various retry, resubmit, and expiration deadlines based on the message's source and destination. *Retry* is a renewed connection attempt with the destination. *Resubmit* is the act of sending messages back to the Submission queue for the categorizer to reprocess. The message *expires* after all delivery efforts have failed over a specified period of time. After a message expires, the sender is notified of the delivery failure. Then the message is deleted from the queue.
+In Microsoft Exchange Server 2013, messages that can't be successfully delivered are subject to various retry, resubmit, and expiration deadlines based on the message's source and destination. _Retry_ is a renewed connection attempt with the destination. _Resubmit_ is the act of sending messages back to the Submission queue for the categorizer to reprocess. The message _expires_ after all delivery efforts have failed over a specified period of time. After a message expires, the sender is notified of the delivery failure. Then the message is deleted from the queue.
 
 In all three cases of retry, resubmit, or expire, you can manually intervene before the automatic actions are performed on the messages.
 
@@ -35,80 +35,15 @@ The configuration options that are available for message retry intervals are des
 
 ### Configuration options that are available for message retry intervals
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter or key name</th>
-<th>Default value</th>
-<th>Where to configure</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>QueueGlitchRetryCount</em></p></td>
-<td><p>4</p></td>
-<td><p>EdgeTransport.exe.config</p></td>
-<td><p>This key specifies the number of connection attempts that are immediately tried when a transport server has trouble connecting with the destination server. Such connection problems are typically caused by very brief network outages.</p>
-<p>Valid input for this key is an integer from 0 through 15.</p>
-<p>Typically, you don't have to modify this key unless the network is unreliable and continues to experience many accidentally dropped connections.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>QueueGlitchRetryInterval</em></p></td>
-<td><p><code>00:01:00</code> or 1 minute</p></td>
-<td><p>EdgeTransport.exe.config</p></td>
-<td><p>This key controls the connection interval between each connection attempt that's specified by the <em>QueueGlitchRetryCount</em> key.</p>
-<p>Typically, you don't have to modify this parameter unless the network is unreliable and continues to experience many accidentally dropped connections.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>TransientFailureRetryCount</em></p></td>
-<td><p>6</p></td>
-<td><p><strong>Set-TransportService</strong> cmdlet or server properties in the Exchange admin center (EAC)</p></td>
-<td><p>This parameter specifies the number of connection attempts that are tried after the connection attempts that are controlled by the <em>QueueGlitchRetryCount</em> and <em>QueueGlitchRetryInterval</em> keys have failed. Connection problems that exhaust the <em>QueueGlitchRetryCount</em> and <em>QueueGlitchRetryInterval</em> keys can be caused by server restarts or cached DNS lookup failures.</p>
-<p>Valid input for this parameter is an integer from 0 through 15. If you set this parameter to 0, the next connection attempt is controlled by the <em>OutboundConnectionFailureRetryInterval</em> parameter.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>TransientFailureRetryInterval</em></p></td>
-<td><ul>
-<li><p>Transport service on Mailbox servers: <code>00:05:00</code> or 5 minutes</p></li>
-<li><p>Edge Transport servers: <code>00:01:00</code> or 10 minutes</p></li>
-</ul></td>
-<td><p><strong>Set-TransportService</strong>cmdlet or server properties in the EAC</p></td>
-<td><p>This parameter controls the connection interval between each connection attempt that's specified by the <em>TransientFailureRetryCount</em> parameter.</p>
-<p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>OutboundConnectionFailureRetryInterval</em></p></td>
-<td><ul>
-<li><p>Transport service on Mailbox servers: <code>00:10:00</code> or 10 minutes</p></li>
-<li><p>Edge Transport Servers: <code>00:30:00</code> or 30 minutes</p></li>
-</ul></td>
-<td><p><strong>Set-TransportService</strong> cmdlet or server properties in the EAC</p></td>
-<td><p>This parameter specifies the retry interval for outbound connection attempts that have previously failed. The previously failed connection attempts are controlled by the <em>TransientFailureRetryCount</em> and <em>TransientFailureRetryInterval</em> parameters.</p>
-<p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>MessageRetryInterval</em></p></td>
-<td><p><code>00:15:00</code> or15 minutes</p></td>
-<td><p><strong>Set-TransportService</strong> cmdlet</p></td>
-<td><p>This parameter specifies the retry interval for individual messages that have a status of Retry. We recommend that you don't modify the default value unless Microsoft Customer Service and Support advises you to do this.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>MailboxDeliveryQueueRetryInterval</em></p></td>
-<td><p><code>00:05:00</code> or 5 minutes</p></td>
-<td><p>EdgeTransport.exe.config</p></td>
-<td><p>This key specifies how frequently the queues try to connect to the Mailbox Transport Delivery service for a destination mailbox database that can't be successfully reached.</p>
-<p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p>
-<p>Valid input for this key is from 00:00:01 through 1.00:00:00.</p></td>
-</tr>
-</tbody>
-</table>
+|Parameter or key name|Default value|Where to configure|Description|
+|---|---|---|---|
+|_QueueGlitchRetryCount_|4|EdgeTransport.exe.config|This key specifies the number of connection attempts that are immediately tried when a transport server has trouble connecting with the destination server. Such connection problems are typically caused by very brief network outages. <br/><br/> Valid input for this key is an integer from 0 through 15. <br/><br/> Typically, you don't have to modify this key unless the network is unreliable and continues to experience many accidentally dropped connections.|
+|_QueueGlitchRetryInterval_|`00:01:00` or 1 minute|EdgeTransport.exe.config|This key controls the connection interval between each connection attempt that's specified by the _QueueGlitchRetryCount_ key. <br/><br/> Typically, you don't have to modify this parameter unless the network is unreliable and continues to experience many accidentally dropped connections.|
+|_TransientFailureRetryCount_|6|**Set-TransportService** cmdlet or server properties in the Exchange admin center (EAC)|This parameter specifies the number of connection attempts that are tried after the connection attempts that are controlled by the _QueueGlitchRetryCount_ and _QueueGlitchRetryInterval_ keys have failed. Connection problems that exhaust the _QueueGlitchRetryCount_ and _QueueGlitchRetryInterval_ keys can be caused by server restarts or cached DNS lookup failures. <br/><br/> Valid input for this parameter is an integer from 0 through 15. If you set this parameter to 0, the next connection attempt is controlled by the _OutboundConnectionFailureRetryInterval_ parameter.|
+|_TransientFailureRetryInterval_|<ul><li>Transport service on Mailbox servers: `00:05:00` or 5 minutes</li><li>Edge Transport servers: `00:01:00` or 10 minutes</li></ul>|**Set-TransportService**cmdlet or server properties in the EAC|This parameter controls the connection interval between each connection attempt that's specified by the _TransientFailureRetryCount_ parameter. <br/><br/> To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.|
+|_OutboundConnectionFailureRetryInterval_|<ul><li>Transport service on Mailbox servers: `00:10:00` or 10 minutes</li><li>Edge Transport Servers: `00:30:00` or 30 minutes</li></ul>|**Set-TransportService** cmdlet or server properties in the EAC|This parameter specifies the retry interval for outbound connection attempts that have previously failed. The previously failed connection attempts are controlled by the _TransientFailureRetryCount_ and _TransientFailureRetryInterval_ parameters. <br/><br/> To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.|
+|_MessageRetryInterval_|`00:15:00` or15 minutes|**Set-TransportService** cmdlet|This parameter specifies the retry interval for individual messages that have a status of Retry. We recommend that you don't modify the default value unless Microsoft Customer Service and Support advises you to do this.|
+|_MailboxDeliveryQueueRetryInterval_|`00:05:00` or 5 minutes|EdgeTransport.exe.config|This key specifies how frequently the queues try to connect to the Mailbox Transport Delivery service for a destination mailbox database that can't be successfully reached. <br/><br/> To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds. <br/><br/> Valid input for this key is from 00:00:01 through 1.00:00:00.|
 
 ## Configuration options for manual message retry
 
@@ -124,48 +59,14 @@ The configuration options that are available for delay DSN notification messages
 
 ### Configuration options that are available for delay DSN notification messages
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter name</th>
-<th>Default value</th>
-<th>Location</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>DelayNotificationTimeOut</em></p></td>
-<td><p><code>4:00:00</code>4 hours</p></td>
-<td><p><strong>Set-TransportService</strong> or server properties in the EAC</p></td>
-<td><p>This parameter specifies how long the server waits before it sends a delay DSN message to the sender. The value of this parameter should always be greater than the value of the <em>TransientFailureRetryCount</em> parameter multiplied by the value of the <em>TransientFailureRetryInterval</em> parameter.</p>
-<p>To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>ExternalDelayDSNEnabled</em></p></td>
-<td><p><code>$true</code></p></td>
-<td><p><strong>Set-TransportConfig</strong></p></td>
-<td><p>This parameter specifies whether delay DSN messages can be sent to message senders who are outside the Exchange organization.</p>
-<p>Valid input for this parameter is <code>$true</code> or <code>$false</code>.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>InternalDelayDSNEnabled</em></p></td>
-<td><p><code>$true</code></p></td>
-<td><p><strong>Set-TransportConfig</strong></p></td>
-<td><p>This parameter specifies whether delay DSN messages can be sent to message senders who are inside the Exchange organization.</p>
-<p>Valid input for this parameter is <code>$true</code> or <code>$false</code>.</p></td>
-</tr>
-</tbody>
-</table>
+|Parameter name|Default value|Location|Description|
+|---|---|---|---|
+|_DelayNotificationTimeOut_|`4:00:00`4 hours|**Set-TransportService** or server properties in the EAC|This parameter specifies how long the server waits before it sends a delay DSN message to the sender. The value of this parameter should always be greater than the value of the _TransientFailureRetryCount_ parameter multiplied by the value of the _TransientFailureRetryInterval_ parameter. <br/><br/> To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.|
+|_ExternalDelayDSNEnabled_|`$true`|**Set-TransportConfig**|This parameter specifies whether delay DSN messages can be sent to message senders who are outside the Exchange organization. <br/><br/> Valid input for this parameter is `$true` or `$false`.|
+|_InternalDelayDSNEnabled_|`$true`|**Set-TransportConfig**|This parameter specifies whether delay DSN messages can be sent to message senders who are inside the Exchange organization. <br/><br/> Valid input for this parameter is `$true` or `$false`.|
 
 > [!NOTE]
-> On Exchange 2007 Hub Transport servers, all <EM>ExternalDSN*</EM> and <EM>InternalDSN*</EM> parameters are available on the <STRONG>Set-TransportServer</STRONG> cmdlet, not the <STRONG>Set-TransportConfig</STRONG> cmdlet. If you have any Exchange 2007 Hub Transport servers in your organization, you need to make changes to these values using the <STRONG>Set-TransportServer</STRONG> cmdlet on each Exchange 2007 Hub Transport server.
+> On Exchange 2007 Hub Transport servers, all _ExternalDSN\*_ and _InternalDSN\*_ parameters are available on the **Set-TransportServer** cmdlet, not the **Set-TransportConfig** cmdlet. If you have any Exchange 2007 Hub Transport servers in your organization, you need to make changes to these values using the **Set-TransportServer** cmdlet on each Exchange 2007 Hub Transport server.
 
 ## Configuration options for message resubmission
 
@@ -173,7 +74,7 @@ Message resubmission sends undelivered messages back to the Submission queue to 
 
 ## Automatic message resubmission
 
-Undelivered messages are automatically resubmitted if the delivery queue is in the status of Retry and has been unable to successfully deliver any messages for a specified period of time. That period of time is controlled by the *MaxIdleTimeBeforeResubmit* key in the EdgeTransport.exe.config application configuration file. Only messages in delivery queues are candidates for automatic resubmission.
+Undelivered messages are automatically resubmitted if the delivery queue is in the status of Retry and has been unable to successfully deliver any messages for a specified period of time. That period of time is controlled by the _MaxIdleTimeBeforeResubmit_ key in the EdgeTransport.exe.config application configuration file. Only messages in delivery queues are candidates for automatic resubmission.
 
 To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.
 
@@ -183,15 +84,13 @@ The default value is `12:00:00` or 12 hours.
 
 You can manually resubmit messages that have the following status in the Transport service on a Mailbox server or an Edge Transport server:
 
-  - Delivery queues that have the status of Retry. The messages in the queues must not be in the Suspended state.
-
-  - Messages that are in the Unreachable queue and aren't in the Suspended state.
-
-  - Messages that are in the poison message queue.
+- Delivery queues that have the status of Retry. The messages in the queues must not be in the Suspended state.
+- Messages that are in the Unreachable queue and aren't in the Suspended state.
+- Messages that are in the poison message queue.
 
 For more information about the poison message queue and the Unreachable queue, see "About the Poison Message Queue and the Unreachable Queue" in the topic [Queues](queues-exchange-2013-help.md).
 
-If you want to manually resubmit messages that are located in delivery queues or the Unreachable queue without waiting for the time that's specified by the *MaxIdleTimeBeforeResubmit* parameter to pass, you need to use the **Retry-Queue** cmdlet with the *Resubmit* parameter. To manually resubmit messages that are located in the poison message queue, you can use Queue Viewer or the **Resume-Message** cmdlet to resume the message. For more information, see the "Resubmit messages in queues" section in [Manage queues](manage-queues-exchange-2013-help.md).
+If you want to manually resubmit messages that are located in delivery queues or the Unreachable queue without waiting for the time that's specified by the _MaxIdleTimeBeforeResubmit_ parameter to pass, you need to use the **Retry-Queue** cmdlet with the _Resubmit_ parameter. To manually resubmit messages that are located in the poison message queue, you can use Queue Viewer or the **Resume-Message** cmdlet to resume the message. For more information, see the "Resubmit messages in queues" section in [Manage queues](manage-queues-exchange-2013-help.md).
 
 Another way that you can manually resubmit messages is to suspend the messages, export the messages to text files that have the .eml file name extension, and then copy the .eml files to the Replay directory on any Mailbox server or Edge Transport server. This resubmission method works for messages that are located in delivery queues or the Unreachable queue. Messages that are located in the poison message queue are already in the Suspended state. Messages that are located in the Submission queue can't be suspended or exported.
 
@@ -202,13 +101,13 @@ For more information, see [Export messages from queues](export-messages-from-que
 
 ## Configuration options for message expiration
 
-The *message expiration timeout interval* specifies the maximum length of time that an Edge Transport server or the Transport service on a Mailbox server tries to deliver a failed message. If the message can't be successfully delivered before the expiration timeout interval has passed, an NDR that contains the original message or the message headers is delivered to the sender.
+The _message expiration timeout interval_ specifies the maximum length of time that an Edge Transport server or the Transport service on a Mailbox server tries to deliver a failed message. If the message can't be successfully delivered before the expiration timeout interval has passed, an NDR that contains the original message or the message headers is delivered to the sender.
 
 ## Automatic message expiration
 
-The message expiration timeout interval is controlled by the *MessageExpirationTimeOut* parameter in the **Set-TransportService** cmdlet or in the server properties in the EAC.
+The message expiration timeout interval is controlled by the _MessageExpirationTimeOut_ parameter in the **Set-TransportService** cmdlet or in the server properties in the EAC.
 
-To specify a value, enter it as a time span: dd.hh:mm:ss where d = days, h = hours, m = minutes, and s = seconds.
+To specify a value, enter it as a time span: _dd_._hh_:_mm_:_ss_ where _dd_ = days, _hh_ = hours, _mm_ = minutes, and _ss_ = seconds.
 
 The default value is `2.00:00:00` or 2 days. The valid input range for this parameter is from `00:00:05` through `90.00:00:00`.
 
