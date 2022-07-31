@@ -2,6 +2,103 @@
 
 
 
+## Week of July 25, 2022
+
+
+| Published On |Topic title | Change |
+|------|------------|--------|
+| 7/26/2022 | [High availability and site resilience: Exchange 2013 Help](/Exchange/high-availability-and-site-resilience-exchange-2013-help) | modified |
+| 7/26/2022 | [High availability and site resilience permissions: Exchange 2013 Help](/Exchange/high-availability-and-site-resilience-permissions-exchange-2013-help) | modified |
+| 7/26/2022 | [Exchange Server - IIS 7 component not installed](/Exchange/iis-7-component-not-installed-longhorniis7basicauthnotinstalled-exchange-2013-help) | modified |
+| 7/26/2022 | [IIS 7 component not installed](/Exchange/iis-7-component-not-installed-longhorniis7digestauthnotinstalled-exchange-2013-help) | modified |
+| 7/26/2022 | [Exchange Server - IIS 7 component isn't installed](/Exchange/iis-7-component-not-installed-longhorniis7httpcompressiondynamicnotinstalled-exchange-2013-help) | modified |
+| 7/26/2022 | [Exchange setup can't continue: IIS 7 component not installed](/Exchange/iis-7-component-not-installed-longhorniis7httpcompressionstaticnotinstalled-exchange-2013-help) | modified |
+| 7/26/2022 | [Exchange Server: IIS 7 component not installed](/Exchange/iis-7-component-not-installed-longhorniis7windowsauthnotinstalled-exchange-2013-help) | modified |
+| 7/26/2022 | [Import address rewrite entries on Edge Transport servers: Exchange 2013 Help](/Exchange/import-address-rewrite-entries-on-edge-transport-servers-exchange-2013-help) | modified |
+| 7/26/2022 | [Import and export files in the Exchange Management Shell: Exchange 2013 Help](/Exchange/import-and-export-files-in-the-exchange-management-shell-exchange-2013-help) | modified |
+| 7/26/2022 | [In-Place Archiving in Exchange 2013: Exchange 2013 Help](/Exchange/in-place-archiving-in-exchange-2013-exchange-2013-help) | modified |
+| 7/26/2022 | [Information Rights Management: Exchange 2013 Help](/Exchange/information-rights-management-exchange-2013-help) | modified |
+| 7/26/2022 | [Information Rights Management in Exchange ActiveSync: Exchange 2013 Help](/Exchange/information-rights-management-in-exchange-activesync-exchange-2013-help) | modified |
+| 7/26/2022 | [Information Rights Management logging: Exchange 2013 Help](/Exchange/information-rights-management-logging-exchange-2013-help) | modified |
+| 7/26/2022 | [Integration with SharePoint and Lync: Exchange 2013 Help](/Exchange/integration-with-sharepoint-and-lync-exchange-2013-help) | modified |
+| 7/26/2022 | [IPv6 support in Exchange 2013: Exchange 2013 Help](/Exchange/ipv6-support-in-exchange-2013-exchange-2013-help) | modified |
+| 7/26/2022 | [Keyboard shortcuts in the Exchange admin center in Exchange 2013](/Exchange/keyboard-shortcuts-in-the-exchange-admin-center-2013-help) | modified |
+| 7/26/2022 | [Keyboard shortcuts in the Exchange admin center](/Exchange/keyboard-shortcuts-in-the-exchange-admin-center-exchange-online-protection-help) | modified |
+| 7/26/2022 | [Learn about the Exchange UM Troubleshooting Tool: Exchange 2013 Help](/Exchange/learn-about-the-exchange-um-troubleshooting-tool-exchange-2013-help) | modified |
+| 7/26/2022 | [Limits for public folders: Exchange 2013 Help](/Exchange/limits-for-public-folders-exchange-2013-help) | modified |
+| 7/26/2022 | [Mail flow: Exchange 2013 Help](/Exchange/mail-flow-exchange-2013-help) | modified |
+| 7/26/2022 | [Mail flow permissions: Exchange 2013 Help](/Exchange/mail-flow-permissions-exchange-2013-help) | modified |
+| 7/26/2022 | [Transport rule actions in Exchange 2013: Exchange 2013 Help](/Exchange/mail-flow-rule-actions-in-exchange-2013-exchange-2013-help) | modified |
+| 7/27/2022 | [Mail routing: Exchange 2013 Help](/Exchange/mail-routing-exchange-2013-help) | modified |
+| 7/27/2022 | [Mailbox and Client Access servers: Exchange 2013 Help](/Exchange/mailbox-and-client-access-servers-exchange-2013-help) | modified |
+| 7/27/2022 | [Mailbox audit logging: Exchange 2013 Help](/Exchange/mailbox-audit-logging-exchange-2013-help) | modified |
+| 7/27/2022 | [Mailbox import and export requests: Exchange 2013 Help](/Exchange/mailbox-import-and-export-requests-exchange-2013-help) | modified |
+| 7/27/2022 | [Mailbox moves in Exchange 2013: Exchange 2013 Help](/Exchange/mailbox-moves-in-exchange-2013-exchange-2013-help) | modified |
+| 7/27/2022 | [MailTips: Exchange 2013 Help](/Exchange/mailtips-exchange-2013-help) | modified |
+| 7/27/2022 | [Manage In-Place Archives in Exchange 2013: Exchange 2013 Help](/Exchange/manage-in-place-archives-in-exchange-2013-exchange-2013-help) | modified |
+| 7/27/2022 | [Manage mailbox restore requests: Exchange 2013 Help](/Exchange/manage-mailbox-restore-requests-exchange-2013-help) | modified |
+| 7/27/2022 | [Manage sender reputation: Exchange 2013 Help](/Exchange/manage-sender-reputation-exchange-2013-help) | modified |
+| 7/27/2022 | [Managed Availability: Exchange 2013 Help](/Exchange/managed-availability-exchange-2013-help) | modified |
+| 7/27/2022 | [Managed Store Limits: Exchange 2013 Help](/Exchange/managed-store-limits-exchange-2013-help) | modified |
+| 7/27/2022 | [Exchange Server 2013 Management Pack Guide](/Exchange/management/exchange-server-2013-management-pack-guide) | modified |
+| 7/27/2022 | [Troubleshooting ActiveSync Health Set](/Exchange/management/health/troubleshooting-activesync-health-set) | modified |
+| 7/27/2022 | [Troubleshooting Autodiscover Health Set](/Exchange/management/health/troubleshooting-autodiscover-health-set) | modified |
+| 7/27/2022 | [Troubleshooting Autodiscover.Protocol Health Set](/Exchange/management/health/troubleshooting-autodiscover-protocol-health-set) | modified |
+| 7/27/2022 | [Troubleshooting Autodiscover.Proxy Health Set](/Exchange/management/health/troubleshooting-autodiscover-proxy-health-set) | modified |
+| 7/29/2022 | [Deploying Outlook for iOS and Android app configuration settings in Exchange Online](/Exchange/clients-and-mobile-in-exchange-online/outlook-for-ios-and-android/outlook-for-ios-and-android-configuration-with-microsoft-intune) | modified |
+| 7/29/2022 | [Message encoding options: Exchange 2013 Help](/Exchange/message-encoding-options-exchange-2013-help) | modified |
+| 7/29/2022 | [Troubleshooting DataProtection Health Set](/Exchange/management/health/troubleshooting-dataprotection-health-set) | modified |
+| 7/29/2022 | [Troubleshooting ECP Health Set](/Exchange/management/health/troubleshooting-ecp-health-set) | modified |
+| 7/29/2022 | [Troubleshooting ECP.Proxy Health Set](/Exchange/management/health/troubleshooting-ecp-proxy-health-set) | modified |
+| 7/29/2022 | [Troubleshooting EWS Health Set](/Exchange/management/health/troubleshooting-ews-health-set) | modified |
+| 7/29/2022 | [Troubleshooting EWS.Protocol Health Set](/Exchange/management/health/troubleshooting-ews-protocol-health-set) | modified |
+| 7/29/2022 | [Troubleshooting EWS.Proxy Health Set](/Exchange/management/health/troubleshooting-ews-proxy-health-set) | modified |
+| 7/29/2022 | [Troubleshooting FIPS Health Set](/Exchange/management/health/troubleshooting-fips-health-set) | modified |
+| 7/29/2022 | [Troubleshooting IMAP Health Set](/Exchange/management/health/troubleshooting-imap-health-set) | modified |
+| 7/29/2022 | [Troubleshooting MailboxTransport Health Set](/Exchange/management/health/troubleshooting-mailboxtransport-health-set) | modified |
+| 7/29/2022 | [Troubleshooting MRS Health Set](/Exchange/management/health/troubleshooting-mrs-health-set) | modified |
+| 7/29/2022 | [Troubleshooting OAB.Proxy Health Set](/Exchange/management/health/troubleshooting-oab-proxy-health-set) | modified |
+| 7/29/2022 | [Troubleshooting Outlook.Proxy Health Set](/Exchange/management/health/troubleshooting-outlook-proxy-health-set) | modified |
+| 7/29/2022 | [Troubleshooting OWA Health Set](/Exchange/management/health/troubleshooting-owa-health-set) | modified |
+| 7/29/2022 | [Troubleshooting OWA.Protocol.Dep Health Set](/Exchange/management/health/troubleshooting-owa-protocol-dep-health-set) | modified |
+| 7/29/2022 | [Troubleshooting OWA.Protocol Health Set](/Exchange/management/health/troubleshooting-owa-protocol-health-set) | modified |
+| 7/29/2022 | [Troubleshooting OWA.Proxy Health Set](/Exchange/management/health/troubleshooting-owa-proxy-health-set) | modified |
+| 7/29/2022 | [Troubleshooting POP Health Set](/Exchange/management/health/troubleshooting-pop-health-set) | modified |
+| 7/29/2022 | [Troubleshooting RPS.Proxy Health Set](/Exchange/management/health/troubleshooting-rps-proxy-health-set) | modified |
+| 7/29/2022 | [Troubleshooting UM.CallRouter Health Set](/Exchange/management/health/troubleshooting-um-callrouter-health-set) | modified |
+| 7/29/2022 | [Troubleshooting UM Health Set](/Exchange/management/health/troubleshooting-um-health-set) | modified |
+| 7/29/2022 | [Troubleshooting UM.Protocol Health Set](/Exchange/management/health/troubleshooting-um-protocol-health-set) | modified |
+| 7/29/2022 | [Understanding how Exchange Server 2013 Management Pack reports system health](/Exchange/management/understanding-how-exchange-server-2013-management-pack-reports-system-health) | modified |
+| 7/29/2022 | [Managing database availability groups: Exchange 2013 Help](/Exchange/managing-database-availability-groups-exchange-2013-help) | modified |
+| 7/29/2022 | [Managing mailbox database copies: Exchange 2013 Help](/Exchange/managing-mailbox-database-copies-exchange-2013-help) | modified |
+| 7/29/2022 | [MAPI over HTTP: Exchange 2013 Help](/Exchange/mapi-over-http-exchange-2013-help) | modified |
+| 7/29/2022 | [Message filters: Exchange 2013 Help](/Exchange/message-filters-exchange-2013-help) | modified |
+| 7/29/2022 | [Message retry, resubmit, and expiration intervals: Exchange 2013 Help](/Exchange/message-retry-resubmit-and-expiration-intervals-exchange-2013-help) | modified |
+| 7/29/2022 | [Message size limits: Exchange 2013 Help](/Exchange/message-size-limits-exchange-2013-help) | modified |
+| 7/29/2022 | [Message throttling: Exchange 2013 Help](/Exchange/message-throttling-exchange-2013-help) | modified |
+| 7/29/2022 | [Messaging policy and compliance: Exchange 2013 Help](/Exchange/messaging-policy-and-compliance-exchange-2013-help) | modified |
+| 7/29/2022 | [Messaging policy and compliance permissions: Exchange 2013 Help](/Exchange/messaging-policy-and-compliance-permissions-exchange-2013-help) | modified |
+| 7/29/2022 | [Messaging records management errors and events: Exchange 2013 Help](/Exchange/messaging-records-management-errors-and-events-exchange-2013-help) | modified |
+| 7/29/2022 | [Migrate from managed folders: Exchange 2013 Help](/Exchange/migrate-from-managed-folders-exchange-2013-help) | modified |
+| 7/29/2022 | [Mobile device mailbox policies: Exchange 2013 Help](/Exchange/mobile-device-mailbox-policies-exchange-2013-help) | modified |
+| 7/29/2022 | [Modify AD LDS configuration: Exchange 2013 Help](/Exchange/modify-ad-lds-configuration-exchange-2013-help) | modified |
+| 7/29/2022 | [Modifying multivalued properties: Exchange 2013 Help](/Exchange/modifying-multivalued-properties-exchange-2013-help) | modified |
+| 7/29/2022 | [Network ports for clients and mail flow in Exchange 2013: Exchange 2013 Help](/Exchange/network-ports-for-clients-and-mail-flow-in-exchange-2013-exchange-2013-help) | modified |
+| 7/29/2022 | [One or more Active Directory Connector servers were found](/Exchange/one-or-more-active-directory-connector-servers-were-found-adcfound-exchange-2013-help) | modified |
+| 7/29/2022 | [Organization-wide disclaimers, signatures, footers, or headers](/Exchange/organization-wide-disclaimers-signatures-footers-or-headers-exchange-2013-help) | modified |
+| 7/29/2022 | [Overview of Exchange 2013 services: Exchange 2013 Help](/Exchange/overview-of-exchange-2013-services-exchange-2013-help) | modified |
+| 7/29/2022 | [Performance counters for messaging records management: Exchange 2013 Help](/Exchange/performance-counters-for-messaging-records-management-exchange-2013-help) | modified |
+| 7/29/2022 | [Permissions: Exchange 2013 Help](/Exchange/permissions-exchange-2013-help) | modified |
+| 7/29/2022 | [Planning for high availability and site resilience: Exchange 2013 Help](/Exchange/planning-for-high-availability-and-site-resilience-exchange-2013-help) | modified |
+| 7/29/2022 | [Prepare mailboxes for cross-forest moves using the Prepare-MoveRequest.ps1 script in the Shell](/Exchange/prepare-mailboxes-for-cross-forest-moves-using-the-prepare-moverequest-ps1-script-in-the-shell-exchange-2013-help) | modified |
+| 7/29/2022 | [Priority queuing: Exchange 2013 Help](/Exchange/priority-queuing-exchange-2013-help) | modified |
+| 7/29/2022 | [Protect voice mail: Exchange 2013 Help](/Exchange/protect-voice-mail-exchange-2013-help) | modified |
+| 7/29/2022 | [Protocol logging: Exchange 2013 Help](/Exchange/protocol-logging-exchange-2013-help) | modified |
+| 7/29/2022 | [Protocol logging for POP3 and IMAP4: Exchange 2013 Help](/Exchange/protocol-logging-for-pop3-and-imap4-exchange-2013-help) | modified |
+| 7/29/2022 | [Queue filters: Exchange 2013 Help](/Exchange/queue-filters-exchange-2013-help) | modified |
+| 7/29/2022 | [Queues: Exchange 2013 Help](/Exchange/queues-exchange-2013-help) | modified |
+
+
 ## Week of July 18, 2022
 
 
