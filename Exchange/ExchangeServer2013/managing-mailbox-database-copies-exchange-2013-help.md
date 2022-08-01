@@ -138,7 +138,7 @@ After a database copy is created, you can view and modify its configuration sett
 
 ## Using replay lag and truncation lag options
 
-Mailbox database copies support the use of a _replay lag time_ and a _truncation lag time*, both of which are configured in minutes. Setting a replay lag time enables you to take a database copy back to a specific point in time. Setting a truncation lag time enables you to use the logs on a passive database copy to recover from the loss of log files on the active database copy. Because both of these features result in the temporary buildup of log files, using either of them will affect your storage design.
+Mailbox database copies support the use of a _replay lag time_ and a _truncation lag time_, both of which are configured in minutes. Setting a replay lag time enables you to take a database copy back to a specific point in time. Setting a truncation lag time enables you to use the logs on a passive database copy to recover from the loss of log files on the active database copy. Because both of these features result in the temporary buildup of log files, using either of them will affect your storage design.
 
 ## Replay lag time
 

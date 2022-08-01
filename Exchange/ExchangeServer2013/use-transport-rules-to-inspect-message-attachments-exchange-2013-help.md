@@ -22,13 +22,9 @@ _**Applies to:** Exchange Server 2013_
 You can inspect email attachments in your organization by setting up transport rules. Exchange offers transport rules that provide the ability to examine email attachments as a part of your messaging security and compliance needs. When you inspect attachments, you can then take action on the messages that were inspected based on the content or characteristics of those attachments. Here are some attachment-related tasks you can do by using transport rules:
 
 - Search files in compressed attachments such as .zip and .rar files and, if there's any text that matches a pattern you specify, add a disclaimer to the end of the message.
-
 - Inspect content within attachments and, if there are any keywords you specify, redirect the message to a moderator for approval before it's delivered.
-
 - Check for messages with attachments that can't be inspected and then block the entire message from being sent.
-
 - Check for attachments that exceed a certain size and then notify the sender of the issue if you choose to prevent the message from being delivered.
-
 - Create notifications that alert users if they send a message that has matched a transport rule.
 
 - Block all messages containing attachments. For examples, see [Common attachment blocking scenarios](../ExchangeOnline/security-and-compliance/mail-flow-rules/common-attachment-blocking-scenarios.md).
@@ -43,32 +39,10 @@ For more information about transport rules, including the full range of conditio
 
 You can use the transport rule conditions in the following table to examine the content of attachments to messages. For these conditions, only the first 150 KB of an attachment is inspected. In order to start using these conditions when inspecting messages, you need to add them to a transport rule. Learn about creating or changing rules at [Manage transport rules in Exchange 2013](manage-transport-rules-exchange-2013-help.md)
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition name in EAC</th>
-<th>Condition name in the Shell</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Any attachment content includes any of these words</strong></p></td>
-<td><p><code>AttachmentContainsWords</code></p></td>
-<td><p>This condition matches messages with supported file type attachments that contain a specified string or group of characters.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any attachment content matches these text patterns</strong></p></td>
-<td><p><code>AttachmentMatchesPatterns</code></p></td>
-<td><p>This condition matches messages with supported file type attachments that contain a text pattern that matches a specified regular expression.</p></td>
-</tr>
-</tbody>
-</table>
+|Condition name in EAC|Condition name in the Shell|Description|
+|---|---|---|
+|**Any attachment content includes any of these words**|`AttachmentContainsWords`|This condition matches messages with supported file type attachments that contain a specified string or group of characters.|
+|**Any attachment content matches these text patterns**|`AttachmentMatchesPatterns`|This condition matches messages with supported file type attachments that contain a text pattern that matches a specified regular expression.|
 
 The Exchange Management Shell names for the conditions listed here are parameters that require the `TransportRule` cmdlet.
 
@@ -84,211 +58,60 @@ If the message contains a compressed archive file such as a .zip or .cab file, t
 
 ## Supported file types for transport rule content inspection
 
-The following table lists the file types supported by transport rules. The system automatically detects file types by inspecting file properties rather than the actual file name extension, thus helping to prevent malicious hackers from being able to bypass transport rule filtering by renaming a file extension. A list of file types with executable code that can be checked within the context of transport rules is listed later in this topic.
+The following table lists the file types supported by transport rules. The system automatically detects file types by inspecting file properties rather than the actual file name extension. This behavior helps to prevent hackers from bypassing transport rule filtering by renaming a file extension. A list of file types with executable code that can be checked within the context of transport rules is listed later in this topic.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>File extension</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Office 2013, Office 2010, and Office 2007</p></td>
-<td><p>.docm, .docx, .pptm, .pptx, .pub, .one, .xlsb, .xlsm, .xlsx</p></td>
-<td><p>Microsoft OneNote and Microsoft Publisher files aren't supported by default. You can enable support for these file types by using IFilter integration. For more information, see <a href="register-filter-pack-ifilters-with-exchange-2013-exchange-2013-help.md">Register Filter Pack IFilters with Exchange 2013</a>.</p>
-<p>The contents of any embedded parts contained within these file types are also inspected. However, any objects that aren't embedded (for example, linked documents) aren't inspected.</p></td>
-</tr>
-<tr class="even">
-<td><p>Office 2003</p></td>
-<td><p>.doc, .ppt, .xls</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>Additional Office files</p></td>
-<td><p>.rtf, .vdw, .vsd, .vss, .vst</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>Adobe PDF</p></td>
-<td><p>.pdf</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>HTML</p></td>
-<td><p>.html</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>XML</p></td>
-<td><p>.xml, .odp, .ods, .odt</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="odd">
-<td><p>Text</p></td>
-<td><p>.txt, .asm, .bat, .c, .cmd, .cpp, .cxx, .def, .dic, .h, .hpp, .hxx, .ibq, .idl, .inc, inf, .ini, inx, .js, .log, .m3u, .pl, .rc, .reg, .txt, .vbs, .wtx</p></td>
-<td><p>None</p></td>
-</tr>
-<tr class="even">
-<td><p>OpenDocument</p></td>
-<td><p>.odp, .ods, .odt</p></td>
-<td><p>No parts of .odf files are processed. For example, if the .odf file contains an embedded document, the contents of that embedded document aren't inspected.</p></td>
-</tr>
-<tr class="odd">
-<td><p>AutoCAD Drawing</p></td>
-<td><p>.dxf</p></td>
-<td><p>AutoCAD 2013 files aren't supported.</p></td>
-</tr>
-<tr class="even">
-<td><p>Image</p></td>
-<td><p>.jpg, .tiff</p></td>
-<td><p>Only the metadata text associated with these image files is inspected. There is no optical character recognition.</p></td>
-</tr>
-</tbody>
-</table>
+|Category|File extension|Notes|
+|---|---|---|
+|Office 2013, Office 2010, and Office 2007|`.docm, .docx, .pptm, .pptx, .pub, .one, .xlsb, .xlsm, .xlsx`|Microsoft OneNote and Microsoft Publisher files aren't supported by default. You can enable support for these file types by using IFilter integration. For more information, see [Register Filter Pack IFilters with Exchange 2013](register-filter-pack-ifilters-with-exchange-2013-exchange-2013-help.md). <br/><br/> The contents of any embedded parts contained within these file types are also inspected. However, any objects that aren't embedded (for example, linked documents) aren't inspected.|
+|Office 2003|`.doc, .ppt, .xls`|None|
+|Additional Office files|`.rtf, .vdw, .vsd, .vss, .vst`|None|
+|Adobe PDF|`.pdf`|None|
+|HTML|.html|None|
+|XML|`.xml, .odp, .ods, .odt`|None|
+|Text|`.txt, .asm, .bat, .c, .cmd, .cpp, .cxx, .def, .dic, .h, .hpp, .hxx, .ibq, .idl, .inc, inf, .ini, inx, .js, .log, .m3u, .pl, .rc, .reg, .txt, .vbs, .wtx`|None|
+|OpenDocument|`.odp, .ods, .odt`|No parts of .odf files are processed. For example, if the .odf file contains an embedded document, the contents of that embedded document aren't inspected.|
+|AutoCAD Drawing|`.dxf`|AutoCAD 2013 files aren't supported.|
+|Image|`.jpg, .tiff`|Only the metadata text associated with these image files is inspected. There's no optical character recognition.|
 
 ## Inspect the file properties of attachments
 
-The following transport rule conditions inspect the properties of a file that is attached to a message. In order to start using these conditions when inspecting messages, you need to add them to a transport rule. A list of supported file types with executable code that can be checked within the context of transport rules is listed here. For more information about creating or changing rules, see [Manage transport rules in Exchange 2013](manage-transport-rules-exchange-2013-help.md).
+The following transport rule conditions inspect the properties of a file that's attached to a message. In order to start using these conditions when inspecting messages, you need to add them to a transport rule. A list of supported file types with executable code that can be checked within the context of transport rules is listed here. For more information about creating or changing rules, see [Manage transport rules in Exchange 2013](manage-transport-rules-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Condition name in EAC</th>
-<th>Condition name in the Shell</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Any attachment file name matches these text patterns</strong></p></td>
-<td><p><code>AttachmentNameMatchesPatterns</code></p></td>
-<td><p>This condition matches messages with supported file type attachments when those attachments have a name that contains the characters you specify.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any attachment file extension includes these words</strong></p></td>
-<td><p><code>AttachmentExtensionMatchesWords</code></p></td>
-<td><p>This condition matches messages with supported file type attachments when the file name extension matches what you specify.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Any attachment size is greater than or equal to</strong></p></td>
-<td><p><code>AttachmentSizeOver</code></p></td>
-<td><p>This condition matches messages with supported file type attachments when those attachments are larger than the size you specify.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any attachment didn't complete scanning</strong></p></td>
-<td><p><code>AttachmentProcessingLimitExceeded</code></p></td>
-<td><p>This condition matches messages when an attachment is not inspected by the transport rules agent.</p></td>
-</tr>
-<tr class="odd">
-<td><p><strong>Any attachment has executable content</strong></p></td>
-<td><p><code>AttachmentHasExecutableContent</code></p></td>
-<td><p>This condition matches messages that contain executable files as attachments. The supported file types are listed here.</p></td>
-</tr>
-<tr class="even">
-<td><p><strong>Any attachment is password protected</strong></p></td>
-<td><p><code>AttachmentIsPasswordProtected</code></p></td>
-<td><p>This condition matches messages with supported file type attachments when those attachments are protected by a password.</p></td>
-</tr>
-</tbody>
-</table>
+|Condition name in EAC|Condition name in the Shell|Description|
+|---|---|---|
+|**Any attachment file name matches these text patterns**|`AttachmentNameMatchesPatterns`|This condition matches messages with supported file type attachments when those attachments have a name that contains the characters you specify.|
+|**Any attachment file extension includes these words**|`AttachmentExtensionMatchesWords`|This condition matches messages with supported file type attachments when the file name extension matches what you specify.|
+|**Any attachment size is greater than or equal to**|`AttachmentSizeOver`|This condition matches messages with supported file type attachments when those attachments are larger than the size you specify.|
+|**Any attachment didn't complete scanning**|`AttachmentProcessingLimitExceeded`|This condition matches messages when an attachment isn't inspected by the transport rules agent.|
+|**Any attachment has executable content**|`AttachmentHasExecutableContent`|This condition matches messages that contain executable files as attachments. The supported file types are listed here.|
+|**Any attachment is password protected**|`AttachmentIsPasswordProtected`|This condition matches messages with supported file type attachments when those attachments are protected by a password.|
 
 The Exchange Management Shell names for the conditions listed here are parameters that require the `TransportRule` cmdlet.
 
 - Learn more about the cmdlet at [New-TransportRule](/powershell/module/exchange/New-TransportRule).
-
 - Learn more about property types for these conditions at [Conditions and Condition Properties for a Mailbox Server](mail-flow-rule-conditions-and-exceptions-predicates-in-exchange-2013-exchange-2013-help.md).
 
 ## Supported executable file types for transport rule inspection
 
-The transport agent uses true type detection by inspecting file properties rather than merely the file extensions. This helps to prevent malicious hackers from being able to bypass your rule by renaming a file extension. The following table lists the executable file types supported by these conditions. If a file is found that is not listed here, the `AttachmentIsUnsupported` condition is triggered.
+The transport agent uses true type detection by inspecting file properties rather than merely the file extensions. This detection helps to prevent hackers from bypassing your rule by renaming a file extension. The following table lists the executable file types supported by these conditions. If a file is found that isn't listed here, the `AttachmentIsUnsupported` condition is triggered.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Type of file</th>
-<th>Native extension</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Self-extracting archive file created with the WinRAR archiver.</p></td>
-<td><p>.rar</p></td>
-</tr>
-<tr class="even">
-<td><p>32-bit Windows executable file with a dynamic link library extension.</p></td>
-<td><p>.dll</p></td>
-</tr>
-<tr class="odd">
-<td><p>Self-extracting executable program file.</p></td>
-<td><p>.exe</p></td>
-</tr>
-<tr class="even">
-<td><p>Java archive file.</p></td>
-<td><p>.jar</p></td>
-</tr>
-<tr class="odd">
-<td><p>Uninstallation executable file.</p></td>
-<td><p>.exe</p></td>
-</tr>
-<tr class="even">
-<td><p>Program shortcut file.</p></td>
-<td><p>.exe</p></td>
-</tr>
-<tr class="odd">
-<td><p>Compiled source code file or 3-D object file or sequence file.</p></td>
-<td><p>.obj</p></td>
-</tr>
-<tr class="even">
-<td><p>32-bit Windows executable file.</p></td>
-<td><p>.exe</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft Visio XML drawing file.</p></td>
-<td><p>.vxd</p></td>
-</tr>
-<tr class="even">
-<td><p>OS/2 operating system file.</p></td>
-<td><p>.os2</p></td>
-</tr>
-<tr class="odd">
-<td><p>16-bit Windows executable file.</p></td>
-<td><p>.w16</p></td>
-</tr>
-<tr class="even">
-<td><p>Disk-operating system file.</p></td>
-<td><p>.dos</p></td>
-</tr>
-<tr class="odd">
-<td><p>European Institute for Computer Antivirus Research standard antivirus test file.</p></td>
-<td><p>.com</p></td>
-</tr>
-<tr class="even">
-<td><p>Windows program information file.</p></td>
-<td><p>.pif</p></td>
-</tr>
-<tr class="odd">
-<td><p>Windows executable program file.</p></td>
-<td><p>.exe</p></td>
-</tr>
-</tbody>
-</table>
+|Type of file|Native extension|
+|---|---|
+|Self-extracting archive file created with the WinRAR archiver.|`.rar`|
+|32-bit Windows executable file with a dynamic link library extension.|`.dll`|
+|Self-extracting executable program file.|`.exe`|
+|Java archive file.|`.jar`|
+|Uninstallation executable file.|`.exe`|
+|Program shortcut file.|`.exe`|
+|Compiled source code file or 3-D object file or sequence file.|`.obj`|
+|32-bit Windows executable file.|`.exe`|
+|Microsoft Visio XML drawing file.|`.vxd`|
+|OS/2 operating system file.|`.os2`|
+|16-bit Windows executable file.|`.w16`|
+|Disk-operating system file.|`.dos`|
+|European Institute for Computer Antivirus Research standard antivirus test file.|`.com`|
+|Windows program information file.|`.pif`|
+|Windows executable program file.|`.exe`|
 
 ## Extending the number of supported file types
 
@@ -298,15 +121,13 @@ The file types you add using this process become supported file types and no lon
 
 ## Data loss prevention policies and attachment transport rules
 
-To help you manage important business information in email, you can include any of the attachment-related conditions along with the rules of a data loss prevention (DLP) policy. For example, you might want to allow messages with passport numbers to be sent but only if the passport numbers are in a password-protected attachment. To accomplish this, do the following:
+To help you manage important business information in email, you can include any of the attachment-related conditions along with the rules of a data loss prevention (DLP) policy. For example, you might want to allow messages with passport numbers to be sent but only if the passport numbers are in a password-protected attachment. To accomplish this, do the following steps:
 
 - Create a DLP policy that inspects mail for passport-related sensitive information. Learn more at [DLP procedures](dlp-procedures-exchange-2013-help.md).
-
 - Add the **Any attachment is password protected** exception in the **Except if...** transport rule area.
+- Define an action to take on mail that contains passport numbers that aren't in the protected file.
 
-- Define an action to take on mail that contains passport numbers that are not in the protected file.
-
-DLP policies and attachment-related conditions can help you enforce your business needs by defining those needs as transport rule conditions, exceptions, and actions. When you include the sensitive information inspection in a DLP policy, any attachments to messages are scanned for that information only. However, attachment-related conditions such as size or file type are not included until you add the conditions listed in this topic. DLP is not available with all versions of Exchange; learn more at [Data loss prevention](../ExchangeOnline/security-and-compliance/data-loss-prevention/data-loss-prevention.md).
+DLP policies and attachment-related conditions can help you enforce your business needs by defining those needs as transport rule conditions, exceptions, and actions. When you include the sensitive information inspection in a DLP policy, any attachments to messages are scanned for that information only. However, attachment-related conditions such as size or file type aren't included until you add the conditions listed in this topic. DLP isn't available with all versions of Exchange; learn more at [Data loss prevention](../ExchangeOnline/security-and-compliance/data-loss-prevention/data-loss-prevention.md).
 
 ## For more information
 

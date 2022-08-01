@@ -50,7 +50,7 @@ In addition to meeting the prerequisites for installing Exchange 2013, there are
 
 ## Network requirements
 
-There are specific networking requirements that must be met for each DAG and for each DAG member. Each DAG must have a single _MAPI network_, which is used by a DAG member to communicate with other servers (for example, other Exchange 2013 servers or directory servers), and zero or more _Replication networks*, which are networks dedicated to log shipping and seeding.
+There are specific networking requirements that must be met for each DAG and for each DAG member. Each DAG must have a single _MAPI network_, which is used by a DAG member to communicate with other servers (for example, other Exchange 2013 servers or directory servers), and zero or more _Replication networks_, which are networks dedicated to log shipping and seeding.
 
 In previous versions of Exchange, we recommended at least two networks (one MAPI network and one Replication network) for DAGs. In Exchange 2013, multiple networks are supported, but our recommendation depends on your physical network topology. If you have multiple physical networks between DAG members that are physically separate from one another, then using a separate MAPI and Replication network provides more redundancy. If you have multiple networks that are partially physically separate but converge into a single physical network (for example, a single WAN link), then using a single network (preferably 10 gigabit Ethernet) for both MAPI and Replication traffic is recommended. This approach provides simplicity for the network and the network path.
 

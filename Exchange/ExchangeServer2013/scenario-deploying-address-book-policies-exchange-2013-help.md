@@ -141,9 +141,9 @@ You'll need to develop a way to divide your organizations. We recommend using th
 
 - Not all recipient types of objects have precanned conditional attributes in Active Directory. For example, Distribution Group and Dynamic Distribution Group do not support company, department, or state attributes.
 
-- Not all precanned conditional attributes are exposed in cmdlets for some recipients. For example, the _Company*, _department*, and _StateOrProvince_ parameters are not available on the exposed in cmdlets for mail users, contacts, distribution groups, and mail-enabled public folders.
+- Not all precanned conditional attributes are exposed in cmdlets for some recipients. For example, the _Company_, _department_, and _StateOrProvince_ parameters are not available on the exposed in cmdlets for mail users, contacts, distribution groups, and mail-enabled public folders.
 
-- Multiple cmdlets are required to segregate recipient when you use the pre-canned conditional attribute. For example, you need to run Set-User to tag _Company*, _Department*, _StateOrProvince_ for a UserMailbox after you run **New-Mailbox** or **Set-Mailbox** cmdlets.
+- Multiple cmdlets are required to segregate recipient when you use the pre-canned conditional attribute. For example, you need to run Set-User to tag _Company_, _Department_, _StateOrProvince_ for a UserMailbox after you run **New-Mailbox** or **Set-Mailbox** cmdlets.
 
 - The _CustomAttributeX_ parameters are all exposed in the Set-\* cmdlet for each recipient type, we can complete all segregation for that type via single Set- cmdlet
 

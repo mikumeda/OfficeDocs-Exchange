@@ -27,7 +27,6 @@ Management roles are part of the Role Based Access Control (RBAC) permissions mo
 Management role scopes and management role assignments are important components for the operation of management roles. For more information about these components, see the following topics:
 
 - [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
-
 - [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
 
 Looking for management tasks related to management roles? See [Permissions](permissions-exchange-2013-help.md).
@@ -37,11 +36,8 @@ Looking for management tasks related to management roles? See [Permissions](perm
 Exchange 2013 provides many built-in management roles that you can use to administer your organization. Each role includes the cmdlets and parameters necessary for users to manage specific Exchange components. The following are examples of some built-in management roles:
 
 - **Mail Recipients**: Enables administrators to manage mailboxes, contacts, and mail users.
-
 - **Transport Rules**: Enables administrators or specialist users assigned the role to manage the transport rules feature.
-
 - **Distribution Groups**: Enables administrators or specialist users assigned the role to manage distribution groups and distribution group members.
-
 - **MyPersonalInformation**: Enables end users to modify their own home phone number and Web site address.
 
 For a complete list of the management roles included with Exchange 2013, see [Built-in management roles](built-in-management-roles-exchange-2013-help.md).
@@ -60,9 +56,7 @@ You need to assign management roles for them to take effect. Most often, you ass
 For more information about assigning management roles, see the following topics:
 
 - [Manage role groups](manage-role-groups-exchange-2013-help.md)
-
 - [Manage role assignment policies](manage-role-assignment-policies-exchange-2013-help.md)
-
 - [Add a role to a user or USG](add-a-role-to-a-user-or-usg-exchange-2013-help.md)
 
 For more information about management role assignments, see [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md).
@@ -88,13 +82,11 @@ You can create custom management roles based on built-in Exchange roles when the
 Custom roles become children of the role used to create the new role. You can only use management role entries in the new child role that exist in the parent role. For more information, see the following sections later in this topic:
 
 - Management Role Hierarchy
-
 - Management Role Entries
 
 Creating custom management roles requires multiple steps and is an advanced task that you should rarely, if ever, need to perform. Before you create a custom management role, make sure one of the existing built-in management roles doesn't provide the permissions you need. For more information about the built-in management roles, or if you want to create custom management roles, see the following topics:
 
 - [Built-in management roles](built-in-management-roles-exchange-2013-help.md)
-
 - [Advanced permissions](advanced-permissions-exchange-2013-help.md)
 
 For more information about how to create a management role, see [Create a role](create-a-role-exchange-2013-help.md).
@@ -127,7 +119,7 @@ For more information about managing role entries, see [Management roles and role
 
 ## Parent and child management role relationship
 
-As mentioned previously, a management role entry, including the cmdlet and its parameters, must exist in the immediate parent role to add the entry to the child role. For example, if the parent role doesn't have an entry for **New-Mailbox**, the child role can't be assigned that cmdlet. Additionally, if **Set-Mailbox** is on the parent role but the *Database* parameter has been removed from the entry, the *Database* parameter on the **Set-Mailbox** cmdlet can't be added to the entry on the child role.
+As mentioned previously, a management role entry, including the cmdlet and its parameters, must exist in the immediate parent role to add the entry to the child role. For example, if the parent role doesn't have an entry for **New-Mailbox**, the child role can't be assigned that cmdlet. Additionally, if **Set-Mailbox** is on the parent role but the _Database_ parameter has been removed from the entry, the _Database_ parameter on the **Set-Mailbox** cmdlet can't be added to the entry on the child role.
 
 Because you can't add management role entries to child roles if the entries don't appear in parent roles, and because the role is based on a specific role type, you must carefully choose the parent role to copy when you want to create a customized role.
 
@@ -224,7 +216,7 @@ The following table lists all of the administrative management role types in Exc
 |`RoleManagement`|[Role Management role](role-management-role-exchange-2013-help.md)|This role type is associated with roles that enable administrators to manage management role groups, role assignment policies, management roles, role entries, assignments, and scopes in an organization. <br/><br/> Users assigned roles associated with this role type can override the **role group managed by** property, configure any role group, and add or remove members to or from any role group.|Organization|
 |`SecurityGroupCreationAndMembership`|[Security Group Creation and Membership role](security-group-creation-and-membership-role-exchange-2013-help.md)|This role type is associated with roles that enable administrators to create and manage USGs and their memberships in an organization. <br/><br/> If your organization maintains a split permissions model where USG creation and management is performed by a different group from the group that manages Exchange servers, assign roles associated with this role type to that group.|Organization|
 |`SendConnectors`|[Send Connectors role](send-connectors-role-exchange-2013-help.md)|This role type is associated with roles that enable administrators to manage transport Send connectors in an organization.|Organization|
-|`SupportDiagnostics`|[Support Diagnostics role](support-diagnostics-role-exchange-2013-help.md)|This role type is associated with roles that enable administrators to perform advanced diagnostics under the direction of Microsoft support services in an organization.</p> <br/><br/> **Note**: Roles associated with this role type grant permissions to cmdlets and scripts that should only be used under the direction of Microsoft Customer Service and Support.|Organization|
+|`SupportDiagnostics`|[Support Diagnostics role](support-diagnostics-role-exchange-2013-help.md)|This role type is associated with roles that enable administrators to perform advanced diagnostics under the direction of Microsoft support services in an organization.  <br/><br/> **Note**: Roles associated with this role type grant permissions to cmdlets and scripts that should only be used under the direction of Microsoft Customer Service and Support.|Organization|
 |`TeamMailboxes`|[Team Mailboxes role](team-mailboxes-role-exchange-2013-help.md)|This role type is associated with roles that enable administrators to define one or more site mailbox provisioning policies and manage site mailboxes in an organization. Administrators assigned roles associated with this role type can manage site mailboxes they don't own.|Organization|
 |`TeamMailboxLifecycleApplication`|[TeamMailboxLifecycleApplication role](teammailboxlifecycleapplication-role-exchange-2013-help.md)|This role type is associated with roles that enable partner applications to update site mailbox lifecycle states in an organization.|Organization|
 |`TransportAgents`|[Transport Agents role](transport-agents-role-exchange-2013-help.md)|This role type is associated with roles that enable administrators to manage transport agents in an organization.|Organization|

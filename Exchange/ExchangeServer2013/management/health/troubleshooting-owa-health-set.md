@@ -74,7 +74,7 @@ It's possible that the service recovered after it issued the alert. Therefore, w
       Invoke-MonitoringProbe <health set name>\<probe name> -Server <server name> | Format-List
       ```
 
-      For example, to create an Exchange ActiveSync monitoring probe on _server1.contoso.com*, run the following command:
+      For example, to create an Exchange ActiveSync monitoring probe on _server1.contoso.com_, run the following command:
 
       ```powershell
       Invoke-MonitoringProbe -Identity ActiveSync.Protocol\ActiveSyncSelfTestProbe -Server server1.contoso.com

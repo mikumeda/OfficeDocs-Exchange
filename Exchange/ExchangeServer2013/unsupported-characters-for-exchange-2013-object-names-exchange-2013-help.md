@@ -25,74 +25,16 @@ This article describes characters that you can't use in object or component name
 
 The following table lists characters that aren't supported for use in the names of Exchange-related objects or components. The table also lists the scenario in which problems may occur if unsupported characters are used. Note that there is a maximum length of 64 characters for each object listed in the table.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Exchange object or component</th>
-<th>Exchange scenario</th>
-<th>Unsupported characters</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Email domain name</p></td>
-<td><p>Simple Mail Transfer Protocol (SMTP) connector</p></td>
-<td><p><code>~ ` ! @ # $ % ^ &amp; * ( ) + = { } | [ ] \ : &quot; ; &lt; &gt; , . ? /</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Host name of connector address space</p></td>
-<td><p>Mail flow</p></td>
-<td><p><code>..</code> (two periods)</p></td>
-</tr>
-<tr class="odd">
-<td><p>Host name for Exchange servers</p></td>
-<td><p>SMTP</p></td>
-<td><p><code>_</code> (underscore)</p></td>
-</tr>
-<tr class="even">
-<td><p>Organization or site name</p></td>
-<td><p>Running the Setup program or moving mailboxes</p></td>
-<td><p><code>~ ` ! @ # $ % ^ &amp; * ( ) _ + = { } | [ ] \ : &quot; ; '  &lt; &gt; , . ? /</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Organization internal directory name</p></td>
-<td><p>Directory</p></td>
-<td><p><code>~ ` ! @ # $ % ^ &amp; * ( ) _ + = { } | [ ] \ : &quot; ; '  &lt; &gt; , . ? /</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Public folder tree name</p></td>
-<td><p>Viewing and creating the public folder</p></td>
-<td><p><code>: ;</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Recipient name</p></td>
-<td><p>SMTP</p></td>
-<td><p><code>' &quot;</code></p></td>
-</tr>
-<tr class="even">
-<td><p>Recipient policy SMTP address</p></td>
-<td><p>Viewing the public folder hierarchy</p></td>
-<td><p><code>~ ` ! @ # $ % ^ &amp; * ( ) + = { } | [ ] \ : &quot; ; &lt; &gt; , . ? /</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Recipient policy SMTP address host name</p></td>
-<td><p>Mail flow</p></td>
-<td><p><code>..</code> (two periods)</p></td>
-</tr>
-<tr class="even">
-<td><p>Site internal directory name</p></td>
-<td><p>Viewing the public folder hierarchy</p></td>
-<td><p><code>? ( ) *</code></p></td>
-</tr>
-<tr class="odd">
-<td><p>Smart host name</p></td>
-<td><p>SMTP</p></td>
-<td><p>Leading or trailing spaces</p></td>
-</tr>
-</tbody>
-</table>
+|Exchange object or component|Exchange scenario|Unsupported characters|
+|---|---|---|
+|Email domain name|Simple Mail Transfer Protocol (SMTP) connector|`~ ! @ # $ % ^ & * ( ) + = { } | [ ] \ : " ; < > , . ? /`|
+|Host name of connector address space|Mail flow|`..` (two periods)|
+|Host name for Exchange servers|SMTP|`_` (underscore)|
+|Organization or site name|Running the Setup program or moving mailboxes|`~ ! @ # $ % ^ & * ( ) _ + = { } | [ ] \ : " ; '  < > , . ? /`|
+|Organization internal directory name|Directory|`~ ! @ # $ % ^ & * ( ) _ + = { } | [ ] \ : " ; '  < > , . ? /`|
+|Public folder tree name|Viewing and creating the public folder|`: ;`|
+|Recipient name|SMTP|`' "`|
+|Recipient policy SMTP address|Viewing the public folder hierarchy|`~ ! @ # $ % ^ & * ( ) + = { } | [ ] \ : " ; < > , . ? /`|
+|Recipient policy SMTP address host name|Mail flow|`..` (two periods)|
+|Site internal directory name|Viewing the public folder hierarchy|`? ( ) *`|
+|Smart host name|SMTP|Leading or trailing spaces|

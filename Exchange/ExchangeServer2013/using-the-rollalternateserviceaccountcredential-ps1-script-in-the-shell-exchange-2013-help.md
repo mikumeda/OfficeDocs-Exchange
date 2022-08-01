@@ -46,11 +46,11 @@ To use the script, you need to identify which servers you want to target and whi
 
 ## Server Scope
 
-You can choose to have the script target all the Client Access servers in the forest, all members of a particular Client Access server array, or specific servers. The available parameters are *ToEntireForest*, *ToArraryMembers*, and *ToSpecificServers*. If you target the script to specific servers or to members of a specific server array, the *Identity* parameter need to be specified with the servers or server array names you want to target.
+You can choose to have the script target all the Client Access servers in the forest, all members of a particular Client Access server array, or specific servers. The available parameters are _ToEntireForest_, _ToArraryMembers_, and _ToSpecificServers_. If you target the script to specific servers or to members of a specific server array, the _Identity_ parameter need to be specified with the servers or server array names you want to target.
 
 ## Credential Source
 
-The script can copy the alternate service account password from an existing server. Or, you can specify the account you want to use and let the script generate a new password for the account. The available parameters are *GenerateNewPasswordFor* and *CopyFrom*. The *GenerateNewPasswordFor* parameter requires that you specify an account string in the following format: DOMAIN\\Account Name. If you're using a computer account, you need to append "$" at the end of the account name, for example CONTOSO\\ClientServerAcct$. The *CopyFrom* parameter takes the name of an existing Client Access server as the credential source.
+The script can copy the alternate service account password from an existing server. Or, you can specify the account you want to use and let the script generate a new password for the account. The available parameters are _GenerateNewPasswordFor_ and _CopyFrom_. The _GenerateNewPasswordFor_ parameter requires that you specify an account string in the following format: DOMAIN\\Account Name. If you're using a computer account, you need to append "$" at the end of the account name, for example CONTOSO\\ClientServerAcct$. The _CopyFrom_ parameter takes the name of an existing Client Access server as the credential source.
 
 ## Generating a New Password for a Credential
 
@@ -66,7 +66,7 @@ If the passwords aren't changed successfully for all target Client Access server
 
 ## Creating a Scheduled Task to Automate Password Maintenance
 
-If you want the script to create a scheduled task to maintain the password on an ongoing basis, use the *CreateScheduledTask* parameter. This parameter requires a string for the name of the task you want to create.
+If you want the script to create a scheduled task to maintain the password on an ongoing basis, use the _CreateScheduledTask_ parameter. This parameter requires a string for the name of the task you want to create.
 
 > [!NOTE]
 > Run the script and verify that it works correctly in attended mode before you create the unattended scheduled task.
@@ -89,41 +89,16 @@ The output of the script when you run it interactively with the -verbose flag sh
 Get-ClientAccessServer -IncludeAlternateServiceAccountCredentialstatus |Fl Name, AlternateServiceAccountConfiguration
 ```
 
-You can also examine the event log on the computer on which the script is run. The event log entries for the script are in the Application Event log and are from the source *MSExchange Management Application*. The following table lists the events that are logged and what the events mean.
+You can also examine the event log on the computer on which the script is run. The event log entries for the script are in the Application Event log and are from the source _MSExchange Management Application_. The following table lists the events that are logged and what the events mean.
 
 ### Script Event IDs and their explanations
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Event</th>
-<th>Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>14001</p></td>
-<td><p>Start</p></td>
-</tr>
-<tr class="even">
-<td><p>14002</p></td>
-<td><p>Success (information)</p></td>
-</tr>
-<tr class="odd">
-<td><p>14003</p></td>
-<td><p>Successful but with Warnings.</p>
-<p>The script encountered some issues but was able to overcome them, or user input confirmed they weren't necessary. If the script is running in interactive mode, read the script output for further warning details.</p></td>
-</tr>
-<tr class="even">
-<td><p>14004</p></td>
-<td><p>Failed</p></td>
-</tr>
-</tbody>
-</table>
+|Event|Explanation|
+|---|---|
+|14001|Start|
+|14002|Success (information)|
+|14003|Successful but with Warnings. <br/><br/> The script encountered some issues but was able to overcome them, or user input confirmed they weren't necessary. If the script is running in interactive mode, read the script output for further warning details.|
+|14004|Failed|
 
 If the script runs as a scheduled task, its results are logged to the Exchange server **Logging** folder in a subfolder called **RollAlternateServiceAccountPassword**.
 
@@ -131,97 +106,20 @@ You can use the log to confirm that the task has been running successfully.
 
 ## Parameters
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><em>ToEntireForest</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>ToEntireForest</em> parameter targets the script to all Client Access servers in the forest.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>ToArrayMembers</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>ToArrayMembers</em> parameter targets the script to all members of a specific Client Access server array.</p>
-
-> [!NOTE]
-> If you're using the <EM>ToArrayMembers</EM> parameter or the <EM>ToSpecificServers</EM> parameter, you need to specify the server names or the server array names using the <EM>Identity</EM> parameter.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p><em>ToSpecificServers</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>ToSpecificServers</em> parameter targets the script to specific servers.</p>
-
-> [!NOTE]
-> If you're using the <EM>ToArrayMembers</EM> parameter or the <EM>ToSpecificServers</EM> parameter, you need to specify the server names or the server array names using the <EM>Identity</EM> parameter.
-
-</td>
-</tr>
-<tr class="even">
-<td><p><em>Identity</em></p></td>
-<td><p>Required</p></td>
-<td><p>The <em>Identity</em> parameter specifies name of the Client Access server array or the names of the specific servers that you're targeting.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>GenerateNewPasswordFor&lt;String&gt;</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>GenerateNewPasswordFor</em> parameter specifies that the script should generate a new password for the ASA. The string value need to be the ASA account in the following format: DOMAIN\Account Name. If you're using a computer account, you need to append the $ character at the end of the account name.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>CopyFrom&lt;String&gt;</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>CopyFrom</em> parameter specifies that the credential is copied from another Client Access server. The string value specified is the name of the Client Access server.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>Mode</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>Mode</em> switch specifies whether the script runs in attended or unattended mode. Unattended mode doesn't prompt for user input and automatically chooses more conservative options, when necessary.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>CreateScheduledTask&lt;String&gt;</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>CreateScheduledTask</em> parameter tells the script to create a scheduled task to perform the ASA credential update. The string value is the name of the scheduled task that will be created.</p>
-
-> [!NOTE]
-> This script creates a .cmd file in the folder where the script is located. The scheduled task will run the .cmd file once every three weeks. You can edit the task directly in Windows Task Scheduler to change the frequency of the task.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p><em>WhatIf</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>WhatIf</em> switch instructs the command to simulate the actions that it would take on the object. By using the <em>WhatIf</em> switch, you can view what changes would occur without having to apply any of those changes. You don't have to specify a value with the <em>WhatIf</em> switch.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>Confirm</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>Confirm</em> switch causes the command to pause processing and requires you to acknowledge what the command will do before processing continues. You don't have to specify a value with the <em>Confirm</em> switch.</p></td>
-</tr>
-<tr class="odd">
-<td><p><em>Verbose</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>Verbose</em> parameter tells the script to perform verbose logging, so that additional information about the script's actions is written to the log file.</p></td>
-</tr>
-<tr class="even">
-<td><p><em>Debug</em></p></td>
-<td><p>Optional</p></td>
-<td><p>The <em>Debug</em> parameter tells the script to run in debugging mode. This parameter should be used to determine why the script fails.</p></td>
-</tr>
-</tbody>
-</table>
+|Parameter|Required|Description|
+|---|---|---|
+|_ToEntireForest_|Optional|The _ToEntireForest_ parameter targets the script to all Client Access servers in the forest.|
+|_ToArrayMembers_|Optional|The _ToArrayMembers_ parameter targets the script to all members of a specific Client Access server array. <br/><br/> **Note**: If you're using the _ToArrayMembers_ parameter or the _ToSpecificServers_ parameter, you need to specify the server names or the server array names using the _Identity_ parameter.|
+|_ToSpecificServers_|Optional|The _ToSpecificServers_ parameter targets the script to specific servers. <br/><br/> **Note**: If you're using the _ToArrayMembers_ parameter or the _ToSpecificServers_ parameter, you need to specify the server names or the server array names using the _Identity_ parameter.|
+|_Identity_|Required|The _Identity_ parameter specifies name of the Client Access server array or the names of the specific servers that you're targeting.|
+|_GenerateNewPasswordFor&lt;String\>_|Optional|The _GenerateNewPasswordFor_ parameter specifies that the script should generate a new password for the ASA. The string value need to be the ASA account in the following format: DOMAIN\Account Name. If you're using a computer account, you need to append the $ character at the end of the account name.|
+|_CopyFrom&lt;String\>_|Optional|The _CopyFrom_ parameter specifies that the credential is copied from another Client Access server. The string value specified is the name of the Client Access server.|
+|_Mode_|Optional|The _Mode_ switch specifies whether the script runs in attended or unattended mode. Unattended mode doesn't prompt for user input and automatically chooses more conservative options, when necessary.|
+|_CreateScheduledTask&lt;String\>_|Optional|The _CreateScheduledTask_ parameter tells the script to create a scheduled task to perform the ASA credential update. The string value is the name of the scheduled task that will be created. <br/><br/> **Note**: This script creates a .cmd file in the folder where the script is located. The scheduled task will run the .cmd file once every three weeks. You can edit the task directly in Windows Task Scheduler to change the frequency of the task.|
+|_WhatIf_|Optional|The _WhatIf_ switch instructs the command to simulate the actions that it would take on the object. By using the _WhatIf_ switch, you can view what changes would occur without having to apply any of those changes. You don't have to specify a value with the _WhatIf_ switch.|
+|_Confirm_|Optional|The _Confirm_ switch causes the command to pause processing and requires you to acknowledge what the command will do before processing continues. You don't have to specify a value with the _Confirm_ switch.|
+|_Verbose_|Optional|The _Verbose_ parameter tells the script to perform verbose logging, so that additional information about the script's actions is written to the log file.|
+|_Debug_|Optional|The _Debug_ parameter tells the script to run in debugging mode. This parameter should be used to determine why the script fails.|
 
 ## Examples
 
@@ -238,7 +136,7 @@ This example uses the script to push the credential to all Client Access servers
 This example generates a new password for a user account ASA credential and distributes the password to all members of Client Access server arrays where the name matches \*mailbox\*.
 
 ```powershell
-.\RollAlternateserviceAccountPassword.ps1 -ToArrayMembers *mailbox* -GenerateNewPasswordFor "Contoso\UserAccount" -Verbose
+.\RollAlternateserviceAccountPassword.ps1 -ToArrayMembers _mailbox_ -GenerateNewPasswordFor "Contoso\UserAccount" -Verbose
 ```
 
 ## Example 3

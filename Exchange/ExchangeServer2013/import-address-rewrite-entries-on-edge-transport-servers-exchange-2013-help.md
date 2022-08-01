@@ -27,7 +27,7 @@ You can bulk-create or import address rewriting information into an Edge Transpo
 
 You can use any text editor, like Notepad, or an application like Microsoft Excel, to create the CSV file. Format the file as described in this topic and save it as a .csv file.
 
-The first row, or _header row*, of the CSV file lists the names of the parameters. Each parameter is separated by a comma. The required and optional parameters are described in the following table.
+The first row, or _header row_, of the CSV file lists the names of the parameters. Each parameter is separated by a comma. The required and optional parameters are described in the following table.
 
 |Parameter|Required or optional|Description|
 |---|---|---|
