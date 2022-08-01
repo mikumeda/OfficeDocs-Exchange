@@ -91,9 +91,9 @@ For additional management tasks related to UM mailbox policies, see [UM mailbox 
 
      The text that you provide in this text box can be plain. It can also contain simple HTML formatting tags if you want to emphasize text or add hyperlinks to other content.
 
-     **Example 1:**: If you have any questions or suggestions about voice mail service, please call the help desk at extension 4200.
+     **Example 1:**: `If you have any questions or suggestions about voice mail service, please call the help desk at extension 4200.`
 
-     **Example 2:**: If you have any questions or suggestions about \<b\>voice mail service\</b\>, please call the help desk at extension 4200 or visit our website at \<a href="http://emp.contoso.com/itinfo/vmail"\>\</a\>.
+     **Example 2:**: `If you have any questions or suggestions about <b>voice mail service</b>, please call the help desk at extension 4200 or visit our website at <a href="http://emp.contoso.com/itinfo/vmail"></a>`.
 
    - **When a user's Outlook Voice Access PIN is reset**: The text entered in this text box is included in the email message sent to UM-enabled users when their UM PIN is reset.
 
