@@ -34,11 +34,12 @@ To find out what permissions you need to perform the procedure or run the cmdlet
 
 If you want to delegate the ability to manage a feature to another user, see [Delegate role assignments](delegate-role-assignments-exchange-2013-help.md).
 
-## Role management permissions
+## About role management permissions
 
 You can use the features in the following table to manage the management role groups, roles, assignment policies, assignments, scopes that define the permissions you can apply to administrators, and end users. Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
 |Feature|Permissions required|
+|---|---|
 |Management roles|[Organization Management](organization-management-exchange-2013-help.md)|
 |Unscoped management roles|[Unscoped Role Management role](unscoped-role-management-role-exchange-2013-help.md) management role|
 |Role groups|[Organization Management](organization-management-exchange-2013-help.md)|
