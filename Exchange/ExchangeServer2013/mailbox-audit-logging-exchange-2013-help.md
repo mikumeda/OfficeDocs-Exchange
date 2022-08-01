@@ -21,7 +21,7 @@ _**Applies to:** Exchange Server 2013_
 
 Because mailboxes can contain sensitive, high business impact (HBI) information and personally identifiable information (PII), it's important that you track who logs on to the mailboxes in your organization and what actions are taken. It's especially important to track access to mailboxes by users other than the mailbox owner. These users are referred to as _delegate users_.
 
-By using _mailbox audit logging*, you can log mailbox access by mailbox owners, delegates (including administrators with full access permissions to mailboxes), and administrators.
+By using _mailbox audit logging_, you can log mailbox access by mailbox owners, delegates (including administrators with full access permissions to mailboxes), and administrators.
 
 When you enable audit logging for a mailbox, you can specify which user actions (for example, accessing, moving, or deleting a message) will be logged for a logon type (administrator, delegate user, or owner). Audit log entries also include important information such as the client IP address, host name, and process or client used to access the mailbox. For items that are moved, the entry includes the name of the destination folder.
 
