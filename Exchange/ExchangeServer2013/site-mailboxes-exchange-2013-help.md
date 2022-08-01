@@ -21,12 +21,11 @@ _**Applies to:** Exchange Server 2013_
 
 Email and documents are traditionally kept in two unique and separate data repositories. Most organizations collaborate using both mediums. The challenge is that both email and documents are accessed using different clients. This usually results in a reduction in user productivity and a degraded user experience.
 
-The *site mailbox* is a new concept in Microsoft Exchange 2013 that attempts to solve this problem. Site mailboxes improve collaboration and user productivity by allowing access to both Microsoft SharePoint 2013 documents and Exchange email using the same client interface. A site mailbox is functionally comprised of SharePoint 2013 site membership (owners and members), shared storage through an Exchange 2013 mailbox for email messages and a SharePoint 2013 site for documents, and a management interface that addresses provisioning and lifecycle needs.
+The _site mailbox_ is a new concept in Microsoft Exchange 2013 that attempts to solve this problem. Site mailboxes improve collaboration and user productivity by allowing access to both Microsoft SharePoint 2013 documents and Exchange email using the same client interface. A site mailbox is functionally comprised of SharePoint 2013 site membership (owners and members), shared storage through an Exchange 2013 mailbox for email messages and a SharePoint 2013 site for documents, and a management interface that addresses provisioning and lifecycle needs.
 
 Site mailboxes require Exchange 2013 and SharePoint Server 2013 integration and configuration. For more information about how to configure your Exchange 2013 organization to work with your SharePoint Server 2013 organization, see the following topics:
 
 - [Configure site mailboxes in SharePoint Server 2013](/SharePoint/administration/configure-site-mailboxes-in-sharepoint).
-
 - [Integration with SharePoint and Lync](integration-with-sharepoint-and-lync-exchange-2013-help.md)
 
 For more information about collaboration features in Exchange Server 2013, see [Collaboration](collaboration-exchange-2013-help.md).
@@ -41,37 +40,11 @@ When one project member files mail or documents using the site mailbox, any proj
 
 Site mailbox quotas can be set by using the **SiteMailboxProvisioningPolicy** cmdlets in the Exchange Management Shell. The Site mailbox provisioning policies only apply to the email that is sent to and from the site mailbox and the size of the site mailbox on the Exchange server. The document repository settings are configured in SharePoint. Although you can create multiple site mailbox provisioning policies using the **New-SiteMailboxProvisioningPolicy** cmdlet, only the default provisioning policy will be applied to all site mailboxes. You can't apply multiple policies within your organization. The provisioning policies allow you to set the following quotas:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Quota</th>
-<th>Description</th>
-<th>Default setting</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>IssueWarningQuota</p></td>
-<td><p>The <em>IssueWarningQuota</em> parameter specifies the site mailbox size that triggers a warning message to the site mailbox</p></td>
-<td><p>4.5 GB</p></td>
-</tr>
-<tr class="even">
-<td><p>MaxReceiveSize</p></td>
-<td><p>The <em>MaxReceiveSize</em> parameter specifies the maximum size of email messages that can be received by the site mailbox.</p></td>
-<td><p>36 MB</p></td>
-</tr>
-<tr class="odd">
-<td><p>ProhibitSendReceiveQuota</p></td>
-<td><p>The <em>ProhibitSendReceiveQuota</em> parameter specifies the size at which the site mailbox can no longer send or receive messages.</p></td>
-<td><p>5 GB</p></td>
-</tr>
-</tbody>
-</table>
+|Quota|Description|Default setting|
+|---|---|---|
+|IssueWarningQuota|The _IssueWarningQuota_ parameter specifies the site mailbox size that triggers a warning message to the site mailbox|4.5 GB|
+|MaxReceiveSize|The _MaxReceiveSize_ parameter specifies the maximum size of email messages that can be received by the site mailbox.|36 MB|
+|ProhibitSendReceiveQuota|The _ProhibitSendReceiveQuota_ parameter specifies the size at which the site mailbox can no longer send or receive messages.|5 GB|
 
 For more information about how to configure site mailbox provisioning policies, see [Manage site mailbox provisioning policies](manage-site-mailbox-provisioning-policies-exchange-2013-help.md).
 
@@ -100,4 +73,4 @@ Using the eDiscovery Console in SharePoint, site mailboxes can be part of the In
 
 Backup and Restore for the Exchange site mailboxes housed on the mailbox server will use the same backup and restore method that you use for all Exchange mailboxes. For more information, see [Database availability groups (DAGs)](database-availability-groups-dags-exchange-2013-help.md).
 
-For SharePoint documents, you should back up and restore into the same place. If you restore your SharePoint content to same URLs, then the site mailbox will continue to work and no other configuration is needed. If you restore to a different URL, then you'll need to run **Set-SiteMailbox** cmdlet to update the *SharePointURL* property. We recommend that you don't restore SharePoint to a new forest.
+For SharePoint documents, you should back up and restore into the same place. If you restore your SharePoint content to same URLs, then the site mailbox will continue to work and no other configuration is needed. If you restore to a different URL, then you'll need to run **Set-SiteMailbox** cmdlet to update the _SharePointURL_ property. We recommend that you don't restore SharePoint to a new forest.

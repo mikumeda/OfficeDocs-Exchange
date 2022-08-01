@@ -30,7 +30,7 @@ To find out what permissions you need to perform the procedure or run the cmdlet
 3. Now, run the **Get-ManagementRoleAssignment** cmdlet to look at the role groups or management roles assigned to you to see if you have the permissions that are necessary to manage the feature.
 
     > [!NOTE]
-    > You must be assigned the Role Management management role to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet. If you don't have permissions to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
+    > You must be assigned the Role Management management role to run the **Get-ManagementRoleAssignment** cmdlet. If you don't have permissions to run the **Get-ManagementRoleAssignment** cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
 
 If you want to delegate the ability to manage a feature to another user, see [Delegate role assignments](delegate-role-assignments-exchange-2013-help.md).
 
@@ -43,31 +43,10 @@ The following table lists the permissions required to perform tasks that manage 
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>User throttling</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="recipient-management-exchange-2013-help.md">Recipient Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Exchange workload throttling</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|User throttling|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Recipient Management](recipient-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md)|
+|Exchange workload throttling|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md)|
 
 ## Exchange event log permissions
 
@@ -75,24 +54,6 @@ The following table lists the permissions required to perform tasks that manage 
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Exchange event log management</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p>
-<p><a href="view-only-organization-management-exchange-2013-help.md">View-only Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|Exchange event log management|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md) <br/><br/> [View-only Organization Management](view-only-organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|

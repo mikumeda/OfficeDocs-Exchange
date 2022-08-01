@@ -29,108 +29,33 @@ This scenario is applicable to government agencies, divisions, or departments th
 
 ![Address Book Policies with two separate companies.](images/JJ657455.b4fc82da-a659-4ade-ba33-d55d90dcf204(EXCHG.150).gif "Address Book Policies with two separate companies")
 
-The Contoso and Humungous Insurance ABPs were created using the following address lists, global address lists, room lists, and OABs, which were created using a recipient filter that grouped the objects with a filter such as Custom Attribute. Because the two companies are separate without any interaction between the two, there aren't any address lists in common.
+The Contoso and Humongous Insurance ABPs were created using the following address lists, global address lists, room lists, and OABs, which were created using a recipient filter that grouped the objects with a filter such as Custom Attribute. Because the two companies are separate without any interaction between the two, there aren't any address lists in common.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>   </p></td>
-<td><p>Contoso</p></td>
-<td><p>Humungous Insurance</p></td>
-</tr>
-<tr class="even">
-<td><p>Address Lists</p></td>
-<td><p>AL_CON_Groups</p>
-<p>AL_CON_Users</p>
-<p>AL_CON_Contacts</p></td>
-<td><p>AL_HI_Groups</p>
-<p>AL_HI_Users</p>
-<p>AL_HI_Contacts</p></td>
-</tr>
-<tr class="odd">
-<td><p>Global address list</p></td>
-<td><p>GAL_CON</p></td>
-<td><p>GAL_HI</p></td>
-</tr>
-<tr class="even">
-<td><p>Room address list</p></td>
-<td><p>AL_CON_Rooms</p></td>
-<td><p>AL_HI_Rooms</p></td>
-</tr>
-<tr class="odd">
-<td><p>Offline address book (OAB)</p></td>
-<td><p>OAB_CON</p></td>
-<td><p>OAB_HI</p></td>
-</tr>
-</tbody>
-</table>
+|&nbsp;|Contoso|Humongous Insurance|
+|---|---|---|
+|Address Lists|AL_CON_Groups <br/><br/> AL_CON_Users <br/><br/> AL_CON_Contacts|AL_HI_Groups <br/><br/> AL_HI_Users <br/><br/> AL_HI_Contacts|
+|Global address list|GAL_CON|GAL_HI|
+|Room address list|AL_CON_Rooms|AL_HI_Rooms|
+|Offline address book (OAB)|OAB_CON|OAB_HI|
 
 ## Scenario 2: Two companies sharing a CEO
 
 In this scenario, Fabrikam and Tailspin Toys share the same Exchange organization and the same CEO. The CEO is the only common person between the two companies. This scenario requires three ABPs that have the following characteristics:
 
 - The users in Tailspin Toys can only see Tailspin Toys users when they browse the GAL.
-
 - The users in Fabrikam can only see Fabrikam users when they browse the GAL.
-
 - In each company, there is a SeniorLeaders distribution group that includes the senior leaders of that company and the CEO.
-
 - Users who look at the CEO's group membership will only see groups that belong to the user's company. They won't see groups not in their own company.
-
 - Three ABPs are created: **Fab**, **Tail**, and **CEO**.
 
 ![Two Companies One CEO.](images/JJ657455.c87a5654-d456-4688-acb2-0be15ba1cda6(EXCHG.150).gif "Two Companies One CEO")
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>   </p></td>
-<td><p>Fabrikam</p></td>
-<td><p>Tailspin Toys</p></td>
-<td><p>CEO</p></td>
-</tr>
-<tr class="even">
-<td><p>Address lists</p></td>
-<td><p>AL_FAB_Users_DGs</p>
-<p>AL_FAB_Contacts</p></td>
-<td><p>AL_TAIL_Users_DGs</p>
-<p>AL_TAIL_Contacts</p></td>
-<td><p>AL_FAB_Users_DGs</p>
-<p>AL_FAB_Contacts</p>
-<p>AL_TAIL_Users_DGs</p>
-<p>AL_TAIL_Contacts</p></td>
-</tr>
-<tr class="odd">
-<td><p>Global address list</p></td>
-<td><p>GAL_FAB</p></td>
-<td><p>GAL_TAIL</p></td>
-<td><p>Default GAL</p></td>
-</tr>
-<tr class="even">
-<td><p>Room address list</p></td>
-<td><p>AL_FAB_Rooms</p></td>
-<td><p>AL_TAIL_Rooms</p></td>
-<td><p>Default All Rooms</p></td>
-</tr>
-<tr class="odd">
-<td><p>Offline address book (OAB)</p></td>
-<td><p>OAB_FAB</p></td>
-<td><p>OAB_TAIL</p></td>
-<td><p>Default OAB</p></td>
-</tr>
-</tbody>
-</table>
+|&nbsp;|Fabrikam|Tailspin Toys|CEO|
+|---|---|---|---|
+|Address lists|AL_FAB_Users_DGs <br/><br/> AL_FAB_Contacts|AL_TAIL_Users_DGs <br/><br/> AL_TAIL_Contacts|AL_FAB_Users_DGs <br/><br/> AL_FAB_Contacts <br/><br/> AL_TAIL_Users_DGs <br/><br/> AL_TAIL_Contacts|
+|Global address list|GAL_FAB|GAL_TAIL|Default GAL|
+|Room address list|AL_FAB_Rooms|AL_TAIL_Rooms|Default All Rooms|
+|Offline address book (OAB)|OAB_FAB|OAB_TAIL|Default OAB|
 
 When the CEO is added to the distribution groups in each organization and falls within the scope of each company's ABP, then the CEO becomes visible to each company. The CEO can create distribution groups that span both companies and will be visible within each company's GAL, but members of the distribution group will only be able to view the members of the group that are within their own organization.
 
@@ -139,59 +64,18 @@ When the CEO is added to the distribution groups in each organization and falls 
 This scenario is applicable to schools or universities where a division of class rooms is necessary to ensure the privacy of the students. The Education scenario has the following characteristics:
 
 - Students in each class can only see other students in their class, their teacher, and the principal.
-
 - Teachers can only students in their own classrooms.
-
 - Teachers can see all other teachers and the principal.
-
 - Distribution groups are created for each class's parents and the faculty.
 
 ![Address Book Policies Education Scenario.](images/JJ657455.435f3b1a-9752-4c61-ab8a-80115c643d12(EXCHG.150).gif "Address Book Policies Education Scenario")
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>   </p></td>
-<td><p>Students_ClassA</p></td>
-<td><p>Teachers_ClassA</p></td>
-<td><p>Principal</p></td>
-</tr>
-<tr class="even">
-<td><p>Address Lists</p></td>
-<td><p>AL_ClassAAL_Principal</p></td>
-<td><p>AL_ClassAAL_AllTeachersAL_AllGroupsAL_Principal</p></td>
-<td><p>AL_ClassA</p>
-<p>AL_ClassB</p>
-<p>AL_AllTeachers</p>
-<p>AL_AllStudents</p>
-<p>AL_AllGroups</p></td>
-</tr>
-<tr class="odd">
-<td><p>Global address list</p></td>
-<td><p>GAL_StudentsClassA</p></td>
-<td><p>GAL_TeachersClassA</p></td>
-<td><p>GAL_Everyone</p></td>
-</tr>
-<tr class="even">
-<td><p>Room address list</p></td>
-<td><p>AL_BlankRoom</p></td>
-<td><p>AL_BlankRoom</p></td>
-<td><p>Default All Rooms</p></td>
-</tr>
-<tr class="odd">
-<td><p>Offline address book (OAB)</p></td>
-<td><p>OAB_StudentsClassA</p></td>
-<td><p>OAB_TeachersClassA</p></td>
-<td><p>Default OAB</p></td>
-</tr>
-</tbody>
-</table>
+|&nbsp;|Students_ClassA|Teachers_ClassA|Principal|
+|---|---|---|---|
+|Address Lists|AL_ClassAAL_Principal|AL_ClassAAL_AllTeachersAL_AllGroupsAL_Principal|AL_ClassA <br/><br/> AL_ClassB <br/><br/> AL_AllTeachers <br/><br/> AL_AllStudents <br/><br/> AL_AllGroups|
+|Global address list|GAL_StudentsClassA|GAL_TeachersClassA|GAL_Everyone|
+|Room address list|AL_BlankRoom|AL_BlankRoom|Default All Rooms|
+|Offline address book (OAB)|OAB_StudentsClassA|OAB_TeachersClassA|Default OAB|
 
 ## Considerations and best practices
 
@@ -257,11 +141,11 @@ You'll need to develop a way to divide your organizations. We recommend using th
 
 - Not all recipient types of objects have precanned conditional attributes in Active Directory. For example, Distribution Group and Dynamic Distribution Group do not support company, department, or state attributes.
 
-- Not all precanned conditional attributes are exposed in cmdlets for some recipients. For example, the *Company*, *department*, and *StateOrProvince* parameters are not available on the exposed in cmdlets for mail users, contacts, distribution groups, and mail-enabled public folders.
+- Not all precanned conditional attributes are exposed in cmdlets for some recipients. For example, the _Company*, _department*, and _StateOrProvince_ parameters are not available on the exposed in cmdlets for mail users, contacts, distribution groups, and mail-enabled public folders.
 
-- Multiple cmdlets are required to segregate recipient when you use the pre-canned conditional attribute. For example, you need to run Set-User to tag *Company*, *Department*, *StateOrProvince* for a UserMailbox after you run **New-Mailbox** or **Set-Mailbox** cmdlets.
+- Multiple cmdlets are required to segregate recipient when you use the pre-canned conditional attribute. For example, you need to run Set-User to tag _Company*, _Department*, _StateOrProvince_ for a UserMailbox after you run **New-Mailbox** or **Set-Mailbox** cmdlets.
 
-- The *CustomAttributeX* parameters are all exposed in the Set-\* cmdlet for each recipient type, we can complete all segregation for that type via single Set- cmdlet
+- The _CustomAttributeX_ parameters are all exposed in the Set-\* cmdlet for each recipient type, we can complete all segregation for that type via single Set- cmdlet
 
 - CustomAttributeX attributes are explicitly reserved for customization of an organization and are entirely under the control of the organization administrators.
 
@@ -311,7 +195,7 @@ New-GlobalAddressList -Name "GAL_TAIL" -RecipientFilter "(CustomAttribute15 -eq 
 
 For more information, see [Create a global address list](../ExchangeOnline/address-books/address-lists/create-global-address-list.md).
 
-When you create the OAB you should include the appropriate GAL when providing the *AddressLists* parameter of New- or Set-OfflineAddressBook to ensure no entry is unexpectedly missed. Basically, you can customize the set of entries that a user will see or reduce the download size of the OAB by specifying a list of AddressLists in AddressLists of New/Set-OfflineAddressBook. However, if you want users to see the full set of GAL entries in OAB, make sure that you include the GAL in the AddressLists.
+When you create the OAB you should include the appropriate GAL when providing the _AddressLists_ parameter of New- or Set-OfflineAddressBook to ensure no entry is unexpectedly missed. Basically, you can customize the set of entries that a user will see or reduce the download size of the OAB by specifying a list of AddressLists in AddressLists of New/Set-OfflineAddressBook. However, if you want users to see the full set of GAL entries in OAB, make sure that you include the GAL in the AddressLists.
 
 This example creates the OAB for Fabrikam named OAB\_FAB.
 
