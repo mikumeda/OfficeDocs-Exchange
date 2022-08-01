@@ -102,7 +102,7 @@ The transport agent uses true type detection by inspecting file properties rathe
 |Self-extracting executable program file.|`.exe`|
 |Java archive file.|`.jar`|
 |Uninstallation executable file.|`.exe`|
-|Program shortcut file.|`.`exe`|
+|Program shortcut file.|`.exe`|
 |Compiled source code file or 3-D object file or sequence file.|`.obj`|
 |32-bit Windows executable file.|`.exe`|
 |Microsoft Visio XML drawing file.|`.vxd`|
