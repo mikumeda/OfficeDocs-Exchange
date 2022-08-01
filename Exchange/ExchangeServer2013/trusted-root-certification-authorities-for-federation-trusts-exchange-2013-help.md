@@ -25,101 +25,23 @@ If you don't want to use the recommended self-signed certificate, you should req
 
 The following table lists CAs currently trusted Microsoft. These CAs have been tested for use with Exchange 2013.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>CA friendly name</th>
-<th>Issued by</th>
-<th>Intended purposes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Autoridade Certificadora Raiz Brasileira</p></td>
-<td><p>Autoridade Certificadora Raiz Brasileira</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="even">
-<td><p>Comodo</p></td>
-<td><p>Comodo Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="odd">
-<td><p>CyberTrust</p></td>
-<td><p>Baltimore CyberTrust Root Certificate Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="even">
-<td><p>Digicert</p></td>
-<td><p>Digicert Global Root Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="odd">
-<td><p>Digicert High Assurance EV</p></td>
-<td><p>Digicert Global Root Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="even">
-<td><p>Entrust</p></td>
-<td><p>Entrust.net Secure Server Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="odd">
-<td><p>Entrust (2048)</p></td>
-<td><p>Entrust.net Secure Server Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="even">
-<td><p>Equifax</p></td>
-<td><p>Equifax Secure Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="odd">
-<td><p>GlobalSign</p></td>
-<td><p>GlobalSign Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="even">
-<td><p>Go Daddy</p></td>
-<td><p>Go Daddy Class 2 Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="odd">
-<td><p>Network Solutions</p></td>
-<td><p>Network Solutions Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="even">
-<td><p>PositiveSSL</p></td>
-<td><p>Comodo Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="odd">
-<td><p>SECOM</p></td>
-<td><p>SECOM Trust Systems Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="even">
-<td><p>UTN-UserFirst-Hardware</p></td>
-<td><p>Comodo Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="odd">
-<td><p>VeriSign</p></td>
-<td><p>Class 3 Public Primary Certification Authority</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-<tr class="even">
-<td><p>VeriSign</p></td>
-<td><p>VeriSign Trust Network</p></td>
-<td><p>Server authentication, client authentication</p></td>
-</tr>
-</tbody>
-</table>
+|CA friendly name|Issued by|Intended purposes|
+|---|---|---|
+|Autoridade Certificadora Raiz Brasileira|Autoridade Certificadora Raiz Brasileira|Server authentication, client authentication|
+|Comodo|Comodo Certification Authority|Server authentication, client authentication|
+|CyberTrust|Baltimore CyberTrust Root Certificate Authority|Server authentication, client authentication|
+|Digicert|Digicert Global Root Certification Authority|Server authentication, client authentication|
+|Digicert High Assurance EV|Digicert Global Root Certification Authority|Server authentication, client authentication|
+|Entrust|Entrust.net Secure Server Certification Authority|Server authentication, client authentication|
+|Entrust (2048)|Entrust.net Secure Server Certification Authority|Server authentication, client authentication|
+|Equifax|Equifax Secure Certification Authority|Server authentication, client authentication|
+|GlobalSign|GlobalSign Certification Authority|Server authentication, client authentication|
+|Go Daddy|Go Daddy Class 2 Certification Authority|Server authentication, client authentication|
+|Network Solutions|Network Solutions Certification Authority|Server authentication, client authentication|
+|PositiveSSL|Comodo Certification Authority|Server authentication, client authentication|
+|SECOM|SECOM Trust Systems Certification Authority|Server authentication, client authentication|
+|UTN-UserFirst-Hardware|Comodo Certification Authority|Server authentication, client authentication|
+|VeriSign|Class 3 Public Primary Certification Authority|Server authentication, client authentication|
+|VeriSign|VeriSign Trust Network|Server authentication, client authentication|
 
 For more information about certificate requirements for Federation, see [Federation](federation-exchange-2013-help.md).

@@ -19,57 +19,15 @@ mtps_version: v=EXCHG.150
 
 **Summary:** About arbitration mailboxes in Exchange 2013 and how to re-create them.
 
-Exchange 2013 comes with five system mailboxes known as *arbitration mailboxes*. Arbitration mailboxes are used for storing different types of system data and for managing messaging approval workflow. The below chart lists each type of arbitration mailbox and their responsibilities.
+Exchange 2013 comes with five system mailboxes known as _arbitration mailboxes_. Arbitration mailboxes are used for storing different types of system data and for managing messaging approval workflow. The below chart lists each type of arbitration mailbox and their responsibilities.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Arbitration mailbox Name</th>
-<th>Display name</th>
-<th>Persisted capabilities</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042</p></td>
-<td><p>Microsoft Exchange Federation Mailbox</p></td>
-<td><p>{}</p></td>
-<td><p>This mailbox stores data used to maintain federation between different Exchange organizations. This includes Rights Management Services, cross-premises mail-flow monitoring probes and responses, notifications, online archives, messaging records management, and cross-premises free/busy information.</p></td>
-</tr>
-<tr class="even">
-<td><p>SystemMailbox{1f05a927-XXXX-XXXX-XXXX-XXXXXXXXXXXX}</p>(for example, SystemMailbox{1f05a927-9350-4efe-a823-5529c2d64109}; most of the mailbox name is unique to your organization)</td>
-<td><p>Microsoft Exchange Approval Assistant</p></td>
-<td><p>{}</p></td>
-<td><p>This mailbox is provisioned for use by the Exchange approval framework for recipient moderation and auto group approval requests.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Migration.8f3e7716-2011-43e4-96b1-aba62d229136</p></td>
-<td><p>Microsoft Exchange Migration</p></td>
-<td><p>{OrganizationCapabilityManagement}</p></td>
-<td><p>Stores data for the Exchange migration service to use when moving mailboxes in batches.</p></td>
-</tr>
-<tr class="even">
-<td><p>SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}</p></td>
-<td><p>Microsoft Exchange</p></td>
-<td><p>{OrganizationCapabilityUMDataStorage}</p></td>
-<td><p>Discovery system mailbox.</p>
-<p>Provisioned for use by e-Discovery feature, which is used by compliance officers to locate messages that match specified selection criteria. This mailbox is also used by Unified Messaging for storing UM console attending files and other information.</p></td>
-</tr>
-<tr class="odd">
-<td><p>SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}</p></td>
-<td><p>Microsoft Exchange</p></td>
-<td><p>{OrganizationCapabilityUMGrammarReady, OrganizationCapabilityPstProvider, OrganizationCapabilityMessageTracking, OrganizationCapabilityMailRouting, OrganizationCapabilityClientExtensions, OrganizationCapabilityGMGen, OrganizationCapabilityOABGen, OrganizationCapabilityUMGrammar}</p></td>
-<td><p>This is known as an organization mailbox. It is used for creating offline address books (OABs). To load-balance OAB generation across your organization, including across geographically separate sites, you can create additional organization mailboxes.</p></td>
-</tr>
-</tbody>
-</table>
+|Arbitration mailbox Name|Display name|Persisted capabilities|Function|
+|---|---|---|---|
+|FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042|Microsoft Exchange Federation Mailbox|{}|This mailbox stores data used to maintain federation between different Exchange organizations. This includes Rights Management Services, cross-premises mail-flow monitoring probes and responses, notifications, online archives, messaging records management, and cross-premises free/busy information.|
+|SystemMailbox{1f05a927-XXXX-XXXX-XXXX-XXXXXXXXXXXX} (for example, SystemMailbox{1f05a927-9350-4efe-a823-5529c2d64109}; most of the mailbox name is unique to your organization)|Microsoft Exchange Approval Assistant|{}|This mailbox is provisioned for use by the Exchange approval framework for recipient moderation and auto group approval requests.|
+|Migration.8f3e7716-2011-43e4-96b1-aba62d229136|Microsoft Exchange Migration|{OrganizationCapabilityManagement}|Stores data for the Exchange migration service to use when moving mailboxes in batches.|
+|SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}|Microsoft Exchange|{OrganizationCapabilityUMDataStorage}|Discovery system mailbox. <br/><br/> Provisioned for use by e-Discovery feature, which is used by compliance officers to locate messages that match specified selection criteria. This mailbox is also used by Unified Messaging for storing UM console attending files and other information.|
+|SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}|Microsoft Exchange|{OrganizationCapabilityUMGrammarReady, OrganizationCapabilityPstProvider, OrganizationCapabilityMessageTracking, OrganizationCapabilityMailRouting, OrganizationCapabilityClientExtensions, OrganizationCapabilityGMGen, OrganizationCapabilityOABGen, OrganizationCapabilityUMGrammar}|This is known as an organization mailbox. It is used for creating offline address books (OABs). To load-balance OAB generation across your organization, including across geographically separate sites, you can create additional organization mailboxes.|
 
 If you need to re-create one of more of these arbitration mailboxes, see the instructions that follow.
 
@@ -157,6 +115,7 @@ To re-create the arbitration mailbox SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29
     ```powershell
     Enable-Mailbox -Arbitration -Identity "SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}"
     ```
+
 3. In Exchange Management Shell, set the Persisted Capabilities (msExchCapabilityIdentifiers) by running the following command:
 
     ```powershell
@@ -193,7 +152,7 @@ Set-ADUser $OABMBX.SamAccountName -Add @{"msExchCapabilityIdentifiers"="40","42"
 
 ## How do I know this worked?
 
-To verify that you have successfully re-created the arbitration mailbox, use the **Get-Mailbox** cmdlet with the *Arbitration* switch to retrieve system mailboxes.
+To verify that you have successfully re-created the arbitration mailbox, use the **Get-Mailbox** cmdlet with the _Arbitration_ switch to retrieve system mailboxes.
 
 ```powershell
 Get-Mailbox -Arbitration | Format-Table Name, DisplayName

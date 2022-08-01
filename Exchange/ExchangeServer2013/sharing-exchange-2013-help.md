@@ -19,127 +19,39 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-You may need to coordinate schedules with people in different organizations or with friends and family members so that you can work together on projects or plan social events. With Exchange 2013, administrators can set up different levels of calendar access to allow businesses to collaborate with other businesses and to let users share their schedules with others. Business-to-business calendar sharing is set up by creating *organization relationships*. User-to-user calendar sharing is set up by applying *sharing policies*.
+You may need to coordinate schedules with people in different organizations or with friends and family members so that you can work together on projects or plan social events. With Exchange 2013, administrators can set up different levels of calendar access to allow businesses to collaborate with other businesses and to let users share their schedules with others. Business-to-business calendar sharing is set up by creating _organization relationships_. User-to-user calendar sharing is set up by applying _sharing policies_.
 
 > [!IMPORTANT]
-> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see <A href="/microsoft-365/admin/services-in-china/services-in-china">Learn about Office 365 operated by 21Vianet</A>.
+> This feature of Exchange Server 2013 isn't fully compatible with Office 365 operated by 21Vianet in China and some feature limitations may apply. For more information, see [Learn about Office 365 operated by 21Vianet](/microsoft-365/admin/services-in-china/services-in-china).
 
 ## Sharing Scenarios in Exchange 2013
 
 The following sharing scenarios are supported in Exchange 2013:
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sharing goal</th>
-<th>Setting to use</th>
-<th>Requirements</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Share calendars with a Microsoft 365 or Office 365 organization</p></td>
-<td><p>Organization relationships</p></td>
-<td><p>The Microsoft 365 or Office 365 organization is ready to configure. The on-premises Exchange administrator has to set up an authentication relationship with the cloud (also known as "federation") and must meet minimum software requirements. To learn more about setting up federation, see <a href="federation-exchange-2013-help.md">Federation</a>.</p></td>
-</tr>
-<tr class="even">
-<td><p>Share calendars with another on-premises Exchange organization</p></td>
-<td><p>Organization relationships</p></td>
-<td><p>Both on-premises Exchange organizations have to set up federation and must meet minimum software requirements</p></td>
-</tr>
-<tr class="odd">
-<td><p>Share an Exchange user's calendar with an Internet user</p></td>
-<td><p>Sharing policies</p></td>
-<td><p>None, ready to configure</p></td>
-</tr>
-<tr class="even">
-<td><p>Share an Exchange user's calendar with another Exchange on-premises user</p></td>
-<td><p>Sharing policies</p></td>
-<td><p>Both on-premises Exchange organizations have to set up federation and must meet minimum software requirements.</p></td>
-</tr>
-</tbody>
-</table>
+|Sharing goal|Setting to use|Requirements|
+|---|---|---|
+|Share calendars with a Microsoft 365 or Office 365 organization|Organization relationships|The Microsoft 365 or Office 365 organization is ready to configure. The on-premises Exchange administrator has to set up an authentication relationship with the cloud (also known as "federation") and must meet minimum software requirements. To learn more about setting up federation, see [Federation](federation-exchange-2013-help.md).|
+|Share calendars with another on-premises Exchange organization|Organization relationships|Both on-premises Exchange organizations have to set up federation and must meet minimum software requirements|
+|Share an Exchange user's calendar with an Internet user|Sharing policies|None, ready to configure|
+|Share an Exchange user's calendar with another Exchange on-premises user|Sharing policies|Both on-premises Exchange organizations have to set up federation and must meet minimum software requirements.|
 
 The following table lists the differences between organization relationships and sharing policies.
 
 ### Organization relationships vs. sharing policies
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Functionality</th>
-<th>Organization relationship</th>
-<th>Sharing policy</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Requires a federation trust for your organization</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes when sharing with other federated domain organizations. Not required for Internet sharing policies.</p></td>
-</tr>
-<tr class="even">
-<td><p>Recommends that the external domain be federated</p></td>
-<td><p>Yes</p></td>
-<td><p>Yes when sharing with other federated domain organizations. Not required for Internet sharing policies.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Allows sharing of free/busy information (including subject and location) with external organizations for a set of many users.</p></td>
-<td><p>Yes</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>Allows sharing of Calendar folders with free/busy information</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Allows sharing of Calendar folders with free/busy information, including subject and body</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Requires users to send a sharing invitation to external recipients</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Provides an access method</p></td>
-<td><p>Your Client Access server accesses the Client Access server of the external organization and retrieves free/busy information for the external user when requested.</p></td>
-<td><p>Your Client Access server accesses the Client Access server of the external organization and subscribes to the external user's Calendar folder. For Internet sharing policies, external users access either a restricted or public URL on the Client Access server.</p></td>
-</tr>
-<tr class="even">
-<td><p>Can be applied to all external domains</p></td>
-<td><p>No (a one-to-one relationship between two Exchange 2013 organizations)</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Provides users with different sharing experiences with external recipients</p></td>
-<td><p>No</p></td>
-<td><p>Yes, based on the sharing policy that's applied</p></td>
-</tr>
-<tr class="even">
-<td><p>Disables sharing for some users</p></td>
-<td><p>Yes, by specifying a security distribution group for the organization relationship</p></td>
-<td><p>Yes, by disabling the sharing policy that's applied</p></td>
-</tr>
-<tr class="odd">
-<td><p>Requires that the mailbox reside on an Exchange 2013 Mailbox server</p></td>
-<td><p>No</p></td>
-<td><p>Yes</p></td>
-</tr>
-</tbody>
-</table>
+|Functionality|Organization relationship|Sharing policy|
+|---|---|---|
+|Requires a federation trust for your organization|Yes|Yes when sharing with other federated domain organizations. Not required for Internet sharing policies.|
+|Recommends that the external domain be federated|Yes|Yes when sharing with other federated domain organizations. Not required for Internet sharing policies.|
+|Allows sharing of free/busy information (including subject and location) with external organizations for a set of many users.|Yes|No|
+|Allows sharing of Calendar folders with free/busy information|No|Yes|
+|Allows sharing of Calendar folders with free/busy information, including subject and body|No|Yes|
+|Requires users to send a sharing invitation to external recipients|No|Yes|
+|Provides an access method|Your Client Access server accesses the Client Access server of the external organization and retrieves free/busy information for the external user when requested.|Your Client Access server accesses the Client Access server of the external organization and subscribes to the external user's Calendar folder. For Internet sharing policies, external users access either a restricted or public URL on the Client Access server.|
+|Can be applied to all external domains|No (a one-to-one relationship between two Exchange 2013 organizations)|Yes|
+|Provides users with different sharing experiences with external recipients|No|Yes, based on the sharing policy that's applied|
+|Disables sharing for some users|Yes, by specifying a security distribution group for the organization relationship|Yes, by disabling the sharing policy that's applied|
+|Requires that the mailbox reside on an Exchange 2013 Mailbox server|No|Yes|
 
 ## Limitations of free/busy sharing
 
@@ -193,30 +105,8 @@ Sharing policies are assigned to Exchange 2013 mailbox users. To use sharing pol
 
 The following table contains links to topics that will help you learn about and manage sharing in Exchange 2013.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Topic</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><a href="federation-exchange-2013-help.md">Federation</a></p></td>
-<td><p>Learn more about the underlying trust infrastructure that supports sharing, an easy method for users to share calendar information with external recipients.</p></td>
-</tr>
-<tr class="even">
-<td><p><a href="organization-relationships-exchange-2013-help.md">Organization relationships</a></p></td>
-<td><p>Learn more about the one-to-one relationships between Exchange organizations that enable calendar free/busy sharing.</p></td>
-</tr>
-<tr class="odd">
-<td><p><a href="sharing-policies-exchange-2013-help.md">Sharing policies</a></p></td>
-<td><p>Learn more about the person-to-person policies that enable sharing.</p>
-<p></p></td>
-</tr>
-</tbody>
-</table>
+|Topic|Description|
+|---|---|
+|[Federation](federation-exchange-2013-help.md)|Learn more about the underlying trust infrastructure that supports sharing, an easy method for users to share calendar information with external recipients.|
+|[Organization relationships](organization-relationships-exchange-2013-help.md)|Learn more about the one-to-one relationships between Exchange organizations that enable calendar free/busy sharing.|
+|[Sharing policies](sharing-policies-exchange-2013-help.md)|Learn more about the person-to-person policies that enable sharing.|

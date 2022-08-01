@@ -21,9 +21,9 @@ _**Applies to:** Exchange Server 2013 SP1_
 
 Switchovers and failovers are the two forms of outages in Microsoft Exchange Server 2013:
 
-  - A *switchover* is a scheduled outage of a database or server that's explicitly initiated by a cmdlet or by the managed availability system in Exchange 2013. Switchovers are typically done to prepare for performing a maintenance operation. Switchovers involve moving the active mailbox database copy to another server in the database availability group (DAG). If no healthy target is found during a switchover, administrators will receive an error and the mailbox database will remain up, or mounted.
+- A _switchover_ is a scheduled outage of a database or server that's explicitly initiated by a cmdlet or by the managed availability system in Exchange 2013. Switchovers are typically done to prepare for performing a maintenance operation. Switchovers involve moving the active mailbox database copy to another server in the database availability group (DAG). If no healthy target is found during a switchover, administrators will receive an error and the mailbox database will remain up, or mounted.
 
-  - A *failover* refers to unexpected events that result in the unavailability of services, data, or both. A failover involves the system automatically recovering from the failure by activating a passive mailbox database copy to make it the active mailbox database copy. If no healthy target is found during a failover, the mailbox database will be dismounted.
+- A _failover_ refers to unexpected events that result in the unavailability of services, data, or both. A failover involves the system automatically recovering from the failure by activating a passive mailbox database copy to make it the active mailbox database copy. If no healthy target is found during a failover, the mailbox database will be dismounted.
 
 Exchange 2013 is designed to handle both switchovers and failovers.
 
@@ -33,15 +33,13 @@ Looking for management tasks related to high availability and site resilience? S
 
 There are three types of switchovers in Exchange 2013:
 
-  - Database switchovers
-
-  - Server switchovers
-
-  - Datacenter switchovers
+- Database switchovers
+- Server switchovers
+- Datacenter switchovers
 
 ## Database Switchovers
 
-A *database switchover* is the process by which an individual active database is switched over to another database copy (a passive copy), and that database copy is made the new active database copy. Database switchovers can happen both within and across datacenters. A database switchover can be performed by using the Exchange admin center (EAC) or the Shell. Regardless of which interface is used, the switchover process is as follows:
+A _database switchover_ is the process by which an individual active database is switched over to another database copy (a passive copy), and that database copy is made the new active database copy. Database switchovers can happen both within and across datacenters. A database switchover can be performed by using the Exchange admin center (EAC) or the Shell. Regardless of which interface is used, the switchover process is as follows:
 
 1. The administrator initiates a database switchover to move the current active mailbox database copy to another server.
 
@@ -111,7 +109,7 @@ For detailed steps about how to perform a server switchover, see [Perform a Serv
 
 In a site resilient configuration, automatic recovery in response to a site-level failure can occur within a DAG, allowing the messaging system to remain in a functional state. This configuration requires at least three locations, as it requires deploying DAG members in two locations and the DAG's witness server in a third location.
 
-If you don't have three locations, or even if you do have three locations, but you want to control datacenter-level recovery actions, you can configure a DAG for manual recovery if a site-level failure occurs. In that event, you would perform a process called a *datacenter switchover*. As with many disaster recovery scenarios, prior planning and preparation for a datacenter switchover can simplify your recovery process and reduce the duration of your outage.
+If you don't have three locations, or even if you do have three locations, but you want to control datacenter-level recovery actions, you can configure a DAG for manual recovery if a site-level failure occurs. In that event, you would perform a process called a _datacenter switchover_. As with many disaster recovery scenarios, prior planning and preparation for a datacenter switchover can simplify your recovery process and reduce the duration of your outage.
 
 Because of the numerous architectural changes in Exchange 2013, including the consolidation of server roles, performing a datacenter switchover in Exchange 2013 is easier than it was in Exchange 2010. For detailed steps to performing a datacenter switchover, see [Datacenter Switchovers](datacenter-switchovers-exchange-2013-help.md).
 
@@ -121,341 +119,40 @@ A failover is an automatic activation process that can occur at the database, se
 
 DAGs and mailbox database copies provide full redundancy and rapid recovery of both the data and the services that provide access to the data. The following table lists the expected recovery actions for various failures. Some failures require the administrator to initiate the recovery, and other failures are automatically handled by the system.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Description</th>
-<th>Automatic activation</th>
-<th>Automatic repair action</th>
-<th>State during repair: Active</th>
-<th>State during repair: Passive</th>
-<th>Repair actions</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Extensible Storage Engine (ESE) soft database failure: The drives storing the database are returning errors on some reads (for example, a -1018 error).</p></td>
-<td><p>Possible short outage.</p>
-<p>Possible automatic failover.</p></td>
-<td><p>Automatic patching of bad page.</p></td>
-<td><p>Manual switchover, automatic failover, or online repair.</p></td>
-<td><p>Failed</p></td>
-<td><p>RAID rebuild, database and database copy repair, restore and run recovery then page patching, or page patching from copy.</p></td>
-<td><p>There may be other soft database failure codes.</p>
-<p>Doesn't include NTFS file system block failures.</p>
-<p>If failover or switchover is performed, host server is updated.</p></td>
-</tr>
-<tr class="even">
-<td><p>ESE &quot;<em>semi-soft&quot;</em> database failure: The drives storing the database are returning errors on some writes.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>Automatic volume/disk rebuilt after possible drive replacement.</p></td>
-<td><p>Dismounted if it can't be recovered.</p></td>
-<td><p>Failed</p></td>
-<td><p>RAID rebuild may solve the problem.</p>
-<p>Copy and repair, restore and run recovery, or volume/disk rebuilt after possible replacement.</p></td>
-<td><p>An ESE semi-soft write error means some writes are successful.</p>
-<p>Doesn't include an NTFS block failure.</p></td>
-</tr>
-<tr class="odd">
-<td><p>ESE &quot;semi-soft&quot; log failure: The drives storing the log data are returning non-recovered errors on some reads or writes.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>Automatic volume/disk rebuilt after possible drive replacement.</p></td>
-<td><p>Dismounted if it can't be recovered.</p></td>
-<td><p>Failed</p></td>
-<td><p>RAID rebuild may solve the problem.</p>
-<p>Copy and repair, restore and run recovery, or volume/disk rebuilt after possible replacement.</p></td>
-<td><p>An ESE semi-soft read/write error means some reads/writes are successful.</p>
-<p>If the database fails, automated recovery will occur before log data recovery processing starts.</p></td>
-</tr>
-<tr class="even">
-<td><p>ESE software error or resource exhaustion: An error where ESE terminates instance (for example, Event ID 1022, checkpoint depth too deep).</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted if it can't be recovered.</p></td>
-<td><p>Failed</p></td>
-<td><p>Fix underlying resource issue.</p></td>
-<td><p>This failure could be the surfaced error of other cases.</p></td>
-</tr>
-<tr class="odd">
-<td><p>NTFS block failures: The drives storing the database or logs experiences a read or write error to an NTFS control structure.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>Volume rebuilt after possible drive replacement.</p></td>
-<td><p>Dismounted if it can't be recovered.</p></td>
-<td><p>Failed</p></td>
-<td><p>RAID rebuild may solve the problem. NTFS utilities may solve the NTFS problems. Exchange recovery may be required.</p></td>
-<td><p>This event is more likely to occur when RAID isn't in use. If this event impacts the active log volume, some recent log files will be lost.</p>
-<p>Doesn't include errors automatically corrected by NTFS or its underlying software or hardware stack.</p></td>
-</tr>
-<tr class="even">
-<td><p>Database or log drive failure: A drive storing the database or logs has failed and is inaccessible.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>Drive reformatted or replaced, followed by complete volume rebuild.</p></td>
-<td><p>Dismounted if it can't be recovered.</p></td>
-<td><p>Failed</p></td>
-<td><p>Drive replacement followed by possible RAID rebuild.</p>
-<p>Drive replacement followed by complete volume rebuild.</p>
-<p>Complete volume rebuild.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Database or log volume failure: The volume fails due to NTFS or lower-level volume issues.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>Drive reformatted or replaced.</p></td>
-<td><p>Dismounted if it can't be recovered.</p></td>
-<td><p>Failed</p></td>
-<td><p>Drive replacement followed by possible RAID rebuild.</p>
-<p>Drive replacement followed by complete volume rebuild.</p>
-<p>Complete volume rebuild.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="even">
-<td><p>Database or log volume out of space: The NTFS file system with the database or log files is out of space.</p></td>
-<td><p>Automatic failover if other copy isn't in similar state.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Failed</p></td>
-<td><p>Run full or incremental backups, manually delete logs, let time pass, resume database copy, or repair failed database copy.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Administrator dismounts the wrong database.</p></td>
-<td><p>If automatic failover isn't blocked by the administrator, there will be a short outage.</p>
-<p>If automatic failover is prevented, there will be an outage until the database is mounted.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Not applicable</p></td>
-<td><p>Administrator corrects the error.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="even">
-<td><p>Administrator suspends the wrong database copy.</p></td>
-<td><p>Depending on configuration and impacted copy, auto recovery may be prevented.</p></td>
-<td><p>None.</p></td>
-<td><p>Not applicable.</p></td>
-<td><p>Suspended</p></td>
-<td><p>Administrator corrects the error.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Administrator dismounts a database for storage, NTFS, or volume maintenance.</p></td>
-<td><p>If automatic failover isn't blocked by the administrator, there will be a short outage.</p>
-<p>If automatic failover is blocked, there will be an outage until the administrator completes the task.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Not applicable</p></td>
-<td><p>Administrator completes the task.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="even">
-<td><p>Administrator suspends a database copy for storage, NTFS, or volume maintenance.</p></td>
-<td><p>Depending on configuration and impacted copy, auto recovery may be prevented.</p></td>
-<td><p>None.</p></td>
-<td><p>Not applicable.</p></td>
-<td><p>Suspended</p></td>
-<td><p>Administrator completes the actions.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Administrator dismounts a database for offline database maintenance.</p></td>
-<td><p>Outage until repaired.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Suspended</p></td>
-<td><p>Administrator completes the actions.</p></td>
-<td><p>Active and passive database copies are diverged.</p>
-<p>Administrator must suspend copies.</p></td>
-</tr>
-<tr class="even">
-<td><p>Storage area network (SAN), disk, or storage controller failure.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Repair hardware.</p></td>
-<td><p>A passive database copy will be in the state that existed at the time when the system failed.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Server hardware maintenance.</p></td>
-<td><p>Short outage during automatic failover (unless blocked by an administrator).</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Complete actions.</p></td>
-<td><p>A passive database copy will be in the state that existed at the time when the system was shut down.</p></td>
-</tr>
-<tr class="even">
-<td><p>Server software maintenance.</p></td>
-<td><p>Short outage during automatic failover (unless blocked by an administrator).</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Complete actions.</p></td>
-<td><p>A passive database copy will be in the state that existed at the time when the system was shut down.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Microsoft Exchange Information Store service is stopped or paused by an administrator.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Restart the Microsoft Exchange Information Store service.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="even">
-<td><p>Microsoft Exchange Information Store service fails; operating system is still running.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>Service Control Manager restarts the Microsoft Exchange Information Store service.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Manually or automatically restart the Microsoft Exchange Information Store service.</p></td>
-<td><p>A passive database copy will be in the state that existed when the Microsoft Exchange Information Store service failed.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Partial Microsoft Exchange Information Store service failure; some part of the Exchange store stops functioning, but it's not identified as failed.</p></td>
-<td><p>Possible short outage during automatic failover.</p></td>
-<td><p>None.</p></td>
-<td><p>Mounted and partially functional.</p></td>
-<td><p>Any, but may be only partially functional</p></td>
-<td><p>Restart server, operating system, or Microsoft Exchange Information Store service.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="even">
-<td><p>Server failure: The server fails for one of the following reasons:</p>
-<ul>
-<li><p>Complete power failure</p></li>
-<li><p>Unrecovered failure of the processor chip, motherboard, or backplane</p></li>
-<li><p>Operating system stop error</p></li>
-<li><p>Operating system stops responding</p></li>
-<li><p>Complete communication failure</p></li>
-</ul></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>Restart computer.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Restore power, change operating system settings, change hardware settings, replace hardware, restart operating system, service operating system, service hardware, or repair communication problems.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="odd">
-<td><p>DAG experiences a quorum failure.</p></td>
-<td><p>Outage until repaired.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Repair failed quorum, assign new quorum, or restore the network that's causing quorum failure.</p></td>
-<td><p>A passive database copy will be in the state that existed at the time when the system failed.</p></td>
-</tr>
-<tr class="even">
-<td><p>MAPI network communication failure: The server is no longer available on the MAPI network.</p></td>
-<td><p>Short outage during automatic failover; must be lossless.</p></td>
-<td><p>None. Communication continues to be attempted.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Fix communication problem by correcting hardware or software issues.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Replication network communication failure: The server can't receive heartbeats, log copies, or seed through the failed replication network.</p></td>
-<td><p>Possible short copying or seeding outage while the workload is switched to other network.</p></td>
-<td><p>None. Communication continues to be attempted.</p></td>
-<td><p>None.</p></td>
-<td><p>Any</p></td>
-<td><p>Fix communication problem by correcting hardware or software issues.</p></td>
-<td><p>Resiliency impacted by failure.</p></td>
-</tr>
-<tr class="even">
-<td><p>Multiple network communication failures: The server can't receive heartbeats, log copies, or seed through multiple networks.</p></td>
-<td><p>Short outage during automatic failover; must be lossless.</p></td>
-<td><p>None. Communication continues to be attempted.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Fix communication problem by correcting hardware or software issues.</p></td>
-<td><p>At least one network is still functional.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Partial failure of one or more networks: Networks experience high error rates.</p></td>
-<td><p>Failure not detected; no action.</p></td>
-<td><p>None.</p></td>
-<td><p>Mounted, but possible performance issues.</p></td>
-<td><p>Any</p></td>
-<td><p>Fix communication problem by correcting hardware or software issues.</p></td>
-<td><p>Network experiences higher than normal error rates.</p></td>
-</tr>
-<tr class="even">
-<td><p>Undetected operating systems hang: Operating system stops responding but it's not detected by monitoring or clustering.</p></td>
-<td><p>None.</p></td>
-<td><p>None.</p></td>
-<td><p>Any.</p></td>
-<td><p>Any</p></td>
-<td><p>Restart or terminate the resources that aren't responding.</p></td>
-<td><p>Hang isn't detected so no action is taken.</p>
-<p>Some functionality may be operational.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Operating system drive experiences a failure.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Replace drive and rebuild server or rebuild volume by using RAID.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="even">
-<td><p>Operating system drive out of space.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Manually free space on the volume.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Drives containing Exchange binaries experience a volume or drive failure.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Replace drive and reinstall application or rebuild volume by using RAID.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="even">
-<td><p>Drive containing the Exchange binaries is out of space.</p></td>
-<td><p>Short outage during automatic failover.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Any</p></td>
-<td><p>Manually free space on the volume.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Invalid new log detected: The log sequence is disrupted by an existing file.</p></td>
-<td><p>Short outage during automatic failover; assume other copies don't have the same problem.</p></td>
-<td><p>None.</p></td>
-<td><p>Dismounted.</p></td>
-<td><p>Failed</p></td>
-<td><p>Remove disruptive logs after determining source.</p></td>
-<td><p>The disruptive logs shouldn't replicate.</p></td>
-</tr>
-<tr class="even">
-<td><p>Continuous replication detects invalid log: Replay detects an inappropriate log during copy or replay.</p></td>
-<td><p>Not applicable.</p></td>
-<td><p>Discard log.</p></td>
-<td><p>Not applicable.</p></td>
-<td><p>Failed</p></td>
-<td><p>Discard invalid log; move impacting log stream.</p></td>
-<td><p>Not applicable.</p></td>
-</tr>
-</tbody>
-</table>
+|Description|Automatic activation|Automatic repair action|State during repair: Active|State during repair: Passive|Repair actions|Comments|
+|---|---|---|---|---|---|---|
+|Extensible Storage Engine (ESE) soft database failure: The drives storing the database are returning errors on some reads (for example, a -1018 error).|Possible short outage. <br/><br/> Possible automatic failover.|Automatic patching of bad page.|Manual switchover, automatic failover, or online repair.|Failed|RAID rebuild, database and database copy repair, restore and run recovery then page patching, or page patching from copy.|There may be other soft database failure codes. <br/><br/> Doesn't include NTFS file system block failures. <br/><br/> If failover or switchover is performed, host server is updated.|
+|ESE "_semi-soft"_ database failure: The drives storing the database are returning errors on some writes.|Short outage during automatic failover.|Automatic volume/disk rebuilt after possible drive replacement.|Dismounted if it can't be recovered.|Failed|RAID rebuild may solve the problem. <br/><br/> Copy and repair, restore and run recovery, or volume/disk rebuilt after possible replacement.|An ESE semi-soft write error means some writes are successful. <br/><br/> Doesn't include an NTFS block failure.|
+|ESE "semi-soft" log failure: The drives storing the log data are returning non-recovered errors on some reads or writes.|Short outage during automatic failover.|Automatic volume/disk rebuilt after possible drive replacement.|Dismounted if it can't be recovered.|Failed|RAID rebuild may solve the problem. <br/><br/> Copy and repair, restore and run recovery, or volume/disk rebuilt after possible replacement.|An ESE semi-soft read/write error means some reads/writes are successful. <br/><br/> If the database fails, automated recovery will occur before log data recovery processing starts.|
+|ESE software error or resource exhaustion: An error where ESE terminates instance (for example, Event ID 1022, checkpoint depth too deep).|Short outage during automatic failover.|None.|Dismounted if it can't be recovered.|Failed|Fix underlying resource issue.|This failure could be the surfaced error of other cases.|
+|NTFS block failures: The drives storing the database or logs experiences a read or write error to an NTFS control structure.|Short outage during automatic failover.|Volume rebuilt after possible drive replacement.|Dismounted if it can't be recovered.|Failed|RAID rebuild may solve the problem. NTFS utilities may solve the NTFS problems. Exchange recovery may be required.|This event is more likely to occur when RAID isn't in use. If this event impacts the active log volume, some recent log files will be lost. <br/><br/> Doesn't include errors automatically corrected by NTFS or its underlying software or hardware stack.|
+|Database or log drive failure: A drive storing the database or logs has failed and is inaccessible.|Short outage during automatic failover.|Drive reformatted or replaced, followed by complete volume rebuild.|Dismounted if it can't be recovered.|Failed|Drive replacement followed by possible RAID rebuild. <br/><br/> Drive replacement followed by complete volume rebuild. <br/><br/> Complete volume rebuild.|Not applicable.|
+|Database or log volume failure: The volume fails due to NTFS or lower-level volume issues.|Short outage during automatic failover.|Drive reformatted or replaced.|Dismounted if it can't be recovered.|Failed|Drive replacement followed by possible RAID rebuild. <br/><br/> Drive replacement followed by complete volume rebuild. <br/><br/> Complete volume rebuild.|Not applicable.|
+|Database or log volume out of space: The NTFS file system with the database or log files is out of space.|Automatic failover if other copy isn't in similar state.|None.|Dismounted.|Failed|Run full or incremental backups, manually delete logs, let time pass, resume database copy, or repair failed database copy.|Not applicable.|
+|Administrator dismounts the wrong database.|If automatic failover isn't blocked by the administrator, there will be a short outage. <br/><br/> If automatic failover is prevented, there will be an outage until the database is mounted.|None.|Dismounted.|Not applicable|Administrator corrects the error.|Not applicable.|
+|Administrator suspends the wrong database copy.|Depending on configuration and impacted copy, auto recovery may be prevented.|None.|Not applicable.|Suspended|Administrator corrects the error.|Not applicable.|
+|Administrator dismounts a database for storage, NTFS, or volume maintenance.|If automatic failover isn't blocked by the administrator, there will be a short outage. <br/><br/> If automatic failover is blocked, there will be an outage until the administrator completes the task.|None.|Dismounted.|Not applicable|Administrator completes the task.|Not applicable.|
+|Administrator suspends a database copy for storage, NTFS, or volume maintenance.|Depending on configuration and impacted copy, auto recovery may be prevented.|None.|Not applicable.|Suspended|Administrator completes the actions.|Not applicable.|
+|Administrator dismounts a database for offline database maintenance.|Outage until repaired.|None.|Dismounted.|Suspended|Administrator completes the actions.|Active and passive database copies are diverged. <br/><br/> Administrator must suspend copies.|
+|Storage area network (SAN), disk, or storage controller failure.|Short outage during automatic failover.|None.|Dismounted.|Any|Repair hardware.|A passive database copy will be in the state that existed at the time when the system failed.|
+|Server hardware maintenance.|Short outage during automatic failover (unless blocked by an administrator).|None.|Dismounted.|Any|Complete actions.|A passive database copy will be in the state that existed at the time when the system was shut down.|
+|Server software maintenance.|Short outage during automatic failover (unless blocked by an administrator).|None.|Dismounted.|Any|Complete actions.|A passive database copy will be in the state that existed at the time when the system was shut down.|
+|Microsoft Exchange Information Store service is stopped or paused by an administrator.|Short outage during automatic failover.|None.|Dismounted.|Any|Restart the Microsoft Exchange Information Store service.|Not applicable.|
+|Microsoft Exchange Information Store service fails; operating system is still running.|Short outage during automatic failover.|Service Control Manager restarts the Microsoft Exchange Information Store service.|Dismounted.|Any|Manually or automatically restart the Microsoft Exchange Information Store service.|A passive database copy will be in the state that existed when the Microsoft Exchange Information Store service failed.|
+|Partial Microsoft Exchange Information Store service failure; some part of the Exchange store stops functioning, but it's not identified as failed.|Possible short outage during automatic failover.|None.|Mounted and partially functional.|Any, but may be only partially functional|Restart server, operating system, or Microsoft Exchange Information Store service.|Not applicable.|
+|Server failure: The server fails for one of the following reasons: <ul><li>Complete power failure</li><li>Unrecovered failure of the processor chip, motherboard, or backplane</li><li>Operating system stop error</li><li>Operating system stops responding</li><li>Complete communication failure</li></ul>|Short outage during automatic failover.|Restart computer.|Dismounted.|Any|Restore power, change operating system settings, change hardware settings, replace hardware, restart operating system, service operating system, service hardware, or repair communication problems.|Not applicable.|
+|DAG experiences a quorum failure.|Outage until repaired.|None.|Dismounted.|Any|Repair failed quorum, assign new quorum, or restore the network that's causing quorum failure.|A passive database copy will be in the state that existed at the time when the system failed.|
+|MAPI network communication failure: The server is no longer available on the MAPI network.|Short outage during automatic failover; must be lossless.|None. Communication continues to be attempted.|Dismounted.|Any|Fix communication problem by correcting hardware or software issues.|Not applicable.|
+|Replication network communication failure: The server can't receive heartbeats, log copies, or seed through the failed replication network.|Possible short copying or seeding outage while the workload is switched to other network.|None. Communication continues to be attempted.|None.|Any|Fix communication problem by correcting hardware or software issues.|Resiliency impacted by failure.|
+|Multiple network communication failures: The server can't receive heartbeats, log copies, or seed through multiple networks.|Short outage during automatic failover; must be lossless.|None. Communication continues to be attempted.|Dismounted.|Any|Fix communication problem by correcting hardware or software issues.|At least one network is still functional.|
+|Partial failure of one or more networks: Networks experience high error rates.|Failure not detected; no action.|None.|Mounted, but possible performance issues.|Any|Fix communication problem by correcting hardware or software issues.|Network experiences higher than normal error rates.|
+|Undetected operating systems hang: Operating system stops responding but it's not detected by monitoring or clustering.|None.|None.|Any.|Any|Restart or terminate the resources that aren't responding.|Hang isn't detected so no action is taken. <br/><br/> Some functionality may be operational.|
+|Operating system drive experiences a failure.|Short outage during automatic failover.|None.|Dismounted.|Any|Replace drive and rebuild server or rebuild volume by using RAID.|Not applicable.|
+|Operating system drive out of space.|Short outage during automatic failover.|None.|Dismounted.|Any|Manually free space on the volume.|Not applicable.|
+|Drives containing Exchange binaries experience a volume or drive failure.|Short outage during automatic failover.|None.|Dismounted.|Any|Replace drive and reinstall application or rebuild volume by using RAID.|Not applicable.|
+|Drive containing the Exchange binaries is out of space.|Short outage during automatic failover.|None.|Dismounted.|Any|Manually free space on the volume.|Not applicable.|
+|Invalid new log detected: The log sequence is disrupted by an existing file.|Short outage during automatic failover; assume other copies don't have the same problem.|None.|Dismounted.|Failed|Remove disruptive logs after determining source.|The disruptive logs shouldn't replicate.|
+|Continuous replication detects invalid log: Replay detects an inappropriate log during copy or replay.|Not applicable.|Discard log.|Not applicable.|Failed|Discard invalid log; move impacting log stream.|Not applicable.|
 
 ## Database Failovers
 
@@ -491,21 +188,17 @@ A server failover occurs when the DAG member is no longer able to service the MA
 
 1. The Cluster service on the PAM sends a notification to the PAM for one of two conditions:
 
-    1. **Node Down**: The server is reachable but is unable to participate in DAG operations.
-
-    2. **MAPI Network Down**: The server can't be contacted over the MAPI network and therefore can't participate in DAG operations.
+   1. **Node Down**: The server is reachable but is unable to participate in DAG operations.
+   2. **MAPI Network Down**: The server can't be contacted over the MAPI network and therefore can't participate in DAG operations.
 
 2. If the server is reachable, the PAM contacts the Active Manager on the affected server and requests that all databases be immediately dismounted.
 
 3. For each affected database copy:
 
-    1. The PAM requests the database copy status from all servers in the DAG.
-
-    2. The PAM receives a response from all reachable and active DAG members.
-
-    3. The PAM tries to determine the best log source among all responding servers by querying the most recent log generation number from each of the responders.
-
-    4. Each of the servers responds with the log generation number.
+   1. The PAM requests the database copy status from all servers in the DAG.
+   2. The PAM receives a response from all reachable and active DAG members.
+   3. The PAM tries to determine the best log source among all responding servers by querying the most recent log generation number from each of the responders.
+   4. Each of the servers responds with the log generation number.
 
 4. The PAM retrieves the current search index catalog status from the cluster database.
 

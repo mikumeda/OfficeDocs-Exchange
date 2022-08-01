@@ -21,30 +21,9 @@ _**Applies to:** Exchange Server 2013_
 
 If the content index catalog for a mailbox database copy gets corrupted, you may need to reseed the catalog. Corrupted content indexes are indicated in the Application event log by the following event.
 
-<table>
-<colgroup>
-<col  />
-<col  />
-<col  />
-<col  />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Event ID</th>
-<th>Level</th>
-<th>Source</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>123</p></td>
-<td><p>Error</p></td>
-<td><p>ExchangeStoreDB</p></td>
-<td><p>At &lt;<em>timestamp</em>&gt; the Microsoft Exchange Information Store Database &lt;<em>identity</em>&gt; copy on this server experienced a corrupted search catalog. Consult the event log on the server for other &quot;ExchangeStoreDb&quot; and &quot;MSExchange Search Indexer&quot; events for more specific information about the failure. Reseeding the catalog is recommended via the 'Update-MailboxDatabaseCopy' task.</p></td>
-</tr>
-</tbody>
-</table>
+|Event ID|Level|Source|Details|
+|---|---|---|---|
+|123|Error|ExchangeStoreDB|At \<_timestamp_\> the Microsoft Exchange Information Store Database \<_identity_\> copy on this server experienced a corrupted search catalog. Consult the event log on the server for other "ExchangeStoreDb" and "MSExchange Search Indexer" events for more specific information about the failure. Reseeding the catalog is recommended via the 'Update-MailboxDatabaseCopy' task.|
 
 If the mailbox database copy is located on a server that is part of a database availability group (DAG), you can reseed the content index catalog from another DAG member.
 
@@ -125,4 +104,4 @@ It might take a while for Exchange Search to reseed the content index catalog. R
 Get-MailboxDatabaseCopyStatus | FL Name,*Index*
 ```
 
-When the reseeding of the search catalog is in progress, the value of the *ContentIndexState* property is **Crawling**. When the reseeding is complete, this value is changed to **Healthy**.
+When the reseeding of the search catalog is in progress, the value of the _ContentIndexState_ property is **Crawling**. When the reseeding is complete, this value is changed to **Healthy**.

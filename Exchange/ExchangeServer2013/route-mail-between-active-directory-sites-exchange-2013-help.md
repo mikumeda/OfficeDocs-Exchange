@@ -37,37 +37,11 @@ The value for the **msExchServerSite** attribute is populated and kept up to dat
 
 The following table shows how an organization might define Active Directory sites. In this example, three Active Directory sites are defined, and each Active Directory site is associated with more than one IP subnet.
 
-**Example of an Active Directory site-to-subnet association**
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Active Directory site name</th>
-<th>Associated IP subnets</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Site A</p></td>
-<td><p>192.168.1.0/24</p>
-<p>192.168.2.0/24</p></td>
-</tr>
-<tr class="even">
-<td><p>Site B</p></td>
-<td><p>192.168.3.0/24</p>
-<p>192.168.4.0/24</p></td>
-</tr>
-<tr class="odd">
-<td><p>Site C</p></td>
-<td><p>192.168.5.0/24</p>
-<p>192.168.6.0/24</p></td>
-</tr>
-</tbody>
-</table>
+|Active Directory site name|Associated IP subnets|
+|---|---|
+|Site A|192.168.1.0/24 <br/><br/> 192.168.2.0/24|
+|Site B|192.168.3.0/24 <br/><br/> 192.168.4.0/24|
+|Site C|192.168.5.0/24 <br/><br/> 192.168.6.0/24|
 
 If a server named Mailbox01 has the IP address of 192.168.1.1, it's a member of Site A. By changing the IP address of a server, you may change its site membership. If you change the IP address of Mailbox01 to 192.168.2.1, it won't change the server's Active Directory site membership because that subnet is also associated with Site A. However, if you move the server and the IP address changes to 192.168.3.1, the server would be considered a member of Site B.
 
@@ -77,7 +51,7 @@ A change in site membership can also occur if you change the association of subn
 
 Site links are logical paths between Active Directory sites. A site link object represents a set of sites that can communicate at a uniform cost. Site links don't correspond to the actual path taken by network packets on the physical network. However, the cost assigned to the site link by the administrator typically relates to the underlying network reliability, speed, and available bandwidth. For example, the Active Directory administrator would assign a lower cost to a network connection with a speed of 100 megabits per second (Mbps) than to a network connection with a speed of 10 Mbps.
 
-By default, all site links are transitive. This means that if Site A has a link to Site B, and Site B has a link to Site C, Site A is transitively linked to Site C. The transitive link between Site A and Site C is also known as a *site-link bridge*.
+By default, all site links are transitive. This means that if Site A has a link to Site B, and Site B has a link to Site C, Site A is transitively linked to Site C. The transitive link between Site A and Site C is also known as a _site-link bridge_.
 
 Exchange uses only IP site links to determine its Active Directory site routing topology. The cost that's assigned to the IP site link will be considered by the routing component of Exchange when calculating a routing table. These costs are used to calculate the least-cost routing path to the ultimate destination for a message.
 
@@ -85,13 +59,9 @@ Every Active Directory site must be associated with at least one IP site link. T
 
 In the following figure, four Active Directory sites are configured in the forest. Every site has been associated with the `DEFAULTIPSITELINK`. Therefore, each Active Directory site communicates directly with every other site by using the same cost metric. More than one communication path is indicated, but only a single IP site link is defined.
 
-**Full mesh topology with a single IP site link**
-
 ![Full mesh topology with a single IP site link.](images/JJ916681.af38d41d-e768-4221-ab4b-b782aa388b73(EXCHG.150).gif "Full mesh topology with a single IP site link")
 
-In the following figure, four Active Directory sites are configured in the forest. In this topology, the administrator has configured IP site links to create a *hub-and-spoke topology* of Active Directory sites. Each spoke site can communicate directly with the central site, and the spoke sites can communicate with one another by using the transitive IP site links.
-
-**Hub-and-spoke topology of Active Directory IP site links**
+In the following figure, four Active Directory sites are configured in the forest. In this topology, the administrator has configured IP site links to create a _hub-and-spoke topology_ of Active Directory sites. Each spoke site can communicate directly with the central site, and the spoke sites can communicate with one another by using the transitive IP site links.
 
 ![Hub and spoke topology of IP site links.](images/JJ916681.eca6cd51-8c2e-4996-81ea-070cd9766ef8(EXCHG.150).gif "Hub and spoke topology of IP site links")
 
@@ -111,8 +81,6 @@ When an Exchange-specific cost is assigned to an IP site link, the Exchange cost
 
 Adjusting IP site link costs can be useful when the message routing topology has to diverge from the Active Directory replication topology. Exchange costs can be used to force all message routes to use a hub site. Exchange costs can also be used to control where messages are queued when communication to an Active Directory site fails. The following figure shows an Active Directory topology with four sites.
 
-**Topology with Exchange costs configured on IP site links**
-
 ![Topology with Exchange costs on IP site links.](images/JJ916681.56ac2bab-99de-4ddf-b968-80cd34ab8c21(EXCHG.150).gif "Topology with Exchange costs on IP site links")
 
 In the preceding figure, the network connection between Site C and Site D is a low bandwidth connection that's only used for Active Directory replication and shouldn't be used for message routing. However, the Active Directory IP site link costs cause that link to be included in the least-cost routing path from any other Active Directory site to Site D. Therefore, messages are delivered to the Site D queue in Site C. The Exchange administrator prefers that the least-cost routing path include Site B instead so that if Site D is unavailable, the messages will queue at Site B. Configuring a high Exchange cost on the IP site link between Site C and Site D prevents that IP site link from being included in the least-cost routing path to Site D.
@@ -129,13 +97,9 @@ After the least-cost routing path is chosen, routing determines whether there's 
 
 This variation to direct relay routing only is in effect when the hub site is located along the least-cost routing path. The following figure shows the correct use of a hub site. In this diagram, Site B is configured as a hub site. Messages that are relayed from Site A to Site D are relayed through Site B before they're delivered to Site D.
 
-**Message delivery with a hub site**
-
 ![Message delivery with a hub site.](images/JJ916681.93238bcb-6bbc-4a48-aeb0-09342a421b5b(EXCHG.150).gif "Message delivery with a hub site")
 
 The following figure shows how IP site link costs affect routing to a hub site. In this scenario, Site B has been designated as a hub site. However, Site B doesn't exist along the least-cost routing path between any other sites. Therefore, messages that are relayed from Site A to Site D are never relayed through Site B. An Active Directory site is never used as a hub site if it isn't on the least-cost routing path between two other sites.
-
-**Misconfigured hub site**
 
 ![Misconfigured hub site.](images/JJ916681.c010d4d8-5cd3-4b79-b7db-0367ba3cc287(EXCHG.150).gif "Misconfigured hub site")
 
@@ -146,7 +110,6 @@ You can configure any Active Directory site as a hub site. However, for this con
 The Active Directory topology is made available to Exchange by the following required elements:
 
 - The Microsoft Exchange Active Directory Topology service.
-
 - The topology discovery module inside the Microsoft Exchange Transport service.
 
 The Microsoft Exchange Active Directory Topology service runs on all Exchange 2013 Client Access servers and Mailbox servers. These servers use the Microsoft Exchange Active Directory Topology service to discover the domain controllers and global catalog servers that can be used by the Exchange servers to read and write Active Directory data. Exchange 2013 binds to the identified directory servers whenever Exchange has to read from or write to Active Directory.
@@ -158,9 +121,7 @@ The topology discovery module performs the following steps to generate an Exchan
 1. Data is read from Active Directory. All the following objects are retrieved:
 
    - Active Directory sites.
-
    - IP site links.
-
    - All Exchange servers.
 
 2. The data that's retrieved in step 1 is used to create the initial topology and to begin linking and mapping the related configuration objects.
