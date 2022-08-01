@@ -31,7 +31,7 @@ For additional tasks related to UM reporting, see [UM reports procedures](um-rep
 
 4. In the **File Download** confirmation box, click **Open** or **Save**.
 
-    The exported file will be named um_cdr_ _YYYY-MM-DD_.csv, where _YYYY-MM-DD_ is the year, month, and day the report was run.
+    The exported file will be named um\_cdr\__YYYY-MM-DD_.csv, where _YYYY-MM-DD_ is the year, month, and day the report was run.
 
     > [!NOTE]
     > On the report page, you can download a Microsoft Excel template that you can use to import the .csv file for a specific day.
@@ -126,7 +126,7 @@ The UM call data that you export includes the following detailed information abo
 - **NMOS Score**: The Network Mean Opinion Score (NMOS) for the call. The NMOS indicates how good the audio quality was on the call as a number on a scale from 1 to 5, with 5 being excellent.
 
     > [!NOTE]
-    > **Note**: The maximum NMOS possible for a call depends on the audio codec being used. The NMOS may not be available for very short calls that are less than 10 seconds long.
+    > The maximum NMOS possible for a call depends on the audio codec being used. The NMOS may not be available for very short calls that are less than 10 seconds long.
 
 - **NMOSDegradation**: The amount of audio degradation of the NMOS from the top value possible for the audio codec being used. For example, if the NMOS degradation value for a call was 1.2 and the NMOS reported for the call was 3.3, the maximum NMOS for that particular call would be 4.5 (1.2 + 3.3).
 

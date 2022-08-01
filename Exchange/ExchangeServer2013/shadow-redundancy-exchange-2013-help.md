@@ -146,7 +146,7 @@ The shadow server determines the discard status of the shadow messages in its sh
 
 The SMTP communication between the shadow server and the primary server is used as the _heartbeat_ that determines the availability of the servers. If the shadow server can't open an SMTP session with the primary server after a preconfigured time interval, or if the transport database of the primary server has a different database ID, the shadow server promotes itself as the primary server, promotes the shadow messages as primary messages, and transmits the messages to the next hop. The time interval is controlled by the _ShadowResubmitTimeSpan_ parameter on the **Set-TransportConfig** cmdlet. The default value is 3 hours.
 
-*Shadow Redundancy Manager_ is the core component of an Exchange 2013 transport server that's responsible for managing shadow redundancy. Shadow Redundancy Manager is responsible for maintaining the following information for all the primary messages that a server is currently processing:
+_Shadow Redundancy Manager_ is the core component of an Exchange 2013 transport server that's responsible for managing shadow redundancy. Shadow Redundancy Manager is responsible for maintaining the following information for all the primary messages that a server is currently processing:
 
 - The shadow server for each primary message being processed.
 - The discard status to be sent to shadow servers.
