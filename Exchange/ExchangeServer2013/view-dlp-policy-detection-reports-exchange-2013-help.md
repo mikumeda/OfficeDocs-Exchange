@@ -24,7 +24,7 @@ Data loss prevention (DLP) policy detection management broadly defines the activ
 For information about creating an incident report along with a single policy detection event, see [Create incident reports for DLP policy detections](create-incident-reports-for-dlp-policy-detections-exchange-2013-help.md). For more information about message logs, see [Track messages with delivery reports](track-messages-with-delivery-reports-exchange-2013-help.md).
 
 > [!NOTE]
-> Exchange 2013: DLP is a premium feature that requires an Exchange Enterprise Client Access License (CAL). For more information about CALs and server licensing, see <A href="https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview">Exchange licensing FAQs</A>.
+> Exchange 2013: DLP is a premium feature that requires an Exchange Enterprise Client Access License (CAL). For more information about CALs and server licensing, see [Exchange licensing FAQs](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview).
 
 ## Audit information
 
@@ -40,6 +40,7 @@ The agent name will be **TRA** or **Transport Rule Agent** in the AgentInfo even
 
 An example of the DLP log entry is displayed here. The output has been formatted to display strings in separate lines with new lines between.
 
+```text
 Source: AGENT
 
 EventId: AGENTINFO
@@ -57,6 +58,7 @@ S:TRA=ETR|ruleId=FC2AA60C9D811E0AFC076D34824019B|dlpid=1B81CC82C9DB11E09052C5D64
 S:TRA=ETR|ruleId=AB2AA60C9D811E0AFC076D34824019B|dlpid=1B81CC82C9DB11E09052C5D64824019B|st=2010-11-03 15:30T|action=Encrypt|sev=1|mode=enabled|dcid=C7ECCBA0CA0011E0B6C00B124924019B|sndOverride=fp;
 
 S:TRA=ETRP|ruleId=C27D21EECA0311E0BCB896154924019B|LoadW=200|LoadC=100|ExecW=5500|ExecC=200;
+```
 
 The Transport Rule Agent requires grouping of the rule ID, DLP Policy ID (optional), last modified date, action, severity, mode, detected data classification (optional), and sender override (optional) based on rule ID (indicated by "TRA=ETR" in the log line). It also requires the data classification ID, count, and confidence level of classifications to be grouped by classification name (indicated by "TRA=DC" in the log line).
 
@@ -64,205 +66,33 @@ Additional groupings include data classification ID, sender override (optional),
 
 The following is a complete list of the data fields. All data in the MTL is type string. Format column describes how to recognize each field in the Message Tracking Log. Optional Field column specifies what fields might not be logged when a rule matches. DLP Specific column shows what fields are specific to the DLP feature.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>Field name</strong></p></td>
-<td><p><strong>Description</strong></p></td>
-<td><p><strong>Format</strong></p></td>
-<td><p><strong>Optional field</strong></p></td>
-<td><p><strong>DLP specific</strong></p></td>
-</tr>
-<tr class="even">
-<td><p>TRA</p></td>
-<td><p>Transport Rule Agent; type AgentName</p></td>
-<td><p>TRA=DC, ETR, CI, or ETRP</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>DC</p></td>
-<td><p>Data Classification; type groupName</p></td>
-<td><p>TRA=DC</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>ETR</p></td>
-<td><p>Exchange Transport Rule; type groupName</p></td>
-<td><p>TRA=ETR</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>CI</p></td>
-<td><p>Client Information, type groupName</p></td>
-<td><p>TRA=CI</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>ETRP</p></td>
-<td><p>Exchange Transport Rule Performance; type groupName</p></td>
-<td><p>TRA=ETRP</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>dcid</p></td>
-<td><p>ID of the Data Classification</p></td>
-<td><p>dcid=GUID</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>count</p></td>
-<td><p>Count of the Data Classification</p></td>
-<td><p>count=Integer</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>conf</p></td>
-<td><p>Confidence level of the Data Classification</p></td>
-<td><p>conf=Integer (Percent)</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>sndOverride</p></td>
-<td><p>Sender override; the field is optional.</p>
-<p>In the TRA=CI line, when field is set to "or" signifies the data classification was overridden. If the field is set to "fp" signifies the data classification was reported as a false positive.</p>
-<p>In the TRA=ETR line, when the field is set to "or" signifies the rule or part of the rule was overridden. If the field is set to "fp" signifies the rule or part of the rule was reported as a false positive.</p></td>
-<td><p>sndOverride=or or fp</p>
-<p>Where "or" represents override and "fp" means false positive. The sndOverride field is present when an end-user had reported either an override or false positive for a rule.</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>just</p></td>
-<td><p>Justification; the field is optional and only available when the sender override field is equal to "or" in the TRA=CI line. Justification text provided by the end user as the reason the data classification should be overridden.</p></td>
-<td><p>just=IW input justification string</p>
-<p>Justification field is only logged when end user reports an override.</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>ruleId</p></td>
-<td><p>ID for a rule</p></td>
-<td><p>ruleId=GUID</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>dlpId</p></td>
-<td><p>ID for a DLP Policy. The field is optional; if there is no dlpId then the rule doesn't belong to a DLP Policy.</p></td>
-<td><p>dlpId=GUID</p></td>
-<td><p>Optional</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>st</p></td>
-<td><p>Last Modified Date of a rule</p></td>
-<td><p>st=UTC date-time</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>action</p></td>
-<td><p>Action taken by a rule; could have multiple actions per rule</p></td>
-<td><p>action=single action</p>
-<p>If there are multiple actions applied for a rule, there will be multiple action fields.</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>sev</p></td>
-<td><p>Audit severity of the rule</p></td>
-<td><p>sev=1, 2, or 3</p>
-<p>Where 1 represents low, 2 is medium, and 3 means high.</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>mode</p></td>
-<td><p>State of the rule when it was hit (enforcement, audit, or auditandnotify).</p></td>
-<td><p>mode=audit, auditandnotify, or enforcement</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>loadW</p></td>
-<td><p>Load Wall Clock; the field is optional</p></td>
-<td><p>loadW=time in ms</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>loadC</p></td>
-<td><p>Load CPU Clock; the field is optional</p></td>
-<td><p>loadC=time in ms</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>execW</p></td>
-<td><p>Execute Wall Clock; the field is optional</p></td>
-<td><p>execW=time in ms</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>execC</p></td>
-<td><p>Execute CPU Clock; the field is optional</p></td>
-<td><p>execC=time in ms</p></td>
-<td><p>Optional</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>message-id</p></td>
-<td><p>ID of the message</p></td>
-<td><p>message-id=ID of message</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>date-time</p></td>
-<td><p>Date and time the message was sent in universal time</p></td>
-<td><p>date-time=UTC date-time</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>sender-address</p></td>
-<td><p>Email address specified in the sender field</p></td>
-<td><p>sender-address=Email address</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="odd">
-<td><p>recipient-address</p></td>
-<td><p>Email address(es) of the message's recipient(s)</p></td>
-<td><p>recipient-address=Email address</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-<tr class="even">
-<td><p>message-subject</p></td>
-<td><p>Data found in the subject field of the message</p></td>
-<td><p>message-subject=end-user input subject string</p></td>
-<td><p>Mandatory</p></td>
-<td><p>No</p></td>
-</tr>
-</tbody>
-</table>
+|Field name|Description|Format|Optional field|DLP specific|
+|---|---|---|---|---|
+|TRA|Transport Rule Agent; type AgentName|TRA=DC, ETR, CI, or ETRP|Mandatory|No|
+|DC|Data Classification; type groupName|TRA=DC|Optional|Yes|
+|ETR|Exchange Transport Rule; type groupName|TRA=ETR|Mandatory|No|
+|CI|Client Information, type groupName|TRA=CI|Optional|Yes|
+|ETRP|Exchange Transport Rule Performance; type groupName|TRA=ETRP|Optional|No|
+|dcid|ID of the Data Classification|dcid=GUID|Optional|Yes|
+|count|Count of the Data Classification|count=Integer|Optional|Yes|
+|conf|Confidence level of the Data Classification|conf=Integer (Percent)|Optional|Yes|
+|sndOverride|Sender override; the field is optional. <br/><br/> In the TRA=CI line, when field is set to "or" signifies the data classification was overridden. If the field is set to "fp" signifies the data classification was reported as a false positive. <br/><br/> In the TRA=ETR line, when the field is set to "or" signifies the rule or part of the rule was overridden. If the field is set to "fp" signifies the rule or part of the rule was reported as a false positive.|sndOverride=or or fp <br/><br/> Where "or" represents override and "fp" means false positive. The sndOverride field is present when an end-user had reported either an override or false positive for a rule.|Optional|Yes|
+|just|Justification; the field is optional and only available when the sender override field is equal to "or" in the TRA=CI line. Justification text provided by the end user as the reason the data classification should be overridden.|just=IW input justification string <br/><br/> Justification field is only logged when end user reports an override.|Optional|Yes|
+|ruleId|ID for a rule|ruleId=GUID|Mandatory|No|
+|dlpId|ID for a DLP Policy. The field is optional; if there is no dlpId then the rule doesn't belong to a DLP Policy.|dlpId=GUID|Optional|Yes|
+|st|Last Modified Date of a rule|st=UTC date-time|Mandatory|No|
+|action|Action taken by a rule; could have multiple actions per rule|action=single action <br/><br/> If there are multiple actions applied for a rule, there will be multiple action fields.|Mandatory|No|
+|sev|Audit severity of the rule|sev=1, 2, or 3 <br/><br/> Where 1 represents low, 2 is medium, and 3 means high.|Optional|No|
+|mode|State of the rule when it was hit (enforcement, audit, or auditandnotify).|mode=audit, auditandnotify, or enforcement|Mandatory|No|
+|loadW|Load Wall Clock; the field is optional|loadW=time in ms|Optional|No|
+|loadC|Load CPU Clock; the field is optional|loadC=time in ms|Optional|No|
+|execW|Execute Wall Clock; the field is optional|execW=time in ms|Optional|No|
+|execC|Execute CPU Clock; the field is optional|execC=time in ms|Optional|No|
+|message-id|ID of the message|message-id=ID of message|Mandatory|No|
+|date-time|Date and time the message was sent in universal time|date-time=UTC date-time|Mandatory|No|
+|sender-address|Email address specified in the sender field|sender-address=Email address|Mandatory|No|
+|recipient-address|Email address(es) of the message's recipient(s)|recipient-address=Email address|Mandatory|No|
+|message-subject|Data found in the subject field of the message|message-subject=end-user input subject string|Mandatory|No|
 
 ## For more information
 

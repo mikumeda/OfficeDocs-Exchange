@@ -30,7 +30,7 @@ To find out what permissions you need to perform the procedure or run the cmdlet
 3. Now, run the **Get-ManagementRoleAssignment** cmdlet to look at the role groups or management roles assigned to you to see if you have the permissions that are necessary to manage the feature.
 
     > [!NOTE]
-    > You must be assigned the Role Management management role to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet. If you don't have permissions to run the <STRONG>Get-ManagementRoleAssignment</STRONG> cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
+    > You must be assigned the Role Management management role to run the **Get-ManagementRoleAssignment** cmdlet. If you don't have permissions to run the **Get-ManagementRoleAssignment** cmdlet, ask your Exchange administrator to retrieve the role groups or management roles assigned to you.
 
 If you want to delegate the ability to manage a feature to another user, see [Delegate role assignments](delegate-role-assignments-exchange-2013-help.md).
 
@@ -40,72 +40,16 @@ You can configure settings for the UM components and features in the following t
 
 Users who are assigned the View-Only Management role group can view the configuration of the features in the following table. For more information, see [View-only Organization Management](view-only-organization-management-exchange-2013-help.md).
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Permissions required</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>UM auto attendants</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>UM call answering rules</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>UM call data and summary reports</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Client Access Server (UM call router service)</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>UM dial plans</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>UM hunt groups</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>UM IP gateways</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>UM mailbox policies</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>UM mailboxes</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="even">
-<td><p>UM prompts</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="um-management-exchange-2013-help.md">UM Management</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Mailbox server (UM service)</p></td>
-<td><p><a href="organization-management-exchange-2013-help.md">Organization Management</a></p>
-<p><a href="server-management-exchange-2013-help.md">Server Management</a></p></td>
-</tr>
-</tbody>
-</table>
+|Feature|Permissions required|
+|---|---|
+|UM auto attendants|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|UM call answering rules|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|UM call data and summary reports|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|Client Access Server (UM call router service)|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|UM dial plans|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|UM hunt groups|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|UM IP gateways|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|UM mailbox policies|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|UM mailboxes|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|UM prompts|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [UM Management](um-management-exchange-2013-help.md)|
+|Mailbox server (UM service)|[Organization Management](organization-management-exchange-2013-help.md) <br/><br/> [Server Management](server-management-exchange-2013-help.md)|

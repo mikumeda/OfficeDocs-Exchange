@@ -30,11 +30,8 @@ In some cases, deploying multiple Client Access servers is a requirement, and th
 When a Client Access server is installed, the Microsoft Exchange Unified Messaging Call Router service is running. The service does the following:
 
 - When initialized, it reads a local configuration file named msexchangeumcallrouter.config.
-
 - Performs speech grammar generation using an arbitration mailbox for an organization.
-
 - Supports Transmission Control Protocol (TCP) and/or Transport Layer Security (TLS) connections. This setting is configurable.
-
 - Will only stop if there's a configuration error or if it can't register the required ports.
 
 In Exchange 2013, the Mailbox server isn't responsible for answering SIP requests from incoming calls. It's only responsible for receiving the SIP traffic from a Client Access server and then establishing an RTP or SRTP connection to the VoIP gateway, IP PBX, or SBC.
@@ -43,29 +40,29 @@ After a Client Access server redirects an incoming call to a Mailbox server, a m
 
 Exchange 2010 UM administrators can configure a set of properties for Unified Messaging on each UM server. In Exchange 2013, UM components and configuration settings for UM are found on both Client Access and Mailbox servers. All the configuration settings that applied to a single computer running the Unified Messaging server role in Exchange 2010 are still available. However, some of those properties and configuration settings are set on a Client Access server that's running the Microsoft Exchange Unified Messaging Call Router service, and others are available on a Mailbox server that's running the Microsoft Exchange Unified Messaging service. In some cases, the same setting is available on both. The following list shows the cmdlets and parameters that are available on Client Access servers and Mailbox servers and where changes were made to a cmdlet to support deployment scenarios with previous versions of Unified Messaging.
 
-- **Set-UMService -DialPlans \<MultiValuedProperty\>**:  Available on Exchange 2013 Mailbox servers and also works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMService -DialPlans \<MultiValuedProperty\>**: Available on Exchange 2013 Mailbox servers and also works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMCallRouterSettings -DialPlans \<MultiValuedProperty\>**:  Available on Exchange 2013 Client Access servers but not available for Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMCallRouterSettings -DialPlans \<MultiValuedProperty\>**: Available on Exchange 2013 Client Access servers but not available for Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMService -MaxCallsAllowed \<Int32\>**:  Available on Exchange 2013 Mailbox servers and also works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMService -MaxCallsAllowed \<Int32\>**: Available on Exchange 2013 Mailbox servers and also works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
 - **Set-UMCallRouterSettings -MaxCallsAllowed \<Int32\>**: Not available on Exchange 2013 Client Access servers and not available for Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMService -SipTcpListeningPort \<Int32\>**:  Not configurable on Exchange 2013 Mailbox servers but works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMService -SipTcpListeningPort \<Int32\>**: Not configurable on Exchange 2013 Mailbox servers but works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
 - **Set-UMService -SipTlsListeningPort \<Int32\>**: Not configurable on Exchange 2013 Mailbox servers but works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMCallRouterSettings -SipTcpListeningPort \<Int32\>**:  Available on Exchange 2013 Client Access servers but doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMCallRouterSettings -SipTcpListeningPort \<Int32\>**: Available on Exchange 2013 Client Access servers but doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
 - **Set-UMCallRouterSettings -SipTlsListeningPort \<Int32\>**: Available on Exchange 2013 Client Access servers but doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
 - **Set-UMService - Status \<Enabled | Disabled | NoNewCalls\>**: Not available on Exchange 2013 Mailbox servers but works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMCallRouterSettings - Status \<Enabled | Disabled | NoNewCalls\>**:  Not available on Exchange 2013 Client Access servers and doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMCallRouterSettings - Status \<Enabled | Disabled | NoNewCalls\>**: Not available on Exchange 2013 Client Access servers and doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
 - **Set-UMService -UMStartupMode \<TCP | TLS | Dual\>**: Available on Exchange 2013 Mailbox servers and works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMCallRouterSettings - UMStartupMode \<TCP | TLS | Dual\>**:  Available on Exchange 2013 Client Access servers but doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMCallRouterSettings - UMStartupMode \<TCP | TLS | Dual\>**: Available on Exchange 2013 Client Access servers but doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
 - **Enable-UMService**:  Not available on Exchange 2013 Mailbox servers but works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
@@ -81,48 +78,12 @@ The following table summarizes the Exchange 2013 ports and protocols, and whethe
 
 ### UM listening ports
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Protocol</th>
-<th>TCP port</th>
-<th>UDP port</th>
-<th>Can the ports be changed?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>SIP (Client Access server - Microsoft Exchange Unified Messaging Call Router service)</p></td>
-<td><p>5060 (unsecured), 5061 (secured). The service listens on both ports.</p></td>
-<td><p>Not applicable</p></td>
-<td><p>Yes, using the <strong>Set-UMCallRouterSettings</strong> cmdlet.</p></td>
-</tr>
-<tr class="even">
-<td><p>SIP (Mailbox server - Microsoft Exchange Unified Messaging service)</p></td>
-<td><p>5062 (unsecured), 5063 (secured). The service listens on both ports.</p></td>
-<td><p>Not applicable</p></td>
-<td><p>Ports can't be changed.</p></td>
-</tr>
-<tr class="odd">
-<td><p>SIP (Mailbox server - UM worker process)</p></td>
-<td><p>5065 and 5067 for TCP (unsecured). 5066 and 5068 for mutual TLS (secured). This is the case when <em>UMStartupMode</em> is set to <em>Dual</em>. If <em>UMStartUpMode</em> is set to <em>TCP</em> or <em>TLS</em>, ports 5065 and 5066 are used. The default <em>UMStartupMode</em> is <em>TCP</em>.</p></td>
-<td><p>Not applicable</p></td>
-<td><p>Ports can't be changed.</p></td>
-</tr>
-<tr class="even">
-<td><p>RTP (Mailbox server - UM worker process)</p></td>
-<td><p>Not applicable</p></td>
-<td><p>Ports between 1024 and 65535.</p></td>
-<td><p>Ports can be changed in the msexchangeum.config configuration file. The msexchangeum.config file is located in the \Program Files\Microsoft\Exchange\V15\bin folder on an Exchange 2013 Unified Messaging server.</p></td>
-</tr>
-</tbody>
-</table>
+|Protocol|TCP port|UDP port|Can the ports be changed?|
+|---|---|---|---|
+|SIP (Client Access server - Microsoft Exchange Unified Messaging Call Router service)|5060 (unsecured), 5061 (secured). The service listens on both ports.|Not applicable|Yes, using the **Set-UMCallRouterSettings** cmdlet.|
+|SIP (Mailbox server - Microsoft Exchange Unified Messaging service)|5062 (unsecured), 5063 (secured). The service listens on both ports.|Not applicable|Ports can't be changed.|
+|SIP (Mailbox server - UM worker process)|5065 and 5067 for TCP (unsecured). 5066 and 5068 for mutual TLS (secured). This is the case when _UMStartupMode_ is set to _Dual_. If _UMStartUpMode_ is set to _TCP_ or _TLS_, ports 5065 and 5066 are used. The default _UMStartupMode_ is _TCP_.|Not applicable|Ports can't be changed.|
+|RTP (Mailbox server - UM worker process)|Not applicable|Ports between 1024 and 65535.|Ports can be changed in the msexchangeum.config configuration file. The msexchangeum.config file is located in the \Program Files\Microsoft\Exchange\V15\bin folder on an Exchange 2013 Unified Messaging server.|
 
 ## UM dial plans
 
@@ -132,36 +93,12 @@ The following table summarizes the relationship between Client Access and Mailbo
 
 ### Linking UM dial plans
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Topology</th>
-<th>Dial plan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Client Access and Mailbox on the same server (without Communications Server 2007 R2 or Lync Server 2010 non-SIP dial plans)</p></td>
-<td><p>Dial plans are no longer required to be associated with a Client Access or Mailbox server. You aren't allowed to add the Client Access or Mailbox servers to a dial plan. If you run the <strong>Set-UMService</strong> cmdlet, it will generate an error if you try to associate a Mailbox server with a non-SIP dial plan.</p></td>
-</tr>
-<tr class="even">
-<td><p>Client Access and Mailbox on different servers (without Communications Server 2007 R2 or Lync Server 2010 non-SIP dial plans)</p></td>
-<td><p>Dial plans are no longer required to be associated with Client Access or Mailbox servers. You aren't allowed to add Client Access or Mailbox servers to a dial plan. If you run the <strong>Set-UMService</strong> cmdlet, it will generate an error if you try to associate a Mailbox server with a non-SIP dial plan.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Client Access and Mailbox server on the same physical server (with Communications Server 2007 R2 and Lync Server 2010 with SIP dial plans)</p></td>
-<td><p>For a single SIP dial plan, add all Client Access and Mailbox servers to the SIP dial plan. For multiple SIP dial plans, add all Client Access and Mailbox servers to each SIP dial plan. This will make both servers trusted peers of Office Communications Server 2007 R2 or Lync Server. You must use the same certificate in your Office Communications Server 2007 R2 or Lync Server deployment as you do on each Client Access and Mailbox server.</p></td>
-</tr>
-<tr class="even">
-<td><p>Client Access and Mailbox server on different physical servers (with Communications Server 2007 R2 and Lync Server 2010 with SIP dial plans)</p></td>
-<td><p>For a single SIP dial plan, add all Client Access and Mailbox servers to the SIP dial plan. For multiple SIP dial plans, add all Client Access and Mailbox servers to each SIP dial plan. This will make both servers trusted peers of Office Communications Server 2007 R2 or Lync Server. If the certificates being used on the Client Access and Mailbox servers are different, you must use the same certificate in your Office Communications Server 2007 R2 or Lync Server deployment as you do on each Client Access and Mailbox server in your organization.</p></td>
-</tr>
-</tbody>
-</table>
+|Topology|Dial plan|
+|---|---|
+|Client Access and Mailbox on the same server (without Communications Server 2007 R2 or Lync Server 2010 non-SIP dial plans)|Dial plans are no longer required to be associated with a Client Access or Mailbox server. You aren't allowed to add the Client Access or Mailbox servers to a dial plan. If you run the **Set-UMService** cmdlet, it will generate an error if you try to associate a Mailbox server with a non-SIP dial plan.|
+|Client Access and Mailbox on different servers (without Communications Server 2007 R2 or Lync Server 2010 non-SIP dial plans)|Dial plans are no longer required to be associated with Client Access or Mailbox servers. You aren't allowed to add Client Access or Mailbox servers to a dial plan. If you run the **Set-UMService** cmdlet, it will generate an error if you try to associate a Mailbox server with a non-SIP dial plan.|
+|Client Access and Mailbox server on the same physical server (with Communications Server 2007 R2 and Lync Server 2010 with SIP dial plans)|For a single SIP dial plan, add all Client Access and Mailbox servers to the SIP dial plan. For multiple SIP dial plans, add all Client Access and Mailbox servers to each SIP dial plan. This will make both servers trusted peers of Office Communications Server 2007 R2 or Lync Server. You must use the same certificate in your Office Communications Server 2007 R2 or Lync Server deployment as you do on each Client Access and Mailbox server.|
+|Client Access and Mailbox server on different physical servers (with Communications Server 2007 R2 and Lync Server 2010 with SIP dial plans)|For a single SIP dial plan, add all Client Access and Mailbox servers to the SIP dial plan. For multiple SIP dial plans, add all Client Access and Mailbox servers to each SIP dial plan. This will make both servers trusted peers of Office Communications Server 2007 R2 or Lync Server. If the certificates being used on the Client Access and Mailbox servers are different, you must use the same certificate in your Office Communications Server 2007 R2 or Lync Server deployment as you do on each Client Access and Mailbox server in your organization.|
 
 ## UM Call Router performance counters
 
@@ -171,51 +108,10 @@ To support the new Client Access Unified Messaging Call Router service in Exchan
 
 ### Performance counters
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Performance counter category</th>
-<th>Counter name</th>
-<th>Description</th>
-<th>Threshold</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>MSExchangeUMRouterAvailability</p></td>
-<td><p>% of Inbound Calls Rejected by the Microsoft Exchange Unified Messaging Call Router Service over the Last Hour</p></td>
-<td><p>Shows the percentage of inbound calls that were rejected by the Microsoft Exchange Unified Messaging Call router service over the last hour.</p></td>
-<td><p>Should always be less than 5 percent, but should be 0 at all times.</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeUMRouterAvailability</p></td>
-<td><p>Calls Disconnected on Irrecoverable Internal Error for the Microsoft Exchange Unified Messaging Call Router Service</p></td>
-<td><p>Shows the number of calls disconnected after an internal system error occurred.</p></td>
-<td><p>Should be 0 at all times.</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeUMRouterAvailability</p></td>
-<td><p>Total Inbound Calls Rejected by the Microsoft Exchange Unified Messaging Call Router Service</p></td>
-<td><p>Shows the total number of inbound calls that were rejected by the Microsoft Exchange Unified Messaging Call Router service since the service was started.</p></td>
-<td><p>Should be 0 at all times.</p></td>
-</tr>
-<tr class="even">
-<td><p>MSExchangeUMRouterAvailability</p></td>
-<td><p>Total number of calls received by the Microsoft Exchange Unified Messaging Call Router Service</p></td>
-<td><p>Shows the total number of inbound calls that were received by the Microsoft Exchange Unified Messaging Call Router service since the service was started.</p></td>
-<td><p>Should be 0 or greater.</p></td>
-</tr>
-<tr class="odd">
-<td><p>MSExchangeUMRouterAvailability</p></td>
-<td><p>% of Inbound Calls Rejected by the Microsoft Exchange Unified Messaging Call Router Service Over the Last Hour</p></td>
-<td><p>Shows the percentage of inbound calls that were rejected by the Microsoft Exchange Unified Messaging Call Router service over the last hour.</p></td>
-<td><p>Should be less than 5 percent.</p></td>
-</tr>
-</tbody>
-</table>
+|Performance counter category|Counter name|Description|Threshold|
+|---|---|---|---|
+|MSExchangeUMRouterAvailability|% of Inbound Calls Rejected by the Microsoft Exchange Unified Messaging Call Router Service over the Last Hour|Shows the percentage of inbound calls that were rejected by the Microsoft Exchange Unified Messaging Call router service over the last hour.|Should always be less than 5 percent, but should be 0 at all times.|
+|MSExchangeUMRouterAvailability|Calls Disconnected on Irrecoverable Internal Error for the Microsoft Exchange Unified Messaging Call Router Service|Shows the number of calls disconnected after an internal system error occurred.|Should be 0 at all times.|
+|MSExchangeUMRouterAvailability|Total Inbound Calls Rejected by the Microsoft Exchange Unified Messaging Call Router Service|Shows the total number of inbound calls that were rejected by the Microsoft Exchange Unified Messaging Call Router service since the service was started.|Should be 0 at all times.|
+|MSExchangeUMRouterAvailability|Total number of calls received by the Microsoft Exchange Unified Messaging Call Router Service|Shows the total number of inbound calls that were received by the Microsoft Exchange Unified Messaging Call Router service since the service was started.|Should be 0 or greater.|
+|MSExchangeUMRouterAvailability|% of Inbound Calls Rejected by the Microsoft Exchange Unified Messaging Call Router Service Over the Last Hour|Shows the percentage of inbound calls that were rejected by the Microsoft Exchange Unified Messaging Call Router service over the last hour.|Should be less than 5 percent.|
