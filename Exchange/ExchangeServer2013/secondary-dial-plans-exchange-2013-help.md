@@ -37,9 +37,7 @@ In some configurations, after you add a second extension on a primary dial plan 
 The mailbox of a UM-enabled user can be assigned the following:
 
 - A single extension number, Session Initiation Protocol (SIP) address, or E.164 address on a single dial plan
-
 - Multiple extension numbers on a single dial plan
-
 - Multiple extension numbers on two separate dial plans
 
 When a user is enabled for UM, you must specify an extension number and a UM mailbox policy. UM requires the extension number to identify the user when they sign in to Outlook Voice Access to retrieve messages. The UM mailbox policy contains a collection of configuration properties, with values that UM applies to any user who is UM-enabled under that policy. The UM mailbox policy is similar to the "class of service" found in other systems (for example, voice mail or PBX), in the sense that a change to a UM mailbox policy value can affect the behavior for a large number of associated users.
@@ -50,44 +48,14 @@ Therefore, a user's extension number is unique within the UM dial plan in which 
 
 The following table defines terms that are used when discussing primary and secondary extensions, Outlook Voice Access numbers, and UM dial plans.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Term</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>primary extension</p></td>
-<td><p>The extension number that's specified when the user is UM enabled.</p></td>
-</tr>
-<tr class="even">
-<td><p>primary dial plan</p></td>
-<td><p>The UM dial plan that's specified when the user is UM enabled. The UM-enabled user is associated with the dial plan when the user is linked to the UM mailbox policy.</p></td>
-</tr>
-<tr class="odd">
-<td><p>primary Outlook Voice Access number</p></td>
-<td><p>The Outlook Voice Access number for the user's primary dial plan. The user's calls are forwarded to this number if there's no answer or their line is busy. It's also the number that the user calls when they want to sign in to Outlook Voice Access.</p></td>
-</tr>
-<tr class="even">
-<td><p>secondary extension</p></td>
-<td><p>One or more extension numbers that may be added to a UM-enabled user's configuration.</p></td>
-</tr>
-<tr class="odd">
-<td><p>secondary dial plan</p></td>
-<td><p>A UM dial plan other than the primary dial plan in which one or more secondary extensions can be configured.</p></td>
-</tr>
-<tr class="even">
-<td><p>secondary Outlook Voice Access number</p></td>
-<td><p>The Outlook Voice Access number of a user's secondary dial plan. A user can call this number from their secondary extension number when they want to sign in to Outlook Voice Access.</p></td>
-</tr>
-</tbody>
-</table>
+|Term|Definition|
+|---|---|
+|primary extension|The extension number that's specified when the user is UM enabled.|
+|primary dial plan|The UM dial plan that's specified when the user is UM enabled. The UM-enabled user is associated with the dial plan when the user is linked to the UM mailbox policy.|
+|primary Outlook Voice Access number|The Outlook Voice Access number for the user's primary dial plan. The user's calls are forwarded to this number if there's no answer or their line is busy. It's also the number that the user calls when they want to sign in to Outlook Voice Access.|
+|secondary extension|One or more extension numbers that may be added to a UM-enabled user's configuration.|
+|secondary dial plan|A UM dial plan other than the primary dial plan in which one or more secondary extensions can be configured.|
+|secondary Outlook Voice Access number|The Outlook Voice Access number of a user's secondary dial plan. A user can call this number from their secondary extension number when they want to sign in to Outlook Voice Access.|
 
 ## Use of secondary extensions
 
@@ -98,23 +66,16 @@ When Microsoft Lync Server is used for Enterprise Voice, Unified Messaging can p
 For more information about adding, removing, or changing extensions, see one of the following:
 
 - [Change an extension number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-extension-number.md)
-
 - [Add an extension number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-extension-number.md)
-
 - [Remove an extension number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-extension-number.md)
 
 If you need to change SIP addresses or E.164 numbers for UM-enabled users, see:
 
 - [Add a SIP address](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-sip-address.md)
-
 - [Change a SIP address](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-sip-address.md)
-
 - [Remove a SIP address](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-sip-address.md)
-
 - [Add an E.164 number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/add-e-164-number.md)
-
 - [Change an E.164 number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/change-e-164-number.md)
-
 - [Remove an E.164 number](../ExchangeOnline/voice-mail-unified-messaging/set-up-voice-mail/remove-e-164-number.md)
 
 ## Call answering
@@ -122,7 +83,6 @@ If you need to change SIP addresses or E.164 numbers for UM-enabled users, see:
 Unified Messaging provides both of the following:
 
 - **Call answering**: Occurs when a user doesn't answer their phone and UM takes the call.
-
 - **Outlook Voice Access**: Used by users when they dial in to the voice mail system to access their mailbox.
 
 Two configurations are used frequently:
@@ -138,12 +98,10 @@ In either configuration, voice messages or missed call notification messages tha
 You may want UM-enabled users to be able to sign in to Outlook Voice Access from any extension, primary or secondary. While this is possible, there may be some architectural restrictions that keep this from working identically from all extensions. To sign in to Outlook Voice Access, UM-enabled users must perform the following steps:
 
 1. Call an Outlook Voice Access number.
-
 2. Key in their extension number if they're calling from another phone number.
-
 3. Key in their PIN if they aren't enabled for Enterprise Voice and are calling from a Unified Communications phone, Office Communicator, or Lync Server.
 
-**Usage scenarios**
+### Usage scenarios
 
 - **Single extension with Outlook Voice Access**: If the user has a single primary extension, they must always call the Outlook Voice Access number for their primary UM dial plan. If they call from their extension number, they won't be prompted to enter the extension number, and step 2 of the preceding steps will be skipped.
 
@@ -154,11 +112,8 @@ You may want UM-enabled users to be able to sign in to Outlook Voice Access from
   Outlook Voice Access features that don't involve outbound dialing (for example "Call the sender" or "Call the office") will work the same way, whichever extension is used to sign in. However, Outlook Voice Access features that do require outbound dialing won't work as expected when the user signs in to the secondary dial plan unless the outbound dialing rules are exactly the same in both dial plans. For the behavior of outbound dialing to be exactly the same, you must ensure that the following properties are configured identically on the primary and secondary dial plans:
 
   - Dialing codes (trunk access, national, and international)
-
   - In-country or region dialing codes
-
   - Dialing rules
-
   - Dialing rule group names
 
 A UM-enabled user is associated with a UM mailbox policy, and this UM mailbox policy is linked with the user's primary dial plan. The UM mailbox policy settings that are associated with the UM-enabled user's primary dial plan will be applied to the user. If a user is associated with a secondary dial plan with a second extension number in the secondary dial plan, the UM mailbox policy settings associated with the primary dial plan will still be applied. In Outlook Voice Access, the same UM mailbox policy settings associated with the primary dial plan are applied whether the user calls in to the primary dial plan or to a secondary dial plan.
@@ -179,19 +134,19 @@ In Outlook Web App, Play on Phone uses the VoIP gateway that's associated with t
 
 - A search of the directory for a user who's been authenticated will follow these rules:
 
-   - The ability to search for a user and then leave a voice message or call a user will be available only if the user conducting the search is UM enabled and has a primary extension on the same dial plan as the user that's being called. If so, a search by name, alias, and primary extension will locate the user. However, searching by using the secondary extension won't locate the user.
+  - The ability to search for a user and then leave a voice message or call a user will be available only if the user conducting the search is UM enabled and has a primary extension on the same dial plan as the user that's being called. If so, a search by name, alias, and primary extension will locate the user. However, searching by using the secondary extension won't locate the user.
 
-   - If the user being searched for is UM enabled and has a secondary extension on the called dial plan, then a search by name, alias, and secondary extension will find the user. However, although options to leave a voice message and call the contact will be offered, the call contact option won't succeed. In this case, a search by primary extension won't find the user.
+  - If the user being searched for is UM enabled and has a secondary extension on the called dial plan, then a search by name, alias, and secondary extension will find the user. However, although options to leave a voice message and call the contact will be offered, the call contact option won't succeed. In this case, a search by primary extension won't find the user.
 
-   - To find and be able to either call or leave a voice message for the user they're searching for, the UM-enabled user should use Outlook Voice Access through their primary dial plan's Outlook Voice Access number and search by name, alias, or primary extension. If the searched-for user is called using the secondary dial plan's Outlook Voice Access number, the user will only be found if the search is made by name, alias, or secondary extension. If the primary extension is used, the only option that will be available is for the user to leave a voice mail.
+  - To find and be able to either call or leave a voice message for the user they're searching for, the UM-enabled user should use Outlook Voice Access through their primary dial plan's Outlook Voice Access number and search by name, alias, or primary extension. If the searched-for user is called using the secondary dial plan's Outlook Voice Access number, the user will only be found if the search is made by name, alias, or secondary extension. If the primary extension is used, the only option that will be available is for the user to leave a voice mail.
 
 - A search of the directory for a user who hasn't been authenticated will follow these rules:
 
-   - The user being searched for will be found and the option to leave a voice message or call the user will be offered only if the user is UM enabled and has a primary extension on the called dial plan. If so, a search by name, alias, and primary extension will find the user. However, a search by secondary extension won't find the user.
+  - The user being searched for will be found and the option to leave a voice message or call the user will be offered only if the user is UM enabled and has a primary extension on the called dial plan. If so, a search by name, alias, and primary extension will find the user. However, a search by secondary extension won't find the user.
 
-   - If the user being searched for is UM enabled, has a secondary extension on the called dial plan, and the option **Transfer and search** \> **Allow callers to** \> **Leave voice messages without ringing a user's phone** is selected on the called dial plan, then a search by name, alias, and secondary extension will find them. However, the option to leave voice mail will be offered to the caller, and there will be no option to call them.
+  - If the user being searched for is UM enabled, has a secondary extension on the called dial plan, and the option **Transfer and search** \> **Allow callers to** \> **Leave voice messages without ringing a user's phone** is selected on the called dial plan, then a search by name, alias, and secondary extension will find them. However, the option to leave voice mail will be offered to the caller, and there will be no option to call them.
 
-   - To find and be able to either call or leave a voice message for a user, the caller must call the Outlook Voice Access number of the user's primary dial plan and search by name, alias, or the user's secondary extension. If the user's secondary Outlook Voice Access number is called, they will only be found if the **Allow callers to search by name of alias** option is set to **In the entire organization**. In this case, only the option to leave a voice message will be provided.
+  - To find and be able to either call or leave a voice message for a user, the caller must call the Outlook Voice Access number of the user's primary dial plan and search by name, alias, or the user's secondary extension. If the user's secondary Outlook Voice Access number is called, they will only be found if the **Allow callers to search by name of alias** option is set to **In the entire organization**. In this case, only the option to leave a voice message will be provided.
 
 ## Call the Sender (Outlook Voice Access)
 
@@ -202,7 +157,5 @@ When a user calls in to Outlook Voice Access and chooses the option to Call the 
 - **Voice mail messages**: If the caller is a UM-enabled user, the option to call the sender will always result in a call to the extension that the sender uses to leave their voice message. If this extension has a number of digits different from the called dial plan, the prompt to call the sender won't be provided unless there are dialing rules in place that would permit the call. For example:
 
   - The "Call the sender" option will be offered if the sender uses an extension on the dial plan that was used to send the voice message.
-
   - The "Call the sender" option will be played if the sender uses an extension from a different dial plan than the dial plan that's used with Outlook Voice Access to send the voice message and both dial plans have the same number of digits. The success of the call will depend on whether the VoIP gateway and PBX infrastructure permit the call transfer.
-
   - The "Call the sender" option won't be played if the sender uses an extension from a different dial plan than the dial plan that's used with Outlook Voice Access to send the voice message, the dial plans have a different number of digits, and there are no outdialing rules that match the sender's extension.
