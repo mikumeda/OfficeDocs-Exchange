@@ -2,9 +2,9 @@
 title: 'Using Outlook Web App Web parts: Exchange 2013 Help'
 TOCTitle: Using Outlook Web App Web parts
 ms:assetid: 7272e3ab-430c-4d6c-8621-9535236ce463
-ms:mtpsurl: `https://technet.microsoft.com/library/Mt574711(v=EXCHG.150)
+ms:mtpsurl: https://technet.microsoft.com/library/Mt574711(v=EXCHG.150)
 ms:contentKeyID: 70319891
-ms.reviewer: 
+ms.reviewer:
 ms.topic: article
 description: Use Microsoft Office Outlook Web App Web Parts in Microsoft Exchange to specify the mailbox to open, the folder within that mailbox to open, and the content view to use
 manager: serdars
