@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-*Exclusive scopes_ are a special type of explicit management scope that can be associated with management role assignments. Exclusive scopes are designed to enable situations where you have a group of highly valuable objects, such as a CEO mailbox, and you want to tightly control who has access to manage those objects.
+_Exclusive scopes_ are a special type of explicit management scope that can be associated with management role assignments. Exclusive scopes are designed to enable situations where you have a group of highly valuable objects, such as a CEO mailbox, and you want to tightly control who has access to manage those objects.
 
 A role assignment that has an exclusive scope is called an _exclusive role assignment_.
 

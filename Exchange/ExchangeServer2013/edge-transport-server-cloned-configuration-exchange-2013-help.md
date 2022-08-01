@@ -23,7 +23,7 @@ Edge Transport servers store their configuration information in Active Directory
 
 To ensure all Edge Transport servers use the same configuration information, use the provided cloned configuration scripts to duplicate your source server's configuration on a target server.
 
-*Cloned configuration_ is used to deploy new Edge Transport servers based on a configured source server. Source server configuration information is duplicated and then exported to an XML file. The XML file is then imported to the target server.
+_Cloned configuration_ is used to deploy new Edge Transport servers based on a configured source server. Source server configuration information is duplicated and then exported to an XML file. The XML file is then imported to the target server.
 
 This topic provides an overview of the cloned configuration process. For detailed steps about configuring your Edge Transport servers using cloned configuration, see [Configure Edge Transport server using cloned configuration](configure-edge-transport-server-using-cloned-configuration-exchange-2013-help.md).
 

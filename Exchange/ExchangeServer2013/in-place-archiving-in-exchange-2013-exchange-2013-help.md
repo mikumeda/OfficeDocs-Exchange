@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-*In-Place Archiving_ helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an _archive mailbox_ accessible in Microsoft Outlook 2010 and later and Microsoft Office Outlook Web App.
+_In-Place Archiving_ helps you regain control of your organization's messaging data by eliminating the need for personal store (.pst) files and allowing users to store messages in an _archive mailbox_ accessible in Microsoft Outlook 2010 and later and Microsoft Office Outlook Web App.
 
 In Microsoft Exchange Server 2013, In-Place Archiving provides users with an alternate storage location in which to store historical messaging data. An In-Place Archive is an additional mailbox (called an archive mailbox) enabled for a mailbox user. Outlook 2007 and later and Outlook Web App users have seamless access to their archive mailbox. Using either of these client applications, users can view an archive mailbox and move or copy messages between their primary mailbox and the archive. In-Place Archiving presents a consistent view of messaging data to users and eliminates the user overhead required to manage .pst files.
 
@@ -57,7 +57,7 @@ Outlook doesn't create a local copy of the archive mailbox on a user's computer,
 
 ## Delegate access
 
-*Delegate access_ is when a user or set of users is provided access to another user's mailbox. There are several scenarios for providing delegate access, including:
+_Delegate access_ is when a user or set of users is provided access to another user's mailbox. There are several scenarios for providing delegate access, including:
 
 - Providing one or more users with access to the mailbox of a user who is no longer employed by the organization. In this case, users who may be given delegate access include the departed user's manager or supervisor or another user who will assume the departed user's responsibilities.
 

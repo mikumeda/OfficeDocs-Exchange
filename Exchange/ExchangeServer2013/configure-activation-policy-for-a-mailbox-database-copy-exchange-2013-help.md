@@ -19,7 +19,7 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-*Activation* is the process of changing a mailbox database copy from a passive copy to an active copy. Activation occurs automatically by the system as part of a database or server failover operation, and it can be performed manually by an administrator as part of a database or server switchover operation. Blocking a database for activation prevents it from becoming the active copy during a database or server failover.
+_Activation_ is the process of changing a mailbox database copy from a passive copy to an active copy. Activation occurs automatically by the system as part of a database or server failover operation, and it can be performed manually by an administrator as part of a database or server switchover operation. Blocking a database for activation prevents it from becoming the active copy during a database or server failover.
 
 Looking for other management tasks related to mailbox database copies? Check out [Managing mailbox database copies](managing-mailbox-database-copies-exchange-2013-help.md).
 

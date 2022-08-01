@@ -19,13 +19,13 @@ mtps_version: v=EXCHG.150
 
 _**Applies to:** Exchange Server 2013_
 
-*Recipient resolution_ is the process of expanding and resolving all the recipients in a message. The act of resolving the recipients matches a recipient to the corresponding Active Directory object in the Microsoft Exchange organization. The act of expanding the recipients expands all distribution groups into a list of individual recipients. Recipient resolution allows message limits and alternative recipients to be applied correctly to each recipient.
+_Recipient resolution_ is the process of expanding and resolving all the recipients in a message. The act of resolving the recipients matches a recipient to the corresponding Active Directory object in the Microsoft Exchange organization. The act of expanding the recipients expands all distribution groups into a list of individual recipients. Recipient resolution allows message limits and alternative recipients to be applied correctly to each recipient.
 
 In a Microsoft Exchange Server 2013 organization, recipient resolution is performed by the categorizer in the Transport service on Mailbox servers. Categorization on each message happens after a newly arrived message is put in the Submission queue. Recipient resolution, in addition to content conversion and routing, is performed on the message before the message is put in a delivery queue. The categorizer performs recipient resolution before routing. The component of the categorizer that's responsible for recipient resolution is frequently called the _resolver_.
 
 ## Top-level resolution
 
-*Top-level resolution_ is the first stage of recipient resolution. Top-level resolution associates each recipient in an incoming message to a matching recipient object in Active Directory. During top-level resolution, the categorizer creates a list that contains the sender and the initial, unexpanded recipient email addresses that exist within the message. The categorizer then uses that list of email addresses to query Active Directory to find any mail-enabled objects that have matching email address attributes. When a match is found, the properties of matching Active Directory objects are cached for later use. Any sender message restrictions are also enforced.
+_Top-level resolution_ is the first stage of recipient resolution. Top-level resolution associates each recipient in an incoming message to a matching recipient object in Active Directory. During top-level resolution, the categorizer creates a list that contains the sender and the initial, unexpanded recipient email addresses that exist within the message. The categorizer then uses that list of email addresses to query Active Directory to find any mail-enabled objects that have matching email address attributes. When a match is found, the properties of matching Active Directory objects are cached for later use. Any sender message restrictions are also enforced.
 
 ## Recipient email addresses
 
