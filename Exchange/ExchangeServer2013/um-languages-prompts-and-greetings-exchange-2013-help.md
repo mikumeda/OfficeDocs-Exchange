@@ -34,13 +34,9 @@ It's very important that you install the correct version and platform of the UM 
 Unified Messaging language packs allow a Mailbox server to speak additional languages to callers and recognize other languages when callers use ASR or when voice messages are transcribed. UM language packs contain:
 
 - Pre-recorded prompts in the language of the UM language pack. For example, "After the tone, please record your message. When you've finished recording, hang up, or press the \# key for more options."
-
 - Grammar files in the language of the UM language pack that are used by a Mailbox server to look up the names of given users in the directory.
-
 - Text-to-Speech (TTS) translation so that content (email, calendar, contact information, etc.) can be read to callers in the language of the UM language pack.
-
 - Support for Automatic Speech Recognition, which allows callers to interact with UM using the voice user interface (VUI) in the language of the UM language pack.
-
 - Support for Voice Mail Preview, which allows users to read the transcript of voice mail messages in a specific language from within a supported email client such as Outlook or Outlook Web App.
 
 UM language packs include pre-recorded prompts, TTS conversion support for a specific language, and in some cases, support for ASR. In multiple-language environments, you may have to install additional UM language packs because some callers prefer to be prompted in a different language, or because they receive email in more than one language. You must install multiple UM language packs to support the ability of the Mailbox server to read an email message that contains more than one language, because the TTS conversion system must be instructed which language to select based on the text of the message to be read. If the Unified Messaging language pack hasn't been installed, the email message will be illogical and incoherent when it's read back to the user. Installing the appropriate language pack enables the TTS engine to read email and calendar items to the Outlook Voice Access user by using the correct language and also provides language-specific pre-recorded prompts for Unified Messaging. In some cases, they may also provide support for ASR.
@@ -51,224 +47,45 @@ UM language packs include pre-recorded prompts, TTS conversion support for a spe
 When you install a language pack, the installation program does the following:
 
 1. Copies the language prompts that will be used to configure UM dial plans and auto attendants.
-
 2. Allows the TTS engine to read messages when Outlook Voice Access users access their Inbox.
-
 3. Enables ASR for speech-enabled UM dial plans and auto attendants for the language installed.
-
 4. Enables Voice Mail Preview for clients in other languages.
 
-You can add UM language packs by using the **Setup.exe** command or by running the *\<UMLanguagePack\>*.exe installation program after you've downloaded the UM language pack from [Exchange Server 2013 UM Language Packs](https://www.microsoft.com/download/details.aspx?id=35368). However, you have to use the Setup.exe command to remove a UM language pack. There's no Exchange Management Shell cmdlet that you can use to add or remove languages from a Mailbox server. For more information about how to install a UM language pack, see [Install a UM language pack](install-a-um-language-pack-exchange-2013-help.md). For more information about how to remove a UM language pack, see [Remove a UM language pack](remove-a-um-language-pack-exchange-2013-help.md).
+You can add UM language packs by using the **Setup.exe** command or by running the _\<UMLanguagePack\>_.exe installation program after you've downloaded the UM language pack from [Exchange Server 2013 UM Language Packs](https://www.microsoft.com/download/details.aspx?id=35368). However, you have to use the Setup.exe command to remove a UM language pack. There's no Exchange Management Shell cmdlet that you can use to add or remove languages from a Mailbox server. For more information about how to install a UM language pack, see [Install a UM language pack](install-a-um-language-pack-exchange-2013-help.md). For more information about how to remove a UM language pack, see [Remove a UM language pack](remove-a-um-language-pack-exchange-2013-help.md).
 
 > [!NOTE]
 > By default, when you install a Mailbox server, the U.S. English (en-US) language pack is installed. It can't be removed unless you remove the Mailbox server from the computer.
 
 The following table lists the Unified Messaging language packs that are currently available. It also lists the installation file name for each UM language pack and the culture ID for the UM language.
 
-### UM language pack installation file names and culture IDs
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Language</th>
-<th>Country/Region</th>
-<th>Culture ID</th>
-<th>Installation file name</th>
-<th>Availability</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Catalan</p></td>
-<td><p>Spain</p></td>
-<td><p>ca-ES</p></td>
-<td><p>UMLanguagePack. ca-ES</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Chinese (Hong Kong)</p></td>
-<td><p>China</p></td>
-<td><p>zh-HK</p></td>
-<td><p>UMLanguagePack. zh-HK</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Chinese (Simplified)</p></td>
-<td><p>China</p></td>
-<td><p>zh-CHS</p></td>
-<td><p>UMLanguagePack.zh-CN</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Chinese (Traditional)</p></td>
-<td><p>Taiwan</p></td>
-<td><p>zh-TW</p></td>
-<td><p>UMLanguagePack.zh-TW</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Danish</p></td>
-<td><p>Denmark</p></td>
-<td><p>da-DK</p></td>
-<td><p>UMLanguagePack.da-DK</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Dutch</p></td>
-<td><p>Netherlands</p></td>
-<td><p>nl-NL</p></td>
-<td><p>UMLanguagePack.nl-NL</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>English</p></td>
-<td><p>Australia</p></td>
-<td><p>en-AU</p></td>
-<td><p>UMLanguagePack.en-AU</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>English</p></td>
-<td><p>Canada</p></td>
-<td><p>en-CA</p></td>
-<td><p>UMLanguagePack. en-CA</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>English</p></td>
-<td><p>India</p></td>
-<td><p>en-IN</p></td>
-<td><p>UMLanguagePack. en-IN</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>English</p></td>
-<td><p>United Kingdom</p></td>
-<td><p>en-GB</p></td>
-<td><p>UMLanguagePack.en-GB</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>English</p></td>
-<td><p>United States</p></td>
-<td><p>en-US</p></td>
-<td><p>Included with installation of a Mailbox server</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Finnish</p></td>
-<td><p>Finland</p></td>
-<td><p>fi-Fl</p></td>
-<td><p>UMLanguagePack.fi-Fl</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>French</p></td>
-<td><p>Canada</p></td>
-<td><p>fr-CA</p></td>
-<td><p>UMLanguagePack.fr-CA</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>French</p></td>
-<td><p>France</p></td>
-<td><p>fr-FR</p></td>
-<td><p>UMLanguagePack.fr-FR</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>German</p></td>
-<td><p>Germany</p></td>
-<td><p>de-DE</p></td>
-<td><p>UMLanguagePack.de-DE</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Italian</p></td>
-<td><p>Italy</p></td>
-<td><p>it-IT</p></td>
-<td><p>UMLanguagePack.it-IT</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Japanese</p></td>
-<td><p>Japan</p></td>
-<td><p>ja-JP</p></td>
-<td><p>UMLanguagePack.ja-JP</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Korean</p></td>
-<td><p>Korean</p></td>
-<td><p>ko-KR</p></td>
-<td><p>UMLanguagePack.ko-KR</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Norwegian (Bokmal)</p></td>
-<td><p>Norway</p></td>
-<td><p>nb-NO</p></td>
-<td><p>UMLanguagePack.nb-NO</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Polish</p></td>
-<td><p>Poland</p></td>
-<td><p>pl-PL</p></td>
-<td><p>UMLanguagePack.pl-PL</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Portuguese</p></td>
-<td><p>Brazil</p></td>
-<td><p>pt-BR</p></td>
-<td><p>UMLanguagePack.pt-BR</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Portuguese</p></td>
-<td><p>Portugal</p></td>
-<td><p>pt-PT</p></td>
-<td><p>UMLanguagePack.pt-PT</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Russian</p></td>
-<td><p>Russia</p></td>
-<td><p>ru-RU</p></td>
-<td><p>UMLanguagePack. ru-RU</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Spanish</p></td>
-<td><p>Spain</p></td>
-<td><p>es-ES</p></td>
-<td><p>UMLanguagePack.es-ES</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="odd">
-<td><p>Spanish</p></td>
-<td><p>Mexico</p></td>
-<td><p>es-MX</p></td>
-<td><p>UMLanguagePack.es-MX</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-<tr class="even">
-<td><p>Swedish</p></td>
-<td><p>Sweden</p></td>
-<td><p>sv-SE</p></td>
-<td><p>UMLanguagePack.sv-SE</p></td>
-<td><p><a href="https://www.microsoft.com/download/details.aspx?id=35368">Download available</a></p></td>
-</tr>
-</tbody>
-</table>
+|Language|Country/Region|Culture ID|Installation file name|Availability|
+|---|---|---|---|---|
+|Catalan|Spain|ca-ES|UMLanguagePack.ca-ES|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Chinese (Hong Kong)|China|zh-HK|UMLanguagePack.zh-HK|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Chinese (Simplified)|China|zh-CHS|UMLanguagePack.zh-CN|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Chinese (Traditional)|Taiwan|zh-TW|UMLanguagePack.zh-TW|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Danish|Denmark|da-DK|UMLanguagePack.da-DK|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Dutch|Netherlands|nl-NL|UMLanguagePack.nl-NL|[Download available](https://www.microsoft.com/download/details.aspx)|
+|English|Australia|en-AU|UMLanguagePack.en-AU|[Download available](https://www.microsoft.com/download/details.aspx)|
+|English|Canada|en-CA|UMLanguagePack.en-CA|[Download available](https://www.microsoft.com/download/details.aspx)|
+|English|India|en-IN|UMLanguagePack.en-IN|[Download available](https://www.microsoft.com/download/details.aspx)|
+|English|United Kingdom|en-GB|UMLanguagePack.en-GB|[Download available](https://www.microsoft.com/download/details.aspx)|
+|English|United States|en-US|Included with installation of a Mailbox server|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Finnish|Finland|fi-Fl|UMLanguagePack.fi-Fl|[Download available](https://www.microsoft.com/download/details.aspx)|
+|French|Canada|fr-CA|UMLanguagePack.fr-CA|[Download available](https://www.microsoft.com/download/details.aspx)|
+|French|France|fr-FR|UMLanguagePack.fr-FR|[Download available](https://www.microsoft.com/download/details.aspx)|
+|German|Germany|de-DE|UMLanguagePack.de-DE|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Italian|Italy|it-IT|UMLanguagePack.it-IT|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Japanese|Japan|ja-JP|UMLanguagePack.ja-JP|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Korean|Korean|ko-KR|UMLanguagePack.ko-KR|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Norwegian (Bokmal)|Norway|nb-NO|UMLanguagePack.nb-NO|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Polish|Poland|pl-PL|UMLanguagePack.pl-PL|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Portuguese|Brazil|pt-BR|UMLanguagePack.pt-BR|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Portuguese|Portugal|pt-PT|UMLanguagePack.pt-PT|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Russian|Russia|ru-RU|UMLanguagePack.ru-RU|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Spanish|Spain|es-ES|UMLanguagePack.es-ES|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Spanish|Mexico|es-MX|UMLanguagePack.es-MX|[Download available](https://www.microsoft.com/download/details.aspx)|
+|Swedish|Sweden|sv-SE|UMLanguagePack.sv-SE|[Download available](https://www.microsoft.com/download/details.aspx)|
 
 ## UM language components and features
 
@@ -276,7 +93,7 @@ There are several key components and features in Unified Messaging that enable u
 
 ## Pre-recorded prompts
 
-The Mailbox server role is installed with a set of default audio prompt files. These audio files contain the recordings for Outlook Voice Access menus, voice mail greetings, and numbers that are used by Exchange Unified Messaging. The audio files are played by a Mailbox server to incoming callers, both internal and external. Many of the audio files are default prompts that provide the users of the Telephone User Interface (TUI) and Outlook Voice Access the information they need to move through the TUI and the Voice User Interface (VUI). The prompts are located in \<*Program Files*\>\\Microsoft\\Exchange Server\\V15\\UnifiedMessaging\\Prompts\\\<language\>. The prompts used by the Mailbox server to help callers move through the menus shouldn't be replaced or changed.
+The Mailbox server role is installed with a set of default audio prompt files. These audio files contain the recordings for Outlook Voice Access menus, voice mail greetings, and numbers that are used by Exchange Unified Messaging. The audio files are played by a Mailbox server to incoming callers, both internal and external. Many of the audio files are default prompts that provide the users of the Telephone User Interface (TUI) and Outlook Voice Access the information they need to move through the TUI and the Voice User Interface (VUI). The prompts are located in `%ExchangeInstallPath%UnifiedMessaging\Prompts\<language>`. The prompts used by the Mailbox server to help callers move through the menus shouldn't be replaced or changed.
 
 When an additional UM language pack is installed, the pre-recorded prompts for that language will also be installed. After a UM language pack is installed, the pre-recorded prompts for that language can be used by UM dial plans and auto attendants.
 
@@ -285,11 +102,8 @@ When an additional UM language pack is installed, the pre-recorded prompts for t
 Unified Messaging relies on a Text-to-Speech (TTS) engine. TTS functionality is provided by the Microsoft Speech Server service. The TTS engine reads and converts written text into audible output that can be heard by a caller. The TTS engine reads and converts the following items in a user's mailbox:
 
 - Email and voice mail message bodies, subjects, and names
-
 - Calendar item bodies, subjects, locations, and names
-
 - Personal contact names
-
 - Users' default voice mail greetings
 
 > [!NOTE]
@@ -310,17 +124,11 @@ All UM language packs are single files that can be downloaded. These language pa
 The following UM language packs contain support for all the components and features, including Voice Mail Preview:
 
 - English (US) - (en-US)
-
 - English (Canada) (en-CA)
-
 - French (France) - (fr-FR)
-
 - Italian - (it-IT)
-
 - Polish (pl-PL)
-
 - Portuguese (Portugal) (pt-PT)
-
 - Spanish (Spain) (es-ES)
 
 By default, after you install the Mailbox server, the server will send voice mail previews to UM-enabled users if a supported UM language pack is installed.
@@ -375,233 +183,31 @@ The following table includes a list of client languages and the fallback languag
 
 ### Client fallback languages for UM
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Language</th>
-<th>Country/Region</th>
-<th>Culture ID</th>
-<th>First language chosen, if installed</th>
-<th>Second language chosen, if installed</th>
-<th>Third language chosen, if installed</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Catalan</p></td>
-<td><p>Spain</p></td>
-<td><p>ca-ES</p></td>
-<td><p>ca-ES</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>Chinese (Hong Kong)</p></td>
-<td><p>China</p></td>
-<td><p>zh-HK</p></td>
-<td><p>zh-HK</p></td>
-<td><p>zh-CN</p></td>
-<td><p>zh-TW</p></td>
-</tr>
-<tr class="odd">
-<td><p>Chinese (Simplified)</p></td>
-<td><p>China</p></td>
-<td><p>zh-CN</p></td>
-<td><p>zh-CN</p></td>
-<td><p>zh-HK</p></td>
-<td><p>zh-TW</p></td>
-</tr>
-<tr class="even">
-<td><p>Chinese (Traditional)</p></td>
-<td><p>Taiwan</p></td>
-<td><p>zh-TW</p></td>
-<td><p>zh-TW</p></td>
-<td><p>zh-HK</p></td>
-<td><p>zh-CN</p></td>
-</tr>
-<tr class="odd">
-<td><p>Danish</p></td>
-<td><p>Denmark</p></td>
-<td><p>da-DK</p></td>
-<td><p>da-DK</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>Dutch</p></td>
-<td><p>Netherlands</p></td>
-<td><p>nl-NL</p></td>
-<td><p>nl-NL</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="odd">
-<td><p>English</p></td>
-<td><p>Australia</p></td>
-<td><p>en-AU</p></td>
-<td><p>en-AU</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>English</p></td>
-<td><p>Canada</p></td>
-<td><p>en-CA</p></td>
-<td><p>en-CA</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="odd">
-<td><p>English</p></td>
-<td><p>India</p></td>
-<td><p>en-IN</p></td>
-<td><p>en-IN</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>English</p></td>
-<td><p>United Kingdom</p></td>
-<td><p>en-GB</p></td>
-<td><p>en-GB</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="odd">
-<td><p>English</p></td>
-<td><p>United States</p></td>
-<td><p>en-US</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>Finnish</p></td>
-<td><p>Finland</p></td>
-<td><p>fi-FL</p></td>
-<td><p>fi-FL</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="odd">
-<td><p>French</p></td>
-<td><p>Canada</p></td>
-<td><p>fr-CA</p></td>
-<td><p>fr-CA</p></td>
-<td><p>fr-FR</p></td>
-<td><p>en-US</p></td>
-</tr>
-<tr class="even">
-<td><p>French</p></td>
-<td><p>France</p></td>
-<td><p>fr-FR</p></td>
-<td><p>fr-FR</p></td>
-<td><p>fr-CA</p></td>
-<td><p>en-US</p></td>
-</tr>
-<tr class="odd">
-<td><p>German</p></td>
-<td><p>Germany</p></td>
-<td><p>de-DE</p></td>
-<td><p>de-DE</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>Italian</p></td>
-<td><p>Italy</p></td>
-<td><p>it-IT</p></td>
-<td><p>it-IT</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="odd">
-<td><p>Japanese</p></td>
-<td><p>Japan</p></td>
-<td><p>ja-JP</p></td>
-<td><p>ja-JP</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>Korean</p></td>
-<td><p>Korea</p></td>
-<td><p>ko-KR</p></td>
-<td><p>ko-KR</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="odd">
-<td><p>Norwegian (Bokmal)</p></td>
-<td><p>Norway</p></td>
-<td><p>nb-NO</p></td>
-<td><p>nb-NO</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>Polish</p></td>
-<td><p>Poland</p></td>
-<td><p>pl-PL</p></td>
-<td><p>pl-PL</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="odd">
-<td><p>Portuguese</p></td>
-<td><p>Brazil</p></td>
-<td><p>pt-BR</p></td>
-<td><p>pt-BR</p></td>
-<td><p>pt-PT</p></td>
-<td><p>en-US</p></td>
-</tr>
-<tr class="even">
-<td><p>Portuguese</p></td>
-<td><p>Portugal</p></td>
-<td><p>pt-PT</p></td>
-<td><p>pt-PT</p></td>
-<td><p>pt-BR</p></td>
-<td><p>en-US</p></td>
-</tr>
-<tr class="odd">
-<td><p>Russian</p></td>
-<td><p>Russia</p></td>
-<td><p>ru-RU</p></td>
-<td><p>ru-RU</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-<tr class="even">
-<td><p>Spanish</p></td>
-<td><p>Spain</p></td>
-<td><p>es-ES</p></td>
-<td><p>es-ES</p></td>
-<td><p>es-MX</p></td>
-<td><p>en-US</p></td>
-</tr>
-<tr class="odd">
-<td><p>Spanish</p></td>
-<td><p>Mexico</p></td>
-<td><p>es-MX</p></td>
-<td><p>es-MX</p></td>
-<td><p>es-ES</p></td>
-<td><p>en-US</p></td>
-</tr>
-<tr class="even">
-<td><p>Swedish</p></td>
-<td><p>Sweden</p></td>
-<td><p>sv-SE</p></td>
-<td><p>sv-SE</p></td>
-<td><p>en-US</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+|Language|Country/Region|Culture ID|First language chosen, if installed|Second language chosen, if installed|Third language chosen, if installed|
+|---|---|---|---|---|---|
+|Catalan|Spain|ca-ES|ca-ES|en-US||
+|Chinese (Hong Kong)|China|zh-HK|zh-HK|zh-CN|zh-TW|
+|Chinese (Simplified)|China|zh-CN|zh-CN|zh-HK|zh-TW|
+|Chinese (Traditional)|Taiwan|zh-TW|zh-TW|zh-HK|zh-CN|
+|Danish|Denmark|da-DK|da-DK|en-US||
+|Dutch|Netherlands|nl-NL|nl-NL|en-US||
+|English|Australia|en-AU|en-AU|en-US||
+|English|Canada|en-CA|en-CA|en-US||
+|English|India|en-IN|en-IN|en-US||
+|English|United Kingdom|en-GB|en-GB|en-US||
+|English|United States|en-US|en-US|||
+|Finnish|Finland|fi-FL|fi-FL|en-US||
+|French|Canada|fr-CA|fr-CA|fr-FR|en-US|
+|French|France|fr-FR|fr-FR|fr-CA|en-US|
+|German|Germany|de-DE|de-DE|en-US||
+|Italian|Italy|it-IT|it-IT|en-US||
+|Japanese|Japan|ja-JP|ja-JP|en-US||
+|Korean|Korea|ko-KR|ko-KR|en-US||
+|Norwegian (Bokmal)|Norway|nb-NO|nb-NO|en-US||
+|Polish|Poland|pl-PL|pl-PL|en-US||
+|Portuguese|Brazil|pt-BR|pt-BR|pt-PT|en-US|
+|Portuguese|Portugal|pt-PT|pt-PT|pt-BR|en-US|
+|Russian|Russia|ru-RU|ru-RU|en-US||
+|Spanish|Spain|es-ES|es-ES|es-MX|en-US|
+|Spanish|Mexico|es-MX|es-MX|es-ES|en-US|
+|Swedish|Sweden|sv-SE|sv-SE|en-US||

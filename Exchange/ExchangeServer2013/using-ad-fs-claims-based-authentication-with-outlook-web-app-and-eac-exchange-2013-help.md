@@ -24,13 +24,9 @@ _**Applies to:** Exchange Server 2013 SP1_
 For on-premises Exchange 2013 Service Pack 1 (SP1) deployments, installing and configuring Active Directory Federation Services (AD FS) means you can now use AD FS claims-based authentication to connect to Outlook Web App and EAC. You can integrate AD FS and claims-based authentication with Exchange 2013 SP1. Using claims-based authentication replaces traditional authentication methods, including the following:
 
 - Windows authentication
-
 - Forms authentication
-
 - Digest authentication
-
 - Basic authentication
-
 - Active Directory client certificate authentication
 
 Authentication is the process of confirming the identity of a user. Authentication validates that the user is who he or she claims to be. Claims-based identity is another approach to authentication. Claims-based authentication removes the management of authentication from the application (in this case, Outlook Web App and EA) to make it easier to manage accounts by centralizing authentication. Outlook Web App and EAC aren't responsible for authenticating users, storing user accounts and passwords, looking up user identity details, or integrating with other identity systems. Centralizing authentication helps make it easier to upgrade to authentication methods in the future.
@@ -40,63 +36,37 @@ Authentication is the process of confirming the identity of a user. Authenticati
 
 There are multiple versions of AD FS that can be used, as summarized by the following table.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Windows Server version</th>
-<th>Installation</th>
-<th>AD FS version</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Windows Server 2008 R2</p></td>
-<td><p><strong>Download and install</strong> AD FS 2.0, which is an add-on Windows component.</p></td>
-<td><p>AD FS 2.0</p></td>
-</tr>
-<tr class="even">
-<td><p>Windows Server 2012</p></td>
-<td><p>Install the <strong>built-in</strong> AD FS server role.</p></td>
-<td><p>AD FS 2.1</p></td>
-</tr>
-<tr class="odd">
-<td><p>Windows Server 2012 R2</p></td>
-<td><p>Install the <strong>built-in</strong> AD FS server role.</p></td>
-<td><p>AD FS 3.0</p></td>
-</tr>
-</tbody>
-</table>
+|Windows Server version|Installation|AD FS version|
+|---|---|---|
+|Windows Server 2008 R2|**Download and install** AD FS 2.0, which is an add-on Windows component.|AD FS 2.0|
+|Windows Server 2012|Install the **built-in** AD FS server role.|AD FS 2.1|
+|Windows Server 2012 R2|Install the **built-in** AD FS server role.|AD FS 3.0|
 
 The tasks that you will perform here are based on Windows Server 2012 R2 that includes the AD FS role service.
 
-**Overview of the required steps**
+**Overview of the required steps**:
 
-Step 1 - Review the certificate requirements for AD FS
+[Step 1 - Review the certificate requirements for AD FS](#step-1---review-the-certificate-requirements-for-ad-fs)
 
-Step 2 - Install and configure Active Directory Federation Services (AD FS)
+[Step 2 - Install and configure Active Directory Federation Services (AD FS)](#step-2---install-and-configure-active-directory-federation-services-ad-fs)
 
-Step 3 - Create a relying party trust and custom claim rules for Outlook Web App and EAC
+[Step 3 - Create a relying party trust and custom claim rules for Outlook Web App and EAC](#step-3---create-a-relying-party-trust-and-custom-claim-rules-for-outlook-web-app-and-eac)
 
-Step 4 - Install the Web Application Proxy role service (optional)
+[Step 4 - Install the Web Application Proxy role service (optional)](#step-4---install-the-web-application-proxy-role-service-optional)
 
-Step 5 - Configure the Web Application Proxy role service (optional)
+[Step 5 - Configure the Web Application Proxy role service (optional)](#step-5---configure-the-web-application-proxy-role-service-optional)
 
-Step 6 - Publish Outlook Web App and EAC using Web Application Proxy (optional)
+[Step 6 - Publish Outlook Web App and EAC using Web Application Proxy (optional)](#step-6---publish-outlook-web-app-and-eac-by-using-web-application-proxy-optional)
 
-Step 7 - Configure Exchange 2013 to use AD FS authentication
+[Step 7 - Configure Exchange 2013 to use AD FS authentication](#step-7---configure-exchange-2013-to-use-ad-fs-authentication)
 
-Step 8 - Enable AD FS authentication on the OWA and ECP virtual directories
+[Step 8 - Enable AD FS authentication on the OWA and ECP virtual directories](#step-8---enable-ad-fs-authentication-on-the-owa-and-ecp-virtual-directories)
 
-Step 9 - Restart or recycle Internet Information Services (IIS)
+[Step 9 - Restart or recycle Internet Information Services (IIS)](#step-9---restart-or-recycle-internet-information-services-iis)
 
-Step 10 - Test the AD FS claims for Outlook Web App and EAC
+[Step 10 - Test the AD FS claims for Outlook Web App and EAC](#step-10---test-the-ad-fs-claims-for-outlook-web-app-and-eac)
 
-Additional information you might want to know
+[Additional information you might want to know](#additional-information-you-might-want-to-know)
 
 ## What do I need to know before I begin?
 
@@ -143,15 +113,11 @@ When you are setting up Exchange 2013 SP1, AD FS, and Web Application Proxy, fol
 - **AD FS**: Two types of certificates are required by AD FS:
 
   - SSL certificate used for service communications
-
     - Subject name: **adfs.contoso.com** (AD FS deployment name)
-
     - Subject Alternative Name (SAN): None
 
   - Token signing certificate
-
     - Subject name: **tokensigning.contoso.com**
-
     - Subject Alternative Name (SAN): None
 
   > [!NOTE]
@@ -160,18 +126,14 @@ When you are setting up Exchange 2013 SP1, AD FS, and Web Application Proxy, fol
 - **Web Application Proxy**
 
   - SSL certificate used for service communications
-
     - Subject name: **owa.contoso.com**
-
     - Subject Alternative Name (SAN): None
 
     > [!NOTE]
     > If your Web Application Proxy External URL is the same as your internal URL, you can reuse Exchange's SSL certificate here.
 
     - AD FS Proxy SSL certificate
-
       - Subject name: **adfs.contoso.com** (AD FS deployment name)
-
       - Subject Alternative Name (SAN): None
 
     - Token signing certificate - This will be copied over from AD FS automatically as part of the steps below. If this certificate is used, it must be trusted by the Exchange 2013 servers in your organization.
@@ -263,16 +225,16 @@ Install-AdfsFarm -CertificateThumbprint 0E0C205D252002D535F6D32026B6AB074FB840E7
 
 For details and syntax, see [Install-AdfsFarm](/powershell/module/adfs/install-adfsfarm).
 
-To verify the installation: On the AD FS server, open your web browser, and then browse to the URL of the federation metadata (for example, **https://adfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml**).
+To verify the installation: On the AD FS server, open your web browser, and then browse to the URL of the federation metadata (for example, `https://adfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`).
 
 ## Step 3 - Create a relying party trust and custom claim rules for Outlook Web App and EAC
 
 For all applications and services that you want to publish through Web Application Proxy, you must configure a relying party trust on the AD FS server. For deployments with multiple Active Directory sites that use separate namespaces, a relying party trust for Outlook Web App and EAC must be added for each namespace.
 
-EAC uses the ECP virtual directory. You can view or configure settings for EAC by using the [Get-EcpVirtualDirectory](/powershell/module/exchange/Get-EcpVirtualDirectory) and the [Set-EcpVirtualDirectory](/powershell/module/exchange/Set-EcpVirtualDirectory) cmdlets. To access EAC, you must use a web browser and go to **http://server1.contoso.com/ecp**.
+EAC uses the ECP virtual directory. You can view or configure settings for EAC by using the [Get-EcpVirtualDirectory](/powershell/module/exchange/Get-EcpVirtualDirectory) and the [Set-EcpVirtualDirectory](/powershell/module/exchange/Set-EcpVirtualDirectory) cmdlets. To access EAC, you must use a web browser and go to `http://server1.contoso.com/ecp`.
 
 > [!NOTE]
-> The inclusion of the trailing slash <STRONG>/</STRONG> in the URL examples shown below is intentional. It's important to ensure that both the AD FS relying party trusts and Exchange Audience URI's <STRONG>are identical</STRONG>. This means the AD FS relying party trusts and Exchange Audience URI's should <STRONG>both have</STRONG> or <STRONG>both emit</STRONG> the trailing slashes in their URLs. The examples in this section contain the trailing <STRONG>/</STRONG>'s after any url ending with "owa" ( /owa/) or "ecp" (/ecp/).
+> The inclusion of the trailing slash **/** in the URL examples shown below is intentional. It's important to ensure that both the AD FS relying party trusts and Exchange Audience URI's **are identical**. This means the AD FS relying party trusts and Exchange Audience URI's should **both have** or **both emit** the trailing slashes in their URLs. The examples in this section contain the trailing **/**'s after any url ending with "owa" ( /owa/) or "ecp" (/ecp/).
 
 For Outlook Web App, to create relying party trusts by using the AD FS Management snap-in in Windows Server 2012 R2:
 
@@ -284,13 +246,13 @@ For Outlook Web App, to create relying party trusts by using the AD FS Managemen
 
 4. On the **Select Data Source** page, click **Enter data about the relying party manually**, and then click **Next**.
 
-5. On the **Specify Display Name** page, in the **Display Name** box, type **Outlook Web App**, and then under **Notes**, type a description for this relying party trust (such as **This is a trust for https://mail.contoso.com/owa/**) and then click **Next**.
+5. On the **Specify Display Name** page, in the **Display Name** box, type **Outlook Web App**, and then under **Notes**, type a description for this relying party trust (such as **This is a trust for <https://mail.contoso.com/owa/>**) and then click **Next**.
 
 6. On the **Choose Profile** page, click **AD FS profile**, and then click **Next**.
 
 7. On the **Configure Certificate** page, click **Next**.
 
-8. On the **Configure URL** page, click **Enable support for the WS-Federation Passive protocol**, and then under **Relying party WS-Federation Passive protocol URL**, **type https://mail.contoso.com/owa/**, and then click **Next**.
+8. On the **Configure URL** page, click **Enable support for the WS-Federation Passive protocol**, and then under **Relying party WS-Federation Passive protocol URL**, type `https://mail.contoso.com/owa/`, and then click **Next**.
 
 9. On the **Configure Identifiers** page, specify one or more identifiers for this relying party, click **Add** to add them to the list, and then click **Next**.
 
@@ -304,14 +266,13 @@ For Outlook Web App, to create relying party trusts by using the AD FS Managemen
 
 14. On the **Finish** page, verify that **Open the Edit Claim Rules dialog for this relying party trust when the wizard closes** isn't selected, and then click **Close**.
 
-To create a relying party trust for EAC, you must do these steps again and create a second relying party trust, but instead of putting in **Outlook Web App** for the display name, enter **EAC**. For the description, enter **This is a trust for the Exchange admin center**, and the **Relying party WS-Federation Passive protocol URL** is **https://mail.contoso.com/ecp**.
+To create a relying party trust for EAC, you must do these steps again and create a second relying party trust, but instead of putting in **Outlook Web App** for the display name, enter **EAC**. For the description, enter **This is a trust for the Exchange admin center**, and the **Relying party WS-Federation Passive protocol URL** is `https://mail.contoso.com/ecp`.
 
 In a claims-based identity model, the function of Active Directory Federation Services (AD FS) as a federation service is to issue a token that contains a set of claims. Claims rules govern the decisions in regard to claims that AD FS issues. Claim rules and all server configuration data are stored in the AD FS configuration database.
 
 It's required that you create two claim rules:
 
 - Active Directory user SID
-
 - Active Directory UPN
 
 To add the required claims rules:
@@ -472,14 +433,14 @@ To publish Outlook Web App and EAC by using Web Application Proxy:
 
    1. In the **Name** box, enter a friendly name for the application. This name is used only in the list of published applications in the **Remote Access Management console**. You can use **OWA** and **EAC** for the names.
 
-   2. In the **External URL** box, enter the external URL for this application (for example, **https://external.contoso.com/owa/** for Outlook Web App and **https://external.contoso.com/ecp/** for EAC).
+   2. In the **External URL** box, enter the external URL for this application (for example, `https://external.contoso.com/owa/` for Outlook Web App and `https://external.contoso.com/ecp/` for EAC).
 
    3. In the **External certificate** list, select a certificate whose subject name matches the host name of the external URL.
 
-   4. In the **Backend server URL** box, enter the URL of the back-end server. Note that this value is automatically entered when you enter the external URL, and you should change it only if the back-end server URL is different (for example, **https://mail.contoso.com/owa/** for Outlook Web App and **https://mail.contoso.com/ecp/** for EAC).
+   4. In the **Backend server URL** box, enter the URL of the back-end server. Note that this value is automatically entered when you enter the external URL, and you should change it only if the back-end server URL is different (for example, `https://mail.contoso.com/owa/` for Outlook Web App and `https://mail.contoso.com/ecp/` for EAC).
 
    > [!NOTE]
-   > Web Application Proxy can translate host names in URLs but cannot translate paths. Therefore, you can enter different host names, but you must enter the same path. For example, you can enter an external URL of <EM>https://external.contoso.com/app1/</EM> and a back-end server URL of <EM>https://mail.contoso.com/app1/</EM>. However, you cannot enter an external URL of <EM>https://external.contoso.com/app1/</EM> and a back-end server URL of <EM>https://mail.contoso.com/internal-app1/</EM>.
+   > Web Application Proxy can translate host names in URLs but cannot translate paths. Therefore, you can enter different host names, but you must enter the same path. For example, you can enter an external URL of `https://external.contoso.com/app1/` and a back-end server URL of `https://mail.contoso.com/app1/`. However, you cannot enter an external URL of `https://external.contoso.com/app1/` and a back-end server URL of `https://mail.contoso.com/internal-app1/`.
 
 6. On the **Confirmation** page, review the settings, and then click **Publish**. You can copy the Windows PowerShell command to set up additional published applications.
 
@@ -503,9 +464,9 @@ After you complete these steps, Web Application Proxy will perform AD FS authent
 
 When you are configuring AD FS to be used for claims-based authentication with Outlook Web App and EAC in Exchange 2013, you must enable AD FS for your Exchange organization. You must use the [Set-OrganizationConfig](/powershell/module/exchange/Set-OrganizationConfig) cmdlet to configure AD FS settings for your organization:
 
-- Set the AD FS issuer to **https://adfs.contoso.com/adfs/ls/**.
+- Set the AD FS issuer to `https://adfs.contoso.com/adfs/ls/`.
 
-- Set the AD FS URIs to **https://mail.contoso.com/owa/** and **https://mail.contoso.com/ecp/**.
+- Set the AD FS URIs to `https://mail.contoso.com/owa/` and `https://mail.contoso.com/ecp/`.
 
 - Find the AD FS token signing certificate thumbprint by using Windows PowerShell on the AD FS server and entering `Get-ADFSCertificate -CertificateType "Token-signing"`. Then, assign the token-signing certificate thumbprint that you found. If the AD FS token-signing certificate has expired, the thumbprint from the new AD FS token-signing certificate must be updated by using the [Set-OrganizationConfig](/powershell/module/exchange/Set-OrganizationConfig) cmdlet.
 
@@ -517,7 +478,7 @@ Set-OrganizationConfig -AdfsIssuer "https://adfs.contoso.com/adfs/ls/" -AdfsAudi
 ```
 
 > [!NOTE]
-> The <EM>-AdfsEncryptCertificateThumbprint</EM> parameter isn't supported for these scenarios.
+> The _-AdfsEncryptCertificateThumbprint_ parameter isn't supported for these scenarios.
 
 For details and syntax, see [Set-OrganizationConfig](/powershell/module/exchange/set-organizationconfig) and [Get-ADFSCertificate](/powershell/module/adfs/get-adfscertificate).
 
@@ -541,7 +502,7 @@ Get-OwaVirtualDirectory | Set-OwaVirtualDirectory -AdfsAuthentication $true -Bas
 ````
 
 > [!NOTE]
-> The preceding Exchange Management Shell commands configure the OWA and ECP virtual directories on every Client Access server in your organization. If you don't want to apply these settings to all Client Access servers, use the <EM>-Identity</EM> parameter and specify the Client Access server. It's likely you will want to apply these settings only to the Client Access servers in your organization that are Internet facing.
+> The preceding Exchange Management Shell commands configure the OWA and ECP virtual directories on every Client Access server in your organization. If you don't want to apply these settings to all Client Access servers, use the _-Identity_ parameter and specify the Client Access server. It's likely you will want to apply these settings only to the Client Access servers in your organization that are Internet facing.
 
 For details and syntax, see [Get-OwaVirtualDirectory](/powershell/module/exchange/Get-OwaVirtualDirectory) and [Set-OwaVirtualDirectory](/powershell/module/exchange/Set-OwaVirtualDirectory) or [Get-EcpVirtualDirectory](/powershell/module/exchange/Get-EcpVirtualDirectory) and [Set-EcpVirtualDirectory](/powershell/module/exchange/Set-EcpVirtualDirectory).
 
@@ -563,7 +524,7 @@ After you have completed all of the required steps, including making changes to 
 
 To test the AD FS claims for Outlook Web App:
 
-- In your web browser, sign in to Outlook Web App (for example, **https://mail.contoso.com/owa**).
+- In your web browser, sign in to Outlook Web App (for example, `https://mail.contoso.com/owa`).
 
 - In the browser window, if you get a certificate error, just continue on to the Outlook Web App website. You should be redirected to the ADFS sign-in page or the ADFS prompt for credentials.
 
@@ -573,7 +534,7 @@ Outlook Web App will load in the window.
 
 To test the AD FS claims for EAC:
 
-1. In your web browser, go to **https://mail.contoso.com/ecp**.
+1. In your web browser, go to `https://mail.contoso.com/ecp`.
 
 2. In the browser window, if you get a certificate error, just continue on to the ECP website. You should be redirected to the ADFS sign-in page or the ADFS prompt for credentials.
 

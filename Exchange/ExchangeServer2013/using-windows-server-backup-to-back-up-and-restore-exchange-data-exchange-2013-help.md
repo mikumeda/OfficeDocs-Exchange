@@ -25,50 +25,29 @@ The plug-in, WSBExchange.exe, runs as a service named Microsoft Exchange Server 
 
 Before using WSB to back up Exchange data, we recommend that you familiarize yourself with the following features and options for the plug-in:
 
-  - Backups taken with WSB occur at the volume level, and the only way to perform an application-level backup or restore is to select an entire volume. To back up a database and its log stream, you must back up the entire volume containing the database and logs, not just the individual folders. You can't back up any data without backing up the entire volume containing the data.
+- Backups taken with WSB occur at the volume level, and the only way to perform an application-level backup or restore is to select an entire volume. To back up a database and its log stream, you must back up the entire volume containing the database and logs, not just the individual folders. You can't back up any data without backing up the entire volume containing the data.
 
-  - The backup must be run locally on the server being backed up, and you can't use the plug-in to take remote VSS backups. There is no remote administration of WSB or the plug-in. You can, however, use Remote Desktop Services or Terminal Services to remotely manage backups.
+- The backup must be run locally on the server being backed up, and you can't use the plug-in to take remote VSS backups. There is no remote administration of WSB or the plug-in. You can, however, use Remote Desktop Services or Terminal Services to remotely manage backups.
 
-  - The backup can be created on a local drive or on a remote network share.
+- The backup can be created on a local drive or on a remote network share.
 
-  - Only full backups should be taken. Log truncation will occur only after a successful completion of a VSS full backup of a volume or folders containing an Exchange database.
+- Only full backups should be taken. Log truncation will occur only after a successful completion of a VSS full backup of a volume or folders containing an Exchange database.
 
-  - When restoring data, it's possible to restore only Exchange data. This data can be restored to its original location or to an alternate location. If you restore the data to its original location, WSB and the plug-in automatically handle the recovery process, including dismounting any existing database and replaying logs into the restored database.
+- When restoring data, it's possible to restore only Exchange data. This data can be restored to its original location or to an alternate location. If you restore the data to its original location, WSB and the plug-in automatically handle the recovery process, including dismounting any existing database and replaying logs into the restored database.
 
-  - The restore process doesn't support the Exchange recovery database (RDB). If you want to use an RDB, you must restore the data to an alternate location and then manually copy or move the restored data from that location into the RDB folder structure.
+- The restore process doesn't support the Exchange recovery database (RDB). If you want to use an RDB, you must restore the data to an alternate location and then manually copy or move the restored data from that location into the RDB folder structure.
 
-  - When restoring Exchange data, all backed-up databases must be restored together. You can't restore a single database.
+- When restoring Exchange data, all backed-up databases must be restored together. You can't restore a single database.
 
-  - Bare metal restores are supported when using WSB; however, the recommended recovery approach for Exchange servers is to recover the Exchange server and then restore the data. If you are using a third-party backup application (for example, non-Microsoft), then support for bare metal restores of Exchange may be available from your backup application vendor.
+- Bare metal restores are supported when using WSB; however, the recommended recovery approach for Exchange servers is to recover the Exchange server and then restore the data. If you are using a third-party backup application (for example, non-Microsoft), then support for bare metal restores of Exchange may be available from your backup application vendor.
 
 The following table describes the supportability of the backup and recovery options available for Exchange 2013 with WSB.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>If you...</th>
-<th>Then...</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Back up the full server...</p></td>
-<td><p>A VSS copy backup will be performed, and the transaction logs for the databases on the server will not be truncated.</p></td>
-</tr>
-<tr class="even">
-<td><p>Perform a custom backup and select one or more volumes to back up...</p></td>
-<td><p>A VSS full backup can be selected, allowing the transaction logs for the databases on the selected volumes to be truncated at the completion of a successful backup.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Perform a custom backup and select one or more folders to back up...</p></td>
-<td><p>A VSS full backup can be selected and the log files will be truncated; however, restoration of the backup will be limited to file restore, as an Application level restore will not be available as an option.</p></td>
-</tr>
-</tbody>
-</table>
+|If you...|Then...|
+|---|---|
+|Back up the full server...|A VSS copy backup will be performed, and the transaction logs for the databases on the server will not be truncated.|
+|Perform a custom backup and select one or more volumes to back up...|A VSS full backup can be selected, allowing the transaction logs for the databases on the selected volumes to be truncated at the completion of a successful backup.|
+|Perform a custom backup and select one or more folders to back up...|A VSS full backup can be selected and the log files will be truncated; however, restoration of the backup will be limited to file restore, as an Application level restore will not be available as an option.|
 
 For detailed steps to back up Exchange using WSB, see [Use Windows Server Backup to back up Exchange](use-windows-server-backup-to-back-up-exchange-exchange-2013-help.md).
 

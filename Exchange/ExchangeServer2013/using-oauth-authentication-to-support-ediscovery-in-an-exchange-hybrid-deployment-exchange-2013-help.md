@@ -37,45 +37,13 @@ OAuth authentication typically involves three parties: a single authorization se
 
 The follow table identifies the eDiscovery scenarios in an Exchange hybrid deployment that require OAuth authentication.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>eDiscovery scenario</th>
-<th>Requires OAuth authentication?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Search Exchange on-premises mailboxes and Exchange Online mailboxes in the same eDiscovery search initiated from the Exchange on-premises organization. For example, searching all mailboxes in the organization in a single eDiscovery search.</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Search Exchange on-premises mailboxes that use Exchange Online Archiving for cloud-based archive mailboxes. When you use In-Place eDiscovery, both the primary and archive mailboxes are searched.</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="odd">
-<td><p>Search Exchange Online mailboxes from an eDiscovery search initiated from the Exchange on-premises organization by an administrator or compliance officer.</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="even">
-<td><p>Search on-premises mailboxes using an eDiscovery search initiated from the Exchange on-premises organization by an administrator or compliance officer.</p></td>
-<td><p>No</p>
-
-> [!NOTE]
-> As previously discussed, OAuth authentication would be required if the on-premises mailboxes were configured with cloud-based archive mailboxes.
-
-</td>
-</tr>
-<tr class="odd">
-<td><p>Search Exchange Online mailboxes from an eDiscovery search initiated from Exchange Online or the eDiscovery Center in SharePoint Online by a Microsoft 365 or Office 365 tenant administrator or a compliance officer signed in to a Microsoft 365 or Office 365 user account.</p></td>
-<td><p>No</p></td>
-</tr>
-</tbody>
-</table>
+|eDiscovery scenario|Requires OAuth authentication?|
+|---|---|
+|Search Exchange on-premises mailboxes and Exchange Online mailboxes in the same eDiscovery search initiated from the Exchange on-premises organization. For example, searching all mailboxes in the organization in a single eDiscovery search.|Yes|
+|Search Exchange on-premises mailboxes that use Exchange Online Archiving for cloud-based archive mailboxes. When you use In-Place eDiscovery, both the primary and archive mailboxes are searched.|Yes|
+|Search Exchange Online mailboxes from an eDiscovery search initiated from the Exchange on-premises organization by an administrator or compliance officer.|Yes|
+|Search on-premises mailboxes using an eDiscovery search initiated from the Exchange on-premises organization by an administrator or compliance officer.|No <br/><br/> **Note**: As previously discussed, OAuth authentication would be required if the on-premises mailboxes were configured with cloud-based archive mailboxes.|
+|Search Exchange Online mailboxes from an eDiscovery search initiated from Exchange Online or the eDiscovery Center in SharePoint Online by a Microsoft 365 or Office 365 tenant administrator or a compliance officer signed in to a Microsoft 365 or Office 365 user account.|No|
 
 ## Configuring OAuth authentication to support eDiscovery
 
