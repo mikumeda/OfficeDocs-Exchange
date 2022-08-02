@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Admins can learn how to change a custom management role scope in Exchange Server 2013.
 ---
 
 # Change a role scope
@@ -25,7 +26,6 @@ You can change a custom management scope. You can change either exclusive or reg
 For more information about management role scopes and assignments in Microsoft Exchange Server 2013, see the following topics:
 
 - [Understanding management role scopes](understanding-management-role-scopes-exchange-2013-help.md)
-
 - [Understanding management role assignments](understanding-management-role-assignments-exchange-2013-help.md)
 
 Looking for other management tasks related to role scopes? Check out [Advanced permissions](advanced-permissions-exchange-2013-help.md).

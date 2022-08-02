@@ -12,6 +12,7 @@ ms.assetid: d2b4d527-311e-442d-9f1f-54fac8371b80
 f1.keywords:
 - CSH
 mtps_version: v=EXCHG.150
+description: Admins can learn how to change the offline address book (OAB) generation schedule in Exchange Server 2013.
 ---
 
 # Change the offline address book generation schedule in Exchange 2013
