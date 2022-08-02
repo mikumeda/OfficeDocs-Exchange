@@ -100,7 +100,7 @@ To troubleshoot this issue, follow these steps:
 
 1. Review the protocol logs on the CA and Mailbox servers. By default, Protocol logs on the CAS are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\Autodiscover** folder. By default, Protocol log files on the Mailbox server are located in the **%ExchangeInstallPath%Logging\\Autodiscover** folder.
 
-2. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using: https://_\<servername\>_/autodiscover/autodiscover.xml.
+2. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using: `https://<servername>/autodiscover/autodiscover.xml`.
 
    If test user account name passes, an issue may affect the mailbox server that's hosting the monitored mailbox.
 

@@ -62,7 +62,7 @@ All probes are defined on Health Manager service startup in the Microsoft.Exchan
 - **Name**: The name of the probe, which begins with a _SampleMask_ of the probe's monitor.
 - **TypeName**: The code object type of the probe that contains the probe's logic.
 - **ServiceName**: The name of the health set that contains this probe.
-- **TargetResource**: The object the probe is validating. This property name is appended to the name of the probe when it is executed to become a probe result _ResultName*
+- **TargetResource**: The object the probe is validating. This property name is appended to the name of the probe when it is executed to become a probe result _ResultName_
 - **RecurrenceIntervalSeconds**: How often the probe executes.
 - **TimeoutSeconds**: How long the probe will wait before failing.
 
@@ -136,7 +136,7 @@ When the Exchange Management Pack is installed, System Center Operations Manager
 
 Overrides provide an administrator with the ability to configure some aspects of the managed availability probes, monitors, and responders. Overrides can be used to fine tune some of the thresholds used by managed availability. They can also be used to enable emergency actions for unexpected events that may require configuration settings that are different from the out-of-box defaults.
 
-Overrides can be created and applied to a single server (this process is known as a _server override_), or they can be applied to a group of servers (this process is known as a _global override*). Server override configuration data is stored in the Windows registry on the server on which the override is applied. Global override configuration data is stored in Active Directory.
+Overrides can be created and applied to a single server (this process is known as a _server override_), or they can be applied to a group of servers (this process is known as a _global override_). Server override configuration data is stored in the Windows registry on the server on which the override is applied. Global override configuration data is stored in Active Directory.
 
 Overrides can be configured to last indefinitely, or they can be configured for a specific duration. In addition, global overrides can be configured to apply to all servers, or only servers running a specific version of Exchange.
 

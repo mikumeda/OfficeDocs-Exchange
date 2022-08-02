@@ -10,6 +10,7 @@ ms.topic: article
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Admins can learn about retention policies and how to use them to enforce message retention settings.
 ---
 
 # Apply a retention policy to mailboxes in Exchange 2013

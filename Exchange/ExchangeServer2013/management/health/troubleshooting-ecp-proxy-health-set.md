@@ -99,7 +99,7 @@ To troubleshoot this issue, follow these steps:
 
 1. Review the protocol logs on CA servers. Protocol logs are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\_\<protocol\>_** folder on the CAS.
 
-2. Create a test user account, and then log on to the CAS by using the test user account name. For example, log on by using: https://_\<servername\>_/owa.
+2. Create a test user account, and then log on to the CAS by using the test user account name. For example, log on by using: `https://<servername>/owa`.
 
 3. Start IIS Manager, and then connect to the server that is reporting the issue. Verify that the MSExchangeServicesAppPool is running on the CAS.
 

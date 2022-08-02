@@ -100,4 +100,4 @@ To verify that you have successfully configured an Active Directory site as a hu
    Get-AdSite | Format-List Name,HubSiteEnabled
    ```
 
-2. Verify the *HubSiteEnabled* value is `True` for the Active Directory site.
+2. Verify the _HubSiteEnabled_ value is `True` for the Active Directory site.

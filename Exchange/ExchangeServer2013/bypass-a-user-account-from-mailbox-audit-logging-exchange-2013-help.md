@@ -12,9 +12,10 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Admins can learn how to configure a user or computer account to bypass mailbox audit logging in Exchange Server 2013.
 ---
 
-# Bypass a user account from mailbox audit logging
+# Bypass a user account from mailbox audit logging in Exchange 2013
 
 _**Applies to:** Exchange Server 2013_
 

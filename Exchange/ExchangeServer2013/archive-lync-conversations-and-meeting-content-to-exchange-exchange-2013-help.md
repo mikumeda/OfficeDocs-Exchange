@@ -10,6 +10,7 @@ ms.topic: article
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: Admins can learn how to archive Lync 2013 content to Exchange 2013 mailboxes.
 ---
 
 # Archive Lync conversations and meeting content to Exchange 2013

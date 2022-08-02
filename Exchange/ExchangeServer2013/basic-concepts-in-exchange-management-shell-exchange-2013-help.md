@@ -12,6 +12,7 @@ author: msdmaguire
 f1.keywords:
 - NOCSH
 mtps_version: v=EXCHG.150
+description: A list of links for Exchange Management Shell topics.
 ---
 
 # Basic concepts in Exchange Management Shell

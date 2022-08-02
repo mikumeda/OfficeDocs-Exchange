@@ -81,7 +81,7 @@ The following table shows an example with values, which indicates when the compl
 |City|Department|Title|Result|
 |---|---|---|---|
 |Vancouver (True)|Sales (True)|CEO (False)|True because both **City** and **Department** evaluated as True. **Title** isn't evaluated because the filter query conditions are already satisfied.|
-|Seattle (False)|Sales (True)|IT Manager (True)|True because **Title** evaluated as True. The results of the **City** and **Department** comparison are discarded because **Title** evaluated as True, which satisfied the filter query conditions. <br/><br/> **Note**: IT Manager matches the filter query because the **Like** comparison operator was used, which matches partial strings when wildcard characters (*) are used in the filter query.|
+|Seattle (False)|Sales (True)|IT Manager (True)|True because **Title** evaluated as True. The results of the **City** and **Department** comparison are discarded because **Title** evaluated as True, which satisfied the filter query conditions. <br/><br/> **Note**: IT Manager matches the filter query because the **Like** comparison operator was used, which matches partial strings when wildcard characters (\*) are used in the filter query.|
 |Vancouver (True)|Marketing (False)|Writer (False)|False because **City** and **Department** didn't both evaluate as True, and **Title** also didn't evaluate as True.|
 
 ## Filterable recipient properties
