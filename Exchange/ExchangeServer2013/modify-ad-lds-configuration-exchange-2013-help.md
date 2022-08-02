@@ -26,8 +26,6 @@ You can use the **ConfigureAdam.ps1** script (located in $env:ExchangeInstallPat
 
 The parameters in the following table are available for the **ConfigureAdam.ps1** script. You can use one, all, or any combination of these parameters to modify AD LDS.
 
-### Parameters available for the ConfigureAdam.ps1 script
-
 |Parameter|Description|
 |---|---|
 |_Ldapport_|Modifies the port used for LDAP communication. By default, the Edge Transport server uses the nonstandard port 50389.|

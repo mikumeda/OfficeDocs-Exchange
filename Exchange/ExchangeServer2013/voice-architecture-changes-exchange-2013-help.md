@@ -56,13 +56,13 @@ Exchange 2010 UM administrators can configure a set of properties for Unified Me
 
 - **Set-UMCallRouterSettings -SipTlsListeningPort \<Int32\>**: Available on Exchange 2013 Client Access servers but doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMService - Status \<Enabled | Disabled | NoNewCalls\>**: Not available on Exchange 2013 Mailbox servers but works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMService - Status \<Enabled \| Disabled \| NoNewCalls\>**: Not available on Exchange 2013 Mailbox servers but works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMCallRouterSettings - Status \<Enabled | Disabled | NoNewCalls\>**: Not available on Exchange 2013 Client Access servers and doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMCallRouterSettings - Status \<Enabled \| Disabled \| NoNewCalls\>**: Not available on Exchange 2013 Client Access servers and doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMService -UMStartupMode \<TCP | TLS | Dual\>**: Available on Exchange 2013 Mailbox servers and works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMService -UMStartupMode \<TCP \| TLS \| Dual\>**: Available on Exchange 2013 Mailbox servers and works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
-- **Set-UMCallRouterSettings - UMStartupMode \<TCP | TLS | Dual\>**: Available on Exchange 2013 Client Access servers but doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
+- **Set-UMCallRouterSettings - UMStartupMode \<TCP \| TLS \| Dual\>**: Available on Exchange 2013 Client Access servers but doesn't work on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
 - **Enable-UMService**:  Not available on Exchange 2013 Mailbox servers but works on Exchange 2007 and Exchange 2010 Unified Messaging servers.
 
@@ -83,7 +83,7 @@ The following table summarizes the Exchange 2013 ports and protocols, and whethe
 |SIP (Client Access server - Microsoft Exchange Unified Messaging Call Router service)|5060 (unsecured), 5061 (secured). The service listens on both ports.|Not applicable|Yes, using the **Set-UMCallRouterSettings** cmdlet.|
 |SIP (Mailbox server - Microsoft Exchange Unified Messaging service)|5062 (unsecured), 5063 (secured). The service listens on both ports.|Not applicable|Ports can't be changed.|
 |SIP (Mailbox server - UM worker process)|5065 and 5067 for TCP (unsecured). 5066 and 5068 for mutual TLS (secured). This is the case when _UMStartupMode_ is set to _Dual_. If _UMStartUpMode_ is set to _TCP_ or _TLS_, ports 5065 and 5066 are used. The default _UMStartupMode_ is _TCP_.|Not applicable|Ports can't be changed.|
-|RTP (Mailbox server - UM worker process)|Not applicable|Ports between 1024 and 65535.|Ports can be changed in the msexchangeum.config configuration file. The msexchangeum.config file is located in the \Program Files\Microsoft\Exchange\V15\bin folder on an Exchange 2013 Unified Messaging server.|
+|RTP (Mailbox server - UM worker process)|Not applicable|Ports between 1024 and 65535.|Ports can be changed in the msexchangeum.config configuration file. The msexchangeum.config file is located in the `%ExchangeInstallPath%bin` folder on an Exchange 2013 Unified Messaging server.|
 
 ## UM dial plans
 

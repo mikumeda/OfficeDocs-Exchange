@@ -91,7 +91,7 @@ When the Edge Subscription file is imported on a Mailbox server, the following s
 
 4. Each Mailbox server encrypts the ESRA.edge account by using the public key of its own TransportService certificate and then stores it in its own configuration object.
 
-5. Each Mailbox server generates an ESRA for each existing Edge Transport server configuration object in Active Directory (ESRA.edge. _Mailboxname.\#*).
+5. Each Mailbox server generates an ESRA for each existing Edge Transport server configuration object in Active Directory (ESRA.edge._Mailboxname.\#_).
 
    Example: ESRA.edge.Example.0
 

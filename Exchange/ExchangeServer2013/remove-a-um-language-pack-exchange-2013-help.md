@@ -44,7 +44,7 @@ At a command prompt, run the following command.
 Setup.exe /RemoveUmLanguagePack:<UmLanguagePackName>
 ```
 
-In the previous command, *\<UmLanguagePackName\>* is the name of the UM language pack, for example, fr-FR.
+In the previous command, _\<UmLanguagePackName\>_ is the name of the UM language pack, for example, fr-FR.
 
 > [!WARNING]
 > You can't use the Setup.exe file that's located in the \Bin folder to remove a UM language pack after you've installed any updates. You must use the Setup.exe file from the Exchange 2013 DVD or the downloaded source files. If you don't, you'll see the following error: There is a version mismatch between the running application and the installed application.

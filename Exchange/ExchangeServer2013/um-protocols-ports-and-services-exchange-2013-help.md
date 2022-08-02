@@ -71,7 +71,7 @@ The following table summarizes the Exchange 2013 ports and protocols, and whethe
 |SIP (Client Access server - Microsoft Unified Messaging Call Router service)|5060 (unsecured), 5061 (secured). The service listens on both ports.|Not applicable|Yes, using the **Set-UMCallRouterSettings** cmdlet.|
 |SIP (Mailbox server - Microsoft Exchange Unified Messaging service)|5062 (unsecured), 5063 (secured). The service listens on both ports.|Not applicable|Ports can't be changed.|
 |SIP (Mailbox server - UM worker process)|5065 and 5067 for TCP (unsecured). 5065 and 5067 for mutual TLS (secured). If you have set it to Dual mode 5066 and 5068 are also used.|Not applicable|Ports can't be changed.|
-|RTP (Mailbox server - UM worker process)|Not applicable|Ports between 1024 and 65535.|Ports can be changed in the msexchangeum.config configuration file. The msexchangeum.config file is located in the \Program Files\Microsoft\Exchange\V15\bin folder on an Exchange 2013 Unified Messaging server.|
+|RTP (Mailbox server - UM worker process)|Not applicable|Ports between 1024 and 65535.|Ports can be changed in the msexchangeum.config configuration file. The msexchangeum.config file is located in the %ExchangeInstallPath%bin folder on an Exchange 2013 Unified Messaging server.|
 
 ## Lync Server and UM ports
 

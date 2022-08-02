@@ -106,11 +106,11 @@ You must complete the following steps to configure Unified Messaging to work wit
 
    Although a UM dial plan can be configured as SIP secured or Secured, we recommend that you configure the dial plan as Secured to enable Lync Phone Edition devices to work correctly. This is recommended because of the default encryption level settings configured in Lync Server. A Lync Phone Edition device will work only if the encryption settings are configured as shown in the following table. This table shows the relationship between the encryption settings for Lync Server and UM dial plans.
 
-    |Lync Server|UM dial plan|
-    |---|---|
-    |Encryption required (default)|Secured|
-    |Encryption optional|SIP secured/Secured|
-    |No encryption|SIP secured|
+   |Lync Server|UM dial plan|
+   |---|---|
+   |Encryption required (default)|Secured|
+   |Encryption optional|SIP secured/Secured|
+   |No encryption|SIP secured|
 
 4. Add all Client Access and Mailbox servers to the SIP dial plan. To enable the server to answer incoming calls, you must add all Exchange servers to a dial plan if you want them to answer calls from Lync Server.
 
@@ -123,7 +123,7 @@ You must complete the following steps to configure Unified Messaging to work wit
    > [!IMPORTANT]
    > Users who are associated with a SIP URI dial plan can't receive incoming faxes. This is because incoming voice and fax calls are routed through a Mediation Server and faxing isn't supported when using a Mediation Server.
 
-8. Open the Exchange Management Shell and run the exchucutil.ps1 script located in the %Program Files%\\Microsoft\\Exchange Server\\V15\\Scripts folder. The exchucutil.ps1 script does the following:
+8. Open the Exchange Management Shell and run the exchucutil.ps1 script located in the `$env:ExchangeInstallPath\Scripts` folder. The exchucutil.ps1 script does the following:
 
    - Grants Lync Server permission to read Exchange UM Active Directory components, specifically, the SIP URI dial plan that was created in the previous task. For details about how to configure permissions in Active Directory, see [How to Use ADSI Edit to Apply Permissions](/previous-versions/tn-archive/aa997502(v=exchg.65)).
 
@@ -136,15 +136,10 @@ You must complete the following steps to configure Unified Messaging to work wit
 You must also complete the following tasks to configure Lync Server to work with Exchange UM:
 
 - Create location profiles or Lync dial plans. The location profile name doesn't have to match the FQDN of the corresponding UM dial plans.
-
 - Assign location profiles to the Lync Server pools.
-
 - Deploy and configure media gateways or Mediation Servers. You must also import a certificate from the same trusted CA as was used for the certificates on the Client Access and Mailbox servers and Lync Server.
-
 - Define telephone usage, create and assign voice policies and outbound call routes.
-
 - Configure the users for Enterprise Voice and add a TEL URI and SIP identifier.
-
 - Run **ocsumutil.exe**, which creates the contact objects for Outlook Voice Access and for the auto attendants.
 
   > [!NOTE]
