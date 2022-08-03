@@ -29,4 +29,4 @@ Exchange 2007 setup requires that there be a valid Exchange Mailbox server hosti
 
 To address this issue, designate a valid Exchange Mailbox server as OAB generation host, and then rerun Exchange 2007 setup.
 
-For information about how to designate an Exchange server to be the host for Offline Address Book generation, see "How to Create an Offline Address Book" ([https://docs.microsoft.com/previous-versions/office/exchange-server-2007/bb124270(v=exchg.80)](/previous-versions/office/exchange-server-2007/bb124270(v=exchg.80))) in the Exchange 2007 product documentation.
+For information about how to designate an Exchange server to be the host for Offline Address Book generation, see [How to Create an Offline Address Book](/previous-versions/office/exchange-server-2007/bb124270(v=exchg.80)) in the Exchange 2007 product documentation.
