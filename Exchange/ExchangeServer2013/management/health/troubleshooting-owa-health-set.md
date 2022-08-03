@@ -126,7 +126,7 @@ An email alert from a health set contains the following information:
 
 To troubleshoot this issue, follow these steps:
 
-1. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using https://_\<servername\>_/owa.
+1. Create a test user account, and then log on to the CAS by using the test user account. For example, log on by using `https://<servername>/owa`.
 
    If this fails, test by using a different CA server to verify that the problem is occurring on a specific CAS, and not on the Mailbox server.
 

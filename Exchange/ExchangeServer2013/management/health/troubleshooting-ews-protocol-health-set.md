@@ -117,7 +117,7 @@ This monitor alert is typically issued for Mailbox servers.
 
 7. If the issue still exits, review the protocol log files on the Mailbox server. On the Mailbox server, the logs reside in the **%ExchangeInstallPath%Logging\\Ews** folder.
 
-8. Create a test user account, and then log on by using the test user account against the given Mailbox server on port 444 https://_\<servername\>_:444/ews/exchange.asmx. If the test is successful, an issue may affect the specific mailbox database or Mailbox server on which the monitoring mailbox is located. Try to repeat this step by using a test account on that database.
+8. Create a test user account, and then log on by using the test user account against the given Mailbox server on port 444: `https://<servername>:444/ews/exchange.asmx`. If the test is successful, an issue may affect the specific mailbox database or Mailbox server on which the monitoring mailbox is located. Try to repeat this step by using a test account on that database.
 
 9. Check for any alerts on the EWS.Protocol Health Set that might indicate a problem that affects the specific Mailbox server.
 

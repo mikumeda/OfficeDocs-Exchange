@@ -91,7 +91,7 @@ To help troubleshoot this issue, perform the following steps:
 
 1. Review the protocol logs on CAS servers. Protocol logs are located in the **%ExchangeInstallPath%Logging\\HttpProxy\\_\<protocol\>_** folder on the CAS server.
 
-2. Create a test user account, and then logon to the CAS server by using the test user account. For example https://_\<servername\>_/owa
+2. Create a test user account, and then logon to the CAS server by using the test user account. For example `https://<servername>/owa`.
 
 3. Start IIS Manager and connect to the server that's reporting the issue and verify that the `MSExchangePowerShellFrontEndAppPool` is running on CAS server.
 

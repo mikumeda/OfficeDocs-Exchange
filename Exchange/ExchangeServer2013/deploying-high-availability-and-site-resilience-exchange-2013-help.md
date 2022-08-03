@@ -58,7 +58,7 @@ The following figure illustrates the Contoso configuration.
 
 ## Network configuration
 
-As illustrated in the previous figure, the solution involves the use of multiple subnets and multiple networks. Each Mailbox server in the DAG has two network adapters on separate subnets. In each Mailbox server, one network adapter will be used for the MAPI network (192.168.*x_.*x*) and one network adapter will be used for the Replication network (10.0.*x_.*x*). Only the MAPI network provides connectivity to Active Directory, DNS services, other Exchange servers and clients. The adapter used for the Replication network in each member provides connectivity only to the Replication network adapters in the other members of the DAG.
+As illustrated in the previous figure, the solution involves the use of multiple subnets and multiple networks. Each Mailbox server in the DAG has two network adapters on separate subnets. In each Mailbox server, one network adapter will be used for the MAPI network (192.168._x_._x_) and one network adapter will be used for the Replication network (10.0._x_._x_). Only the MAPI network provides connectivity to Active Directory, DNS services, other Exchange servers and clients. The adapter used for the Replication network in each member provides connectivity only to the Replication network adapters in the other members of the DAG.
 
 The settings for each network adapter in each node are detailed in the following table.
 

@@ -405,7 +405,7 @@ To verify that a server is ready for maintenance, perform the following tasks:
 
 1. To verify the server has been placed into maintenance mode, run `Get-ServerComponentState <ServerName> | ft Component,State -Autosize`
 
-2. To verify the server is not hosting any active database copies, run `Get-MailboxServer <ServerName> | ft DatabaseCopy_ -Autosize`
+2. To verify the server is not hosting any active database copies, run `Get-MailboxServer <ServerName> | ft DatabaseCopy* -Autosize`
 
 3. To verify that the node is paused, run `Get-ClusterNode <ServerName> | fl`
 

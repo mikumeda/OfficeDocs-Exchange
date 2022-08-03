@@ -84,13 +84,13 @@ You can configure the SCL delete, reject, quarantine, and Junk Email folder sett
 
   The same SCL parameters are available on the **Set-Mailbox** cmdlet that are available on the **Set-ContentFilterConfig** and **Set-OrganizationConfig** cmdlets:
 
-  - _SCLDeleteEnabled*
-  - _SCLDeleteThreshold*
-  - _SCLRejectEnabled*
-  - _SCLRejectThreshold*
-  - _SCLQuarantineEnabled*
-  - _SCLQuarantineThreshold*
-  - _SCLJunkThreshold*
+  - _SCLDeleteEnabled_
+  - _SCLDeleteThreshold_
+  - _SCLRejectEnabled_
+  - _SCLRejectThreshold_
+  - _SCLQuarantineEnabled_
+  - _SCLQuarantineThreshold_
+  - _SCLJunkThreshold_
 
   However, all the SCL parameters on the **Set-Mailbox** cmdlet also accept the value `$null`. If an SCL setting on a mailbox is blank (`$null`), the corresponding Content Filter agent setting or organization configuration setting is applied to the mailbox. If an SCL setting on a mailbox has the value of `$true` or `$false`, the setting on the mailbox overrides the corresponding organization-wide setting on the Content Filter agent or the organization configuration.
 

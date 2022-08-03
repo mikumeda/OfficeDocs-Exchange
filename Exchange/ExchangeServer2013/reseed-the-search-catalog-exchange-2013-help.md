@@ -79,7 +79,7 @@ If there is only one copy of the mailbox database, you have to manually reseed t
     Stop-Service HostControllerService
     ```
 
-2. Delete, move, or rename the folder that contains the Exchange content index catalog. This folder is named `%ExchangeInstallPath\Mailbox\<name of mailbox database>_Catalog\<GUID>12.1.Single`. For example, you might rename the folder `C:\Program Files\Microsoft\Exchange Server\V15\Mailbox\Mailbox Database 0657134726_Catalog\F0627A72-9F1D-494A-839A-D7C915C279DB12.1.Single_OLD`.
+2. Delete, move, or rename the folder that contains the Exchange content index catalog. This folder is named `%ExchangeInstallPath%Mailbox\<name of mailbox database>_Catalog\<GUID>12.1.Single`. For example, you might rename the folder `C:\Program Files\Microsoft\Exchange Server\V15\Mailbox\Mailbox Database 0657134726_Catalog\F0627A72-9F1D-494A-839A-D7C915C279DB12.1.Single_OLD`.
 
     > [!NOTE]
     > Deleting this folder will make additional disk space available. Alternatively, you might want to rename or move the folder to keep it for troubleshooting purposes.

@@ -175,7 +175,7 @@ To troubleshoot this issue, follow these steps:
 
 ## OwaDeepTestProbe Recovery Actions
 
-1. To determine whether the issue still exists, create a test user account on the same server on which the mailbox is mounted, and then try to log on to OWA. For example, try to log on by using: https:/_\<servername\>_/owa.
+1. To determine whether the issue still exists, create a test user account on the same server on which the mailbox is mounted, and then try to log on to OWA. For example, try to log on by using: `https:/<servername>/owa`.
 
 2. Check for alerts on the OWA health set that may indicate an issue that affects a specific Mailbox server. For more information, see [Troubleshooting OWA Health Set](troubleshooting-owa-health-set.md).
 
