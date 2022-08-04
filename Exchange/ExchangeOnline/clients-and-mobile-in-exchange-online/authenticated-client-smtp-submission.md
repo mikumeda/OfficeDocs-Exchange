@@ -42,7 +42,7 @@ Note that these settings only apply to mailboxes that are hosted in Exchange Onl
 > [!NOTE]
 > - If you've enabled _security defaults_ in your organization, SMTP AUTH is already disabled in Exchange Online. For more information, see [What are security defaults?](/azure/active-directory/conditional-access/concept-conditional-access-security-defaults).
 >
-> - If your authentication policy disables basic authentication for SMTP, clients cannot use the SMTP AUTH protocol even if you enable the settings outlined in this article. For more information, see [Disable Basic authentication in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online).
+> - If your authentication policy disables basic authentication for SMTP, clients cannot use the SMTP AUTH protocol with basic authentication, even if you enable the settings outlined in this article. For more information, see [Disable Basic authentication in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online).
 
 ## Disable SMTP AUTH in your organization
 
